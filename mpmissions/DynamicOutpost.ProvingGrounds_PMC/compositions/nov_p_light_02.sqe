@@ -1,0 +1,158 @@
+version=53;
+center[]={1626.2656,51.250202,785.17133};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Group";
+		side="East";
+		class Entities
+		{
+			items=8;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-7.875,0.088165283,4.4249268};
+				};
+				side="East";
+				flags=3;
+				class Attributes
+				{
+					rank="SERGEANT";
+				};
+				id=3077;
+				type="LOP_US_Infantry_TL";
+				atlOffset=0.5415802;
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-4.875,0.27495956,-0.57507324};
+				};
+				side="East";
+				flags=1;
+				class Attributes
+				{
+					skill=0.44999999;
+					rank="CORPORAL";
+				};
+				id=3078;
+				type="LOP_US_Infantry_SL";
+				atlOffset=0.64170074;
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-2.875,0.25495911,-0.57507324};
+				};
+				side="East";
+				flags=1;
+				class Attributes
+				{
+					skill=0.44999999;
+					rank="CORPORAL";
+				};
+				id=3079;
+				type="LOP_US_Infantry_Corpsman";
+				atlOffset=0.55670166;
+			};
+			class Item3
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-0.875,0.14253235,-0.57507324};
+				};
+				side="East";
+				flags=1;
+				class Attributes
+				{
+					skill=0.40000001;
+				};
+				id=3080;
+				type="LOP_US_Infantry_AT";
+				atlOffset=0.41205215;
+			};
+			class Item4
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={1.125,0.11753082,-0.57507324};
+				};
+				side="East";
+				flags=1;
+				class Attributes
+				{
+					skill=0.40000001;
+				};
+				id=3081;
+				type="LOP_US_Infantry_AT_Asst";
+				atlOffset=0.37705231;
+			};
+			class Item5
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={3.125,0.028808594,-0.57507324};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					skill=0.40000001;
+				};
+				id=3082;
+				type="LOP_US_Infantry_MG";
+				atlOffset=0.24840546;
+			};
+			class Item6
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={5.125,0.038806915,-0.57507324};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					skill=0.40000001;
+				};
+				id=3083;
+				type="LOP_US_Infantry_MG_Asst";
+				atlOffset=0.20340347;
+			};
+			class Item7
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={7.125,0.0014381409,-0.57507324};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					skill=0.40000001;
+				};
+				id=3084;
+				type="LOP_US_Infantry_GL_2";
+				atlOffset=0.12605667;
+			};
+		};
+		class Attributes
+		{
+		};
+		id=3076;
+		atlOffset=0.5415802;
+	};
+};

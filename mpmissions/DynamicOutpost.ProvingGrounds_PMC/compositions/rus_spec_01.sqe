@@ -1,0 +1,68 @@
+version=53;
+center[]={104.24765,50.493313,1636.4155};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Group";
+		side="East";
+		class Entities
+		{
+			items=3;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={0.66666412,0.0014381409,3.3834229};
+				};
+				side="East";
+				flags=7;
+				class Attributes
+				{
+					skill=0.55000001;
+					rank="LIEUTENANT";
+				};
+				id=605;
+				type="rhs_msv_efreitor";
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-4.3333359,0.037509918,-1.6165771};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					skill=0.40000001;
+				};
+				id=606;
+				type="rhs_msv_rifleman";
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={3.6666641,0.063926697,-1.6165771};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					skill=0.40000001;
+				};
+				id=607;
+				type="rhs_msv_rifleman";
+			};
+		};
+		class Attributes
+		{
+		};
+		id=604;
+	};
+};

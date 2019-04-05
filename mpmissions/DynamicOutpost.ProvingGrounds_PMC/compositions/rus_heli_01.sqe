@@ -1,0 +1,294 @@
+version=53;
+center[]={1652.5795,113.48448,905.69275};
+class items
+{
+	items=6;
+	class Item0
+	{
+		dataType="Group";
+		side="East";
+		class Entities
+		{
+			items=2;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={162.92834,2.5202942,-95.08429};
+					angles[]={0,4.2333679,0};
+				};
+				side="East";
+				flags=2;
+				class Attributes
+				{
+				};
+				id=1;
+				type="rhs_pilot_combat_heli";
+				atlOffset=64.256477;
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={162.92834,2.5202942,-95.08429};
+					angles[]={0,4.2333679,0};
+				};
+				side="East";
+				class Attributes
+				{
+				};
+				id=2;
+				type="rhs_pilot_combat_heli";
+				atlOffset=64.256477;
+			};
+		};
+		class Attributes
+		{
+		};
+		class CrewLinks
+		{
+			class LinkIDProvider
+			{
+				nextID=2;
+			};
+			class Links
+			{
+				items=2;
+				class Item0
+				{
+					linkID=0;
+					item0=1;
+					item1=3;
+					class CustomData
+					{
+						role=1;
+					};
+				};
+				class Item1
+				{
+					linkID=1;
+					item0=2;
+					item1=3;
+					class CustomData
+					{
+						role=2;
+						turretPath[]={0};
+					};
+				};
+			};
+		};
+		id=0;
+		atlOffset=64.256477;
+	};
+	class Item1
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={162.91797,4.5997849,-95.082397};
+			angles[]={0,4.2333679,0};
+		};
+		side="East";
+		flags=2;
+		class Attributes
+		{
+		};
+		id=3;
+		type="RHS_Ka52_vvsc";
+		atlOffset=64.256477;
+	};
+	class Item2
+	{
+		dataType="Group";
+		side="East";
+		class Entities
+		{
+			items=2;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-51.276733,0.87226868,-30.110657};
+					angles[]={0,4.2333679,0};
+				};
+				side="East";
+				flags=2;
+				class Attributes
+				{
+				};
+				id=5;
+				type="rhs_pilot_combat_heli";
+				atlOffset=63.863228;
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-51.276733,0.87226868,-30.110657};
+					angles[]={0,4.2333679,0};
+				};
+				side="East";
+				class Attributes
+				{
+				};
+				id=6;
+				type="rhs_pilot_combat_heli";
+				atlOffset=63.863228;
+			};
+		};
+		class Attributes
+		{
+		};
+		class CrewLinks
+		{
+			class LinkIDProvider
+			{
+				nextID=2;
+			};
+			class Links
+			{
+				items=2;
+				class Item0
+				{
+					linkID=0;
+					item0=5;
+					item1=7;
+					class CustomData
+					{
+						role=1;
+					};
+				};
+				class Item1
+				{
+					linkID=1;
+					item0=6;
+					item1=7;
+					class CustomData
+					{
+						role=2;
+						turretPath[]={0};
+					};
+				};
+			};
+		};
+		id=4;
+		atlOffset=63.863228;
+	};
+	class Item3
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-51.281982,2.9520111,-30.202332};
+			angles[]={0,4.2333679,0};
+		};
+		side="East";
+		flags=2;
+		class Attributes
+		{
+		};
+		id=7;
+		type="RHS_Ka52_vvsc";
+		atlOffset=63.863228;
+	};
+	class Item4
+	{
+		dataType="Group";
+		side="East";
+		class Entities
+		{
+			items=2;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-111.65149,0.0014343262,125.34485};
+					angles[]={0,4.2333679,0};
+				};
+				side="East";
+				flags=2;
+				class Attributes
+				{
+				};
+				id=9;
+				type="rhs_pilot_combat_heli";
+				atlOffset=64.572975;
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-111.65149,0.0014343262,125.34485};
+					angles[]={0,4.2333679,0};
+				};
+				side="East";
+				class Attributes
+				{
+				};
+				id=10;
+				type="rhs_pilot_combat_heli";
+				atlOffset=64.572975;
+			};
+		};
+		class Attributes
+		{
+		};
+		class CrewLinks
+		{
+			class LinkIDProvider
+			{
+				nextID=2;
+			};
+			class Links
+			{
+				items=2;
+				class Item0
+				{
+					linkID=0;
+					item0=9;
+					item1=11;
+					class CustomData
+					{
+						role=1;
+					};
+				};
+				class Item1
+				{
+					linkID=1;
+					item0=10;
+					item1=11;
+					class CustomData
+					{
+						role=2;
+						turretPath[]={0};
+					};
+				};
+			};
+		};
+		id=8;
+		atlOffset=64.572975;
+	};
+	class Item5
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-111.71899,2.0776367,125.18555};
+			angles[]={0,4.2333679,0};
+		};
+		side="East";
+		flags=2;
+		class Attributes
+		{
+		};
+		id=11;
+		type="RHS_Ka52_vvsc";
+		atlOffset=64.572975;
+	};
+};

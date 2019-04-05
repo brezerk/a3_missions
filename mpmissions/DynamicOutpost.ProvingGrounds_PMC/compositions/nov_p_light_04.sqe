@@ -1,0 +1,167 @@
+version=53;
+center[]={1620.7374,50.658199,813.23163};
+class items
+{
+	items=2;
+	class Item0
+	{
+		dataType="Group";
+		side="East";
+		class Entities
+		{
+			items=4;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-9.0279541,0.0014381409,3.178772};
+				};
+				side="East";
+				flags=7;
+				class Attributes
+				{
+					rank="SERGEANT";
+				};
+				id=3055;
+				type="LOP_US_Infantry_SL";
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-6.0279541,0.01713562,-1.821228};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					skill=0.44999999;
+					rank="CORPORAL";
+				};
+				id=3056;
+				type="LOP_US_Infantry_Rifleman";
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-4.0279541,0.046379089,-1.821228};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					skill=0.40000001;
+				};
+				id=3057;
+				type="LOP_US_Infantry_Rifleman_2";
+			};
+			class Item3
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-2.0279541,0.056377411,-1.821228};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					skill=0.40000001;
+				};
+				id=3058;
+				type="LOP_US_Infantry_Rifleman_3";
+			};
+		};
+		class Attributes
+		{
+		};
+		id=3054;
+	};
+	class Item1
+	{
+		dataType="Group";
+		side="East";
+		class Entities
+		{
+			items=4;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={1.222168,0.53416824,3.5469971};
+				};
+				side="East";
+				flags=3;
+				class Attributes
+				{
+					rank="SERGEANT";
+				};
+				id=3072;
+				type="LOP_US_Infantry_SL";
+				atlOffset=0.52882004;
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={4.222168,0.73935699,-1.4530029};
+				};
+				side="East";
+				flags=1;
+				class Attributes
+				{
+					skill=0.44999999;
+					rank="CORPORAL";
+				};
+				id=3073;
+				type="LOP_US_Infantry_Rifleman_4";
+				atlOffset=0.56679153;
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={6.222168,0.79203033,-1.4530029};
+				};
+				side="East";
+				flags=1;
+				class Attributes
+				{
+					skill=0.40000001;
+				};
+				id=3074;
+				type="LOP_US_Infantry_MG_2";
+				atlOffset=0.55446625;
+			};
+			class Item3
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={8.222168,0.69485474,-1.4530029};
+				};
+				side="East";
+				flags=1;
+				class Attributes
+				{
+					skill=0.40000001;
+				};
+				id=3075;
+				type="LOP_US_Infantry_GL";
+				atlOffset=0.39917374;
+			};
+		};
+		class Attributes
+		{
+		};
+		id=3071;
+		atlOffset=0.52882004;
+	};
+};

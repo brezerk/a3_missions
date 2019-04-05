@@ -1,0 +1,99 @@
+version=53;
+center[]={1203.9772,49.837299,986.16614};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Group";
+		side="East";
+		class Entities
+		{
+			items=5;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={1.7541504,0.13993073,1.0852051};
+				};
+				side="East";
+				flags=7;
+				class Attributes
+				{
+				};
+				id=4078;
+				type="rhs_vdv_recon_sergeant";
+				atlOffset=-7.6293945e-006;
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={2.6712646,0.29206085,-0.1015625};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+				};
+				id=4087;
+				type="rhs_vdv_recon_marksman_asval";
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-2.5657959,0.025463104,1.131958};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+				};
+				id=4088;
+				type="rhs_vdv_recon_marksman_asval";
+				atlOffset=3.8146973e-006;
+			};
+			class Item3
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={2.9995117,0.4546814,-1.7014771};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+				};
+				id=4089;
+				type="rhs_vdv_recon_marksman_vss";
+				atlOffset=-3.8146973e-006;
+			};
+			class Item4
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-4.8592529,0.0014381409,-0.16455078};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+				};
+				id=4090;
+				type="rhs_vdv_recon_marksman_vss";
+				atlOffset=-1.1444092e-005;
+			};
+		};
+		class Attributes
+		{
+		};
+		id=4077;
+		atlOffset=-7.6293945e-006;
+	};
+};

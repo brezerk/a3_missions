@@ -1,0 +1,202 @@
+version=53;
+center[]={692.66504,50.647964,1434.6582};
+class items
+{
+	items=5;
+	class Item0
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-0.36486816,0.10445786,3.032959};
+			angles[]={-0,4.6596479,0.01749678};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+			init="call{_fire = ""test_EmptyObjectForFireBig"" createVehicle (position this); " \n "_fire attachTo [this, [0, 0, 0]];}";
+		};
+		id=23;
+		type="Crater";
+		atlOffset=-0.032829285;
+	};
+	class Item1
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-3.6439209,0.08568573,7.1591797};
+			angles[]={0.02999169,4.6834536,6.2631865};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+		};
+		id=24;
+		type="FireLit";
+		atlOffset=-0.13709259;
+	};
+	class Item2
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-1.3198242,2.886776,3.5856934};
+			angles[]={-0,0,6.2631865};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+		};
+		id=26;
+		type="Land_Wreck_Heli_Attack_02_F";
+		atlOffset=-0.050067902;
+	};
+	class Item3
+	{
+		dataType="Group";
+		side="East";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={6.2519531,0.22665787,-2.3851318};
+				};
+				side="East";
+				flags=7;
+				class Attributes
+				{
+					name="p_officer_02";
+					isPlayer=1;
+				};
+				id=29;
+				type="rhs_pilot_combat_heli";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="RHS_Male01RUS";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=1.05;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+		};
+		class Attributes
+		{
+		};
+		id=28;
+	};
+	class Item4
+	{
+		dataType="Group";
+		side="East";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-7.1750488,0.10134888,-8.8581543};
+					angles[]={0,3.7984123,0};
+				};
+				side="East";
+				flags=7;
+				class Attributes
+				{
+					health=0;
+				};
+				id=31;
+				type="rhs_pilot_combat_heli";
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="RHS_Male02RUS";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=1;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+		};
+		class Attributes
+		{
+		};
+		id=30;
+	};
+};

@@ -1,0 +1,130 @@
+version=53;
+center[]={1206.6831,49.859989,985.85193};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Group";
+		side="East";
+		class Entities
+		{
+			items=7;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={0.22229004,0.20561218,0.89337158};
+				};
+				side="East";
+				flags=7;
+				class Attributes
+				{
+				};
+				id=4070;
+				type="rhs_vdv_marksman";
+				atlOffset=7.6293945e-006;
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={3.2658691,0.093681335,1.0561523};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+				};
+				id=4071;
+				type="rhs_vdv_marksman";
+				atlOffset=3.8146973e-006;
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-3.5527344,0.15106201,-0.085205078};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+				};
+				id=4072;
+				type="rhs_vdv_marksman";
+			};
+			class Item3
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-3.637207,0.2949295,-2.0563354};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+				};
+				id=4073;
+				type="rhs_vdv_marksman_asval";
+			};
+			class Item4
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={3.3720703,0.31365967,-1.3887939};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+				};
+				id=4074;
+				type="rhs_vdv_marksman_asval";
+				atlOffset=3.8146973e-006;
+			};
+			class Item5
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={0.099243164,0.43654251,-1.5776978};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+				};
+				id=4075;
+				type="rhs_vdv_medic";
+				atlOffset=3.8146973e-006;
+			};
+			class Item6
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={0.0079345703,0.0014381409,2.6652832};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+				};
+				id=4076;
+				type="rhs_vdv_junior_sergeant";
+				atlOffset=-3.8146973e-006;
+			};
+		};
+		class Attributes
+		{
+		};
+		id=4069;
+		atlOffset=7.6293945e-006;
+	};
+};

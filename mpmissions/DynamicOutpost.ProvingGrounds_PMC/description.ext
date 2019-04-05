@@ -1,0 +1,161 @@
+/***************************************************************************
+ *   Copyright (C) 2008-2019 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *                                                                         *
+ *   This program is free software: you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation, either version 3 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
+ *                                                                         *
+ ***************************************************************************/
+ 
+ // Mission description file
+ 
+class Header
+{
+	gameType   =  Coop;	// Game type
+	minPlayers =  1;	// minimum number of players the mission supports
+	maxPlayers = 10;	// maximum number of players the mission supports
+};
+
+author			= "brezerk@brezblock.org.ua";
+OnLoadName		= "Dynamic Outpost v1.3.7";
+OnLoadMission	= $STR_ONLOAD_INFO_01;
+briefingName    = $STR_ONLOAD_INFO_02;
+// FIXME: https://feedback.bistudio.com/T67181
+// overviewPicture = "images\outpost_logo.paa";
+loadScreen      = "images\outpost_logo.paa";
+overviewTextLocked = $STR_LOCKED_INFO_01;
+
+// Respawn type
+respawn = 3;
+// Delay in seconds before playable unit respawns.
+respawnDelay = 15;
+// Respawn templates from CfgRespawnTemplates. You can combine any number of them together.
+respawnTemplates[] = {"Counter", "EndMission", "Tickets"};
+// 0 to disable the score table (it can still be opened manually by pressing 'P' key).
+respawnDialog = 0;
+// When 1, the score table contains score of all playable units as opposed to players only.
+aikills = 0;
+
+respawnOnStart = -1;
+
+// Force cba_settings.sqf loading
+cba_settings_hasSettingsFile = 1;
+
+class CfgSounds
+{
+	sounds[] = {};
+	class outpost_wave01
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "outpost_wave01";
+
+		// filename, volume, pitch, distance (optional)
+		sound[] = {};
+
+		// subtitle delay in seconds, subtitle text
+		titles[] = {
+			0, $STR_RADIO_CALL_01,
+			6, $STR_RADIO_CALL_02,
+			12, $STR_RADIO_CALL_03
+		};
+	};
+	class outpost_wave02
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "outpost_wave02";
+
+		// filename, volume, pitch, distance (optional)
+		sound[] = {};
+
+		// subtitle delay in seconds, subtitle text
+		titles[] = {
+			0, $STR_RADIO_CALL_01,
+			6, $STR_RADIO_CALL_04
+		};
+	};
+	class outpost_wave03
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "outpost_wave03";
+
+		// filename, volume, pitch, distance (optional)
+		sound[] = {};
+
+		// subtitle delay in seconds, subtitle text
+		titles[] = {
+			0, $STR_RADIO_CALL_01,
+			6, $STR_RADIO_CALL_05,
+			12, $STR_RADIO_CALL_06
+		};
+	};
+	class outpost_convoy
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "outpost_convoy";
+
+		// filename, volume, pitch, distance (optional)
+		sound[] = {};
+
+		// subtitle delay in seconds, subtitle text
+		titles[] = {
+			0, $STR_RADIO_CALL_07,
+			6, $STR_RADIO_CALL_08
+		};
+	};
+	class outpost_docs_found
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "outpost_docs_found";
+
+		// filename, volume, pitch, distance (optional)
+		sound[] = {};
+
+		// subtitle delay in seconds, subtitle text
+		titles[] = {
+			0, $STR_RADIO_CALL_01,
+			6, $STR_RADIO_CALL_09
+		};
+	};
+	class outpost_artellery_down
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "outpost_artellery_down";
+
+		// filename, volume, pitch, distance (optional)
+		sound[] = {};
+
+		// subtitle delay in seconds, subtitle text
+		titles[] = {
+			0, $STR_RADIO_CALL_10,
+			6, $STR_RADIO_CALL_11,
+			12, $STR_RADIO_CALL_10
+		};
+	};
+};
+
+class CfgFunctions {
+	#include "addons\LARs\spawnComp\functions\functions.cpp"
+	class BrezBlock
+	{
+		class common
+		{
+			class Get_RND_Index {file = "addons\brezblock\utils\get_rnd_index.sqf";};
+			class Spawn_Objective {file = "addons\brezblock\utils\spawn_objective.sqf";};
+			//class Spawn_OPFOR_Forces {file = "addons\brezblock\utils\spawn_opfor_forces.sqf"};
+			class Spawn_OPFOR_Forces {file = "addons\brezblock\utils\spawn_opfor_forces_v2.sqf"};
+			class Spawn_OPFOR_Forces_Guard {file = "addons\brezblock\utils\spawn_opfor_forces_guard.sqf"}
+			class Attach_Hold_Action {file = "addons\brezblock\actions\attach_hold.sqf"};
+		};
+	};
+};
+
+#include "compositions\compositions.cfg"

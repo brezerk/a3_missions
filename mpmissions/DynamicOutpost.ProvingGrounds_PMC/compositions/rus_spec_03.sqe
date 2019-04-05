@@ -1,0 +1,112 @@
+version=53;
+center[]={1204.9349,49.975792,984.01172};
+class items
+{
+	items=1;
+	class Item0
+	{
+		dataType="Group";
+		side="East";
+		class Entities
+		{
+			items=6;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={0.79638672,0.0014381409,3.239624};
+				};
+				side="East";
+				flags=7;
+				class Attributes
+				{
+				};
+				id=4078;
+				type="rhs_vdv_recon_sergeant";
+				atlOffset=-7.6293945e-006;
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-1.5964355,0.065216064,1.4196167};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+				};
+				id=4079;
+				type="rhs_vdv_recon_arifleman_scout";
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-2.2000732,0.20057678,-0.88848877};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+				};
+				id=4080;
+				type="rhs_vdv_recon_grenadier_scout";
+			};
+			class Item3
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={2.3312988,0.27072525,1.1135864};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+				};
+				id=4081;
+				type="rhs_vdv_recon_rifleman_scout";
+			};
+			class Item4
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={2.4775391,0.35503769,-1.4254761};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+				};
+				id=4082;
+				type="rhs_vdv_recon_rifleman_scout";
+			};
+			class Item5
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-1.8087158,0.29879379,-3.1591797};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+				};
+				id=4083;
+				type="rhs_vdv_recon_medic";
+				atlOffset=7.6293945e-006;
+			};
+		};
+		class Attributes
+		{
+		};
+		id=4077;
+		atlOffset=-7.6293945e-006;
+	};
+};

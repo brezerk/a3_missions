@@ -1,0 +1,680 @@
+version=53;
+center[]={267.90341,51.3447,1430.7783};
+class items
+{
+	items=7;
+	class Item0
+	{
+		dataType="Group";
+		side="Independent";
+		class Entities
+		{
+			items=4;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-1.7873535,0.41375351,4.4178467};
+					angles[]={0,0.079077244,0};
+				};
+				side="Independent";
+				flags=3;
+				class Attributes
+				{
+					name="ua_injured_01";
+					stance="Down";
+				};
+				id=6512;
+				type="LOP_UKR_Infantry_officer";
+				atlOffset=0.64441681;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="RHS_Male03RUS";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=1.05;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-1.2104187,0.28476715,-0.45129395};
+					angles[]={6.2581921,1.4699512,6.248209};
+				};
+				side="Independent";
+				flags=1;
+				class Attributes
+				{
+					health=0;
+					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
+					name="ua_uaz_02D";
+				};
+				id=6513;
+				type="LOP_UKR_Infantry_Grenadier";
+				atlOffset=0.29400253;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="RHS_Male05RUS";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0.97000003;
+							};
+						};
+					};
+					class Attribute2
+					{
+						property="face";
+						expression="_this setface _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="";
+							};
+						};
+					};
+					nAttributes=3;
+				};
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-3.7502441,0.37887192,-0.16479492};
+					angles[]={0,2.0457528,0};
+				};
+				side="Independent";
+				flags=1;
+				class Attributes
+				{
+					health=0;
+					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
+					stance="Down";
+				};
+				id=6514;
+				type="LOP_UKR_Infantry_Light";
+				atlOffset=0.38389206;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="RHS_Male05RUS";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0.95999998;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+			class Item3
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-1.3852539,0.24594498,-2.4868164};
+					angles[]={0,2.0457528,0};
+				};
+				side="Independent";
+				flags=5;
+				class Attributes
+				{
+					health=0;
+					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
+					stance="Middle";
+				};
+				id=6515;
+				type="LOP_UKR_Infantry_Light";
+				atlOffset=0.13507843;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="RHS_Male04RUS";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0.97000003;
+							};
+						};
+					};
+					class Attribute2
+					{
+						property="face";
+						expression="_this setface _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="";
+							};
+						};
+					};
+					nAttributes=3;
+				};
+			};
+		};
+		class Attributes
+		{
+		};
+		class CrewLinks
+		{
+			class LinkIDProvider
+			{
+				nextID=1;
+			};
+			class Links
+			{
+				items=1;
+				class Item0
+				{
+					linkID=0;
+					item0=6513;
+					item1=6516;
+					class CustomData
+					{
+						role=1;
+					};
+				};
+			};
+		};
+		id=6511;
+		atlOffset=0.64441681;
+	};
+	class Item1
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-1.1948853,1.5263863,-0.42370605};
+			angles[]={6.2581921,1.4699512,6.248209};
+		};
+		side="Independent";
+		class Attributes
+		{
+			health=0.22890538;
+			name="ua_uaz_02";
+		};
+		id=6516;
+		type="LOP_UKR_UAZ_Open";
+		atlOffset=0.29400253;
+		class CustomAttributes
+		{
+			class Attribute0
+			{
+				property="rhs_decalArmy_type";
+				expression="_this setVariable ['rhs_decalArmy_type', _value];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="Army";
+					};
+				};
+			};
+			class Attribute1
+			{
+				property="rhs_decalNumber_type";
+				expression="_this setVariable ['rhs_decalNumber_type', _value];[_this,[['Number', cDecals4CarsNumberPlaces, _value]]] call rhs_fnc_decalsInit";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="Default";
+					};
+				};
+			};
+			class Attribute2
+			{
+				property="rhs_decalArmy";
+				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cDecalsCarsRightArmyPlaces,  _this getVariable ['rhs_decalArmy_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="-1";
+					};
+				};
+			};
+			class Attribute3
+			{
+				property="rhs_decalPlatoon_type";
+				expression="_this setVariable ['rhs_decalPlatoon_type', _value];";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="Army";
+					};
+				};
+			};
+			class Attribute4
+			{
+				property="rhs_decalPlatoon";
+				expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cDecalsCarsRightPlatoonPlaces,  _this getVariable ['rhs_decalPlatoon_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="-1";
+					};
+				};
+			};
+			class Attribute5
+			{
+				property="ammoBox";
+				expression="[_this,_value] call bis_fnc_initAmmoBox;";
+				class Value
+				{
+					class data
+					{
+						class type
+						{
+							type[]=
+							{
+								"STRING"
+							};
+						};
+						value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+					};
+				};
+			};
+			nAttributes=6;
+		};
+	};
+	class Item2
+	{
+		dataType="Group";
+		side="East";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={4.2757568,0.0083312988,-7.0919189};
+					angles[]={0,5.723228,0};
+				};
+				side="East";
+				flags=7;
+				class Attributes
+				{
+					health=0;
+					name="p_officer_03";
+				};
+				id=6518;
+				type="rhs_vdv_rifleman_asval";
+				atlOffset=-0.33482742;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="RHS_Male01RUS";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=1.02;
+							};
+						};
+					};
+					class Attribute2
+					{
+						property="face";
+						expression="_this setface _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="";
+							};
+						};
+					};
+					nAttributes=3;
+				};
+			};
+		};
+		class Attributes
+		{
+		};
+		id=6517;
+		atlOffset=-0.33482742;
+	};
+	class Item3
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={4.5825195,0.0050010681,-7.064209};
+			angles[]={6.2731848,2.0457497,6.2581916};
+		};
+		side="Empty";
+		flags=4;
+		class Attributes
+		{
+		};
+		id=6520;
+		type="BloodSplatter_01_Medium_New_F";
+		atlOffset=-0.33316803;
+	};
+	class Item4
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-1.7890625,0.37756348,2.456543};
+			angles[]={6.2581916,3.1337347,6.2482009};
+		};
+		side="Empty";
+		class Attributes
+		{
+		};
+		id=6523;
+		type="BloodTrail_01_New_F";
+		atlOffset=0.55469513;
+	};
+	class Item5
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-1.9442139,0.39099121,1.6618652};
+			angles[]={0,2.0457497,0};
+		};
+		side="Empty";
+		flags=1;
+		class Attributes
+		{
+		};
+		id=6527;
+		type="MedicalGarbage_01_3x3_v2_F";
+		atlOffset=0.49262619;
+	};
+	class Item6
+	{
+		dataType="Group";
+		side="East";
+		class Entities
+		{
+			items=1;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={6.0059814,0.093334198,5.1555176};
+					angles[]={0,4.2236443,0};
+				};
+				side="East";
+				flags=7;
+				class Attributes
+				{
+					health=0;
+				};
+				id=6529;
+				type="rhs_msv_emr_engineer";
+				atlOffset=0.016994476;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="RHS_Male04RUS";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=1.03;
+							};
+						};
+					};
+					nAttributes=2;
+				};
+			};
+		};
+		class Attributes
+		{
+		};
+		id=6528;
+		atlOffset=0.016994476;
+	};
+};

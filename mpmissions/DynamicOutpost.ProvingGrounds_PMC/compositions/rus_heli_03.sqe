@@ -1,0 +1,537 @@
+version=53;
+center[]={1790.3474,213.56189,761.61108};
+class items
+{
+	items=6;
+	class Item0
+	{
+		dataType="Group";
+		side="East";
+		class Entities
+		{
+			items=5;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-229.32043,80.390442,252.29266};
+					angles[]={0,4.4474154,0};
+				};
+				side="East";
+				flags=2;
+				class Attributes
+				{
+				};
+				id=25;
+				type="rhs_pilot_transport_heli";
+				atlOffset=241.68704;
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-229.32043,80.390442,252.29266};
+					angles[]={0,4.4474154,0};
+				};
+				side="East";
+				class Attributes
+				{
+				};
+				id=26;
+				type="rhs_pilot_transport_heli";
+				atlOffset=241.68704;
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-229.32043,80.390442,252.29266};
+					angles[]={0,4.4474154,0};
+				};
+				side="East";
+				class Attributes
+				{
+				};
+				id=27;
+				type="rhs_pilot_transport_heli";
+				atlOffset=241.68704;
+			};
+			class Item3
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-229.32043,80.390442,252.29266};
+					angles[]={0,4.4474154,0};
+				};
+				side="East";
+				class Attributes
+				{
+				};
+				id=28;
+				type="rhs_pilot_transport_heli";
+				atlOffset=241.68704;
+			};
+			class Item4
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-229.32043,80.390442,252.29266};
+					angles[]={0,4.4474154,0};
+				};
+				side="East";
+				class Attributes
+				{
+				};
+				id=29;
+				type="rhs_pilot_transport_heli";
+				atlOffset=241.68704;
+			};
+		};
+		class Attributes
+		{
+		};
+		class CrewLinks
+		{
+			class LinkIDProvider
+			{
+				nextID=5;
+			};
+			class Links
+			{
+				items=5;
+				class Item0
+				{
+					linkID=0;
+					item0=25;
+					item1=30;
+					class CustomData
+					{
+						role=1;
+					};
+				};
+				class Item1
+				{
+					linkID=1;
+					item0=26;
+					item1=30;
+					class CustomData
+					{
+						role=2;
+						turretPath[]={0};
+					};
+				};
+				class Item2
+				{
+					linkID=2;
+					item0=27;
+					item1=30;
+					class CustomData
+					{
+						role=2;
+						turretPath[]={1};
+					};
+				};
+				class Item3
+				{
+					linkID=3;
+					item0=28;
+					item1=30;
+					class CustomData
+					{
+						role=2;
+						turretPath[]={2};
+					};
+				};
+				class Item4
+				{
+					linkID=4;
+					item0=29;
+					item1=30;
+					class CustomData
+					{
+						role=2;
+						turretPath[]={3};
+					};
+				};
+			};
+		};
+		id=24;
+		atlOffset=241.68704;
+	};
+	class Item1
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-229.3136,83.617645,252.07458};
+			angles[]={0,4.4474154,0};
+		};
+		side="East";
+		flags=2;
+		class Attributes
+		{
+		};
+		id=30;
+		type="RHS_Mi8MTV3_heavy_vvsc";
+		atlOffset=241.68704;
+	};
+	class Item2
+	{
+		dataType="Group";
+		side="East";
+		class Entities
+		{
+			items=5;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-154.62598,78.705475,72.617554};
+					angles[]={0,4.4474154,0};
+				};
+				side="East";
+				flags=2;
+				class Attributes
+				{
+				};
+				id=32;
+				type="rhs_pilot_transport_heli";
+				atlOffset=241.67108;
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-154.62598,78.705475,72.617554};
+					angles[]={0,4.4474154,0};
+				};
+				side="East";
+				class Attributes
+				{
+				};
+				id=33;
+				type="rhs_pilot_transport_heli";
+				atlOffset=241.67108;
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-154.62598,78.705475,72.617554};
+					angles[]={0,4.4474154,0};
+				};
+				side="East";
+				class Attributes
+				{
+				};
+				id=34;
+				type="rhs_pilot_transport_heli";
+				atlOffset=241.67108;
+			};
+			class Item3
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-154.62598,78.705475,72.617554};
+					angles[]={0,4.4474154,0};
+				};
+				side="East";
+				class Attributes
+				{
+				};
+				id=35;
+				type="rhs_pilot_transport_heli";
+				atlOffset=241.67108;
+			};
+			class Item4
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-154.62598,78.705475,72.617554};
+					angles[]={0,4.4474154,0};
+				};
+				side="East";
+				class Attributes
+				{
+				};
+				id=36;
+				type="rhs_pilot_transport_heli";
+				atlOffset=241.67108;
+			};
+		};
+		class Attributes
+		{
+		};
+		class CrewLinks
+		{
+			class LinkIDProvider
+			{
+				nextID=5;
+			};
+			class Links
+			{
+				items=5;
+				class Item0
+				{
+					linkID=0;
+					item0=32;
+					item1=37;
+					class CustomData
+					{
+						role=1;
+					};
+				};
+				class Item1
+				{
+					linkID=1;
+					item0=33;
+					item1=37;
+					class CustomData
+					{
+						role=2;
+						turretPath[]={0};
+					};
+				};
+				class Item2
+				{
+					linkID=2;
+					item0=34;
+					item1=37;
+					class CustomData
+					{
+						role=2;
+						turretPath[]={1};
+					};
+				};
+				class Item3
+				{
+					linkID=3;
+					item0=35;
+					item1=37;
+					class CustomData
+					{
+						role=2;
+						turretPath[]={2};
+					};
+				};
+				class Item4
+				{
+					linkID=4;
+					item0=36;
+					item1=37;
+					class CustomData
+					{
+						role=2;
+						turretPath[]={3};
+					};
+				};
+			};
+		};
+		id=31;
+		atlOffset=241.67108;
+	};
+	class Item3
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={-154.60303,81.935791,72.480225};
+			angles[]={0,4.4474154,0};
+		};
+		side="East";
+		flags=2;
+		class Attributes
+		{
+		};
+		id=37;
+		type="RHS_Mi8MTV3_heavy_vvsc";
+		atlOffset=241.67108;
+	};
+	class Item4
+	{
+		dataType="Group";
+		side="East";
+		class Entities
+		{
+			items=5;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={109.69849,0.0014343262,-92.75293};
+					angles[]={0,4.4474154,0};
+				};
+				side="East";
+				flags=2;
+				class Attributes
+				{
+				};
+				id=39;
+				type="rhs_pilot_transport_heli";
+				atlOffset=164.28004;
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={109.69849,0.0014343262,-92.75293};
+					angles[]={0,4.4474154,0};
+				};
+				side="East";
+				class Attributes
+				{
+				};
+				id=40;
+				type="rhs_pilot_transport_heli";
+				atlOffset=164.28004;
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={109.69849,0.0014343262,-92.75293};
+					angles[]={0,4.4474154,0};
+				};
+				side="East";
+				class Attributes
+				{
+				};
+				id=41;
+				type="rhs_pilot_transport_heli";
+				atlOffset=164.28004;
+			};
+			class Item3
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={109.69849,0.0014343262,-92.75293};
+					angles[]={0,4.4474154,0};
+				};
+				side="East";
+				class Attributes
+				{
+				};
+				id=42;
+				type="rhs_pilot_transport_heli";
+				atlOffset=164.28004;
+			};
+			class Item4
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={109.69849,0.0014343262,-92.75293};
+					angles[]={0,4.4474154,0};
+				};
+				side="East";
+				class Attributes
+				{
+				};
+				id=43;
+				type="rhs_pilot_transport_heli";
+				atlOffset=164.28004;
+			};
+		};
+		class Attributes
+		{
+		};
+		class CrewLinks
+		{
+			class LinkIDProvider
+			{
+				nextID=5;
+			};
+			class Links
+			{
+				items=5;
+				class Item0
+				{
+					linkID=0;
+					item0=39;
+					item1=44;
+					class CustomData
+					{
+						role=1;
+					};
+				};
+				class Item1
+				{
+					linkID=1;
+					item0=40;
+					item1=44;
+					class CustomData
+					{
+						role=2;
+						turretPath[]={0};
+					};
+				};
+				class Item2
+				{
+					linkID=2;
+					item0=41;
+					item1=44;
+					class CustomData
+					{
+						role=2;
+						turretPath[]={1};
+					};
+				};
+				class Item3
+				{
+					linkID=3;
+					item0=42;
+					item1=44;
+					class CustomData
+					{
+						role=2;
+						turretPath[]={2};
+					};
+				};
+				class Item4
+				{
+					linkID=4;
+					item0=43;
+					item1=44;
+					class CustomData
+					{
+						role=2;
+						turretPath[]={3};
+					};
+				};
+			};
+		};
+		id=38;
+		atlOffset=241.66896;
+	};
+	class Item5
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={110.89417,80.005585,-94.277954};
+			angles[]={0,4.4474154,0};
+		};
+		side="East";
+		flags=2;
+		class Attributes
+		{
+		};
+		id=44;
+		type="RHS_Mi8MTV3_heavy_vvsc";
+		atlOffset=241.66896;
+	};
+};

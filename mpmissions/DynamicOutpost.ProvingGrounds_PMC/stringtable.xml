@@ -1,0 +1,448 @@
+// stringtable.xml
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="BrezBlock.org.ua">
+	<Package name="DynamicOutpost">
+		<Container name="l18n">
+			<Key ID="BRIEFING_01_TITLE">
+				<Original>Gaming conventions</Original>
+				<English>Gaming conventions</English>
+				<Russian>Ігрові умовності</Russian>
+			</Key>
+			<Key ID="BRIEFING_01_DESC">
+				<Original>Most of the dynamic objects and their locations are random, player experience may change.&lt;br /&gt;&lt;br /&gt;Rrespawn tickets count per player is limited to - 3.&lt;br /&gt;&lt;br /&gt;Recommenred game diffictlty settings are:&lt;br /&gt;&lt;br /&gt; * Preset: Veteran.&lt;br /&gt; * Detected mines: Hide&lt;br /&gt;&lt;br /&gt;Recommenred Addon setttings are:&lt;br /&gt;&lt;br /&gt; * ACE Logistics -&gt; Allow Repair = Everyone;&lt;br /&gt; * ACE Medical -&gt; Prevent Instant Death = True;&lt;br /&gt; * ACE Medical -&gt; Locations Boost Training = True; This will allow ordinary soldiers to transfuse blood at &lt;marker name = 'ua_hospital_01'&gt;field hospital&lt;/marker&gt; position.</Original>
+				<English>Most of the dynamic objects and their locations are random, player experience may change.&lt;br /&gt;&lt;br /&gt;Rrespawn tickets count per player is limited to - 3.&lt;br /&gt;&lt;br /&gt;Recommenred game diffictlty settings are:&lt;br /&gt;&lt;br /&gt; * Preset: Veteran.&lt;br /&gt; * Detected mines: Hide&lt;br /&gt;&lt;br /&gt;Recommenred Addon setttings are:&lt;br /&gt;&lt;br /&gt; * ACE Logistics -&gt; Allow Repair = Everyone;&lt;br /&gt; * ACE Medical -&gt; Prevent Instant Death = True;&lt;br /&gt; * ACE Medical -&gt; Locations Boost Training = True; This will allow ordinary soldiers to transfuse blood at &lt;marker name = 'ua_hospital_01'&gt;field hospital&lt;/marker&gt; position.</English>
+				<Russian>Більшість динамічних об'єктів і їх місцеположеня є випадковим, досвід гравця може змінюватися.&lt;br /&gt;&lt;br /&gt;Кількість респаунів на гравця - 3.&lt;br /&gt;&lt;br /&gt;Рекомендовані налаштування для гри:&lt;br / &gt;&lt;br /&gt; * Попередньо встановлені налаштування: Ветеран.&lt;br /&gt; * Виявлені міни: Приховати&lt;br /&gt;&lt;br /&gt;Рекомендовані налаштування Додатків:&lt;br /&gt;&lt;br /&gt; * ACE Logistics -&gt; Дозволити ремонт = Всі; &lt;br /&gt; * ACE Medical -&gt; Запобігання миттєвої смерті = True; &lt;br /&gt; * ACE Medical -&gt; Locations Boost Training = True; Це дозволить звичайним солдатам переливати кров на позиції &lt;marker name = 'ua_hospital_01'&gt;Польовий шпиталь&lt;/ marker&gt;.</Russian>
+			</Key>
+			<Key ID="BRIEFING_02_TITLE">
+				<Original>Rampart 'Oles'</Original>
+				<English>Rampart 'Oles'</English>
+				<Russian>Опорник 'Олесь'</Russian>
+			</Key>
+			<Key ID="BRIEFING_02_DESC">
+				<Original>&lt;marker name='ua_secret_01'&gt;Rampart 'Oles'&lt;/marker&gt; was built by the 703rd Engineer Regiment. The staging point for our scout squads, an ammunition and supplies warehouse.</Original>
+				<English>&lt;marker name='ua_secret_01'&gt;Rampart 'Oles'&lt;/marker&gt; was built by the 703rd Engineer Regiment. The staging point for our scout squads, an ammunition and supplies warehouse.</English>
+				<Russian>&lt;marker name='ua_secret_01'&gt;Опорник 'Олесь'&lt;/marker&gt; було побудовано 703-й інженерним полком. Це опорна точка для наших розвідників, склад боєприпасів та провіанту.</Russian>
+			</Key>
+			<Key ID="BRIEFING_03_TITLE">
+				<Original>The Smilevyts'ke village</Original>
+				<English>The Smilevyts'ke village</English>
+				<Russian>Село Смілевицьке</Russian>
+			</Key>
+			<Key ID="BRIEFING_03_DESC">
+				<Original>The &lt;marker name='wp_info_meetup_01'&gt;Smilevyts'ke village&lt;/marker&gt; is under the control of 'DPR' separatists forces.&lt;br /&gt;&lt;br /&gt;Scouts are reporting a small checkpoint at the entrance to the village. A few patrols were spotted on the northwestern outskirts. A part of the local population is still in the city.</Original>
+				<English>The &lt;marker name='wp_info_meetup_01'&gt;Smilevyts'ke village&lt;/marker&gt; is under the control of 'DPR' separatists forces.&lt;br /&gt;&lt;br /&gt;Scouts are reporting a small checkpoint at the entrance to the village. A few patrols were spotted on the northwestern outskirts. A part of the local population is still in the city.</English>
+				<Russian>Село &lt;marker name='wp_info_meetup_01'&gt;Смілевицьке&lt;/marker&gt; знаходиться під контролем сил сепаратистів 'ДНР'.&lt;br /&gt;&lt;br /&gt;Розвідники повідомляють про невеликий блокпост на в'їзді до села. Нечисленні патрулі були помічені на північно-західних околицях. Частина місцевого населення досі знаходиться у місті.</Russian>
+			</Key>
+			<Key ID="BRIEFING_04_TITLE">
+				<Original>The Farm</Original>
+				<English>The Farm</English>
+				<Russian>Ферма</Russian>
+			</Key>
+			<Key ID="BRIEFING_04_DESC">
+				<Original>Object &lt;marker name='wp_patrol_task'&gt;The Farm&lt;/marker&gt; -- the old abandoned farm. The property of Kopitnytsky LLC. Located north-east from the &lt;marker name='wp_defend_01'&gt;37th checkpoint&lt;/marker&gt;.&lt;br /&gt;&lt;br /&gt;Scouts are reporting multiple Russians sabotage and reconnaissance groups presence. Not confirmed.</Original>
+				<English>Object &lt;marker name='wp_patrol_task'&gt;The Farm&lt;/marker&gt; -- the old abandoned farm. The property of Kopitnytsky LLC. Located north-east from the &lt;marker name='wp_defend_01'&gt;37th checkpoint&lt;/marker&gt;.&lt;br /&gt;&lt;br /&gt;Scouts are reporting multiple Russians sabotage and reconnaissance groups presence. Not confirmed.</English>
+				<Russian>Об'єкт &lt;marker name='wp_patrol_task'&gt;ферма&lt;/marker&gt; -- покинута стара ферма ТОВ 'Копитницький' на північний схід від &lt;marker name='wp_defend_01'&gt;37-й блокпосту&lt;/marker&gt;.&lt;br /&gt;&lt;br /&gt;Розвідники повідомляють про можливу присутність ДРГ супротивника. Не підтверджено.</Russian>
+			</Key>
+			<Key ID="BRIEFING_05_TITLE">
+				<Original>37th checkpoint 'Bunker'</Original>
+				<English>37th checkpoint 'Bunker'</English>
+				<Russian>37-й блокпост 'Бункер'</Russian>
+			</Key>
+			<Key ID="BRIEFING_05_DESC">
+				<Original>&lt;marker name='wp_defend_01'&gt;37th checkpoint 'Bunker'&lt;/marker&gt; defended by about 40 soldiers from the 88th Aeromobile Brigade. The 703rd engineering regiment built trenches, fire points and minefields (both APs and ATs) to improve the garrison's defense capabilities. The &lt;marker name = 'ua_mortar_01'&gt;mortar battery&lt;/marker&gt; is located at the eastern part of the checkpoint. There is a &lt;marker name='ua_hospital_01'&gt;field hospital&lt;/marker&gt;.&lt;br /&gt;&lt;br /&gt;Technical equipment: several UAZ cars with different equipment, stationary AA points, BTR-70, BTR-80.&lt;br /&gt;&lt;br /&gt;Technical condition: not confirmed.</Original>
+				<English>&lt;marker name='wp_defend_01'&gt;37th checkpoint 'Bunker'&lt;/marker&gt; defended by about 40 soldiers from the 88th Aeromobile Brigade. The 703rd engineering regiment built trenches, fire points and minefields (both APs and ATs) to improve the garrison's defense capabilities. The &lt;marker name = 'ua_mortar_01'&gt;mortar battery&lt;/marker&gt; is located at the eastern part of the checkpoint. There is a &lt;marker name='ua_hospital_01'&gt;field hospital&lt;/marker&gt;.&lt;br /&gt;&lt;br /&gt;Technical equipment: several UAZ cars with different equipment, stationary AA points, BTR-70, BTR-80.&lt;br /&gt;&lt;br /&gt;Technical condition: not confirmed.</English>
+				<Russian>&lt;marker name='wp_defend_01'&gt;37-й блокпост 'Бункер'&lt;/marker&gt; утримують приблизно 40 бійців зі складу 88-ї аеромобільної бригади. 703-й інженерний полк спорудив траншеї, вогневі точки та мінні поля (ПТ та ПП) для підвищення обороноздатності гарнізону. У східній частині блокпосту розташована &lt;marker name='ua_mortar_01'&gt;мінометна батарея&lt;/marker&gt;. Є облаштований &lt;marker name='ua_hospital_01'&gt;польовий шпиталь&lt;/marker&gt;.&lt;br /&gt;&lt;br /&gt;Технічне оснащення: декілька машин УАЗ різної комплектації, стаціонарні ЗУ, БТР-70, БТР-80.&lt;br /&gt;&lt;br /&gt;Технічний стан: не підтверджено.</Russian>
+			</Key>
+			<Key ID="BRIEFING_06_TITLE">
+				<Original>Resources</Original>
+				<English>Resources</English>
+				<Russian>Ресурси</Russian>
+			</Key>
+			<Key ID="BRIEFING_06_DESC">
+				<Original>Your staff is a unit of the 73rd Airmobile Brigade.&lt;br /&gt;&lt;br /&gt;Technical equipment: URAL Freighter, UAZ and BMP-2.&lt;br /&gt;&lt;br /&gt;Technical condition: not confirmed.</Original>
+				<English>Your staff is a unit of the 73rd Airmobile Brigade.&lt;br /&gt;&lt;br /&gt;Technical equipment: URAL Freighter, UAZ and BMP-2.&lt;br /&gt;&lt;br /&gt;Technical condition: not confirmed.</English>
+				<Russian>У Вашому розпряжені особовий склад підрозділу 73-ї аеромобільної бригади.&lt;br /&gt;&lt;br /&gt;Технічне оснащення: Вантажний УРАЛ, УАЗ та БМП-2.&lt;br /&gt;&lt;br /&gt;Технічний стан: не підтверджено.</Russian>
+			</Key>
+			<Key ID="BRIEFING_07_TITLE">
+				<Original>Order</Original>
+				<English>Order</English>
+				<Russian>Наказ</Russian>
+			</Key>
+			<Key ID="BRIEFING_07_DESC">
+				<Original>Your order: load supply boxes into Freighter URAL deployed on &lt;marker name = 'ua_secret_01'&gt;Rampart 'Oles'&lt;/marker&gt;. Deliver supplies and personnel to &lt;marker name='wp_defend_01'&gt;37th checkpoint&lt;/marker&gt; and reinforce the military presence in the region.</Original>
+				<English>Your order: load supply boxes into Freighter URAL deployed on &lt;marker name = 'ua_secret_01'&gt;Rampart 'Oles'&lt;/marker&gt;. Deliver supplies and personnel to &lt;marker name='wp_defend_01'&gt;37th checkpoint&lt;/marker&gt; and reinforce the military presence in the region.</English>
+				<Russian>Ваш наказ: завантижити боєприпаси і провіант розташований на &lt;marker name='ua_secret_01'&gt;опорнику 'Олесь'&lt;/marker&gt;. Доставити боєприпаси, провіант і особовий склад на &lt;marker name='wp_defend_01'&gt;37-й блокпост&lt;/marker&gt; та посилити військову присутність у даному регіоні.</Russian>
+			</Key>
+			<Key ID="BRIEFING_08_TITLE">
+				<Original>Weather</Original>
+				<English>Weather</English>
+				<Russian>Погода</Russian>
+			</Key>
+			<Key ID="BRIEFING_08_DESC">
+				<Original>Small fog, strong east wind. Forecasted heavy rain and difficult weather conditions.</Original>
+				<English>Small fog, strong east wind. Forecasted heavy rain and difficult weather conditions.</English>
+				<Russian>Невеликий туман, сильний східний вітер. Прогнозується дощ і складні умови.</Russian>
+			</Key>
+			<Key ID="BRIEFING_09_TITLE">
+				<Original>Situation</Original>
+				<English>Situation</English>
+				<Russian>Обстановка</Russian>
+			</Key>
+			<Key ID="BRIEFING_09_DESC">
+				<Original>The situation is moderately complex. No active military actions are currently registered. &lt;marker name='wp_defend_01'&gt;37th checkpoint 'Bunker'&lt;/marker&gt; suffer significant damage from artillery shells and attack attempts during past months. It needs to be resupplied with new personnel and equipment. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</Original>
+				<English>The situation is moderately complex. No active military actions are currently registered. &lt;marker name='wp_defend_01'&gt;37th checkpoint 'Bunker'&lt;/marker&gt; suffer significant damage from artillery shells and attack attempts during past months. It needs to be resupplied with new personnel and equipment. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</English>
+				<Russian>Обстановка складна, помірна. Активних бойових дій на цей час не зареєстровано. &lt;marker name='wp_defend_01'&gt;37-й блокпост 'Бункер'&lt;/marker&gt; було значно пошкоджено артилерією та спробами наступу супротивника протягом останніх місяців і потребує доукомплектації особовим складом і технікою. У Вашому розпряжені особовий склад підрозділу 73-ї аеромобільної бригади. Ваш наказ: доставити підкріплення, боєприпаси і провіант на &lt;marker name='wp_defend_01'&gt;37-й блокпост &lt;/marker&gt; та посилити військову присутність у даному регіоні.&lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</Russian>
+			</Key>
+			<Key ID="TASK_ORIG_01">
+				<Original>Headquarters</Original>
+				<English>Headquarters</English>
+				<Russian>Штаб</Russian>
+			</Key>
+			<Key ID="TASK_ORIG_02">
+				<Original>Officer</Original>
+				<English>Officer</English>
+				<Russian>Офіцер</Russian>
+			</Key>
+			<Key ID="TASK_01_TITLE">
+				<Original>Load supplies</Original>
+				<English>Load supplies</English>
+				<Russian>Завантижити припаси</Russian>
+			</Key>
+			<Key ID="TASK_01_DESC">
+				<Original>Load supply boxes into Freighter URAL deployed on &lt;marker name = 'ua_secret_01'&gt;Rampart 'Oles'&lt;/marker&gt;</Original>
+				<English>Load supply boxes into Freighter URAL deployed on &lt;marker name = 'ua_secret_01'&gt;Rampart 'Oles'&lt;/marker&gt;</English>
+				<Russian>Завантижити боєприпаси, амуніцію і провіант до вантажного УРАЛу на &lt;marker name='ua_secret_01'&gt;опорному пункту 'Олесь'&lt;/marker&gt;.</Russian>
+			</Key>
+			<Key ID="TASK_02_TITLE">
+				<Original>Deliver supplies</Original>
+				<English>Deliver supplies</English>
+				<Russian>Завантижити припаси</Russian>
+			</Key>
+			<Key ID="TASK_02_DESC">
+				<Original>Deliver supplies and personnel to &lt;marker name='wp_defend_01'&gt;37th checkpoint&lt;/marker&gt;, reinforce the military presence in the region.</Original>
+				<English>Deliver supplies and personnel to &lt;marker name='wp_defend_01'&gt;37th checkpoint&lt;/marker&gt;, reinforce the military presence in the region.</English>
+				<Russian>Доставити підкріплення, боєприпаси і провіант на позиції &lt;marker name='wp_defend_01'&gt;37-й блокпосту&lt;/marker&gt;.</Russian>
+			</Key>
+			<Key ID="TASK_03_TITLE">
+				<Original>Report to the officer</Original>
+				<English>Report to the officer</English>
+				<Russian>Доповісти офіцеру</Russian>
+			</Key>
+			<Key ID="TASK_03_DESC">
+				<Original>Arrive at destination and report to the officer at &lt;marker name='wp_defend_01'&gt; 37th checkpoint&lt;/marker&gt;.</Original>
+				<English>Arrive at destination and report to the officer at &lt;marker name='wp_defend_01'&gt; 37th checkpoint&lt;/marker&gt;.</English>
+				<Russian>Прибути на місце призначення та доповісти офіцеру &lt;marker name='wp_defend_01'&gt;37-й блокпосту&lt;/marker&gt;.</Russian>
+			</Key>
+			<Key ID="TASK_04_TITLE">
+				<Original>Unload supplies</Original>
+				<English>Unload supplies</English>
+				<Russian>Розвантижити припаси</Russian>
+			</Key>
+			<Key ID="TASK_04_DESC">
+				<Original>Unload supply boxes from Freighter URAL.</Original>
+				<English>Unload supply boxes from Freighter URAL.</English>
+				<Russian>Розавантижити боєприпаси, амуніцію і провіант з вантажного УРАЛу.</Russian>
+			</Key>
+			<Key ID="TASK_05_TITLE">
+				<Original>Optional: Repair BMP-2</Original>
+				<English>Optional: Repair BMP-2</English>
+				<Russian>Додаткове: Відремонтувати БМП</Russian>
+			</Key>
+			<Key ID="TASK_05_DESC">
+				<Original>Our BMP-2 is broken! We must immediately find a way to repair it ....</Original>
+				<English>Our BMP-2 is broken! We must immediately find a way to repair it ...</English>
+				<Russian>Наше БПМ-2 вийшло із ладу! Треба негайно знайти спосіб відремонтувати його...</Russian>
+			</Key>
+			<Key ID="TASK_06_TITLE">
+				<Original>Optional: Patrol</Original>
+				<English>Optional: Patrol</English>
+				<Russian>Додаткове: Патруль</Russian>
+			</Key>
+			<Key ID="TASK_06_DESC">
+				<Original>We lost a contact with our patrol. Patrol UAZ was moving to &lt;marker name='wp_patrol_task'&gt;farm&lt;/marker&gt; using a route over the dirt road. They should been reporting 15 minutes ago. Find out where hell they are.</Original>
+				<English>We lost a contact with our patrol. Patrol UAZ was moving to &lt;marker name='wp_patrol_task'&gt;farm&lt;/marker&gt; using a route over the dirt road. They should been reporting 15 minutes ago. Find out where hell they are.</English>
+				<Russian>Ми втратили зв'язок з нашим патрулем. Патрульний УАЗ рухався на &lt;marker name='wp_patrol_task'&gt;ферма&lt;/marker&gt; маршрутом ґрунтової дороги. Вони повинні були вийти на зв'язок 15 хвилин тому. Дізнайтеся де вони.</Russian>
+			</Key>
+			<Key ID="TASK_07_TITLE">
+				<Original>Optional: Crash site</Original>
+				<English>Optional: Crash site</English>
+				<Russian>Додаткове: Гелікоптер</Russian>
+			</Key>
+			<Key ID="TASK_07_DESC">
+				<Original>Enemy helicopter of the VCS of Russian forces crashed nearby. Explore the crash site. You may be able to find some documents or pilot's records.</Original>
+				<English>Enemy helicopter of the VCS of Russian forces crashed nearby. Explore the crash site. You may be able to find some documents or pilot's records.</English>
+				<Russian>Ворожій гелікоптер ВКС РФ впав неподалік. Огляньте місце падіння. Можливо вам вдасться знайти документи або записи пілотів.</Russian>
+			</Key>
+			<Key ID="TASK_08_TITLE">
+				<Original>Optional: Informantor</Original>
+				<English>Optional: Informantor</English>
+				<Russian>Додаткове:Інформатор</Russian>
+			</Key>
+			<Key ID="TASK_08_DESC">
+				<Original>A friendly informator named %1 is hiding in the &lt;marker name='wp_info_meetup_01'&gt;Smilevyts'ke&lt;/marker&gt; village. Find him. Be careful, there are a lot of civilians still present in the village. The village is under the control of 'DPR' separatist forces.</Original>
+				<English>A friendly informator named %1 is hiding in the &lt;marker name='wp_info_meetup_01'&gt;Smilevyts'ke&lt;/marker&gt; village. Find him. Be careful, there are a lot of civilians still present in the village. The village is under the control of 'DPR' separatist forces.</English>
+				<Russian>Дружній інформатор на ім'я %1 переховується в селі &lt;marker name='wp_info_meetup_01'&gt;Смілевицьке&lt;/marker&gt;. Знайдить його. Будьте обережні, у селі ще багато цивільних осіб. Саме село знаходиться під контролем сепаратистських сил 'ДНР'.</Russian>
+			</Key>
+			<Key ID="TASK_09_TITLE">
+				<Original>Optional: Intelligence</Original>
+				<English>Optional: Intelligence</English>
+				<Russian>Додаткове: Розвіддані</Russian>
+			</Key>
+			<Key ID="TASK_09_DESC">
+				<Original>Hostile officers can have valuable intelligence at their disposal.</Original>
+				<English>Hostile officers can have valuable intelligence at their disposal.</English>
+				<Russian>Ворожі офіцери можуть мати при собі цінні розвіддані.</Russian>
+			</Key>
+			<Key ID="TASK_10_TITLE">
+				<Original>Defend the checkpoint</Original>
+				<English>Defend the checkpoint</English>
+				<Russian>Захистити блокпост</Russian>
+			</Key>
+			<Key ID="TASK_10_DESC">
+				<Original>Intelligence reports on the accumulation of significant enemy forces nearby. There is a probability of starting an offensive actions. Organize your defense. Watch out for the surroundings.</Original>
+				<English>Intelligence reports on the accumulation of significant enemy forces nearby. There is a probability of starting an offensive actions. Organize your defense. Watch out for the surroundings.</English>
+				<Russian>Розвідка доповідає про скупченя значних сил противника поблизу. Є імовірність початку наступу. Організуйте оборону та пристріляйте міномети. Спостерігайте за оточенням.</Russian>
+			</Key>
+			<Key ID="TASK_11_TITLE">
+				<Original>VKS RF Documents</Original>
+				<English>VKS RF Documents</English>
+				<Russian>Документи ВКС РФ</Russian>
+			</Key>
+			<Key ID="TASK_11_DESC">
+				<Original>The pilot's documents contains marks of possible locations of attack helicopters.</Original>
+				<English>The pilot's documents contains marks of possible locations of attack helicopters.</English>
+				<Russian>Документи пілота містять позначки можливих місць дислокації ударних гелікоптерів.</Russian>
+			</Key>
+			<Key ID="TASK_12_TITLE">
+				<Original>AF RF Documents</Original>
+				<English>AF RF Documents</English>
+				<Russian>Документи ВС РФ</Russian>
+			</Key>
+			<Key ID="TASK_12_DESC">
+				<Original>Records of the officer of the Armed Forces of the Russian Federation contains the designation of possible places of dislocation of armored units.</Original>
+				<English>Records of the officer of the Armed Forces of the Russian Federation contains the designation of possible places of dislocation of armored units.</English>
+				<Russian>Записи офіцера ВС РФ містять позначки можливих місць дислокації ударних танкових підрозділів.</Russian>
+			</Key>
+			<Key ID="TASK_13_TITLE">
+				<Original>RF Artillery Documents</Original>
+				<English>RF Artillery Documents</English>
+				<Russian>Артилерія ВС РФ</Russian>
+			</Key>
+			<Key ID="TASK_13_DESC">
+				<Original>Records of the spotter of the Armed Forces of Russia contains the designation of possible places for the deployment of artillery units.</Original>
+				<English>Records of the spotter of the Armed Forces of Russia contains the designation of possible places for the deployment of artillery units.</English>
+				<Russian>Записи навідника ВС РФ містять позначки можливих місць дислокації артилерійських підрозділів.</Russian>
+			</Key>
+			<Key ID="TASK_14_TITLE">
+				<Original>Optional: Deliver the wounded</Original>
+				<English>Optional: Deliver the wounded</English>
+				<Russian>Додаткове: Доставити пораненого</Russian>
+			</Key>
+			<Key ID="TASK_14_DESC">
+				<Original>Deliver a wounded soldier to the &lt;marker name='ua_hospital_01'&gt;field hospital&lt;/marker&gt;.</Original>
+				<English>Deliver a wounded soldier to the &lt;marker name='ua_hospital_01'&gt;field hospital&lt;/marker&gt;.</English>
+				<Russian>Доставити пораненого солдата до &lt;marker name='ua_hospital_01'&gt;польового госпіталю&lt;/marker&gt;.</Russian>
+			</Key>
+			<Key ID="TASK_15_TITLE">
+				<Original>Optional: Evacuate wounded</Original>
+				<English>Optional: Evacuate wounded</English>
+				<Russian>Додаткове: Евакуювати поранених</Russian>
+			</Key>
+			<Key ID="TASK_15_DESC">
+				<Original>Evacuate wounded from &lt;marker name='ua_hospital_01'>field hospital&lt;/marker&gt; to the &lt;marker name='ua_secret_01'&gt;Rampart 'Oles'&lt;/marker&gt; and load them in to medevac helicopter.</Original>
+				<English>Evacuate wounded from &lt;marker name='ua_hospital_01'>field hospital&lt;/marker&gt; to the &lt;marker name='ua_secret_01'&gt;Rampart 'Oles'&lt;/marker&gt; and load them in to medevac helicopter.</English>
+				<Russian>Перевезти поранених з &lt;marker name='ua_hospital_01'&gt;польового госпіталю&lt;/marker&gt; до &lt;marker name='ua_secret_01'&gt;опорника 'Олесь'&lt;/marker&gt; та погрузити їх до гелікоптера.</Russian>
+			</Key>
+			<Key ID="TASK_16_TITLE">
+				<Original>Optional: Ambush</Original>
+				<English>Optional: Ambush</English>
+				<Russian>Додаткове: Засідка</Russian>
+			</Key>
+			<Key ID="TASK_16_DESC">
+				<Original>Our reinforcement got into an ambush and started a gunfight. Get there to help them immediately!</Original>
+				<English>Our reinforcement got into an ambush and started a gunfight. Get there to help them immediately!</English>
+				<Russian>Наше підкриплення попало в засідку і вступило в бій. Негайно вирушайте їм на допомогу!</Russian>
+			</Key>
+			<Key ID="TASK_17_TITLE">
+				<Original>Optional: Destroy tank</Original>
+				<English>Optional: Destroy tank</English>
+				<Russian>Додаткове: Знищіти танк</Russian>
+			</Key>
+			<Key ID="TASK_17_DESC">
+				<Original>Unfortunately, our reinforcements has been destroyed. The tank is very damaged, we can not leave it here. Destroy the tank and return to &lt;marker name='wp_defend_01'&gt;37th 'Bunker' checkpoint&lt;/marker&gt;.</Original>
+				<English>Unfortunately, our reinforcements has been destroyed. The tank is very damaged, we can not leave it here. Destroy the tank and return to &lt;marker name='wp_defend_01'&gt;37th 'Bunker' checkpoint&lt;/marker&gt;.</English>
+				<Russian>На жаль наше підкріплення знищено. Танк дуже пошкоджено, ми не можемо лишити його тут. Підірвіть танк та повертайтесь на &lt;marker name='wp_defend_01'&gt;37-й блокпост 'Бункер'&lt;/marker&gt;.</Russian>
+			</Key>
+			<Key ID="TASK_18_TITLE">
+				<Original>Retreat</Original>
+				<English>Retreat</English>
+				<Russian>Відступ</Russian>
+			</Key>
+			<Key ID="TASK_18_DESC">
+				<Original>Significant enemy armored forces on the way to &lt;marker name='wp_defend_01'&gt;37th checkpoint&lt;/marker&gt;. Our reinforcements are destroyed. We need to get out of here. Retreat to the &lt;marker name='ua_secret_01'&gt;rampart 'Oles'&lt;/marker&gt;.</Original>
+				<English>Significant enemy armored forces on the way to &lt;marker name='wp_defend_01'&gt;37th checkpoint&lt;/marker&gt;. Our reinforcements are destroyed. We need to get out of here. Retreat to the &lt;marker name='ua_secret_01'&gt;rampart 'Oles'&lt;/marker&gt;.</English>
+				<Russian>Значні бронетанкові сили супротивника на підході до околиць &lt;marker name='wp_defend_01'&gt;37-й блокпосту&lt;/marker&gt;. Наше підкріплення розбито. Потрібно забираться звідси. Відступайте до позиції &lt;marker name='ua_secret_01'&gt;опорник 'Олесь'&lt;/marker&gt;.</Russian>
+			</Key>
+			<Key ID="TASK_19_TITLE">
+				<Original>Optional: Iron will</Original>
+				<English>Optional: Iron will</English>
+				<Russian>Додаткове: Залізна воля</Russian>
+			</Key>
+			<Key ID="TASK_19_DESC">
+				<Original>Hold &lt;marker name='wp_defend_01'&gt;37th checkout&lt;/marker&gt;at any cost.</Original>
+				<English>Hold &lt;marker name='wp_defend_01'&gt;37th checkout&lt;/marker&gt;at any cost.</English>
+				<Russian>Захистить &lt;marker name='wp_defend_01'&gt;37-й блокпост&lt;/marker&gt; будь якою ціною.</Russian>
+			</Key>
+			<Key ID="TASK_20_TITLE">
+				<Original>Optional: DPR Documents</Original>
+				<English>Optional: DPR Documents</English>
+				<Russian>Додаткове: Документи ДНР</Russian>
+			</Key>
+			<Key ID="TASK_20_DESC">
+				<Original>The officer at the checkpoint has important information about the DPR forces movement. Find the documents.</Original>
+				<English>The officer at the checkpoint has important information about the DPR forces movement. Find the documents.</English>
+				<Russian>Офіцер на блокпосту має важливу інформацію щодо переміщення сил ДНР. Знайдіть документи.</Russian>
+			</Key>
+			<Key ID="TASK_21_TITLE">
+				<Original>Optional: Spotter</Original>
+				<English>Optional: Spotter</English>
+				<Russian>Додатково: Навідник</Russian>
+			</Key>
+			<Key ID="TASK_21_DESC">
+				<Original>Our positions are shelled by long-range artillery. Find the spotter immediately!</Original>
+				<English>Our positions are shelled by long-range artillery. Find the spotter immediately!</English>
+				<Russian>По наших позиціях пристрілюється далекобійна артилерія. Знайдіть навідника, негайно!</Russian>
+			</Key>			
+			<Key ID="INFO_DATE_01">
+				<Original>October 16, 2014 %1</Original>
+				<English>October 16, 2014 %1</English>
+				<Russian>16 жовтня 2014 %1</Russian>
+			</Key>
+			<Key ID="INFO_LOC_01">
+				<Original>Ukraine. ATO zone.</Original>
+				<English>Ukraine. ATO zone.</English>
+				<Russian>Україна. Зона АТО.</Russian>
+			</Key>
+			<Key ID="INFO_SUBLOC_01">
+				<Original>Trenches of the 37 'Bunker' checkpoint.</Original>
+				<English>Trenches of the 37 'Bunker' checkpoint.</English>
+				<Russian>Окопи 37 блокпосту.</Russian>
+			</Key>
+			<Key ID="INFO_SUBLOC_02">
+				<Original>Positions of the 37 'Bunker' checkpoint.</Original>
+				<English>Positions of the 37 'Bunker' checkpoint.</English>
+				<Russian>Позиції 37 блокпосту.</Russian>
+			</Key>
+			<Key ID="INFO_SUBLOC_03">
+				<Original>Rampart 'Oles'.</Original>
+				<English>Rampart 'Oles'.</English>
+				<Russian>Опорний пункт 'Олесь'.</Russian>
+			</Key>
+			<Key ID="INFO_SUBLOC_04">
+				<Original>The Farm.</Original>
+				<English>The Farm.</English>
+				<Russian>Ферма.</Russian>
+			</Key>
+			<Key ID="INFO_SUBLOC_05">
+				<Original>Helicopter crash site.</Original>
+				<English>Helicopter crash site.</English>
+				<Russian>Місце аварії гелікоптера.</Russian>
+			</Key>
+			<Key ID="INFO_SUBLOC_06">
+				<Original>Missing patrol.</Original>
+				<English>Missing patrol.</English>
+				<Russian>Зниклий патруль.</Russian>
+			</Key>
+			<Key ID="INFO_SUBLOC_07">
+				<Original>The Smilevyts'ke village</Original>
+				<English>The Smilevyts'ke village</English>
+				<Russian>Село Смілевицьке</Russian>
+			</Key>
+			<Key ID="INFO_SUBLOC_08">
+				<Original>Reinforcement column</Original>
+				<English>Reinforcement column</English>
+				<Russian>Колонна підкріплення</Russian>
+			</Key>
+			<Key ID="ACTION_01">
+				<Original>Search</Original>
+				<English>Search</English>
+				<Russian>Обшукати</Russian>
+			</Key>
+			<Key ID="ACTION_02">
+				<Original>Talk to</Original>
+				<English>Talk to</English>
+				<Russian>Поговорити</Russian>
+			</Key>
+			<Key ID="STR_ONLOAD_INFO_01">
+				<Original>37th checkpoint 'Bunker' is defended by about 40 soldiers from the 88th Aeromobile Brigade. Following the Minsk Truce, the ringleaders of the pro-Russian armed groups assured that they would not open the fire and agreed to build their own base. Your order: deliver supplies and personnel to the 37th checkpoint and reinforce the military presence in the region.</Original>
+				<English>37th checkpoint 'Bunker' is defended by about 40 soldiers from the 88th Aeromobile Brigade. Following the Minsk Truce, the ringleaders of the pro-Russian armed groups assured that they would not open the fire and agreed to build their own base. Your order: deliver supplies and personnel to the 37th checkpoint and reinforce the military presence in the region.</English>
+				<Russian>37-й блокпост 'Бункер' утримують приблизно 40 бійців зі складу 88-ї аеромобільної бригади. Після Мінського перемир'я ватажки проросійських збройних угруповань запевнили, що не відкриватимуть вогню і домовилися збудувати власний опорний пункт. Ваш наказ: доставити підкріплення, боєприпаси і провіант на 37-й блокпост та посилити військову присутність у данному регіоні.</Russian>
+			</Key>
+			<Key ID="STR_ONLOAD_INFO_02">
+				<Original>37th checkpoint 'Bunker'</Original>
+				<English>37th checkpoint 'Bunker'</English>
+				<Russian>37-й блокпост 'Бункер'</Russian>
+			</Key>
+			<Key ID="STR_RADIO_CALL_01">
+				<Original>Fox to Bunker. Fox to Bunker.</Original>
+				<English>Fox to Bunker. Fox to Bunker.</English>
+				<Russian>Лисиця, Бункеру. Лисиця, Бункеру.</Russian>
+			</Key>
+			<Key ID="STR_RADIO_CALL_02">
+				<Original>The aerial intelligence has noticed the increased activity of the enemy in your area.</Original>
+				<English>The aerial intelligence has noticed the increased activity of the enemy in your area.</English>
+				<Russian>Аеророзвідка помітила підвищену активність супротивника у вашому районі.</Russian>
+			</Key>
+			<Key ID="STR_RADIO_CALL_03">
+				<Original>Get ready for it. Over.</Original>
+				<English>Get ready for it. Over.</English>
+				<Russian>Будьте на по готові. Прийом.</Russian>
+			</Key>
+			<Key ID="STR_RADIO_CALL_04">
+				<Original>The intelligence reports about the motorized forces on the way to your positions. Over.</Original>
+				<English>The intelligence reports about the motorized forces on the way to your positions. Over.</English>
+				<Russian>Розвідка повідомляє про моторизовані сили супротивника які рухаються у ваш бік.</Russian>
+			</Key>
+			<Key ID="STR_RADIO_CALL_05">
+				<Original>Retreat, retreat right now!</Original>
+				<English>Retreat, retreat right now!</English>
+				<Russian>Відходьте, негайно відходьте!</Russian>
+			</Key>
+			<Key ID="STR_RADIO_CALL_06">
+				<Original>Fox to Bunker. Retreat, retreat right now! Over.</Original>
+				<English>Fox to Bunker. Retreat, retreat right now! Over.</English>
+				<Russian>Лисиця, Бункеру. Як прийняли? Негайне відходьте.</Russian>
+			</Key>
+			<Key ID="STR_RADIO_CALL_07">
+				<Original>Fox to Bunker. The reinforcements group was ambushed.</Original>
+				<English>Fox to Bunker. The reinforcements group was ambushed.</English>
+				<Russian>Лисиця, Бункеру. Загін підкріплення попав у засідку.</Russian>
+			</Key>
+			<Key ID="STR_RADIO_CALL_08">
+				<Original>Your help is urgently needed. How copy?</Original>
+				<English>Your help is urgently needed. How copy?</English>
+				<Russian>Терміново потрібна ваша допомога. Як прийняли?</Russian>
+			</Key>
+			<Key ID="STR_RADIO_CALL_09">
+				<Original>Information received, verifying.</Original>
+				<English>Information received, verifying.</English>
+				<Russian>Інформацію отримано, перевіряємо.</Russian>
+			</Key>
+			<Key ID="STR_RADIO_CALL_10">
+				<Original>We are suppressing enemy artillery by the given coordinates.</Original>
+				<English>We are suppressing enemy artillery by the given coordinates.</English>
+				<Russian>Подавляємо артилерію супротивника за заданими координатами.</Russian>
+			</Key>
+			<Key ID="STR_RADIO_CALL_11">
+				<Original>Information received, verifying.</Original>
+				<English>Information received, verifying.</English>
+				<Russian>Тримайтесь!</Russian>
+			</Key>
+			<Key ID="STR_LOCKED_INFO_01">
+				<Original>The game is locked. Try again later.</Original>
+				<English>The game is locked. Try again later.</English>
+				<Russian>Гру замкнено. Спробуйте пізніше.</Russian>
+			</Key>
+		</Container>
+	</Package>
+</Project> 

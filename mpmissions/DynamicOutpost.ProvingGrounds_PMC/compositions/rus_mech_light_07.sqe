@@ -1,0 +1,161 @@
+version=53;
+center[]={1712.113,50.577461,1034.0106};
+class items
+{
+	items=2;
+	class Item0
+	{
+		dataType="Group";
+		side="East";
+		class Entities
+		{
+			items=5;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={0,0.12305832,2.5500488};
+				};
+				side="East";
+				flags=7;
+				class Attributes
+				{
+					rank="SERGEANT";
+				};
+				id=3835;
+				type="rhs_vdv_junior_sergeant";
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-5,0.0014381409,-2.4499512};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					skill=0.44999999;
+					rank="CORPORAL";
+				};
+				id=3836;
+				type="rhs_vdv_aa";
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={5,0.047554016,-2.4499512};
+					angles[]={0.0049914722,0,0.010000871};
+				};
+				side="East";
+				flags=4;
+				class Attributes
+				{
+				};
+				id=3838;
+				type="rhs_vdv_driver";
+			};
+			class Item3
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={4.9838867,1.6588402,-2.4411621};
+					angles[]={0.0049914722,0,0.010000871};
+				};
+				side="East";
+				class Attributes
+				{
+				};
+				id=3839;
+				type="rhs_vdv_rifleman";
+				atlOffset=1.6114883;
+			};
+			class Item4
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={4.9838867,1.6588402,-2.4411621};
+					angles[]={0.0049914722,0,0.010000871};
+				};
+				side="East";
+				class Attributes
+				{
+				};
+				id=3840;
+				type="rhs_vdv_sergeant";
+				atlOffset=1.6114883;
+			};
+		};
+		class Attributes
+		{
+		};
+		class CrewLinks
+		{
+			class LinkIDProvider
+			{
+				nextID=3;
+			};
+			class Links
+			{
+				items=3;
+				class Item0
+				{
+					linkID=0;
+					item0=3838;
+					item1=3837;
+					class CustomData
+					{
+						role=1;
+					};
+				};
+				class Item1
+				{
+					linkID=1;
+					item0=3839;
+					item1=3837;
+					class CustomData
+					{
+						role=2;
+						turretPath[]={0};
+					};
+				};
+				class Item2
+				{
+					linkID=2;
+					item0=3840;
+					item1=3837;
+					class CustomData
+					{
+						role=2;
+						turretPath[]={1};
+					};
+				};
+			};
+		};
+		id=3834;
+	};
+	class Item1
+	{
+		dataType="Object";
+		class PositionInfo
+		{
+			position[]={4.9838867,1.657402,-2.4912109};
+			angles[]={0.0049914722,0,0.010000871};
+		};
+		side="East";
+		flags=4;
+		class Attributes
+		{
+			skill=0.44999999;
+			rank="CORPORAL";
+		};
+		id=3837;
+		type="rhs_gaz66_zu23_vdv";
+	};
+};

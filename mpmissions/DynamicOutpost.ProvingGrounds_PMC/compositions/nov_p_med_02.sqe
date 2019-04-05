@@ -1,0 +1,237 @@
+version=53;
+center[]={1607.0466,50.417801,812.17767};
+class items
+{
+	items=2;
+	class Item0
+	{
+		dataType="Group";
+		side="East";
+		class Entities
+		{
+			items=4;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={4.6628418,0.24183655,4.2327271};
+				};
+				side="East";
+				flags=7;
+				class Attributes
+				{
+					rank="SERGEANT";
+				};
+				id=3055;
+				type="LOP_US_Infantry_SL";
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={7.6628418,0.25753403,-0.76727295};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					skill=0.44999999;
+					rank="CORPORAL";
+				};
+				id=3056;
+				type="LOP_US_Infantry_Rifleman";
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={9.6628418,0.2867775,-0.76727295};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					skill=0.40000001;
+				};
+				id=3057;
+				type="LOP_US_Infantry_Rifleman_2";
+			};
+			class Item3
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={11.662842,0.29677582,-0.76727295};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					skill=0.40000001;
+				};
+				id=3058;
+				type="LOP_US_Infantry_Rifleman_3";
+			};
+		};
+		class Attributes
+		{
+		};
+		id=3054;
+	};
+	class Item1
+	{
+		dataType="Group";
+		side="East";
+		class Entities
+		{
+			items=8;
+			class Item0
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-12.664551,0.0014381409,3.68573};
+				};
+				side="East";
+				flags=7;
+				class Attributes
+				{
+					rank="SERGEANT";
+				};
+				id=3060;
+				type="LOP_US_Infantry_TL";
+				atlOffset=-0.022663116;
+			};
+			class Item1
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-9.6645508,0.041603088,-1.31427};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					skill=0.44999999;
+					rank="CORPORAL";
+				};
+				id=3061;
+				type="LOP_US_Infantry_SL";
+				atlOffset=0.01738739;
+			};
+			class Item2
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-7.6645508,0.16249466,-1.31427};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					skill=0.44999999;
+					rank="CORPORAL";
+				};
+				id=3062;
+				type="LOP_US_Infantry_Corpsman";
+				atlOffset=0.11328125;
+			};
+			class Item3
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-5.6645508,0.27072144,-1.31427};
+				};
+				side="East";
+				flags=5;
+				class Attributes
+				{
+					skill=0.44999999;
+					rank="CORPORAL";
+				};
+				id=3063;
+				type="LOP_US_Infantry_Rifleman";
+				atlOffset=0.20589447;
+			};
+			class Item4
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-3.6645508,0.40161514,-1.31427};
+				};
+				side="East";
+				flags=1;
+				class Attributes
+				{
+					skill=0.40000001;
+				};
+				id=3064;
+				type="LOP_US_Infantry_AT";
+				atlOffset=0.31678772;
+			};
+			class Item5
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={-1.6645508,0.51984024,-1.31427};
+				};
+				side="East";
+				flags=1;
+				class Attributes
+				{
+					skill=0.40000001;
+				};
+				id=3065;
+				type="LOP_US_Infantry_AT_Asst";
+				atlOffset=0.40464783;
+			};
+			class Item6
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={0.33544922,0.66155624,-1.31427};
+				};
+				side="East";
+				flags=1;
+				class Attributes
+				{
+					skill=0.40000001;
+				};
+				id=3066;
+				type="LOP_US_Infantry_GL";
+				atlOffset=0.51136398;
+			};
+			class Item7
+			{
+				dataType="Object";
+				class PositionInfo
+				{
+					position[]={2.3354492,0.79008102,-1.31427};
+				};
+				side="East";
+				flags=1;
+				class Attributes
+				{
+					skill=0.40000001;
+				};
+				id=3067;
+				type="LOP_US_Infantry_MG";
+				atlOffset=0.60338593;
+			};
+		};
+		class Attributes
+		{
+		};
+		id=3059;
+		atlOffset=-0.022663116;
+	};
+};
