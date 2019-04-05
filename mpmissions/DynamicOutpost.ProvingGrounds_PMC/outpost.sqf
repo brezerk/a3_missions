@@ -167,18 +167,20 @@ if (isServer) then {
 	/*
 	Run this scenario only on server
 	*/
-	//reveal mines to the UA forces
 	
+	//set flag textures
 	{ _x  setFlagTexture "addons\apl\data\flag_ukraine.paa"; } forEach [ua_flag_01, ua_flag_02, ua_flag_03, ua_flag_04];
 	
+	//reveal mines to the UA forces
 	(allMines select 0) mineDetectedBy independent;
 	
 	//spawn random uaz
 	["wp_spawn_uaz_01"] call Fn_Spawn_UAZ;
 	
+	//wait a bit
 	sleep 5;
 	call Fn_Create_Objectives_Start;
-	//call Fn_Task_Create_AmmoDelivery;
+
 	//Move all units into the one Groop (Required for ACE);
 	_grp = createGroup independent;
 	{
@@ -187,23 +189,7 @@ if (isServer) then {
 	
 	sleep 5;
 	
-	// We need to end game is everyone dies
+	// We need to end game if all players are no longer alive
 	[] execVM "addons\brezblock\triggers\end_game.sqf";
-	
-	//["wp_mort_spot", 10, 6] execVM "addons\brezblock\systems\incoming.sqf";
-	
-	//call Fn_Task_Create_Informator;
-	
-	//["wp_nov_main", "rus_mech_med_04", "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
-	//["wp_nov_main", "rus_heli_01", "wp_defend_01", [[0,0,0],[0,30,0],[30,0,0]]] call BrezBlock_fnc_Spawn_OPFOR_Forces;
-	
-	//["wp_nov_main", "rus_heli_02", "wp_defend_01"] call Fn_Spawn_2;
-
-	//call Fn_Spawn_2;
-	
-	//[, "nov_mech_light_02", "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
-	//["wp_nov_main", "nov_mech_light_02", "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
-	
-	
 };
 

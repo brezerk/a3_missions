@@ -44,16 +44,6 @@ if (isServer) then {
 	] call BIS_fnc_taskCreate;
 	["t_doc_search", "search"] call BIS_fnc_taskSetType;
 	
-	/*
-		rus_spec	[1-4];
-		rus_tank    [1-3];
-		rus_heli	[1-3];
-		rus_p		light[1-6] med[1-4] heavy[1-2];
-		rus_mech	light[1-7] med[1-4] heavy[1-6];
-		nov_p		light[1-4] med[1-3] heavy[1];
-		nov_mech	light[1-2] med[1-2] heavy[1-2];
-	*/
-	
 	// +3 mins: spawn 3 spec ops waves
 	_until = diag_tickTime + 6 * 60;
 	waitUntil {sleep 1; diag_tickTime > _until;};
@@ -135,32 +125,22 @@ if (isServer) then {
 	//Wave 2 (5 Minutes) med
 	_until = diag_tickTime + 5 * 60;
 	waitUntil {sleep 1; diag_tickTime > _until;};
-
-	//call Fn_Get_Task_State;
 	
 	// rus med at full scale
 	[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_p_med", 4] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
 	[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_p_med", 6] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
 
-	// if patrol docs found, spawn light
-	//if (!task_completed_06) then {
-		// if patrol is not done spawn heavy or med other vice
-		if (!task_completed_01) then {
-			[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_mech_light", 7] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
-			[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_mech_med", 4] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
-			[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_p_med", 4] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
-			[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_p_light", 6] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
-		} else {
-			[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_mech_med", 4] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
-			[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_p_med", 4] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
-			[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_p_light", 6] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
-		};
-	//} else {
-	//	[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_mech_ligh", 7] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
-		
-	//	[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_p_light", 6] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
-	//};
-	
+	if (!task_completed_01) then {
+		[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_mech_light", 7] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
+		[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_mech_med", 4] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
+		[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_p_med", 4] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
+		[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_p_light", 6] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
+	} else {
+		[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_mech_med", 4] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
+		[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_p_med", 4] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
+		[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_p_light", 6] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
+	};
+
 	// if inform docs found, skip heavy
 	if (!task_completed_04) then {
 		["wp_nov_main", ["nov_mech_med", 2] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
@@ -181,15 +161,12 @@ if (isServer) then {
 	call Fn_Task_Create_InjuredEvacuation;
 	
 	//Wait some time and create convoy task
-	//call Fn_Get_Task_State;
 	_until = diag_tickTime + 2 * 60;
 	waitUntil {sleep 1; diag_tickTime > _until;};
 	
 	call Fn_Task_Create_Convoy;
 	
-	
 	//Wave 4 (10 Minutes) heavy invasion final
-	//call Fn_Get_Task_State;
 	_until = diag_tickTime + 10 * 60;
 	waitUntil {sleep 1; diag_tickTime > _until;};
 	
@@ -223,7 +200,6 @@ if (isServer) then {
 	waitUntil {sleep 1; diag_tickTime > _until;};
 
 	// rus are doing full scale regardless
-	//[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_p_light", 2] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
 	[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_mech_med", 3] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
 	[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_mech_ligh", 7] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
 	
@@ -247,10 +223,7 @@ if (isServer) then {
 	_until = diag_tickTime + 3 * 60;
 	waitUntil {sleep 1; diag_tickTime > _until;};
 	
-	// if patrol docs found, skip stage
-	//if (!task_completed_06) then {
-	
-	//reweal all mines
+	//reweal all mines to east forces
 	(allMines select 0) mineDetectedBy east;
 	
 	[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_tank", 3] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
@@ -262,15 +235,8 @@ if (isServer) then {
 	_until = diag_tickTime + 5 * 60;
 	waitUntil {sleep 1; diag_tickTime > _until;};
 	
-	// if heli cods found, skip stage. other vice spawn full if heli is not done or geli_01 if heli task done
+	//call heli regardless >:E
 	[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_heli", 3] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01", [[0,0,0],[0,30,0],[30,0,0]]] call BrezBlock_fnc_Spawn_OPFOR_Forces;
-	//if (!task_completed_05) then {
-	//	if (!task_completed_02) then {
-	//		[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_heli", 3] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
-	//	} else {
-	//		[["wp", 10] call BrezBlock_fnc_Get_RND_Index, "rus_heli_01", "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
-	//	};
-	//};
 	
 	// wait some more
 	_until = diag_tickTime + 10 * 60;
