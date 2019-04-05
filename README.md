@@ -1,7 +1,7 @@
 
 **a3_missions** is a collection of my multiplayer and sinpleplayer missions created for ARMA 3 game.
 
-The project is entirely **open-source** and all contributions are welcome. Feel free to maintain your own custom version, so long as the changes you make are open to the public in accordance with the GNU General Public License ([GPLv2](https://github.com/brezerk/a3_missions/blob/master/LICENSE)).
+The project is entirely **open-source** and all contributions are welcome. Feel free to maintain your own custom version, so long as the changes you make are open to the public in accordance with the GNU General Public License ([GPLv3](https://github.com/brezerk/a3_missions/blob/master/LICENSE)).
 
 ## Getting started
 
@@ -17,5 +17,5 @@ To contribute something to **a3_missions**, simply fork this repository and subm
 
 ## License
 
-**a3_missions** are licensed under the GNU General Public License ([GPLv2](https://github.com/brezerk/a3_missions/blob/master/LICENSE)).
+**a3_missions** are licensed under the GNU General Public License ([GPLv3](https://github.com/brezerk/a3_missions/blob/master/LICENSE)).
 
