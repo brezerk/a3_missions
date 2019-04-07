@@ -1,0 +1,38 @@
+// stringtable.xml
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="BrezBlock.org.ua">
+	<Package name="DynamicOutpost">
+		<Container name="l18n">
+			<Key ID="BRIEFING_01_TITLE">
+				<Original>Gaming conventions</Original>
+				<English>Gaming conventions</English>
+				<Russian>Ігрові умовності</Russian>
+			</Key>
+			<Key ID="BRIEFING_01_DESC">
+				<Original>Most of the dynamic objects and their locations are random, player experience may change.&lt;br /&gt;&lt;br /&gt;Rrespawn tickets count per player is limited to - 3.&lt;br /&gt;&lt;br /&gt;Recommenred game diffictlty settings are:&lt;br /&gt;&lt;br /&gt; * Preset: Veteran.&lt;br /&gt; * Detected mines: Hide&lt;br /&gt;&lt;br /&gt;Recommenred Addon setttings are:&lt;br /&gt;&lt;br /&gt; * ACE Logistics -&gt; Allow Repair = Everyone;&lt;br /&gt; * ACE Medical -&gt; Prevent Instant Death = True;&lt;br /&gt; * ACE Medical -&gt; Locations Boost Training = True; This will allow ordinary soldiers to transfuse blood at &lt;marker name = 'ua_hospital_01'&gt;field hospital&lt;/marker&gt; position.</Original>
+				<English>Most of the dynamic objects and their locations are random, player experience may change.&lt;br /&gt;&lt;br /&gt;Rrespawn tickets count per player is limited to - 3.&lt;br /&gt;&lt;br /&gt;Recommenred game diffictlty settings are:&lt;br /&gt;&lt;br /&gt; * Preset: Veteran.&lt;br /&gt; * Detected mines: Hide&lt;br /&gt;&lt;br /&gt;Recommenred Addon setttings are:&lt;br /&gt;&lt;br /&gt; * ACE Logistics -&gt; Allow Repair = Everyone;&lt;br /&gt; * ACE Medical -&gt; Prevent Instant Death = True;&lt;br /&gt; * ACE Medical -&gt; Locations Boost Training = True; This will allow ordinary soldiers to transfuse blood at &lt;marker name = 'ua_hospital_01'&gt;field hospital&lt;/marker&gt; position.</English>
+				<Russian>Більшість динамічних об'єктів і їх місцеположеня є випадковим, досвід гравця може змінюватися.&lt;br /&gt;&lt;br /&gt;Кількість респаунів на гравця - 3.&lt;br /&gt;&lt;br /&gt;Рекомендовані налаштування для гри:&lt;br / &gt;&lt;br /&gt; * Попередньо встановлені налаштування: Ветеран.&lt;br /&gt; * Виявлені міни: Приховати&lt;br /&gt;&lt;br /&gt;Рекомендовані налаштування Додатків:&lt;br /&gt;&lt;br /&gt; * ACE Logistics -&gt; Дозволити ремонт = Всі; &lt;br /&gt; * ACE Medical -&gt; Запобігання миттєвої смерті = True; &lt;br /&gt; * ACE Medical -&gt; Locations Boost Training = True; Це дозволить звичайним солдатам переливати кров на позиції &lt;marker name = 'ua_hospital_01'&gt;Польовий шпиталь&lt;/ marker&gt;.</Russian>
+			</Key>
+			<Key ID="TASK_01_TITLE">
+				<Original>Eliminate rebel leader</Original>
+				<English>Eliminate rebel leader</English>
+				<Russian>Ліквідувати ватажка бунтівників</Russian>
+			</Key>
+			<Key ID="TASK_01_DESC">
+				<Original>Eliminate the rebel leader on the base near the &lt;marker name = 'wp_target_01'&gt;Monuet airfield&lt;/marker&gt;.</Original>
+				<English>Eliminate the rebel leader on the base near the &lt;marker name = 'wp_target_01'&gt;Monuet airfield&lt;/marker&gt;.</English>
+				<Russian>Ліквідувати ватажка бунтівників на базі біля &lt;marker name='wp_target_01'&gt;аеродрому Monuet&lt;/marker&gt;.</Russian>
+			</Key>
+			<Key ID="TASK_02_TITLE">
+				<Original>Get to the Gurun airfield</Original>
+				<English>Get to the Gurun airfield</English>
+				<Russian>Прибути до аеродрому Gurun</Russian>
+			</Key>
+			<Key ID="TASK_02_DESC">
+				<Original>Get to the  &lt;marker name = 'wp_air_field_01'&gt;Gurun airfield&lt;/marker&gt; and report to the officer.</Original>
+				<English>Get to the  &lt;marker name = 'wp_air_field_01'&gt;Gurun airfield&lt;/marker&gt; and report to the officer.</English>
+				<Russian>Прибути до &lt;marker name='wp_air_field_01'&gt;аеродрому Gurun&lt;/marker&gt; та доповісти команидру.</Russian>
+			</Key>
+		</Container>
+	</Package>
+</Project> 

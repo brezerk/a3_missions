@@ -30,7 +30,7 @@ OnLoadName		= "Dynamic Outpost v1.3.7";
 OnLoadMission	= $STR_ONLOAD_INFO_01;
 briefingName    = $STR_ONLOAD_INFO_02;
 // FIXME: https://feedback.bistudio.com/T67181
-// overviewPicture = "images\outpost_logo.paa";
+overviewPicture = "images\outpost_logo.paa";
 loadScreen      = "images\outpost_logo.paa";
 overviewTextLocked = $STR_LOCKED_INFO_01;
 
