@@ -33,6 +33,36 @@
 				<English>Get to the  &lt;marker name = 'wp_air_field_01'&gt;Gurun airfield&lt;/marker&gt; and report to the officer.</English>
 				<Russian>Прибути до &lt;marker name='wp_air_field_01'&gt;аеродрому Gurun&lt;/marker&gt; та доповісти команидру.</Russian>
 			</Key>
+			<Key ID="TASK_03_TITLE">
+				<Original>Regroup</Original>
+				<English>Regroup</English>
+				<Russian>Перегрупуйтесь</Russian>
+			</Key>
+			<Key ID="TASK_03_DESC">
+				<Original>You vaguely remember how you got out of a burning airplane. You think that before you have lost consciousness, you have seen someone else. Are your friends alive? You have to find them.</Original>
+				<English>You vaguely remember how you got out of a burning airplane. You think that before you have lost consciousness, you have seen someone else. Are your friends alive? You have to find them.</English>
+				<Russian>Ви смутно пам'ятаєте як вибрались із палючого літака. Вам здається, що перед тим, як ви втратили свідомість, ви бачили ще когось. Чи живі ваші товариші? Ви повинні знайти їх.</Russian>
+			</Key>
+			<Key ID="TASK_04_TITLE">
+				<Original>Optional: Crash site</Original>
+				<English>Optional: Crash site</English>
+				<Russian>Додаткове: Місце катастрофи</Russian>
+			</Key>
+			<Key ID="TASK_04_DESC">
+				<Original>The plane fell somewhere nearby. Trees are making it difficult to find, but I need to try to find it. It is possible that there is something valuable among the rubble. However, the enemy also will search for it. I might be careful.</Original>
+				<English>The plane fell somewhere nearby. Trees are making it difficult to find, but I need to try to find it. It is possible that there is something valuable among the rubble. However, the enemy also will search for it. I might be careful.</English>
+				<Russian>Літак впав десь неподалік. Дерева сильно заважать, але потрібно спробувати знайти його. Можливо серед уламків знайдеться щось цінне. Проте ворог теж його шукає. Треба бути обережним.</Russian>
+			</Key>
+			<Key ID="TASK_05_TITLE">
+				<Original>What the hell?</Original>
+				<English>What the hell?</English>
+				<Russian>Якого біса?</Russian>
+			</Key>
+			<Key ID="TASK_05_DESC">
+				<Original>Everything went wrong. Are we betrayed? What is happening? What to do now? I need information. The big cities are definitely very well guarded, but in small villages such as &lt;marker name = 'wp_balalon'&gt;Balalon&lt;/marker&gt; or &lt;marker name = 'wp_bibung'&gt;Bibung&lt;/marker&gt; I should be able to find some information for sure.</Original>
+				<English>Everything went wrong. Are we betrayed? What is happening? What to do now? I need information. The big cities are definitely very well guarded, but in small villages such as &lt;marker name = 'wp_balalon'&gt;Balalon&lt;/marker&gt; or &lt;marker name = 'wp_bibung'&gt;Bibung&lt;/marker&gt; I should be able to find some information for sure.</English>
+				<Russian>Все пішло шкереберть. Нас зраджено? Що коїться? Що тепер робити? Потрібна інформація. Великі міста напевно дуже добре охороняються, але в невеличких селах таких як &lt;marker name = 'wp_balalon'&gt;Balalon&lt;/marker&gt; або &lt;marker name = 'wp_bibung'&gt;Bibung&lt;/marker&gt; я зможу знайти якусь інформацію.</Russian>
+			</Key>
 		</Container>
 	</Package>
 </Project> 
