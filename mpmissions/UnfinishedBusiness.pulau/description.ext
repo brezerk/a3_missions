@@ -48,7 +48,7 @@ aikills = 0;
 respawnOnStart = -1;
 
 // Force cba_settings.sqf loading
-//cba_settings_hasSettingsFile = 1;
+cba_settings_hasSettingsFile = 1;
 
 class CfgSounds
 {
