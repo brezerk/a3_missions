@@ -53,6 +53,9 @@ if (hasInterface) then {
 if (isServer) then {
 
 	Fn_Task_Create_ArriveToIsland = {
+		{
+			[_x, false] remoteExec ["allowDamage"];
+		} forEach playableUnits;
 		trgJetIsDead = createTrigger ["EmptyDetector", getMarkerPos "wp_air_field_01" ];
 		trgJetIsDead setTriggerArea [0, 0, 0, false];
 		trgJetIsDead setTriggerActivation ["NONE", "PRESENT", false];
@@ -86,6 +89,11 @@ if (isServer) then {
 			true
 		] call BIS_fnc_taskCreate;
 		['t_rebel_leader', "kill"] call BIS_fnc_taskSetType;
+	
+		sleep 30;
+		
+		["radio_chatter_01"] remoteExec ["playSound"];
+		["rhs_usa_land_rc_25"] remoteExec ["playSound"];
 	};
 	
 	
@@ -116,6 +124,7 @@ if (isServer) then {
 		_obj addItemCargoGlobal ["ACE_fieldDressing", 20];
 		_obj addItemCargoGlobal ["ACE_morphine", 10];
 		_obj addItemCargoGlobal ["ACE_epinephrine", 6];
+		_obj addItemCargoGlobal ["ACE_bloodIV", 20];
 		_obj addBackpackCargoGlobal ["B_Kitbag_tan", 5];
 			
 		if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
@@ -178,88 +187,83 @@ if (isServer) then {
 		
 		sleep 5;
 
-		"Crater" createVehicle (_markerPos); 
-		_obj = "Land_Wreck_Plane_Transport_01_F" createVehicle (_markerPos); 
-		_fire = "test_EmptyObjectForFireBig" createVehicle (_markerPos); 
-		_fire attachTo [_obj, [0, 0, 0]];
+		[_markerPos] call Fn_Task_Create_C130J_CrashSite;
 		[_markerPos] call Fn_Task_Create_ArriveToIsland_SpawnRandomCargo;
+		
+		//patrol by heli
+		
+		_wp = group rebel_heli_01 addWaypoint [_markerPos, 0];
+		_wp setWaypointType "loiter";
+		_wp setWaypointSpeed "NORMAL";
+		_wp setWaypointLoiterType "Circle_L";
+		_wp setWaypointLoiterRadius 500;
+		rebel_heli_01 flyInHeight 110;
+		
+		{
+			_x assignAsCargo rebel_jeep_04;
+			_x moveInCargo rebel_jeep_04;
+		} forEach units rebel_grp_01;
+		
+		_wp = group rebel_jeep_04 addWaypoint [_markerPos, 0];
+		_wp setWaypointType "TR UNLOAD";
+		_wp setWaypointCombatMode "WHITE";
+		_wp setWaypointBehaviour "SAFE";
+		_wp setWaypointSpeed "NORMAL";
+		
+		_wp = group rebel_jeep_03 addWaypoint [_markerPos, 0];
+		_wp setWaypointType "SENTRY";
+		_wp setWaypointCombatMode "WHITE";
+		_wp setWaypointBehaviour "SAFE";
+		_wp setWaypointSpeed "NORMAL";
+		
+		_wp = rebel_grp_01 addWaypoint [_markerPos, 0];
+		_wp setWaypointType "SENTRY";
+		_wp setWaypointCombatMode "RED";
+		_wp setWaypointBehaviour "STEALTH";
+		
+		//_wp setWaypointPosition [getPosASL player, -1];
+		//[_grp, 2] setWaypointLoiterType "CIRCLE";
+		//[_grp, 2] setWaypointLoiterRadius 200;
+		
+		//[group rebel_heli_01, _markerPos, 1000] call CBA_fnc_taskPatrol;
 		
 		for "_i" from 1 to 5 do {
 			_markerPos = getMarkerPos (["wp_plain_crash", 11] call BrezBlock_fnc_Get_RND_Index);
 			[_markerPos] call Fn_Task_Create_ArriveToIsland_SpawnRandomCargo;
 		};
 
-		{
-			removeAllWeapons _x;
-			removeAllItems _x;
-			removeAllAssignedItems _x;
-			removeBackpack _x;
-			removeHeadgear _x;
-			removeGoggles _x;
-			
-			_x addItemToUniform "ACE_EarPlugs";
-			_x addItemToUniform "ACE_CableTie";
-			for "_i" from 1 to 5 do {_x addItemToUniform "ACE_morphine";};
-			for "_i" from 1 to 15 do {_x addItemToUniform "ACE_fieldDressing";};
-			_x addGoggles "rhs_googles_clear";
-			_x addWeapon "rhsusf_weap_m1911a1";
-			_x addItemToVest "rhsusf_mag_7x45acp_MHP";
-			for "_i" from 1 to 3 do {_x addItemToVest "rhs_mag_30Rnd_556x45_M855_Stanag";};
-			for "_i" from 1 to 2 do {_x addItemToVest "Chemlight_green";};
-			for "_i" from 1 to 2 do {_x addItemToVest "Chemlight_red";};
-			_x setSpeaker "NoVoice";
-			//ACEX
-			_x addItemToVest "ACE_Canteen";
-			_x linkItem "ItemWatch";
-			_x linkItem "ItemMap";
-			
-			_x allowDamage true;
-			
+
+		[[], "gear\player.sqf"] remoteExec ["execVM"];
+		{			
 			_marker = selectRandom _free_landing_markers;
 			_free_landing_markers = _free_landing_markers - [_marker];
 			_markerPos = getMarkerPos _marker;
 			
-			
-			
 			//do some damage
-			_dmgType = ["leg_l", "leg_r", "hand_r", "hand_l", "body", "head"];
-			[_x, 2, selectRandom _dmgType, "bullet"] call ace_medical_fnc_addDamageToUnit;
+			_dmgType = ["leg_l", "leg_r", "hand_r", "hand_l", "head"];
+			[_x, 1, selectRandom _dmgType, "bullet"] remoteExec ["ace_medical_fnc_addDamageToUnit"];
 			
 			//parachute
-			_x setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 140)];
-			_x addBackpack "B_Parachute";
-			_x action ["openParachute", _x];
-			
+			_x setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 160)];
+			[_x, true] remoteExec ["setUnconscious", _x];
 			_x setVariable ["ACE_isUnconscious", true, true];
-			_x setUnconscious true;
 			
 		} forEach playableUnits;
-		[1, "BLACK", 10, 1] remoteExec ["BIS_fnc_fadeEffect", 0];
+		[1, "BLACK", 5, 1] remoteExec ["BIS_fnc_fadeEffect", 0];
 		
 		{deleteVehicle _x} foreach crew us_airplane_01; deleteVehicle us_airplane_01;
 		
-		sleep 20;
+		sleep 10;
 		{
-			_x setVariable ["ACE_isUnconscious", false, false];
-			_x setUnconscious false;
+			[_x, false] remoteExec ["setUnconscious", _x];
+			_x setVariable ["ACE_isUnconscious", false, true];
+			[_x, true] remoteExec ["allowDamage"];
 		} forEach playableUnits;
 		
 		{
 			[
 				_x,
 				"t_find_informator",
-				[localize "TASK_04_DESC",
-				localize "TASK_04_TITLE",
-				localize "TASK_ORIG_01"],
-				objNull,
-				"CREATED",
-				0,
-				true
-			] call BIS_fnc_taskCreate;
-			['t_find_informator', "talk"] call BIS_fnc_taskSetType;
-			[
-				_x,
-				"t_crash_site",
 				[localize "TASK_05_DESC",
 				localize "TASK_05_TITLE",
 				localize "TASK_ORIG_01"],
@@ -268,8 +272,10 @@ if (isServer) then {
 				0,
 				true
 			] call BIS_fnc_taskCreate;
-			['t_crash_site', "unknown"] call BIS_fnc_taskSetType;
+			['t_find_informator', "talk"] call BIS_fnc_taskSetType;
 		} forEach playableUnits;
+		
+		remoteExec ["Fn_Task_Create_Informator"];
 		
 		sleep 5;
 		
@@ -285,6 +291,8 @@ if (isServer) then {
 			true
 		] call BIS_fnc_taskCreate;
 		['t_regroup', "meet"] call BIS_fnc_taskSetType;
+		
+		[] execVM "missions\regroup.sqf";
 		
 		
 		//"test_EmptyObjectForFireBig" createVehicle (_markerPos); 

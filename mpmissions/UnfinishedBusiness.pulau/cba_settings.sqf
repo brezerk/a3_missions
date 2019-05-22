@@ -16,17 +16,35 @@
  *                                                                         *
  ***************************************************************************/
  
-/*
-Briefing script
-*/
+ /*
+ Suggested CBA Settings
+ */
+ 
+ // ACE Advanced Fatigue
+force ace_advanced_fatigue_enabled = true;
+force ace_advanced_fatigue_enableStaminaBar = true;
+force ace_advanced_fatigue_loadFactor = 0.3;
+force ace_advanced_fatigue_performanceFactor = 0.3;
+force ace_advanced_fatigue_recoveryFactor = 2;
+force ace_advanced_fatigue_swayFactor = 1;
+force ace_advanced_fatigue_terrainGradientFactor = 1;
 
-player createDiaryRecord ["Diary", [localize "BRIEFING_01_TITLE", localize "BRIEFING_01_DESC"]];
-player createDiaryRecord ["Diary", ["-------------", ""]];
-player createDiaryRecord ["Diary", [localize "BRIEFING_02_TITLE", localize "BRIEFING_02_DESC"]];
-player createDiaryRecord ["Diary", [localize "BRIEFING_03_TITLE", localize "BRIEFING_03_DESC"]];
-player createDiaryRecord ["Diary", ["-------------", ""]];
-player createDiaryRecord ["Diary", [localize "BRIEFING_04_TITLE", localize "BRIEFING_04_DESC"]]; 
-player createDiaryRecord ["Diary", [localize "BRIEFING_05_TITLE", localize "BRIEFING_05_DESC"]];
-player createDiaryRecord ["Diary", ["-------------", ""]];
-player createDiaryRecord ["Diary", [localize "BRIEFING_06_TITLE", localize "BRIEFING_06_DESC"]];
-player createDiaryRecord ["Diary", [localize "BRIEFING_07_TITLE", localize "BRIEFING_07_DESC"]];
+// ACE Logistics
+force ace_repair_engineerSetting_repair = 0;
+
+// ACE Medical
+force ace_medical_amountOfReviveLives = -1;
+force ace_medical_increaseTrainingInLocations = true;
+ace_medical_menu_useMenu = 1;
+force ace_medical_preventInstaDeath = true;
+
+// GRAD Trenches
+grad_trenches_functions_stopBuildingAtFatigueMax = true;
+
+// ACE Pointing
+force ace_finger_enabled = true;
+
+// ACEX Field Rations
+force acex_field_rations_enabled = true;
+force acex_field_rations_timeWithoutWater = 2;
+force acex_field_rations_timeWithoutFood = 3;

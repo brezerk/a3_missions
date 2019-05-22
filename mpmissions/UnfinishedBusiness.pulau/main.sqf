@@ -17,12 +17,75 @@
  ***************************************************************************/
 
 _westHQ = createCenter west;
-_eastHQ = createCenter east;
+_indepHQ = createCenter independent;
 
+[] execVM "missions\crash_site.sqf";
+[] execVM "missions\informator.sqf";
+[] execVM "missions\aa.sqf";
 [] execVM "missions\intro.sqf";
 
-
 if (isServer) then {
+
+	Fn_Task_CreatePatrols = {
+		private ["_cars", "_wp", "_marker", "_wp_array"];
+		_cars = [
+			'synd_jeep_01',
+			'synd_jeep_02'
+		];
+		{
+			_wp_array = [
+				'wp_monse',
+				'wp_lalomo',
+				'wp_minanga',
+				'wp_apal',
+				'wp_village_01',
+				'wp_village_02',
+				'wp_village_03',
+				'wp_village_04',
+				'wp_village_05',
+				'wp_village_06',
+				'wp_village_07',
+				'wp_village_08'
+			];
+			for "_i" from 1 to random [1, 2] do {
+				_marker = selectRandom _wp_array;
+				_wp_array = _wp_array - [_marker];
+				_wp = opp01 addWaypoint [getMarkerPos _marker, 0];
+				_wp setWaypointCombatMode "YELLOW";
+				_wp setWaypointBehaviour "SAFE";
+				_wp setWaypointSpeed "LIMITED";
+				_wp setWaypointFormation "NO CHANGE";
+				_wp setWaypointType "MOVE";
+			};
+			_marker = selectRandom _wp_array;
+			_wp_array = _wp_array - [_marker];
+			_wp = opp01 addWaypoint [getMarkerPos _marker, 0];
+			_wp setWaypointCombatMode "YELLOW";
+			_wp setWaypointBehaviour "SAFE";
+			_wp setWaypointSpeed "LIMITED";
+			_wp setWaypointFormation "NO CHANGE";
+			_wp setWaypointType "CICLE";
+		} forEach _cars;
+	};
+
+	Fn_Endgame_Loss = {
+		if (isServer) then {
+			['t_defend_blockpost', 'FAILED'] call BIS_fnc_taskSetState;
+			"EveryoneLost" call BIS_fnc_endMissionServer;
+		};
+	};
+
+	Fn_Endgame_Win = {
+		if (isServer) then {
+			"EveryoneWon" call BIS_fnc_endMissionServer;
+		};
+	};
+
 	sleep 5;
-	call Fn_Task_Create_ArriveToIsland;
+	
+	call Fn_Task_CreatePatrols;
+	//call Fn_Task_Create_ArriveToIsland;
 };
+
+// We need to end game if all players are no longer alive
+[] execVM "addons\brezblock\triggers\end_game.sqf";

@@ -27,12 +27,12 @@ class Header
 
 author			= "brezerk@brezblock.org.ua";
 OnLoadName		= "Unfinished Business v0.0.3";
-OnLoadMission	= $STR_ONLOAD_INFO_01;
-briefingName    = $STR_ONLOAD_INFO_02;
+//OnLoadMission	= $STR_ONLOAD_INFO_01;
+//briefingName    = $STR_ONLOAD_INFO_02;
 // FIXME: https://feedback.bistudio.com/T67181
 // overviewPicture = "images\outpost_logo.paa";
 //loadScreen      = "images\unfinished_business.paa";
-overviewTextLocked = $STR_LOCKED_INFO_01;
+//overviewTextLocked = $STR_LOCKED_INFO_01;
 
 // Respawn type
 respawn = 3;
@@ -53,10 +53,10 @@ cba_settings_hasSettingsFile = 1;
 class CfgSounds
 {
 	sounds[] = {};
-	class outpost_wave01
+	class radio_chatter_01
 	{
 		// how the sound is referred to in the editor (e.g. trigger effects)
-		name = "outpost_wave01";
+		name = "radio_chatter_01";
 
 		// filename, volume, pitch, distance (optional)
 		sound[] = {};
@@ -71,16 +71,11 @@ class CfgSounds
 };
 
 class CfgFunctions {
-	#include "addons\LARs\spawnComp\functions\functions.cpp"
 	class BrezBlock
 	{
 		class common
 		{
 			class Get_RND_Index {file = "addons\brezblock\utils\get_rnd_index.sqf";};
-			class Spawn_Objective {file = "addons\brezblock\utils\spawn_objective.sqf";};
-			//class Spawn_OPFOR_Forces {file = "addons\brezblock\utils\spawn_opfor_forces.sqf"};
-			class Spawn_OPFOR_Forces {file = "addons\brezblock\utils\spawn_opfor_forces_v2.sqf"};
-			class Spawn_OPFOR_Forces_Guard {file = "addons\brezblock\utils\spawn_opfor_forces_guard.sqf"}
 			class Attach_Hold_Action {file = "addons\brezblock\actions\attach_hold.sqf"};
 		};
 	};

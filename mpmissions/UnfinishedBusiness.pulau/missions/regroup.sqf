@@ -15,18 +15,47 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
  ***************************************************************************/
- 
+
 /*
-Briefing script
+Spawn start objectives, triggers for informator contact
 */
 
-player createDiaryRecord ["Diary", [localize "BRIEFING_01_TITLE", localize "BRIEFING_01_DESC"]];
-player createDiaryRecord ["Diary", ["-------------", ""]];
-player createDiaryRecord ["Diary", [localize "BRIEFING_02_TITLE", localize "BRIEFING_02_DESC"]];
-player createDiaryRecord ["Diary", [localize "BRIEFING_03_TITLE", localize "BRIEFING_03_DESC"]];
-player createDiaryRecord ["Diary", ["-------------", ""]];
-player createDiaryRecord ["Diary", [localize "BRIEFING_04_TITLE", localize "BRIEFING_04_DESC"]]; 
-player createDiaryRecord ["Diary", [localize "BRIEFING_05_TITLE", localize "BRIEFING_05_DESC"]];
-player createDiaryRecord ["Diary", ["-------------", ""]];
-player createDiaryRecord ["Diary", [localize "BRIEFING_06_TITLE", localize "BRIEFING_06_DESC"]];
-player createDiaryRecord ["Diary", [localize "BRIEFING_07_TITLE", localize "BRIEFING_07_DESC"]];
+//Player side triggers
+// Client side code
+if (hasInterface) then {
+	
+};
+
+if (isServer) then {
+
+	task_complete_regroup = false;
+
+
+
+	trgRegroupPoint = createTrigger ["EmptyDetector", getMarkerPos 'wp_air_field_01'];
+	trgRegroupPoint setTriggerArea [30, 30, 0, false];
+	trgRegroupPoint setTriggerActivation ["NONE", "PRESENT", false];
+	trgRegroupPoint setTriggerStatements [
+			"({alive _x} count (allPlayers -  entities 'HeadlessClient_F' ) == {alive _x && _x inArea thisTrigger} count (allPlayers - entities 'HeadlessClient_F' ))  && ({alive _x} count allPlayers) > 0",
+			"['t_regroup', 'SUCCEEDED'] call BIS_fnc_taskSetState; task_complete_regroup = true;",
+			""
+	];
+	
+	while {!task_complete_regroup} do {
+		sleep 10;
+		{
+			if (alive _x) exitWith { trgRegroupPoint setPos (getPos _x); };
+		} forEach (allPlayers - entities 'HeadlessClient_F');
+	};
+	
+	deleteVehicle trgRegroupPoint;
+	
+	trgRegroupPoint = createTrigger ["EmptyDetector", getMarkerPos 'wp_air_field_01'];
+	trgRegroupPoint setTriggerArea [0, 0, 0, false];
+	trgRegroupPoint setTriggerActivation ["NONE", "PRESENT", false];
+	trgRegroupPoint setTriggerStatements [
+			"task_complete_intormator",
+			"call Fn_Task_Create_AA; call Fn_Task_Create_KillLeader;",
+			""
+	];
+};

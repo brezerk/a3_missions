@@ -15,18 +15,28 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
  ***************************************************************************/
- 
-/*
-Briefing script
-*/
 
-player createDiaryRecord ["Diary", [localize "BRIEFING_01_TITLE", localize "BRIEFING_01_DESC"]];
-player createDiaryRecord ["Diary", ["-------------", ""]];
-player createDiaryRecord ["Diary", [localize "BRIEFING_02_TITLE", localize "BRIEFING_02_DESC"]];
-player createDiaryRecord ["Diary", [localize "BRIEFING_03_TITLE", localize "BRIEFING_03_DESC"]];
-player createDiaryRecord ["Diary", ["-------------", ""]];
-player createDiaryRecord ["Diary", [localize "BRIEFING_04_TITLE", localize "BRIEFING_04_DESC"]]; 
-player createDiaryRecord ["Diary", [localize "BRIEFING_05_TITLE", localize "BRIEFING_05_DESC"]];
-player createDiaryRecord ["Diary", ["-------------", ""]];
-player createDiaryRecord ["Diary", [localize "BRIEFING_06_TITLE", localize "BRIEFING_06_DESC"]];
-player createDiaryRecord ["Diary", [localize "BRIEFING_07_TITLE", localize "BRIEFING_07_DESC"]];
+waitUntil { !isNull player }; // Wait for player to initialize
+
+/*
+Local player script
+*/
+private ["_trgKickToSpecator", "_trgLocationInfo01"];
+
+//3 tickets per player
+[player, 1] call BIS_fnc_respawnTickets;
+
+// hide markers
+{if (_x find "wp_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
+
+sleep 1;
+
+// kick player to specator upon death
+_trgKickToSpecator = createTrigger ["EmptyDetector", getMarkerPos 'wp_air_field_01'];
+_trgKickToSpecator setTriggerArea [0, 0, 0, false];
+_trgKickToSpecator setTriggerActivation ["NONE", "PRESENT", false];
+_trgKickToSpecator setTriggerStatements [
+			"([player,nil,true] call BIS_fnc_respawnTickets) <= 0",
+			"[true] call ace_spectator_fnc_setSpectator; [[west], [east,independent,civilian]] call ace_spectator_fnc_updateSides;",
+			""
+];
