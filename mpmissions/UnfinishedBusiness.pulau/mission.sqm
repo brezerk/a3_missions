@@ -1327,8 +1327,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={4036.2388,2.0181775,10369.927};
-				angles[]={6.2731848,0,0.023328418};
+				position[]={4036.239,2.0181861,10369.927};
+				angles[]={6.2731848,0,0.023335053};
 			};
 			areaSize[]={100,-1,100};
 			areaIsRectangle=1;
@@ -1409,7 +1409,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=5;
+							value=3;
 						};
 					};
 				};
@@ -1846,7 +1846,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=8;
+							value=4;
 						};
 					};
 				};
@@ -2525,7 +2525,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={4360.8628,1.8117175,10253.378};
-				angles[]={6.2798557,0,6.2798557};
+				angles[]={6.2798514,0,6.2798514};
 			};
 			areaSize[]={100,-1,100};
 			areaIsRectangle=1;
@@ -2606,7 +2606,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=7;
+							value=4;
 						};
 					};
 				};
@@ -3308,7 +3308,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=12;
+							value=5;
 						};
 					};
 				};
@@ -4284,7 +4284,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=9;
+							value=4;
 						};
 					};
 				};
@@ -5171,7 +5171,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=10;
+							value=4;
 						};
 					};
 				};
@@ -5883,15 +5883,15 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={6365.9492,3.0365729,9070.791};
-				angles[]={0.0033296358,1.182307,6.2332273};
+				position[]={6365.9492,3.0365553,9070.791};
+				angles[]={0.0033335788,1.1823034,6.2332339};
 			};
 			areaSize[]={100,-1,100};
 			areaIsRectangle=1;
 			flags=1;
 			id=369;
 			type="ModuleCivilianPresence_F";
-			atlOffset=1.7881393e-005;
+			atlOffset=2.3841858e-007;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -5934,6 +5934,25 @@ class Mission
 				};
 				class Attribute2
 				{
+					property="#onDeleted";
+					expression="_this setVariable [""#onDeleted"",compile _value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="true";
+						};
+					};
+				};
+				class Attribute3
+				{
 					property="#unitCount";
 					expression="_this setVariable [""#unitCount"",_value]";
 					class Value
@@ -5947,11 +5966,11 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=5;
+							value=4;
 						};
 					};
 				};
-				class Attribute3
+				class Attribute4
 				{
 					property="#useAgents";
 					expression="_this setVariable [""#useAgents"",_value]";
@@ -5970,7 +5989,26 @@ class Mission
 						};
 					};
 				};
-				nAttributes=4;
+				class Attribute5
+				{
+					property="#onCreated";
+					expression="_this setVariable [""#onCreated"",compile _value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="true";
+						};
+					};
+				};
+				nAttributes=6;
 			};
 		};
 		class Item99
@@ -6621,7 +6659,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=9;
+							value=4;
 						};
 					};
 				};
@@ -7329,8 +7367,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={5677.8306,10.862297,8753.0479};
-				angles[]={6.2631865,0,6.1967349};
+				position[]={5677.8311,10.862266,8753.0479};
+				angles[]={6.2631841,0,6.1967392};
 			};
 			areaSize[]={100,-1,100};
 			areaIsRectangle=1;
@@ -7379,6 +7417,25 @@ class Mission
 				};
 				class Attribute2
 				{
+					property="#onDeleted";
+					expression="_this setVariable [""#onDeleted"",compile _value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="true";
+						};
+					};
+				};
+				class Attribute3
+				{
 					property="#unitCount";
 					expression="_this setVariable [""#unitCount"",_value]";
 					class Value
@@ -7392,11 +7449,11 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=5;
+							value=3;
 						};
 					};
 				};
-				class Attribute3
+				class Attribute4
 				{
 					property="#useAgents";
 					expression="_this setVariable [""#useAgents"",_value]";
@@ -7415,7 +7472,26 @@ class Mission
 						};
 					};
 				};
-				nAttributes=4;
+				class Attribute5
+				{
+					property="#onCreated";
+					expression="_this setVariable [""#onCreated"",compile _value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="true";
+						};
+					};
+				};
+				nAttributes=6;
 			};
 		};
 		class Item120
@@ -8070,7 +8146,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=5;
+							value=4;
 						};
 					};
 				};
@@ -8924,14 +9000,14 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={5466.9014,12.660641,8233.2852};
+				position[]={5466.9009,12.661047,8233.2852};
 			};
 			areaSize[]={100,-1,100};
 			areaIsRectangle=1;
 			flags=1;
 			id=414;
 			type="ModuleCivilianPresence_F";
-			atlOffset=1.2725544;
+			atlOffset=1.2729998;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8974,6 +9050,25 @@ class Mission
 				};
 				class Attribute2
 				{
+					property="#onDeleted";
+					expression="_this setVariable [""#onDeleted"",compile _value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="true";
+						};
+					};
+				};
+				class Attribute3
+				{
 					property="#unitCount";
 					expression="_this setVariable [""#unitCount"",_value]";
 					class Value
@@ -8987,11 +9082,11 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=5;
+							value=3;
 						};
 					};
 				};
-				class Attribute3
+				class Attribute4
 				{
 					property="#useAgents";
 					expression="_this setVariable [""#useAgents"",_value]";
@@ -9010,7 +9105,26 @@ class Mission
 						};
 					};
 				};
-				nAttributes=4;
+				class Attribute5
+				{
+					property="#onCreated";
+					expression="_this setVariable [""#onCreated"",compile _value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="true";
+						};
+					};
+				};
+				nAttributes=6;
 			};
 		};
 		class Item139
@@ -9308,14 +9422,14 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={4733.8218,2.9388494,9058.8633};
+				position[]={4733.8218,2.9387965,9058.8633};
 			};
 			areaSize[]={100,-1,100};
 			areaIsRectangle=1;
 			flags=1;
 			id=419;
 			type="ModuleCivilianPresence_F";
-			atlOffset=5.3167343e-005;
+			atlOffset=2.3841858e-007;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -9358,6 +9472,25 @@ class Mission
 				};
 				class Attribute2
 				{
+					property="#onDeleted";
+					expression="_this setVariable [""#onDeleted"",compile _value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="true";
+						};
+					};
+				};
+				class Attribute3
+				{
 					property="#unitCount";
 					expression="_this setVariable [""#unitCount"",_value]";
 					class Value
@@ -9371,11 +9504,11 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=5;
+							value=4;
 						};
 					};
 				};
-				class Attribute3
+				class Attribute4
 				{
 					property="#useAgents";
 					expression="_this setVariable [""#useAgents"",_value]";
@@ -9394,7 +9527,26 @@ class Mission
 						};
 					};
 				};
-				nAttributes=4;
+				class Attribute5
+				{
+					property="#onCreated";
+					expression="_this setVariable [""#onCreated"",compile _value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="true";
+						};
+					};
+				};
+				nAttributes=6;
 			};
 		};
 		class Item144
@@ -9692,8 +9844,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={4616.3315,19.635077,8127.5537};
-				angles[]={0.016662678,0,0.083140828};
+				position[]={4616.332,19.635096,8127.5542};
+				angles[]={0.016667893,0,0.083147481};
 			};
 			areaSize[]={100,-1,100};
 			areaIsRectangle=1;
@@ -9742,6 +9894,25 @@ class Mission
 				};
 				class Attribute2
 				{
+					property="#onDeleted";
+					expression="_this setVariable [""#onDeleted"",compile _value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="true";
+						};
+					};
+				};
+				class Attribute3
+				{
 					property="#unitCount";
 					expression="_this setVariable [""#unitCount"",_value]";
 					class Value
@@ -9755,11 +9926,11 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=5;
+							value=3;
 						};
 					};
 				};
-				class Attribute3
+				class Attribute4
 				{
 					property="#useAgents";
 					expression="_this setVariable [""#useAgents"",_value]";
@@ -9778,7 +9949,26 @@ class Mission
 						};
 					};
 				};
-				nAttributes=4;
+				class Attribute5
+				{
+					property="#onCreated";
+					expression="_this setVariable [""#onCreated"",compile _value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="true";
+						};
+					};
+				};
+				nAttributes=6;
 			};
 		};
 		class Item149
@@ -10347,7 +10537,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=10;
+							value=5;
 						};
 					};
 				};
@@ -10954,7 +11144,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=6;
+							value=4;
 						};
 					};
 				};
@@ -11477,14 +11667,13 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={5515.9434,28.075375,7166.2046};
+				position[]={5515.9429,28.075352,7166.2051};
 			};
 			areaSize[]={100,-1,100};
 			areaIsRectangle=1;
 			flags=1;
 			id=447;
 			type="ModuleCivilianPresence_F";
-			atlOffset=-9.5367432e-006;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -11527,6 +11716,25 @@ class Mission
 				};
 				class Attribute2
 				{
+					property="#onDeleted";
+					expression="_this setVariable [""#onDeleted"",compile _value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="true";
+						};
+					};
+				};
+				class Attribute3
+				{
 					property="#unitCount";
 					expression="_this setVariable [""#unitCount"",_value]";
 					class Value
@@ -11540,11 +11748,11 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=5;
+							value=4;
 						};
 					};
 				};
-				class Attribute3
+				class Attribute4
 				{
 					property="#useAgents";
 					expression="_this setVariable [""#useAgents"",_value]";
@@ -11563,7 +11771,26 @@ class Mission
 						};
 					};
 				};
-				nAttributes=4;
+				class Attribute5
+				{
+					property="#onCreated";
+					expression="_this setVariable [""#onCreated"",compile _value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="true";
+						};
+					};
+				};
+				nAttributes=6;
 			};
 		};
 		class Item170
@@ -12049,8 +12276,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={5746.2163,26.447672,7661.374};
-				angles[]={0.0066682254,0,6.2531958};
+				position[]={5746.2158,26.447695,7661.374};
+				angles[]={0.0066671576,0,6.2532005};
 			};
 			areaSize[]={100,-1,100};
 			areaIsRectangle=1;
@@ -12099,6 +12326,25 @@ class Mission
 				};
 				class Attribute2
 				{
+					property="#onDeleted";
+					expression="_this setVariable [""#onDeleted"",compile _value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="true";
+						};
+					};
+				};
+				class Attribute3
+				{
 					property="#unitCount";
 					expression="_this setVariable [""#unitCount"",_value]";
 					class Value
@@ -12112,11 +12358,11 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=5;
+							value=3;
 						};
 					};
 				};
-				class Attribute3
+				class Attribute4
 				{
 					property="#useAgents";
 					expression="_this setVariable [""#useAgents"",_value]";
@@ -12135,7 +12381,26 @@ class Mission
 						};
 					};
 				};
-				nAttributes=4;
+				class Attribute5
+				{
+					property="#onCreated";
+					expression="_this setVariable [""#onCreated"",compile _value]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="true";
+						};
+					};
+				};
+				nAttributes=6;
 			};
 		};
 		class Item177
