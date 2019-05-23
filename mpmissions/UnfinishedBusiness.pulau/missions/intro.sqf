@@ -179,6 +179,8 @@ if (isServer) then {
 		['t_arrive_to_island', 'FAILED'] call BIS_fnc_taskSetState;
 		['t_rebel_leader', 'FAILED'] call BIS_fnc_taskSetState;
 
+		_markerPos = getPos synd_jeep_01;
+
 		for "_i" from 1 to 3 do {
 			_boom = createVehicle ["Sh_120mm_HE", _markerPos, [], 0, "FLY"];
 			_boom setPos [(_markerPos select 0), (_markerPos select 0), 200];
@@ -244,7 +246,7 @@ if (isServer) then {
 			[_x, 1, selectRandom _dmgType, "bullet"] remoteExec ["ace_medical_fnc_addDamageToUnit"];
 			
 			//parachute
-			_x setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 160)];
+			_x setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 160 + random 150)];
 			[_x, true] remoteExec ["setUnconscious", _x];
 			_x setVariable ["ACE_isUnconscious", true, true];
 			
@@ -293,6 +295,8 @@ if (isServer) then {
 		['t_regroup', "meet"] call BIS_fnc_taskSetType;
 		
 		[] execVM "missions\regroup.sqf";
+		
+		
 		
 		
 		//"test_EmptyObjectForFireBig" createVehicle (_markerPos); 

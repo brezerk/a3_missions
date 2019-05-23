@@ -68,8 +68,16 @@ if (isServer) then {
 	*/
 	Fn_Task_Create_C130J_CrashSite = {
 		params ["_markerPos"];
+		for "_i" from 1 to 3 do {
+			_boom = createVehicle ["Sh_120mm_HE", _markerPos, [], 0, "FLY"];
+			_boom setPos [((getPos _boom select 0) + (round(random 10) - 5)), ((getPos _boom select 1) + (round(random 10) - 5)), 250];
+			_boom setVelocity [0,0,-50];
+			sleep 1;
+		};
+		
 		"Crater" createVehicle (_markerPos); 
 		_obj = "Land_Wreck_Plane_Transport_01_F" createVehicle (_markerPos); 
+		//test_EmptyObjectForSmoke
 		_fire = "test_EmptyObjectForFireBig" createVehicle (_markerPos); 
 		_fire attachTo [_obj, [0, 0, 0]];
 		
