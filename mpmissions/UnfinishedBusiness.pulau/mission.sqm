@@ -84,14 +84,13 @@ addons[]=
 	"ace_medical",
 	"ace_spectator",
 	"A3_Soft_F_Gamma_Van_01",
-	"A3_Soft_F_Gamma_SUV_01",
-	"A3_Modules_F_Effects"
+	"A3_Soft_F_Gamma_SUV_01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=43;
+		items=42;
 		class Item0
 		{
 			className="RHS_US_A2_AirImport";
@@ -384,13 +383,6 @@ class AddonsMetaData
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
-		class Item42
-		{
-			className="A3_Modules_F";
-			name="Arma 3 Alpha - Scripted Modules";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
 	};
 };
 randomSeed=6619403;
@@ -514,7 +506,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=616;
+		items=613;
 		class Item0
 		{
 			dataType="Object";
@@ -40426,292 +40418,13 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={4058.907,2.823132,10369.684};
-			};
-			id=1551;
-			type="ModuleEffectsSmoke_F";
-			atlOffset=-2.3841858e-007;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ModuleEffectsSmoke_F_ParticleLifeTime";
-					expression="_this setVariable ['ParticleLifeTime',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=180;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ModuleEffectsSmoke_F_ParticleLifting";
-					expression="_this setVariable ['ParticleLifting',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ModuleEffectsSmoke_F_ColorAlpha";
-					expression="_this setVariable ['ColorAlpha',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=0.5;
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="ModuleEffectsSmoke_F_ColorBlue";
-					expression="_this setVariable ['ColorBlue',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=0.5;
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="ModuleEffectsSmoke_F_Timeout";
-					expression="_this setVariable ['Timeout',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				class Attribute5
-				{
-					property="ModuleEffectsSmoke_F_Expansion";
-					expression="_this setVariable ['Expansion',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=5;
-						};
-					};
-				};
-				class Attribute6
-				{
-					property="ModuleEffectsSmoke_F_ColorRed";
-					expression="_this setVariable ['ColorRed',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=0.5;
-						};
-					};
-				};
-				class Attribute7
-				{
-					property="ModuleEffectsSmoke_F_ParticleDensity";
-					expression="_this setVariable ['ParticleDensity',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=40;
-						};
-					};
-				};
-				class Attribute8
-				{
-					property="ModuleEffectsSmoke_F_ColorGreen";
-					expression="_this setVariable ['ColorGreen',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=0.5;
-						};
-					};
-				};
-				class Attribute9
-				{
-					property="ModuleEffectsSmoke_F_EffectSize";
-					expression="_this setVariable ['EffectSize',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=5;
-						};
-					};
-				};
-				class Attribute10
-				{
-					property="ModuleEffectsSmoke_F_ParticleSpeed";
-					expression="_this setVariable ['ParticleSpeed',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute11
-				{
-					property="ModuleEffectsSmoke_F_ParticleSize";
-					expression="_this setVariable ['ParticleSize',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=8;
-						};
-					};
-				};
-				class Attribute12
-				{
-					property="ModuleEffectsSmoke_F_WindEffect";
-					expression="_this setVariable ['WindEffect',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				nAttributes=13;
-			};
-		};
-		class Item608
-		{
-			dataType="Marker";
-			position[]={3428.9106,10.593955,9652.1416};
-			name="wp_test01";
-			type="mil_destroy";
-			id=1552;
-		};
-		class Item609
-		{
-			dataType="Marker";
-			position[]={3355.2056,6.7912598,9626.7158};
-			name="wp_test02";
-			type="mil_destroy";
-			id=1553;
-			atlOffset=-0.88678217;
-		};
-		class Item610
-		{
-			dataType="Logic";
-			class PositionInfo
-			{
 				position[]={5776.8833,59.029999,6247.0752};
 			};
 			isPlayable=1;
 			id=1560;
 			type="ace_spectator_virtual";
 		};
-		class Item611
+		class Item608
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -40722,7 +40435,7 @@ class Mission
 			id=1561;
 			type="ace_spectator_virtual";
 		};
-		class Item612
+		class Item609
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -40733,7 +40446,7 @@ class Mission
 			id=1562;
 			type="ace_spectator_virtual";
 		};
-		class Item613
+		class Item610
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -40744,7 +40457,7 @@ class Mission
 			id=1563;
 			type="ace_spectator_virtual";
 		};
-		class Item614
+		class Item611
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -40755,7 +40468,7 @@ class Mission
 			id=1564;
 			type="ace_spectator_virtual";
 		};
-		class Item615
+		class Item612
 		{
 			dataType="Group";
 			side="West";

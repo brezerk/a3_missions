@@ -55,7 +55,7 @@ if (isServer) then {
 	Fn_Task_Create_ArriveToIsland = {
 		{
 			[_x, false] remoteExec ["allowDamage"];
-		} forEach playableUnits;
+		} forEach (playableUnits + switchableUnits);
 		trgJetIsDead = createTrigger ["EmptyDetector", getMarkerPos "wp_air_field_01" ];
 		trgJetIsDead setTriggerArea [0, 0, 0, false];
 		trgJetIsDead setTriggerActivation ["NONE", "PRESENT", false];
@@ -90,6 +90,7 @@ if (isServer) then {
 		] call BIS_fnc_taskCreate;
 		['t_rebel_leader', "kill"] call BIS_fnc_taskSetType;
 	
+		//FIXME: Move to triggers instead
 		sleep 30;
 		
 		["radio_chatter_01"] remoteExec ["playSound"];
@@ -143,6 +144,8 @@ if (isServer) then {
 	};
 	
 	Fn_Task_Create_ArriveToIsland_JetIsDown = {
+		// operate on vehicle crew only
+		_crew = crew us_airplane_01;
 		_free_landing_markers = [
 			'wp_player_spawn_01',
 			'wp_player_spawn_02',
@@ -165,24 +168,32 @@ if (isServer) then {
 			'wp_player_spawn_19',
 			'wp_player_spawn_20'
 		];
-		//sleep 5;
-		[0, "BLACK", 8, 1] remoteExec ["BIS_fnc_fadeEffect", 0];
+		{
+			[0, "BLACK", 8, 1] remoteExec ["BIS_fnc_fadeEffect", _x];
+		} forEach _crew;
 		sleep 3;
 		{
-			doGetOut _x;
-			moveOut _x;
-		} forEach playableUnits;
+			if (isPlayer _x) then {
+				doGetOut _x;
+				moveOut _x;
+			};
+		} forEach _crew;
 		
 		//spawn wreck
 		_markerPos = getMarkerPos (["wp_plain_crash", 11] call BrezBlock_fnc_Get_RND_Index);
 		
 		['t_arrive_to_island', 'FAILED'] call BIS_fnc_taskSetState;
 		['t_rebel_leader', 'FAILED'] call BIS_fnc_taskSetState;
-		
-		sleep 5;
 
 		[_markerPos] call Fn_Task_Create_C130J_CrashSite;
 		[_markerPos] call Fn_Task_Create_ArriveToIsland_SpawnRandomCargo;
+		
+		for "_i" from 1 to 5 do {
+			_markerPos = getMarkerPos (["wp_plain_crash", 11] call BrezBlock_fnc_Get_RND_Index);
+			[_markerPos] call Fn_Task_Create_ArriveToIsland_SpawnRandomCargo;
+		};
+		
+		sleep 5;
 		
 		//patrol by heli
 		
@@ -191,7 +202,7 @@ if (isServer) then {
 		_wp setWaypointSpeed "NORMAL";
 		_wp setWaypointLoiterType "Circle_L";
 		_wp setWaypointLoiterRadius 500;
-		rebel_heli_01 flyInHeight 110;
+		rebel_heli_01 flyInHeight 100;
 		
 		{
 			_x assignAsCargo rebel_jeep_04;
@@ -221,40 +232,34 @@ if (isServer) then {
 		
 		//[group rebel_heli_01, _markerPos, 1000] call CBA_fnc_taskPatrol;
 		
-		for "_i" from 1 to 5 do {
-			_markerPos = getMarkerPos (["wp_plain_crash", 11] call BrezBlock_fnc_Get_RND_Index);
-			[_markerPos] call Fn_Task_Create_ArriveToIsland_SpawnRandomCargo;
-		};
-
-
-		[[], "gear\player.sqf"] remoteExec ["execVM"];
-		{			
-			_marker = selectRandom _free_landing_markers;
-			_free_landing_markers = _free_landing_markers - [_marker];
-			_markerPos = getMarkerPos _marker;
+		{
+			if (isPlayer _x) then {
+				[[], "gear\player.sqf"] remoteExec ["execVM", _x];
 			
-			//do some damage
-			_dmgType = ["leg_l", "leg_r", "hand_r", "hand_l", "head"];
-			[_x, 1, selectRandom _dmgType, "bullet"] remoteExec ["ace_medical_fnc_addDamageToUnit"];
-			
-			//parachute
-			_x setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 160 + random 150)];
-			[_x, true] remoteExec ["setUnconscious", _x];
-			_x setVariable ["ACE_isUnconscious", true, true];
-			
-		} forEach playableUnits;
-		[1, "BLACK", 5, 1] remoteExec ["BIS_fnc_fadeEffect", 0];
+				_marker = selectRandom _free_landing_markers;
+				_free_landing_markers = _free_landing_markers - [_marker];
+				_markerPos = getMarkerPos _marker;
+				
+				//do some damage
+				_dmgType = ["leg_l", "leg_r", "hand_r", "hand_l", "head"];
+				[_x, 1, selectRandom _dmgType, "bullet"] remoteExec ["ace_medical_fnc_addDamageToUnit"];
+				
+				//parachute
+				_x setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 160 + random 100)];
+				[_x, true] remoteExec ["setUnconscious", _x];
+				_x setVariable ["ACE_isUnconscious", true, true];
+				[1, "BLACK", 5, 1] remoteExec ["BIS_fnc_fadeEffect", _x];
+			};
+		} forEach _crew;
 		
 		{deleteVehicle _x} foreach crew us_airplane_01; deleteVehicle us_airplane_01;
 		
+		//let them fall a bit
 		sleep 10;
 		{
 			[_x, false] remoteExec ["setUnconscious", _x];
 			_x setVariable ["ACE_isUnconscious", false, true];
 			[_x, true] remoteExec ["allowDamage"];
-		} forEach playableUnits;
-		
-		{
 			[
 				_x,
 				"t_find_informator",
@@ -267,7 +272,7 @@ if (isServer) then {
 				true
 			] call BIS_fnc_taskCreate;
 			['t_find_informator', "talk"] call BIS_fnc_taskSetType;
-		} forEach playableUnits;
+		} forEach _crew;
 		
 		remoteExec ["Fn_Task_Create_Informator"];
 		
@@ -287,20 +292,5 @@ if (isServer) then {
 		['t_regroup', "meet"] call BIS_fnc_taskSetType;
 		
 		[] execVM "missions\regroup.sqf";
-		
-		
-		
-		
-		//"test_EmptyObjectForFireBig" createVehicle (_markerPos); 
-		/*_fire attachTo [this, [0, 0, 0]];
-		_units = units _us_airplane_02;
-		{
-			_vehicle = assignedVehicle _x;
-			if (!isNull _vehicle) exitWith {
-				_vehicle setDamage 1;
-			};
-		} forEach _units;*/
-
 	};
-
 };
