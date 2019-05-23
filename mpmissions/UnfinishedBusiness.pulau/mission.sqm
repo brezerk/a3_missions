@@ -8,18 +8,18 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1552;
+		nextID=1555;
 	};
 	class MarkerIDProvider
 	{
-		nextID=21;
+		nextID=23;
 	};
 	class Camera
 	{
-		pos[]={4074.8682,43.380116,10339.105};
-		dir[]={-0.18466331,-0.79219079,0.58180249};
-		up[]={-0.2396761,0.61020756,0.75511974};
-		aside[]={0.95321238,8.9721289e-007,0.30255002};
+		pos[]={3412.324,15.165491,9625.9834};
+		dir[]={-0.60403156,-0.79700166,-0.010157485};
+		up[]={-0.79694122,0.60390967,-0.013403912};
+		aside[]={-0.016817462,6.6315988e-007,0.99993676};
 	};
 };
 binarizationWanted=0;
@@ -514,7 +514,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=610;
+		items=612;
 		class Item0
 		{
 			dataType="Object";
@@ -873,14 +873,13 @@ class Mission
 				class Item7
 				{
 					dataType="Waypoint";
-					position[]={5773,58.98,6448.8809};
-					type="Land";
-					script="A3\functions_f\waypoints\fn_wpLand.sqf";
+					position[]={5759.8584,59.020565,6462.1689};
 					class Effects
 					{
 					};
 					showWP="NEVER";
-					id=1512;
+					id=1554;
+					type="Move";
 				};
 			};
 			class Attributes
@@ -39907,6 +39906,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={3405.542,7.400609,9627.7412};
+						angles[]={0,4.5753918,0};
 					};
 					side="West";
 					flags=7;
@@ -40984,6 +40984,23 @@ class Mission
 				};
 				nAttributes=13;
 			};
+		};
+		class Item610
+		{
+			dataType="Marker";
+			position[]={3428.9106,10.593955,9652.1416};
+			name="wp_test01";
+			type="mil_destroy";
+			id=1552;
+		};
+		class Item611
+		{
+			dataType="Marker";
+			position[]={3355.2056,6.7912598,9626.7158};
+			name="wp_test02";
+			type="mil_destroy";
+			id=1553;
+			atlOffset=-0.88678217;
 		};
 	};
 	class Connections

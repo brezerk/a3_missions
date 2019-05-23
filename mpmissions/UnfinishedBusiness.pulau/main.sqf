@@ -90,10 +90,6 @@ if (isServer) then {
 
 	sleep 5;
 	
-	_markerPos = getPos synd_jeep_02;
-	
-	"ModuleEffectsSmoke_F" createUnit [_markerPos,(createGroup [sideLogic,false])];
-	
 	//test_EmptyObjectForSmoke
 	//_fire = "test_EmptyObjectForFireBig" createVehicle (_markerPos); 
 	/*
