@@ -16,27 +16,6 @@
  *                                                                         *
  ***************************************************************************/
 
-waitUntil { !isNull player }; // Wait for player to initialize
+//Remove unit if it was in the assault group
 
-/*
-Local player script
-*/
-private ["_trgKickToSpecator", "_trgLocationInfo01"];
-
-//3 tickets per player
-[player, 1] call BIS_fnc_respawnTickets;
-
-// hide markers
-{if (_x find "wp_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
-
-sleep 1;
-
-// kick player to specator upon death
-_trgKickToSpecator = createTrigger ["EmptyDetector", getMarkerPos 'wp_air_field_01'];
-_trgKickToSpecator setTriggerArea [0, 0, 0, false];
-_trgKickToSpecator setTriggerActivation ["NONE", "PRESENT", false];
-_trgKickToSpecator setTriggerStatements [
-			"([player,nil,true] call BIS_fnc_respawnTickets) <= 0",
-			"[true] call ace_spectator_fnc_setSpectator; [[west], [east,independent,civilian]] call ace_spectator_fnc_updateSides;",
-			""
-];
+assault_group = assault_group - [player];

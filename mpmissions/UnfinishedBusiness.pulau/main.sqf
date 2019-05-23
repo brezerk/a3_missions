@@ -19,6 +19,8 @@
 _westHQ = createCenter west;
 _indepHQ = createCenter independent;
 
+assault_group = [];
+
 [] execVM "missions\crash_site.sqf";
 [] execVM "missions\informator.sqf";
 [] execVM "missions\aa.sqf";
