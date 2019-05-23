@@ -26,6 +26,7 @@ _indepHQ = createCenter independent;
 
 if (isServer) then {
 
+	// Create random waypoints for enemy and civilian vehicles
 	Fn_Task_CreatePatrols = {
 		private ["_cars", "_wp", "_marker", "_wp_array", "_group"];
 		_cars = [
@@ -89,41 +90,6 @@ if (isServer) then {
 	};
 
 	sleep 5;
-	
-	//test_EmptyObjectForSmoke
-	//_fire = "test_EmptyObjectForFireBig" createVehicle (_markerPos); 
-	/*
-	_fire = "ModuleEffectsSmoke_F" createVehicle (_markerPos); 
-	_fire setVariable ["ParticleDensity",40 ,true];
-	_fire setVariable ["ParticleSize", 15,true];
-	_fire setVariable ["EffectSize", 5, true];
-	_fire setVariable ["ParticleLifeTime", 180, true];
-
-
-	//_fire = "test_EmptyObjectForFireBig" createVehicle (_markerPos); 
-	_fire attachTo [synd_jeep_02, [0, 0, 0]];*/
-	/*
-	_logicCenter = createCenter sideLogic; 
-	_logicGroup = createGroup _logicCenter; 
-	_fire = _logicGroup createUnit ["ModuleEffectsFire_F", _markerPos, [], 0, "CAN_COLLIDE"]; 
-	_smoke = _logicGroup createUnit ["ModuleEffectsSmoke_F", _markerPos, [], 0, "CAN_COLLIDE"]; 
-
-	_smoke setVariable ["ParticleDensity", 50, true];
-	_smoke setVariable ["ColorRed", 1, true];
-	_smoke setVariable ["ColorGreen", 1,true]; 
-	_smoke setVariable ["ColorBlue", 1,true]; 
-	_smoke setVariable ["ColorAlpha", 0.04,true];
-	_smoke setVariable ["ParticleLifeTime", 12,true];
-
-	_fire setVariable ["ParticleDensity", 40, true];
-	_fire setVariable ["ColorRed", 0.5, true];
-	_fire setVariable ["ColorGreen", 0.5,true]; 
-	_fire setVariable ["ColorBlue", 0.5,true]; 
-	_fire setVariable ["ParticleLifeTime", 2.5,true];
-
-	_fire attachTo [synd_jeep_02, [0, 0, 3]]; 
-	_smoke attachTo [synd_jeep_02, [0, 0, 4]];*/
-		
 	
 	call Fn_Task_CreatePatrols;
 	call Fn_Task_Create_ArriveToIsland;

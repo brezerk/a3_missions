@@ -68,18 +68,32 @@ if (isServer) then {
 	*/
 	Fn_Task_Create_C130J_CrashSite = {
 		params ["_markerPos"];
-		for "_i" from 1 to 3 do {
+		
+		//do envonmental damage
+		for "_i" from 1 to 5 do {
 			_boom = createVehicle ["Sh_120mm_HE", _markerPos, [], 0, "FLY"];
-			_boom setPos [((getPos _boom select 0) + (round(random 10) - 5)), ((getPos _boom select 1) + (round(random 10) - 5)), 250];
+			_boom setPos [((getPos _boom select 0) + (round(random 25) - 10)), ((getPos _boom select 1) + (round(random 25) - 10)), 250];
 			_boom setVelocity [0,0,-50];
 			sleep 1;
 		};
 		
+		//let is fall
+		sleep 1;
+		
+		//spawn creater and wreck
 		"Crater" createVehicle (_markerPos); 
 		_obj = "Land_Wreck_Plane_Transport_01_F" createVehicle (_markerPos); 
-		//test_EmptyObjectForSmoke
+		//put fire and smoke
 		_fire = "test_EmptyObjectForFireBig" createVehicle (_markerPos); 
 		_fire attachTo [_obj, [0, 0, 0]];
+		
+		/* does not seems to be working now?
+		_fire = "ModuleEffectsSmoke_F" createVehicle (_markerPos); 
+		_fire setVariable ["ParticleDensity",40 ,true];
+		_fire setVariable ["ParticleSize", 15,true];
+		_fire setVariable ["EffectSize", 5, true];
+		_fire setVariable ["ParticleLifeTime", 180, true];
+		*/
 		
 		[_markerPos] remoteExec ["Fn_Task_C130J_CrashSite_Info"];
 	};

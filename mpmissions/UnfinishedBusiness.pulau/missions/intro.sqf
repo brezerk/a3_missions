@@ -178,14 +178,6 @@ if (isServer) then {
 		
 		['t_arrive_to_island', 'FAILED'] call BIS_fnc_taskSetState;
 		['t_rebel_leader', 'FAILED'] call BIS_fnc_taskSetState;
-
-		_markerPos = getPos synd_jeep_01;
-
-		for "_i" from 1 to 3 do {
-			_boom = createVehicle ["Sh_120mm_HE", _markerPos, [], 0, "FLY"];
-			_boom setPos [(_markerPos select 0), (_markerPos select 0), 200];
-			_boom setVelocity [0,0,-50];
-		};
 		
 		sleep 5;
 
