@@ -129,8 +129,8 @@ if (isServer) then {
 	_smoke attachTo [synd_jeep_02, [0, 0, 4]];*/
 		
 	
-	//call Fn_Task_CreatePatrols;
-	//call Fn_Task_Create_ArriveToIsland;
+	call Fn_Task_CreatePatrols;
+	call Fn_Task_Create_ArriveToIsland;
 };
 
 // We need to end game if all players are no longer alive
