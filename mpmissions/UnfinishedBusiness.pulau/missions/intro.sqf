@@ -190,12 +190,6 @@ if (isServer) then {
 		['t_rebel_leader', 'FAILED'] call BIS_fnc_taskSetState;
 
 		[_markerPos] call Fn_Task_Create_C130J_CrashSite;
-		[_markerPos] call Fn_Task_Create_ArriveToIsland_SpawnRandomCargo;
-		
-		for "_i" from 1 to 5 do {
-			_markerPos = getMarkerPos (["wp_plain_crash", 11] call BrezBlock_fnc_Get_RND_Index);
-			[_markerPos] call Fn_Task_Create_ArriveToIsland_SpawnRandomCargo;
-		};
 		
 		sleep 5;
 		
@@ -229,6 +223,15 @@ if (isServer) then {
 		_wp setWaypointType "SENTRY";
 		_wp setWaypointCombatMode "RED";
 		_wp setWaypointBehaviour "STEALTH";
+		
+		[_markerPos] call Fn_Task_Create_ArriveToIsland_SpawnRandomCargo;
+		
+		for "_i" from 1 to 5 do {
+			_markerPos = getMarkerPos (["wp_plain_crash", 11] call BrezBlock_fnc_Get_RND_Index);
+			[_markerPos] call Fn_Task_Create_ArriveToIsland_SpawnRandomCargo;
+		};
+		
+	
 		
 		//_wp setWaypointPosition [getPosASL player, -1];
 		//[_grp, 2] setWaypointLoiterType "CIRCLE";
