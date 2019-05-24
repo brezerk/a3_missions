@@ -137,8 +137,9 @@ if (isServer) then {
 		[_x, us_airplane_01] remoteExec ["assignAsCargo"];
 		[_x, us_airplane_01] remoteExec ["moveInCargo"];
 	} forEach (playableUnits);*/
+	sleep 1;
 	
-	[playableUnits, us_airplane_01] call MRH_fnc_MoveInCargo;
+	//[us_airplane_01, {player moveInCargo _this}] remoteExec ["call", [0,-2] select isDedicated];
 	
 	sleep 5;
 	

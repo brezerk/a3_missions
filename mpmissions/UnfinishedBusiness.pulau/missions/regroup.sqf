@@ -50,10 +50,10 @@ if (isServer) then {
 		_player = _this select 0;
 		_old_unit = _this select 1;
 		
-		["killed handler acticated"] remoteExec ["systemChat"];
+		//["killed handler acticated"] remoteExec ["systemChat"];
 		
 		if (_player in assault_group) then {
-			["ok. kick from group"] remoteExec ["systemChat"];
+			//["ok. kick from group"] remoteExec ["systemChat"];
 			assault_group = assault_group - [_player];
 		};
 		/*
@@ -89,7 +89,7 @@ if (isServer) then {
 				_trgRegroupPoint setPos (getPos _x);
 				{
 					if (_x inArea _trgRegroupPoint) then {
-						["unit in area +1"] remoteExec ["systemChat"];
+						//["unit in area +1"] remoteExec ["systemChat"];
 						_count = _count + 1;
 					};
 				} forEach list _trgRegroupPoint;

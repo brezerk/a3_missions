@@ -29,7 +29,7 @@ player addBackpack "B_Parachute";
 player addWeapon "rhsusf_weap_m1911a1";
 
 //ACEX
-			
+player addHeadgear "rhsusf_lwh_helmet_marpatwd";	
 player addGoggles "rhs_googles_clear";
 			
 player linkItem "ItemMap";

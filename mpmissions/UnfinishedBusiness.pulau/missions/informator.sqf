@@ -58,6 +58,8 @@ if (hasInterface) then {
 	];
 	
 	Fn_Task_Create_Informator_Complete = {
+		PUB_fnc_informatorFound = [player, _this select 0];
+		publicVariableServer "PUB_fnc_informatorFound";
 		['t_find_informator', 'SUCCEEDED'] call BIS_fnc_taskSetState;
 	};
 };
@@ -66,6 +68,16 @@ if (isServer) then {
 
 	//Global task state
 	task_complete_intormator = false;
+
+
+	"PUB_fnc_informatorFound" addPublicVariableEventHandler {(_this select 1) call EventHander_InformatorFound};
+	
+	/*
+	Event Handler for loaded or unloaded box
+	*/
+	EventHander_InformatorFound = {
+		task_complete_intormator = true;
+	};
 
 	/*
 	Select random Informator unit. Disable MOVE and place the trigger
