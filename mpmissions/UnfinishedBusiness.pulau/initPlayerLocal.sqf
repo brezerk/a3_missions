@@ -22,6 +22,12 @@ waitUntil { !isNull player }; // Wait for player to initialize
 Local player script
 */
 
+Fn_Local_FailTasks = {
+	['t_crash_site', 'FAILED'] call BIS_fnc_taskSetState;
+	['t_regroup', 'FAILED'] call BIS_fnc_taskSetState;
+	['t_find_informator', 'FAILED'] call BIS_fnc_taskSetState;
+};
+
 //tickets
 [player, 3] call BIS_fnc_respawnTickets;
 
@@ -33,6 +39,8 @@ sleep 5;
 
 [ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_00', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;
 
+
+[[west], [east,independent,civilian]] call ace_spectator_fnc_updateSides;
 /*
 // kick player to specator upon death
 //private ["_trgKickToSpecator"];

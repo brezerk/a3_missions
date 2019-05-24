@@ -28,6 +28,44 @@ assault_group = [];
 
 if (isServer) then {
 
+
+	//eg [allplayers,plane] call MRH_fnc_MoveInCargo;
+	MRH_fnc_MoveInCargo = {
+
+		Params ["_groupOfplayers", "_vehicle"];
+		{	
+			//this scope will be remote executed for all given players
+			[[_vehicle,_x],{	
+				Params ["_vehicle","_entityToMove"];
+				if (isPlayer _entityToMove) then {_entityToMove = player};//might not be necessary
+				//innermost scope create trigger localy
+				//step 0 generate a random contion variable
+				
+				
+				//step 1 pass the variables to the player
+				_trg = createTrigger ["EmptyDetector", [0,0,0],false];
+				
+				_trg setVariable ["MRH_MoveInCargoVeh",_vehicle];
+				_trg setVariable ["MRH_MoveInCargoEntity",_entityToMove];
+				//step 2 create the trigger, get the variables from player
+					
+					_trg setTriggerActivation ["NONE", "PRESENT", false];
+					_trg triggerAttachVehicle [player];
+					_trg setTriggerStatements ["true", 
+					"
+					
+					_veh = thisTrigger getVariable 'MRH_MoveInCargoVeh';
+					_entityToMove = thisTrigger getVariable 'MRH_MoveInCargoEntity';
+					_entityToMove moveInCargo _veh;
+					deleteVehicle thisTrigger;
+
+					"
+					, ""];
+				
+			}] RemoteExec ["Call",_x,true];
+		} forEach _groupOfplayers;
+	};
+
 	// Create random waypoints for enemy and civilian vehicles
 	Fn_Task_CreatePatrols = {
 		private ["_cars", "_wp", "_marker", "_wp_array", "_group"];
@@ -90,10 +128,20 @@ if (isServer) then {
 			"EveryoneWon" call BIS_fnc_endMissionServer;
 		};
 	};
-
-	sleep 5;
+	
 	
 	call Fn_Task_CreatePatrols;
+	/*
+	{
+		waitUntil { isPlayer _x };
+		[_x, us_airplane_01] remoteExec ["assignAsCargo"];
+		[_x, us_airplane_01] remoteExec ["moveInCargo"];
+	} forEach (playableUnits);*/
+	
+	[playableUnits, us_airplane_01] call MRH_fnc_MoveInCargo;
+	
+	sleep 5;
+	
 	call Fn_Task_Create_ArriveToIsland;
 };
 

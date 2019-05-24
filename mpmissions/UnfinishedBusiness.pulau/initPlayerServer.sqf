@@ -16,9 +16,11 @@
  *                                                                         *
  ***************************************************************************/
 
+/*
 waitUntil { !isNull player }; // Wait for player to initialize
 
 if (alive us_airplane_01) then {
-	player assignAsCargo us_airplane_01;
-	player moveInCargo us_airplane_01;
+	[player, us_airplane_01] remoteExec ["assignAsCargo"];
+	[player, us_airplane_01] remoteExec ["moveInCargo"];
 };
+*/

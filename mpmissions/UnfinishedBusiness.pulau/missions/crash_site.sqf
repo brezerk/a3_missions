@@ -25,20 +25,7 @@ Fn_Task_C130J_CrashSite_Info = {
 	if (!isDedicated) then {
 		params['_markerPos'];
 		private ["_trg"];
-		
-		[
-			player,
-			"t_crash_site",
-			[localize "TASK_04_DESC",
-			localize "TASK_04_TITLE",
-			localize "TASK_ORIG_01"],
-			objNull,
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_crash_site', "unknown"] call BIS_fnc_taskSetType;
-		
+				
 		_trg = createTrigger ["EmptyDetector", _markerPos];
 		_trg setTriggerArea [50, 50, 0, false];
 		_trg setTriggerActivation ["ANYPLAYER", "PRESENT", true];

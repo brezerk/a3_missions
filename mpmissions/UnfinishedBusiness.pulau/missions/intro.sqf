@@ -54,8 +54,10 @@ if (isServer) then {
 
 	Fn_Task_Create_ArriveToIsland = {
 		{
+			//_x assignAsCargo us_airplane_01;
+			//_x moveInCargo us_airplane_01;
 			[_x, false] remoteExec ["allowDamage"];
-		} forEach (playableUnits + switchableUnits);
+		} forEach (playableUnits);
 		trgJetIsDead = createTrigger ["EmptyDetector", getMarkerPos "wp_air_field_01" ];
 		trgJetIsDead setTriggerArea [0, 0, 0, false];
 		trgJetIsDead setTriggerActivation ["NONE", "PRESENT", false];
@@ -256,6 +258,8 @@ if (isServer) then {
 		
 		//let them fall a bit
 		sleep 10;
+		
+		//create tasks assigned to assault_group
 		{
 			[_x, false] remoteExec ["setUnconscious", _x];
 			_x setVariable ["ACE_isUnconscious", false, true];
@@ -272,26 +276,46 @@ if (isServer) then {
 				true
 			] call BIS_fnc_taskCreate;
 			['t_find_informator', "talk"] call BIS_fnc_taskSetType;
+			[
+				_x,
+				"t_regroup",
+				[localize "TASK_03_DESC",
+				localize "TASK_03_TITLE",
+				localize "TASK_ORIG_01"],
+				objNull,
+				"CREATED",
+				0,
+				true
+			] call BIS_fnc_taskCreate;
+			['t_regroup', "meet"] call BIS_fnc_taskSetType;
+			[
+				_x,
+				"t_crash_site",
+				[localize "TASK_04_DESC",
+				localize "TASK_04_TITLE",
+				localize "TASK_ORIG_01"],
+				objNull,
+				"CREATED",
+				0,
+				true
+			] call BIS_fnc_taskCreate;
+			['t_crash_site', "unknown"] call BIS_fnc_taskSetType;
 		} forEach assault_group;
 		
 		remoteExec ["Fn_Task_Create_Informator"];
 		
 		sleep 5;
 		
-		[
-			west,
-			"t_regroup",
-			[localize "TASK_03_DESC",
-			localize "TASK_03_TITLE",
-			localize "TASK_ORIG_01"],
-			objNull,
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_regroup', "meet"] call BIS_fnc_taskSetType;
-		
 		[] execVM "missions\regroup.sqf";
 		[] execVM "missions\assoult_group_is_dead.sqf";
+		
+		trgRegroupIsDone = createTrigger ["EmptyDetector", getMarkerPos 'wp_air_field_01'];
+		trgRegroupIsDone setTriggerArea [0, 0, 0, false];
+		trgRegroupIsDone setTriggerActivation ["NONE", "PRESENT", false];
+		trgRegroupIsDone setTriggerStatements [
+				"task_complete_intormator && task_complete_regroup",
+				"call Fn_Task_Create_AA; call Fn_Task_Create_KillLeader;",
+				""
+		];
 	};
 };

@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1579;
+		nextID=1610;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4032.0068,317.35217,10308.503};
-		dir[]={-0.40208882,-0.76180255,-0.50805694};
-		up[]={-0.47276548,0.64779842,-0.59736025};
-		aside[]={-0.78419387,-1.3393583e-006,0.62063098};
+		pos[]={7927.3291,174.54869,1102.0778};
+		dir[]={0.15175004,-0.95377749,0.25981528};
+		up[]={0.48100349,0.30066627,0.82353979};
+		aside[]={0.86358482,1.9753352e-006,-0.50439835};
 	};
 };
 binarizationWanted=0;
@@ -84,13 +84,16 @@ addons[]=
 	"ace_medical",
 	"ace_spectator",
 	"A3_Soft_F_Gamma_Van_01",
-	"A3_Soft_F_Gamma_SUV_01"
+	"A3_Soft_F_Gamma_SUV_01",
+	"rhsusf_c_markvsoc",
+	"A3_Boat_F_Boat_Transport_01",
+	"A3_Boat_F_Exp_Boat_Transport_01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=42;
+		items=45;
 		class Item0
 		{
 			className="RHS_US_A2_AirImport";
@@ -115,7 +118,7 @@ class AddonsMetaData
 		{
 			className="ace_map";
 			name="ACE3 - Map";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item4
@@ -134,8 +137,8 @@ class AddonsMetaData
 		class Item6
 		{
 			className="cba_modules";
-			name="Community Base Addons - Modules";
-			author="CBA Team";
+			name="Community Base Addons - Компонент Модулей";
+			author="Команда CBA";
 			url="https://www.github.com/CBATeam/CBA_A3";
 		};
 		class Item7
@@ -240,21 +243,21 @@ class AddonsMetaData
 		{
 			className="acex_field_rations";
 			name="ACEX - Field Rations";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item22
 		{
 			className="ace_cargo";
 			name="ACE3 - Cargo";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item23
 		{
 			className="ace_dragging";
 			name="ACE3 - Dragging";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item24
@@ -373,15 +376,35 @@ class AddonsMetaData
 		{
 			className="ace_medical";
 			name="ACE3 - Medical";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item41
 		{
 			className="ace_spectator";
 			name="ACE3 - Spectator";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
+		};
+		class Item42
+		{
+			className="rhsusf_c_markvsoc";
+			name="Mark V SOC";
+			url="http://www.rhsmods.org/";
+		};
+		class Item43
+		{
+			className="A3_Boat_F";
+			name="Arma 3 Alpha - Boats and Submersibles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item44
+		{
+			className="A3_Boat_F_Exp";
+			name="Arma 3 Apex - Boats and Submersibles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
 		};
 	};
 };
@@ -506,14 +529,14 @@ class Mission
 	};
 	class Entities
 	{
-		items=613;
+		items=616;
 		class Item0
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={12212.283,984.59113,12219.368};
-				angles[]={0,3.98984,0};
+				position[]={8044.9058,984.57935,12133.741};
+				angles[]={0,4.4872618,0};
 			};
 			side="West";
 			flags=2;
@@ -526,7 +549,7 @@ class Mission
 			};
 			id=14;
 			type="RHS_C130J";
-			atlOffset=1005.862;
+			atlOffset=1001.692;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -789,8 +812,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={12212.288,984.45618,12219.515};
-						angles[]={0,3.98984,0};
+						position[]={8044.9106,984.4444,12133.888};
+						angles[]={0,4.4872618,0};
 					};
 					side="West";
 					flags=2;
@@ -800,15 +823,15 @@ class Mission
 					};
 					id=15;
 					type="rhsusf_airforce_pilot";
-					atlOffset=1005.862;
+					atlOffset=1001.6891;
 				};
 				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={12212.288,984.45618,12219.515};
-						angles[]={0,3.98984,0};
+						position[]={8044.9106,984.4444,12133.888};
+						angles[]={0,4.4872618,0};
 					};
 					side="West";
 					class Attributes
@@ -816,15 +839,15 @@ class Mission
 					};
 					id=16;
 					type="rhsusf_airforce_pilot";
-					atlOffset=1005.862;
+					atlOffset=1001.6891;
 				};
 				class Item2
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={12212.288,984.45618,12219.515};
-						angles[]={0,3.98984,0};
+						position[]={8044.9106,984.4444,12133.888};
+						angles[]={0,4.4872618,0};
 					};
 					side="West";
 					flags=1;
@@ -833,7 +856,7 @@ class Mission
 					};
 					id=1431;
 					type="rhsusf_airforce_pilot";
-					atlOffset=1005.862;
+					atlOffset=1001.6891;
 				};
 				class Item3
 				{
@@ -941,7 +964,7 @@ class Mission
 				};
 			};
 			id=107;
-			atlOffset=1005.862;
+			atlOffset=1001.692;
 		};
 		class Item25
 		{
@@ -38194,7 +38217,7 @@ class Mission
 		class Item556
 		{
 			dataType="Marker";
-			position[]={2121.2998,1.8206335,8674.1709};
+			position[]={7931.2339,29.064631,1099.7136};
 			name="respawn_west";
 			type="mil_objective";
 			id=1441;
@@ -40480,8 +40503,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2121.0522,1.6709201,8675.9541};
-						angles[]={0,1.3991556,0};
+						position[]={7922.6563,32.064327,1098.2577};
+						angles[]={0,1.9992139,0};
 					};
 					side="West";
 					flags=7;
@@ -40490,7 +40513,7 @@ class Mission
 						isPlayer=1;
 						isPlayable=1;
 					};
-					id=1568;
+					id=1597;
 					type="rhsusf_usmc_marpat_wd_squadleader";
 				};
 				class Item1
@@ -40498,8 +40521,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2121.3215,1.7905771,8674.3008};
-						angles[]={0,1.3821718,0};
+						position[]={7923.7456,32.023376,1094.1477};
+						angles[]={0,0.56522381,0};
 					};
 					side="West";
 					flags=5;
@@ -40507,7 +40530,7 @@ class Mission
 					{
 						isPlayable=1;
 					};
-					id=1569;
+					id=1598;
 					type="rhsusf_usmc_marpat_wd_rifleman_light";
 				};
 				class Item2
@@ -40515,8 +40538,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2121.6292,1.8765609,8672.7236};
-						angles[]={0,1.3520942,0};
+						position[]={7925.106,31.902611,1093.2925};
+						angles[]={0,0.53514624,0};
 					};
 					side="West";
 					flags=5;
@@ -40524,16 +40547,17 @@ class Mission
 					{
 						isPlayable=1;
 					};
-					id=1570;
+					id=1599;
 					type="rhsusf_usmc_marpat_wd_machinegunner";
+					atlOffset=3.8146973e-006;
 				};
 				class Item3
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2122.0522,1.9293925,8670.9541};
-						angles[]={0,1.3461151,0};
+						position[]={7926.6855,31.938623,1092.3896};
+						angles[]={0,0.52916718,0};
 					};
 					side="West";
 					flags=5;
@@ -40541,7 +40565,7 @@ class Mission
 					{
 						isPlayable=1;
 					};
-					id=1571;
+					id=1600;
 					type="rhsusf_usmc_marpat_wd_machinegunner_ass";
 				};
 				class Item4
@@ -40549,8 +40573,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2120.8218,1.5660496,8677.7227};
-						angles[]={0,1.4232827,0};
+						position[]={7923.4648,31.659245,1099.847};
+						angles[]={0,2.0233412,0};
 					};
 					side="West";
 					flags=5;
@@ -40558,7 +40582,7 @@ class Mission
 					{
 						isPlayable=1;
 					};
-					id=1572;
+					id=1601;
 					type="rhsusf_usmc_marpat_wd_grenadier";
 				};
 				class Item5
@@ -40566,8 +40590,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2120.5908,1.4838668,8679.5303};
-						angles[]={0,1.4647665,0};
+						position[]={7924.2949,31.087648,1101.4695};
+						angles[]={0,2.0648248,0};
 					};
 					side="West";
 					flags=5;
@@ -40575,7 +40599,7 @@ class Mission
 					{
 						isPlayable=1;
 					};
-					id=1573;
+					id=1602;
 					type="rhsusf_usmc_marpat_wd_engineer";
 				};
 				class Item6
@@ -40583,8 +40607,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2120.3215,1.4909756,8681.5303};
-						angles[]={0,1.4191821,0};
+						position[]={7925.2021,30.27463,1103.2719};
+						angles[]={0,2.0192404,0};
 					};
 					side="West";
 					flags=5;
@@ -40592,7 +40616,7 @@ class Mission
 					{
 						isPlayable=1;
 					};
-					id=1574;
+					id=1603;
 					type="rhsusf_usmc_marpat_wd_rifleman_m590";
 				};
 				class Item7
@@ -40600,8 +40624,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2122.5137,1.9748783,8669.2236};
-						angles[]={0,1.2159477,0};
+						position[]={7929.5723,31.583115,1094.1686};
+						angles[]={0,5.7030287,0};
 					};
 					side="West";
 					flags=5;
@@ -40609,7 +40633,7 @@ class Mission
 					{
 						isPlayable=1;
 					};
-					id=1576;
+					id=1604;
 					type="rhsusf_usmc_marpat_wd_marksman";
 				};
 				class Item8
@@ -40617,8 +40641,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2122.8982,2.0640383,8667.5313};
-						angles[]={0,1.3398888,0};
+						position[]={7931.1357,30.920164,1094.921};
+						angles[]={0,5.8269701,0};
 					};
 					side="West";
 					flags=5;
@@ -40626,7 +40650,7 @@ class Mission
 					{
 						isPlayable=1;
 					};
-					id=1577;
+					id=1605;
 					type="rhsusf_usmc_marpat_wd_javelin";
 				};
 				class Item9
@@ -40634,8 +40658,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2123.6292,2.0303857,8665.7236};
-						angles[]={0,1.3323791,0};
+						position[]={7932.7339,30.434124,1096.0377};
+						angles[]={0,5.8194604,0};
 					};
 					side="West";
 					flags=5;
@@ -40643,14 +40667,111 @@ class Mission
 					{
 						isPlayable=1;
 					};
-					id=1578;
+					id=1606;
 					type="rhsusf_usmc_marpat_wd_javelin_assistant";
 				};
 			};
 			class Attributes
 			{
 			};
-			id=1567;
+			id=1596;
+		};
+		class Item613
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7954.5469,2.0103495,1166.74};
+				angles[]={0,6.1865292,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				lock="LOCKED";
+			};
+			id=1607;
+			type="rhsusf_mkvsoc";
+			atlOffset=7.388001;
+		};
+		class Item614
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7945.5469,0.94530439,1167.0861};
+				angles[]={0,1.4434921,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				lock="LOCKED";
+			};
+			id=1608;
+			type="B_Boat_Transport_01_F";
+			atlOffset=10.255;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[2]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item615
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={7976.0962,1.2437921,1156.994};
+				angles[]={0,1.4992902,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				lock="LOCKED";
+			};
+			id=1609;
+			type="B_T_Boat_Transport_01_F";
+			atlOffset=10.319;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[2]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 	class Connections
