@@ -54,18 +54,14 @@ if (isServer) then {
 		Usage: call Fn_Task_Create_HelicopterCrashSite
 	*/
 	Fn_Task_Create_C130J_CrashSite = {
-		params ["_markerPos"];
+		params ["_markerPos", "_boom"];
 		
 		//do envonmental damage
 		for "_i" from 1 to 5 do {
 			_boom = createVehicle ["Sh_120mm_HE", _markerPos, [], 0, "FLY"];
 			_boom setPos [((getPos _boom select 0) + (round(random 25) - 10)), ((getPos _boom select 1) + (round(random 25) - 10)), 250];
 			_boom setVelocity [0,0,-50];
-			sleep 1;
 		};
-		
-		//let is fall
-		sleep 1;
 		
 		//spawn creater and wreck
 		"Crater" createVehicle (_markerPos); 
@@ -83,5 +79,51 @@ if (isServer) then {
 		*/
 		
 		[_markerPos] remoteExec ["Fn_Task_C130J_CrashSite_Info"];
+	};
+	
+	
+	/*
+	Spawn cargo crate randomly. Remove all predefined items and populate with a desired ones;
+		Arguments: [spawn marker]
+		Usage: [{SpawnMarker}]] call Fn_Task_Create_ArriveToIsland_SpawnRandomCargo;
+		Return: create object
+	*/
+	Fn_Task_Create_C130J_SpawnRandomCargo = {
+		params ["_markerPos"];
+		private ["_obj"];
+		
+		_obj = "B_supplyCrate_F" createVehicle ([((_markerPos select 0) + (round(random 25) - 10)), ((_markerPos select 1) + (round(random 25) - 10)), (_markerPos select 2)]);
+		
+		clearWeaponCargoGlobal _obj;
+		clearMagazineCargoGlobal _obj;
+		clearItemCargoGlobal _obj;
+		clearBackpackCargoGlobal _obj;
+			
+		_obj addWeaponCargoGlobal ["rhsusf_weap_m1911a1", 3];
+		_obj addWeaponCargoGlobal ["Binocular", 3];
+		_obj addWeaponCargoGlobal ["rhs_weap_m4a1_carryhandle", 2];
+		_obj addMagazineCargoGlobal ["rhsusf_mag_7x45acp_MHP", 5];
+		_obj addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855_Stanag", 8];
+		_obj addItemCargoGlobal ["ACE_EarPlugs", 5];
+		_obj addItemCargoGlobal ["ItemCompass", 4];
+		_obj addItemCargoGlobal ["ACE_fieldDressing", 20];
+		_obj addItemCargoGlobal ["ACE_morphine", 10];
+		_obj addItemCargoGlobal ["ACE_epinephrine", 6];
+		_obj addItemCargoGlobal ["ACE_bloodIV", 20];
+		_obj addBackpackCargoGlobal ["B_Kitbag_tan", 5];
+			
+		if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
+				_obj addItemCargoGlobal ["ACRE_PRC148", 2];
+				_obj addItemCargoGlobal ["ACRE_SEM52SL", 6];
+			} else {
+				if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
+					_obj addItemCargoGlobal ["tf_anprc148jem", 2];
+					_obj addItemCargoGlobal ["tf_anprc152", 6];
+				} else {
+					comment "Fallback to native arma3 radio";
+					_obj addItemCargoGlobal ["ItemRadio", 6];
+				};
+		};
+		_obj;
 	};
 };

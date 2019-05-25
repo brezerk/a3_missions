@@ -26,7 +26,7 @@ class Header
 };
 
 author			= "brezerk@brezblock.org.ua";
-OnLoadName		= "Unfinished Business v0.1.6";
+OnLoadName		= "Unfinished Business v0.2.7";
 //OnLoadMission	= $STR_ONLOAD_INFO_01;
 //briefingName    = $STR_ONLOAD_INFO_02;
 // FIXME: https://feedback.bistudio.com/T67181
@@ -64,6 +64,20 @@ cba_settings_hasSettingsFile = 1;
 class CfgSounds
 {
 	sounds[] = {};
+	class radio_chatter_00
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "radio_chatter_00";
+
+		// filename, volume, pitch, distance (optional)
+		sound[] = {};
+
+		// subtitle delay in seconds, subtitle text
+		titles[] = {
+			0, $STR_RADIO_CALL_01,
+			6, $STR_RADIO_CALL_02
+		};
+	};
 	class radio_chatter_01
 	{
 		// how the sound is referred to in the editor (e.g. trigger effects)
@@ -74,9 +88,9 @@ class CfgSounds
 
 		// subtitle delay in seconds, subtitle text
 		titles[] = {
-			0, $STR_RADIO_CALL_01,
-			6, $STR_RADIO_CALL_02,
-			12, $STR_RADIO_CALL_03
+			0, $STR_RADIO_CALL_03,
+			6, $STR_RADIO_CALL_04,
+			12, $STR_RADIO_CALL_05
 		};
 	};
 };

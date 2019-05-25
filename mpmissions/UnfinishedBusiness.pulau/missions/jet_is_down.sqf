@@ -50,12 +50,11 @@ if (isServer) then {
 			moveOut _x;
 		} forEach assault_group;
 		
+		['t_arrive_to_island', 'FAILED'] call BIS_fnc_taskSetState;
+		
 		//spawn wreck
 		_markerPos = getMarkerPos (["wp_plain_crash", 11] call BrezBlock_fnc_Get_RND_Index);
-		
-		['t_arrive_to_island', 'FAILED'] call BIS_fnc_taskSetState;
-
-		//[_markerPos] call Fn_Task_Create_C130J_CrashSite;
+		[_markerPos] call Fn_Task_Create_C130J_CrashSite;
 		
 		sleep 5;
 		
@@ -90,20 +89,12 @@ if (isServer) then {
 		_wp setWaypointCombatMode "RED";
 		_wp setWaypointBehaviour "STEALTH";
 		
-		//[_markerPos] call Fn_Task_Create_ArriveToIsland_SpawnRandomCargo;
-		//
-		//for "_i" from 1 to 5 do {
-		//	_markerPos = getMarkerPos (["wp_plain_crash", 11] call BrezBlock_fnc_Get_RND_Index);
-		//	[_markerPos] call Fn_Task_Create_ArriveToIsland_SpawnRandomCargo;
-		//};
+		[_markerPos] call Fn_Task_Create_C130J_SpawnRandomCargo;
 		
-	
-		
-		//_wp setWaypointPosition [getPosASL player, -1];
-		//[_grp, 2] setWaypointLoiterType "CIRCLE";
-		//[_grp, 2] setWaypointLoiterRadius 200;
-		
-		//[group rebel_heli_01, _markerPos, 1000] call CBA_fnc_taskPatrol;
+		for "_i" from 1 to 5 do {
+			_markerPos = getMarkerPos (["wp_plain_crash", 11] call BrezBlock_fnc_Get_RND_Index);
+			[_markerPos] call Fn_Task_Create_C130J_SpawnRandomCargo;
+		};
 		
 		{
 			[[], "gear\player.sqf"] remoteExec ["execVM", _x];

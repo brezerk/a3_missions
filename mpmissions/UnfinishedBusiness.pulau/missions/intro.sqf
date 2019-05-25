@@ -62,26 +62,23 @@ if (isServer) then {
 
 	Fn_MissionIntro_Evaluate = {
 		private ["_all_on_board"];
-		
 		_all_on_board = true;
 		{
 			if (objectParent _x != us_airplane_01) then {
 				_all_on_board = false;
-				systemChat "No on board...!";
 			};
 		} forEach (playableUnits + switchableUnits);
 		_all_on_board;
 	}; // Fn_Task_InjuredEvacuation_Evaluate
 	
 	Fn_MissionIntro_SendAirplane = {
-		systemChat "OK. All abourd!";
 		private ['_wp', '_group', '_markerPos'];
 		us_airplane_01 lock 2;
 		{
 			if (isPlayer _x) then {
 				assault_group = assault_group + [_x];
+				[_x, false] remoteExec ["allowDamage"];
 			};
-			[_x, false] remoteExec ["allowDamage"];
 		} forEach crew us_airplane_01;
 		_group = group driver us_airplane_01;
 		{
@@ -92,11 +89,10 @@ if (isServer) then {
 			_wp setWaypointFormation "NO CHANGE";
 			_wp setWaypointType "MOVE";
 		} forEach ['wp_air_field_01'];
-		us_airplane_01 flyInHeight 1000;
+		us_airplane_01 flyInHeight 2000;
 		(driver us_airplane_01) setBehaviour "Careless";
 		(driver us_airplane_01) setCombatMode "Blue";
 		execVM "missions\fast_travel.sqf";
 	}; // Fn_MissionIntro_SendAirplane
-	
 	
 };

@@ -231,14 +231,6 @@ if (isServer) then {
 			[_markerPos] call Fn_Task_Create_ArriveToIsland_SpawnRandomCargo;
 		};
 		
-	
-		
-		//_wp setWaypointPosition [getPosASL player, -1];
-		//[_grp, 2] setWaypointLoiterType "CIRCLE";
-		//[_grp, 2] setWaypointLoiterRadius 200;
-		
-		//[group rebel_heli_01, _markerPos, 1000] call CBA_fnc_taskPatrol;
-		
 		{
 			[[], "gear\player.sqf"] remoteExec ["execVM", _x];
 			

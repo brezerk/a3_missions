@@ -219,20 +219,31 @@
 				<Russian>Поселення Kambani.</Russian>
 			</Key>
 			<Key ID="STR_RADIO_CALL_01">
+				<Original>Welcome on board to AF101. Buckle up,</Original>
+				<English>Welcome on board to AF101. Buckle up,</English>
+				<Russian>Вітаємо на борту AF101. Пристебніть ремені,</Russian>
+			</Key>
+			<Key ID="STR_RADIO_CALL_02">
+				<Original>Our flight will take an hour. Take a nap.</Original>
+				<English>Our flight will take an hour. Take a nap.</English>
+				<Russian>Наш політ займе годину. Подрімайте.</Russian>
+			</Key>
+			<Key ID="STR_RADIO_CALL_03">
 				<Original>AF101 to Gurun airfield.</Original>
 				<English>AF101 to Gurun airfield.</English>
 				<Russian>AF101 до Аеродром Gurun.</Russian>
 			</Key>
-			<Key ID="STR_RADIO_CALL_02">
+			<Key ID="STR_RADIO_CALL_04">
 				<Original>We are inbound and ready for landing. How copy?</Original>
 				<English>We are inbound and ready for landing. How copy?</English>
-				<Russian>Ми вже прибули і готові до посадки. Як прийняли?</Russian>
+				<Russian>Ми вже прибули і готові до приземлення. Як прийняли?</Russian>
 			</Key>
-			<Key ID="STR_RADIO_CALL_03">
+			<Key ID="STR_RADIO_CALL_05">
 				<Original>We are detecting highly active radar source. How copy?</Original>
 				<English>We are detecting highly active radar source. How copy?</English>
 				<Russian>Ми спостерігаємо високу радіолокаційну активність. Як прийняли?</Russian>
 			</Key>
+			
 			<Key ID="STR_LOCKED_INFO_01">
 				<Original>The game is locked. Try again later.</Original>
 				<English>The game is locked. Try again later.</English>

@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=1632;
+		nextID=1633;
 	};
 	class MarkerIDProvider
 	{
@@ -542,7 +542,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=619;
+		items=620;
 		class Item0
 		{
 			dataType="Object";
@@ -40929,6 +40929,18 @@ class Mission
 				};
 				nAttributes=3;
 			};
+		};
+		class Item619
+		{
+			dataType="Trigger";
+			position[]={1186.5151,12.174688,3695.2632};
+			class Attributes
+			{
+				sizeA=0;
+				sizeB=0;
+			};
+			id=1632;
+			type="EmptyDetector";
 		};
 	};
 	class Connections

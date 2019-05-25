@@ -17,17 +17,21 @@
  ***************************************************************************/
 
 if (isServer) then {
-	sleep 30;
+	sleep 35;
 	// operate on vehicle crew only
+	["radio_chatter_00"] remoteExec ["playSound"];
+	["rhs_usa_land_rc_2"] remoteExec ["playSound"];
+	sleep 5;
 	{
 		[0, "BLACK", 5, 1] remoteExec ["BIS_fnc_fadeEffect", _x];
 	} forEach assault_group;
 	_markerPos = getMarkerPos 'wp_waypoint_01';
-	us_airplane_01 setPos [(_markerPos select 0), (_markerPos select 1), 1000];
+	us_airplane_01 setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 3000)];
 	us_airplane_01 setDir (markerDir 'wp_waypoint_01');
+	us_airplane_01 flyInHeight 3000;
 	sleep 10;
 	["radio_chatter_01"] remoteExec ["playSound"];
-	["rhs_usa_land_rc_25"] remoteExec ["playSound"];
+	["rhs_usa_land_rc_5"] remoteExec ["playSound"];
 	{
 		[1, "BLACK", 5, 1] remoteExec ["BIS_fnc_fadeEffect", _x];
 	} forEach assault_group;
