@@ -26,6 +26,8 @@ if (isServer) then {
 	us_airplane_01 setPos [(_markerPos select 0), (_markerPos select 1), 1000];
 	us_airplane_01 setDir (markerDir 'wp_waypoint_01');
 	sleep 10;
+	["radio_chatter_01"] remoteExec ["playSound"];
+	["rhs_usa_land_rc_25"] remoteExec ["playSound"];
 	{
 		[1, "BLACK", 5, 1] remoteExec ["BIS_fnc_fadeEffect", _x];
 	} forEach assault_group;

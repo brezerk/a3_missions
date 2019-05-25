@@ -35,7 +35,15 @@ if (isServer) then {
 		trg setTriggerActivation ["NONE", "PRESENT", false];
 		trg setTriggerStatements [
 			"call Fn_MissionIntro_Evaluate;",
-			"call Fn_MissionIntro_SendHelicopter; deleteVehicle trg;",
+			"call Fn_MissionIntro_SendAirplane; deleteVehicle trg;",
+			""
+		];
+		trgJetIsDead = createTrigger ["EmptyDetector", getMarkerPos "wp_air_field_01" ];
+		trgJetIsDead setTriggerArea [0, 0, 0, false];
+		trgJetIsDead setTriggerActivation ["NONE", "PRESENT", false];
+		trgJetIsDead setTriggerStatements [
+			"!canMove us_airplane_01 || !alive us_airplane_01",
+			"execVM 'missions\jet_is_down.sqf'; deleteVehicle trgJetIsDead;",
 			""
 		];
 		[
@@ -65,7 +73,7 @@ if (isServer) then {
 		_all_on_board;
 	}; // Fn_Task_InjuredEvacuation_Evaluate
 	
-	Fn_MissionIntro_SendHelicopter = {
+	Fn_MissionIntro_SendAirplane = {
 		systemChat "OK. All abourd!";
 		private ['_wp', '_group', '_markerPos'];
 		us_airplane_01 lock 2;
@@ -73,6 +81,7 @@ if (isServer) then {
 			if (isPlayer _x) then {
 				assault_group = assault_group + [_x];
 			};
+			[_x, false] remoteExec ["allowDamage"];
 		} forEach crew us_airplane_01;
 		_group = group driver us_airplane_01;
 		{
@@ -87,5 +96,7 @@ if (isServer) then {
 		(driver us_airplane_01) setBehaviour "Careless";
 		(driver us_airplane_01) setCombatMode "Blue";
 		execVM "missions\fast_travel.sqf";
-	}; // Fn_MissionIntro_SendHelicopter
+	}; // Fn_MissionIntro_SendAirplane
+	
+	
 };
