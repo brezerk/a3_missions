@@ -549,7 +549,7 @@ class Mission
 			};
 			id=14;
 			type="RHS_C130J";
-			atlOffset=1005.1934;
+			atlOffset=1005.2003;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -964,7 +964,7 @@ class Mission
 				};
 			};
 			id=107;
-			atlOffset=1005.1934;
+			atlOffset=1005.2003;
 		};
 		class Item25
 		{
@@ -40805,7 +40805,7 @@ class Mission
 				};
 			};
 			id=1596;
-			atlOffset=1005.1934;
+			atlOffset=1005.2003;
 		};
 		class Item613
 		{
