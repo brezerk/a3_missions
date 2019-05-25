@@ -44,7 +44,7 @@ if (isServer) then {
 		{
 			[0, "BLACK", 8, 1] remoteExec ["BIS_fnc_fadeEffect", _x];
 		} forEach assault_group;
-		sleep 3;
+		//sleep 3;
 		{
 			doGetOut _x;
 			moveOut _x;
@@ -56,7 +56,7 @@ if (isServer) then {
 		_markerPos = getMarkerPos (["wp_plain_crash", 11] call BrezBlock_fnc_Get_RND_Index);
 		[_markerPos] call Fn_Task_Create_C130J_CrashSite;
 		
-		sleep 5;
+		//sleep 5;
 		
 		//patrol by heli
 		
@@ -117,7 +117,7 @@ if (isServer) then {
 		{deleteVehicle _x} foreach crew us_airplane_01; deleteVehicle us_airplane_01;
 		
 		//let them fall a bit
-		sleep 10;
+		//sleep 10;
 		
 		//create tasks assigned to assault_group
 		{
