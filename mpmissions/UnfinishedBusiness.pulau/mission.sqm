@@ -40565,17 +40565,17 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={698.13446,8.5673027,2652.6353};
-				angles[]={-0,4.4005551,0};
+				position[]={698.13397,8.5673027,2652.635};
+				angles[]={0,4.4005508,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				createAsSimpleObject=1;
 			};
 			id=1612;
 			type="rhsusf_M977A4_BKIT_usarmy_wd";
-			atlOffset=4.7683716e-007;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -40605,13 +40605,14 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={701.30518,9.2649994,2681.8013};
-				angles[]={-0,0.69938505,0};
+				position[]={701.30475,9.2649994,2681.8013};
+				angles[]={0,0.69938833,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				createAsSimpleObject=1;
 			};
 			id=1613;
 			type="rhsusf_m998_w_s_2dr_fulltop";
@@ -40680,11 +40681,12 @@ class Mission
 		class Item616
 		{
 			dataType="Marker";
-			position[]={1513.604,0.067000002,11231.69};
+			position[]={4824.7231,0,11935.338};
 			name="wp_waypoint_01";
 			type="b_installation";
+			angle=172.02408;
 			id=1614;
-			atlOffset=16.819973;
+			atlOffset=18.549728;
 		};
 		class Item617
 		{

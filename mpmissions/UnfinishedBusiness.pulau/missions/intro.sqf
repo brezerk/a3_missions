@@ -67,7 +67,13 @@ if (isServer) then {
 	
 	Fn_MissionIntro_SendHelicopter = {
 		systemChat "OK. All abourd!";
-		private ['_wp', '_group'];
+		private ['_wp', '_group', '_markerPos'];
+		us_airplane_01 lock 2;
+		{
+			if (isPlayer _x) then {
+				assault_group = assault_group + [_x];
+			};
+		} forEach crew us_airplane_01;
 		_group = group driver us_airplane_01;
 		{
 			_wp = _group addWaypoint [getMarkerPos _x, 0];
@@ -76,9 +82,10 @@ if (isServer) then {
 			_wp setWaypointSpeed "LIMITED";
 			_wp setWaypointFormation "NO CHANGE";
 			_wp setWaypointType "MOVE";
-		} forEach ['wp_waypoint_01', 'wp_air_field_01'];
-		//us_airplane_01 flyInHeight 1000;
-		//(driver us_airplane_01) setBehaviour "Careless";
-		//(driver us_airplane_01) setCombatMode "Blue";
+		} forEach ['wp_air_field_01'];
+		us_airplane_01 flyInHeight 1000;
+		(driver us_airplane_01) setBehaviour "Careless";
+		(driver us_airplane_01) setCombatMode "Blue";
+		execVM "missions\fast_travel.sqf";
 	}; // Fn_MissionIntro_SendHelicopter
 };
