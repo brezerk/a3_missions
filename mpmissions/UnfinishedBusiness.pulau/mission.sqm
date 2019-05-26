@@ -40670,10 +40670,10 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				createAsSimpleObject=1;
 			};
 			id=1612;
 			type="rhsusf_M977A4_BKIT_usarmy_wd";
+			atlOffset=4.7683716e-007;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -40710,7 +40710,6 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				createAsSimpleObject=1;
 			};
 			id=1613;
 			type="rhsusf_m998_w_s_2dr_fulltop";

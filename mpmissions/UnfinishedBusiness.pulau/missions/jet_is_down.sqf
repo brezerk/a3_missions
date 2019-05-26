@@ -75,19 +75,20 @@ if (isServer) then {
 			[_x, true] remoteExecCall ["allowDamage"];
 		} forEach assault_group;
 		
-		//remoteExec ["Fn_Task_Create_Informator"];
-		
 		sleep 5;
 		
 		[] execVM "missions\regroup.sqf";
 		[] execVM "missions\assoult_group_is_dead.sqf";
-		/*
+		[] execVM "missions\informator.sqf";
+		
+		call Fn_Task_Create_Informator;
+		
 		trgRegroupIsDone = createTrigger ["EmptyDetector", getMarkerPos 'wp_air_field_01'];
 		trgRegroupIsDone setTriggerArea [0, 0, 0, false];
 		trgRegroupIsDone setTriggerActivation ["NONE", "PRESENT", false];
 		trgRegroupIsDone setTriggerStatements [
 				"task_complete_intormator && task_complete_regroup",
-				"call Fn_Task_Create_AA; call Fn_Task_Create_KillLeader;",
+				"call Fn_Task_Create_AA; call Fn_Task_Create_KillLeader; deleteVehicle trgRegroupIsDone;",
 				""
-		];*/
+		];
 };

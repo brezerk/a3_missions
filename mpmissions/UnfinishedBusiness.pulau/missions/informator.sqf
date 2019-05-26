@@ -23,45 +23,7 @@ Spawn start objectives, triggers for informator contact
 //Player side triggers
 // Client side code
 if (hasInterface) then {
-	private ["_trg"];
-	_trg = createTrigger ["EmptyDetector", getMarkerPos "wp_apal"];
-	_trg setTriggerArea [180, 180, 0, false];
-	_trg setTriggerActivation ["ANYPLAYER", "PRESENT", true];
-	_trg setTriggerStatements [
-		"(vehicle player) in thisList",
-		"[ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_02', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;",
-		""
-	];
-	_trg = createTrigger ["EmptyDetector", getMarkerPos "wp_lalomo"];
-	_trg setTriggerArea [140, 140, 0, false];
-	_trg setTriggerActivation ["ANYPLAYER", "PRESENT", true];
-	_trg setTriggerStatements [
-		"(vehicle player) in thisList",
-		"[ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_03', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;",
-		""
-	];
-	_trg = createTrigger ["EmptyDetector", getMarkerPos "wp_minanga"];
-	_trg setTriggerArea [120, 120, 0, false];
-	_trg setTriggerActivation ["ANYPLAYER", "PRESENT", true];
-	_trg setTriggerStatements [
-		"(vehicle player) in thisList",
-		"[ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_04', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;",
-		""
-	];
-	_trg = createTrigger ["EmptyDetector", getMarkerPos "wp_monse"];
-	_trg setTriggerArea [120, 120, 0, false];
-	_trg setTriggerActivation ["ANYPLAYER", "PRESENT", true];
-	_trg setTriggerStatements [
-		"(vehicle player) in thisList",
-		"[ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_05', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;",
-		""
-	];
 	
-	Fn_Task_Create_Informator_Complete = {
-		PUB_fnc_informatorFound = [player, _this select 0];
-		publicVariableServer "PUB_fnc_informatorFound";
-		['t_find_informator', 'SUCCEEDED'] call BIS_fnc_taskSetState;
-	};
 };
 
 if (isServer) then {
@@ -142,15 +104,12 @@ if (isServer) then {
 		_obj disableAi "MOVE";
 		_action_id = [
 			_obj,
-			{ _this call Fn_Task_Create_Informator_Complete;  _this remoteExec ["Fn_Task_Create_Informator_Complete_Server", 2] },
+			{ _this call Fn_Task_Create_Informator_Complete; },
 			"simpleTasks\types\talk",
 			"ACTION_02",
 			"&& alive _target"
 		] call BrezBlock_fnc_Attach_Hold_Action;
-	};
-
-	Fn_Task_Create_Informator_Complete_Server = {
-		task_complete_intormator = true;
-	};
-	
+		
+		remoteExecCall ["Fn_Local_Create_MissionInformator", -2];
+	};	
 };

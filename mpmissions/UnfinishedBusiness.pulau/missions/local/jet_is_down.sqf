@@ -37,18 +37,6 @@ if (hasInterface) then {
 		player setUnconscious false;
 		[
 			player,
-			"t_find_informator",
-			[localize "TASK_05_DESC",
-			localize "TASK_05_TITLE",
-			localize "TASK_ORIG_01"],
-			objNull,
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_find_informator', "talk"] call BIS_fnc_taskSetType;
-		[
-			player,
 			"t_regroup",
 			[localize "TASK_03_DESC",
 			localize "TASK_03_TITLE",

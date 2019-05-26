@@ -26,6 +26,7 @@ waitUntil { !isNull player }; // Wait for player to initialize
 [] execVM "missions\local\intro.sqf";
 [] execVM "missions\local\fast_travel.sqf";
 [] execVM "missions\local\jet_is_down.sqf";
+[] execVM "missions\local\informator.sqf";
 
 Fn_Local_FailTasks = {
 	private ['_task'];
