@@ -126,4 +126,49 @@ if (isServer) then {
 		};
 		_obj;
 	};
+	
+	
+	//spawn wreck
+	_markerPos = getMarkerPos (["wp_plain_crash", 11] call BrezBlock_fnc_Get_RND_Index);
+	[_markerPos] call Fn_Task_Create_C130J_CrashSite;
+		
+		//sleep 5;
+		
+		//patrol by heli
+		
+	_wp = group rebel_heli_01 addWaypoint [_markerPos, 0];
+	_wp setWaypointType "loiter";
+	_wp setWaypointSpeed "NORMAL";
+	_wp setWaypointLoiterType "Circle_L";
+	_wp setWaypointLoiterRadius 500;
+	rebel_heli_01 flyInHeight 100;
+		
+	{
+		_x assignAsCargo rebel_jeep_04;
+		_x moveInCargo rebel_jeep_04;
+	} forEach units rebel_grp_01;
+		
+	_wp = group rebel_jeep_04 addWaypoint [_markerPos, 0];
+	_wp setWaypointType "TR UNLOAD";
+	_wp setWaypointCombatMode "WHITE";
+	_wp setWaypointBehaviour "SAFE";
+	_wp setWaypointSpeed "NORMAL";
+		
+	_wp = group rebel_jeep_03 addWaypoint [_markerPos, 0];
+	_wp setWaypointType "SENTRY";
+	_wp setWaypointCombatMode "WHITE";
+	_wp setWaypointBehaviour "SAFE";
+	_wp setWaypointSpeed "NORMAL";
+		
+	_wp = rebel_grp_01 addWaypoint [_markerPos, 0];
+	_wp setWaypointType "SENTRY";
+	_wp setWaypointCombatMode "RED";
+	_wp setWaypointBehaviour "STEALTH";
+		
+	[_markerPos] call Fn_Task_Create_C130J_SpawnRandomCargo;
+		
+	for "_i" from 1 to 5 do {
+		_markerPos = getMarkerPos (["wp_plain_crash", 11] call BrezBlock_fnc_Get_RND_Index);
+		[_markerPos] call Fn_Task_Create_C130J_SpawnRandomCargo;
+	};
 };
