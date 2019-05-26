@@ -81,8 +81,6 @@ if (isServer) then {
 		[] execVM "missions\assoult_group_is_dead.sqf";
 		[] execVM "missions\informator.sqf";
 		
-		call Fn_Task_Create_Informator;
-		
 		trgRegroupIsDone = createTrigger ["EmptyDetector", getMarkerPos 'wp_air_field_01'];
 		trgRegroupIsDone setTriggerArea [0, 0, 0, false];
 		trgRegroupIsDone setTriggerActivation ["NONE", "PRESENT", false];

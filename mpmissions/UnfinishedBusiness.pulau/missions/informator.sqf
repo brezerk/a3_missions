@@ -112,4 +112,6 @@ if (isServer) then {
 		
 		remoteExecCall ["Fn_Local_Create_MissionInformator", -2];
 	};	
+	
+	call Fn_Task_Create_Informator;
 };
