@@ -45,7 +45,7 @@ if (isServer) then {
 			'wp_player_spawn_20'
 		];
 		{
-			remoteExecCall ["Fn_Jet_GetOut", _x];
+			remoteExecCall ["Fn_Local_Jet_GetOut", _x];
 		} forEach assault_group;
 		
 		['t_arrive_to_island', 'FAILED'] call BIS_fnc_taskSetState;
@@ -59,19 +59,19 @@ if (isServer) then {
 			_markerPos = getMarkerPos _marker;
 			//parachute
 			_x setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 160 + random 100)];
-			remoteExecCall ["Fn_Jet_Player_DoParadrop", _x];
+			remoteExecCall ["Fn_Local_Jet_Player_DoParadrop", _x];
 			_x setVariable ["ACE_isUnconscious", true, true];
 		} forEach assault_group;
 		
 		{deleteVehicle _x} foreach crew us_airplane_01; deleteVehicle us_airplane_01;
 		
 		//let them fall a bit
-		sleep 2;
+		sleep 1;
 		
 		//create tasks assigned to assault_group
 		{
 			_x setVariable ["ACE_isUnconscious", false, true];
-			remoteExecCall ["Fn_Jet_Player_Land", _x];
+			remoteExecCall ["Fn_Local_Jet_Player_Land", _x];
 			[_x, true] remoteExecCall ["allowDamage"];
 		} forEach assault_group;
 		

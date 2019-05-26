@@ -17,11 +17,6 @@
  ***************************************************************************/
 
 //Remove unit if it was in the assault group
-
-//private ['_oldUnit'];
-["killed!"] remoteExec ["systemChat"];
-
-
 call Fn_Local_FailTasks;
 
 PUB_fnc_kickFromAssaultGroup = [player, _this select 0];

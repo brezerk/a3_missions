@@ -16,27 +16,25 @@
  *                                                                         *
  ***************************************************************************/
 
-if (isServer) then {
-	private['_markerPos', "_wp"];
-	sleep 20;
-	{
-		remoteExecCall ["Fn_Local_FastTravel_Sleep", _x];
-	} forEach assault_group;
-	_markerPos = getMarkerPos 'wp_waypoint_01';
-	us_airplane_01 setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 1500)];
-	us_airplane_01 setDir (markerDir 'wp_waypoint_01');
-	us_airplane_01 flyInHeight 1200;
-	_group = group driver us_airplane_01;
-	deleteWaypoint [_group, 0]; 
-	_wp = _group addWaypoint [getMarkerPos 'wp_air_field_01', 0];
-	_wp setWaypointCombatMode "YELLOW";
-	_wp setWaypointBehaviour "SAFE";
-	_wp setWaypointSpeed "LIMITED";
-	_w setWaypointFormation "NO CHANGE";
-	_wp setWaypointType "MOVE";
-	(driver us_airplane_01) setBehaviour "Careless";
-	sleep 15;
-	{
-		remoteExecCall ["Fn_Local_FastTravel_Wokeup", _x];
-	} forEach assault_group;
+/*
+Spawn start objectives, triggers for game intro and players allocation
+*/
+
+//Player side triggers
+// Client side code
+if (hasInterface) then {
+	Fn_Local_Create_MissionIntro = {
+		[
+			west,
+			"t_arrive_to_island",
+			[localize "TASK_02_DESC",
+			localize "TASK_02_TITLE",
+			localize "TASK_ORIG_01"],
+			getMarkerPos "wp_air_field_01",
+			"CREATED",
+			0,
+			true
+		] call BIS_fnc_taskCreate;
+		['t_arrive_to_island', "land"] call BIS_fnc_taskSetType;
+	};
 };

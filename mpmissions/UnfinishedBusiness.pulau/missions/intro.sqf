@@ -24,7 +24,6 @@ Spawn start objectives, triggers for game intro and players allocation
 //Player side triggers
 // Client side code
 if (hasInterface) then {
-
 };
 
 if (isServer) then {
@@ -46,18 +45,7 @@ if (isServer) then {
 			"execVM 'missions\jet_is_down.sqf'; deleteVehicle trgJetIsDead;",
 			""
 		];
-		[
-			west,
-			"t_arrive_to_island",
-			[localize "TASK_02_DESC",
-			localize "TASK_02_TITLE",
-			localize "TASK_ORIG_01"],
-			getMarkerPos "wp_air_field_01",
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_arrive_to_island', "land"] call BIS_fnc_taskSetType;
+		remoteExecCall ["Fn_Local_Create_MissionIntro", -2];
 	}; // Fn_Task_InjuredEvacuation_CallMedEvac
 
 	Fn_MissionIntro_Evaluate = {
