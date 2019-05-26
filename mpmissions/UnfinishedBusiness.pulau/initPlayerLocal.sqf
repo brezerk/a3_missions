@@ -16,7 +16,11 @@
  *                                                                         *
  ***************************************************************************/
 
+[] execVM "briefing.sqf";
+
 waitUntil { !isNull player }; // Wait for player to initialize
+
+
 
 /*
 Local player script

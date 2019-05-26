@@ -20,5 +20,4 @@
 Init mission file
 */
 
-[] execVM "briefing.sqf";
 [] execVM "main.sqf";
