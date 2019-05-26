@@ -17,6 +17,7 @@
  ***************************************************************************/
 
 if (isServer) then {
+	private['_markerPos', "_wp"];
 	sleep 25;
 	// operate on vehicle crew only
 	["radio_chatter_00"] remoteExec ["playSound"];
@@ -26,10 +27,19 @@ if (isServer) then {
 		[0, "BLACK", 5, 1] remoteExec ["BIS_fnc_fadeEffect", _x];
 	} forEach assault_group;
 	_markerPos = getMarkerPos 'wp_waypoint_01';
-	us_airplane_01 setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 4000)];
+	us_airplane_01 setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 3500)];
 	us_airplane_01 setDir (markerDir 'wp_waypoint_01');
-	us_airplane_01 flyInHeight 3500;
+	us_airplane_01 flyInHeight 3000;
+	_group = group driver us_airplane_01;
+	deleteWaypoint [_group, 0]; 
+	_wp = _group addWaypoint [getMarkerPos 'wp_air_field_01', 0];
+	_wp setWaypointCombatMode "YELLOW";
+	_wp setWaypointBehaviour "SAFE";
+	_wp setWaypointSpeed "LIMITED";
+	_w setWaypointFormation "NO CHANGE";
+	_wp setWaypointType "MOVE";
 	(driver us_airplane_01) setBehaviour "Careless";
+	
 	sleep 10;
 	["radio_chatter_01"] remoteExec ["playSound"];
 	["rhs_usa_land_rc_5"] remoteExec ["playSound"];

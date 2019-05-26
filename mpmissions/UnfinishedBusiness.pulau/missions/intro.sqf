@@ -81,14 +81,12 @@ if (isServer) then {
 			};
 		} forEach crew us_airplane_01;
 		_group = group driver us_airplane_01;
-		{
-			_wp = _group addWaypoint [getMarkerPos _x, 0];
-			_wp setWaypointCombatMode "YELLOW";
-			_wp setWaypointBehaviour "SAFE";
-			_wp setWaypointSpeed "LIMITED";
-			_wp setWaypointFormation "NO CHANGE";
-			_wp setWaypointType "MOVE";
-		} forEach ['wp_air_field_01'];
+		_wp = _group addWaypoint [getMarkerPos 'wp_waypoint_01', 0];
+		_wp setWaypointCombatMode "YELLOW";
+		_wp setWaypointBehaviour "SAFE";
+		_wp setWaypointSpeed "LIMITED";
+		_wp setWaypointFormation "NO CHANGE";
+		_wp setWaypointType "MOVE";
 		us_airplane_01 flyInHeight 2000;
 		(driver us_airplane_01) setBehaviour "Careless";
 		(driver us_airplane_01) setCombatMode "Blue";
