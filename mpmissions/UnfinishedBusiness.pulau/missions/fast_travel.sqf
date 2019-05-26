@@ -17,21 +17,7 @@
  ***************************************************************************/
 
 if (hasInterface) then {
-	Fn_FastTravel_Sleep = {
-		if (alive player) then {
-			playSound "radio_chatter_00";
-			playSound "rhs_usa_land_rc_2";
-			[0, 5] execVM "addons\brezblock\utils\fade.sqf";
-		};
-	};
-	
-	Fn_FastTravel_Wokeup = {
-		if (alive player) then {
-			playSound "radio_chatter_01";
-			playSound "rhs_usa_land_rc_5";
-			[1, 5] execVM "addons\brezblock\utils\fade.sqf";
-		};
-	};
+
 };
 
 if (isServer) then {

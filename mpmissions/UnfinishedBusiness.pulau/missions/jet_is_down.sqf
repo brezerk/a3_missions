@@ -17,61 +17,7 @@
  ***************************************************************************/
 
 if (hasInterface) then {
-	Fn_Jet_GetOut = {
-		[0, 5] execVM "addons\brezblock\utils\fade.sqf";
-		doGetOut player;
-		moveOut player;
-	};
 	
-	Fn_Jet_Player_DoParadrop = {
-		private ['_dmgType'];
-		[] execVM "gear\player.sqf";
-		//do some damage
-		_dmgType = ["leg_l", "leg_r", "hand_r", "hand_l", "head"];
-		[player, 1, selectRandom _dmgType, "bullet"] call ace_medical_fnc_addDamageToUnit;
-		[1, 3] execVM "addons\brezblock\utils\fade.sqf";
-		player setUnconscious true;
-	};
-	
-	Fn_Jet_Player_Land = {
-		player setUnconscious false;
-		[
-			player,
-			"t_find_informator",
-			[localize "TASK_05_DESC",
-			localize "TASK_05_TITLE",
-			localize "TASK_ORIG_01"],
-			objNull,
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_find_informator', "talk"] call BIS_fnc_taskSetType;
-		[
-			player,
-			"t_regroup",
-			[localize "TASK_03_DESC",
-			localize "TASK_03_TITLE",
-			localize "TASK_ORIG_01"],
-			objNull,
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_regroup', "meet"] call BIS_fnc_taskSetType;
-		[
-			player,
-			"t_crash_site",
-			[localize "TASK_04_DESC",
-			localize "TASK_04_TITLE",
-			localize "TASK_ORIG_01"],
-			objNull,
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_crash_site', "unknown"] call BIS_fnc_taskSetType;
-	};
 };
 
 if (isServer) then {	
