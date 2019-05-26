@@ -16,6 +16,7 @@
  *                                                                         *
  ***************************************************************************/
 
+
 if (isServer) then {
 	
 	private ['_free_landing_markers', '_markerPos', '_wp'];
@@ -65,9 +66,10 @@ if (isServer) then {
 				
 			//parachute
 			_x setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 160 + random 100)];
+			[1, "BLACK", 2, 1] remoteExec ["BIS_fnc_fadeEffect", _x];
 			[_x, true] remoteExec ["setUnconscious", _x];
 			_x setVariable ["ACE_isUnconscious", true, true];
-			[1, "BLACK", 5, 1] remoteExec ["BIS_fnc_fadeEffect", _x];
+			
 		} forEach assault_group;
 		
 		{deleteVehicle _x} foreach crew us_airplane_01; deleteVehicle us_airplane_01;
