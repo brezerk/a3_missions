@@ -22,49 +22,14 @@ Spawn start objectives, triggers for informator contact
 
 //Player side triggers
 // Client side code
-if (hasInterface) then {
-	private ["_trg"];
-	_trg = createTrigger ["EmptyDetector", getMarkerPos "wp_aa"];
-	_trg setTriggerArea [180, 180, 0, false];
-	_trg setTriggerActivation ["ANYPLAYER", "PRESENT", true];
-	_trg setTriggerStatements [
-		"(vehicle player) in thisList",
-		"[ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_06', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;",
-		""
-	];
-};
+if (hasInterface) then {};
 
 if (isServer) then {
-
 	task_complete_commtower = false;
 	task_complete_aa = false;
 
 	Fn_Task_Create_AA = {
 		private['_trg'];
-		[
-			west,
-			"t_destroy_aa",
-			[localize "TASK_06_DESC",
-			localize "TASK_06_TITLE",
-			localize "TASK_ORIG_01"],
-			getMarkerPos "wp_aa",
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_destroy_aa', "destroy"] call BIS_fnc_taskSetType;
-		[
-			west,
-			"t_destroy_comtower",
-			[localize "TASK_07_DESC",
-			localize "TASK_07_TITLE",
-			localize "TASK_ORIG_01"],
-			getMarkerPos "wp_aa",
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_destroy_comtower', "destroy"] call BIS_fnc_taskSetType;
 		_trg = createTrigger ["EmptyDetector", getPos e_pvo_01];
 		_trg setTriggerArea [0, 0, 0, false];
 		_trg setTriggerActivation ["NONE", "PRESENT", false];
@@ -81,7 +46,7 @@ if (isServer) then {
 			"if (isServer) then { call Fn_Task_Commtower_Complete };",
 			""
 		];
-
+		remoteExecCall ["Fn_Local_Create_MissionAA", -2];
 	};
 	
 	Fn_Task_AA_Complete = {
@@ -90,8 +55,8 @@ if (isServer) then {
 	};
 	
 	Fn_Task_Commtower_Complete = {
-		['t_destroy_aa', 'SUCCEEDED'] call BIS_fnc_taskSetState;
-		task_complete_aa = true;
+		['t_destroy_comtower', 'SUCCEEDED'] call BIS_fnc_taskSetState;
+		task_complete_commtower = true;
 	};
 
 };

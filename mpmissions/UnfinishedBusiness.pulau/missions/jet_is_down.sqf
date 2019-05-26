@@ -58,7 +58,7 @@ if (isServer) then {
 			_free_landing_markers = _free_landing_markers - [_marker];
 			_markerPos = getMarkerPos _marker;
 			//parachute
-			_x setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 170 + random 100)];
+			_x setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 180 + random 100)];
 			remoteExecCall ["Fn_Local_Jet_Player_DoParadrop", _x];
 			_x setVariable ["ACE_isUnconscious", true, true];
 		} forEach assault_group;

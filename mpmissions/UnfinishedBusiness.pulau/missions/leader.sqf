@@ -22,47 +22,13 @@ Spawn start objectives, triggers for informator contact
 
 //Player side triggers
 // Client side code
-if (hasInterface) then {
-	private ["_trg"];
-	_trg = createTrigger ["EmptyDetector", getMarkerPos "wp_air_field_01"];
-	_trg setTriggerArea [500, 500, 0, false];
-	_trg setTriggerActivation ["ANYPLAYER", "PRESENT", true];
-	_trg setTriggerStatements [
-		"(vehicle player) in thisList",
-		"[ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_07', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;",
-		""
-	];
-	
-	private ["_trg"];
-	_trg = createTrigger ["EmptyDetector", getMarkerPos "wp_kambani"];
-	_trg setTriggerArea [150, 150, 0, false];
-	_trg setTriggerActivation ["ANYPLAYER", "PRESENT", true];
-	_trg setTriggerStatements [
-		"(vehicle player) in thisList",
-		"[ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_08', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;",
-		""
-	];
-	
-	
-};
+if (hasInterface) then { };
 
 if (isServer) then {
 
 	Fn_Task_Create_KillLeader = {
 		private['_trg'];
-		[
-			west,
-			"t_kill_leader",
-			[localize "TASK_08_DESC",
-			localize "TASK_08_TITLE",
-			localize "TASK_ORIG_01"],
-			getMarkerPos "wp_air_field_01",
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_kill_leader', "kill"] call BIS_fnc_taskSetType;
-		_trg = createTrigger ["EmptyDetector", getPos e_pvo_01];
+		_trg = createTrigger ["EmptyDetector", getPos target_01];
 		_trg setTriggerArea [0, 0, 0, false];
 		_trg setTriggerActivation ["NONE", "PRESENT", false];
 		_trg setTriggerStatements [
