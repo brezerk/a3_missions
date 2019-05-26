@@ -542,7 +542,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=620;
+		items=619;
 		class Item0
 		{
 			dataType="Object";
@@ -16602,6 +16602,7 @@ class Mission
 			{
 				lock="LOCKEDPLAYER";
 				name="rebel_heli_02";
+				createAsSimpleObject=1;
 			};
 			id=645;
 			type="I_Heli_light_03_dynamicLoadout_F";
@@ -30965,31 +30966,79 @@ class Mission
 			class PositionInfo
 			{
 				position[]={5977.2852,60.761959,6232.103};
-				angles[]={0,3.247915,0};
+				angles[]={0,3.2479179,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				createAsSimpleObject=1;
 			};
 			id=1228;
 			type="I_C_Van_02_transport_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[4]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item474
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5977.9946,60.686138,6241.0415};
-				angles[]={0,3.1539016,0};
+				position[]={5977.9951,60.686138,6241.042};
+				angles[]={0,3.1538973,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				createAsSimpleObject=1;
 			};
 			id=1230;
 			type="I_C_Van_02_vehicle_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[4]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item475
 		{
@@ -31004,6 +31053,7 @@ class Mission
 			class Attributes
 			{
 				lock="LOCKED";
+				createAsSimpleObject=1;
 			};
 			id=1233;
 			type="I_C_Plane_Civil_01_F";
@@ -37608,17 +37658,41 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4861.355,18.810392,7169.9541};
-				angles[]={0.00034526698,1.9912505,0.00077204045};
+				position[]={4861.355,18.810759,7169.9541};
+				angles[]={0.00034906584,1.9912461,0.00076794485};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				createAsSimpleObject=1;
 			};
 			id=1399;
 			type="C_Truck_02_covered_F";
-			atlOffset=0.24863434;
+			atlOffset=0.00036430359;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[10]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item549
 		{
@@ -37697,16 +37771,40 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={4874.1973,17.791504,7172.1836};
-				angles[]={0,1.9619176,0};
+				position[]={4874.1968,17.791504,7172.1836};
+				angles[]={0,1.9619247,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				createAsSimpleObject=1;
 			};
 			id=1402;
 			type="C_Offroad_01_repair_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[4]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item551
 		{
@@ -40572,10 +40670,10 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				createAsSimpleObject=1;
 			};
 			id=1612;
 			type="rhsusf_M977A4_BKIT_usarmy_wd";
-			atlOffset=4.7683716e-007;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -40612,6 +40710,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				createAsSimpleObject=1;
 			};
 			id=1613;
 			type="rhsusf_m998_w_s_2dr_fulltop";
@@ -40680,12 +40779,12 @@ class Mission
 		class Item616
 		{
 			dataType="Marker";
-			position[]={4824.7231,0,11935.338};
+			position[]={7249.2524,0,11633.96};
 			name="wp_waypoint_01";
 			type="b_installation";
-			angle=172.02406;
+			angle=211.26059;
 			id=1614;
-			atlOffset=18.549728;
+			atlOffset=22.597225;
 		};
 		class Item617
 		{
@@ -40929,18 +41028,6 @@ class Mission
 				};
 				nAttributes=3;
 			};
-		};
-		class Item619
-		{
-			dataType="Trigger";
-			position[]={1186.5151,12.174688,3695.2632};
-			class Attributes
-			{
-				sizeA=0;
-				sizeB=0;
-			};
-			id=1632;
-			type="EmptyDetector";
 		};
 	};
 	class Connections
