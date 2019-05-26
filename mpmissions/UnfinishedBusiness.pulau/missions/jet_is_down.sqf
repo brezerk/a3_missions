@@ -73,7 +73,7 @@ if (isServer) then {
 		{deleteVehicle _x} foreach crew us_airplane_01; deleteVehicle us_airplane_01;
 		
 		//let them fall a bit
-		sleep 10;
+		sleep 2;
 		
 		//create tasks assigned to assault_group
 		{
@@ -120,10 +120,10 @@ if (isServer) then {
 		
 		//remoteExec ["Fn_Task_Create_Informator"];
 		
-		//sleep 5;
+		sleep 5;
 		
-		//[] execVM "missions\regroup.sqf";
-		//[] execVM "missions\assoult_group_is_dead.sqf";
+		[] execVM "missions\regroup.sqf";
+		[] execVM "missions\assoult_group_is_dead.sqf";
 		/*
 		trgRegroupIsDone = createTrigger ["EmptyDetector", getMarkerPos 'wp_air_field_01'];
 		trgRegroupIsDone setTriggerArea [0, 0, 0, false];

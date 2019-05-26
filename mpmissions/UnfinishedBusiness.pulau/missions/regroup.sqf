@@ -51,31 +51,10 @@ if (isServer) then {
 		_old_unit = _this select 1;
 		
 		//["killed handler acticated"] remoteExec ["systemChat"];
-		
 		if (_player in assault_group) then {
 			//["ok. kick from group"] remoteExec ["systemChat"];
 			assault_group = assault_group - [_player];
 		};
-		/*
-		private ["_vehicle", "_item", "_value"];
-
-		_value = _this select 2;
-		if (_vehicle == ua_ural_ammo_01) then {
-			if (typeName _item == "OBJECT") then {
-				//FIXME: maybe we need dynamic eval
-				if (_item == ua_supply_box_01) then { task_loaded_ua_supply_box_01 = _value; };
-				if (_item == ua_supply_box_02) then { task_loaded_ua_supply_box_02 = _value; };
-				if (_item == ua_supply_box_03) then { task_loaded_ua_supply_box_03 = _value; };
-				if (_item == ua_supply_box_04) then { task_loaded_ua_supply_box_04 = _value; };
-				if (_item == ua_supply_box_05) then { task_loaded_ua_supply_box_05 = _value; };
-			};
-		};
-		
-		//[<oldUnit>, <killer>, <respawn>, <respawnDelay>]
-		_oldUnit = _this select 0; //killed player, getUnitLoadout
-
-		
-		*/
 	};
 	
 	while { !task_complete_regroup } do {
@@ -84,7 +63,7 @@ if (isServer) then {
 		//Check if assault group members are in the same area
 		{	
 			//Move trigger if member is still alive
-			if (alive _x) exitWith { 
+			if (alive _x) then { 
 				//["move trigger"] remoteExec ["systemChat"];
 				_trgRegroupPoint setPos (getPos _x);
 				{

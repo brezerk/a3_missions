@@ -24,7 +24,13 @@
 
 if (isServer) then {
 	while {count assault_group != 0} do {
-		sleep 5;
+		sleep 10;
+		{
+			//cleanup disconnected? members
+			if (!alive _x) then {
+				assault_group = assault_group - [_x];
+			};
+		} forEach assault_group;
 	};
 	
 	call Fn_Endgame_Loss;
