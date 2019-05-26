@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1436.749,473.80267,2901.5005};
-		dir[]={0.62432945,-0.68452722,0.37641713};
-		up[]={0.58623338,0.72896653,0.35344821};
-		aside[]={0.51634169,8.5495412e-007,-0.85641217};
+		pos[]={1301.6204,838.2019,2772.9412};
+		dir[]={0.29265922,-0.81599659,0.49856728};
+		up[]={0.41308618,0.57803172,0.70372307};
+		aside[]={0.86242652,1.0603108e-006,-0.50624716};
 	};
 };
 binarizationWanted=0;
@@ -40717,10 +40717,10 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				createAsSimpleObject=1;
 			};
 			id=1612;
 			type="rhsusf_M977A4_BKIT_usarmy_wd";
-			atlOffset=4.7683716e-007;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -40757,6 +40757,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
+				createAsSimpleObject=1;
 			};
 			id=1613;
 			type="rhsusf_m998_w_s_2dr_fulltop";
