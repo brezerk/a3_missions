@@ -1,7 +1,6 @@
-// stringtable.xml
 <?xml version="1.0" encoding="utf-8" ?>
 <Project name="BrezBlock.org.ua">
-	<Package name="DynamicOutpost">
+	<Package name="UnfinishedBusiness">
 		<Container name="l18n">
 			<Key ID="BRIEFING_01_TITLE">
 				<Original>Gaming conventions</Original>
@@ -243,7 +242,6 @@
 				<English>We are detecting highly active radar source. How copy?</English>
 				<Russian>Ми спостерігаємо високу радіолокаційну активність. Як прийняли?</Russian>
 			</Key>
-			
 			<Key ID="STR_LOCKED_INFO_01">
 				<Original>The game is locked. Try again later.</Original>
 				<English>The game is locked. Try again later.</English>

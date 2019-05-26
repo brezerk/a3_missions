@@ -16,15 +16,29 @@
  *                                                                         *
  ***************************************************************************/
 
+if (hasInterface) then {
+	Fn_FastTravel_Sleep = {
+		if (alive player) then {
+			playSound "radio_chatter_00";
+			playSound "rhs_usa_land_rc_2";
+			[0, 5] execVM "addons\brezblock\utils\fade.sqf";
+		};
+	};
+	
+	Fn_FastTravel_Wokeup = {
+		if (alive player) then {
+			playSound "radio_chatter_01";
+			playSound "rhs_usa_land_rc_5";
+			[1, 5] execVM "addons\brezblock\utils\fade.sqf";
+		};
+	};
+};
+
 if (isServer) then {
 	private['_markerPos', "_wp"];
-	sleep 25;
-	// operate on vehicle crew only
-	["radio_chatter_00"] remoteExec ["playSound"];
-	["rhs_usa_land_rc_2"] remoteExec ["playSound"];
-	sleep 5;
+	sleep 20;
 	{
-		[0, "BLACK", 5, 1] remoteExec ["BIS_fnc_fadeEffect", _x];
+		remoteExecCall ["Fn_FastTravel_Sleep", _x];
 	} forEach assault_group;
 	_markerPos = getMarkerPos 'wp_waypoint_01';
 	us_airplane_01 setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 1500)];
@@ -39,11 +53,8 @@ if (isServer) then {
 	_w setWaypointFormation "NO CHANGE";
 	_wp setWaypointType "MOVE";
 	(driver us_airplane_01) setBehaviour "Careless";
-	
-	sleep 10;
-	["radio_chatter_01"] remoteExec ["playSound"];
-	["rhs_usa_land_rc_5"] remoteExec ["playSound"];
+	sleep 15;
 	{
-		[1, "BLACK", 5, 1] remoteExec ["BIS_fnc_fadeEffect", _x];
+		remoteExecCall ["Fn_FastTravel_Wokeup", _x];
 	} forEach assault_group;
 };

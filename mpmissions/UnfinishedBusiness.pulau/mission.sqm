@@ -16,7 +16,7 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={693.45349,17.87113,2691.4219};
+		pos[]={681.66772,29.681631,2715.9915};
 		dir[]={0.6098367,-0.25279793,-0.75114036};
 		up[]={0.15934336,0.96751446,-0.1962637};
 		aside[]={-0.77635539,7.8201992e-008,-0.63030738};
@@ -40670,10 +40670,10 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				createAsSimpleObject=1;
 			};
 			id=1612;
 			type="rhsusf_M977A4_BKIT_usarmy_wd";
+			atlOffset=4.7683716e-007;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -40710,7 +40710,6 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				createAsSimpleObject=1;
 			};
 			id=1613;
 			type="rhsusf_m998_w_s_2dr_fulltop";

@@ -16,10 +16,66 @@
  *                                                                         *
  ***************************************************************************/
 
-
-if (isServer) then {
+if (hasInterface) then {
+	Fn_Jet_GetOut = {
+		[0, 5] execVM "addons\brezblock\utils\fade.sqf";
+		doGetOut player;
+		moveOut player;
+	};
 	
-	private ['_free_landing_markers', '_markerPos', '_wp'];
+	Fn_Jet_Player_DoParadrop = {
+		private ['_dmgType'];
+		[] execVM "gear\player.sqf";
+		//do some damage
+		_dmgType = ["leg_l", "leg_r", "hand_r", "hand_l", "head"];
+		[player, 1, selectRandom _dmgType, "bullet"] call ace_medical_fnc_addDamageToUnit;
+		[1, 3] execVM "addons\brezblock\utils\fade.sqf";
+		player setUnconscious true;
+	};
+	
+	Fn_Jet_Player_Land = {
+		player setUnconscious false;
+		[
+			player,
+			"t_find_informator",
+			[localize "TASK_05_DESC",
+			localize "TASK_05_TITLE",
+			localize "TASK_ORIG_01"],
+			objNull,
+			"CREATED",
+			0,
+			true
+		] call BIS_fnc_taskCreate;
+		['t_find_informator', "talk"] call BIS_fnc_taskSetType;
+		[
+			player,
+			"t_regroup",
+			[localize "TASK_03_DESC",
+			localize "TASK_03_TITLE",
+			localize "TASK_ORIG_01"],
+			objNull,
+			"CREATED",
+			0,
+			true
+		] call BIS_fnc_taskCreate;
+		['t_regroup', "meet"] call BIS_fnc_taskSetType;
+		[
+			player,
+			"t_crash_site",
+			[localize "TASK_04_DESC",
+			localize "TASK_04_TITLE",
+			localize "TASK_ORIG_01"],
+			objNull,
+			"CREATED",
+			0,
+			true
+		] call BIS_fnc_taskCreate;
+		['t_crash_site', "unknown"] call BIS_fnc_taskSetType;
+	};
+};
+
+if (isServer) then {	
+	private ['_free_landing_markers', '_marker', '_markerPos', '_wp'];
 		_free_landing_markers = [
 			'wp_player_spawn_01',
 			'wp_player_spawn_02',
@@ -43,9 +99,7 @@ if (isServer) then {
 			'wp_player_spawn_20'
 		];
 		{
-			[0, "BLACK", 5, 1] remoteExec ["BIS_fnc_fadeEffect", _x];
-			[_x] remoteExec ["doGetOut", _x];
-			[_x] remoteExec ["moveOut", _x];
+			remoteExecCall ["Fn_Jet_GetOut", _x];
 		} forEach assault_group;
 		
 		['t_arrive_to_island', 'FAILED'] call BIS_fnc_taskSetState;
@@ -54,22 +108,13 @@ if (isServer) then {
 		sleep 5;
 		
 		{
-			[[], "gear\player.sqf"] remoteExec ["execVM", _x];
-			
 			_marker = selectRandom _free_landing_markers;
 			_free_landing_markers = _free_landing_markers - [_marker];
 			_markerPos = getMarkerPos _marker;
-				
-			//do some damage
-			_dmgType = ["leg_l", "leg_r", "hand_r", "hand_l", "head"];
-			[_x, 1, selectRandom _dmgType, "bullet"] remoteExec ["ace_medical_fnc_addDamageToUnit"];
-				
 			//parachute
 			_x setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 160 + random 100)];
-			[1, "BLACK", 2, 1] remoteExec ["BIS_fnc_fadeEffect", _x];
-			[_x, true] remoteExec ["setUnconscious", _x];
+			remoteExecCall ["Fn_Jet_Player_DoParadrop", _x];
 			_x setVariable ["ACE_isUnconscious", true, true];
-			
 		} forEach assault_group;
 		
 		{deleteVehicle _x} foreach crew us_airplane_01; deleteVehicle us_airplane_01;
@@ -79,45 +124,9 @@ if (isServer) then {
 		
 		//create tasks assigned to assault_group
 		{
-			[_x, false] remoteExec ["setUnconscious", _x];
 			_x setVariable ["ACE_isUnconscious", false, true];
-			[_x, true] remoteExec ["allowDamage"];
-			[
-				_x,
-				"t_find_informator",
-				[localize "TASK_05_DESC",
-				localize "TASK_05_TITLE",
-				localize "TASK_ORIG_01"],
-				objNull,
-				"CREATED",
-				0,
-				true
-			] call BIS_fnc_taskCreate;
-			['t_find_informator', "talk"] call BIS_fnc_taskSetType;
-			[
-				_x,
-				"t_regroup",
-				[localize "TASK_03_DESC",
-				localize "TASK_03_TITLE",
-				localize "TASK_ORIG_01"],
-				objNull,
-				"CREATED",
-				0,
-				true
-			] call BIS_fnc_taskCreate;
-			['t_regroup', "meet"] call BIS_fnc_taskSetType;
-			[
-				_x,
-				"t_crash_site",
-				[localize "TASK_04_DESC",
-				localize "TASK_04_TITLE",
-				localize "TASK_ORIG_01"],
-				objNull,
-				"CREATED",
-				0,
-				true
-			] call BIS_fnc_taskCreate;
-			['t_crash_site', "unknown"] call BIS_fnc_taskSetType;
+			remoteExecCall ["Fn_Jet_Player_Land", _x];
+			[_x, true] remoteExecCall ["allowDamage"];
 		} forEach assault_group;
 		
 		//remoteExec ["Fn_Task_Create_Informator"];
