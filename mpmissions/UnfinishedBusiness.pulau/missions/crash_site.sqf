@@ -131,44 +131,28 @@ if (isServer) then {
 	//spawn wreck
 	_markerPos = getMarkerPos (["wp_plain_crash", 11] call BrezBlock_fnc_Get_RND_Index);
 	[_markerPos] call Fn_Task_Create_C130J_CrashSite;
-		
-		//sleep 5;
-		
-		//patrol by heli
-		
-	_wp = group rebel_heli_01 addWaypoint [_markerPos, 0];
-	_wp setWaypointType "loiter";
-	_wp setWaypointSpeed "NORMAL";
-	_wp setWaypointLoiterType "Circle_L";
-	_wp setWaypointLoiterRadius 500;
-	rebel_heli_01 flyInHeight 100;
-		
-	{
-		_x assignAsCargo rebel_jeep_04;
-		_x moveInCargo rebel_jeep_04;
-	} forEach units rebel_grp_01;
-		
-	_wp = group rebel_jeep_04 addWaypoint [_markerPos, 0];
-	_wp setWaypointType "TR UNLOAD";
-	_wp setWaypointCombatMode "WHITE";
-	_wp setWaypointBehaviour "SAFE";
-	_wp setWaypointSpeed "NORMAL";
-		
-	_wp = group rebel_jeep_03 addWaypoint [_markerPos, 0];
-	_wp setWaypointType "SENTRY";
-	_wp setWaypointCombatMode "WHITE";
-	_wp setWaypointBehaviour "SAFE";
-	_wp setWaypointSpeed "NORMAL";
-		
-	_wp = rebel_grp_01 addWaypoint [_markerPos, 0];
-	_wp setWaypointType "SENTRY";
-	_wp setWaypointCombatMode "RED";
-	_wp setWaypointBehaviour "STEALTH";
-		
-	[_markerPos] call Fn_Task_Create_C130J_SpawnRandomCargo;
-		
+	[_markerPos] call Fn_Task_Create_C130J_SpawnRandomCargo;	
 	for "_i" from 1 to 5 do {
 		_markerPos = getMarkerPos (["wp_plain_crash", 11] call BrezBlock_fnc_Get_RND_Index);
 		[_markerPos] call Fn_Task_Create_C130J_SpawnRandomCargo;
 	};
+	
+	//heli patrol
+	[_markerPos, rebel_heli_01] call Fn_Patrols_CreateLoiter;
+	
+	sleep 60;
+	//vehicle patrol
+	[[
+		synd_jeep_01,
+		synd_jeep_02,
+		synd_jeep_03,
+		synd_jeep_04,
+		civ_veh_01,
+		civ_veh_02,
+		civ_veh_03,
+		civ_veh_04
+	]] call Fn_Patrols_Create_Random_Waypoints;
+	[_markerPos, rebel_jeep_04, rebel_grp_01] call Fn_Patrols_Create_Transport_Sentry;
+	[_markerPos, rebel_jeep_03] call Fn_Patrols_Create_Sentry;
+		
 };

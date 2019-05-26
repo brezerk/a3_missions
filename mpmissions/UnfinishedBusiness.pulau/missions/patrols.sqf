@@ -19,20 +19,10 @@
 
 if (isServer) then { 
 	
-	
 	// Create random waypoints for enemy and civilian vehicles
-	Fn_Task_CreatePatrols = {
-		private ["_cars", "_wp", "_marker", "_wp_array", "_group"];
-		_cars = [
-			synd_jeep_01,
-			synd_jeep_02,
-			synd_jeep_03,
-			synd_jeep_04,
-			civ_veh_01,
-			civ_veh_02,
-			civ_veh_03,
-			civ_veh_04
-		];
+	Fn_Patrols_Create_Random_Waypoints = {
+		params ["_vehicles"];
+		private ["_wp", "_marker", "_wp_array", "_group"];
 		{
 			_group = group driver _x;
 			_wp_array = [
@@ -67,7 +57,47 @@ if (isServer) then {
 			_wp setWaypointSpeed "LIMITED";
 			_wp setWaypointFormation "NO CHANGE";
 			_wp setWaypointType "CYCLE";
-		} forEach _cars;
+		} forEach _vehicles;
 	};
 	
+	Fn_Patrols_CreateLoiter = {
+		params ['_markerPos', '_vehicle'];
+		private ['_wp'];
+		_wp = group _vehicle addWaypoint [_markerPos, 0];
+		_wp setWaypointType "loiter";
+		_wp setWaypointSpeed "NORMAL";
+		_wp setWaypointLoiterType "Circle_L";
+		_wp setWaypointLoiterRadius 500;
+		_vehicle flyInHeight 100;
+	};
+	
+	Fn_Patrols_Create_Transport_Sentry = {
+		params ['_markerPos', '_vehicle', '_group'];
+		private ['_wp'];
+		{
+			_x assignAsCargo _vehicle;
+			_x moveInCargo _vehicle;
+		} forEach units _group;
+			
+		_wp = group _vehicle addWaypoint [_markerPos, 0];
+		_wp setWaypointType "TR UNLOAD";
+		_wp setWaypointCombatMode "WHITE";
+		_wp setWaypointBehaviour "SAFE";
+		_wp setWaypointSpeed "NORMAL";
+		
+		_wp = _group addWaypoint [_markerPos, 0];
+		_wp setWaypointType "SENTRY";
+		_wp setWaypointCombatMode "RED";
+		_wp setWaypointBehaviour "STEALTH";
+	};
+	
+	Fn_Patrols_Create_Sentry = {
+		params ['_markerPos', '_vehicle'];
+		private ['_wp'];
+		_wp = group _vehicle addWaypoint [_markerPos, 0];
+		_wp setWaypointType "SENTRY";
+		_wp setWaypointCombatMode "WHITE";
+		_wp setWaypointBehaviour "SAFE";
+		_wp setWaypointSpeed "NORMAL";
+	};
 };

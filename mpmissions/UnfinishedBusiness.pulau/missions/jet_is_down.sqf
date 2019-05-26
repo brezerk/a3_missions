@@ -51,14 +51,14 @@ if (isServer) then {
 		['t_arrive_to_island', 'FAILED'] call BIS_fnc_taskSetState;
 		
 		[] execVM "missions\crash_site.sqf";
-		sleep 5;
+		sleep 3;
 		
 		{
 			_marker = selectRandom _free_landing_markers;
 			_free_landing_markers = _free_landing_markers - [_marker];
 			_markerPos = getMarkerPos _marker;
 			//parachute
-			_x setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 160 + random 100)];
+			_x setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 170 + random 100)];
 			remoteExecCall ["Fn_Local_Jet_Player_DoParadrop", _x];
 			_x setVariable ["ACE_isUnconscious", true, true];
 		} forEach assault_group;

@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={681.66772,29.681631,2715.9915};
-		dir[]={0.6098367,-0.25279793,-0.75114036};
-		up[]={0.15934336,0.96751446,-0.1962637};
-		aside[]={-0.77635539,7.8201992e-008,-0.63030738};
+		pos[]={1436.749,473.80267,2901.5005};
+		dir[]={0.62432945,-0.68452722,0.37641713};
+		up[]={0.58623338,0.72896653,0.35344821};
+		aside[]={0.51634169,8.5495412e-007,-0.85641217};
 	};
 };
 binarizationWanted=0;
@@ -6312,34 +6312,81 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6333.9092,6.2462645,9093.6572};
-				angles[]={0.023328418,5.9719796,0.010000871};
+				position[]={6333.9092,6.246274,9093.6572};
+				angles[]={0.023335053,5.9719758,0.010000736};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				createAsSimpleObject=1;
 			};
 			id=377;
 			type="C_Truck_02_transport_F";
-			atlOffset=-9.5367432e-006;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[10]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item104
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6362.3257,5.5973234,9081.668};
-				angles[]={0,2.95275,6.2332273};
+				position[]={6362.3262,5.5973568,9081.668};
+				angles[]={0,2.9527478,6.2332339};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				createAsSimpleObject=1;
 			};
 			id=380;
 			type="C_Truck_02_box_F";
-			atlOffset=-0.001070261;
+			atlOffset=-0.0010001659;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit""],[4]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item105
 		{

@@ -25,6 +25,7 @@ assault_group = [];
 //[] execVM "missions\informator.sqf";
 //[] execVM "missions\aa.sqf";
 [] execVM "missions\intro.sqf";
+[] execVM "missions\patrols.sqf";
 
 if (isServer) then {
 
