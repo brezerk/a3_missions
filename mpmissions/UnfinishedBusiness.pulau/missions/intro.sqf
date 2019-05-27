@@ -46,7 +46,7 @@ if (isServer) then {
 			""
 		];
 		remoteExecCall ["Fn_Local_Create_MissionIntro", -2];
-	}; // Fn_Task_InjuredEvacuation_CallMedEvac
+	}; // Fn_Create_MissionIntro
 
 	Fn_MissionIntro_Evaluate = {
 		private ["_all_on_board"];
@@ -56,8 +56,11 @@ if (isServer) then {
 				_all_on_board = false;
 			};
 		} forEach (playableUnits + switchableUnits);
+		if ((count (playableUnits + switchableUnits)) == 0) then {
+			_all_on_board = false;
+		};
 		_all_on_board;
-	}; // Fn_Task_InjuredEvacuation_Evaluate
+	}; // Fn_MissionIntro_Evaluate
 	
 	Fn_MissionIntro_SendAirplane = {
 		private ['_wp', '_group', '_markerPos'];
