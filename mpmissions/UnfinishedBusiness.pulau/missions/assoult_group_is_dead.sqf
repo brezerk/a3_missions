@@ -33,5 +33,5 @@ if (isServer) then {
 		} forEach assault_group;
 	};
 	
-	//call Fn_Endgame_Loss;
+	call Fn_Endgame_Loss;
 };
