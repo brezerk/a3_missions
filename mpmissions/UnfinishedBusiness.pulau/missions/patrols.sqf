@@ -18,7 +18,7 @@
 
 
 if (isServer) then { 
-	
+		
 	// Create random waypoints for enemy and civilian vehicles
 	Fn_Patrols_Create_Random_Waypoints = {
 		params ["_vehicles"];

@@ -30,6 +30,28 @@ waitUntil { !isNull player }; // Wait for player to initialize
 [] execVM "missions\local\aa.sqf";
 [] execVM "missions\local\leader.sqf";
 
+Fn_Local_ConfiscateVehicle = {
+	params["_vehicle"];
+	private["_driver"];
+	if (alive _vehicle) then {
+		_driver = driver _vehicle;
+		if (!isNull _driver) then {
+			if ((!isPlayer _driver) && (alive _driver)) then {
+				doGetOut driver _vehicle;
+			};
+		};
+	};
+};
+
+Fn_Local_AddAction_ConfiscateVehicles = {
+	params ["_vehicles"];
+	{
+		if (alive _x) then {
+			_x addAction [localize 'ACTION_03', "call Fn_Local_ConfiscateVehicle;", this, 1, false, true, "", "alive _this", 5];
+		}
+	} forEach _vehicles;
+};
+
 Fn_Local_FailTasks = {
 	private ['_task'];
 	{
@@ -52,3 +74,5 @@ sleep 5;
 [ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_00', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;
 
 [[west], [east,independent,civilian]] call ace_spectator_fnc_updateSides;
+
+[[civ_veh_01, civ_veh_02, civ_veh_03, civ_veh_04, test_01, test_02, test_03]] call Fn_Local_AddAction_ConfiscateVehicles;

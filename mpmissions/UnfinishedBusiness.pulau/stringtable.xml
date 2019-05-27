@@ -162,6 +162,11 @@
 				<English>Talk to</English>
 				<Russian>Поговорити</Russian>
 			</Key>
+			<Key ID="ACTION_03">
+				<Original>Сonfiscate the car</Original>
+				<English>Сonfiscate the car</English>
+				<Russian>Конфіскувати автомобіль</Russian>
+			</Key>
 			<Key ID="INFO_DATE_01">
 				<Original>July 16, 2019 %1</Original>
 				<English>July 16, 2019 %1</English>
