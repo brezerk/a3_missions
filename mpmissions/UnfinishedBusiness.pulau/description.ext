@@ -26,7 +26,7 @@ class Header
 };
 
 author			= "brezerk@brezblock.org.ua";
-OnLoadName		= "Unfinished Business v0.2.28";
+OnLoadName		= "Unfinished Business v0.2.33";
 //OnLoadMission	= $STR_ONLOAD_INFO_01;
 //briefingName    = $STR_ONLOAD_INFO_02;
 // FIXME: https://feedback.bistudio.com/T67181
@@ -35,12 +35,12 @@ OnLoadName		= "Unfinished Business v0.2.28";
 //overviewTextLocked = $STR_LOCKED_INFO_01;
 
 // Respawn type
-respawn = 3;
+respawn = "BASE";
 // Delay in seconds before playable unit respawns.
 //respawnDelay = "10"; // 900
-respawnDelay = "900";
+respawnDelay = "15";
 // Respawn templates from CfgRespawnTemplates. You can combine any number of them together.
-respawnTemplates[] = {"Counter", "Tickets", "Wave", "ace_spectator"};
+respawnTemplates[] = {"Counter", "Base", "ace_spectator"};
 // 0 to disable the score table (it can still be opened manually by pressing 'P' key).
 respawnDialog = 0;
 // When 1, the score table contains score of all playable units as opposed to players only.

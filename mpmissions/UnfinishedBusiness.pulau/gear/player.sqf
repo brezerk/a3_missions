@@ -1,3 +1,9 @@
+
+comment "Exported from Arsenal by brezerk";
+
+comment "[!] UNIT MUST BE LOCAL [!]";
+if (!local player) exitWith {};
+
 //remove everything
 removeAllWeapons player;
 removeAllItems player;

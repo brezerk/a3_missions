@@ -110,7 +110,11 @@ if (isServer) then {
 			"&& alive _target"
 		] call BrezBlock_fnc_Attach_Hold_Action;
 		
-		remoteExecCall ["Fn_Local_Create_MissionInformator", -2];
+		if (hasInterface) then {
+			remoteExecCall ["Fn_Local_Create_MissionInformator"];
+		} else {
+			remoteExecCall ["Fn_Local_Create_MissionInformator", -2];
+		};
 	};	
 	
 	call Fn_Task_Create_Informator;

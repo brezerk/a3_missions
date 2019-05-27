@@ -29,6 +29,7 @@ waitUntil { !isNull player }; // Wait for player to initialize
 [] execVM "missions\local\informator.sqf";
 [] execVM "missions\local\aa.sqf";
 [] execVM "missions\local\leader.sqf";
+[] execVM "missions\local\csat.sqf";
 
 Fn_Local_ConfiscateVehicle = {
 	params["_vehicle"];
@@ -55,12 +56,51 @@ Fn_Local_AddAction_ConfiscateVehicles = {
 Fn_Local_FailTasks = {
 	private ['_task'];
 	{
-		_task = ["t_crash_site", player] call BIS_fnc_taskReal;
+		_task = [_x, player] call BIS_fnc_taskReal;
 		if (!isNull _task) then {
-			if (taskState _task != "Succeeded") then { _task setTaskState "FAILED"; };
+			if (taskState _task != "Succeeded") then { _task setTaskState "Failed"; };
 		};
 	} forEach ['t_crash_site', 't_regroup', 't_find_informator'];
+	{
+		_task = [_x, player] call BIS_fnc_taskReal;
+		if (!isNull _task) then {
+			if (taskState _task != "Succeeded") then { _task setTaskState "Canceled"; };
+		};
+	} forEach ['t_scat_defend_aa', 't_scat_defend_comm_tower', 't_scat_eliminate_surv'];
 };
+
+
+player addEventHandler
+[
+	"Killed",
+	{
+		switch (playerSide) do
+		{
+			case west:
+			{
+				systemChat "switched";
+				_group = createGroup east;
+				[player] joinSilent _group;
+			};
+		};
+	}
+];
+
+player addEventHandler
+[
+   "Respawn",
+   {
+		switch (playerSide) do
+		{
+			case east:
+			{
+				[] execVM "gear\csat.sqf";
+				player setPos getMarkerPos "respawn_east";
+				call Fn_Local_Create_SCAT_MissionIntro;
+			};
+		};
+   }
+];
 
 //tickets
 [player, 3] call BIS_fnc_respawnTickets;
@@ -75,4 +115,4 @@ sleep 5;
 
 [[west], [east,independent,civilian]] call ace_spectator_fnc_updateSides;
 
-[[civ_veh_01, civ_veh_02, civ_veh_03, civ_veh_04, test_01, test_02, test_03]] call Fn_Local_AddAction_ConfiscateVehicles;
+[[civ_veh_01, civ_veh_02, civ_veh_03, civ_veh_04]] call Fn_Local_AddAction_ConfiscateVehicles;

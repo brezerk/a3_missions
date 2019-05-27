@@ -16,27 +16,49 @@
  *                                                                         *
  ***************************************************************************/
 
-if (isServer) then {
-	private['_markerPos', "_wp"];
-	sleep 20;
-	{
-		remoteExecCall ["Fn_Local_FastTravel_Sleep", _x];
-	} forEach assault_group;
-	_markerPos = getMarkerPos 'wp_waypoint_01';
-	us_airplane_01 setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 1600)];
-	us_airplane_01 setDir (markerDir 'wp_waypoint_01');
-	us_airplane_01 flyInHeight 1600;
-	_group = group driver us_airplane_01;
-	deleteWaypoint [_group, 0]; 
-	_wp = _group addWaypoint [getMarkerPos 'wp_air_field_01', 0];
-	_wp setWaypointCombatMode "YELLOW";
-	_wp setWaypointBehaviour "SAFE";
-	_wp setWaypointSpeed "LIMITED";
-	_w setWaypointFormation "NO CHANGE";
-	_wp setWaypointType "MOVE";
-	(driver us_airplane_01) setBehaviour "Careless";
-	sleep 15;
-	{
-		remoteExecCall ["Fn_Local_FastTravel_Wokeup", _x];
-	} forEach assault_group;
+/*
+Spawn start objectives, triggers for game intro and players allocation
+*/
+
+//Player side triggers
+// Client side code
+if (hasInterface) then {
+	Fn_Local_Create_SCAT_MissionIntro = {
+		[
+			east,
+			"t_scat_defend_aa",
+			[localize "TASK_CSAT_01_DESC",
+			localize "TASK_CSAT_01_TITLE",
+			localize "TASK_ORIG_01"],
+			getPos csat_aa_01,
+			"CREATED",
+			0,
+			true
+		] call BIS_fnc_taskCreate;
+		['t_scat_defend_aa', "defend"] call BIS_fnc_taskSetType;
+		[
+			east,
+			"t_scat_defend_comm_tower",
+			[localize "TASK_CSAT_02_DESC",
+			localize "TASK_CSAT_02_TITLE",
+			localize "TASK_ORIG_02"],
+			getPos csat_comm_tower_01,
+			"CREATED",
+			0,
+			true
+		] call BIS_fnc_taskCreate;
+		['t_scat_defend_comm_tower', "defend"] call BIS_fnc_taskSetType;
+		[
+			east,
+			"t_scat_eliminate_surv",
+			[localize "TASK_CSAT_03_DESC",
+			localize "TASK_CSAT_03_TITLE",
+			localize "TASK_ORIG_03"],
+			objNull,
+			"CREATED",
+			0,
+			true
+		] call BIS_fnc_taskCreate;
+		['t_scat_eliminate_surv', "kill"] call BIS_fnc_taskSetType;
+	};
 };

@@ -17,6 +17,7 @@
  ***************************************************************************/
 
 _westHQ = createCenter west;
+_eastHQ = createCenter east;
 _indepHQ = createCenter independent;
 
 assault_group = [];

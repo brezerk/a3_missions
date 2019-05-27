@@ -45,7 +45,11 @@ if (isServer) then {
 			"execVM 'missions\jet_is_down.sqf'; deleteVehicle trgJetIsDead;",
 			""
 		];
-		remoteExecCall ["Fn_Local_Create_MissionIntro", -2];
+		if (hasInterface) then {
+			remoteExecCall ["Fn_Local_Create_MissionIntro"];
+		} else {
+			remoteExecCall ["Fn_Local_Create_MissionIntro", -2];
+		}
 	}; // Fn_Create_MissionIntro
 
 	Fn_MissionIntro_Evaluate = {
