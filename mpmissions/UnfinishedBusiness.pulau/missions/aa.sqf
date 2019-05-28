@@ -27,14 +27,14 @@ if (hasInterface) then {};
 if (isServer) then {
 	task_complete_commtower = false;
 	task_complete_aa = false;
-
-	Fn_Task_Create_AA = {
+	
+	Fn_Task_Create_CSAT_Triggers = {
 		private['_trg'];
 		_trg = createTrigger ["EmptyDetector", getPos csat_aa_01];
 		_trg setTriggerArea [0, 0, 0, false];
 		_trg setTriggerActivation ["NONE", "PRESENT", false];
 		_trg setTriggerStatements [
-			"!alive csat_aa_01;",
+			"!alive csat_aa_01 || !canFire csat_aa_01;",
 			"if (isServer) then { call Fn_Task_AA_Complete };",
 			""
 		];
@@ -46,6 +46,9 @@ if (isServer) then {
 			"if (isServer) then { call Fn_Task_Commtower_Complete };",
 			""
 		];
+	};
+
+	Fn_Task_Create_AA = {
 		if (hasInterface) then {
 			remoteExecCall ["Fn_Local_Create_MissionAA"];
 		} else {

@@ -154,5 +154,6 @@ if (isServer) then {
 	]] call Fn_Patrols_Create_Random_Waypoints;
 	[_markerPos, rebel_jeep_04, rebel_grp_01] call Fn_Patrols_Create_Transport_Sentry;
 	[_markerPos, rebel_jeep_03] call Fn_Patrols_Create_Sentry;
+	call Fn_Task_Create_CSAT_Triggers;
 		
 };

@@ -32,6 +32,13 @@ assault_group = [];
 
 if (isServer) then {
 
+	Fn_Endgame = {
+		params["_endingType"];
+		if (isServer) then {
+			_endingType call BIS_fnc_endMissionServer;
+		};
+	};
+
 	Fn_Endgame_Loss = {
 		if (isServer) then {
 			//['t_defend_blockpost', 'FAILED'] call BIS_fnc_taskSetState;

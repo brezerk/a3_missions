@@ -24,30 +24,34 @@ Spawn start objectives, triggers for game intro and players allocation
 // Client side code
 if (hasInterface) then {
 	Fn_Local_Create_SCAT_MissionIntro = {
-		[
-			east,
-			"t_scat_defend_aa",
-			[localize "TASK_CSAT_01_DESC",
-			localize "TASK_CSAT_01_TITLE",
-			localize "TASK_ORIG_01"],
-			getPos csat_aa_01,
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_scat_defend_aa', "defend"] call BIS_fnc_taskSetType;
-		[
-			east,
-			"t_scat_defend_comm_tower",
-			[localize "TASK_CSAT_02_DESC",
-			localize "TASK_CSAT_02_TITLE",
-			localize "TASK_ORIG_02"],
-			getPos csat_comm_tower_01,
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_scat_defend_comm_tower', "defend"] call BIS_fnc_taskSetType;
+		if (canFire csat_aa_01) then {
+			[
+				east,
+				"t_scat_defend_aa",
+				[localize "TASK_CSAT_01_DESC",
+				localize "TASK_CSAT_01_TITLE",
+				localize "TASK_ORIG_01"],
+				getPos csat_aa_01,
+				"CREATED",
+				0,
+				true
+			] call BIS_fnc_taskCreate;
+			['t_scat_defend_aa', "defend"] call BIS_fnc_taskSetType;
+		};
+		if (alive csat_comm_tower_01) then {
+			[
+				east,
+				"t_scat_defend_comm_tower",
+				[localize "TASK_CSAT_02_DESC",
+				localize "TASK_CSAT_02_TITLE",
+				localize "TASK_ORIG_02"],
+				getPos csat_comm_tower_01,
+				"CREATED",
+				0,
+				true
+			] call BIS_fnc_taskCreate;
+			['t_scat_defend_comm_tower', "defend"] call BIS_fnc_taskSetType;
+		};
 		[
 			east,
 			"t_scat_eliminate_surv",

@@ -32,6 +32,5 @@ if (isServer) then {
 			};
 		} forEach assault_group;
 	};
-	
-	call Fn_Endgame_Loss;
+	"EndAssaultGroupEvicted" call Fn_Endgame;
 };

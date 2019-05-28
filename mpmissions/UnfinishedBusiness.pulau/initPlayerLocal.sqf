@@ -64,9 +64,16 @@ Fn_Local_FailTasks = {
 	{
 		_task = [_x, player] call BIS_fnc_taskReal;
 		if (!isNull _task) then {
-			if (taskState _task != "Succeeded") then { _task setTaskState "Canceled"; };
+			if (!(taskState _task in ["Succeeded", "Failed"])) then { _task setTaskState "Canceled"; };
 		};
-	} forEach ['t_scat_defend_aa', 't_scat_defend_comm_tower', 't_scat_eliminate_surv'];
+	} forEach [
+		't_scat_defend_aa',
+		't_scat_defend_comm_tower',
+		't_scat_eliminate_surv',
+		't_destroy_aa',
+		't_destroy_comtower',
+		't_kill_leader'
+	];
 };
 
 

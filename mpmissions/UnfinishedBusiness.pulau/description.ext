@@ -95,6 +95,37 @@ class CfgSounds
 	};
 };
 
+class CfgDebriefing
+	{  
+	class End1
+	{
+		title = "The Hostages got rescued!";
+		subtitle = "";
+		description = "The Hostage-takers got annihilated!";
+		pictureBackground = "";
+		picture = "b_inf";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+	class End2
+	{
+		title = "The SWAT Team got wiped out!";
+		subtitle = "";
+		description = "No dinner at home tonight for these hostages.";
+		pictureBackground = "";
+		picture = "b_inf";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+	class EndAssaultGroupEvicted
+	{
+		title = "US Assault group was evicted.";
+		subtitle = "";
+		description = "US Assault group was evicted. CSAT and Bandit groups are controlling Pulau islands for now.";
+		pictureBackground = "";
+		picture = "b_inf";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+};
+
 class CfgFunctions {
 	class BrezBlock
 	{
