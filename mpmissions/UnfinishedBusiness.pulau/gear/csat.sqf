@@ -15,36 +15,48 @@ removeHeadgear player;
 removeGoggles player;
 
 comment "Add containers";
-player forceAddUniform "U_O_CombatUniform_ocamo";
+player forceAddUniform "CUP_U_O_SLA_MixedCamo";
 player addItemToUniform "ACE_EarPlugs";
-for "_i" from 1 to 3 do {player addItemToUniform "ACE_CableTie";};
-for "_i" from 1 to 5 do {player addItemToUniform "ACE_morphine";};
-for "_i" from 1 to 15 do {player addItemToUniform "ACE_fieldDressing";};
-for "_i" from 1 to 2 do {player addItemToUniform "30Rnd_65x39_caseless_green";};
-player addVest "V_HarnessO_brn";
-for "_i" from 1 to 7 do {player addItemToVest "30Rnd_65x39_caseless_green";};
-for "_i" from 1 to 2 do {player addItemToVest "16Rnd_9x21_Mag";};
-for "_i" from 1 to 2 do {player addItemToVest "HandGrenade";};
+for "_i" from 1 to 2 do {player addItemToUniform "CUP_30Rnd_545x39_AK_M";};
+player addVest "CUP_V_O_SLA_M23_1_OD";
+for "_i" from 1 to 2 do {player addItemToVest "ACE_epinephrine";};
+for "_i" from 1 to 15 do {player addItemToVest "ACE_fieldDressing";};
+for "_i" from 1 to 5 do {player addItemToVest "ACE_morphine";};
+for "_i" from 1 to 2 do {player addItemToVest "CUP_HandGrenade_RGD5";};
 player addItemToVest "SmokeShell";
-player addItemToVest "SmokeShellRed";
-for "_i" from 1 to 2 do {player addItemToVest "Chemlight_red";};
-player addHeadgear "H_HelmetO_ocamo";
+player addItemToVest "SmokeShellBlue";
+for "_i" from 1 to 8 do {player addItemToVest "CUP_30Rnd_545x39_AK_M";};
+player addBackpack "B_Kitbag_rgr";
+player addItemToBackpack "ACE_bloodIV";
+player addHeadgear "CUP_H_SLA_Boonie";
+player addGoggles "CUP_G_Oakleys_Clr";
 
 comment "Add weapons";
-player addWeapon "arifle_Katiba_F";
-player addPrimaryWeaponItem "acc_pointer_IR";
-player addPrimaryWeaponItem "optic_ACO_grn";
-player addWeapon "hgun_Rook40_F";
+player addWeapon "CUP_arifle_AK74";
+player addPrimaryWeaponItem "CUP_optic_Kobra";
+player addWeapon "Binocular";
 
 comment "Add items";
 player linkItem "ItemMap";
 player linkItem "ItemCompass";
 player linkItem "ItemWatch";
-player linkItem "ItemRadio";
+
+comment "Give player a radio depending on radio mod loaded";
+if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
+	_player addItemToVest "ACRE_SEM52SL";
+} else {
+	if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
+		_player linkItem "tf_anprc152";
+	} else {
+		comment "Fallback to native arma3 radio";
+		_player linkItem "ItemRadio";
+	};
+};
 
 comment "Add ACEX";
 player addItemToVest "ACE_Canteen";
+for "_i" from 1 to 5 do {player addItemToBackpack "ACE_MRE_ChickenTikkaMasala";};
 
 comment "Set identity";
-[player,"PersianHead_A3_02","male01per"] call BIS_fnc_setIdentity;
+[player,"WhiteHead_14","male03gre"] call BIS_fnc_setIdentity;
 player setSpeaker "NoVoice";

@@ -27,6 +27,8 @@ if (hasInterface) then {
 };
 
 if (isServer) then {
+	(driver us_airplane_01) setBehaviour "Careless";
+
 	Fn_Create_MissionIntro = {
 		private ['_trg'];
 		trg = createTrigger ["EmptyDetector", getMarkerPos "USS Liberty" ];

@@ -99,11 +99,15 @@ if (isServer) then {
 		clearItemCargoGlobal _obj;
 		clearBackpackCargoGlobal _obj;
 			
-		_obj addWeaponCargoGlobal ["rhsusf_weap_m1911a1", 3];
+		_obj addWeaponCargoGlobal ["CUP_hgun_M9", 2];
 		_obj addWeaponCargoGlobal ["Binocular", 3];
-		_obj addWeaponCargoGlobal ["rhs_weap_m4a1_carryhandle", 2];
-		_obj addMagazineCargoGlobal ["rhsusf_mag_7x45acp_MHP", 5];
-		_obj addMagazineCargoGlobal ["rhs_mag_30Rnd_556x45_M855_Stanag", 8];
+		_obj addWeaponCargoGlobal ["CUP_arifle_M4A1", 2];
+		_obj addWeaponCargoGlobal ["CUP_arifle_M16A4_Base", 2];
+		_obj addWeaponCargoGlobal ["CUP_srifle_M14", 2];
+		_obj addMagazineCargoGlobal ["CUP_15Rnd_9x19_M9", 10];
+		_obj addMagazineCargoGlobal ["CUP_7Rnd_45ACP_1911", 10];
+		_obj addMagazineCargoGlobal ["CUP_30Rnd_556x45_Stanag", 10];
+		_obj addMagazineCargoGlobal ["CUP_20Rnd_762x51_DMR", 5];
 		_obj addItemCargoGlobal ["ACE_EarPlugs", 5];
 		_obj addItemCargoGlobal ["ItemCompass", 4];
 		_obj addItemCargoGlobal ["ACE_fieldDressing", 20];
@@ -114,7 +118,7 @@ if (isServer) then {
 			
 		if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
 				_obj addItemCargoGlobal ["ACRE_PRC148", 2];
-				_obj addItemCargoGlobal ["ACRE_SEM52SL", 6];
+				_obj addItemCargoGlobal ["ACRE_PRC343", 6];
 			} else {
 				if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
 					_obj addItemCargoGlobal ["tf_anprc148jem", 2];
