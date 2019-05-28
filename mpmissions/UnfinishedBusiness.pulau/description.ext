@@ -117,11 +117,11 @@ class CfgDebriefing
 	};
 	class EndAssaultGroupEvicted
 	{
-		title = "US Assault group was evicted.";
+		title = $STR_END_01_TITLE;
 		subtitle = "";
-		description = "US Assault group was evicted. CSAT and Bandit groups are controlling Pulau islands for now.";
+		description = $STR_END_01_DESC;
 		pictureBackground = "";
-		picture = "b_inf";
+		picture = "flag_CSAT";
 		pictureColor[] = {0.0,0.3,0.6,1};
 	};
 };

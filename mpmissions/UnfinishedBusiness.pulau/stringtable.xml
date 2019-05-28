@@ -282,6 +282,37 @@
 				<English>The game is locked. Try again later.</English>
 				<Russian>Гру замкнено. Спробуйте пізніше.</Russian>
 			</Key>
+			<Key ID="STR_END_01_TITLE">
+				<Original>US Assault group was eliminated.</Original>
+				<English>US Assault group was eliminated.</English>
+				<Russian>Штурмову группу США було ліквідовано.</Russian>
+			</Key>
+			<Key ID="STR_END_01_DESC">
+				<Original>US Assault group was eliminated. CSAT and Bandit groups are controlling Pulau islands for now.</Original>
+				<English>US Assault group was eliminated. CSAT and Bandit groups are controlling Pulau islands for now.English>
+				<Russian>Штурмову группу США було ліквідовано. Сили CSAT разом з группами бандитів контролюють острови Пулау і по цей день.</Russian>
+			</Key>
+			<Key ID="STR_END_02_TITLE">
+				<Original>US Assault group was eliminated.</Original>
+				<English>US Assault group was eliminated.</English>
+				<Russian>Штурмову группу США було ліквідовано.</Russian>
+			</Key>
+			<Key ID="STR_END_02_DESC">
+				<Original>US Assault group was eliminated. CSAT and Bandit groups are controlling Pulau islands for now.</Original>
+				<English>US Assault group was eliminated. CSAT and Bandit groups are controlling Pulau islands for now.English>
+				<Russian>Штурмову группу США було ліквідовано. Сили CSAT разом з группами бандитів контролюють острови Пулау і по цей день.</Russian>
+			</Key>
+			<Key ID="STR_END_03_TITLE">
+				<Original>US Assault group was eliminated.</Original>
+				<English>US Assault group was eliminated.</English>
+				<Russian>Штурмову группу США було ліквідовано.</Russian>
+			</Key>
+			<Key ID="STR_END_03_DESC">
+				<Original>US Assault group was eliminated. CSAT and Bandit groups are controlling Pulau islands for now.</Original>
+				<English>US Assault group was eliminated. CSAT and Bandit groups are controlling Pulau islands for now.English>
+				<Russian>Штурмову группу США було ліквідовано. Сили CSAT разом з группами бандитів контролюють острови Пулау і по цей день.</Russian>
+			</Key>
+			
 		</Container>
 	</Package>
 </Project>

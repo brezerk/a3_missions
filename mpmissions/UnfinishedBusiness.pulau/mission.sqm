@@ -8,18 +8,18 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1791;
+		nextID=1799;
 	};
 	class MarkerIDProvider
 	{
-		nextID=25;
+		nextID=26;
 	};
 	class Camera
 	{
-		pos[]={5411.8628,129.49582,8994.5391};
-		dir[]={0.25712499,-0.9505505,-0.17419972};
-		up[]={0.78698641,0.31044385,-0.53317553};
-		aside[]={-0.56089061,-2.4073233e-007,-0.82789266};
+		pos[]={5459.9131,13.975878,8230.2314};
+		dir[]={0.003440894,-0.99994999,-0.0093891351};
+		up[]={0.34407976,0.00999978,-0.93888724};
+		aside[]={-0.93893421,0,-0.34409696};
 	};
 };
 binarizationWanted=0;
@@ -578,7 +578,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=672;
+		items=680;
 		class Item0
 		{
 			dataType="Marker";
@@ -43340,6 +43340,78 @@ class Mission
 			};
 			id=1790;
 			type="Flag_CSAT_F";
+		};
+		class Item672
+		{
+			dataType="Marker";
+			position[]={3455.1121,1.329,8938.9092};
+			name="respawn_civilian_01";
+			type="c_unknown";
+			id=1791;
+			atlOffset=-0.00032377243;
+		};
+		class Item673
+		{
+			dataType="Marker";
+			position[]={3638.769,1.6645664,7896.9082};
+			name="respawn_civilian_02";
+			type="c_unknown";
+			id=1792;
+			atlOffset=-0.00032377243;
+		};
+		class Item674
+		{
+			dataType="Marker";
+			position[]={3615.082,2.6167052,9957.3799};
+			name="respawn_civilian_03";
+			type="c_unknown";
+			id=1793;
+			atlOffset=-0.00032377243;
+		};
+		class Item675
+		{
+			dataType="Marker";
+			position[]={3788.8733,1.7932186,10477.228};
+			name="respawn_civilian_04";
+			type="c_unknown";
+			id=1794;
+			atlOffset=-0.00032377243;
+		};
+		class Item676
+		{
+			dataType="Marker";
+			position[]={4493.4893,3.9494689,10173.631};
+			name="respawn_civilian_05";
+			type="c_unknown";
+			id=1795;
+			atlOffset=-0.00032377243;
+		};
+		class Item677
+		{
+			dataType="Marker";
+			position[]={4604.874,2.7052329,9318.2002};
+			name="respawn_civilian_06";
+			type="c_unknown";
+			id=1796;
+			atlOffset=-0.00032377243;
+		};
+		class Item678
+		{
+			dataType="Marker";
+			position[]={6373.5967,2.611434,9084.4775};
+			name="respawn_civilian_07";
+			type="c_unknown";
+			id=1797;
+			atlOffset=-0.00032377243;
+		};
+		class Item679
+		{
+			dataType="Marker";
+			position[]={5460.1787,11.205439,8231.3438};
+			name="respawn_civilian_08";
+			type="c_unknown";
+			id=1798;
+			atlOffset=-0.00032329559;
 		};
 	};
 	class Connections

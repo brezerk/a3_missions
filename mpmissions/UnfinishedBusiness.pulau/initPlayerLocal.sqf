@@ -86,7 +86,7 @@ player addEventHandler
 			case west:
 			{
 				systemChat "switched";
-				_group = createGroup east;
+				_group = createGroup civilian;//east;
 				[player] joinSilent _group;
 			};
 		};
@@ -103,6 +103,21 @@ player addEventHandler
 			{
 				[] execVM "gear\csat.sqf";
 				player setPos getMarkerPos "respawn_east";
+				call Fn_Local_Create_SCAT_MissionIntro;
+			};
+			case civilian:
+			{
+				[] execVM "gear\civilian.sqf";
+				player setPos getMarkerPos selectRandom [
+					'respawn_civilian_01',
+					'respawn_civilian_02',
+					'respawn_civilian_03',
+					'respawn_civilian_04',
+					'respawn_civilian_05',
+					'respawn_civilian_06',
+					'respawn_civilian_07',
+					'respawn_civilian_08'
+				];
 				call Fn_Local_Create_SCAT_MissionIntro;
 			};
 		};
