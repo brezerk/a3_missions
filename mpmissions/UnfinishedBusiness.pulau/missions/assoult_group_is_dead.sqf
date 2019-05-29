@@ -18,7 +18,7 @@
 
 /*
 	If assault group is dead -- end game;
-	Usage: execVM ["missions/assoult_group_is_dead.sqf"];
+	Usage: execVM ["missions/assault_group_is_dead.sqf"];
 	Return: true
 */
 
@@ -32,5 +32,5 @@ if (isServer) then {
 			};
 		} forEach assault_group;
 	};
-	"EndAssaultGroupEvicted" call Fn_Endgame;
+	//"EndAssaultGroupEvicted" call Fn_Endgame;
 };

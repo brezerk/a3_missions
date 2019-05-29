@@ -22,20 +22,20 @@ if (isServer) then {
 	{
 		remoteExecCall ["Fn_Local_FastTravel_Sleep", _x];
 	} forEach assault_group;
+	sleep 8;
 	_markerPos = getMarkerPos 'wp_waypoint_01';
-	us_airplane_01 setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 1600)];
+	us_airplane_01 setPosASL [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 2500)];
 	us_airplane_01 setDir (markerDir 'wp_waypoint_01');
-	us_airplane_01 flyInHeight 1600;
-	_group = group driver us_airplane_01;
+	_group = group us_airplane_01;
 	deleteWaypoint [_group, 0]; 
-	_wp = _group addWaypoint [getMarkerPos 'wp_air_field_01', 0];
+	_wp = _group addWaypoint [getMarkerPos 'wp_air_field_01', 0, 0];
 	_wp setWaypointCombatMode "YELLOW";
 	_wp setWaypointBehaviour "SAFE";
 	_wp setWaypointSpeed "LIMITED";
 	_w setWaypointFormation "NO CHANGE";
 	_wp setWaypointType "MOVE";
+	us_airplane_01 flyInHeight 2000;
 	(driver us_airplane_01) setBehaviour "Careless";
-	sleep 15;
 	{
 		remoteExecCall ["Fn_Local_FastTravel_Wokeup", _x];
 	} forEach assault_group;

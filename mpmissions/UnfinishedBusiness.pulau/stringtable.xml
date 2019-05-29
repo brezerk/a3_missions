@@ -128,9 +128,9 @@
 				<Russian>Додатково: Знищіть ППО</Russian>
 			</Key>
 			<Key ID="TASK_06_DESC">
-				<Original>CSAT is messing the things. Their air defense battery covers the island. We need to destroy &lt;marker name = 'wp_aa'&gt;it&lt;/marker&gt;.</Original>
-				<English>CSAT is messing the things. Their air defense battery covers the island. We need to destroy &lt;marker name = 'wp_aa'&gt;it&lt;/marker&gt;.</English>
-				<Russian>CSAT влізле не в своє діло. Їх батарея ППО прикриває острів. Нам потрібно вивести &lt;marker name = 'wp_aa'&gt;ППО&lt;/marker&gt; з ладу.</Russian>
+				<Original>AOC is messing the things. Their air defense battery covers the island. We need to destroy &lt;marker name = 'wp_aa'&gt;it&lt;/marker&gt;.</Original>
+				<English>AOC is messing the things. Their air defense battery covers the island. We need to destroy &lt;marker name = 'wp_aa'&gt;it&lt;/marker&gt;.</English>
+				<Russian>AOC влізле не в своє діло. Їх батарея ППО прикриває острів. Нам потрібно вивести &lt;marker name = 'wp_aa'&gt;ППО&lt;/marker&gt; з ладу.</Russian>
 			</Key>
 			<Key ID="TASK_07_TITLE">
 				<Original>Optional: Destroy commtower</Original>
@@ -138,9 +138,9 @@
 				<Russian>Додатково: Знищіть Вежу</Russian>
 			</Key>
 			<Key ID="TASK_07_DESC">
-				<Original>CSAT is coordinating communication between Solomon Maru's thug groups. We need to destroy the &lt;marker name = 'wp_aa'&gt;communication tower&lt;/marker&gt;.</Original>
-				<English>CSAT is coordinating communication between Solomon Maru's thug groups. We need to destroy the &lt;marker name = 'wp_aa'&gt;communication tower&lt;/marker&gt;.</English>
-				<Russian>CSAT координую зв'язок між бандами Solomon Maru. Потрібно вивести &lt;marker name = 'wp_aa'&gt;комунікаційну вежу&lt;/marker&gt; з ладу.</Russian>
+				<Original>AOC is coordinating communication between Solomon Maru's thug groups. We need to destroy the &lt;marker name = 'wp_aa'&gt;communication tower&lt;/marker&gt;.</Original>
+				<English>AOC is coordinating communication between Solomon Maru's thug groups. We need to destroy the &lt;marker name = 'wp_aa'&gt;communication tower&lt;/marker&gt;.</English>
+				<Russian>AOC координую зв'язок між бандами Solomon Maru. Потрібно вивести &lt;marker name = 'wp_aa'&gt;комунікаційну вежу&lt;/marker&gt; з ладу.</Russian>
 			</Key>
 			<Key ID="TASK_08_TITLE">
 				<Original>Eliminate the dictator</Original>
@@ -148,36 +148,36 @@
 				<Russian>Усуньте диктатора</Russian>
 			</Key>
 			<Key ID="TASK_08_DESC">
-				<Original>Solomon Maru is a leader of the "Red Sokol" group. Under the guise of CSAT forces, his gangsters killed Rіchardo Gonzales and cut the whole city &lt;marker name = 'wp_kambani'&gt;Kambani&lt;/marker&gt;. In the latter, it was seen on the &lt;marker name='wp_air_field_01'&gt;Gurun airfield&lt;/marker&gt; with a bunch of his bandits.</Original>
-				<English>Solomon Maru is a leader of the "Red Sokol" group. Under the guise of CSAT forces, his gangsters killed Rіchardo Gonzales and cut the whole city &lt;marker name = 'wp_kambani'&gt;Kambani&lt;/marker&gt;. In the latter, it was seen on the &lt;marker name='wp_air_field_01'&gt;Gurun airfield&lt;/marker&gt; with a bunch of his bandits.</English>
-				<Russian>Solomon Maru -- лідер угруппованя "Червоні Соколи". Під прикриттям сил CSAT його бандити вбили президента Rіchardo Gonzales і вирізали ціле місто &lt;marker name = 'wp_kambani'&gt;Kambani&lt;/marker&gt;. В останне його бачили на &lt;marker name='wp_air_field_01'&gt;аеродромі Gurun&lt;/marker&gt; з купою охорони.</Russian>
+				<Original>Solomon Maru is a leader of the "Red Sokol" group. Under the guise of AOC forces, his gangsters killed Rіchardo Gonzales and cut the whole city &lt;marker name = 'wp_kambani'&gt;Kambani&lt;/marker&gt;. In the latter, it was seen on the &lt;marker name='wp_air_field_01'&gt;Gurun airfield&lt;/marker&gt; with a bunch of his bandits.</Original>
+				<English>Solomon Maru is a leader of the "Red Sokol" group. Under the guise of AOC forces, his gangsters killed Rіchardo Gonzales and cut the whole city &lt;marker name = 'wp_kambani'&gt;Kambani&lt;/marker&gt;. In the latter, it was seen on the &lt;marker name='wp_air_field_01'&gt;Gurun airfield&lt;/marker&gt; with a bunch of his bandits.</English>
+				<Russian>Solomon Maru -- лідер угруппованя "Червоні Соколи". Під прикриттям сил AOC його бандити вбили президента Rіchardo Gonzales і вирізали ціле місто &lt;marker name = 'wp_kambani'&gt;Kambani&lt;/marker&gt;. В останне його бачили на &lt;marker name='wp_air_field_01'&gt;аеродромі Gurun&lt;/marker&gt; з купою охорони.</Russian>
 			</Key>
-			<Key ID="TASK_CSAT_01_TITLE">
+			<Key ID="TASK_AOC_01_TITLE">
 				<Original>Defend AA</Original>
 				<English>Defend AA</English>
 				<Russian>Захистить ППО</Russian>
 			</Key>
-			<Key ID="TASK_CSAT_01_DESC">
+			<Key ID="TASK_AOC_01_DESC">
 				<Original>Our air defense battery covers the island. We need to defend &lt;marker name = 'wp_aa'&gt;it&lt;/marker&gt;.</Original>
 				<English>Our air defense battery covers the island. We need to defend &lt;marker name = 'wp_aa'&gt;it&lt;/marker&gt;.</English>
 				<Russian>Наша батарея ППО прикриває острів. Нам потрібно захистити &lt;marker name = 'wp_aa'&gt;ППО&lt;/marker&gt;.</Russian>
 			</Key>
-			<Key ID="TASK_CSAT_02_TITLE">
+			<Key ID="TASK_AOC_02_TITLE">
 				<Original>Defend commtower</Original>
 				<English>Defend commtower</English>
 				<Russian>Захистить Вежу</Russian>
 			</Key>
-			<Key ID="TASK_CSAT_02_DESC">
+			<Key ID="TASK_AOC_02_DESC">
 				<Original>We need to defend &lt;marker name = 'wp_radio'&gt;commtower&lt;/marker&gt;.</Original>
 				<English>We need to defend &lt;marker name = 'wp_radio'&gt;commtower&lt;/marker&gt;.</English>
 				<Russian>Нам потрібно захистити &lt;marker name = 'wp_radio'&gt;радіо вежу&lt;/marker&gt;.</Russian>
 			</Key>
-			<Key ID="TASK_CSAT_03_TITLE">
+			<Key ID="TASK_AOC_03_TITLE">
 				<Original>Eliminate survivors</Original>
 				<English>Eliminate survivors</English>
 				<Russian>Занищіть виживших</Russian>
 			</Key>
-			<Key ID="TASK_CSAT_03_DESC">
+			<Key ID="TASK_AOC_03_DESC">
 				<Original>We took down US military plane. Couple survivors are scattered over the island. Find and eliminate them.</Original>
 				<English>We took down US military plane. Couple survivors are scattered over the island. Find and eliminate them.</English>
 				<Russian>Ми збили американський військовий літак. Декілька виживших розкидані по острову. Знайдіть і усуньте їх.</Russian>
@@ -238,9 +238,9 @@
 				<Russian>Поселення Monse.</Russian>
 			</Key>
 			<Key ID="INFO_SUBLOC_06">
-				<Original>CSAT Positions.</Original>
-				<English>CSAT Positions.</English>
-				<Russian>Позиції CSAT.</Russian>
+				<Original>AOC Positions.</Original>
+				<English>AOC Positions.</English>
+				<Russian>Позиції AOC.</Russian>
 			</Key>
 			<Key ID="INFO_SUBLOC_07">
 				<Original>Gurun airfield.</Original>
@@ -283,14 +283,14 @@
 				<Russian>Гру замкнено. Спробуйте пізніше.</Russian>
 			</Key>
 			<Key ID="STR_END_01_TITLE">
-				<Original>US Assault group was eliminated.</Original>
-				<English>US Assault group was eliminated.</English>
-				<Russian>Штурмову группу США було ліквідовано.</Russian>
+				<Original>Assault group was eliminated.</Original>
+				<English>Assault group was eliminated.</English>
+				<Russian>Штурмову группу ліквідовано.</Russian>
 			</Key>
 			<Key ID="STR_END_01_DESC">
-				<Original>US Assault group was eliminated. CSAT and Bandit groups are controlling Pulau islands for now.</Original>
-				<English>US Assault group was eliminated. CSAT and Bandit groups are controlling Pulau islands for now.English>
-				<Russian>Штурмову группу США було ліквідовано. Сили CSAT разом з группами бандитів контролюють острови Пулау і по цей день.</Russian>
+				<Original>US Assault group was eliminated. AOC and Bandit groups are controlling Pulau islands for now.</Original>
+				<English>US Assault group was eliminated. AOC and Bandit groups are controlling Pulau islands for now.<English>
+				<Russian>Штурмову группу США було ліквідовано. Сили AOC разом з группами бандитів контролюють острови Пулау і по цей день.</Russian>
 			</Key>
 			<Key ID="STR_END_02_TITLE">
 				<Original>US Assault group was eliminated.</Original>
@@ -298,19 +298,19 @@
 				<Russian>Штурмову группу США було ліквідовано.</Russian>
 			</Key>
 			<Key ID="STR_END_02_DESC">
-				<Original>US Assault group was eliminated. CSAT and Bandit groups are controlling Pulau islands for now.</Original>
-				<English>US Assault group was eliminated. CSAT and Bandit groups are controlling Pulau islands for now.English>
-				<Russian>Штурмову группу США було ліквідовано. Сили CSAT разом з группами бандитів контролюють острови Пулау і по цей день.</Russian>
+				<Original>US Assault group was eliminated. AOC and Bandit groups are controlling Pulau islands for now.</Original>
+				<English>US Assault group was eliminated. AOC and Bandit groups are controlling Pulau islands for now.<English>
+				<Russian>Штурмову группу США було ліквідовано. Сили AOC разом з группами бандитів контролюють острови Пулау.</Russian>
 			</Key>
 			<Key ID="STR_END_03_TITLE">
-				<Original>US Assault group was eliminated.</Original>
-				<English>US Assault group was eliminated.</English>
-				<Russian>Штурмову группу США було ліквідовано.</Russian>
+				<Original>Assault group was eliminated</Original>
+				<English>Assault group was eliminated</English>
+				<Russian>Штурмову группу ліквідовано</Russian>
 			</Key>
 			<Key ID="STR_END_03_DESC">
-				<Original>US Assault group was eliminated. CSAT and Bandit groups are controlling Pulau islands for now.</Original>
-				<English>US Assault group was eliminated. CSAT and Bandit groups are controlling Pulau islands for now.English>
-				<Russian>Штурмову группу США було ліквідовано. Сили CSAT разом з группами бандитів контролюють острови Пулау і по цей день.</Russian>
+				<Original>US Assault group was eliminated. AOC and Bandit groups are controlling Pulau islands for now.</Original>
+				<English>US Assault group was eliminated. AOC and Bandit groups are controlling Pulau islands for now.<English>
+				<Russian>Штурмову группу США було ліквідовано. Сили AOC разом з группами бандитів контролюють острови Пулау і по цей день.</Russian>
 			</Key>
 			
 		</Container>

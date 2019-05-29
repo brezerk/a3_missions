@@ -22,6 +22,9 @@ Local player script
 
 waitUntil { !isNull player }; // Wait for player to initialize
 
+player setVariable ["weapon_fiered", false, false];
+player setVariable ["is_civilian", false, true];
+
 [] execVM "briefing.sqf";
 [] execVM "missions\local\intro.sqf";
 [] execVM "missions\local\fast_travel.sqf";
@@ -30,6 +33,8 @@ waitUntil { !isNull player }; // Wait for player to initialize
 [] execVM "missions\local\aa.sqf";
 [] execVM "missions\local\leader.sqf";
 [] execVM "missions\local\csat.sqf";
+
+//private['trgCivPlayerDetected'];
 
 Fn_Local_ConfiscateVehicle = {
 	params["_vehicle"];
@@ -76,17 +81,35 @@ Fn_Local_FailTasks = {
 	];
 };
 
+Fn_Local_CheckIfCivPlayerDetected = {
+	private['_detected'];
+	_detected = false;
+	if (player getVariable ["is_civilian", false]) then {
+		if (!(player getVariable ["weapon_fiered", false])) then {
+			{
+				if ((_x knowsAbout player) > 0) exitWith {
+					_detected = true;
+				};
+			} forEach nearestObjects [player, ["SoldierEB", "SoldierGB"], 800];
+		};
+	};
+	_detected;
+};
 
 player addEventHandler
 [
 	"Killed",
 	{
+		player setVariable ["is_civilian", false, true];
+		player setVariable ["weapon_fiered", false, false];
+		deleteVehicle trgCivPlayerDetected;
 		switch (playerSide) do
 		{
 			case west:
 			{
 				systemChat "switched";
-				_group = createGroup civilian;//east;
+				_group = createGroup [civilian, true];//east;
+				player setVariable ["is_civilian", true, true];
 				[player] joinSilent _group;
 			};
 		};
@@ -122,6 +145,43 @@ player addEventHandler
 			};
 		};
    }
+];
+
+player addEventHandler
+[
+    "Take",
+    {
+		if (playerSide == civilian) then {
+			if (primaryWeapon player != "" || secondaryWeapon player != "" || handgunWeapon player != "") then {
+				[player] joinSilent (createGroup [west, true]);
+				
+				trgCivPlayerDetected = createTrigger ["EmptyDetector", getPos player];
+				trgCivPlayerDetected setTriggerArea [0, 0, 0, false];
+				trgCivPlayerDetected setTriggerActivation ["NONE", "PRESENT", false];
+				trgCivPlayerDetected setTriggerStatements [
+					"call Fn_Local_CheckIfCivPlayerDetected;",
+					"player setVariable ['weapon_fiered', true, false]; deleteVehicle trgCivPlayerDetected;",
+					""
+				];
+			};
+		};
+    }
+];
+
+player addEventHandler
+[
+    "Put",
+    {
+		systemChat format ["%1 %2", player getVariable ["is_civilian", false], player getVariable ["weapon_fiered", false]];
+		if (player getVariable ["is_civilian", false]) then {
+			if (!(player getVariable ["weapon_fiered", false])) then {
+				if (primaryWeapon player == "" && secondaryWeapon player == "" && handgunWeapon player == "") then {
+					[player] joinSilent (createGroup [civilian, true]);
+					deleteVehicle trgCivPlayerDetected;
+				};
+			};
+		};
+    }
 ];
 
 //tickets

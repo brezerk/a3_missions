@@ -21,7 +21,7 @@ for "_i" from 1 to 5 do {player addItemToUniform "ACE_morphine";};
 for "_i" from 1 to 15 do {player addItemToUniform "ACE_fieldDressing";};
 
 player addVest "CUP_V_B_RRV_DA1";
-for "_i" from 1 to 2 do {player addItemToVest "CUP_7Rnd_45ACP_1911";};
+for "_i" from 1 to 3 do {player addItemToVest "CUP_7Rnd_45ACP_1911";};
 for "_i" from 1 to 3 do {player addItemToVest "CUP_30Rnd_556x45_Stanag";};
 for "_i" from 1 to 2 do {player addItemToVest "CUP_HandGrenade_M67";};
 for "_i" from 1 to 2 do {player addItemToVest "Chemlight_green";};

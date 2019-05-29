@@ -107,7 +107,7 @@ if (isServer) then {
 			{ _this call Fn_Task_Create_Informator_Complete; },
 			"simpleTasks\types\talk",
 			"ACTION_02",
-			"&& alive _target"
+			"&& alive _target && !(_this getVariable ['is_civilian', false])"
 		] call BrezBlock_fnc_Attach_Hold_Action;
 		
 		if (hasInterface) then {

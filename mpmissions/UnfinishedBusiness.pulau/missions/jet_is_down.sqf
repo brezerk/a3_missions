@@ -72,7 +72,7 @@ if (isServer) then {
 		{
 			_x setVariable ["ACE_isUnconscious", false, true];
 			remoteExecCall ["Fn_Local_Jet_Player_Land", _x];
-			[_x, true] remoteExecCall ["allowDamage"];
+			//[_x, true] remoteExecCall ["allowDamage"];
 		} forEach assault_group;
 		
 		sleep 5;
