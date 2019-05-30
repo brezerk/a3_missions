@@ -16,22 +16,19 @@
  *                                                                         *
  ***************************************************************************/
 
-_westHQ = createCenter west;
-_eastHQ = createCenter east;
-_indepHQ = createCenter independent;
-_civilianHQ = createCenter civilian;
-
-assault_group = [];
-
-
-//[] execVM "missions\informator.sqf";
-//[] execVM "missions\aa.sqf";
-[] execVM "missions\intro.sqf";
-[] execVM "missions\patrols.sqf";
-[] execVM "missions\aa.sqf";
-[] execVM "missions\leader.sqf";
-
 if (isServer) then {
+	_westHQ = createCenter west;
+	_eastHQ = createCenter east;
+	_indepHQ = createCenter independent;
+	_civilianHQ = createCenter civilian;
+
+	assault_group = [];
+
+	#include "missions\intro.sqf";
+	#include "missions\patrols.sqf";
+	#include "missions\aa.sqf";
+	#include "missions\leader.sqf";
+	#include "missions\civilian\cargo.sqf";
 
 	Fn_Endgame = {
 		params["_endingType"];
@@ -56,6 +53,7 @@ if (isServer) then {
 	sleep 5;
 	
 	call Fn_Create_MissionIntro;
+	[getMarkerPos "wp_cargo_03"] call Fn_Task_Create_Civilian_FloodedShip;
 	
 
 	addMissionEventHandler ["EntityKilled",{

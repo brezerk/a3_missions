@@ -1,25 +1,25 @@
 version=53;
 class EditorData
 {
-	moveGridStep=1;
+	moveGridStep=29.226496;
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=37;
 	class ItemIDProvider
 	{
-		nextID=1963;
+		nextID=1977;
 	};
 	class MarkerIDProvider
 	{
-		nextID=26;
+		nextID=27;
 	};
 	class Camera
 	{
-		pos[]={5456.6885,53.795021,8960.5869};
-		dir[]={0.73151344,-0.6266067,-0.26881886};
-		up[]={0.58819509,0.77929652,-0.21615197};
-		aside[]={-0.3449322,9.0221874e-009,-0.93863374};
+		pos[]={5619.2734,32.940384,9941.3613};
+		dir[]={0.4321115,-0.33023584,0.83931667};
+		up[]={0.15120219,0.94386029,0.29368442};
+		aside[]={0.88919955,-3.7885911e-007,-0.45779532};
 	};
 };
 binarizationWanted=0;
@@ -544,7 +544,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=677;
+		items=688;
 		class Item0
 		{
 			dataType="Marker";
@@ -43123,6 +43123,111 @@ class Mission
 			};
 			id=1960;
 			atlOffset=-7.6293945e-006;
+		};
+		class Item677
+		{
+			dataType="Marker";
+			position[]={6756.2329,0.001,10487.821};
+			name="wp_cargo_01";
+			type="c_ship";
+			id=1966;
+			atlOffset=23.396542;
+		};
+		class Item678
+		{
+			dataType="Marker";
+			position[]={5533.1274,5.9967499,11186.336};
+			name="wp_cargo_02";
+			type="c_ship";
+			id=1967;
+			atlOffset=23.396542;
+		};
+		class Item679
+		{
+			dataType="Marker";
+			position[]={4268.082,5.6152782,11554.35};
+			name="wp_cargo_03";
+			type="c_ship";
+			id=1968;
+			atlOffset=23.396542;
+		};
+		class Item680
+		{
+			dataType="Marker";
+			position[]={2882.282,2.69063,11588.852};
+			name="wp_cargo_04";
+			type="c_ship";
+			id=1969;
+			atlOffset=23.396542;
+		};
+		class Item681
+		{
+			dataType="Marker";
+			position[]={2054.252,-1.1419983,10962.078};
+			name="wp_cargo_05";
+			type="c_ship";
+			id=1970;
+			atlOffset=23.396542;
+		};
+		class Item682
+		{
+			dataType="Marker";
+			position[]={2370.5137,4.7436867,10042.045};
+			name="wp_cargo_06";
+			type="c_ship";
+			id=1971;
+			atlOffset=23.396542;
+		};
+		class Item683
+		{
+			dataType="Marker";
+			position[]={2612.0222,6.308939,9334.7695};
+			name="wp_cargo_07";
+			type="c_ship";
+			id=1972;
+			atlOffset=23.396542;
+		};
+		class Item684
+		{
+			dataType="Marker";
+			position[]={2721.2759,9.115263,8638.9951};
+			name="wp_cargo_08";
+			type="c_ship";
+			id=1973;
+			atlOffset=23.396542;
+		};
+		class Item685
+		{
+			dataType="Marker";
+			position[]={3011.7581,8.6515532,7975.1133};
+			name="wp_cargo_09";
+			type="c_ship";
+			id=1974;
+			atlOffset=23.396542;
+		};
+		class Item686
+		{
+			dataType="Marker";
+			position[]={6883.2871,11.320016,9564.8135};
+			name="wp_cargo_10";
+			type="c_ship";
+			id=1975;
+			atlOffset=23.396542;
+		};
+		class Item687
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6531.0195,4.9348445,10186.13};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=1976;
+			type="Land_Wreck_Traw2_F";
+			atlOffset=23.224678;
 		};
 	};
 	class Connections

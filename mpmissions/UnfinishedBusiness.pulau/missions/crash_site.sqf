@@ -54,7 +54,8 @@ if (isServer) then {
 		Usage: call Fn_Task_Create_HelicopterCrashSite
 	*/
 	Fn_Task_Create_C130J_CrashSite = {
-		params ["_markerPos", "_boom"];
+		params ["_markerPos"];
+		private ["_boom", "_obj", "_fire"];
 		
 		//do envonmental damage
 		for "_i" from 1 to 5 do {
