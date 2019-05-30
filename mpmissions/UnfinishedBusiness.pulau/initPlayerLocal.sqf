@@ -108,7 +108,7 @@ player addEventHandler
 			case west:
 			{
 				systemChat "switched";
-				_group = createGroup [civilian, true];//east;
+				_group = createGroup [east, true];//east;
 				player setVariable ["is_civilian", true, true];
 				[player] joinSilent _group;
 			};
