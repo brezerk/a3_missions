@@ -182,6 +182,56 @@
 				<English>We took down US military plane. Couple survivors are scattered over the island. Find and eliminate them.</English>
 				<Russian>Ми збили американський військовий літак. Декілька виживших розкидані по острову. Знайдіть і усуньте їх.</Russian>
 			</Key>
+			<Key ID="TASK_CIV_01_TITLE">
+				<Original>Optional: Sunken ship</Original>
+				<English>Optional: Sunken ship</English>
+				<Russian>Додаткове: Затонулий корабель</Russian>
+			</Key>
+			<Key ID="TASK_CIV_01_DESC">
+				<Original>Last storm sunk cargo ship. There were some rumors about carrying weapons on this boat. I have to find diving equipment and check the wreckage. But I need to be careful and avoid patrol boats.</Original>
+				<English>Last storm sunk cargo ship. There were some rumors about carrying weapons on this boat. I have to find diving equipment and check the wreckage. But I need to be careful and avoid patrol boats.</English>
+				<Russian>У минулий шторм затонув вантажний корабель. Продукують, що на цьому човні перевозили зброю. Я повинен знайти водолазне обладнання та перевірити уламки. Але потрібно бути обережним і уникати патрульних катерів.</Russian>
+			</Key>
+			<Key ID="TASK_CIV_02_TITLE">
+				<Original>Optional: Police Station</Original>
+				<English>Optional: Police Station</English>
+				<Russian>Додаткове: Police Station</Russian>
+			</Key>
+			<Key ID="TASK_CIV_02_DESC">
+				<Original>I need to check the police station. Police are very relaxed this days and maybe I will be able to steal some weapon.</Original>
+				<English>I need to check the police station. Police are very relaxed this days and maybe I will be able to steal some weapon.</English>
+				<Russian>Потрібно перевірити поліцейський участок. Поліція дуже розслабилась і можливо я зможу поцупити якусь зброю.</Russian>
+			</Key>
+			<Key ID="TASK_CIV_03_TITLE">
+				<Original>Sunken ship</Original>
+				<English>Sunken ship</English>
+				<Russian>Затонулий корабель</Russian>
+			</Key>
+			<Key ID="TASK_CIV_03_DESC">
+				<Original>Last storm sunk cargo ship. There were some rumors about carrying weapons on this boat. I have to find diving equipment and check the wreckage. But I need to be careful and avoid patrol boats.</Original>
+				<English>Last storm sunk cargo ship. There were some rumors about carrying weapons on this boat. I have to find diving equipment and check the wreckage. But I need to be careful and avoid patrol boats.</English>
+				<Russian>У минулий шторм затонув вантажний корабель. Продукують, що на цьому човні перевозили зброю. Я повинен знайти водолазне обладнання та перевірити уламки. Але потрібно бути обережним і уникати патрульних катерів.</Russian>
+			</Key>
+			<Key ID="TASK_CIV_04_TITLE">
+				<Original>Sunken ship</Original>
+				<English>Sunken ship</English>
+				<Russian>Затонулий корабель</Russian>
+			</Key>
+			<Key ID="TASK_CIV_04_DESC">
+				<Original>Last storm sunk cargo ship. There were some rumors about carrying weapons on this boat. I have to find diving equipment and check the wreckage. But I need to be careful and avoid patrol boats.</Original>
+				<English>Last storm sunk cargo ship. There were some rumors about carrying weapons on this boat. I have to find diving equipment and check the wreckage. But I need to be careful and avoid patrol boats.</English>
+				<Russian>У минулий шторм затонув вантажний корабель. Продукують, що на цьому човні перевозили зброю. Я повинен знайти водолазне обладнання та перевірити уламки. Але потрібно бути обережним і уникати патрульних катерів.</Russian>
+			</Key>
+			<Key ID="TASK_CIV_05_TITLE">
+				<Original>Sunken ship</Original>
+				<English>Sunken ship</English>
+				<Russian>Затонулий корабель</Russian>
+			</Key>
+			<Key ID="TASK_CIV_05_DESC">
+				<Original>Last storm sunk cargo ship. There were some rumors about carrying weapons on this boat. I have to find diving equipment and check the wreckage. But I need to be careful and avoid patrol boats.</Original>
+				<English>Last storm sunk cargo ship. There were some rumors about carrying weapons on this boat. I have to find diving equipment and check the wreckage. But I need to be careful and avoid patrol boats.</English>
+				<Russian>У минулий шторм затонув вантажний корабель. Продукують, що на цьому човні перевозили зброю. Я повинен знайти водолазне обладнання та перевірити уламки. Але потрібно бути обережним і уникати патрульних катерів.</Russian>
+			</Key>
 			<Key ID="ACTION_01">
 				<Original>Search</Original>
 				<English>Search</English>
@@ -251,6 +301,11 @@
 				<Original>Kambani village.</Original>
 				<English>Kambani village.</English>
 				<Russian>Поселення Kambani.</Russian>
+			</Key>
+			<Key ID="INFO_SUBLOC_09">
+				<Original>Sunken ship.</Original>
+				<English>Sunken ship.</English>
+				<Russian>Затонулий корабель.</Russian>
 			</Key>
 			<Key ID="STR_RADIO_CALL_01">
 				<Original>Welcome on board to AF101. Buckle up,</Original>

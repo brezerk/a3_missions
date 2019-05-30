@@ -25,14 +25,16 @@ waitUntil { !isNull player }; // Wait for player to initialize
 player setVariable ["weapon_fiered", false, false];
 player setVariable ["is_civilian", false, true];
 
-[] execVM "briefing.sqf";
-[] execVM "missions\local\intro.sqf";
-[] execVM "missions\local\fast_travel.sqf";
-[] execVM "missions\local\jet_is_down.sqf";
-[] execVM "missions\local\informator.sqf";
-[] execVM "missions\local\aa.sqf";
-[] execVM "missions\local\leader.sqf";
-[] execVM "missions\local\csat.sqf";
+#include "briefing.sqf";
+#include "missions\local\intro.sqf";
+#include "missions\local\fast_travel.sqf";
+#include "missions\local\jet_is_down.sqf";
+#include "missions\local\informator.sqf";
+#include "missions\local\aa.sqf";
+#include "missions\local\leader.sqf";
+#include "missions\local\csat.sqf";
+#include "missions\local\cargo.sqf";
+#include "missions\local\police.sqf";
 
 //private['trgCivPlayerDetected'];
 
@@ -77,7 +79,9 @@ Fn_Local_FailTasks = {
 		't_scat_eliminate_surv',
 		't_destroy_aa',
 		't_destroy_comtower',
-		't_kill_leader'
+		't_kill_leader',
+		't_civ_boat',
+		't_civ_police'
 	];
 };
 
@@ -103,12 +107,14 @@ player addEventHandler
 		player setVariable ["is_civilian", false, true];
 		player setVariable ["weapon_fiered", false, false];
 		deleteVehicle trgCivPlayerDetected;
+		deleteVehicle trgCivFloodedShip;
+		deleteVehicle trgCivPoliceStation;
 		switch (playerSide) do
 		{
 			case west:
 			{
 				systemChat "switched";
-				_group = createGroup [east, true];//east;
+				_group = createGroup [civilian, true];//east;
 				player setVariable ["is_civilian", true, true];
 				[player] joinSilent _group;
 			};
@@ -141,7 +147,8 @@ player addEventHandler
 					'respawn_civilian_07',
 					'respawn_civilian_08'
 				];
-				call Fn_Local_Create_SCAT_MissionIntro;
+				call Fn_Local_Create_Task_Civilian_FloodedShip;
+				call Fn_Local_Create_Task_Civilian_Police;
 			};
 		};
    }

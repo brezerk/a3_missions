@@ -65,7 +65,7 @@ if (isServer) then {
 		};
 		
 		//spawn creater and wreck
-		"Crater" createVehicle (_markerPos); 
+		"CraterLong" createVehicle (_markerPos); 
 		_obj = "Land_Wreck_Plane_Transport_01_F" createVehicle (_markerPos); 
 		//put fire and smoke
 		_fire = "test_EmptyObjectForFireBig" createVehicle (_markerPos); 

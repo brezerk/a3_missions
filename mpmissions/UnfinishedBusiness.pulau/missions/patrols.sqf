@@ -60,6 +60,44 @@ if (isServer) then {
 		} forEach _vehicles;
 	};
 	
+	Fn_Patrols_Create_Random_SeaWaypoints = {
+		params ["_vehicles"];
+		private ["_wp", "_marker", "_wp_array", "_group"];
+		{
+			_group = group driver _x;
+			_wp_array = [
+				'wp_cargo_01',
+				'wp_cargo_02',
+				'wp_cargo_03',
+				'wp_cargo_04',
+				'wp_cargo_05',
+				'wp_cargo_06',
+				'wp_cargo_07',
+				'wp_cargo_08',
+				'wp_cargo_09',
+				'wp_cargo_10'
+			];
+			for "_i" from 0 to (random 4 + 6) do {
+				_marker = selectRandom _wp_array;
+				_wp_array = _wp_array - [_marker];
+				_wp = _group addWaypoint [getMarkerPos _marker, 0];
+				_wp setWaypointCombatMode "YELLOW";
+				_wp setWaypointBehaviour "SAFE";
+				_wp setWaypointSpeed "LIMITED";
+				_wp setWaypointFormation "NO CHANGE";
+				_wp setWaypointType "MOVE";
+			};
+			_marker = selectRandom _wp_array;
+			_wp_array = _wp_array - [_marker];
+			_wp = _group addWaypoint [getMarkerPos _marker, 0];
+			_wp setWaypointCombatMode "YELLOW";
+			_wp setWaypointBehaviour "SAFE";
+			_wp setWaypointSpeed "LIMITED";
+			_wp setWaypointFormation "NO CHANGE";
+			_wp setWaypointType "CYCLE";
+		} forEach _vehicles;
+	};
+	
 	Fn_Patrols_CreateLoiter = {
 		params ['_markerPos', '_vehicle'];
 		private ['_wp'];

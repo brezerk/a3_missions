@@ -43,13 +43,13 @@ player linkItem "ItemWatch";
 
 comment "Give player a radio depending on radio mod loaded";
 if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
-	_player addItemToVest "ACRE_SEM52SL";
+	player addItemToVest "ACRE_SEM52SL";
 } else {
 	if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
-		_player linkItem "tf_anprc152";
+		player linkItem "tf_anprc152";
 	} else {
 		comment "Fallback to native arma3 radio";
-		_player linkItem "ItemRadio";
+		player linkItem "ItemRadio";
 	};
 };
 

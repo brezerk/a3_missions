@@ -17,52 +17,58 @@
  ***************************************************************************/
 
 /*
-Spawn start objectives, triggers for game intro and players allocation
+Spawn start objectives, triggers for informator contact
 */
 
 //Player side triggers
 // Client side code
+
 if (hasInterface) then {
-	Fn_Local_Create_SCAT_MissionIntro = {
-		if (canFire csat_aa_01) then {
-			[
-				east,
-				"t_scat_defend_aa",
-				[localize "TASK_AOC_01_DESC",
-				localize "TASK_AOC_01_TITLE",
-				localize "TASK_ORIG_01"],
-				getPos csat_aa_01,
-				"CREATED",
-				0,
-				true
-			] call BIS_fnc_taskCreate;
-			['t_scat_defend_aa', "defend"] call BIS_fnc_taskSetType;
-		};
-		if (alive csat_comm_tower_01) then {
-			[
-				east,
-				"t_scat_defend_comm_tower",
-				[localize "TASK_AOC_02_DESC",
-				localize "TASK_AOC_02_TITLE",
-				localize "TASK_ORIG_02"],
-				getPos csat_comm_tower_01,
-				"CREATED",
-				0,
-				true
-			] call BIS_fnc_taskCreate;
-			['t_scat_defend_comm_tower', "defend"] call BIS_fnc_taskSetType;
-		};
+
+	Fn_Local_Create_Task_Civilian_Police = {
+		private ["_trg"];
 		[
-			east,
-			"t_scat_eliminate_surv",
-			[localize "TASK_AOC_03_DESC",
-			localize "TASK_AOC_03_TITLE",
-			localize "TASK_ORIG_03"],
-			objNull,
-			"CREATED",
-			0,
-			true
+				player,
+				"t_civ_police",
+				[localize "TASK_CIV_02_DESC",
+				localize "TASK_CIV_02_TITLE",
+				localize "TASK_ORIG_01"],
+				getMarkerPos 'wp_police',
+				"CREATED",
+				0,
+				true
 		] call BIS_fnc_taskCreate;
-		['t_scat_eliminate_surv', "kill"] call BIS_fnc_taskSetType;
+		['t_civ_police', 'dange'] call BIS_fnc_taskSetType;
+			
+		trgCivPoliceStation = createTrigger ["EmptyDetector", getMarkerPos 'wp_police'];
+		trgCivPoliceStation setTriggerArea [12, 12, 0, false];
+		trgCivPoliceStation setTriggerActivation ["ANYPLAYER", "PRESENT", true];
+		trgCivPoliceStation setTriggerStatements [
+			"(vehicle player) in thisList",
+			"call Fn_Task_Civilian_Police_Enter_Area;",
+			"call Fn_Task_Civilian_Police_Leave_Area;"
+		];
 	};
+	
+	Fn_Task_Civilian_Police_Enter_Area = {
+		private['_task'];
+		if (player getVariable ["is_civilian", false]) then {
+			_task = ['t_civ_police', player] call BIS_fnc_taskReal;
+			if (!isNull _task) then {
+				_task setTaskState "Succeeded";
+			};
+			systemChat "You are on danger waters";
+			[player] joinSilent (createGroup [west, true]);
+		};
+	};
+	
+	Fn_Task_Civilian_Police_Leave_Area = {
+		if (player getVariable ["is_civilian", false]) then {
+			if (primaryWeapon player == "" && secondaryWeapon player == "" && handgunWeapon player == "") then {
+				systemChat "Ok. Claim down.";
+				[player] joinSilent (createGroup [civilian, true]);
+			};
+		};
+	};
+	
 };
