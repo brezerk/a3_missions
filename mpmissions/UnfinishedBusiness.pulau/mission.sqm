@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=41;
+	toggles=169;
 	class ItemIDProvider
 	{
 		nextID=2063;
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={4182.0815,1.2625197,11106.858};
-		dir[]={0.33478487,-0.85562629,0.39478862};
-		up[]={0.55339128,0.5175873,0.65257758};
-		aside[]={0.76269692,8.4890053e-007,-0.64677811};
+		pos[]={4021.625,786.41815,10755.362};
+		dir[]={0.0025776639,-0.99994999,0.0096618459};
+		up[]={0.25775915,0.00999978,0.9661575};
+		aside[]={0.96620584,0,-0.25777206};
 	};
 };
 binarizationWanted=0;
@@ -100,26 +100,13 @@ addons[]=
 	"A3_Boat_F_Gamma_Boat_Civil_01",
 	"CUP_WheeledVehicles_Lada",
 	"CUP_Creatures_People_Civil_Russia",
-	"A3_Weapons_F_Rifles_MX",
-	"ace_scopes",
-	"ace_ballistics",
-	"A3_Weapons_F_Acc",
-	"ace_laserpointer",
-	"A3_Weapons_F",
-	"ace_smallarms",
-	"A3_Weapons_F_Pistols_P07",
-	"A3_Characters_F_Heads",
-	"ace_goggles",
-	"ace_nightvision",
-	"A3_Weapons_F_Items",
-	"A3_Boat_F_Boat_Armed_01",
 	"A3_Structures_F_Mil_Helipads"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=61;
+		items=55;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -479,48 +466,6 @@ class AddonsMetaData
 			className="CUP_Creatures_People_Civil_Russia";
 			name="CUP_Creatures_People_Civil_Russia";
 		};
-		class Item55
-		{
-			className="ace_scopes";
-			name="ACE3 - Scopes";
-			author="Команда ACE";
-			url="http://ace3mod.com/";
-		};
-		class Item56
-		{
-			className="ace_ballistics";
-			name="ACE3 - Ballistics";
-			author="Команда ACE";
-			url="http://ace3mod.com/";
-		};
-		class Item57
-		{
-			className="ace_laserpointer";
-			name="ACE3 - Laser Pointer";
-			author="Команда ACE";
-			url="http://ace3mod.com/";
-		};
-		class Item58
-		{
-			className="ace_smallarms";
-			name="ACE3 - Small Arms";
-			author="Команда ACE";
-			url="http://ace3mod.com/";
-		};
-		class Item59
-		{
-			className="ace_goggles";
-			name="ACE3 - Goggles";
-			author="Команда ACE";
-			url="http://ace3mod.com/";
-		};
-		class Item60
-		{
-			className="ace_nightvision";
-			name="ACE3 - Night Vision";
-			author="Команда ACE";
-			url="http://ace3mod.com/";
-		};
 	};
 };
 randomSeed=6619403;
@@ -645,7 +590,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=710;
+		items=708;
 		class Item0
 		{
 			dataType="Marker";
@@ -22509,7 +22454,7 @@ class Mission
 			};
 			id=905;
 			type="CBA_ModulePatrol";
-			atlOffset=0.00029754639;
+			atlOffset=0.96199989;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -39420,7 +39365,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={5439.0444,41.529984,8985.1553};
-						angles[]={-0,6.1848707,6.2698579};
+						angles[]={0,6.1848707,6.2698579};
 					};
 					side="East";
 					flags=4;
@@ -39438,7 +39383,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={5439.0444,41.529984,8985.1553};
-						angles[]={-0,6.1848707,6.2698579};
+						angles[]={0,6.1848707,6.2698579};
 					};
 					side="East";
 					flags=6;
@@ -41404,13 +41349,14 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={708.24591,7.3214388,2662.3428};
-						angles[]={0,0.81411523,0};
+						position[]={708.24597,7.3214388,2662.343};
+						angles[]={0,0.81410885,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
+						isPlayer=1;
 						isPlayable=1;
 					};
 					id=1817;
@@ -41923,7 +41869,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={5439.0962,45.419964,8985.1055};
-				angles[]={-0,6.1848707,6.2698579};
+				angles[]={0,6.1848707,6.2698579};
 			};
 			side="East";
 			flags=6;
@@ -43590,11 +43536,11 @@ class Mission
 		class Item691
 		{
 			dataType="Marker";
-			position[]={4182.6509,-0.012277169,11106.06};
-			name="marker_28";
+			position[]={4182.6509,-0.012,11106.06};
+			name="wp_marker_28";
 			type="mil_objective";
 			id=2018;
-			atlOffset=21.500847;
+			atlOffset=21.501125;
 		};
 		class Item692
 		{
@@ -43641,7 +43587,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={3334.7466,0.68327022,8855.126};
-				angles[]={-0,1.3089969,0};
+				angles[]={0,1.3089969,0};
 			};
 			side="Empty";
 			flags=4;
@@ -43745,7 +43691,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={5595.8511,3.3049934,9905.4873};
-				angles[]={-0,3.4033921,0};
+				angles[]={0,3.4033921,0};
 			};
 			side="Empty";
 			flags=4;
@@ -43817,7 +43763,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={4489.2314,6.2077522,10182.445};
-				angles[]={-0,0.2617994,-0};
+				angles[]={0,0.2617994,0};
 			};
 			side="Empty";
 			flags=4;
@@ -43982,7 +43928,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={4486.6812,5.0462918,10177.364};
-				angles[]={-0,4.9741888,0};
+				angles[]={0,4.9741888,0};
 			};
 			side="Empty";
 			flags=4;
@@ -44100,231 +44046,6 @@ class Mission
 			atlOffset=0.0035872459;
 		};
 		class Item707
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=3;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={4216.9805,-18.768522,11177.939};
-						angles[]={0.053282689,3.6651917,6.2166171};
-					};
-					side="West";
-					class Attributes
-					{
-						isPlayer=1;
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="arifle_MX_F";
-								optics="optic_Aco";
-								flashlight="acc_pointer_IR";
-								class primaryMuzzleMag
-								{
-									name="30Rnd_65x39_caseless_mag";
-									ammoLeft=30;
-								};
-							};
-							class handgun
-							{
-								name="hgun_P07_F";
-								class primaryMuzzleMag
-								{
-									name="16Rnd_9x21_Mag";
-									ammoLeft=17;
-								};
-							};
-							class uniform
-							{
-								typeName="U_B_Wetsuit";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="30Rnd_65x39_caseless_mag";
-										count=2;
-										ammoLeft=30;
-									};
-								};
-								class ItemCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-								};
-							};
-							class vest
-							{
-								typeName="V_RebreatherB";
-								isBackpack=0;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-							goggles="G_Diving";
-							hmd="NVGoggles";
-							headgear="H_HelmetB";
-						};
-					};
-					id=2059;
-					type="B_Soldier_F";
-					atlOffset=1.0862122;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="Male11ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"SCALAR"
-										};
-									};
-									value=1.03;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={4216.98,-0.15269597,11177.939};
-						angles[]={0,3.6651917,0};
-					};
-					side="West";
-					flags=2;
-					class Attributes
-					{
-					};
-					id=2060;
-					type="B_Soldier_F";
-					atlOffset=19.702013;
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={4216.98,-18.768497,11177.939};
-						angles[]={0.053282689,3.6651917,6.2166171};
-					};
-					side="West";
-					class Attributes
-					{
-					};
-					id=2061;
-					type="B_Soldier_F";
-					atlOffset=1.0862122;
-				};
-			};
-			class Attributes
-			{
-			};
-			class CrewLinks
-			{
-				class LinkIDProvider
-				{
-					nextID=3;
-				};
-				class Links
-				{
-					items=3;
-					class Item0
-					{
-						linkID=0;
-						item0=2059;
-						item1=2058;
-						class CustomData
-						{
-							role=1;
-						};
-					};
-					class Item1
-					{
-						linkID=1;
-						item0=2060;
-						item1=2058;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={0};
-						};
-					};
-					class Item2
-					{
-						linkID=2;
-						item0=2061;
-						item1=2058;
-						class CustomData
-						{
-							role=2;
-							turretPath[]={1};
-						};
-					};
-				};
-			};
-			id=2057;
-			atlOffset=19.702013;
-		};
-		class Item708
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={4216.98,3.1697388,11177.89};
-				angles[]={0,3.6651917,0};
-			};
-			side="West";
-			flags=2;
-			class Attributes
-			{
-			};
-			id=2058;
-			type="B_Boat_Armed_01_minigun_F";
-			atlOffset=19.702013;
-		};
-		class Item709
 		{
 			dataType="Object";
 			class PositionInfo
