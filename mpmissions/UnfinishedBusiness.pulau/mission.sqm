@@ -5,21 +5,21 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=169;
+	toggles=41;
 	class ItemIDProvider
 	{
-		nextID=2063;
+		nextID=2068;
 	};
 	class MarkerIDProvider
 	{
-		nextID=30;
+		nextID=33;
 	};
 	class Camera
 	{
-		pos[]={4021.625,786.41815,10755.362};
-		dir[]={0.0025776639,-0.99994999,0.0096618459};
-		up[]={0.25775915,0.00999978,0.9661575};
-		aside[]={0.96620584,0,-0.25777206};
+		pos[]={3487.2463,107.14793,8893.6777};
+		dir[]={0.009999292,-0.99994999,9.8846947e-005};
+		up[]={0.99990124,0.00999978,0.009884418};
+		aside[]={0.0098849125,0,-0.99995124};
 	};
 };
 binarizationWanted=0;
@@ -590,7 +590,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=708;
+		items=710;
 		class Item0
 		{
 			dataType="Marker";
@@ -22454,7 +22454,7 @@ class Mission
 			};
 			id=905;
 			type="CBA_ModulePatrol";
-			atlOffset=0.96199989;
+			atlOffset=0.00029754639;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -44060,6 +44060,32 @@ class Mission
 			id=2062;
 			type="Land_HelipadEmpty_F";
 			atlOffset=21.490999;
+		};
+		class Item708
+		{
+			dataType="Marker";
+			position[]={1092.79,8.3331203,2498.356};
+			name="wp_civ_test";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			fillName="BDiagonal";
+			a=50;
+			b=50;
+			id=2063;
+		};
+		class Item709
+		{
+			dataType="Marker";
+			position[]={1762.9508,34.975651,3112.8967};
+			name="wp_indep_test";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorGUER";
+			fillName="DiagGrid";
+			a=100;
+			b=100;
+			id=2067;
 		};
 	};
 	class Connections

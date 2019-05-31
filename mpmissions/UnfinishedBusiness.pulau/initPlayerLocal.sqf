@@ -38,6 +38,19 @@ player setVariable ["is_civilian", false, true];
 
 //private['trgCivPlayerDetected'];
 
+Fn_Local_SetPersonalTaskState = {
+	params['_name', '_state'];
+	private ['_task'];
+	systemChat format ["CHeck %1 %2", _name, _state];
+	_task = [_name, player] call BIS_fnc_taskReal;
+	if (!isNull _task) then {
+		systemChat "SET";
+		_task setTaskState _state;
+	} else {
+		systemChat "NUL?";
+	};
+};
+
 Fn_Local_ConfiscateVehicle = {
 	params["_vehicle"];
 	private["_driver"];

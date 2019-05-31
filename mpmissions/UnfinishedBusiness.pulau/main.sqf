@@ -58,6 +58,8 @@ if (isServer) then {
 	{
 		[_x] joinSilent createGroup [independent, true];
 	} forEach [synd_police_01, synd_police_02, synd_police_03];
+	
+	["wp_civ_test"] call BrezBlock_fnc_CreateCivilianPresence;
 };
 
 // We need to end game if all players are no longer alive

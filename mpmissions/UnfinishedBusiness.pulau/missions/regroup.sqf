@@ -20,25 +20,8 @@
 Spawn start objectives, triggers for informator contact
 */
 
-//Player side triggers
-// Client side code
-if (hasInterface) then {
-	
-};
-
 if (isServer) then {
-	private ["_count", "_trgRegroupPoint"];
-
 	task_complete_regroup = false;
-
-	_trgRegroupPoint = createTrigger ["EmptyDetector", getMarkerPos 'wp_air_field_01'];
-	_trgRegroupPoint setTriggerArea [30, 30, 0, false];
-	_trgRegroupPoint setTriggerActivation ["WEST", "PRESENT", true];
-	_trgRegroupPoint setTriggerStatements [
-			"this",
-			"",
-			""
-	];
 	
 	"PUB_fnc_kickFromAssaultGroup" addPublicVariableEventHandler {(_this select 1) call EventHander_Player_Killed};
 	
@@ -48,34 +31,32 @@ if (isServer) then {
 	EventHander_Player_Killed = {
 		private ["_player", "_old_unit"];
 		_player = _this select 0;
-		_old_unit = _this select 1;
-		
+		_old_unit = _this select 1; //FIXME: Should we use this instead?
 		if (_player in assault_group) then {
 			assault_group = assault_group - [_player];
 		};
 	};
 	
 	while { !task_complete_regroup } do {
+		private ["_count"];
 		sleep 10;
 		_count = 0;
 		//Check if assault group members are in the same area
 		{	
 			//Move trigger if member is still alive
-			if (alive _x) then { 
-				_trgRegroupPoint setPos (getPos _x);
+			if (alive _x) exitWith {
+				_count = 1;
 				{
-					if (_x inArea _trgRegroupPoint) then {
+					if (_x getVariable ["is_assault_group", false]) then {
 						_count = _count + 1;
 					};
-				} forEach list _trgRegroupPoint;
-				
-				if ((_count != 0) && (_count == count assault_group)) exitWith {
-					['t_regroup', 'SUCCEEDED'] call BIS_fnc_taskSetState;
-					task_complete_regroup = true;
-				};
+				} forEach nearestObjects [_x, ["SoldierWB"], 15];
 			};
 		} forEach assault_group;
+		if ((_count != 0) && (_count == count assault_group)) exitWith {
+			task_complete_regroup = true;
+		};
 	};
 	
-	deleteVehicle _trgRegroupPoint;
+	 ['t_regroup', 'SUCCEEDED'] call BIS_fnc_taskSetState;
 };

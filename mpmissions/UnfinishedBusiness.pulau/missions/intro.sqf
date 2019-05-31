@@ -75,6 +75,7 @@ if (isServer) then {
 			if (isPlayer _x) then {
 				assault_group = assault_group + [_x];
 				[_x, false] remoteExec ["allowDamage"];
+				_x setVariable ["is_assault_group", true, false];
 			};
 		} forEach crew us_airplane_01;
 		_group = group driver us_airplane_01;
