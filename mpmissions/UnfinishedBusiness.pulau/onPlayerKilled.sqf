@@ -23,13 +23,3 @@ call Fn_Local_FailTasks;
 PUB_fnc_kickFromAssaultGroup = [player, _this select 0];
 publicVariableServer "PUB_fnc_kickFromAssaultGroup";
 
-/*
-switch (playerSide) do
-{
-	case west:
-	{
-		systemChat "switched";
-		_group = createGroup east;
-		[player] joinSilent _group;
-	};
-};*/

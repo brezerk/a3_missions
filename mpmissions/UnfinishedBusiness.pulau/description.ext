@@ -38,7 +38,7 @@ OnLoadName		= "Unfinished Business v0.3.58";
 respawn = "BASE";
 // Delay in seconds before playable unit respawns.
 //respawnDelay = "10"; // 900
-respawnDelay = "15";
+respawnDelay = "30";
 // Respawn templates from CfgRespawnTemplates. You can combine any number of them together.
 respawnTemplates[] = {"Counter", "Base", "ace_spectator"};
 // 0 to disable the score table (it can still be opened manually by pressing 'P' key).

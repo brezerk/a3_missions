@@ -50,9 +50,7 @@ if (isServer) then {
 		_player = _this select 0;
 		_old_unit = _this select 1;
 		
-		//["killed handler acticated"] remoteExec ["systemChat"];
 		if (_player in assault_group) then {
-			//["ok. kick from group"] remoteExec ["systemChat"];
 			assault_group = assault_group - [_player];
 		};
 	};
@@ -64,16 +62,13 @@ if (isServer) then {
 		{	
 			//Move trigger if member is still alive
 			if (alive _x) then { 
-				//["move trigger"] remoteExec ["systemChat"];
 				_trgRegroupPoint setPos (getPos _x);
 				{
 					if (_x inArea _trgRegroupPoint) then {
-						//["unit in area +1"] remoteExec ["systemChat"];
 						_count = _count + 1;
 					};
 				} forEach list _trgRegroupPoint;
 				
-				//[format ["%1 found. excepcted %2", _count, count assault_group]] remoteExec ["systemChat"];
 				if ((_count != 0) && (_count == count assault_group)) exitWith {
 					['t_regroup', 'SUCCEEDED'] call BIS_fnc_taskSetState;
 					task_complete_regroup = true;
