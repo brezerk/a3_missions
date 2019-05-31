@@ -89,6 +89,8 @@ if (isServer) then {
 					_obj addItemCargoGlobal ["ItemRadio", 6];
 				};
 		};
+		//_target setPosASL [getPos _target select 0, getPos _target select 1, 0];
+		_obj addAction [localize 'ACTION_03', { private['_target']; _target = _this select 0; _target attachTo [invisble_01, [0,0,0]]; }, nil, 1, false, true, "", "alive _this", 5];
 		_obj;
 	};
 };

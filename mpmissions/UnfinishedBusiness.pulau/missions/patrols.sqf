@@ -88,7 +88,6 @@ if (isServer) then {
 				_wp setWaypointType "MOVE";
 			};
 			_marker = selectRandom _wp_array;
-			_wp_array = _wp_array - [_marker];
 			_wp = _group addWaypoint [getMarkerPos _marker, 0];
 			_wp setWaypointCombatMode "YELLOW";
 			_wp setWaypointBehaviour "SAFE";

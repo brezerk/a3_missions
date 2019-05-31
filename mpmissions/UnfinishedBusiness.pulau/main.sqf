@@ -55,19 +55,9 @@ if (isServer) then {
 	call Fn_Create_MissionIntro;
 	[getMarkerPos "wp_cargo_03"] call Fn_Task_Create_Civilian_FloodedShip;
 	
-
-	addMissionEventHandler ["EntityKilled",{
-		params ["_killed", "_killer", "_instigator"];
-		if (isNull _instigator) then {_instigator = UAVControl vehicle _killer select 0}; // UAV/UGV player operated road kill
-		if (isNull _instigator) then {_instigator = _killer}; // player driven vehicle road kill
-		systemChat format ["some %1 one died %2 %3", side group _killed, side group _killer, side group _instigator];
-		if (isPlayer _instigator) then {
-			systemChat "ok. _instigator is a plyer";
-			if ((side group _instigator in [east, independent, civilian]) && (side group _killed in [east, independent])) then {
-				systemChat "player killed an east or indep!";
-			};
-		};
-	}];
+	{
+		[_x] joinSilent createGroup [independent, true];
+	} forEach [synd_police_01, synd_police_02, synd_police_03];
 };
 
 // We need to end game if all players are no longer alive

@@ -38,7 +38,7 @@ if (hasInterface) then {
 				0,
 				true
 		] call BIS_fnc_taskCreate;
-		['t_civ_police', 'dange'] call BIS_fnc_taskSetType;
+		['t_civ_police', 'danger'] call BIS_fnc_taskSetType;
 			
 		trgCivPoliceStation = createTrigger ["EmptyDetector", getMarkerPos 'wp_police'];
 		trgCivPoliceStation setTriggerArea [12, 12, 0, false];
