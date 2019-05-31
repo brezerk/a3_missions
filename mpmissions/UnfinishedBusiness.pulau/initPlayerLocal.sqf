@@ -104,19 +104,28 @@ player addEventHandler
 [
 	"Killed",
 	{
+		private['_sides', '_side', '_group'];
 		player setVariable ["is_civilian", false, true];
 		player setVariable ["weapon_fiered", false, false];
 		deleteVehicle trgCivPlayerDetected;
 		deleteVehicle trgCivFloodedShip;
 		deleteVehicle trgCivPoliceStation;
-		switch (playerSide) do
+
+		_sides = [civilian, east] - [playerSide];
+		_side = selectRandom _sides;
+		_group = createGroup [_side, true];
+		[player] joinSilent _group;
+		switch (_side) do
 		{
-			case west:
+			case civilian:
 			{
-				systemChat "switched";
-				_group = createGroup [civilian, true];//east;
+				//systemChat "switched";
 				player setVariable ["is_civilian", true, true];
-				[player] joinSilent _group;
+			};
+			case east:
+			{
+				//systemChat "switched";
+				player setVariable ["is_civilian", false, true];
 			};
 		};
 	}
@@ -179,7 +188,7 @@ player addEventHandler
 [
     "Put",
     {
-		systemChat format ["%1 %2", player getVariable ["is_civilian", false], player getVariable ["weapon_fiered", false]];
+		//systemChat format ["%1 %2", player getVariable ["is_civilian", false], player getVariable ["weapon_fiered", false]];
 		if (player getVariable ["is_civilian", false]) then {
 			if (!(player getVariable ["weapon_fiered", false])) then {
 				if (primaryWeapon player == "" && secondaryWeapon player == "" && handgunWeapon player == "") then {
@@ -205,3 +214,4 @@ sleep 5;
 [[west], [east,independent,civilian]] call ace_spectator_fnc_updateSides;
 
 [[civ_veh_01, civ_veh_02, civ_veh_03, civ_veh_04]] call Fn_Local_AddAction_ConfiscateVehicles;
+

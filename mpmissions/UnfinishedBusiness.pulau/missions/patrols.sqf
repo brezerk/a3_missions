@@ -77,7 +77,7 @@ if (isServer) then {
 				'wp_cargo_09',
 				'wp_cargo_10'
 			];
-			for "_i" from 0 to (random 4 + 6) do {
+			for "_i" from 0 to (random 4 + 4) do {
 				_marker = selectRandom _wp_array;
 				_wp_array = _wp_array - [_marker];
 				_wp = _group addWaypoint [getMarkerPos _marker, 0];

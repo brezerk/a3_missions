@@ -39,7 +39,7 @@ if (hasInterface) then {
 				true
 		] call BIS_fnc_taskCreate;
 		['t_civ_police', 'danger'] call BIS_fnc_taskSetType;
-			
+		
 		trgCivPoliceStation = createTrigger ["EmptyDetector", getMarkerPos 'wp_police'];
 		trgCivPoliceStation setTriggerArea [12, 12, 0, false];
 		trgCivPoliceStation setTriggerActivation ["ANYPLAYER", "PRESENT", true];
@@ -57,7 +57,7 @@ if (hasInterface) then {
 			if (!isNull _task) then {
 				_task setTaskState "Succeeded";
 			};
-			systemChat "You are on danger waters";
+			//systemChat "You are on danger waters";
 			[player] joinSilent (createGroup [west, true]);
 		};
 	};
@@ -65,10 +65,11 @@ if (hasInterface) then {
 	Fn_Task_Civilian_Police_Leave_Area = {
 		if (player getVariable ["is_civilian", false]) then {
 			if (primaryWeapon player == "" && secondaryWeapon player == "" && handgunWeapon player == "") then {
-				systemChat "Ok. Claim down.";
+				//systemChat "Ok. Claim down.";
 				[player] joinSilent (createGroup [civilian, true]);
 			};
 		};
 	};
-	
+
 };
+

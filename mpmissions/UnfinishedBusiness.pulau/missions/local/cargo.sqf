@@ -57,7 +57,7 @@ if (hasInterface) then {
 			if (!isNull _task) then {
 				_task setTaskState "Succeeded";
 			};
-			systemChat "You are on danger waters";
+			//systemChat "You are on danger waters";
 			[player] joinSilent (createGroup [west, true]);
 		};
 	};
@@ -65,7 +65,7 @@ if (hasInterface) then {
 	Fn_Task_Civilian_FloodedShip_Leave_Area = {
 		if (player getVariable ["is_civilian", false]) then {
 			if (primaryWeapon player == "" && secondaryWeapon player == "" && handgunWeapon player == "") then {
-				systemChat "Ok. Claim down.";
+				//systemChat "Ok. Claim down.";
 				[player] joinSilent (createGroup [civilian, true]);
 			};
 		};
