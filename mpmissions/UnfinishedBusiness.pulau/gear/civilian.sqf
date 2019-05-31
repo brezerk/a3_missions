@@ -23,8 +23,8 @@ comment "Add items";
 player linkItem "ItemMap";
 player linkItem "ItemWatch";
 
-player addItemToUniform "CUP_hgun_Colt1911";
-for "_i" from 1 to 3 do {player addItemToUniform "CUP_7Rnd_45ACP_1911";};
+//player addItemToUniform "CUP_hgun_Colt1911";
+//for "_i" from 1 to 3 do {player addItemToUniform "CUP_7Rnd_45ACP_1911";};
 
 comment "Set identity";
 [player,"Ioannou","male03gre"] call BIS_fnc_setIdentity;
