@@ -20,15 +20,16 @@ if (isServer) then {
 	_westHQ = createCenter west;
 	_eastHQ = createCenter east;
 	_indepHQ = createCenter independent;
+	D_FRACTION_INDEP = "CUP_I_NAPA"; //posible CUP_I_TK_GUE, IND_F, IND_F, IND_G_F
 	_civilianHQ = createCenter civilian;
 
 	assault_group = [];
 
-	#include "missions\intro.sqf";
-	#include "missions\patrols.sqf";
-	#include "missions\aa.sqf";
-	#include "missions\leader.sqf";
-	#include "missions\civilian\cargo.sqf";
+	//#include "missions\intro.sqf";
+	//#include "missions\patrols.sqf";
+	//#include "missions\aa.sqf";
+	//#include "missions\leader.sqf";
+	//#include "missions\civilian\cargo.sqf";
 
 	Fn_Endgame = {
 		params["_endingType"];
@@ -50,16 +51,58 @@ if (isServer) then {
 		};
 	};
 	
-	sleep 5;
+	//sleep 5;
 	
-	call Fn_Create_MissionIntro;
-	[getMarkerPos "wp_cargo_03"] call Fn_Task_Create_Civilian_FloodedShip;
+	//call Fn_Create_MissionIntro;
+	//[getMarkerPos "wp_cargo_03"] call Fn_Task_Create_Civilian_FloodedShip;
+	
+	//{
+	//	[_x] joinSilent createGroup [independent, true];
+	//} forEach [synd_police_01, synd_police_02, synd_police_03];
+	
+	/*["wp_civ_test"] call BrezBlock_fnc_CreateCivilianPresence;
+	{
+		[_x] call BrezBlock_fnc_CreatePatrol;
+	} forEach ["wp_indep_test", "wp_indep_test_1", "wp_indep_test_2"];*/
+	
+	//_markers = allMapMarkers select {(getMarkerPos _x) inArea yourTrigger}
+	/*{
+		if (_x find "wp_" >= 0) then {
+		//if (markerType  _x != "") then {
+			systemChat format ["WOOT? %1 %2", markerBrush _x, markerType _x];
+		//};
+		};
+	} forEach allMapMarkers;*/
+	
+	Fn_Spawn = {
+		params['_trigger'];
+		{
+			if (getMarkerPos _x inArea _trigger) then {
+				systemChat format ["Spawn %1", _x];
+			};
+		} forEach allMapMarkers; //select {(getMarkerPos _x) };
+	};
+	
+	Fn_Despawn = {
+		params['_trigger'];
+		{
+			if (getMarkerPos _x inArea _trigger) then {
+				systemChat format ["Despawn %1", _x];
+			};
+			//systemChat format ["DeSpawn %1", _x];
+		} forEach allMapMarkers; //select {(getMarkerPos _x) inArea [getPos _trigger, 50, 50, 0, false ] };
+	};
+	
 	
 	{
-		[_x] joinSilent createGroup [independent, true];
-	} forEach [synd_police_01, synd_police_02, synd_police_03];
-	
-	["wp_civ_test"] call BrezBlock_fnc_CreateCivilianPresence;
+		systemChat "Got trigger!";
+		_x setTriggerActivation ["ANYPLAYER", "PRESENT", true];
+		_x setTriggerStatements [
+				"this",
+				"[thisTrigger] call Fn_Spawn;",
+				"[thisTrigger] call Fn_Despawn;"
+		];
+	} forEach allMissionObjects "EmptyDetector";
 };
 
 // We need to end game if all players are no longer alive

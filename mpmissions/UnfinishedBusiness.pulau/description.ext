@@ -26,7 +26,7 @@ class Header
 };
 
 author			= "brezerk@brezblock.org.ua";
-OnLoadName		= "Unfinished Business v0.5.45";
+OnLoadName		= "Unfinished Business v0.6.35";
 //OnLoadMission	= $STR_ONLOAD_INFO_01;
 //briefingName    = $STR_ONLOAD_INFO_02;
 // FIXME: https://feedback.bistudio.com/T67181
@@ -134,6 +134,7 @@ class CfgFunctions {
 			class Get_RND_Index {file = "addons\brezblock\utils\get_rnd_index.sqf";};
 			class Attach_Hold_Action {file = "addons\brezblock\actions\attach_hold.sqf";};
 			class CreateCivilianPresence {file = "addons\brezblock\systems\civilian.sqf";};
+			class CreatePatrol {file = "addons\brezblock\systems\patrol.sqf";};
 		};
 	};
 };

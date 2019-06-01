@@ -17,42 +17,43 @@
  ***************************************************************************/
 
 /*
-Create civilian presence module
+Create CBA patrol
 	Arguments: [_marker]
-	Usage: [_marker] call BrezBlock_fnc_CreateCivilianPresence;
-	Return: none
+	Usage: [_marker] call BrezBlock_fnc_CreatePatrol;
+	Return: Group
 */
 if (isServer) then {
 	params['_marker'];
-	private['_grp', '_center', '_pos', '_radius', '_obj', '_i'];
+	private['_grp', '_center', '_radius', '_side', '_cfg'];
 	
 	_radius = getMarkerSize _marker select 0;
 	_center = getMarkerPos _marker;
 	
-	_grp = createGroup [civilian, true];
-	
-	for "_i" from 0 to (_radius / 25) do
+	//https://community.bistudio.com/wiki/Arma_3_CfgMarkerColors
+	switch (getMarkerColor _marker) do
 	{
-		_pos = [_center, 5, _radius, 3, 0, 0, 0] call BIS_fnc_findSafePos;
-		_obj = _grp createUnit ["ModuleCivilianPresenceSafeSpot_F", _pos, [], 0, "NONE"];
-		_obj setVariable ["#capacity",    1];
-		_obj setVariable ["#usebuilding", true];
-		_obj setVariable ["#terminal",    false];
+		case "ColorWEST": { _side = west; };
+		case "ColorEAST": { _side = east; };
+		case "ColorGUER": { 
+			_side = resistance;
+			switch (D_FRACTION_INDEP) do
+			{
+				case "CUP_I_NAPA": { _cfg = selectRandom["CUP_I_NAPA_InfTeam_1", "CUP_I_NAPA_InfTeam_2"]; };
+				case "CUP_I_TK_GUE": { _cfg = "CUP_I_TK_GUE_Patrol"; };
+				case "IND_F": { _cfg = "HAF_InfSentry"; };
+				case "IND_G_F": { _cfg = "I_G_InfTeam_Light"; };
+			};
+			 
+			//_cfg =  (configfile >> "CfgGroups" >> "Indep" >> "CUP_I_NAPA" >> "Infantry" >> (selectRandom []));
+		};
+		case "ColorWEST": { _side = civilian; };
+		 default { _side = sideUnknown };
 	};
-	
-	for "_i" from 0 to ((_radius / 25) + 1) do
-	{
-		_pos = [_center, 5, _radius, 3, 0, 0, 0] call BIS_fnc_findSafePos;
-		_obj = _grp createUnit ["ModuleCivilianPresenceUnit_F", _pos, [], 0, "NONE"];
-		_obj setVariable ["#capacity",    1];
-		_obj setVariable ["#usebuilding", false];
-		_obj setVariable ["#terminal",    false];
-	};
-	
-	_obj = _grp createUnit ["ModuleCivilianPresence_F", [0,0,0], [], 0, "NONE"];
-	_obj setVariable ["#area", [_center, _radius, _radius, 0, true, -1]];  // https://community.bistudio.com/wiki/inAreaArray 
-	_obj setVariable ["#debug",        true ]; // Debug mode on
-	_obj setVariable ["#useagents",    true ];
-	_obj setVariable ["#usepanicmode", false];
-	_obj setVariable ["#unitcount",    ((_radius / 25) + 2)];
+	_pos = [_center, 5, _radius, 3, 0, 0, 0] call BIS_fnc_findSafePos;
+	//http://arma3scriptingtutorials.blogspot.com/2014/02/config-viewer-what-is-it-and-how-to-use.html
+	_grp = [_pos, _side, configfile >> "CfgGroups" >> "Indep" >> D_FRACTION_INDEP >> "Infantry" >> _cfg] call BIS_fnc_spawnGroup;
+	_grp deleteGroupWhenEmpty true;
+	systemChat format ["F %1", (round (_radius / 15) + 5)];
+	[_grp, _center, _radius, round (round (_radius / 15) + 5), "MOVE", "SAFE", "YELLOW", "LIMITED", "STAG COLUMN", "", [5,15,30]] call CBA_fnc_taskPatrol;
+	_grp;
 };
