@@ -76,23 +76,53 @@ if (isServer) then {
 	
 	Fn_Spawn = {
 		params['_trigger'];
+		private['_grp'];
 		{
 			if (getMarkerPos _x inArea _trigger) then {
 				systemChat format ["Spawn %1", _x];
+				_grp = [_x] call BrezBlock_fnc_CreatePatrol;
+				_trigger setVariable ["spawned_grp", _grp, false];
+				_trigger setVariable ["killed", false, false];
 			};
 		} forEach allMapMarkers; //select {(getMarkerPos _x) };
 	};
 	
 	Fn_Despawn = {
 		params['_trigger'];
+		private['_grp', '_count'];
+		_count = 0;
 		{
 			if (getMarkerPos _x inArea _trigger) then {
-				systemChat format ["Despawn %1", _x];
+				_count = _count + 1;
+				_grp = _trigger getVariable ["spawned_grp", grpNull];
+				if (!(isNull _grp)) then {
+					if ({ alive _x } count units _grp == 0) then {
+						systemChat "Group was killed. Removing.";
+						deleteMarker _x;
+						_count = _count - 1;
+					} else {
+						systemChat format ["Despawn %1", _x];
+						{deletevehicle _x} foreach units _grp;
+						_trigger setVariable ["spawned_grp", grpNull, false];
+						
+					};
+				} else {
+					//Group is probably dead
+					if (!(_trigger getVariable ["killed", false])) then {
+						systemChat "Looks like group was killed. Removing.";
+						deleteMarker _x;
+						_count = _count - 1;
+					};
+				};
 			};
+			//{_x distance hostage <5} count allPlayers> 0
 			//systemChat format ["DeSpawn %1", _x];
 		} forEach allMapMarkers; //select {(getMarkerPos _x) inArea [getPos _trigger, 50, 50, 0, false ] };
+		if (_count == 0) then {
+			systemChat "Ok. No markers left. Removing trigger.";
+			deleteVehicle _trigger;
+		};
 	};
-	
 	
 	{
 		systemChat "Got trigger!";
