@@ -74,15 +74,28 @@ if (isServer) then {
 		};
 	} forEach allMapMarkers;*/
 	
+	
+	Fn_Process_Marker = {
+		params['_marker'];
+		private['_grp'];
+		switch(markerBrush _x) do
+		{
+			case "Solid": {_grp = [_x] call BrezBlock_fnc_CreateCivilianPresence; format ["Spawn CIV why? %1 %2", _x, markerBrush _x];};
+			case "SolidBorder": {_grp = [_x] call BrezBlock_fnc_CreatePatrol;};
+			case "DiagGrid": {_grp = [_x] call BrezBlock_fnc_CreatePatrol;};
+		};
+		_grp;
+	};
+	
 	Fn_Spawn = {
 		params['_trigger'];
 		private['_grp'];
 		{
 			if (getMarkerPos _x inArea _trigger) then {
-				systemChat format ["Spawn %1", _x];
-				_grp = [_x] call BrezBlock_fnc_CreatePatrol;
-				_trigger setVariable ["spawned_grp", _grp, false];
-				_trigger setVariable ["killed", false, false];
+				if (markerType _x in ["ellipse", "square"]) then {
+					_grp = [_x] call Fn_Process_Marker;
+					_trigger setVariable [_x, _grp, false];
+				};
 			};
 		} forEach allMapMarkers; //select {(getMarkerPos _x) };
 	};
@@ -93,31 +106,23 @@ if (isServer) then {
 		_count = 0;
 		{
 			if (getMarkerPos _x inArea _trigger) then {
-				_count = _count + 1;
-				_grp = _trigger getVariable ["spawned_grp", grpNull];
-				if (!(isNull _grp)) then {
-					if ({ alive _x } count units _grp == 0) then {
-						systemChat "Group was killed. Removing.";
-						deleteMarker _x;
-						_count = _count - 1;
+				if (markerType _x in ["ellipse", "square"]) then {
+					_count = _count + 1;
+					_grp = _trigger getVariable [_x, grpNull];
+					if (!(isNull _grp)) then {
+						if ({ alive _x } count units _grp == 0) then {
+							deleteMarker _x;
+							_count = _count - 1;
+						} else {
+							{deletevehicle _x} foreach units _grp;
+							_trigger setVariable [_x, grpNull, false];
+						};
 					} else {
-						systemChat format ["Despawn %1", _x];
-						{deletevehicle _x} foreach units _grp;
-						_trigger setVariable ["spawned_grp", grpNull, false];
-						
-					};
-				} else {
-					//Group is probably dead
-					if (!(_trigger getVariable ["killed", false])) then {
-						systemChat "Looks like group was killed. Removing.";
-						deleteMarker _x;
-						_count = _count - 1;
+						systemChat "WARNING: Looks like group was killed\lost?";
 					};
 				};
 			};
-			//{_x distance hostage <5} count allPlayers> 0
-			//systemChat format ["DeSpawn %1", _x];
-		} forEach allMapMarkers; //select {(getMarkerPos _x) inArea [getPos _trigger, 50, 50, 0, false ] };
+		} forEach allMapMarkers;
 		if (_count == 0) then {
 			systemChat "Ok. No markers left. Removing trigger.";
 			deleteVehicle _trigger;
