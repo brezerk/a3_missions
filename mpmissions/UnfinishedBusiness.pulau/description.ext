@@ -135,6 +135,7 @@ class CfgFunctions {
 			class Attach_Hold_Action {file = "addons\brezblock\actions\attach_hold.sqf";};
 			class CreateCivilianPresence {file = "addons\brezblock\systems\civilian.sqf";};
 			class CreatePatrol {file = "addons\brezblock\systems\patrol.sqf";};
+			class CreateDefend {file = "addons\brezblock\systems\defend.sqf";};
 		};
 	};
 };

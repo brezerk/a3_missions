@@ -20,6 +20,7 @@ if (isServer) then {
 	_westHQ = createCenter west;
 	_eastHQ = createCenter east;
 	_indepHQ = createCenter independent;
+	D_DIFFICLTY = 0; //0 easy, 1 medium, 2 hard
 	D_FRACTION_INDEP = "CUP_I_NAPA"; //posible CUP_I_TK_GUE, IND_F, IND_F, IND_G_F
 	_civilianHQ = createCenter civilian;
 
@@ -50,38 +51,14 @@ if (isServer) then {
 			"EveryoneWon" call BIS_fnc_endMissionServer;
 		};
 	};
-	
-	//sleep 5;
-	
-	//call Fn_Create_MissionIntro;
-	//[getMarkerPos "wp_cargo_03"] call Fn_Task_Create_Civilian_FloodedShip;
-	
-	//{
-	//	[_x] joinSilent createGroup [independent, true];
-	//} forEach [synd_police_01, synd_police_02, synd_police_03];
-	
-	/*["wp_civ_test"] call BrezBlock_fnc_CreateCivilianPresence;
-	{
-		[_x] call BrezBlock_fnc_CreatePatrol;
-	} forEach ["wp_indep_test", "wp_indep_test_1", "wp_indep_test_2"];*/
-	
-	//_markers = allMapMarkers select {(getMarkerPos _x) inArea yourTrigger}
-	/*{
-		if (_x find "wp_" >= 0) then {
-		//if (markerType  _x != "") then {
-			systemChat format ["WOOT? %1 %2", markerBrush _x, markerType _x];
-		//};
-		};
-	} forEach allMapMarkers;*/
-	
-	
+
 	Fn_Process_Marker = {
 		params['_marker'];
 		private['_grp'];
-		switch(markerBrush _x) do
+		switch(markerBrush _marker) do
 		{
-			case "Solid": {_grp = [_x] call BrezBlock_fnc_CreateCivilianPresence; format ["Spawn CIV why? %1 %2", _x, markerBrush _x];};
-			case "SolidBorder": {_grp = [_x] call BrezBlock_fnc_CreatePatrol;};
+			case "Solid": {_grp = [_x] call BrezBlock_fnc_CreateCivilianPresence;};
+			case "SolidBorder": {_grp = [_x] call BrezBlock_fnc_CreateDefend;};
 			case "DiagGrid": {_grp = [_x] call BrezBlock_fnc_CreatePatrol;};
 		};
 		_grp;
@@ -91,52 +68,56 @@ if (isServer) then {
 		params['_trigger'];
 		private['_grp'];
 		{
-			if (getMarkerPos _x inArea _trigger) then {
-				if (markerType _x in ["ellipse", "square"]) then {
-					_grp = [_x] call Fn_Process_Marker;
-					_trigger setVariable [_x, _grp, false];
-				};
-			};
-		} forEach allMapMarkers; //select {(getMarkerPos _x) };
+			_grp = [_x] call Fn_Process_Marker;
+			_trigger setVariable [_x, _grp, false];
+		} forEach (_trigger getVariable ["markers", []]);
 	};
 	
 	Fn_Despawn = {
 		params['_trigger'];
-		private['_grp', '_count'];
-		_count = 0;
+		private['_grp', '_markers'];
+		_markers = _trigger getVariable ["markers", []];
 		{
-			if (getMarkerPos _x inArea _trigger) then {
-				if (markerType _x in ["ellipse", "square"]) then {
-					_count = _count + 1;
-					_grp = _trigger getVariable [_x, grpNull];
-					if (!(isNull _grp)) then {
-						if ({ alive _x } count units _grp == 0) then {
-							deleteMarker _x;
-							_count = _count - 1;
-						} else {
-							{deletevehicle _x} foreach units _grp;
-							_trigger setVariable [_x, grpNull, false];
-						};
-					} else {
-						systemChat "WARNING: Looks like group was killed\lost?";
-					};
+			_grp = _trigger getVariable [_x, grpNull];
+			if (!(isNull _grp)) then {
+				if ({ alive _x } count units _grp == 0) then {
+					deleteMarker _x;
+					_markers deleteAt (_markers find _x);
+				} else {
+					{deletevehicle _x} foreach units _grp;
+					_trigger setVariable [_x, grpNull, false];
 				};
+			} else {
+				systemChat "WARNING: Looks like group was killed\lost?";
 			};
-		} forEach allMapMarkers;
-		if (_count == 0) then {
+		} forEach _markers;
+		if (count _markers == 0) then {
 			systemChat "Ok. No markers left. Removing trigger.";
 			deleteVehicle _trigger;
 		};
 	};
 	
+	//Setup all Triggers
 	{
+		private['_trigger', '_markers'];
+		_markers = [];
+		_trigger = _x;
 		systemChat "Got trigger!";
-		_x setTriggerActivation ["ANYPLAYER", "PRESENT", true];
-		_x setTriggerStatements [
+		_trigger setTriggerActivation ["ANYPLAYER", "PRESENT", true];
+		_trigger setTriggerStatements [
 				"this",
 				"[thisTrigger] call Fn_Spawn;",
 				"[thisTrigger] call Fn_Despawn;"
 		];
+		//Build marker's Cache
+		{
+			if (getMarkerPos _x inArea _trigger) then {
+				if (markerType _x in ["ellipse", "square"]) then {
+					_markers pushBack _x;
+				};
+			};
+		} forEach allMapMarkers;
+		_trigger setVariable ["markers", _markers, false];
 	} forEach allMissionObjects "EmptyDetector";
 };
 

@@ -8,7 +8,7 @@ class EditorData
 	toggles=41;
 	class ItemIDProvider
 	{
-		nextID=2106;
+		nextID=2137;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={724.15173,28.594381,2651.415};
-		dir[]={0.83760375,-0.32741225,0.43735969};
-		up[]={0.29027733,0.94486254,0.15157147};
-		aside[]={0.46287042,-1.0575459e-006,-0.88646168};
+		pos[]={4418.0688,2.3408613,9371.3379};
+		dir[]={0.22071952,-0.35872826,-0.90698904};
+		up[]={0.084823728,0.93343657,-0.34855875};
+		aside[]={-0.97165579,-1.344888e-007,-0.23645806};
 	};
 };
 binarizationWanted=0;
@@ -609,7 +609,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=358;
+		items=359;
 		class Item0
 		{
 			dataType="Marker";
@@ -11098,7 +11098,7 @@ class Mission
 		class Item348
 		{
 			dataType="Marker";
-			position[]={4160.3022,-0.86877441,9154.7939};
+			position[]={4221.4785,10.552742,9253.5781};
 			name="wp_patrol_A";
 			markerType="ELLIPSE";
 			type="ellipse";
@@ -11107,7 +11107,6 @@ class Mission
 			a=100;
 			b=100;
 			id=2095;
-			atlOffset=-6.1508484;
 		};
 		class Item349
 		{
@@ -11163,7 +11162,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3757.5483,3.6288803,9724.8379};
+						position[]={4257.7451,12.718358,9411.2529};
 						angles[]={0,2.6179941,0};
 					};
 					side="West";
@@ -11309,7 +11308,7 @@ class Mission
 					};
 					id=2100;
 					type="B_Soldier_GL_F";
-					atlOffset=4.7683716e-006;
+					atlOffset=-0.00024986267;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -11377,40 +11376,41 @@ class Mission
 			{
 			};
 			id=2099;
-			atlOffset=4.7683716e-006;
+			atlOffset=-0.00024986267;
 		};
 		class Item353
 		{
 			dataType="Trigger";
-			position[]={4152.3306,16.233887,9390.5244};
+			position[]={4254.5762,15.757813,9270.2451};
 			class Attributes
 			{
-				sizeA=500;
-				sizeB=500;
+				sizeA=150;
+				sizeB=150;
 				isServerOnly=1;
 			};
 			id=2101;
 			type="EmptyDetectorAreaR250";
-			atlOffset=9.1552734e-005;
+			atlOffset=-8.392334e-005;
 		};
 		class Item354
 		{
 			dataType="Marker";
-			position[]={4561.2002,-1.4517822,9438.3955};
+			position[]={4352.9292,1.563,9302.0596};
 			name="wp_patrol_B";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorGUER";
-			fillName="DiagGrid";
-			a=100;
-			b=100;
+			fillName="SolidBorder";
+			a=50;
+			b=50;
+			drawBorder=1;
 			id=2102;
-			atlOffset=-0.82832766;
+			atlOffset=-0.00037038326;
 		};
 		class Item355
 		{
 			dataType="Marker";
-			position[]={4381.1138,2.4903564,9273.2813};
+			position[]={4492.1011,3.3416443,9467.8506};
 			name="wp_patrol_C";
 			markerType="ELLIPSE";
 			type="ellipse";
@@ -11419,7 +11419,7 @@ class Mission
 			a=100;
 			b=100;
 			id=2103;
-			atlOffset=-6.3419342e-005;
+			atlOffset=4.7683716e-006;
 		};
 		class Item356
 		{
@@ -11447,6 +11447,20 @@ class Mission
 			a=100;
 			b=100;
 			id=2105;
+		};
+		class Item358
+		{
+			dataType="Trigger";
+			position[]={4686.6221,2.4106445,9470.1221};
+			class Attributes
+			{
+				sizeA=150;
+				sizeB=150;
+				isServerOnly=1;
+			};
+			id=2106;
+			type="EmptyDetectorAreaR250";
+			atlOffset=-3.1709671e-005;
 		};
 	};
 	class Connections
