@@ -20,17 +20,19 @@ if (isServer) then {
 	_westHQ = createCenter west;
 	_eastHQ = createCenter east;
 	_indepHQ = createCenter independent;
+	_civilianHQ = createCenter civilian;
+	
+	//Set east and west sides to friends.
+	//b/c friendship is a magic!
+	EAST setFriend [WEST, 1];
+	WEST setFriend [EAST, 1];
+	
+	// Defaines (should be an UI option at mission startup);
 	D_DIFFICLTY = 0; //0 easy, 1 medium, 2 hard
 	D_FRACTION_INDEP = "CUP_I_NAPA"; //posible CUP_I_TK_GUE, IND_F, IND_F, IND_G_F
-	_civilianHQ = createCenter civilian;
 
+	// Global variables
 	assault_group = [];
-
-	//#include "missions\intro.sqf";
-	//#include "missions\patrols.sqf";
-	//#include "missions\aa.sqf";
-	//#include "missions\leader.sqf";
-	//#include "missions\civilian\cargo.sqf";
 
 	Fn_Endgame = {
 		params["_endingType"];
@@ -51,74 +53,16 @@ if (isServer) then {
 			"EveryoneWon" call BIS_fnc_endMissionServer;
 		};
 	};
-
-	Fn_Process_Marker = {
-		params['_marker'];
-		private['_grp'];
-		switch(markerBrush _marker) do
-		{
-			case "Solid": {_grp = [_x] call BrezBlock_fnc_CreateCivilianPresence;};
-			case "SolidBorder": {_grp = [_x] call BrezBlock_fnc_CreateDefend;};
-			case "DiagGrid": {_grp = [_x] call BrezBlock_fnc_CreatePatrol;};
-		};
-		_grp;
-	};
 	
-	Fn_Spawn = {
-		params['_trigger'];
-		private['_grp'];
-		{
-			_grp = [_x] call Fn_Process_Marker;
-			_trigger setVariable [_x, _grp, false];
-		} forEach (_trigger getVariable ["markers", []]);
-	};
+	#include "missions\intro.sqf";
+	#include "missions\patrols.sqf";
+	#include "missions\aa.sqf";
+	#include "missions\leader.sqf";
+	#include "missions\civilian\cargo.sqf";
 	
-	Fn_Despawn = {
-		params['_trigger'];
-		private['_grp', '_markers'];
-		_markers = _trigger getVariable ["markers", []];
-		{
-			_grp = _trigger getVariable [_x, grpNull];
-			if (!(isNull _grp)) then {
-				if ({ alive _x } count units _grp == 0) then {
-					deleteMarker _x;
-					_markers deleteAt (_markers find _x);
-				} else {
-					{deletevehicle _x} foreach units _grp;
-					_trigger setVariable [_x, grpNull, false];
-				};
-			} else {
-				systemChat "WARNING: Looks like group was killed\lost?";
-			};
-		} forEach _markers;
-		if (count _markers == 0) then {
-			systemChat "Ok. No markers left. Removing trigger.";
-			deleteVehicle _trigger;
-		};
-	};
+	sleep 2;
 	
-	//Setup all Triggers
-	{
-		private['_trigger', '_markers'];
-		_markers = [];
-		_trigger = _x;
-		systemChat "Got trigger!";
-		_trigger setTriggerActivation ["ANYPLAYER", "PRESENT", true];
-		_trigger setTriggerStatements [
-				"this",
-				"[thisTrigger] call Fn_Spawn;",
-				"[thisTrigger] call Fn_Despawn;"
-		];
-		//Build marker's Cache
-		{
-			if (getMarkerPos _x inArea _trigger) then {
-				if (markerType _x in ["ellipse", "square"]) then {
-					_markers pushBack _x;
-				};
-			};
-		} forEach allMapMarkers;
-		_trigger setVariable ["markers", _markers, false];
-	} forEach allMissionObjects "EmptyDetector";
+	call Fn_Create_MissionIntro;
 };
 
 // We need to end game if all players are no longer alive

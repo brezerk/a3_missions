@@ -67,6 +67,8 @@ if (isServer) then {
 		
 		//let them fall a bit
 		sleep 1;
+		//activate spawn controller here
+		[] execVM "addons\brezblock\utils\controller.sqf";
 		
 		//create tasks assigned to assault_group
 		{
@@ -89,4 +91,6 @@ if (isServer) then {
 				"call Fn_Task_Create_AA; call Fn_Task_Create_KillLeader; deleteVehicle trgRegroupIsDone;",
 				""
 		];
+		
+		
 };

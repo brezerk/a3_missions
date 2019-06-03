@@ -28,23 +28,33 @@ if (hasInterface) then {
 
 if (isServer) then {
 	(driver us_airplane_01) setBehaviour "Careless";
+	systemChat "Attached?";
+	us_airplane_01 attachTo [land_00, [0, 0, 0] ];
 
 	Fn_Create_MissionIntro = {
 		private ['_trg'];
-		trg = createTrigger ["EmptyDetector", getMarkerPos "USS Liberty" ];
-		trg setTriggerArea [0, 0, 0, false];
-		trg setTriggerActivation ["NONE", "PRESENT", false];
-		trg setTriggerStatements [
+		_trg = createTrigger ["EmptyDetector", getMarkerPos "USS Liberty" ];
+		_trg setTriggerArea [0, 0, 0, false];
+		_trg setTriggerActivation ["NONE", "PRESENT", false];
+		_trg setTriggerStatements [
 			"call Fn_MissionIntro_Evaluate;",
-			"call Fn_MissionIntro_SendAirplane; deleteVehicle trg;",
+			"call Fn_MissionIntro_SendAirplane;",
 			""
 		];
-		trgJetIsDead = createTrigger ["EmptyDetector", getMarkerPos "wp_air_field_01" ];
-		trgJetIsDead setTriggerArea [0, 0, 0, false];
-		trgJetIsDead setTriggerActivation ["NONE", "PRESENT", false];
-		trgJetIsDead setTriggerStatements [
+		_trg = createTrigger ["EmptyDetector", getMarkerPos "wp_air_field_01" ];
+		_trg setTriggerArea [0, 0, 0, false];
+		_trg setTriggerActivation ["NONE", "PRESENT", false];
+		_trg setTriggerStatements [
 			"!canMove us_airplane_01 || !alive us_airplane_01",
-			"execVM 'missions\jet_is_down.sqf'; deleteVehicle trgJetIsDead;",
+			"execVM 'missions\jet_is_down.sqf';",
+			""
+		];
+		_trg = createTrigger ["EmptyDetector", getPos csat_aa_01];
+		_trg setTriggerArea [1500, 1500, 0, false];
+		_trg setTriggerActivation ["WEST", "PRESENT", false];
+		_trg setTriggerStatements [
+			"this",
+			"call Fn_MissionIntro_MakeEnemies;",
 			""
 		];
 		if (hasInterface) then {
@@ -53,6 +63,14 @@ if (isServer) then {
 			remoteExecCall ["Fn_Local_Create_MissionIntro", -2];
 		}
 	}; // Fn_Create_MissionIntro
+	
+	
+	Fn_MissionIntro_MakeEnemies = {
+		//FIXME: Add radio chatter
+		systemChat "NO FRIENDS ANYMORE!";
+		EAST setFriend [WEST, 0];
+		WEST setFriend [EAST, 0];
+	};
 
 	Fn_MissionIntro_Evaluate = {
 		private ["_all_on_board"];
@@ -78,6 +96,7 @@ if (isServer) then {
 				_x setVariable ["is_assault_group", true, false];
 			};
 		} forEach crew us_airplane_01;
+		detach us_airplane_01;
 		_group = group driver us_airplane_01;
 		_wp = _group addWaypoint [getMarkerPos 'wp_waypoint_01', 0];
 		_wp setWaypointCombatMode "YELLOW";
@@ -85,7 +104,7 @@ if (isServer) then {
 		_wp setWaypointSpeed "LIMITED";
 		_wp setWaypointFormation "NO CHANGE";
 		_wp setWaypointType "MOVE";
-		us_airplane_01 flyInHeight 2000;
+		us_airplane_01 flyInHeight 1500;
 		(driver us_airplane_01) setBehaviour "Careless";
 		(driver us_airplane_01) setCombatMode "Blue";
 		execVM "missions\fast_travel.sqf";

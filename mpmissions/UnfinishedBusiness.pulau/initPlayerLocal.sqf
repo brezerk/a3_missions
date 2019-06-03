@@ -22,8 +22,6 @@ Local player script
 
 waitUntil { !isNull player }; // Wait for player to initialize
 
-/*
-
 player setVariable ["weapon_fiered", false, false];
 player setVariable ["is_civilian", false, true];
 
@@ -229,4 +227,4 @@ sleep 5;
 [[west], [east,independent,civilian]] call ace_spectator_fnc_updateSides;
 
 [[civ_veh_01, civ_veh_02, civ_veh_03, civ_veh_04]] call Fn_Local_AddAction_ConfiscateVehicles;
-*/
+
