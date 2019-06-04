@@ -16,42 +16,42 @@
  *                                                                         *
  ***************************************************************************/
 
-if (hasInterface) then {
-	Fn_Local_Create_MissionInformator = {
-		params['_lcs', '_pois'];
-		private _uri = "";
-		{
-			_uri = _uri + format["<marker name = 'wp_city_%1'>%2</marker> ", _forEachIndex, _x select 0];
-		} forEach _pois;
-		[
-			west,
-			"t_find_informator",
-			[format[localize "TASK_05_DESC", _uri],
-			localize "TASK_05_TITLE",
-			localize "TASK_ORIG_01"],
-			objNull,
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_find_informator', "talk"] call BIS_fnc_taskSetType;
+
+if (isServer) then { 
 		
+	Fn_POI_GetAllCitiesInPlayerRange = {
+		params['_players'];
+		//Get all POI in the range of 3000m
+		private _lcs = [];
+		private _poi = [];
+		private _blacklist = [
+			'Pulau Monyet',
+			'Monyet Airfield',
+			'Pulau Gurun',
+			'Gurun Airfield'
+		];
 		{
-			private ["_trg"];
-			_trg = createTrigger ["EmptyDetector", _x select 1];
-			_trg setTriggerArea [180, 180, 0, false];
-			_trg setTriggerActivation ["ANYPLAYER", "PRESENT", true];
-			_trg setTriggerStatements [
-				"(vehicle player) in thisList",
-				format ["[ localize 'INFO_LOC_01', format [localize 'INFO_SUBLOC_02', '%1'], format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;", _x select 0],
-				""
-			];
-		} forEach _lcs;
-	};
-	
-	Fn_Task_Create_Informator_Complete = {
-		PUB_fnc_informatorFound = [player, _this select 0];
-		publicVariableServer "PUB_fnc_informatorFound";
-		['t_find_informator', 'SUCCEEDED'] call BIS_fnc_taskSetState;
+			if (alive _x) exitWith {
+				{	
+					if (!(text _x in _blacklist)) then {
+						_lcs pushBack [text _x, locationPosition _x];
+					};
+				} forEach nearestLocations [getPos _x, ["NameVillage", "NameCity", "NameCityCapital"], 3500];	
+			};
+		} forEach _players;
+		
+		//Select no more than 4 to create tasks
+		private _avalible_lcs = _lcs;
+		if (count _lcs <= 4) then {
+			_poi = _lcs;
+		} else {
+			for "_i" from 0 to 3 do {
+				private _lc = selectRandom _avalible_lcs;
+				_avalible_lcs = _avalible_lcs - [_lc];
+				_poi pushBackUnique _lc;
+			};
+		};
+		
+		[_lcs, _poi];
 	};
 };

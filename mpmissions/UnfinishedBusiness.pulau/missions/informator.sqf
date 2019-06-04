@@ -47,49 +47,24 @@ if (isServer) then {
 		Usage: call Fn_Task_Create_Informator
 	*/
 	Fn_Task_Create_Informator = {
-		private ["_monse", "_minanga", "_lalomo", "_apal"];
-		//Assign civilians to groups
-		_monse = [
-			p_civ_10,
-			p_civ_11,
-			p_civ_12
-		];
-		_minanga = [
-			p_civ_00,
-			p_civ_01,
-			p_civ_02,
-			p_civ_03
-		];
-		_lalomo = [
-			p_civ_20,
-			p_civ_21,
-			p_civ_22,
-			p_civ_23,
-			p_civ_24
-		];
-		_apal = [
-			p_civ_30,
-			p_civ_31,
-			p_civ_32,
-			p_civ_33,
-			p_civ_34
-		];
-		
-		// try to make civilians not to run away
-		east setFriend [civilian, 1];
-		civilian setFriend [east, 1];
-		independent setFriend [civilian, 1];
-		civilian setFriend [independent, 1];
-		
-		{ _x setBehaviour "CARELESS"; } forEach _monse;
-		{ _x setBehaviour "CARELESS"; } forEach _minanga;
-		{ _x setBehaviour "CARELESS"; } forEach _lalomo;
-		{ _x setBehaviour "CARELESS"; } forEach _apal;
-		
-		selectRandom [_monse] call Fn_Task_Create_Informator_Attach_Action;
-		selectRandom [_minanga] call Fn_Task_Create_Informator_Attach_Action;
-		selectRandom [_lalomo] call Fn_Task_Create_Informator_Attach_Action;
-		selectRandom [_apal] call Fn_Task_Create_Informator_Attach_Action;
+		{
+			private _builing = nearestBuilding (_x select 1);
+			private _pos = selectRandom (_builing buildingPos -1);
+			private _class = selectRandom [
+					'C_man_polo_1_F',
+					'C_man_polo_2_F',
+					'C_man_polo_3_F',
+					'C_man_polo_4_F',
+					'C_man_polo_5_F',
+					'C_man_polo_6_F',
+					'C_man_1_1_F',
+					'C_man_1_2_F',
+					'C_man_1_3_F'
+				];
+			private _group = createGroup [civilian, true];
+			private _unit = _group createUnit [_class, _pos, [], 0, "FORM"];
+			[_unit] call Fn_Task_Create_Informator_Attach_Action;
+		} forEach avaliable_pois;
 	};
 	
 	/*
@@ -101,6 +76,7 @@ if (isServer) then {
 		params['_obj'];
 		private['_action_id'];
 		
+		_obj setBehaviour "CARELESS";
 		_obj disableAi "MOVE";
 		_action_id = [
 			_obj,
@@ -111,9 +87,9 @@ if (isServer) then {
 		] call BrezBlock_fnc_Attach_Hold_Action;
 		
 		if (hasInterface) then {
-			remoteExecCall ["Fn_Local_Create_MissionInformator"];
+			[avaliable_locations, avaliable_pois] remoteExecCall ["Fn_Local_Create_MissionInformator"];
 		} else {
-			remoteExecCall ["Fn_Local_Create_MissionInformator", -2];
+			[avaliable_locations, avaliable_pois] remoteExecCall ["Fn_Local_Create_MissionInformator", -2];
 		};
 	};	
 	

@@ -118,9 +118,9 @@
 				<Russian>Якого біса?</Russian>
 			</Key>
 			<Key ID="TASK_05_DESC">
-				<Original>Everything went wrong. Are we betrayed? What is happening? What to do now? I need information. The big cities are definitely very well guarded, but in small villages such as &lt;marker name = 'wp_minanga'&gt;Minanga&lt;/marker&gt;, &lt;marker name = 'wp_monse'&gt;Monse&lt;/marker&gt;, &lt;marker name = 'wp_lalomo'&gt;Lalomo&lt;/marker&gt; or &lt;marker name = 'wp_apal'&gt;Apal&lt;/marker&gt; I should be able to find some information for sure.</Original>
-				<English>Everything went wrong. Are we betrayed? What is happening? What to do now? I need information. The big cities are definitely very well guarded, but in small villages such as &lt;marker name = 'wp_minanga'&gt;Minanga&lt;/marker&gt;, &lt;marker name = 'wp_monse'&gt;Monse&lt;/marker&gt;, &lt;marker name = 'wp_lalomo'&gt;Lalomo&lt;/marker&gt; or &lt;marker name = 'wp_apal'&gt;Apal&lt;/marker&gt; I should be able to find some information for sure.</English>
-				<Russian>Все пішло шкереберть. Нас зрадили? Що коїться? Що тепер робити? Потрібна інформація. Великі міста напевно дуже добре охороняються, але в невеличких селах таких як &lt;marker name = 'wp_minanga'&gt;Minanga&lt;/marker&gt;, &lt;marker name = 'wp_Monse'&gt;Monse&lt;/marker&gt;, &lt;marker name = 'wp_lalomo'&gt;Lalomo&lt;/marker&gt; або &lt;marker name = 'wp_apal'&gt;Apal&lt;/marker&gt; я зможу знайти якусь інформацію.</Russian>
+				<Original>Everything went wrong. Are we betrayed? What is happening? What to do now? I need information. The big cities are definitely very well guarded, but in small villages such as %1 I should be able to find some information for sure.</Original>
+				<English>Everything went wrong. Are we betrayed? What is happening? What to do now? I need information. The big cities are definitely very well guarded, but in small villages such as %1 I should be able to find some information for sure.</English>
+				<Russian>Все пішло шкереберть. Нас зрадили? Що коїться? Що тепер робити? Потрібна інформація. Великі міста напевно дуже добре охороняються, але в невеличких селах таких як %1 я зможу знайти якусь інформацію.</Russian>
 			</Key>
 			<Key ID="TASK_06_TITLE">
 				<Original>Optional: Destroy AA</Original>
@@ -258,9 +258,9 @@
 				<Russian>Острів Пулау Гурун.</Russian>
 			</Key>
 			<Key ID="INFO_SUBLOC_00">
-				<Original>С130J.</Original>
-				<English>С130J.</English>
-				<Russian>Борт С130J.</Russian>
+				<Original>USS "Democracy".</Original>
+				<English>USS "Democracy".</English>
+				<Russian>USS "Democracy".</Russian>
 			</Key>
 			<Key ID="INFO_SUBLOC_01">
 				<Original>С130J crash site.</Original>
@@ -268,24 +268,9 @@
 				<Russian>Місце катастрофи С130J.</Russian>
 			</Key>
 			<Key ID="INFO_SUBLOC_02">
-				<Original>Apal village.</Original>
-				<English>Apal village.</English>
-				<Russian>Поселення Apal.</Russian>
-			</Key>
-			<Key ID="INFO_SUBLOC_03">
-				<Original>Lalomol village.</Original>
-				<English>Lalomol village.</English>
-				<Russian>Поселення Lalomol.</Russian>
-			</Key>
-			<Key ID="INFO_SUBLOC_04">
-				<Original>Minanga village.</Original>
-				<English>Minanga village.</English>
-				<Russian>Поселення Minanga.</Russian>
-			</Key>
-			<Key ID="INFO_SUBLOC_05">
-				<Original>Monse village.</Original>
-				<English>Monse village.</English>
-				<Russian>Поселення Monse.</Russian>
+				<Original>%1 village.</Original>
+				<English>%1 village.</English>
+				<Russian>Поселення %1.</Russian>
 			</Key>
 			<Key ID="INFO_SUBLOC_06">
 				<Original>AOC Positions.</Original>
@@ -348,9 +333,9 @@
 				<Russian>Гру замкнено. Спробуйте пізніше.</Russian>
 			</Key>
 			<Key ID="STR_END_01_TITLE">
-				<Original>Assault group was eliminated.</Original>
-				<English>Assault group was eliminated.</English>
-				<Russian>Штурмову группу ліквідовано.</Russian>
+				<Original>Assault group was eliminated</Original>
+				<English>Assault group was eliminated</English>
+				<Russian>Штурмову группу ліквідовано</Russian>
 			</Key>
 			<Key ID="STR_END_01_DESC">
 				<Original>US Assault group was eliminated. AOC and Bandit groups are controlling Pulau islands for now.</Original>
@@ -358,9 +343,9 @@
 				<Russian>Штурмову группу США було ліквідовано. Сили AOC разом з группами бандитів контролюють острови Пулау і по цей день.</Russian>
 			</Key>
 			<Key ID="STR_END_02_TITLE">
-				<Original>US Assault group was eliminated.</Original>
-				<English>US Assault group was eliminated.</English>
-				<Russian>Штурмову группу США було ліквідовано.</Russian>
+				<Original>US Assault group was eliminated</Original>
+				<English>US Assault group was eliminated</English>
+				<Russian>Штурмову группу США було ліквідовано</Russian>
 			</Key>
 			<Key ID="STR_END_02_DESC">
 				<Original>US Assault group was eliminated. AOC and Bandit groups are controlling Pulau islands for now.</Original>
@@ -377,7 +362,6 @@
 				<English>US Assault group was eliminated. AOC and Bandit groups are controlling Pulau islands for now.<English>
 				<Russian>Штурмову группу США було ліквідовано. Сили AOC разом з группами бандитів контролюють острови Пулау і по цей день.</Russian>
 			</Key>
-			
 		</Container>
 	</Package>
 </Project>
