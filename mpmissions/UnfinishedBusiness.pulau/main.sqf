@@ -57,9 +57,13 @@ if (isServer) then {
 		};
 	};
 	
+	["Including..."] remoteExec ["systemChat"];
+	
 	#include "missions\patrols.sqf";
 	
-	sleep 5;
+	["Ok. Patrols included..."] remoteExec ["systemChat"];
+	
+	sleep 15;
 	/*
 	#include "missions\intro.sqf";
 	
@@ -70,6 +74,8 @@ if (isServer) then {
 	sleep 2;
 	
 	call Fn_Create_MissionIntro;*/
+	
+	["Ok. Get locations list?"] remoteExec ["systemChat"];
 	
 	//Get all POI in the range of 3000m
 	private _lcs = [];
@@ -101,6 +107,8 @@ if (isServer) then {
 			_poi pushBackUnique _lc;
 		};
 	};
+	
+	["Ok.Create markers?"] remoteExec ["systemChat"];
 	
 	//Create markers
 	{ 
