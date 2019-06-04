@@ -328,9 +328,19 @@
 				<Russian>Ми вже прибули і готові до приземлення. Як прийняли?</Russian>
 			</Key>
 			<Key ID="STR_RADIO_CALL_05">
-				<Original>We are detecting highly active radar source. How copy?</Original>
-				<English>We are detecting highly active radar source. How copy?</English>
-				<Russian>Ми спостерігаємо високу радіолокаційну активність. Як прийняли?</Russian>
+				<Original>Radar!!! Capture, droping the IRCM.</Original>
+				<English>Radar!!! Capture, droping the IRCM.</English>
+				<Russian>Радар!!! Захват, скидай ЛТЦ.</Russian>
+			</Key>
+			<Key ID="STR_RADIO_CALL_06">
+				<Original>What the hell???</Original>
+				<English>What the hell???</English>
+				<Russian>Якого біса???</Russian>
+			</Key>
+			<Key ID="STR_RADIO_CALL_07">
+				<Original>Turn around! Lower! Lower</Original>
+				<English>Turn around! Lower! Lower!</English>
+				<Russian>Розвертай, уходь нижче!</Russian>
 			</Key>
 			<Key ID="STR_LOCKED_INFO_01">
 				<Original>The game is locked. Try again later.</Original>

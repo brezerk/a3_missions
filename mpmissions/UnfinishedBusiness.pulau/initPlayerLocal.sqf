@@ -228,3 +228,5 @@ sleep 5;
 
 [[civ_veh_01, civ_veh_02, civ_veh_03, civ_veh_04]] call Fn_Local_AddAction_ConfiscateVehicles;
 
+
+

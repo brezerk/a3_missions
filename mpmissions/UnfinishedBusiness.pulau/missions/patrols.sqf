@@ -21,42 +21,35 @@ if (isServer) then {
 		
 	// Create random waypoints for enemy and civilian vehicles
 	Fn_Patrols_Create_Random_Waypoints = {
-		params ["_vehicles"];
-		private ["_wp", "_marker", "_wp_array", "_group"];
+		params ["_vehicles", "_lcs_array"];
+		private ["_wp", "_pos"];
+		private _wp_array = [];
 		{
-			_group = group driver _x;
-			_wp_array = [
-				'wp_monse',
-				'wp_lalomo',
-				'wp_minanga',
-				'wp_apal',
-				'wp_village_01',
-				'wp_village_02',
-				'wp_village_03',
-				'wp_village_04',
-				'wp_village_05',
-				'wp_village_06',
-				'wp_village_07',
-				'wp_village_08'
-			];
-			for "_i" from 0 to (random 4 + 6) do {
-				_marker = selectRandom _wp_array;
-				_wp_array = _wp_array - [_marker];
-				_wp = _group addWaypoint [getMarkerPos _marker, 0];
+			_wp_array append [_x select 1];
+			//systemChat format ["%1", _x select 1];
+		} forEach _lcs_array;
+		
+		{
+			_wp_avalible = _wp_array;
+			private _group = group driver _x;
+			for "_i" from 0 to (round (count _wp_array / 2)) do {
+				_pos = selectRandom _wp_avalible;
+				_wp_avalible = _wp_avalible - [_pos];
+				_wp = _group addWaypoint [_pos, 0];
 				_wp setWaypointCombatMode "YELLOW";
 				_wp setWaypointBehaviour "SAFE";
 				_wp setWaypointSpeed "LIMITED";
 				_wp setWaypointFormation "NO CHANGE";
 				_wp setWaypointType "MOVE";
 			};
-			_marker = selectRandom _wp_array;
-			_wp_array = _wp_array - [_marker];
-			_wp = _group addWaypoint [getMarkerPos _marker, 0];
+			/*
+			_pos = selectRandom _wp_array;
+			_wp = _group addWaypoint [_pos, 0];
 			_wp setWaypointCombatMode "YELLOW";
 			_wp setWaypointBehaviour "SAFE";
 			_wp setWaypointSpeed "LIMITED";
 			_wp setWaypointFormation "NO CHANGE";
-			_wp setWaypointType "CYCLE";
+			_wp setWaypointType "CYCLE";*/
 		} forEach _vehicles;
 	};
 	

@@ -89,8 +89,22 @@ class CfgSounds
 		// subtitle delay in seconds, subtitle text
 		titles[] = {
 			0, $STR_RADIO_CALL_03,
-			6, $STR_RADIO_CALL_04,
-			12, $STR_RADIO_CALL_05
+			6, $STR_RADIO_CALL_04
+		};
+	};
+	class radio_chatter_02
+	{
+		// how the sound is referred to in the editor (e.g. trigger effects)
+		name = "radio_chatter_02";
+
+		// filename, volume, pitch, distance (optional)
+		sound[] = {};
+
+		// subtitle delay in seconds, subtitle text
+		titles[] = {
+			0, $STR_RADIO_CALL_05,
+			6, $STR_RADIO_CALL_06,
+			12, $STR_RADIO_CALL_07
 		};
 	};
 };

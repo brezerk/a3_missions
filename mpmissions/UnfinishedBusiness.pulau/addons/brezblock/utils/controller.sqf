@@ -59,7 +59,7 @@ if (isServer) then {
 					_trigger setVariable [_x, grpNull, false];
 				};
 			} else {
-				["WARNING: Looks like AI group was killed\lost?"] remoteExec ["systemChat"];
+				//["WARNING: Looks like AI group was killed\lost?"] remoteExec ["systemChat"];
 			};
 		} forEach _markers;
 		if (count _markers == 0) then {

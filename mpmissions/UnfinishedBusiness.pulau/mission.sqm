@@ -8,7 +8,7 @@ class EditorData
 	toggles=41;
 	class ItemIDProvider
 	{
-		nextID=2262;
+		nextID=2276;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={12130.693,47.66497,91.810104};
-		dir[]={-0.55710816,-0.45804071,0.69287115};
-		up[]={-0.28708261,0.88885647,0.35703453};
-		aside[]={0.77940816,-1.2541132e-006,0.62669832};
+		pos[]={4602.5005,561.43353,8194.9111};
+		dir[]={-0.27672416,-0.51406717,0.81188816};
+		up[]={-0.16584638,0.8577503,0.48658088};
+		aside[]={0.94653201,-1.253793e-007,0.32261601};
 	};
 };
 binarizationWanted=0;
@@ -572,7 +572,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=402;
+		items=414;
 		class Item0
 		{
 			dataType="Marker";
@@ -6683,12 +6683,12 @@ class Mission
 		class Item217
 		{
 			dataType="Marker";
-			position[]={7008.2681,-0.045306861,11235.812};
+			position[]={6736.7725,-0.13830566,10849.56};
 			name="wp_waypoint_01";
 			type="b_installation";
-			angle=211.26057;
+			angle=196.26048;
 			id=1614;
-			atlOffset=16.595993;
+			atlOffset=20.282404;
 		};
 		class Item218
 		{
@@ -10418,7 +10418,7 @@ class Mission
 		class Item324
 		{
 			dataType="Marker";
-			position[]={3567.9441,4.1999998,10450.01};
+			position[]={3575.1943,1.8095703,10479.009};
 			name="wp_patrol_01";
 			markerType="ELLIPSE";
 			type="ellipse";
@@ -10427,7 +10427,7 @@ class Mission
 			a=100;
 			b=100;
 			id=2070;
-			atlOffset=-1.2384181;
+			atlOffset=-1.8714454;
 		};
 		class Item325
 		{
@@ -10446,7 +10446,7 @@ class Mission
 		class Item326
 		{
 			dataType="Marker";
-			position[]={3877.207,2.0209999,10266.086};
+			position[]={3915.8743,-3.1309814,10263.67};
 			name="wp_patrol_03";
 			markerType="ELLIPSE";
 			type="ellipse";
@@ -10455,7 +10455,7 @@ class Mission
 			a=100;
 			b=100;
 			id=2072;
-			atlOffset=-0.00042104721;
+			atlOffset=-14.109126;
 		};
 		class Item327
 		{
@@ -10513,7 +10513,7 @@ class Mission
 		class Item331
 		{
 			dataType="Marker";
-			position[]={3886.7451,0.125,10050.359};
+			position[]={3863.7866,-5.5125732,10038.275};
 			name="wp_patrol_04";
 			markerType="ELLIPSE";
 			type="ellipse";
@@ -10522,7 +10522,7 @@ class Mission
 			a=100;
 			b=100;
 			id=2077;
-			atlOffset=-1.2388843;
+			atlOffset=-8.7192526;
 		};
 		class Item332
 		{
@@ -10839,7 +10839,7 @@ class Mission
 		class Item355
 		{
 			dataType="Marker";
-			position[]={4036.2324,9.0800781,9395.6797};
+			position[]={4051.8547,4.3475046,9387.8691};
 			name="wp_patrol_A_1";
 			markerType="ELLIPSE";
 			type="ellipse";
@@ -10848,7 +10848,6 @@ class Mission
 			a=100;
 			b=100;
 			id=2142;
-			atlOffset=-0.46836185;
 		};
 		class Item356
 		{
@@ -10960,15 +10959,16 @@ class Mission
 		class Item364
 		{
 			dataType="Marker";
-			position[]={4986.7188,13.464528,8631.748};
+			position[]={4963.2852,-0.96252441,8719.6221};
 			name="wp_patrol_A_8";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorGUER";
 			fillName="DiagGrid";
-			a=100;
-			b=100;
+			a=150;
+			b=150;
 			id=2151;
+			atlOffset=-5.34447;
 		};
 		class Item365
 		{
@@ -11000,7 +11000,7 @@ class Mission
 		class Item367
 		{
 			dataType="Marker";
-			position[]={5303.4238,14.816998,8588.8066};
+			position[]={5246.7944,2.0830078,8629.8125};
 			name="wp_patrol_A_11";
 			markerType="ELLIPSE";
 			type="ellipse";
@@ -11009,6 +11009,7 @@ class Mission
 			a=100;
 			b=100;
 			id=2154;
+			atlOffset=-6.7195807;
 		};
 		class Item368
 		{
@@ -12055,6 +12056,222 @@ class Mission
 			id=2259;
 			type="Land_HelipadEmpty_F";
 			atlOffset=3.8749027;
+		};
+		class Item402
+		{
+			dataType="Marker";
+			position[]={4611.9111,2.3052931,9319.166};
+			name="wp_civ_test_5";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=40;
+			b=40;
+			id=2262;
+			atlOffset=-0.0022363663;
+		};
+		class Item403
+		{
+			dataType="Marker";
+			position[]={4444.2188,1.973587,10217.523};
+			name="wp_civ_test_6";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=40;
+			b=40;
+			id=2263;
+			atlOffset=3.0994415e-006;
+		};
+		class Item404
+		{
+			dataType="Marker";
+			position[]={4715.5498,4.8520002,9045.6406};
+			name="wp_civ_test_7";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=25;
+			b=25;
+			id=2264;
+			atlOffset=-0.0019593239;
+		};
+		class Item405
+		{
+			dataType="Marker";
+			position[]={5639.7202,9.1048536,8734.9023};
+			name="wp_civ_test_8";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=40;
+			b=40;
+			id=2265;
+			atlOffset=-0.0022363663;
+		};
+		class Item406
+		{
+			dataType="Marker";
+			position[]={6086.9131,6.1064124,8621.7031};
+			name="wp_civ_test_9";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=40;
+			b=40;
+			id=2266;
+			atlOffset=-0.0022363663;
+		};
+		class Item407
+		{
+			dataType="Marker";
+			position[]={6347.1611,4.2309999,9069.3633};
+			name="wp_civ_test_10";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=50;
+			b=50;
+			id=2267;
+			atlOffset=0.22823381;
+		};
+		class Item408
+		{
+			dataType="Marker";
+			position[]={5621.3804,3.6305542,9707.3477};
+			name="wp_civ_test_11";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=50;
+			b=50;
+			id=2268;
+			atlOffset=7.390976e-006;
+		};
+		class Item409
+		{
+			dataType="Marker";
+			position[]={5543.5103,2.9550793,9762.8887};
+			name="wp_civ_test_12";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=50;
+			b=50;
+			id=2269;
+			atlOffset=7.390976e-006;
+		};
+		class Item410
+		{
+			dataType="Marker";
+			position[]={4560.2188,2.1998267,10182.816};
+			name="wp_civ_test_13";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=50;
+			b=50;
+			id=2270;
+			atlOffset=7.390976e-006;
+		};
+		class Item411
+		{
+			dataType="Marker";
+			position[]={4357.3223,1.8055993,10243.507};
+			name="wp_civ_test_14";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=50;
+			b=50;
+			id=2271;
+			atlOffset=7.390976e-006;
+		};
+		class Item412
+		{
+			dataType="Marker";
+			position[]={4562.043,11.187891,8107.519};
+			name="wp_civ_test_15";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorCIV";
+			a=40;
+			b=40;
+			id=2272;
+			atlOffset=-0.0022363663;
+		};
+		class Item413
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2436.8259,12.304857,1763.571};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						isPlayable=1;
+					};
+					id=2274;
+					type="B_Soldier_A_F";
+					atlOffset=-9.5367432e-007;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male08ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.98000002;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=2273;
+			atlOffset=-9.5367432e-007;
 		};
 	};
 	class Connections

@@ -67,7 +67,11 @@ if (isServer) then {
 	
 	Fn_MissionIntro_MakeEnemies = {
 		//FIXME: Add radio chatter
-		systemChat "NO FRIENDS ANYMORE!";
+		if (hasInterface) then {
+			remoteExecCall ["Fn_Local_MakeEnemies"];
+		} else {
+			remoteExecCall ["Fn_Local_MakeEnemies", -2];
+		}
 		EAST setFriend [WEST, 0];
 		WEST setFriend [EAST, 0];
 	};
