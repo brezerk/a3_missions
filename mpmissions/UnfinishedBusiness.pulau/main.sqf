@@ -94,7 +94,7 @@ if (isServer) then {
 				};
 			} forEach nearestLocations [getPos _x, ["NameVillage", "NameCity", "NameCityCapital"], 3500];	
 		};
-	} forEach allPlayers; //FIXME: assault_group only
+	} forEach (playableUnits + switchableUnits); //FIXME: assault_group only
 	
 	//Select no more than 4 to create tasks
 	private _avalible_lcs = _lcs;
