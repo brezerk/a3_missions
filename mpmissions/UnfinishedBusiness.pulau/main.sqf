@@ -31,7 +31,7 @@ if (isServer) then {
 	D_DIFFICLTY = 0; //0 easy, 1 medium, 2 hard
 	D_FRACTION_INDEP = "CUP_I_NAPA"; //posible CUP_I_TK_GUE, IND_F, IND_F, IND_G_F
 	
-	D_LOCATION = "Gurun";
+	D_LOCATION = "Gurun"; //selectRandom ["Gurun", "Monyet"];
 
 	// Global variables
 	assault_group = [];

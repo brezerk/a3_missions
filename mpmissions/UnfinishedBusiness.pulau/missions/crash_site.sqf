@@ -66,12 +66,12 @@ if (isServer) then {
 		//spawn creater and wreck
 		private _crater = "CraterLong" createVehicle (_markerPos); 
 		private _obj = "Land_UWreck_MV22_F" createVehicle (_markerPos); 
-		_obj attachTo [_crater, [-1.5, 0, 3.5]];
+		_obj attachTo [_crater, [-1.5, -4, 3.5]];
 		//put fire and smoke
 		private _fire = "test_EmptyObjectForFireBig" createVehicle (_markerPos); 
-		_fire attachTo [_crater, [0, 0, 0]];
+		_fire attachTo [_crater, [0, -10.5, 0]];
 		_fire = "test_EmptyObjectForFireBig" createVehicle (_markerPos); 
-		_fire attachTo [_crater, [0, 3, 0]];
+		_fire attachTo [_crater, [0, -6, 0]];
 		
 		/* does not seems to be working now?
 		_fire = "ModuleEffectsSmoke_F" createVehicle (_markerPos); 
@@ -136,17 +136,17 @@ if (isServer) then {
 	
 	private _markers = [];
 	{
-		if (_x find "wp_plain_crash_" >= 0) then {
+		if (_x find format["wp_jet_crash_%1", D_LOCATION] >= 0) then {
 			_markers pushBack _x;
 		};
 	} forEach allMapMarkers;
 	
 	//spawn wreck
-	_markerPos = getMarkerPos (selectRandom _markers);
-	[_markerPos] call Fn_Task_Create_C130J_CrashSite;
-	[_markerPos] call Fn_Task_Create_C130J_SpawnRandomCargo;	
+	private _crashSitePos = getMarkerPos (selectRandom _markers);
+	[_crashSitePos] call Fn_Task_Create_C130J_CrashSite;
+	[_crashSitePos] call Fn_Task_Create_C130J_SpawnRandomCargo;	
 	//heli patrol
-	[_markerPos, rebel_heli_01] call Fn_Patrols_CreateLoiter;
+	[_crashSitePos, rebel_heli_01] call Fn_Patrols_CreateLoiter;
 	
 	//Additional random cargos
 	//for "_i" from 1 to 5 do {
@@ -155,8 +155,8 @@ if (isServer) then {
 	
 	private _free_landing_markers = [];
 	{
-		if (_x find "wp_player_spawn_" >= 0) then {
-			if (_markerPos distance2D getMarkerPos _x <= 2000) then {
+		if (_x find format["wp_paradrop_%1_", D_LOCATION] >= 0) then {
+			if (_crashSitePos distance2D getMarkerPos _x <= 2000) then {
 				_free_landing_markers pushBack _x;
 			};
 		};
@@ -177,11 +177,11 @@ if (isServer) then {
 	//let them fall a bit
 	sleep 1;
 		
-	private _ret = [_markerPos, 2500] call BrezBlock_fnc_GetAllCitiesInRange;
+	private _ret = [_crashSitePos, 2500] call BrezBlock_fnc_GetAllCitiesInRange;
 	//Get all POI in the range of 3000m
 	avaliable_locations = _ret select 0;
 	avaliable_pois = _ret select 1;
-	[_markerPos, 3000] execVM "addons\brezblock\utils\controller.sqf";
+	[_crashSitePos, 3000] execVM "addons\brezblock\utils\controller.sqf";
 
 	//Create markers
 	{ 
@@ -220,8 +220,8 @@ if (isServer) then {
 	];
 	
 	sleep 60;
-	[_markerPos, rebel_jeep_04, rebel_grp_01] call Fn_Patrols_Create_Transport_Sentry;
-	[_markerPos, rebel_jeep_03] call Fn_Patrols_Create_Sentry;
+	[_crashSitePos, rebel_jeep_04, rebel_grp_01] call Fn_Patrols_Create_Transport_Sentry;
+	[_crashSitePos, rebel_jeep_03] call Fn_Patrols_Create_Sentry;
 	call Fn_Task_Create_CSAT_Triggers;
 	
 };

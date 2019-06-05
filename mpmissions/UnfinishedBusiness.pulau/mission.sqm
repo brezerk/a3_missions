@@ -575,7 +575,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3852.748,-2.0109999,8164.8218};
-			name="wp_paradrop_gurun_01";
+			name="wp_paradrop_Gurun_01";
 			type="b_recon";
 			id=67;
 			atlOffset=-9.7346497;
@@ -584,7 +584,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3974.9719,-2.497,9113.9834};
-			name="wp_paradrop_gurun_02";
+			name="wp_paradrop_Gurun_02";
 			type="b_recon";
 			id=88;
 			atlOffset=-9.4036703;
@@ -593,7 +593,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4460.959,11.866,9676.8398};
-			name="wp_paradrop_gurun_03";
+			name="wp_paradrop_Gurun_03";
 			type="b_recon";
 			id=89;
 			atlOffset=-0.00011348724;
@@ -602,7 +602,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5883.6138,4.8070002,9322.6729};
-			name="wp_paradrop_gurun_05";
+			name="wp_paradrop_Gurun_05";
 			type="b_recon";
 			id=91;
 			atlOffset=-4.5140305;
@@ -611,7 +611,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4838.603,26.589001,9505.8096};
-			name="wp_paradrop_gurun_06";
+			name="wp_paradrop_Gurun_06";
 			type="b_recon";
 			id=92;
 			atlOffset=20.172768;
@@ -620,7 +620,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3696.655,-1.655,8388.7676};
-			name="wp_paradrop_gurun_07";
+			name="wp_paradrop_Gurun_07";
 			type="b_recon";
 			id=93;
 			atlOffset=-5.6226988;
@@ -629,7 +629,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4828.6631,-2.615,8891.3877};
-			name="wp_paradrop_gurun_08";
+			name="wp_paradrop_Gurun_08";
 			type="b_recon";
 			id=94;
 			atlOffset=-9.8000517;
@@ -638,7 +638,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3338.3799,5.006,10267.004};
-			name="wp_paradrop_gurun_09";
+			name="wp_paradrop_Gurun_09";
 			type="b_recon";
 			id=95;
 			atlOffset=-0.92385483;
@@ -647,7 +647,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3147.271,9.1739998,10509.994};
-			name="wp_paradrop_gurun_10";
+			name="wp_paradrop_Gurun_10";
 			type="b_recon";
 			id=96;
 			atlOffset=11.183502;
@@ -656,7 +656,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3568.1479,20.663,9461.8936};
-			name="wp_paradrop_gurun_11";
+			name="wp_paradrop_Gurun_11";
 			type="b_recon";
 			id=97;
 			atlOffset=17.092834;
@@ -665,7 +665,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5122.5571,46.653,9441.2012};
-			name="wp_paradrop_gurun_12";
+			name="wp_paradrop_Gurun_12";
 			type="b_recon";
 			id=98;
 			atlOffset=42.309372;
@@ -674,7 +674,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3394.6641,9.0019999,9713.6533};
-			name="wp_paradrop_gurun_13";
+			name="wp_paradrop_Gurun_13";
 			type="b_recon";
 			id=99;
 			atlOffset=-0.00020980835;
@@ -683,7 +683,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4233.6201,2.6670001,9513.8232};
-			name="wp_paradrop_gurun_14";
+			name="wp_paradrop_Gurun_14";
 			type="b_recon";
 			id=100;
 			atlOffset=-0.00031685829;
@@ -692,7 +692,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3294.8889,-0.74400002,9463.127};
-			name="wp_paradrop_gurun_15";
+			name="wp_paradrop_Gurun_15";
 			type="b_recon";
 			id=101;
 			atlOffset=0.00024563074;
@@ -701,7 +701,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6187.9731,-1.0650001,9581.6973};
-			name="wp_paradrop_gurun_16";
+			name="wp_paradrop_Gurun_16";
 			type="b_recon";
 			id=102;
 			atlOffset=7.8082085e-005;
@@ -710,7 +710,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4258.1372,-6.6570001,9791.6904};
-			name="wp_paradrop_gurun_17";
+			name="wp_paradrop_Gurun_17";
 			type="b_recon";
 			id=103;
 			atlOffset=-10.201921;
@@ -719,7 +719,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4900.5508,6.612,9262.6465};
-			name="wp_paradrop_gurun_18";
+			name="wp_paradrop_Gurun_18";
 			type="b_recon";
 			id=104;
 			atlOffset=-0.00033807755;
@@ -728,7 +728,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3405.6101,3.7650001,10719.43};
-			name="wp_paradrop_gurun_19";
+			name="wp_paradrop_Gurun_19";
 			type="b_recon";
 			id=105;
 			atlOffset=3.3450856;
@@ -737,7 +737,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3358.4199,-0.86000001,10022.632};
-			name="wp_paradrop_gurun_20";
+			name="wp_paradrop_Gurun_20";
 			type="b_recon";
 			id=106;
 			atlOffset=-10.070925;
@@ -746,7 +746,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5135.7349,3.5339999,9171.9756};
-			name="wp_jet_crash_gurun_01";
+			name="wp_jet_crash_Gurun_01";
 			type="b_plane";
 			id=112;
 			atlOffset=4.4822693e-005;
@@ -755,7 +755,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4016.3711,8.6920004,9400.5068};
-			name="wp_jet_crash_gurun_02";
+			name="wp_jet_crash_Gurun_02";
 			type="b_plane";
 			id=113;
 			atlOffset=-1.0797424;
@@ -764,7 +764,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4667.209,31.417999,9606.8018};
-			name="wp_jet_crash_gurun_03";
+			name="wp_jet_crash_Gurun_03";
 			type="b_plane";
 			id=114;
 			atlOffset=10.951336;
@@ -773,7 +773,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5374.5239,4.4219999,9433.4736};
-			name="wp_jet_crash_gurun_04";
+			name="wp_jet_crash_Gurun_04";
 			type="b_plane";
 			id=115;
 			atlOffset=0.00031280518;
@@ -782,7 +782,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3852.6289,5.0549998,8542.2881};
-			name="wp_jet_crash_gurun_05";
+			name="wp_jet_crash_Gurun_05";
 			type="b_plane";
 			id=116;
 			atlOffset=-0.00036668777;
@@ -791,7 +791,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3920.7109,8.691,10047.579};
-			name="wp_jet_crash_gurun_06";
+			name="wp_jet_crash_Gurun_06";
 			type="b_plane";
 			id=117;
 			atlOffset=0.00017261505;
@@ -800,7 +800,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3713.3191,6.0739999,9126.4658};
-			name="wp_jet_crash_gurun_07";
+			name="wp_jet_crash_Gurun_07";
 			type="b_plane";
 			id=118;
 			atlOffset=-2.5671182;
@@ -809,7 +809,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4148.9141,6.6929998,8555.374};
-			name="wp_jet_crash_gurun_08";
+			name="wp_jet_crash_Gurun_08";
 			type="b_plane";
 			id=119;
 			atlOffset=0.00012397766;
@@ -818,7 +818,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4927.3521,5.276,8673.0947};
-			name="wp_jet_crash_gurun_09";
+			name="wp_jet_crash_Gurun_09";
 			type="b_plane";
 			id=120;
 			atlOffset=-1.2570906;
@@ -827,7 +827,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4542.5962,4.5900002,9135.8916};
-			name="wp_jet_crash_gurun_10";
+			name="wp_jet_crash_Gurun_10";
 			type="b_plane";
 			id=121;
 			atlOffset=-1.7341108;
@@ -836,7 +836,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3693.155,12.308,9889.1729};
-			name="wp_jet_crash_gurun_11";
+			name="wp_jet_crash_Gurun_11";
 			type="b_plane";
 			id=122;
 			atlOffset=6.9031706;
@@ -8749,7 +8749,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3990.2371,7.6609998,9831.2715};
-			name="wp_paradrop_gurun_04";
+			name="wp_paradrop_Gurun_04";
 			type="b_recon";
 			id=90;
 			atlOffset=0.91819429;
@@ -9009,7 +9009,7 @@ class Mission
 			position[]={3895.854,11.159816,8123.7988};
 			class Attributes
 			{
-				name="tg_controller_gurun_01";
+				name="tg_controller_Gurun_01";
 				sizeA=600;
 				sizeB=600;
 				isServerOnly=1;
@@ -10301,7 +10301,7 @@ class Mission
 			position[]={3575.7849,4.794291,9063.9814};
 			class Attributes
 			{
-				name="tg_controller_gurun_02";
+				name="tg_controller_Gurun_02";
 				sizeA=600;
 				sizeB=600;
 				isServerOnly=1;
@@ -10315,7 +10315,7 @@ class Mission
 			position[]={4382.6899,0.65789795,9248.8926};
 			class Attributes
 			{
-				name="tg_controller_gurun_03";
+				name="tg_controller_Gurun_03";
 				sizeA=600;
 				sizeB=600;
 				isServerOnly=1;
@@ -10329,7 +10329,7 @@ class Mission
 			position[]={4912.6309,36.851135,8468.7773};
 			class Attributes
 			{
-				name="tg_controller_gurun_04";
+				name="tg_controller_Gurun_04";
 				sizeA=600;
 				sizeB=600;
 				isServerOnly=1;
@@ -10343,7 +10343,7 @@ class Mission
 			position[]={6034.1411,14.238004,8859.835};
 			class Attributes
 			{
-				name="tg_controller_gurun_05";
+				name="tg_controller_Gurun_05";
 				sizeA=600;
 				sizeB=600;
 				isServerOnly=1;
@@ -10357,7 +10357,7 @@ class Mission
 			position[]={5366.585,5.6809936,9557.9629};
 			class Attributes
 			{
-				name="tg_controller_gurun_06";
+				name="tg_controller_Gurun_06";
 				sizeA=600;
 				sizeB=600;
 				isServerOnly=1;
@@ -10371,7 +10371,7 @@ class Mission
 			position[]={4606.689,2.4000001,10177.544};
 			class Attributes
 			{
-				name="tg_controller_gurun_07";
+				name="tg_controller_Gurun_07";
 				sizeA=600;
 				sizeB=600;
 				isServerOnly=1;
@@ -10385,7 +10385,7 @@ class Mission
 			position[]={3706.387,4.902935,10279.621};
 			class Attributes
 			{
-				name="tg_controller_gurun_08";
+				name="tg_controller_Gurun_08";
 				sizeA=600;
 				sizeB=600;
 				isServerOnly=1;

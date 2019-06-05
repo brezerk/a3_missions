@@ -29,23 +29,39 @@ if (isServer) then {
 	//Get all POI in the range of 3000m
 	private _lcs = [];
 	private _poi = [];
+	private _blacklist = [];
 	//Fixme could be an argument, but who cares?
-	private _blacklist = [
-		'Pulau Monyet',
-		'Monyet Airfield',
-		'Pulau Gurun',
-		'Gurun Airfield',
-		'Mabau',
-		'Ahiolo',
-		'Selamat',
-		'Boano',
-		'Moko',
-		'Lepar',
-		'Seliu',
-		'Liat',
-		'Pasowe',
-		'Mandomai'
-	];
+	switch(D_LOCATION) do
+	{
+		case "Gurun": {
+			_blacklist = [
+				'Pulau Monyet',
+				'Monyet Airfield',
+				'Pulau Gurun',
+				'Gurun Airfield',
+				'Mabau',
+				'Ahiolo',
+				'Selamat',
+				'Boano',
+				'Moko',
+				'Lepar',
+				'Seliu',
+				'Liat',
+				'Pasowe',
+				'Mandomai',
+				'Keras',
+				'Tabako',
+				'Laora',
+				'Larete',
+				'Tanjung',
+				'Nirwana',
+				'Jaya',
+				'Tinobu',
+				'Kolaka',
+				'Nurul'
+			];
+		};
+	};
 
 	{	
 		if (!(text _x in _blacklist)) then {

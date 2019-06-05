@@ -146,7 +146,6 @@ if (isServer) then {
 	_cfg = [_side, _count] call _Fn_BrezBlock_CreateRandomDefendSquad;
 	_pos = [_center, 5, _radius, 3, 0, 0, 0] call BIS_fnc_findSafePos;
 	
-	systemChat "do?";
 	//http://arma3scriptingtutorials.blogspot.com/2014/02/config-viewer-what-is-it-and-how-to-use.html
 	//_grp = [_pos, _side, configfile >> "CfgGroups" >> "Indep" >> D_FRACTION_INDEP >> "Infantry" >> _cfg] call BIS_fnc_spawnGroup;
 	_grp = [_pos, _side, _cfg] call BIS_fnc_spawnGroup;

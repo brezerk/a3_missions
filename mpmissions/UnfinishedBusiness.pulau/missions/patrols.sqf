@@ -117,7 +117,7 @@ if (isServer) then {
 						vehicle_refuel_group append [_vehicle];
 						vehicle_confiscate_group append [_vehicle];
 					};
-					[_class] remoteExec ["systemChat"];
+					[format ["ERROR: %1", _class]] remoteExec ["systemChat"];
 				} forEach _units;
 			};
 		} forEach _poi;
