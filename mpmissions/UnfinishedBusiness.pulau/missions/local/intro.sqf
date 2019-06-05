@@ -24,7 +24,7 @@ Spawn start objectives, triggers for game intro and players allocation
 // Client side code
 if (hasInterface) then {
 	Fn_Local_MakeEnemies = {
-		playSound "radio_chatter_03";
+		playSound "radio_chatter_02";
 		playSound "RadioAmbient2";
 	};
 

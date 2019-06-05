@@ -54,7 +54,7 @@ if (isServer) then {
 							'CUP_I_GUE_Soldier_AKSU',
 							'CUP_I_GUE_Soldier_MG',
 							'CUP_I_GUE_Soldier_AR',
-							'CUP_I_GUE_Soldier_Sabouter',
+							'CUP_I_GUE_Saboteur',
 							'CUP_I_GUE_Medic',
 							'CUP_I_GUE_Crew'
 						];
@@ -62,7 +62,7 @@ if (isServer) then {
 					case "CUP_I_TK_GUE": { 
 						_units = [
 							'CUP_I_TK_GUE_Soldier',
-							'CUP_I_TK_GUE_Soldier_AK_74S',
+							'CUP_I_TK_GUE_Soldier_AK_47S',
 							'CUP_I_TK_GUE_Guerilla_Enfield',
 							'CUP_I_TK_GUE_Guerilla_Medic',
 							'CUP_I_TK_GUE_Soldier_M16A2',

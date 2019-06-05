@@ -26,7 +26,7 @@ class Header
 };
 
 author			= "brezerk@brezblock.org.ua";
-OnLoadName		= "Unfinished Business v0.6.35";
+OnLoadName		= "Unfinished Business v0.7.65";
 //OnLoadMission	= $STR_ONLOAD_INFO_01;
 //briefingName    = $STR_ONLOAD_INFO_02;
 // FIXME: https://feedback.bistudio.com/T67181
@@ -110,7 +110,7 @@ class CfgSounds
 };
 
 class CfgDebriefing
-	{  
+{  
 	class End1
 	{
 		title = "The Hostages got rescued!";
@@ -150,6 +150,7 @@ class CfgFunctions {
 			class CreateCivilianPresence {file = "addons\brezblock\systems\civilian.sqf";};
 			class CreatePatrol {file = "addons\brezblock\systems\patrol.sqf";};
 			class CreateDefend {file = "addons\brezblock\systems\defend.sqf";};
+			class GetAllCitiesInRange {file = "addons\brezblock\utils\get_cities.sqf";};
 		};
 	};
 };

@@ -63,10 +63,9 @@ if (isServer) then {
 							'CUP_I_GUE_Soldier_AKSU',
 							'CUP_I_GUE_Soldier_MG',
 							'CUP_I_GUE_Soldier_AR',
-							'CUP_I_GUE_Soldier_LAT',
 							'CUP_I_GUE_Soldier_AT',
 							'CUP_I_GUE_Soldier_GL',
-							'CUP_I_GUE_Soldier_Sabouter',
+							'CUP_I_GUE_Saboteur',
 							'CUP_I_GUE_Medic',
 							'CUP_I_GUE_Officer',
 							'CUP_I_GUE_Crew'

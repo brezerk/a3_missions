@@ -20,7 +20,7 @@ if (hasInterface) then {
 	Fn_Local_FastTravel_Sleep = {
 		if (alive player) then {
 			playSound "radio_chatter_00";
-			playSound "RadioAmbient2";
+			playSound "RadioAmbient6";
 			[0, 5] execVM "addons\brezblock\utils\fade.sqf";
 		};
 	};

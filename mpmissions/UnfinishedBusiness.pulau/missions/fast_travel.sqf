@@ -18,6 +18,8 @@
 
 if (isServer) then {
 	private['_markerPos', "_wp"];
+	sleep 3;
+	detach us_airplane_01;
 	sleep 30;
 	{
 		remoteExecCall ["Fn_Local_FastTravel_Sleep", _x];

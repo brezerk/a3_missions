@@ -30,6 +30,8 @@ if (isServer) then {
 	// Defaines (should be an UI option at mission startup);
 	D_DIFFICLTY = 0; //0 easy, 1 medium, 2 hard
 	D_FRACTION_INDEP = "CUP_I_NAPA"; //posible CUP_I_TK_GUE, IND_F, IND_F, IND_G_F
+	
+	D_LOCATION = "Gurun";
 
 	// Global variables
 	assault_group = [];
@@ -61,15 +63,8 @@ if (isServer) then {
 		};
 	};
 	
-	["Including..."] remoteExec ["systemChat"];
-	
 	#include "missions\patrols.sqf";
-	#include "missions\poi.sqf";
-	#include "missions\informator.sqf";
-	
-	["Ok. Patrols included..."] remoteExec ["systemChat"];
-	
-	/*
+
 	#include "missions\intro.sqf";
 	
 	#include "missions\aa.sqf";
@@ -78,29 +73,7 @@ if (isServer) then {
 	
 	sleep 2;
 	
-	call Fn_Create_MissionIntro;*/
-	
-	
-	private _ret = [(playableUnits + switchableUnits)] call Fn_POI_GetAllCitiesInPlayerRange;
-	//Get all POI in the range of 3000m
-	avaliable_locations = _ret select 0;
-	avaliable_pois = _ret select 1;
-	
-	//Create markers
-	{ 
-		private _mark = createMarker [format ["wp_city_%1", _forEachIndex], _x select 1];
-		_mark setMarkerType "hd_destroy";
-		_mark setMarkerAlpha 0;
-	} forEach avaliable_pois;
-	
-	//Spawn vehicles
-	[avaliable_pois] call Fn_Patrols_CreateCivilean_Traffic;
-	[avaliable_pois] call Fn_Patrols_CreateMilitary_Traffic;
-
-	//Send vehicles on patrol
-	[vehicle_patrol_group, avaliable_locations] call Fn_Patrols_Create_Random_Waypoints;
-	
-	call Fn_Task_Create_Informator;
+	call Fn_Create_MissionIntro;
 };
 
 // We need to end game if all players are no longer alive

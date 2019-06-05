@@ -28,7 +28,6 @@ if (hasInterface) then {
 
 if (isServer) then {
 	(driver us_airplane_01) setBehaviour "Careless";
-	systemChat "Attached?";
 	us_airplane_01 attachTo [land_00, [0, 0, 0] ];
 
 	Fn_Create_MissionIntro = {
@@ -71,7 +70,7 @@ if (isServer) then {
 			remoteExecCall ["Fn_Local_MakeEnemies"];
 		} else {
 			remoteExecCall ["Fn_Local_MakeEnemies", -2];
-		}
+		};
 		EAST setFriend [WEST, 0];
 		WEST setFriend [EAST, 0];
 	};
@@ -100,7 +99,6 @@ if (isServer) then {
 				_x setVariable ["is_assault_group", true, false];
 			};
 		} forEach crew us_airplane_01;
-		detach us_airplane_01;
 		_group = group driver us_airplane_01;
 		_wp = _group addWaypoint [getMarkerPos 'wp_waypoint_01', 0];
 		_wp setWaypointCombatMode "YELLOW";

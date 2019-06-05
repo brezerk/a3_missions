@@ -23,6 +23,8 @@ Create Spawn\Despawn controller
 	Return: Group
 */
 if (isServer) then {
+	params['_pos', '_range'];
+
 	BrezBlock_fnc_Cotroller_Process_Marker = {
 		params['_marker'];
 		private['_grp'];
@@ -68,26 +70,35 @@ if (isServer) then {
 		};
 	};
 	
-	//Setup all Triggers
+
+		
+	//Setup affected Triggers and remove unused
 	{
-		private['_trigger', '_markers'];
-		_markers = [];
-		_trigger = _x;
-		//systemChat "Got trigger!";
-		_trigger setTriggerActivation ["ANYPLAYER", "PRESENT", true];
-		_trigger setTriggerStatements [
-			"this",
-			"[thisTrigger] call BrezBlock_fnc_Cotroller_Spawn;",
-			"[thisTrigger] call BrezBlock_fnc_Cotroller_Despawn;"
-		];
-		//Build marker's Cache
-		{
-			if (getMarkerPos _x inArea _trigger) then {
-				if (markerType _x in ["ellipse", "square"]) then {
-					_markers pushBack _x;
-				};
+		if ((vehicleVarName _x) find "tg_controller_" >= 0) then {		
+			if ((_pos distance2D (getPos _x)) > _range) then {
+				systemChat format ["Drop trigger %1: %2 > %3", vehicleVarName _x, _pos distance2D (getPos _x), _range];
+				deleteVehicle _x;
+			} else {
+				private _trigger = _x;
+				private _markers = [];
+				//;
+				_trigger setTriggerActivation ["ANYPLAYER", "PRESENT", true];
+				_trigger setTriggerStatements [
+					"this",
+					"[thisTrigger] call BrezBlock_fnc_Cotroller_Spawn;",
+					"[thisTrigger] call BrezBlock_fnc_Cotroller_Despawn;"
+				];
+				//Build marker's Cache
+				{
+					if (getMarkerPos _x inArea _trigger) then {
+						if (markerType _x in ["ellipse", "square"]) then {
+							_markers pushBack _x;
+						};
+					};
+				} forEach allMapMarkers;
+				_trigger setVariable ["markers", _markers, false];
 			};
-		} forEach allMapMarkers;
-		_trigger setVariable ["markers", _markers, false];
+		};
 	} forEach allMissionObjects "EmptyDetector";
+
 };

@@ -55,21 +55,23 @@ if (isServer) then {
 	*/
 	Fn_Task_Create_C130J_CrashSite = {
 		params ["_markerPos"];
-		private ["_boom", "_obj", "_fire"];
 		
 		//do envonmental damage
 		for "_i" from 1 to 5 do {
-			_boom = createVehicle ["Sh_120mm_HE", _markerPos, [], 0, "FLY"];
+			private _boom = createVehicle ["Sh_120mm_HE", _markerPos, [], 0, "FLY"];
 			_boom setPos [((getPos _boom select 0) + (round(random 25) - 10)), ((getPos _boom select 1) + (round(random 25) - 10)), 250];
 			_boom setVelocity [0,0,-50];
 		};
 		
 		//spawn creater and wreck
-		"CraterLong" createVehicle (_markerPos); 
-		_obj = "Land_Wreck_Plane_Transport_01_F" createVehicle (_markerPos); 
+		private _crater = "CraterLong" createVehicle (_markerPos); 
+		private _obj = "Land_UWreck_MV22_F" createVehicle (_markerPos); 
+		_obj attachTo [_crater, [-1.5, 0, 3.5]];
 		//put fire and smoke
+		private _fire = "test_EmptyObjectForFireBig" createVehicle (_markerPos); 
+		_fire attachTo [_crater, [0, 0, 0]];
 		_fire = "test_EmptyObjectForFireBig" createVehicle (_markerPos); 
-		_fire attachTo [_obj, [0, 0, 0]];
+		_fire attachTo [_crater, [0, 3, 0]];
 		
 		/* does not seems to be working now?
 		_fire = "ModuleEffectsSmoke_F" createVehicle (_markerPos); 
@@ -132,33 +134,94 @@ if (isServer) then {
 		_obj;
 	};
 	
+	private _markers = [];
+	{
+		if (_x find "wp_plain_crash_" >= 0) then {
+			_markers pushBack _x;
+		};
+	} forEach allMapMarkers;
 	
 	//spawn wreck
-	_markerPos = getMarkerPos (["wp_plain_crash", 11] call BrezBlock_fnc_Get_RND_Index);
+	_markerPos = getMarkerPos (selectRandom _markers);
 	[_markerPos] call Fn_Task_Create_C130J_CrashSite;
 	[_markerPos] call Fn_Task_Create_C130J_SpawnRandomCargo;	
-	for "_i" from 1 to 5 do {
-		_markerPos = getMarkerPos (["wp_plain_crash", 11] call BrezBlock_fnc_Get_RND_Index);
-		[_markerPos] call Fn_Task_Create_C130J_SpawnRandomCargo;
-	};
-	
 	//heli patrol
 	[_markerPos, rebel_heli_01] call Fn_Patrols_CreateLoiter;
 	
+	//Additional random cargos
+	//for "_i" from 1 to 5 do {
+	//	[selectRandom _markers] call Fn_Task_Create_C130J_SpawnRandomCargo;
+	//};
+	
+	private _free_landing_markers = [];
+	{
+		if (_x find "wp_player_spawn_" >= 0) then {
+			if (_markerPos distance2D getMarkerPos _x <= 2000) then {
+				_free_landing_markers pushBack _x;
+			};
+		};
+	} forEach allMapMarkers;
+
+	{
+		private _marker = selectRandom _free_landing_markers;
+		_free_landing_markers = _free_landing_markers - [_marker];
+		private _markerPos = getMarkerPos _marker;
+		//parachute
+		_x setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 180 + random 100)];
+		remoteExecCall ["Fn_Local_Jet_Player_DoParadrop", _x];
+		_x setVariable ["ACE_isUnconscious", true, true];
+	} forEach assault_group;
+		
+	{deleteVehicle _x} foreach crew us_airplane_01; deleteVehicle us_airplane_01;
+		
+	//let them fall a bit
+	sleep 1;
+		
+	private _ret = [_markerPos, 2500] call BrezBlock_fnc_GetAllCitiesInRange;
+	//Get all POI in the range of 3000m
+	avaliable_locations = _ret select 0;
+	avaliable_pois = _ret select 1;
+	[_markerPos, 3000] execVM "addons\brezblock\utils\controller.sqf";
+
+	//Create markers
+	{ 
+		private _mark = createMarker [format ["wp_city_%1", _forEachIndex], _x select 1];
+		_mark setMarkerType "hd_destroy";
+		_mark setMarkerAlpha 0;
+	} forEach avaliable_pois; 
+		
+	//Spawn vehicles
+	[avaliable_pois] call Fn_Patrols_CreateCivilean_Traffic;
+	[avaliable_pois] call Fn_Patrols_CreateMilitary_Traffic;
+		
+	//create tasks assigned to assault_group
+	{
+		_x setVariable ["ACE_isUnconscious", false, true];
+		remoteExecCall ["Fn_Local_Jet_Player_Land", _x];
+		[_x, true] remoteExecCall ["allowDamage"];
+	} forEach assault_group;
+		
+	//Send vehicles on patrol
+	[vehicle_patrol_group, avaliable_locations] call Fn_Patrols_Create_Random_Waypoints;
+		
+	sleep 5;
+		
+	[] execVM "missions\regroup.sqf";
+	[] execVM "missions\assoult_group_is_dead.sqf";
+	[] execVM "missions\informator.sqf";
+		
+	trgRegroupIsDone = createTrigger ["EmptyDetector", getMarkerPos 'wp_air_field_01'];
+	trgRegroupIsDone setTriggerArea [0, 0, 0, false];
+	trgRegroupIsDone setTriggerActivation ["NONE", "PRESENT", false];
+	trgRegroupIsDone setTriggerStatements [
+			"task_complete_intormator && task_complete_regroup",
+			"call Fn_Task_Create_AA; call Fn_Task_Create_KillLeader; deleteVehicle trgRegroupIsDone;",
+			""
+	];
+	
 	sleep 60;
-	//vehicle patrol
-	[[
-		synd_jeep_01,
-		synd_jeep_02,
-		synd_jeep_03,
-		synd_jeep_04,
-		civ_veh_01,
-		civ_veh_02,
-		civ_veh_03,
-		civ_veh_04
-	]] call Fn_Patrols_Create_Random_Waypoints;
 	[_markerPos, rebel_jeep_04, rebel_grp_01] call Fn_Patrols_Create_Transport_Sentry;
 	[_markerPos, rebel_jeep_03] call Fn_Patrols_Create_Sentry;
 	call Fn_Task_Create_CSAT_Triggers;
-		
+	
 };
