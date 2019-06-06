@@ -47,22 +47,7 @@
 	_timesync = 60;
 
 	// Mission starting date is 25/09/2013 at 12:00
-	//_startingdate = [2015, 07, 01, 07, 00];
-	if (isServer) then {
-		if (random 1 <= 0.90) then {
-			myNewTime = 5.5 + random 13; // day
-		} else {
-			if (random 1 <= 0.66) then {
-				myNewTime = random 5.5; // night 
-			} else {
-				myNewTime = 18.5 + random 5.5; // evening
-			};
-		};
-		publicVariable "myNewTime";
-	};	
-	
-	waitUntil{not isNil "myNewTime"};
-	skipTime myNewTime;
+	_startingdate = [2019, 07, 16, 00, 00];
 
 	// Mission starting weather "CLEAR|CLOUDY|RAIN";
 	_startingweather = ["CLEAR", "CLOUDY", "RAIN"] call BIS_fnc_selectRandom;
@@ -74,7 +59,7 @@
 	if(_mintime > _maxtime) exitwith {hint format["Real weather: Max time: %1 can no be higher than Min time: %2", _maxtime, _mintime];};
 	_timeforecast = _mintime;
 
-	//setdate _startingdate;
+	
 	switch(toUpper(_startingweather)) do {
 		case "CLEAR": {
 			wcweather = [0, 0, 0, [random 3, random 3, true], date];
@@ -123,7 +108,8 @@
 
 	// SERVER SIDE SCRIPT
 	if (!isServer) exitWith{};
-
+	systemChat "DATE????";
+	setDate _startingdate;
 	// apply weather
 	skipTime -24;
 	86400 setRain (wcweather select 0);

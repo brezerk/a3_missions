@@ -194,7 +194,7 @@ if (isServer) then {
 	[avaliable_pois] call Fn_Patrols_CreateCivilean_Traffic;
 	[avaliable_pois] call Fn_Patrols_CreateMilitary_Traffic;
 	
-	["wp_cargo_03"] call Fn_Task_Create_Civilian_FloodedShip;
+	[getMarkerPos "wp_cargo_03"] call Fn_Task_Create_Civilian_FloodedShip;
 		
 	//create tasks assigned to assault_group
 	{

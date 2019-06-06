@@ -71,6 +71,9 @@ if (isServer) then {
 	#include "missions\leader.sqf";
 	#include "missions\civilian\cargo.sqf";
 	
+	// skip random time
+	skipTime ((random 7) + 3);
+	
 	sleep 2;
 	
 	call Fn_Create_MissionIntro;
