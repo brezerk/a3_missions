@@ -25,21 +25,24 @@ Spawn start objectives, triggers for game intro and players allocation
 if (hasInterface) then {
 	Fn_Local_MakeEnemies = {
 		playSound "radio_chatter_02";
-		playSound "RadioAmbient2";
 	};
 
 	Fn_Local_Create_MissionIntro = {
+		params['_location'];
 		[
 			west,
 			"t_arrive_to_island",
-			[localize "TASK_02_DESC",
-			localize "TASK_02_TITLE",
+			[
+			format [localize "TASK_02_DESC", _location, _location],
+			format [localize "TASK_02_TITLE", _location],
 			localize "TASK_ORIG_01"],
-			getMarkerPos "wp_air_field_01",
+			getMarkerPos format["wp_air_field_%1_01", _location],
 			"CREATED",
 			0,
 			true
 		] call BIS_fnc_taskCreate;
 		['t_arrive_to_island', "land"] call BIS_fnc_taskSetType;
 	};
+	
+
 };

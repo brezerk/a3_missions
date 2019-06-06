@@ -16,6 +16,8 @@
  *                                                                         *
  ***************************************************************************/
 
+[] execVM "addons\code43\real_weather.sqf";
+
 if (isServer) then {
 	_westHQ = createCenter west;
 	_eastHQ = createCenter east;
@@ -64,9 +66,7 @@ if (isServer) then {
 	};
 	
 	#include "missions\patrols.sqf";
-
 	#include "missions\intro.sqf";
-	
 	#include "missions\aa.sqf";
 	#include "missions\leader.sqf";
 	#include "missions\civilian\cargo.sqf";

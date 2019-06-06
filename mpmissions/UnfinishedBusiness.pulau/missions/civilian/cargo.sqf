@@ -34,10 +34,11 @@ if (isServer) then {
 		_obj = "Land_Wreck_Traw2_F" createVehicle ([((_markerPos select 0) - 5), ((_markerPos select 1) - 10), ((_markerPos select 2))]); 
 		
 		[_markerPos] call Fn_Task_Civilian_FloodedShip_SpawnRandomCargo;
+		/*
 		[[
 			synd_boat_01,
 			synd_boat_02
-		]] call Fn_Patrols_Create_Random_SeaWaypoints;
+		]] call Fn_Patrols_Create_Random_SeaWaypoints;*/
 		
 		locationFloodedShip = _markerPos;
 		publicVariable "locationFloodedShip";

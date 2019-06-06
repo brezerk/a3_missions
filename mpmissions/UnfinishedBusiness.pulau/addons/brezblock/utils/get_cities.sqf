@@ -38,7 +38,7 @@ if (isServer) then {
 				'Pulau Monyet',
 				'Monyet Airfield',
 				'Pulau Gurun',
-				'Gurun Airfield',
+				'Gurun airfield',
 				'Mabau',
 				'Ahiolo',
 				'Selamat',

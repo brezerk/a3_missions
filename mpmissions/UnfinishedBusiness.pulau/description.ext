@@ -70,7 +70,7 @@ class CfgSounds
 		name = "radio_chatter_00";
 
 		// filename, volume, pitch, distance (optional)
-		sound[] = {};
+		sound[] = {"@a3\sounds_f\sfx\radio\ambient_radio2", 5, 1};
 
 		// subtitle delay in seconds, subtitle text
 		titles[] = {
@@ -84,7 +84,7 @@ class CfgSounds
 		name = "radio_chatter_01";
 
 		// filename, volume, pitch, distance (optional)
-		sound[] = {};
+		sound[] = {"@a3\sounds_f\sfx\radio\ambient_radio2", 5, 1};
 
 		// subtitle delay in seconds, subtitle text
 		titles[] = {
@@ -98,7 +98,7 @@ class CfgSounds
 		name = "radio_chatter_02";
 
 		// filename, volume, pitch, distance (optional)
-		sound[] = {};
+		sound[] = {"@a3\sounds_f\sfx\radio\ambient_radio6", 5, 1};
 
 		// subtitle delay in seconds, subtitle text
 		titles[] = {

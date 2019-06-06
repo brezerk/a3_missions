@@ -177,7 +177,7 @@ if (isServer) then {
 	//let them fall a bit
 	sleep 1;
 		
-	private _ret = [_crashSitePos, 2500] call BrezBlock_fnc_GetAllCitiesInRange;
+	private _ret = [_crashSitePos, 2200] call BrezBlock_fnc_GetAllCitiesInRange;
 	//Get all POI in the range of 3000m
 	avaliable_locations = _ret select 0;
 	avaliable_pois = _ret select 1;
@@ -193,6 +193,8 @@ if (isServer) then {
 	//Spawn vehicles
 	[avaliable_pois] call Fn_Patrols_CreateCivilean_Traffic;
 	[avaliable_pois] call Fn_Patrols_CreateMilitary_Traffic;
+	
+	["wp_cargo_03"] call Fn_Task_Create_Civilian_FloodedShip;
 		
 	//create tasks assigned to assault_group
 	{
@@ -210,7 +212,7 @@ if (isServer) then {
 	[] execVM "missions\assoult_group_is_dead.sqf";
 	[] execVM "missions\informator.sqf";
 		
-	trgRegroupIsDone = createTrigger ["EmptyDetector", getMarkerPos 'wp_air_field_01'];
+	trgRegroupIsDone = createTrigger ["EmptyDetector", getMarkerPos format["wp_air_field_%1_01", D_LOCATION]];
 	trgRegroupIsDone setTriggerArea [0, 0, 0, false];
 	trgRegroupIsDone setTriggerActivation ["NONE", "PRESENT", false];
 	trgRegroupIsDone setTriggerStatements [

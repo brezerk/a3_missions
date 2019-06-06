@@ -40,7 +40,7 @@ if (isServer) then {
 			"call Fn_MissionIntro_SendAirplane;",
 			""
 		];
-		_trg = createTrigger ["EmptyDetector", getMarkerPos "wp_air_field_01" ];
+		_trg = createTrigger ["EmptyDetector", getMarkerPos format["wp_air_field_%1_01", D_LOCATION] ];
 		_trg setTriggerArea [0, 0, 0, false];
 		_trg setTriggerActivation ["NONE", "PRESENT", false];
 		_trg setTriggerStatements [
@@ -56,10 +56,19 @@ if (isServer) then {
 			"call Fn_MissionIntro_MakeEnemies;",
 			""
 		];
+		_trg = createTrigger ["EmptyDetector", getPos csat_aa_01];
+		_trg setTriggerArea [1000, 1000, 0, false];
+		_trg setTriggerActivation ["WEST", "PRESENT", false];
+		_trg setTriggerStatements [
+			"this",
+			"us_airplane_01 setDamage [0.6, true];",
+			""
+		];
+			
 		if (hasInterface) then {
-			remoteExecCall ["Fn_Local_Create_MissionIntro"];
+			[D_LOCATION] remoteExecCall ["Fn_Local_Create_MissionIntro"];
 		} else {
-			remoteExecCall ["Fn_Local_Create_MissionIntro", -2];
+			[D_LOCATION] remoteExecCall ["Fn_Local_Create_MissionIntro", -2];
 		}
 	}; // Fn_Create_MissionIntro
 	
@@ -100,7 +109,7 @@ if (isServer) then {
 			};
 		} forEach crew us_airplane_01;
 		_group = group driver us_airplane_01;
-		_wp = _group addWaypoint [getMarkerPos 'wp_waypoint_01', 0];
+		_wp = _group addWaypoint [getMarkerPos format["wp_waypoint_%1_01", D_LOCATION], 0];
 		_wp setWaypointCombatMode "YELLOW";
 		_wp setWaypointBehaviour "SAFE";
 		_wp setWaypointSpeed "LIMITED";

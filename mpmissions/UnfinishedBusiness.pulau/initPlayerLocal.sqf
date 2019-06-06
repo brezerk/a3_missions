@@ -22,6 +22,8 @@ Local player script
 
 waitUntil { !isNull player }; // Wait for player to initialize
 
+//playSound "RadioAmbient2";
+
 player setVariable ["weapon_fiered", false, false];
 player setVariable ["is_civilian", false, true];
 

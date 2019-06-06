@@ -32,10 +32,17 @@ if (isServer) then {
 		_trg setTriggerArea [0, 0, 0, false];
 		_trg setTriggerActivation ["NONE", "PRESENT", false];
 		_trg setTriggerStatements [
-			"!alive target_01;",
+			format["!alive target_%1_01;", D_LOCATION],
 			"if (isServer) then { call Fn_Task_KillLeader_Complete };",
 			""
 		];
+		
+		if (hasInterface) then {
+			[D_LOCATION] remoteExecCall ["Fn_Local_Create_KillLeader"];
+		} else {
+			[D_LOCATION] remoteExecCall ["Fn_Local_Create_KillLeader", -2];
+		};
+		
 	};
 	
 	Fn_Task_KillLeader_Complete = {

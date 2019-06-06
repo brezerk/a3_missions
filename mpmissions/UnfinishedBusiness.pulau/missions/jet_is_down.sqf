@@ -27,5 +27,7 @@ if (isServer) then {
 		
 	['t_arrive_to_island', 'FAILED'] call BIS_fnc_taskSetState;
 		
+	sleep 3;
+	
 	[] execVM "missions\crash_site.sqf";
 };

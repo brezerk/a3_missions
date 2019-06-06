@@ -83,14 +83,14 @@
 				<Russian>Ліквідувати ватажка бунтівників Moracio Goaz на базі біля &lt;marker name='wp_target_01'&gt;аеродрому Monuet&lt;/marker&gt;.</Russian>
 			</Key>
 			<Key ID="TASK_02_TITLE">
-				<Original>Get to the Gurun airfield</Original>
-				<English>Get to the Gurun airfield</English>
-				<Russian>Прибути до аеродрому Gurun</Russian>
+				<Original>Get to the %1 airfield</Original>
+				<English>Get to the %1 airfield</English>
+				<Russian>Прибути до аеродрому %1</Russian>
 			</Key>
 			<Key ID="TASK_02_DESC">
-				<Original>Get to the  &lt;marker name = 'wp_air_field_01'&gt;Gurun airfield&lt;/marker&gt; and report to the officer.</Original>
-				<English>Get to the  &lt;marker name = 'wp_air_field_01'&gt;Gurun airfield&lt;/marker&gt; and report to the officer.</English>
-				<Russian>Прибути до &lt;marker name='wp_air_field_01'&gt;аеродрому Gurun&lt;/marker&gt; та доповісти команидру.</Russian>
+				<Original>Get to the &lt;marker name = 'wp_air_field_%1_01'&gt;%2 airfield&lt;/marker&gt; and report to the officer.</Original>
+				<English>Get to the &lt;marker name = 'wp_air_field_%1_01'&gt;%2 airfield&lt;/marker&gt; and report to the officer.</English>
+				<Russian>Прибути до &lt;marker name='wp_air_field_%1_01'&gt;аеродрому %2&lt;/marker&gt; та доповісти команидру.</Russian>
 			</Key>
 			<Key ID="TASK_03_TITLE">
 				<Original>Regroup</Original>
