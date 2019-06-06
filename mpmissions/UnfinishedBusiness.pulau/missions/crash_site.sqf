@@ -188,13 +188,18 @@ if (isServer) then {
 		private _mark = createMarker [format ["wp_city_%1", _forEachIndex], _x select 1];
 		_mark setMarkerType "hd_destroy";
 		_mark setMarkerAlpha 0;
+		
+		private _pos = [_x select 1, 5, 150, 3, 0, 0, 0] call BIS_fnc_findSafePos;
+		_mark = createMarker [format ["respawn_civilian_%1", _forEachIndex], _pos];
+		_mark setMarkerType "hd_destroy";
+		_mark setMarkerAlpha 0;
 	} forEach avaliable_pois; 
 		
 	//Spawn vehicles
 	[avaliable_pois] call Fn_Patrols_CreateCivilean_Traffic;
 	[avaliable_pois] call Fn_Patrols_CreateMilitary_Traffic;
 	
-	[getMarkerPos "wp_cargo_03"] call Fn_Task_Create_Civilian_FloodedShip;
+	call Fn_Task_Create_Civilian_FloodedShip;
 		
 	//create tasks assigned to assault_group
 	{
@@ -226,4 +231,5 @@ if (isServer) then {
 	[_crashSitePos, rebel_jeep_03] call Fn_Patrols_Create_Sentry;
 	call Fn_Task_Create_CSAT_Triggers;
 	
+	execVM "missions\ping.sqf";
 };

@@ -36,6 +36,9 @@ if (isServer) then {
 	D_LOCATION = "Gurun"; //selectRandom ["Gurun", "Monyet"];
 
 	// Global variables
+	
+	pings = [];
+	
 	assault_group = [];
 	vehicle_confiscate_group = [];
 	vehicle_refuel_group = [];
@@ -72,7 +75,7 @@ if (isServer) then {
 	#include "missions\civilian\cargo.sqf";
 	
 	// skip random time
-	skipTime ((random 7) + 3);
+	skipTime ((random 7) + 4);
 	
 	sleep 2;
 	

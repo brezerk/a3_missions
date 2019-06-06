@@ -25,13 +25,20 @@ Spawn start objectives, triggers for informator contact
 
 if (isServer) then {
 	Fn_Task_Create_Civilian_FloodedShip = {
-		params ["_markerPos"];
-		private ["_obj"];
+		//params ["_markerPos"];
+		
+		private _center = selectRandom avaliable_pois select 1;
+		private _myPlaces = selectBestPlaces [_center, 1000, "sea + waterDepth", 15, 1];
+
+		private _markerPos = selectRandom _myPlaces select 0;
+
+		private _mark = createMarker ["test", _markerPos];
+		_mark setMarkerType "hd_destroy";
 
 		//spawn creater and wreck
 		"Crater" createVehicle (_markerPos); 
-		_obj = "Land_Wreck_Traw_F" createVehicle ([((_markerPos select 0) - 5), ((_markerPos select 1) + 20), ((_markerPos select 2))]); 
-		_obj = "Land_Wreck_Traw2_F" createVehicle ([((_markerPos select 0) - 5), ((_markerPos select 1) - 10), ((_markerPos select 2))]); 
+		private _obj = "Land_Wreck_Traw_F" createVehicle ([((_markerPos select 0) - 5), ((_markerPos select 1) + 20), 0]); 
+		_obj = "Land_Wreck_Traw2_F" createVehicle ([((_markerPos select 0) - 5), ((_markerPos select 1) - 10), 0]); 
 		
 		[_markerPos] call Fn_Task_Civilian_FloodedShip_SpawnRandomCargo;
 		/*
@@ -42,6 +49,27 @@ if (isServer) then {
 		
 		locationFloodedShip = _markerPos;
 		publicVariable "locationFloodedShip";
+		
+		call Fn_Task_Spawn_Boats;
+	};
+	
+	Fn_Task_Spawn_Boats = {
+		private _boats = [
+			'C_Boat_Civil_01_F',
+			'C_Rubberboat',
+			'C_Boat_Civil_01_rescue_F',
+			'CUP_C_Fishing_Boat_Chernarus'		
+		];
+		{
+			private _center = _x select 1;
+			private _myPlaces = selectBestPlaces [_center, 200, "((waterDepth factor [1,1.4])/(1 + waterDepth))", 15, 2];
+			{
+				private _pos = _x select 0;
+				selectRandom _boats createVehicle (_pos);
+			} forEach _myPlaces;
+		
+		} forEach avaliable_pois;
+	
 	};
 	
 		/*
@@ -54,7 +82,7 @@ if (isServer) then {
 		params ["_markerPos"];
 		private ["_obj"];
 		
-		_obj = "B_supplyCrate_F" createVehicle ([((_markerPos select 0) + (round(random 25) - 10)), ((_markerPos select 1) + (round(random 25) - 10)), (_markerPos select 2)]);
+		_obj = "B_supplyCrate_F" createVehicle ([((_markerPos select 0) + (round(random 25) - 10)), ((_markerPos select 1) + (round(random 25) - 10)), 0]);
 		
 		clearWeaponCargoGlobal _obj;
 		clearMagazineCargoGlobal _obj;

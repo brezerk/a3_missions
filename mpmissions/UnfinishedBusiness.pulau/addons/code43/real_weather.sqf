@@ -22,7 +22,7 @@
 	// Real time vs fast time
 	// true: Real time is more realistic weather conditions change slowly (ideal for persistent game)
 	// false: fast time give more different weather conditions (ideal for non persistent game) 
-	_realtime = false;
+	_realtime = true;
 
 	// Random time before new forecast
 	// true: forecast happens bewteen mintime and maxtime
@@ -108,7 +108,7 @@
 
 	// SERVER SIDE SCRIPT
 	if (!isServer) exitWith{};
-	systemChat "DATE????";
+
 	setDate _startingdate;
 	// apply weather
 	skipTime -24;
@@ -146,7 +146,7 @@
 	_lastrain = 0;
 	_rain = 0;
 	_overcast = 0;
-
+	
 	while {true} do {
 		_overcast = random 1;
 		if(_overcast > 0.70) then {
@@ -183,4 +183,4 @@
 			_timeforecast = _mintime + (random (_maxtime - _mintime));
 		};
 		sleep _timeforecast;
-};
+	};

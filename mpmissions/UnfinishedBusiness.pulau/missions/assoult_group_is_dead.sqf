@@ -31,6 +31,18 @@ if (isServer) then {
 				assault_group = assault_group - [_x];
 			};
 		} forEach assault_group;
+		// Send ping
+		{
+			if (side _x == west) then {
+				private _player = _x;
+				{
+					if ((_x knowsAbout _player) > 0) exitWith {
+						systemChat "got you";
+						pings pushBackUnique (mapGridPosition _player);
+					};
+				} forEach nearestObjects [_player, ["SoldierEB", "SoldierGB"], 800];
+			};
+		} forEach (playableUnits + switchableUnits);
 	};
 	//"EndAssaultGroupEvicted" call Fn_Endgame;
 };

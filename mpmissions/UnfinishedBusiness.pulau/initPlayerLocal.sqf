@@ -38,8 +38,6 @@ player setVariable ["is_civilian", false, true];
 #include "missions\local\cargo.sqf";
 #include "missions\local\police.sqf";
 
-//private['trgCivPlayerDetected'];
-
 Fn_Local_SetPersonalTaskState = {
 	params['_name', '_state'];
 	private ['_task'];
@@ -126,7 +124,8 @@ player addEventHandler
 		deleteVehicle trgCivFloodedShip;
 		deleteVehicle trgCivPoliceStation;
 
-		_sides = [civilian, east] - [playerSide];
+		//_sides = [civilian, east] - [playerSide];
+		_sides = [civilian];
 		_side = selectRandom _sides;
 		_group = createGroup [_side, true];
 		[player] joinSilent _group;
@@ -161,16 +160,13 @@ player addEventHandler
 			case civilian:
 			{
 				[] execVM "gear\civilian.sqf";
-				player setPos getMarkerPos selectRandom [
-					'respawn_civilian_01',
-					'respawn_civilian_02',
-					'respawn_civilian_03',
-					'respawn_civilian_04',
-					'respawn_civilian_05',
-					'respawn_civilian_06',
-					'respawn_civilian_07',
-					'respawn_civilian_08'
-				];
+				private _civ_spawn_markers = [];
+				{
+					if (_x find "respawn_civilian_" >= 0) then {
+						_civ_spawn_markers pushBack _x;
+					};
+				} forEach allMapMarkers;
+				player setPos getMarkerPos selectRandom _civ_spawn_markers;
 				call Fn_Local_Create_Task_Civilian_FloodedShip;
 				call Fn_Local_Create_Task_Civilian_Police;
 			};
@@ -227,7 +223,6 @@ sleep 5;
 [ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_00', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;
 
 [[west], [east,independent,civilian]] call ace_spectator_fnc_updateSides;
-
 
 //FIXME
 //[[civ_veh_01, civ_veh_02, civ_veh_03, civ_veh_04]] call Fn_Local_AddAction_ConfiscateVehicles;
