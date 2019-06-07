@@ -147,6 +147,9 @@
 	_rain = 0;
 	_overcast = 0;
 	
+	//init is done
+	real_weather_init = true;
+	
 	while {true} do {
 		_overcast = random 1;
 		if(_overcast > 0.70) then {

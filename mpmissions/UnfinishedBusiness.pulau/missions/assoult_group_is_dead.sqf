@@ -36,11 +36,12 @@ if (isServer) then {
 			if (side _x == west) then {
 				private _player = _x;
 				{
-					if ((_x knowsAbout _player) > 0) exitWith {
-						systemChat "got you";
-						pings pushBackUnique (mapGridPosition _player);
+					if (side _x in [independent, east]) then {
+						if ((_x knowsAbout _player) > 1) exitWith {
+							pings pushBackUnique (mapGridPosition _player);
+						};
 					};
-				} forEach nearestObjects [_player, ["SoldierEB", "SoldierGB"], 800];
+				} forEach nearestObjects [_player, ["SoldierEB", "SoldierGB", "SoldierWB"], 450];
 			};
 		} forEach (playableUnits + switchableUnits);
 	};

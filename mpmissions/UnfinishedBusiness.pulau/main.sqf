@@ -16,6 +16,8 @@
  *                                                                         *
  ***************************************************************************/
 
+real_weather_init = false;
+
 [] execVM "addons\code43\real_weather.sqf";
 
 if (isServer) then {
@@ -73,6 +75,8 @@ if (isServer) then {
 	#include "missions\aa.sqf";
 	#include "missions\leader.sqf";
 	#include "missions\civilian\cargo.sqf";
+	
+	waitUntil {real_weather_init};
 	
 	// skip random time
 	skipTime ((random 7) + 4);
