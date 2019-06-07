@@ -4373,12 +4373,12 @@ class Mission
 		class Item167
 		{
 			dataType="Marker";
-			position[]={6736.772,-0.138,10849.56};
+			position[]={6655.353,-0.19434771,10641.488};
 			name="wp_waypoint_Gurun_01";
 			type="b_installation";
 			angle=196.25995;
 			id=1614;
-			atlOffset=20.282709;
+			atlOffset=21.997463;
 		};
 		class Item168
 		{

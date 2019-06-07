@@ -127,18 +127,20 @@ player addEventHandler
 		//_sides = [civilian, east] - [playerSide];
 		_sides = [east];
 		_side = selectRandom _sides;
-		_group = createGroup [_side, true];
-		[player] joinSilent _group;
+		//_group = createGroup [_side, true];
+		
 		switch (_side) do
 		{
 			case civilian:
 			{
 				//systemChat "switched";
+				[player] joinSilent s_civ_group;
 				player setVariable ["is_civilian", true, true];
 			};
 			case east:
 			{
 				//systemChat "switched";
+				[player] joinSilent s_east_group;
 				player setVariable ["is_civilian", false, true];
 			};
 		};

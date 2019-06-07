@@ -25,10 +25,10 @@
 if (isServer) then {
 	while {count assault_group != 0} do {
 		sleep 30;
-		["ping..."] remoteExec ["systemChat"];
+		[[independent, "HQ"], ["ping..."]]] remoteExec ["sideChat"];
+		[[east, "HQ"], ["ping..."]] remoteExec ["sideChat"];
 		if (count pings > 0) then {
 			{
-				[format ["Enemy spotted. Grid: %1", _x]] remoteExec ["systemChat"];
 				[[independent, "HQ"], [format ["Enemy spotted. Grid: %1", _x]]] remoteExec ["sideChat"];
 				[[east, "HQ"], [format ["Enemy spotted. Grid: %1", _x]]] remoteExec ["sideChat"];
 			} forEach pings;

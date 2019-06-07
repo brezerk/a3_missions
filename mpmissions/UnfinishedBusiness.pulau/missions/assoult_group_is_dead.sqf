@@ -33,11 +33,11 @@ if (isServer) then {
 		} forEach assault_group;
 		// Send ping
 		{
-			if (side _x == west) then {
+			if (side group _x == west) then {
 				private _player = _x;
 				{
 					if (side _x in [independent, east]) then {
-						if ((_x knowsAbout _player) > 0) exitWith {
+						if ((_x knowsAbout _player) >= 1.5) exitWith {
 							pings pushBackUnique (mapGridPosition _player);
 						};
 					};

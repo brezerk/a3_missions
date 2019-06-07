@@ -17,54 +17,19 @@
  ***************************************************************************/
 
 /*
-Spawn start objectives, triggers for game intro and players allocation
+Spawn start objectives, triggers for informator contact
 */
 
-//Player side triggers
-// Client side code
-if (hasInterface) then {
-	Fn_Local_Create_SCAT_MissionIntro = {
-		if (canFire csat_aa_01) then {
-			[
-				east,
-				"t_scat_defend_aa",
-				[localize "TASK_AOC_01_DESC",
-				localize "TASK_AOC_01_TITLE",
-				localize "TASK_ORIG_01"],
-				getPos csat_aa_01,
-				"CREATED",
-				0,
-				true
-			] call BIS_fnc_taskCreate;
-			['t_scat_defend_aa', "defend"] call BIS_fnc_taskSetType;
+_id = _this select 0; 
+_caller = _this select 1; 
+_uid  = _this select 2; 
+
+//check if the uid given is for player or server
+//__server__ 
+if (_caller != "__SERVER__") then {
+	{
+		if (getPlayerUID _x == _uid) exitWith {
+			assault_group = assault_group - [_x];
 		};
-		if (alive csat_comm_tower_01) then {
-			[
-				east,
-				"t_scat_defend_comm_tower",
-				[localize "TASK_AOC_02_DESC",
-				localize "TASK_AOC_02_TITLE",
-				localize "TASK_ORIG_02"],
-				getPos csat_comm_tower_01,
-				"CREATED",
-				0,
-				true
-			] call BIS_fnc_taskCreate;
-			['t_scat_defend_comm_tower', "defend"] call BIS_fnc_taskSetType;
-		};
-		[
-			east,
-			"t_scat_eliminate_surv",
-			[localize "TASK_AOC_03_DESC",
-			localize "TASK_AOC_03_TITLE",
-			localize "TASK_ORIG_03"],
-			objNull,
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_scat_eliminate_surv', "kill"] call BIS_fnc_taskSetType;
-	};
-	
-	sleep 5;
+	} forEach (playableUnits + switchableUnits);
 };

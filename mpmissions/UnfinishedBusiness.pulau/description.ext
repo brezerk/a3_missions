@@ -48,13 +48,13 @@ aikills = 0;
 
 //{ 1, true, false },
 // Disable Global, Command, Group, Vehicle and System channels
-disableChannels[] = {
-	{ 0, true, true  },
-	{ 2, true, false },
-	{ 3, true, false },
-	{ 4, true, false },
-	{ 6, true, true  }
-};
+//disableChannels[] = {
+//	{ 0, true, true  },
+//	{ 2, true, false },
+//	{ 3, true, false },
+//	{ 4, true, false },
+//	{ 6, true, true  }
+//};
 
 respawnOnStart = -1;
 

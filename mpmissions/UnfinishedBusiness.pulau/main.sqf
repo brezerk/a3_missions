@@ -31,6 +31,11 @@ if (isServer) then {
 	EAST setFriend [WEST, 1];
 	WEST setFriend [EAST, 1];
 	
+	s_west_group = createGroup west; publicVariable "s_west_group";
+	s_east_group = createGroup east; publicVariable "s_east_group";
+	s_indep_group = createGroup independent; publicVariable "s_indep_group";
+	s_civ_group = createGroup civilian; publicVariable "s_civ_group";
+	
 	// Defaines (should be an UI option at mission startup);
 	D_DIFFICLTY = 0; //0 easy, 1 medium, 2 hard
 	D_FRACTION_INDEP = "CUP_I_NAPA"; //posible CUP_I_TK_GUE, IND_F, IND_F, IND_G_F
@@ -79,11 +84,12 @@ if (isServer) then {
 	waitUntil {real_weather_init};
 	
 	// skip random time
-	skipTime ((random 7) + 4);
+	skipTime ((random 5) + 5);
 	
 	sleep 2;
 	
 	call Fn_Create_MissionIntro;
+
 };
 
 // We need to end game if all players are no longer alive
