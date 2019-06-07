@@ -22,6 +22,14 @@ Local player script
 
 waitUntil { !isNull player }; // Wait for player to initialize
 
+//tickets
+[player, 3] call BIS_fnc_respawnTickets;
+
+// hide markers
+{if (_x find "wp_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
+{if (_x find "respawn_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
+
+
 //playSound "RadioAmbient2";
 
 player setVariable ["weapon_fiered", false, false];
@@ -219,13 +227,6 @@ player addEventHandler
 		};
     }
 ];
-
-//tickets
-[player, 3] call BIS_fnc_respawnTickets;
-
-// hide markers
-{if (_x find "wp_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
-{if (_x find "respawn_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
 
 sleep 5;
 

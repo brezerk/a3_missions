@@ -25,8 +25,8 @@
 if (isServer) then {
 	while {count assault_group != 0} do {
 		sleep 30;
-		[[independent, "HQ"], "ping..."] remoteExec ["sideChat"];
-		[[east, "HQ"], "ping..."] remoteExec ["sideChat"];
+		//[[independent, "HQ"], "ping..."] remoteExec ["sideChat"];
+		//[[east, "HQ"], "ping..."] remoteExec ["sideChat"];
 		//[[west, "HQ"], "WEST ping..."] remoteExec ["sideChat"];
 		if (count pings > 0) then {
 			{
