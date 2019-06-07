@@ -45,13 +45,17 @@ if (isServer) then {
 	];
 	
 	waitUntil {
-		sleep 6;
+		sleep 10;
 		if (!alive _vehicle) then {
 			_counter = _counter + 1;
 		};
 		if (!([_triggerArea, _vehicle] call BIS_fnc_inTrigger)) then {
 			if (count (crew _vehicle) == 0) then {
-				_counter = _counter + 1;
+				{
+					//player found withing 500m
+					if (isPlayer _x) exitWith {};
+					_counter = _counter + 1;
+				} forEach nearestObjects [_vehicle, ["SoldierEB", "SoldierGB", "SoldierWB"], 500];
 			} else {
 				_counter = 0;
 			};
