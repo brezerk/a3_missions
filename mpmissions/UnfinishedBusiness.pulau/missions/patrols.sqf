@@ -107,7 +107,7 @@ if (isServer) then {
 			for "_i" from 0 to (random 2) do {
 				private _class = selectRandom _vehicles;
 				private _pos = [_x select 1, 0, 90, 15, 0, 0, 0] call BIS_fnc_findSafePos;
-				[format ["W: %1 %2", _pos, _class]] remoteExec ["systemChat"];
+				//[format ["W: %1 %2", _pos, _class]] remoteExec ["systemChat"];
 				private _crew = [_pos, independent, [_class]] call BIS_fnc_spawnGroup;
 				_units = units _crew;
 				{

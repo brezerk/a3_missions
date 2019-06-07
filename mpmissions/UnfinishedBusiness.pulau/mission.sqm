@@ -8,15 +8,15 @@ class EditorData
 	toggles=41;
 	class ItemIDProvider
 	{
-		nextID=2501;
+		nextID=2502;
 	};
 	class MarkerIDProvider
 	{
-		nextID=43;
+		nextID=44;
 	};
 	class Camera
 	{
-		pos[]={6034.8047,91.895943,5483.8242};
+		pos[]={6000.6216,143.31342,5424.0586};
 		dir[]={0.45626354,-0.56979579,0.68349904};
 		up[]={0.31635588,0.82178181,0.47391227};
 		aside[]={0.83171952,-1.0908116e-007,-0.55520654};
@@ -538,7 +538,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=528;
+		items=529;
 		class Item0
 		{
 			dataType="Marker";
@@ -4408,8 +4408,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5439.0444,41.529984,8985.1553};
-						angles[]={0,6.1848707,6.2698579};
+						position[]={5439.0439,41.52985,8985.1553};
+						angles[]={0,6.1848707,6.2698507};
 					};
 					side="East";
 					flags=4;
@@ -4419,15 +4419,15 @@ class Mission
 					};
 					id=1866;
 					type="CUP_O_RU_Crew";
-					atlOffset=0.18914032;
+					atlOffset=0.18899918;
 				};
 				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5439.0444,41.529984,8985.1553};
-						angles[]={0,6.1848707,6.2698579};
+						position[]={5439.0439,41.52985,8985.1553};
+						angles[]={0,6.1848707,6.2698507};
 					};
 					side="East";
 					flags=6;
@@ -4437,7 +4437,7 @@ class Mission
 					};
 					id=1867;
 					type="CUP_O_RU_Crew";
-					atlOffset=0.18914032;
+					atlOffset=0.18899918;
 				};
 			};
 			class Attributes
@@ -4477,7 +4477,7 @@ class Mission
 				};
 			};
 			id=1689;
-			atlOffset=0.18914032;
+			atlOffset=0.18899918;
 		};
 		class Item170
 		{
@@ -5642,8 +5642,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5394.4893,43.062775,8992.0059};
-						angles[]={6.2698579,5.6264772,6.2598572};
+						position[]={5394.4888,43.062786,8992.0059};
+						angles[]={6.2698507,5.6264701,6.25985};
 					};
 					side="East";
 					flags=4;
@@ -5658,8 +5658,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5394.4893,43.062775,8992.0059};
-						angles[]={6.2698579,5.6264772,6.2598572};
+						position[]={5394.4888,43.062786,8992.0059};
+						angles[]={6.2698507,5.6264701,6.25985};
 					};
 					side="East";
 					flags=6;
@@ -5712,16 +5712,40 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5394.5459,45.484032,8991.9238};
-				angles[]={6.2698579,5.6264772,6.2598572};
+				position[]={5394.5454,45.484043,8991.9238};
+				angles[]={6.2698507,5.6264701,6.25985};
 			};
 			side="East";
 			flags=6;
 			class Attributes
 			{
+				lock="LOCKEDPLAYER";
 			};
 			id=1843;
 			type="CUP_O_BRDM2_HQ_SLA";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""CUP_arifle_AK74"",""CUP_launch_RPG18"",""FirstAidKit"",""Medikit""],[2,1,10,1]],[[""CUP_30Rnd_545x39_AK_M"",""CUP_RPG18_M"",""SmokeShell"",""SmokeShellOrange"",""Chemlight_red""],[20,2,2,2,2]],[[""ToolKit""],[1]],[[""CUP_B_AlicePack_Khaki""],[4]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item213
 		{
@@ -5735,8 +5759,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5475.5674,40.010983,8954.459};
-						angles[]={6.2631865,4.0686674,0.019999012};
+						position[]={5475.5449,40.010075,8954.4365};
+						angles[]={6.2631841,4.0686593,0.020001473};
 					};
 					side="East";
 					flags=4;
@@ -5751,8 +5775,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5475.5674,40.010983,8954.459};
-						angles[]={6.2631865,4.0686674,0.019999012};
+						position[]={5475.5449,40.010075,8954.4365};
+						angles[]={6.2631841,4.0686593,0.020001473};
 					};
 					side="East";
 					flags=4;
@@ -5767,8 +5791,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5475.5674,40.010983,8954.459};
-						angles[]={6.2631865,4.0686674,0.019999012};
+						position[]={5475.5449,40.010075,8954.4365};
+						angles[]={6.2631841,4.0686593,0.020001473};
 					};
 					side="East";
 					flags=6;
@@ -5826,33 +5850,55 @@ class Mission
 				};
 			};
 			id=1846;
-			atlOffset=-0.00021362305;
 		};
 		class Item214
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5475.501,42.227383,8954.3428};
-				angles[]={6.2631865,4.0686674,0.019999012};
+				position[]={5475.5005,42.227581,8954.3428};
+				angles[]={6.2631841,4.0686593,0.020001473};
 			};
 			side="East";
 			flags=6;
 			class Attributes
 			{
+				lock="LOCKEDPLAYER";
 				textures="RU_GREEN";
 			};
 			id=1847;
 			type="CUP_O_BTR60_SLA";
-			atlOffset=-0.00021362305;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""CUP_arifle_AK74"",""CUP_launch_RPG7V"",""FirstAidKit"",""Medikit""],[4,2,20,2]],[[""CUP_30Rnd_545x39_AK_M"",""CUP_45Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M"",""CUP_1Rnd_HE_GP25_M"",""CUP_PG7V_M"",""CUP_HandGrenade_RGD5"",""SmokeShell"",""SmokeShellOrange"",""Chemlight_red""],[20,4,10,2,4,4,4,4]],[[""ToolKit""],[1]],[[""CUP_B_AlicePack_Khaki""],[8]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item215
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={5439.0962,45.419964,8985.1055};
-				angles[]={0,6.1848707,6.2698579};
+				position[]={5439.0957,45.41983,8985.1055};
+				angles[]={0,6.1848707,6.2698507};
 			};
 			side="East";
 			flags=6;
@@ -5863,7 +5909,7 @@ class Mission
 			};
 			id=1864;
 			type="CUP_O_2S6_RU";
-			atlOffset=0.18914032;
+			atlOffset=0.18899918;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -11826,6 +11872,14 @@ class Mission
 			name="marker_42";
 			type="loc_Hospital";
 			id=2500;
+		};
+		class Item528
+		{
+			dataType="Marker";
+			position[]={5471.5068,40.681244,8988.8584};
+			name="wp_spawn_uaz_01";
+			type="o_motor_inf";
+			id=2501;
 		};
 	};
 	class Connections

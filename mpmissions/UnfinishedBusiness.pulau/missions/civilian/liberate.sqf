@@ -17,24 +17,28 @@
  ***************************************************************************/
 
 /*
-	If assault group is dead -- end game;
-	Usage: execVM ["missions/assault_group_is_dead.sqf"];
-	Return: true
+Spawn start objectives, triggers for game intro and players allocation
 */
 
-if (isServer) then {
-	while {count assault_group != 0} do {
-		sleep 30;
-		[[independent, "HQ"], "ping..."] remoteExec ["sideChat"];
-		[[east, "HQ"], "ping..."] remoteExec ["sideChat"];
-		//[[west, "HQ"], "WEST ping..."] remoteExec ["sideChat"];
-		if (count pings > 0) then {
-			{
-				[[independent, "HQ"], format ["Enemy %1 spotted. Grid: %2", _forEachIndex, _x]] remoteExec ["sideChat"];
-				[[east, "HQ"], format ["Enemy %1 spotted. Grid: %2", _forEachIndex, _x]] remoteExec ["sideChat"];
-				//[[west, "HQ"], format ["WEST Enemy spotted. Grid: %1", _x]] remoteExec ["sideChat"];
-			} forEach pings;
-			pings = [];
-		};
+//Player side triggers
+// Client side code
+if (hasInterface) then {
+	Fn_Local_Create_Task_Civilian_Liberate_MissionIntro = {
+		{
+			private _task = format["t_libirate_%1", _forEachIndex];
+			[
+				civilian,
+				_task,
+				[format[localize "TASK_09_DESC", _forEachIndex, _x select 0],
+				format[localize "TASK_09_TITLE", _x select 0],
+				localize "TASK_ORIG_03"],
+				objNull,
+				"CREATED",
+				0,
+				true
+			] call BIS_fnc_taskCreate;
+			[_task, "kill"] call BIS_fnc_taskSetType;
+		} forEach avaliable_pois;
 	};
+	
 };

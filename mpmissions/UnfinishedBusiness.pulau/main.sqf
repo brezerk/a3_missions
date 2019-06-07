@@ -75,6 +75,29 @@ if (isServer) then {
 		};
 	};
 	
+	Fn_Spawn_UAZ = {
+        params ["_spawnposition"];
+        private ["_pos", "_vec"];
+        _vec = objNull;
+        if (isServer) then {
+                _vec = selectRandom [
+                        "CUP_O_UAZ_Unarmed_SLA",
+                        "CUP_O_UAZ_Militia_SLA",
+                        "CUP_O_UAZ_Open_SLA",
+                        "CUP_O_UAZ_MG_SLA",
+                        "CUP_O_UAZ_AGS30_SLA",
+						"CUP_O_UAZ_SPG9_SLA",
+						"CUP_O_UAZ_METIS_SLA"
+                ];
+                _pos = getMarkerPos _spawnposition findEmptyPosition [0, 15, _vec];
+                _vec = createVehicle [_vec, _pos, [], 0];
+                _vec setDir (markerDir _spawnposition);
+
+        };
+        _vec;
+	};
+
+	
 	#include "missions\patrols.sqf";
 	#include "missions\intro.sqf";
 	#include "missions\aa.sqf";
@@ -84,11 +107,13 @@ if (isServer) then {
 	waitUntil {real_weather_init};
 	
 	// skip random time
-	skipTime ((random 5) + 5);
+	skipTime ((random 5) + 6);
 	
 	sleep 2;
 	
 	call Fn_Create_MissionIntro;
+	
+	[Fn_Spawn_UAZ, 'wp_spawn_uaz_01', 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
 
 };
 

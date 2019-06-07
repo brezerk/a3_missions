@@ -1,3 +1,4 @@
+
 /***************************************************************************
  *   Copyright (C) 2008-2019 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
@@ -17,24 +18,29 @@
  ***************************************************************************/
 
 /*
-	If assault group is dead -- end game;
-	Usage: execVM ["missions/assault_group_is_dead.sqf"];
-	Return: true
+Spawn start objectives, triggers for informator contact
 */
 
 if (isServer) then {
-	while {count assault_group != 0} do {
-		sleep 30;
-		[[independent, "HQ"], "ping..."] remoteExec ["sideChat"];
-		[[east, "HQ"], "ping..."] remoteExec ["sideChat"];
-		//[[west, "HQ"], "WEST ping..."] remoteExec ["sideChat"];
-		if (count pings > 0) then {
-			{
-				[[independent, "HQ"], format ["Enemy %1 spotted. Grid: %2", _forEachIndex, _x]] remoteExec ["sideChat"];
-				[[east, "HQ"], format ["Enemy %1 spotted. Grid: %2", _forEachIndex, _x]] remoteExec ["sideChat"];
-				//[[west, "HQ"], format ["WEST Enemy spotted. Grid: %1", _x]] remoteExec ["sideChat"];
-			} forEach pings;
-			pings = [];
-		};
-	};
+
+	//Create markers
+	{ 
+		private _mark = createMarker [format ["wp_city_%1", _forEachIndex], _x select 1];
+		_mark setMarkerType "hd_destroy";
+		_mark setMarkerAlpha 0;
+		
+		private _pos = [_x select 1, 5, 150, 3, 0, 0, 0] call BIS_fnc_findSafePos;
+		_mark = createMarker [format ["respawn_civilian_%1", _forEachIndex], _pos];
+		_mark setMarkerType "hd_destroy";
+		_mark setMarkerAlpha 0;
+	} forEach avaliable_pois; 
+		
+	//Spawn vehicles
+	[avaliable_pois] call Fn_Patrols_CreateCivilean_Traffic;
+	[avaliable_pois] call Fn_Patrols_CreateMilitary_Traffic;
+	
+	
+	
+	call Fn_Task_Create_Civilian_FloodedShip;
+	
 };

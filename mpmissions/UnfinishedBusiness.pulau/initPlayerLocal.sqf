@@ -37,6 +37,7 @@ player setVariable ["is_civilian", false, true];
 #include "missions\local\csat.sqf";
 #include "missions\local\cargo.sqf";
 #include "missions\local\police.sqf";
+#include "missions\civilian\liberate.sqf";
 
 Fn_Local_SetPersonalTaskState = {
 	params['_name', '_state'];
@@ -94,7 +95,12 @@ Fn_Local_FailTasks = {
 		't_destroy_comtower',
 		't_kill_leader',
 		't_civ_boat',
-		't_civ_police'
+		't_civ_police',
+		't_libirate_0',
+		't_libirate_1',
+		't_libirate_2',
+		't_libirate_3',
+		't_libirate_4'
 	];
 };
 
@@ -107,7 +113,7 @@ Fn_Local_CheckIfCivPlayerDetected = {
 				if ((_x knowsAbout player) > 0) exitWith {
 					_detected = true;
 				};
-			} forEach nearestObjects [player, ["SoldierEB", "SoldierGB"], 800];
+			} forEach nearestObjects [player, ["SoldierEB", "SoldierGB", "SoldierWB"], 800];
 		};
 	};
 	_detected;
@@ -124,8 +130,8 @@ player addEventHandler
 		deleteVehicle trgCivFloodedShip;
 		deleteVehicle trgCivPoliceStation;
 
-		//_sides = [civilian, east] - [playerSide];
-		_sides = [east];
+		_sides = [civilian, east] - [playerSide];
+		//_sides = [civilian];
 		_side = selectRandom _sides;
 		//_group = createGroup [_side, true];
 		
@@ -171,6 +177,7 @@ player addEventHandler
 				player setPos getMarkerPos selectRandom _civ_spawn_markers;
 				call Fn_Local_Create_Task_Civilian_FloodedShip;
 				call Fn_Local_Create_Task_Civilian_Police;
+				call Fn_Local_Create_Task_Civilian_Liberate_MissionIntro;
 			};
 		};
    }

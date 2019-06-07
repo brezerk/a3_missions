@@ -175,31 +175,17 @@ if (isServer) then {
 	{deleteVehicle _x} foreach crew us_airplane_01; deleteVehicle us_airplane_01;
 		
 	//let them fall a bit
-	sleep 1;
+	sleep 2;
 		
 	private _ret = [_crashSitePos, 2200] call BrezBlock_fnc_GetAllCitiesInRange;
 	//Get all POI in the range of 3000m
 	avaliable_locations = _ret select 0;
 	avaliable_pois = _ret select 1;
-	[_crashSitePos, 3000] execVM "addons\brezblock\utils\controller.sqf";
-
-	//Create markers
-	{ 
-		private _mark = createMarker [format ["wp_city_%1", _forEachIndex], _x select 1];
-		_mark setMarkerType "hd_destroy";
-		_mark setMarkerAlpha 0;
-		
-		private _pos = [_x select 1, 5, 150, 3, 0, 0, 0] call BIS_fnc_findSafePos;
-		_mark = createMarker [format ["respawn_civilian_%1", _forEachIndex], _pos];
-		_mark setMarkerType "hd_destroy";
-		_mark setMarkerAlpha 0;
-	} forEach avaliable_pois; 
-		
-	//Spawn vehicles
-	[avaliable_pois] call Fn_Patrols_CreateCivilean_Traffic;
-	[avaliable_pois] call Fn_Patrols_CreateMilitary_Traffic;
 	
-	call Fn_Task_Create_Civilian_FloodedShip;
+	publicVariable "avaliable_pois";
+	
+	[_crashSitePos, 3000] execVM "addons\brezblock\utils\controller.sqf";
+	execVM "missions\create_locations.sqf";
 		
 	//create tasks assigned to assault_group
 	{
@@ -208,15 +194,20 @@ if (isServer) then {
 		[_x, true] remoteExecCall ["allowDamage"];
 	} forEach assault_group;
 		
-	//Send vehicles on patrol
-	[vehicle_patrol_group, avaliable_locations] call Fn_Patrols_Create_Random_Waypoints;
-		
 	sleep 5;
 		
 	[] execVM "missions\regroup.sqf";
 	[] execVM "missions\assoult_group_is_dead.sqf";
 	[] execVM "missions\informator.sqf";
 		
+	//Send vehicles on patrol
+	[vehicle_patrol_group, avaliable_locations] call Fn_Patrols_Create_Random_Waypoints;
+	
+	sleep 60;
+	[_crashSitePos, rebel_jeep_04, rebel_grp_01] call Fn_Patrols_Create_Transport_Sentry;
+	[_crashSitePos, rebel_jeep_03] call Fn_Patrols_Create_Sentry;
+	call Fn_Task_Create_CSAT_Triggers;
+	
 	trgRegroupIsDone = createTrigger ["EmptyDetector", getMarkerPos format["wp_air_field_%1_01", D_LOCATION]];
 	trgRegroupIsDone setTriggerArea [0, 0, 0, false];
 	trgRegroupIsDone setTriggerActivation ["NONE", "PRESENT", false];
@@ -226,10 +217,7 @@ if (isServer) then {
 			""
 	];
 	
-	sleep 60;
-	[_crashSitePos, rebel_jeep_04, rebel_grp_01] call Fn_Patrols_Create_Transport_Sentry;
-	[_crashSitePos, rebel_jeep_03] call Fn_Patrols_Create_Sentry;
-	call Fn_Task_Create_CSAT_Triggers;
+
 	
 	execVM "missions\ping.sqf";
 };
