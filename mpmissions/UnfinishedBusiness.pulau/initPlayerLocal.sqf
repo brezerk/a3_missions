@@ -125,7 +125,7 @@ player addEventHandler
 		deleteVehicle trgCivPoliceStation;
 
 		//_sides = [civilian, east] - [playerSide];
-		_sides = [civilian];
+		_sides = [east];
 		_side = selectRandom _sides;
 		_group = createGroup [_side, true];
 		[player] joinSilent _group;
