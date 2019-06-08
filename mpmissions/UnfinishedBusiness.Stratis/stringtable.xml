@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="BrezBlock.org.ua">
+	<Package name="UnfinishedBusiness">
+		<Container name="l18n">
+			<Key ID="BRIEFING_01_TITLE">
+				<Original>Gaming conventions</Original>
+				<English>Gaming conventions</English>
+				<Russian>Ігрові умовності</Russian>
+			</Key>
+			<Key ID="BRIEFING_01_DESC">
+				<Original>Most of the dynamic objects and their locations are random, player experience may change.&lt;br /&gt;&lt;br /&gt;Rrespawn tickets count per player is limited to - 0.&lt;br /&gt;&lt;br /&gt;Recommenred game diffictlty settings are:&lt;br /&gt;&lt;br /&gt; * Preset: Veteran.&lt;br /&gt; * Detected mines: Hide&lt;br /&gt;&lt;br /&gt;Recommenred Addon setttings are:&lt;br /&gt;&lt;br /&gt; * ACE Logistics -&gt; Allow Repair = Everyone;&lt;br /&gt; * ACE Medical -&gt; Prevent Instant Death = True;&lt;br /&gt; * ACE Medical -&gt; Locations Boost Training = True; This will allow ordinary soldiers to transfuse blood at hospitals.</Original>
+				<English>Most of the dynamic objects and their locations are random, player experience may change.&lt;br /&gt;&lt;br /&gt;Rrespawn tickets count per player is limited to - 0.&lt;br /&gt;&lt;br /&gt;Recommenred game diffictlty settings are:&lt;br /&gt;&lt;br /&gt; * Preset: Veteran.&lt;br /&gt; * Detected mines: Hide&lt;br /&gt;&lt;br /&gt;Recommenred Addon setttings are:&lt;br /&gt;&lt;br /&gt; * ACE Logistics -&gt; Allow Repair = Everyone;&lt;br /&gt; * ACE Medical -&gt; Prevent Instant Death = True;&lt;br /&gt; * ACE Medical -&gt; Locations Boost Training = True; This will allow ordinary soldiers to transfuse blood at hospitals.</English>
+				<Russian>Більшість динамічних об'єктів та їх місцеположення є випадковими, досвід гравця може змінюватися.&lt;br /&gt;&lt;br /&gt;Кількість респаунів на гравця - 0.&lt;br /&gt;&lt;br /&gt;Рекомендовані налаштування для гри:&lt;br / &gt;&lt;br /&gt; * Попередньо встановлені налаштування: Ветеран.&lt;br /&gt; * Виявлені міни: Приховати&lt;br /&gt;&lt;br /&gt;Рекомендовані налаштування Додатків:&lt;br /&gt;&lt;br /&gt; * ACE Logistics -&gt; Allow Repair = Everyone; &lt;br /&gt; * ACE Medical -&gt; Prevent Instant Death = True; &lt;br /&gt; * ACE Medical -&gt; Locations Boost Training = True; Це дозволить звичайним солдатам переливати кров у шпиталях.</Russian>
+			</Key>
+			<Key ID="BRIEFING_02_TITLE">
+				<Original>Pulau Monuet island</Original>
+				<English>Pulau Monuet island</English>
+				<Russian>Острів Pulau Monuet</Russian>
+			</Key>
+			<Key ID="BRIEFING_02_DESC">
+				<Original>Large tropical island. Has several smaller islands of on the north. Currently under the control of 'Red Sokol' bandits group lead by Moracio Goaz.</Original>
+				<English>Large tropical island. Has several smaller islands of on the north. Currently under the control of 'Red Sokol' bandits group lead by Moracio Goaz.</English>
+				<Russian>Великий тропічний острів. Має кілька невеликих островів на півночі. В даний час під контролем бандитів 'Червоного Сокола' очолює Moracio Goaz.</Russian>
+			</Key>
+			<Key ID="BRIEFING_03_TITLE">
+				<Original>Pulau Gurun island</Original>
+				<English>Pulau Gurun island</English>
+				<Russian>Острів Pulau Gurun</Russian>
+			</Key>
+			<Key ID="BRIEFING_03_DESC">
+				<Original>Large tropical island. Has several smaller islands of on the south. Currently under the control of pro American group lead by Rіchardo Gonzales.</Original>
+				<English>Large tropical island. Has several smaller islands of on the south. Currently under the control of pro American group lead by Rіchardo Gonzales.</English>
+				<Russian>Великий тропічний острів. Має кілька невеликих островів на півдні. В даний час під контролем про американської групи яку очолює Rіchardo Gonzales.</Russian>
+			</Key>
+			<Key ID="BRIEFING_04_TITLE">
+				<Original>Resources</Original>
+				<English>Resources</English>
+				<Russian>Ресурси</Russian>
+			</Key>
+			<Key ID="BRIEFING_04_DESC">
+				<Original>Your staff is a unit of the 35rd Airmobile Brigade USMC.</Original>
+				<English>Your staff is a unit of the 35rd Airmobile Brigade USMC.</English>
+				<Russian>У Вашому розпорядженні особовий склад підрозділу 35-ї аеромобільної бригади США.</Russian>
+			</Key>
+			<Key ID="BRIEFING_05_TITLE">
+				<Original>Order</Original>
+				<English>Order</English>
+				<Russian>Наказ</Russian>
+			</Key>
+			<Key ID="BRIEFING_05_DESC">
+				<Original>Your order: Get to the  &lt;marker name = 'wp_air_field_01'&gt;Gurun airfield&lt;/marker&gt; and report to the officer. You will have to plan you operation to eliminate the rebel leader Moracio Goaz on the base near the &lt;marker name = 'wp_target_01'&gt;Monuet airfield&lt;/marker&gt;.</Original>
+				<English>Your order: Get to the  &lt;marker name = 'wp_air_field_01'&gt;Gurun airfield&lt;/marker&gt; and report to the officer. You will have to plan you operation to eliminate the rebel leader Moracio Goaz on the base near the &lt;marker name = 'wp_target_01'&gt;Monuet airfield&lt;/marker&gt;.</English>
+				<Russian>Ваш наказ: Прибути до &lt;marker name='wp_air_field_01'&gt;аеродрому Gurun&lt;/marker&gt; та доповісти команидру. Ви повинні спланувати ліквідацію ватажка бунтівників Moracio Goaz на базі біля &lt;marker name='wp_target_01'&gt;аеродрому Monuet&lt;/marker&gt;.</Russian>
+			</Key>
+			<Key ID="BRIEFING_06_TITLE">
+				<Original>Weather</Original>
+				<English>Weather</English>
+				<Russian>Погода</Russian>
+			</Key>
+			<Key ID="BRIEFING_06_DESC">
+				<Original>Small fog, strong east wind.</Original>
+				<English>Small fog, strong east wind.</English>
+				<Russian>Невеликий туман, сильний східний вітер.</Russian>
+			</Key>
+			<Key ID="BRIEFING_07_TITLE">
+				<Original>Situation</Original>
+				<English>Situation</English>
+				<Russian>Обстановка</Russian>
+			</Key>
+			<Key ID="BRIEFING_07_DESC">
+				<Original>The situation is moderately complex. No active military actions are currently registered. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</Original>
+				<English>The situation is moderately complex. No active military actions are currently registered. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</English>
+				<Russian>Обстановка складна, помірна. Активних бойових дій на цей час не зареєстровано. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</Russian>
+			</Key>
+			<Key ID="TASK_01_TITLE">
+				<Original>Eliminate rebel leader</Original>
+				<English>Eliminate rebel leader</English>
+				<Russian>Ліквідувати ватажка бунтівників</Russian>
+			</Key>
+			<Key ID="TASK_01_DESC">
+				<Original>Eliminate the rebel leader Moracio Goaz on the base near the &lt;marker name = 'wp_target_01'&gt;Monuet airfield&lt;/marker&gt;.</Original>
+				<English>Eliminate the rebel leader Moracio Goaz on the base near the &lt;marker name = 'wp_target_01'&gt;Monuet airfield&lt;/marker&gt;.</English>
+				<Russian>Ліквідувати ватажка бунтівників Moracio Goaz на базі біля &lt;marker name='wp_target_01'&gt;аеродрому Monuet&lt;/marker&gt;.</Russian>
+			</Key>
+			<Key ID="TASK_02_TITLE">
+				<Original>Get to the %1 airfield</Original>
+				<English>Get to the %1 airfield</English>
+				<Russian>Прибути до аеродрому %1</Russian>
+			</Key>
+			<Key ID="TASK_02_DESC">
+				<Original>Get to the &lt;marker name = 'wp_air_field_%1_01'&gt;%2 airfield&lt;/marker&gt; and report to the officer.</Original>
+				<English>Get to the &lt;marker name = 'wp_air_field_%1_01'&gt;%2 airfield&lt;/marker&gt; and report to the officer.</English>
+				<Russian>Прибути до &lt;marker name='wp_air_field_%1_01'&gt;аеродрому %2&lt;/marker&gt; та доповісти команидру.</Russian>
+			</Key>
+			<Key ID="TASK_03_TITLE">
+				<Original>Regroup</Original>
+				<English>Regroup</English>
+				<Russian>Перегрупуйтесь</Russian>
+			</Key>
+			<Key ID="TASK_03_DESC">
+				<Original>You vaguely remember how you got out of a burning airplane. You think that before you have lost consciousness, you have seen someone else. Are your friends alive? You have to find them.</Original>
+				<English>You vaguely remember how you got out of a burning airplane. You think that before you have lost consciousness, you have seen someone else. Are your friends alive? You have to find them.</English>
+				<Russian>Ви смутно пам'ятаєте як вибрались із палаючого літака. Вам здається, що перед тим, як ви втратили свідомість, ви бачили ще когось. Чи живі ваші товариші? Ви повинні знайти їх.</Russian>
+			</Key>
+			<Key ID="TASK_04_TITLE">
+				<Original>Crash site</Original>
+				<English>Crash site</English>
+				<Russian>Місце катастрофи</Russian>
+			</Key>
+			<Key ID="TASK_04_DESC">
+				<Original>The plane fell somewhere nearby. Trees are making it difficult to find, but I need to try to find it. It is possible that there is something valuable among the rubble. However, the enemy also will search for it. I might be careful.</Original>
+				<English>The plane fell somewhere nearby. Trees are making it difficult to find, but I need to try to find it. It is possible that there is something valuable among the rubble. However, the enemy also will search for it. I might be careful.</English>
+				<Russian>Літак впав десь неподалік. Дерева сильно заважать, але потрібно спробувати знайти його. Можливо серед уламків знайдеться щось цінне. Проте ворог теж його шукає. Треба бути обережним.</Russian>
+			</Key>
+			<Key ID="TASK_05_TITLE">
+				<Original>What the hell?</Original>
+				<English>What the hell?</English>
+				<Russian>Якого біса?</Russian>
+			</Key>
+			<Key ID="TASK_05_DESC">
+				<Original>Everything went wrong. Are we betrayed? What is happening? What to do now? I need information. The big cities are definitely very well guarded, but in small villages such as %1 I should be able to find some information for sure.</Original>
+				<English>Everything went wrong. Are we betrayed? What is happening? What to do now? I need information. The big cities are definitely very well guarded, but in small villages such as %1 I should be able to find some information for sure.</English>
+				<Russian>Все пішло шкереберть. Нас зрадили? Що коїться? Що тепер робити? Потрібна інформація. Великі міста напевно дуже добре охороняються, але в невеличких селах таких як %1 я зможу знайти якусь інформацію.</Russian>
+			</Key>
+			<Key ID="TASK_06_TITLE">
+				<Original>Optional: Destroy AA</Original>
+				<English>Optional: Destroy AA</English>
+				<Russian>Додатково: Знищіть ППО</Russian>
+			</Key>
+			<Key ID="TASK_06_DESC">
+				<Original>AOC is messing the things. Their air defense battery covers the island. We need to destroy &lt;marker name = 'wp_aa'&gt;it&lt;/marker&gt;.</Original>
+				<English>AOC is messing the things. Their air defense battery covers the island. We need to destroy &lt;marker name = 'wp_aa'&gt;it&lt;/marker&gt;.</English>
+				<Russian>AOC влізле не в своє діло. Їх батарея ППО прикриває острів. Нам потрібно вивести &lt;marker name = 'wp_aa'&gt;ППО&lt;/marker&gt; з ладу.</Russian>
+			</Key>
+			<Key ID="TASK_07_TITLE">
+				<Original>Optional: Destroy commtower</Original>
+				<English>Optional: Destroy commtower</English>
+				<Russian>Додатково: Знищіть Вежу</Russian>
+			</Key>
+			<Key ID="TASK_07_DESC">
+				<Original>AOC is coordinating communication between Solomon Maru's thug groups. We need to destroy the &lt;marker name = 'wp_aa'&gt;communication tower&lt;/marker&gt;.</Original>
+				<English>AOC is coordinating communication between Solomon Maru's thug groups. We need to destroy the &lt;marker name = 'wp_aa'&gt;communication tower&lt;/marker&gt;.</English>
+				<Russian>AOC координую зв'язок між бандами Solomon Maru. Потрібно вивести &lt;marker name = 'wp_aa'&gt;комунікаційну вежу&lt;/marker&gt; з ладу.</Russian>
+			</Key>
+			<Key ID="TASK_08_TITLE">
+				<Original>Eliminate the dictator</Original>
+				<English>Eliminate the dictator</English>
+				<Russian>Усуньте диктатора</Russian>
+			</Key>
+			<Key ID="TASK_08_DESC">
+				<Original>Solomon Maru is a leader of the "Red Sokol" group. Under the guise of AOC forces, his gangsters killed Rіchardo Gonzales and cut the whole city &lt;marker name = 'wp_kambani'&gt;Kambani&lt;/marker&gt;. In the latter, it was seen on the &lt;marker name='wp_air_field_01'&gt;Gurun airfield&lt;/marker&gt; with a bunch of his bandits.</Original>
+				<English>Solomon Maru is a leader of the "Red Sokol" group. Under the guise of AOC forces, his gangsters killed Rіchardo Gonzales and cut the whole city &lt;marker name = 'wp_kambani'&gt;Kambani&lt;/marker&gt;. In the latter, it was seen on the &lt;marker name='wp_air_field_01'&gt;Gurun airfield&lt;/marker&gt; with a bunch of his bandits.</English>
+				<Russian>Solomon Maru -- лідер угруппованя "Червоні Соколи". Під прикриттям сил AOC його бандити вбили президента Rіchardo Gonzales і вирізали ціле місто &lt;marker name = 'wp_kambani'&gt;Kambani&lt;/marker&gt;. В останне його бачили на &lt;marker name='wp_air_field_01'&gt;аеродромі Gurun&lt;/marker&gt; з купою охорони.</Russian>
+			</Key>
+			<Key ID="TASK_09_TITLE">
+				<Original>Liberate the %1</Original>
+				<English>Liberate the %</English>
+				<Russian>Звільнити %1</Russian>
+			</Key>
+			<Key ID="TASK_09_DESC">
+				<Original>Liberate the the &lt;marker name = 'wp_city_%1'&gt;%2&lt;/marker&gt; settlement by evisting all bandits.</Original>
+				<English>Liberate the the &lt;marker name = 'wp_city_%1'&gt;%2&lt;/marker&gt; settlement by evisting all bandits.</English>
+				<Russian>Звільнити поселення &lt;marker name = 'wp_city_%1'&gt;%2&lt;/marker&gt; від бандитів.</Russian>
+			</Key>
+			<Key ID="TASK_AOC_01_TITLE">
+				<Original>Defend AA</Original>
+				<English>Defend AA</English>
+				<Russian>Захистить ППО</Russian>
+			</Key>
+			<Key ID="TASK_AOC_01_DESC">
+				<Original>Our air defense battery covers the island. We need to defend &lt;marker name = 'wp_aa'&gt;it&lt;/marker&gt;.</Original>
+				<English>Our air defense battery covers the island. We need to defend &lt;marker name = 'wp_aa'&gt;it&lt;/marker&gt;.</English>
+				<Russian>Наша батарея ППО прикриває острів. Нам потрібно захистити &lt;marker name = 'wp_aa'&gt;ППО&lt;/marker&gt;.</Russian>
+			</Key>
+			<Key ID="TASK_AOC_02_TITLE">
+				<Original>Defend commtower</Original>
+				<English>Defend commtower</English>
+				<Russian>Захистить Вежу</Russian>
+			</Key>
+			<Key ID="TASK_AOC_02_DESC">
+				<Original>We need to defend &lt;marker name = 'wp_radio'&gt;commtower&lt;/marker&gt;.</Original>
+				<English>We need to defend &lt;marker name = 'wp_radio'&gt;commtower&lt;/marker&gt;.</English>
+				<Russian>Нам потрібно захистити &lt;marker name = 'wp_radio'&gt;радіо вежу&lt;/marker&gt;.</Russian>
+			</Key>
+			<Key ID="TASK_AOC_03_TITLE">
+				<Original>Eliminate survivors</Original>
+				<English>Eliminate survivors</English>
+				<Russian>Занищіть виживших</Russian>
+			</Key>
+			<Key ID="TASK_AOC_03_DESC">
+				<Original>We took down US military plane. Couple survivors are scattered over the island. Find and eliminate them.</Original>
+				<English>We took down US military plane. Couple survivors are scattered over the island. Find and eliminate them.</English>
+				<Russian>Ми збили американський військовий літак. Декілька виживших розкидані по острову. Знайдіть і усуньте їх.</Russian>
+			</Key>
+			<Key ID="TASK_CIV_01_TITLE">
+				<Original>Optional: Sunken ship</Original>
+				<English>Optional: Sunken ship</English>
+				<Russian>Додаткове: Затонулий корабель</Russian>
+			</Key>
+			<Key ID="TASK_CIV_01_DESC">
+				<Original>Last storm sunk cargo ship. There were some rumors about carrying weapons on this boat. I have to find diving equipment and check the wreckage. But I need to be careful and avoid patrol boats.</Original>
+				<English>Last storm sunk cargo ship. There were some rumors about carrying weapons on this boat. I have to find diving equipment and check the wreckage. But I need to be careful and avoid patrol boats.</English>
+				<Russian>У минулий шторм затонув вантажний корабель. Продукують, що на цьому човні перевозили зброю. Я повинен знайти водолазне обладнання та перевірити уламки. Але потрібно бути обережним і уникати патрульних катерів.</Russian>
+			</Key>
+			<Key ID="TASK_CIV_02_TITLE">
+				<Original>Optional: Police Station</Original>
+				<English>Optional: Police Station</English>
+				<Russian>Додаткове: Police Station</Russian>
+			</Key>
+			<Key ID="TASK_CIV_02_DESC">
+				<Original>I need to check the police station. Police are very relaxed this days and maybe I will be able to steal some weapon.</Original>
+				<English>I need to check the police station. Police are very relaxed this days and maybe I will be able to steal some weapon.</English>
+				<Russian>Потрібно перевірити поліцейський участок. Поліція дуже розслабилась і можливо я зможу поцупити якусь зброю.</Russian>
+			</Key>
+			<Key ID="TASK_CIV_03_TITLE">
+				<Original>Sunken ship</Original>
+				<English>Sunken ship</English>
+				<Russian>Затонулий корабель</Russian>
+			</Key>
+			<Key ID="TASK_CIV_03_DESC">
+				<Original>Last storm sunk cargo ship. There were some rumors about carrying weapons on this boat. I have to find diving equipment and check the wreckage. But I need to be careful and avoid patrol boats.</Original>
+				<English>Last storm sunk cargo ship. There were some rumors about carrying weapons on this boat. I have to find diving equipment and check the wreckage. But I need to be careful and avoid patrol boats.</English>
+				<Russian>У минулий шторм затонув вантажний корабель. Продукують, що на цьому човні перевозили зброю. Я повинен знайти водолазне обладнання та перевірити уламки. Але потрібно бути обережним і уникати патрульних катерів.</Russian>
+			</Key>
+			<Key ID="TASK_CIV_04_TITLE">
+				<Original>Sunken ship</Original>
+				<English>Sunken ship</English>
+				<Russian>Затонулий корабель</Russian>
+			</Key>
+			<Key ID="TASK_CIV_04_DESC">
+				<Original>Last storm sunk cargo ship. There were some rumors about carrying weapons on this boat. I have to find diving equipment and check the wreckage. But I need to be careful and avoid patrol boats.</Original>
+				<English>Last storm sunk cargo ship. There were some rumors about carrying weapons on this boat. I have to find diving equipment and check the wreckage. But I need to be careful and avoid patrol boats.</English>
+				<Russian>У минулий шторм затонув вантажний корабель. Продукують, що на цьому човні перевозили зброю. Я повинен знайти водолазне обладнання та перевірити уламки. Але потрібно бути обережним і уникати патрульних катерів.</Russian>
+			</Key>
+			<Key ID="TASK_CIV_05_TITLE">
+				<Original>Sunken ship</Original>
+				<English>Sunken ship</English>
+				<Russian>Затонулий корабель</Russian>
+			</Key>
+			<Key ID="TASK_CIV_05_DESC">
+				<Original>Last storm sunk cargo ship. There were some rumors about carrying weapons on this boat. I have to find diving equipment and check the wreckage. But I need to be careful and avoid patrol boats.</Original>
+				<English>Last storm sunk cargo ship. There were some rumors about carrying weapons on this boat. I have to find diving equipment and check the wreckage. But I need to be careful and avoid patrol boats.</English>
+				<Russian>У минулий шторм затонув вантажний корабель. Продукують, що на цьому човні перевозили зброю. Я повинен знайти водолазне обладнання та перевірити уламки. Але потрібно бути обережним і уникати патрульних катерів.</Russian>
+			</Key>
+			<Key ID="ACTION_01">
+				<Original>Search</Original>
+				<English>Search</English>
+				<Russian>Обшукати</Russian>
+			</Key>
+			<Key ID="ACTION_02">
+				<Original>Talk to</Original>
+				<English>Talk to</English>
+				<Russian>Поговорити</Russian>
+			</Key>
+			<Key ID="ACTION_03">
+				<Original>Сonfiscate the car</Original>
+				<English>Сonfiscate the car</English>
+				<Russian>Конфіскувати автомобіль</Russian>
+			</Key>
+			<Key ID="INFO_DATE_01">
+				<Original>July 16, 2019 %1</Original>
+				<English>July 16, 2019 %1</English>
+				<Russian>16 липня 2019 %1</Russian>
+			</Key>
+			<Key ID="INFO_LOC_01">
+				<Original>Pulau Gurun island.</Original>
+				<English>Pulau Gurun island.</English>
+				<Russian>Острів Пулау Гурун.</Russian>
+			</Key>
+			<Key ID="INFO_SUBLOC_00">
+				<Original>USS "Democracy".</Original>
+				<English>USS "Democracy".</English>
+				<Russian>USS "Democracy".</Russian>
+			</Key>
+			<Key ID="INFO_SUBLOC_01">
+				<Original>С130J crash site.</Original>
+				<English>С130J crash site.</English>
+				<Russian>Місце катастрофи С130J.</Russian>
+			</Key>
+			<Key ID="INFO_SUBLOC_02">
+				<Original>%1 village.</Original>
+				<English>%1 village.</English>
+				<Russian>Поселення %1.</Russian>
+			</Key>
+			<Key ID="INFO_SUBLOC_06">
+				<Original>AOC Positions.</Original>
+				<English>AOC Positions.</English>
+				<Russian>Позиції AOC.</Russian>
+			</Key>
+			<Key ID="INFO_SUBLOC_07">
+				<Original>Gurun airfield.</Original>
+				<English>Gurun airfield.</English>
+				<Russian>Аеродром Gurun.</Russian>
+			</Key>
+			<Key ID="INFO_SUBLOC_08">
+				<Original>Kambani village.</Original>
+				<English>Kambani village.</English>
+				<Russian>Поселення Kambani.</Russian>
+			</Key>
+			<Key ID="INFO_SUBLOC_09">
+				<Original>Sunken ship.</Original>
+				<English>Sunken ship.</English>
+				<Russian>Затонулий корабель.</Russian>
+			</Key>
+			<Key ID="STR_RADIO_CALL_01">
+				<Original>Welcome on board to AF101. Buckle up,</Original>
+				<English>Welcome on board to AF101. Buckle up,</English>
+				<Russian>Вітаємо на борту AF101. Пристебніть ремені,</Russian>
+			</Key>
+			<Key ID="STR_RADIO_CALL_02">
+				<Original>Our flight will take an hour. Take a nap.</Original>
+				<English>Our flight will take an hour. Take a nap.</English>
+				<Russian>Наш політ займе годину. Подрімайте.</Russian>
+			</Key>
+			<Key ID="STR_RADIO_CALL_03">
+				<Original>AF101 to Gurun airfield.</Original>
+				<English>AF101 to Gurun airfield.</English>
+				<Russian>AF101 до Аеродром Gurun.</Russian>
+			</Key>
+			<Key ID="STR_RADIO_CALL_04">
+				<Original>We are inbound and ready for landing. How copy?</Original>
+				<English>We are inbound and ready for landing. How copy?</English>
+				<Russian>Ми вже прибули і готові до приземлення. Як прийняли?</Russian>
+			</Key>
+			<Key ID="STR_RADIO_CALL_05">
+				<Original>Radar!!! Capture, droping the IRCM.</Original>
+				<English>Radar!!! Capture, droping the IRCM.</English>
+				<Russian>Радар!!! Захват, скидай ЛТЦ.</Russian>
+			</Key>
+			<Key ID="STR_RADIO_CALL_06">
+				<Original>What the hell???</Original>
+				<English>What the hell???</English>
+				<Russian>Якого біса???</Russian>
+			</Key>
+			<Key ID="STR_RADIO_CALL_07">
+				<Original>Turn around! Lower! Lower</Original>
+				<English>Turn around! Lower! Lower!</English>
+				<Russian>Розвертай, уходь нижче!</Russian>
+			</Key>
+			<Key ID="STR_LOCKED_INFO_01">
+				<Original>The game is locked. Try again later.</Original>
+				<English>The game is locked. Try again later.</English>
+				<Russian>Гру замкнено. Спробуйте пізніше.</Russian>
+			</Key>
+			<Key ID="STR_END_01_TITLE">
+				<Original>Assault group was eliminated</Original>
+				<English>Assault group was eliminated</English>
+				<Russian>Штурмову группу ліквідовано</Russian>
+			</Key>
+			<Key ID="STR_END_01_DESC">
+				<Original>US Assault group was eliminated. AOC and Bandit groups are controlling Pulau islands for now.</Original>
+				<English>US Assault group was eliminated. AOC and Bandit groups are controlling Pulau islands for now.<English>
+				<Russian>Штурмову группу США було ліквідовано. Сили AOC разом з группами бандитів контролюють острови Пулау і по цей день.</Russian>
+			</Key>
+			<Key ID="STR_END_02_TITLE">
+				<Original>US Assault group was eliminated</Original>
+				<English>US Assault group was eliminated</English>
+				<Russian>Штурмову группу США було ліквідовано</Russian>
+			</Key>
+			<Key ID="STR_END_02_DESC">
+				<Original>US Assault group was eliminated. AOC and Bandit groups are controlling Pulau islands for now.</Original>
+				<English>US Assault group was eliminated. AOC and Bandit groups are controlling Pulau islands for now.<English>
+				<Russian>Штурмову группу США було ліквідовано. Сили AOC разом з группами бандитів контролюють острови Пулау.</Russian>
+			</Key>
+			<Key ID="STR_END_03_TITLE">
+				<Original>Assault group was eliminated</Original>
+				<English>Assault group was eliminated</English>
+				<Russian>Штурмову группу ліквідовано</Russian>
+			</Key>
+			<Key ID="STR_END_03_DESC">
+				<Original>US Assault group was eliminated. AOC and Bandit groups are controlling Pulau islands for now.</Original>
+				<English>US Assault group was eliminated. AOC and Bandit groups are controlling Pulau islands for now.<English>
+				<Russian>Штурмову группу США було ліквідовано. Сили AOC разом з группами бандитів контролюють острови Пулау і по цей день.</Russian>
+			</Key>
+		</Container>
+	</Package>
+</Project>

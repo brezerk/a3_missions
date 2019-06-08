@@ -1,0 +1,14 @@
+﻿30/10/2018 - All new refactor of code...
+
+    Some changes to positional calculations
+    Added missing unit attribute for stance
+    Added AI Radar use
+    Added remote sensor attributes
+    Fixed errors from BI enumeration changes
+    Fixed trigger and waypoint effect errors in console
+    Added missing trigger isServer attribute
+
+01/11/2018
+
+	Added new parameter to LARs_fnc_spawnComp to allow ignoring of compositions items ATLOffset to enable spawning of building decors.
+	See included example map test_houseFurniture.VR for setup
