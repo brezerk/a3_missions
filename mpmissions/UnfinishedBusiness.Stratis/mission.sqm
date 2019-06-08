@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=871;
+		nextID=878;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={3261.8008,15.308509,5806.8071};
-		dir[]={0.17029053,-0.32428834,0.93050927};
-		up[]={0.058378082,0.9459582,0.31899357};
-		aside[]={0.98366892,1.4074612e-007,-0.18001831};
+		pos[]={3199.9839,79.127792,5816.8525};
+		dir[]={0.33119863,-0.8790893,0.3428244};
+		up[]={0.61080182,0.4766458,0.63224256};
+		aside[]={0.71920407,-3.4095137e-007,-0.69481379};
 	};
 };
 binarizationWanted=0;
@@ -69,13 +69,18 @@ addons[]=
 	"A3_Soft_F_Orange_Van_02",
 	"A3_Supplies_F_Exp_Ammoboxes",
 	"CUP_WheeledVehicles_Lada",
-	"CUP_Creatures_People_Civil_Russia"
+	"CUP_Creatures_People_Civil_Russia",
+	"A3_Soft_F_Offroad_01",
+	"CUP_wheeledvehicles_Octaiva",
+	"A3_Soft_F_Gamma_Van_01",
+	"A3_Soft_F_Beta_Truck_02",
+	"CUP_WheeledVehicles_Datsun"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=37;
+		items=42;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -307,6 +312,37 @@ class AddonsMetaData
 			className="CUP_Creatures_People_Civil_Russia";
 			name="CUP_Creatures_People_Civil_Russia";
 		};
+		class Item37
+		{
+			className="A3_Soft_F";
+			name="Arma 3 Alpha - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item38
+		{
+			className="CUP_wheeledvehicles_Octaiva";
+			name="CUP_wheeledvehicles_Octaiva";
+		};
+		class Item39
+		{
+			className="A3_Soft_F_Gamma";
+			name="Arma 3 - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item40
+		{
+			className="A3_Soft_F_Beta";
+			name="Arma 3 Beta - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item41
+		{
+			className="CUP_WheeledVehicles_Datsun";
+			name="CUP_WheeledVehicles_Datsun";
+		};
 	};
 };
 randomSeed=4614989;
@@ -358,14 +394,14 @@ class Mission
 		year=2035;
 		month=7;
 		day=6;
-		hour=12;
+		hour=0;
 		minute=0;
 		startFogDecay=0.014;
 		forecastFogDecay=0.014;
 	};
 	class Entities
 	{
-		items=254;
+		items=261;
 		class Item0
 		{
 			dataType="Group";
@@ -8890,6 +8926,7 @@ class Mission
 			};
 			id=861;
 			type="CUP_LADA_LM_CIV";
+			atlOffset=-0.00093984604;
 		};
 		class Item248
 		{
@@ -9050,6 +9087,7 @@ class Mission
 			};
 			id=866;
 			type="Box_NATO_Equip_F";
+			atlOffset=-0.00019407272;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -9077,7 +9115,7 @@ class Mission
 		class Item251
 		{
 			dataType="Marker";
-			position[]={3264.2622,4.2149196,5831.0405};
+			position[]={3244.9353,4.9861073,5805.7661};
 			name="wp_police";
 			type="c_car";
 			id=867;
@@ -9105,6 +9143,7 @@ class Mission
 					};
 					id=869;
 					type="CUP_C_R_Policeman_02";
+					atlOffset=4.7683716e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -9153,6 +9192,7 @@ class Mission
 			{
 			};
 			id=868;
+			atlOffset=4.7683716e-007;
 		};
 		class Item253
 		{
@@ -9377,6 +9417,118 @@ class Mission
 				};
 				nAttributes=11;
 			};
+		};
+		class Item254
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2979.7759,4.844337,6049.9102};
+				angles[]={6.2531939,5.2513962,6.2631865};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=871;
+			type="C_Offroad_01_F";
+		};
+		class Item255
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4495.7842,108.12899,6792.5791};
+				angles[]={0.17324494,5.523644,0.019996032};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=872;
+			type="CUP_C_Octavia_CIV";
+		};
+		class Item256
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1932.428,5.5764484,3584.8398};
+				angles[]={6.1196589,1.7225059,0.0025135824};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=873;
+			type="C_Van_01_transport_F";
+		};
+		class Item257
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2061.2788,12.986053,2655.197};
+				angles[]={0.084796712,2.947443,0.057436496};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=874;
+			type="C_Truck_02_transport_F";
+		};
+		class Item258
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2822.7227,145.4514,1761.5852};
+				angles[]={6.0194769,5.057375,0.087275781};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=875;
+			type="C_Offroad_01_F";
+		};
+		class Item259
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6004.2217,21.117916,5569.5825};
+				angles[]={0.10214306,3.0750222,0.11696337};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=876;
+			type="C_Van_01_transport_F";
+		};
+		class Item260
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6478.3564,16.775818,5318.6802};
+				angles[]={0.41659933,4.8101254,0.20699222};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=877;
+			type="CUP_C_Datsun_4seat";
 		};
 	};
 	class Connections

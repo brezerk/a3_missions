@@ -70,8 +70,8 @@ if (isServer) then {
 				'Pythos',
 				'Xiros',
 				'The Spartan',
-				'',
-				''
+				'Air Station Mike-26',
+				'Camp Rogain'
 			];
 		
 		};
