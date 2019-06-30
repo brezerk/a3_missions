@@ -36,69 +36,12 @@ if (isServer) then {
 		};
 		_grp;
 	};
-	
-	BrezBlock_fnc_Cotroller_Spawn = {
-		params['_trigger'];
-		private['_grp'];
-		{
-			_grp = [_x] call BrezBlock_fnc_Cotroller_Process_Marker;
-			_trigger setVariable [_x, _grp, false];
-		} forEach (_trigger getVariable ["markers", []]);
-	};
-	
-	BrezBlock_fnc_Cotroller_Despawn = {
-		params['_trigger'];
-		private['_grp', '_markers'];
-		_markers = _trigger getVariable ["markers", []];
-		{
-			_grp = _trigger getVariable [_x, grpNull];
-			if (!(isNull _grp)) then {
-				if ({ alive _x } count units _grp == 0) then {
-					deleteMarker _x;
-					_markers deleteAt (_markers find _x);
-				} else {
-					{deletevehicle _x} foreach units _grp;
-					_trigger setVariable [_x, grpNull, false];
-				};
-			} else {
-				//["WARNING: Looks like AI group was killed\lost?"] remoteExec ["systemChat"];
-			};
-		} forEach _markers;
-		if (count _markers == 0) then {
-			//systemChat "Ok. No markers left. Removing trigger.";
-			deleteVehicle _trigger;
-		};
-	};
-	
 
-		
-	//Setup affected Triggers and remove unused
+	//Process markers in area and spawn units
 	{
-		if ((vehicleVarName _x) find "tg_controller_" >= 0) then {		
-			if ((_pos distance2D (getPos _x)) > _range) then {
-				systemChat format ["Drop trigger %1: %2 > %3", vehicleVarName _x, _pos distance2D (getPos _x), _range];
-				deleteVehicle _x;
-			} else {
-				private _trigger = _x;
-				private _markers = [];
-				//;
-				_trigger setTriggerActivation ["ANYPLAYER", "PRESENT", true];
-				_trigger setTriggerStatements [
-					"this",
-					"[thisTrigger] call BrezBlock_fnc_Cotroller_Spawn;",
-					"[thisTrigger] call BrezBlock_fnc_Cotroller_Despawn;"
-				];
-				//Build marker's Cache
-				{
-					if (getMarkerPos _x inArea _trigger) then {
-						if (markerType _x in ["ellipse", "square"]) then {
-							_markers pushBack _x;
-						};
-					};
-				} forEach allMapMarkers;
-				_trigger setVariable ["markers", _markers, false];
-			};
+		if ((_pos distance2D (getMarkerPos _x)) <= _range) then {
+			_grp = [_x] call BrezBlock_fnc_Cotroller_Process_Marker;
+			deleteMarker _x;
 		};
-	} forEach allMissionObjects "EmptyDetector";
-
+	} forEach allMapMarkers;
 };

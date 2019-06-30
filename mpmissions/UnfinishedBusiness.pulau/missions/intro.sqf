@@ -57,11 +57,11 @@ if (isServer) then {
 			""
 		];
 		_trg = createTrigger ["EmptyDetector", getPos csat_aa_01];
-		_trg setTriggerArea [1000, 1000, 0, false];
+		_trg setTriggerArea [900, 900, 0, false];
 		_trg setTriggerActivation ["WEST", "PRESENT", false];
 		_trg setTriggerStatements [
 			"this",
-			"us_airplane_01 setDamage [0.6, true];",
+			"us_airplane_01 setVehicleAmmo 0;",
 			""
 		];
 			

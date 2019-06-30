@@ -137,6 +137,7 @@ if (isServer) then {
 			private _group = group driver _x;
 			for "_i" from 0 to (round (count _wp_array / 2)) do {
 				_pos = selectRandom _wp_avalible;
+				if (isNull _pos) exitWith {};
 				_wp_avalible = _wp_avalible - [_pos];
 				_wp = _group addWaypoint [_pos, 0];
 				_wp setWaypointCombatMode "YELLOW";

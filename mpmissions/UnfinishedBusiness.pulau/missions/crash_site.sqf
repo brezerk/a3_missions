@@ -170,6 +170,7 @@ if (isServer) then {
 		_x setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 180 + random 100)];
 		remoteExecCall ["Fn_Local_Jet_Player_DoParadrop", _x];
 		_x setVariable ["ACE_isUnconscious", true, true];
+		[getPos _x, 500] execVM "addons\brezblock\utils\controller.sqf";
 	} forEach assault_group;
 		
 	{deleteVehicle _x} foreach crew us_airplane_01; deleteVehicle us_airplane_01;
@@ -184,8 +185,10 @@ if (isServer) then {
 	
 	publicVariable "avaliable_pois";
 	
-	[_crashSitePos, 3000] execVM "addons\brezblock\utils\controller.sqf";
+	[_crashSitePos, 900] execVM "addons\brezblock\utils\controller.sqf";
 	execVM "missions\create_locations.sqf";
+	[getMarkerPos "wp_aa", 600] execVM "addons\brezblock\utils\controller.sqf";
+	[getMarkerPos "wp_air_field_Gurun_01", 600] execVM "addons\brezblock\utils\controller.sqf";
 		
 	//create tasks assigned to assault_group
 	{
