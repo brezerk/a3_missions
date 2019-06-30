@@ -36,7 +36,7 @@ if (isServer) then {
 			if (side group _x == west) then {
 				private _player = _x;
 				{	
-					if (not _x isPlayer) then {
+					if (not isPlayer _x) then {
 						if (side _x in [independent, east]) then {
 							if ((_x knowsAbout _player) >= 1.5) exitWith {
 								pings pushBackUnique (mapGridPosition _player);

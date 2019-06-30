@@ -61,6 +61,20 @@ if (isServer) then {
 				'Nurul'
 			];
 		};
+		case "Stratis": {
+			_blacklist = [
+				'Stratis Air Base',
+				'Camp Maxvell',
+				'Tusoukalia',
+				'LZ Baldy',
+				'Pythos',
+				'Xiros',
+				'The Spartan',
+				'Air Station Mike-26',
+				'Camp Rogain'
+			];
+		
+		};
 	};
 
 	{	

@@ -26,6 +26,14 @@ if (isServer) then {
 	_indepHQ = createCenter independent;
 	_civilianHQ = createCenter civilian;
 	
+	//make east and independent friends
+	EAST setFriend [independent, 1];
+	independent setFriend [EAST, 1];
+	
+	//make independent and west enemies
+	WEST setFriend [independent, 0];
+	independent setFriend [WEST, 0];
+	
 	//Set east and west sides to friends.
 	//b/c friendship is a magic!
 	EAST setFriend [WEST, 1];

@@ -25,6 +25,9 @@ class Header
 	maxPlayers = 10;	// maximum number of players the mission supports
 };
 
+// Disable AI
+disabledAI = 1;
+
 author			= "brezerk@brezblock.org.ua";
 OnLoadName		= "Unfinished Business v0.7.71";
 //OnLoadMission	= $STR_ONLOAD_INFO_01;
