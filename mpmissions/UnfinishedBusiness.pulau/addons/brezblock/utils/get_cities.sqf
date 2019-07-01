@@ -25,7 +25,7 @@ Create civilian presence module
 
 if (isServer) then { 
 		
-	params['_pos', '_range'];
+	params['_pos', '_range', '_cap'];
 	//Get all POI in the range of 3000m
 	private _lcs = [];
 	private _poi = [];
@@ -85,14 +85,11 @@ if (isServer) then {
 		
 	//Select no more than 4 to create tasks
 	private _avalible_lcs = _lcs;
-	if (count _lcs <= 4) then {
-		_poi = _lcs;
-	} else {
-		for "_i" from 0 to 3 do {
-			private _lc = selectRandom _avalible_lcs;
-			_avalible_lcs = _avalible_lcs - [_lc];
-			_poi pushBackUnique _lc;
-		};
+	for "_i" from 1 to _cap do {
+		private _lc = selectRandom _avalible_lcs;
+		if (isNil "_lc") exitWith {};
+		_avalible_lcs = _avalible_lcs - [_lc];
+		_poi pushBackUnique _lc;
 	};
 		
 	[_lcs, _poi];

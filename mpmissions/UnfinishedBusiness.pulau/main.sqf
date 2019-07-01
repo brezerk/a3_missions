@@ -105,7 +105,6 @@ if (isServer) then {
         _vec;
 	};
 
-	
 	#include "missions\patrols.sqf";
 	#include "missions\intro.sqf";
 	#include "missions\aa.sqf";
@@ -122,7 +121,7 @@ if (isServer) then {
 	call Fn_Create_MissionIntro;
 	
 	[Fn_Spawn_UAZ, 'wp_spawn_uaz_01', 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
-
+	
 };
 
 // We need to end game if all players are no longer alive

@@ -170,7 +170,7 @@ if (isServer) then {
 		_x setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 180 + random 100)];
 		remoteExecCall ["Fn_Local_Jet_Player_DoParadrop", _x];
 		_x setVariable ["ACE_isUnconscious", true, true];
-		[getPos _x, 500] execVM "addons\brezblock\utils\controller.sqf";
+		[getPos _x, 400] execVM "addons\brezblock\utils\controller.sqf";
 	} forEach assault_group;
 		
 	{deleteVehicle _x} foreach crew us_airplane_01; deleteVehicle us_airplane_01;
@@ -178,7 +178,7 @@ if (isServer) then {
 	//let them fall a bit
 	sleep 2;
 		
-	private _ret = [_crashSitePos, 2200] call BrezBlock_fnc_GetAllCitiesInRange;
+	private _ret = [_crashSitePos, 3000, 2] call BrezBlock_fnc_GetAllCitiesInRange;
 	//Get all POI in the range of 3000m
 	avaliable_locations = _ret select 0;
 	avaliable_pois = _ret select 1;

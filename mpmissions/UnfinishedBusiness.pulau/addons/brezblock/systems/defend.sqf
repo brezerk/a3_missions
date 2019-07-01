@@ -24,10 +24,13 @@ Create CBA defend
 */
 if (isServer) then {
 
+	params['_marker'];
+	private['_side'];
+
 	_Fn_BrezBlock_CreateRandomDefendSquad = {
 		params['_side', '_count'];
-		private['_units', '_grp'];
-		_grp = [];
+		private['_units'];
+		private _grp = [];
 		switch(_side) do
 		{
 			case west: {
@@ -126,14 +129,11 @@ if (isServer) then {
 		};
 		_grp;
 	};
-
-	params['_marker'];
-	private['_grp', '_center', '_radius', '_side', '_cfg'];
 	
-	_radius = getMarkerSize _marker select 0;
-	_center = getMarkerPos _marker;
+	private _radius = getMarkerSize _marker select 0;
+	private _center = getMarkerPos _marker;
 	
-	_count = round (_radius / 25) + D_DIFFICLTY + 3;
+	private _count = round (_radius / 25) + D_DIFFICLTY + 3;
 	
 	//https://community.bistudio.com/wiki/Arma_3_CfgMarkerColors
 	switch (getMarkerColor _marker) do
@@ -143,13 +143,15 @@ if (isServer) then {
 		case "ColorGUER": { _side = resistance; };
 		case "ColorWEST": { _side = civilian; };
 	};
-	_cfg = [_side, _count] call _Fn_BrezBlock_CreateRandomDefendSquad;
-	_pos = [_center, 5, _radius, 3, 0, 0, 0] call BIS_fnc_findSafePos;
+	private _cfg = [_side, _count] call _Fn_BrezBlock_CreateRandomDefendSquad;
+	private _pos = [_center, 5, _radius, 3, 0, 0, 0] call BIS_fnc_findSafePos;
 	
 	//http://arma3scriptingtutorials.blogspot.com/2014/02/config-viewer-what-is-it-and-how-to-use.html
 	//_grp = [_pos, _side, configfile >> "CfgGroups" >> "Indep" >> D_FRACTION_INDEP >> "Infantry" >> _cfg] call BIS_fnc_spawnGroup;
-	_grp = [_pos, _side, _cfg] call BIS_fnc_spawnGroup;
+	private _grp = [_pos, _side, _cfg] call BIS_fnc_spawnGroup;
+	
 	_grp deleteGroupWhenEmpty true;
 	[_grp, _center, _radius] call CBA_fnc_taskDefend;
+	
 	_grp;
 };

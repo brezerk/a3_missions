@@ -134,10 +134,12 @@ if (isServer) then {
 		
 		{
 			_wp_avalible = _wp_array;
+			//include airfield
+			_wp_avalible append [getMarkerPos format ["wp_air_field_%s_01", D_LOCATION]];
 			private _group = group driver _x;
 			for "_i" from 0 to (round (count _wp_array / 2)) do {
 				_pos = selectRandom _wp_avalible;
-				if (isNull _pos) exitWith {};
+				if (isNil "_pos") exitWith {};
 				_wp_avalible = _wp_avalible - [_pos];
 				_wp = _group addWaypoint [_pos, 0];
 				_wp setWaypointCombatMode "YELLOW";

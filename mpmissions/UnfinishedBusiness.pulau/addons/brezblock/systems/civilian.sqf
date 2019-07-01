@@ -24,37 +24,37 @@ Create civilian presence module
 */
 if (isServer) then {
 	params['_marker'];
-	private['_grp', '_center', '_pos', '_radius', '_obj', '_i'];
+	private['_i'];
 	
-	_radius = getMarkerSize _marker select 0;
-	_center = getMarkerPos _marker;
+	private _radius = getMarkerSize _marker select 0;
+	private _center = getMarkerPos _marker;
 	
-	_grp = createGroup [civilian, true];
+	private _grp = createGroup [civilian, true];
 	
-	for "_i" from 0 to round (_radius / 25) do
+	for "_i" from 0 to (round (_radius / 25) + 2) do
 	{
-		_pos = [_center, 5, _radius, 3, 0, 0, 0] call BIS_fnc_findSafePos;
-		_obj = _grp createUnit ["ModuleCivilianPresenceSafeSpot_F", _pos, [], 0, "NONE"];
-		_obj setVariable ["#capacity",    1];
+		private _pos = [_center, 5, _radius, 3, 0, 0, 0] call BIS_fnc_findSafePos;
+		private _obj = _grp createUnit ["ModuleCivilianPresenceSafeSpot_F", _pos, [], 0, "NONE"];
+		_obj setVariable ["#capacity",    3];
 		_obj setVariable ["#usebuilding", true];
 		_obj setVariable ["#terminal",    false];
 	};
 	
-	for "_i" from 0 to (round (_radius / 25) + 1) do
+	for "_i" from 0 to (round (_radius / 25) + 2) do
 	{
-		_pos = [_center, 5, _radius, 3, 0, 0, 0] call BIS_fnc_findSafePos;
-		_obj = _grp createUnit ["ModuleCivilianPresenceUnit_F", _pos, [], 0, "NONE"];
-		_obj setVariable ["#capacity",    1];
+		private _pos = [_center, 5, _radius, 3, 0, 0, 0] call BIS_fnc_findSafePos;
+		private _obj = _grp createUnit ["ModuleCivilianPresenceUnit_F", _pos, [], 0, "NONE"];
+		_obj setVariable ["#capacity",    3];
 		_obj setVariable ["#usebuilding", false];
 		_obj setVariable ["#terminal",    false];
 	};
 	
-	_obj = _grp createUnit ["ModuleCivilianPresence_F", [0,0,0], [], 0, "NONE"];
+	private _obj = _grp createUnit ["ModuleCivilianPresence_F", [0,0,0], [], 0, "NONE"];
 	_obj setVariable ["#area", [_center, _radius, _radius, 0, true, -1]];  // https://community.bistudio.com/wiki/inAreaArray 
 	_obj setVariable ["#debug",        true ]; // Debug mode on
 	_obj setVariable ["#useagents",    true ];
 	_obj setVariable ["#usepanicmode", false];
-	_obj setVariable ["#unitcount",    (round (_radius / 25) + 2)];
+	_obj setVariable ["#unitcount",    (round (_radius / 25))];
 	
 	_grp;
 };
