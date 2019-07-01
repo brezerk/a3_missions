@@ -42,9 +42,8 @@ if (isServer) then {
 		if (markerType _x in ["ellipse", "square"]) then {
 			if ((_pos distance2D (getMarkerPos _x)) <= _range) then {
 				private _grp = [_x] call BrezBlock_fnc_Cotroller_Process_Marker;
-				//deleteMarker _x;
-				
-				_x setMarkerAlpha 1;
+				deleteMarker _x;
+//				_x setMarkerAlpha 1;
 			};
 		};
 	} forEach allMapMarkers;

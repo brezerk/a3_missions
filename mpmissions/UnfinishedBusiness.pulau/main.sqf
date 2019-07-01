@@ -122,6 +122,14 @@ if (isServer) then {
 	
 	[Fn_Spawn_UAZ, 'wp_spawn_uaz_01', 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
 	
+			//spawn creater and wreck
+			//"Crater" createVehicle (_markerPos); 
+			//private _obj = "Land_Wreck_Traw_F" createVehicle ([((_markerPos select 0) - 5), ((_markerPos select 1) + 20), 0]); 
+			//_obj = "Land_Wreck_Traw2_F" createVehicle ([((_markerPos select 0) - 5), ((_markerPos select 1) - 10), 0]); 
+			
+	//[_markerPos] call Fn_Task_Civilian_FloodedShip_SpawnRandomCargo;
+	
+	
 };
 
 // We need to end game if all players are no longer alive

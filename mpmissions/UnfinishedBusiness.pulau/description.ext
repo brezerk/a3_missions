@@ -22,14 +22,14 @@ class Header
 {
 	gameType   =  Coop;	// Game type
 	minPlayers =  1;	// minimum number of players the mission supports
-	maxPlayers = 10;	// maximum number of players the mission supports
+	maxPlayers = 15;	// maximum number of players the mission supports
 };
 
 // Disable AI
 disabledAI = 1;
 
 author			= "brezerk@brezblock.org.ua";
-OnLoadName		= "Unfinished Business v0.7.71";
+OnLoadName		= "Unfinished Business v0.8.11";
 //OnLoadMission	= $STR_ONLOAD_INFO_01;
 //briefingName    = $STR_ONLOAD_INFO_02;
 // FIXME: https://feedback.bistudio.com/T67181

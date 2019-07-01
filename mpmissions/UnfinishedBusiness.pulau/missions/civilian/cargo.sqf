@@ -24,11 +24,40 @@ Spawn start objectives, triggers for informator contact
 // Client side code
 
 if (isServer) then {
+
+	Fn_Task_Create_Civilian_Stash = {
+		//params ["_markerPos"];
+		
+		{
+			private _center = _x select 1;
+			private _myPlaces = selectBestPlaces [_center, 1500, "(1 + forest + trees) * (1 - sea) * (1 - houses)", 15, 1];
+
+			private _markerPos = selectRandom _myPlaces select 0;
+
+			private _mark = createMarker ["test", _markerPos];
+			_mark setMarkerType "hd_destroy";
+			
+			"Land_TentDome_F" createVehicle ([((_markerPos select 0) - 4), ((_markerPos select 1) + 10), 0]); 
+			"FirePlace_burning_F" createVehicle ([((_markerPos select 0) - 3), ((_markerPos select 1) + 9), 0]); 
+			"Box_FIA_Wps_F" createVehicle (_markerPos);
+		} forEach avaliable_pois;
+		/*
+		[[
+			synd_boat_01,
+			synd_boat_02
+		]] call Fn_Patrols_Create_Random_SeaWaypoints;*/
+		
+		//locationFloodedShip = _markerPos;
+		//publicVariable "locationFloodedShip";
+		
+		//call Fn_Task_Spawn_Boats;
+	};
+
 	Fn_Task_Create_Civilian_FloodedShip = {
 		//params ["_markerPos"];
 		
 		private _center = selectRandom avaliable_pois select 1;
-		private _myPlaces = selectBestPlaces [_center, 1000, "sea + waterDepth", 15, 1];
+		private _myPlaces = selectBestPlaces [_center, 1000, "((waterDepth factor [10,20])/(1 + waterDepth))", 15, 1];
 
 		private _markerPos = selectRandom _myPlaces select 0;
 
@@ -69,7 +98,6 @@ if (isServer) then {
 			} forEach _myPlaces;
 		
 		} forEach avaliable_pois;
-	
 	};
 	
 		/*
