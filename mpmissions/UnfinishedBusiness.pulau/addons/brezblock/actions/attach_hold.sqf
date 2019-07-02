@@ -23,7 +23,7 @@ Attach holdAction to vehicle and execute corresponding callback
 	Return: _action_id of assigned action
 */
 if (isServer) then {
-	params ["_attach_to", "_call_back", ["_icon", "holdactions\holdAction_search"], ["_text", "ACTION_01"], ["_condition", ""], ["_duration", 6]];
+	params ["_attach_to", "_call_back", ["_icon", "holdactions\holdAction_search"], ["_text", "ACTION_01"], ["_condition", ""], ["_duration", 6], ["_remove", true]];
 	_action_id = [
 		_attach_to,																// Object the action is attached to
 		localize _text,					        								// Title of the action
@@ -38,7 +38,7 @@ if (isServer) then {
 		[],																		// Arguments passed to the scripts as _this select 3
 		_duration,																// Action duration [s]
 		100,																	// Priority
-		true,																	// Remove on completion
+		_remove,																	// Remove on completion
 		false																	// Show in unconscious state 
 	] remoteExec ["BIS_fnc_holdActionAdd", 0, _attach_to];						// MP compatible implementation
 	_action_id;

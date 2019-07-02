@@ -212,6 +212,11 @@
 				<English>Liberate the the &lt;marker name = 'wp_city_%1'&gt;%2&lt;/marker&gt; settlement by eliminating all bandits forces.</English>
 				<Russian>Звільнити поселення &lt;marker name = 'wp_city_%1'&gt;%2&lt;/marker&gt; від бандитів.</Russian>
 			</Key>
+			<Key ID="TASK_CIV_03_DONE">
+				<Original>Settlement liberated</Original>
+				<English>Settlement liberated</English>
+				<Russian>Поселення звільнено</Russian>
+			</Key>
 			<Key ID="TASK_CIV_04_TITLE">
 				<Original>Sunken ship</Original>
 				<English>Sunken ship</English>
@@ -246,6 +251,16 @@
 				<Original>Сonfiscate the car</Original>
 				<English>Сonfiscate the car</English>
 				<Russian>Конфіскувати автомобіль</Russian>
+			</Key>
+			<Key ID="ACTION_04">
+				<Original>Raise the container to the surface</Original>
+				<English>Raise the container to the surface</English>
+				<Russian>Підняти контейнер на поверхню</Russian>
+			</Key>
+			<Key ID="ACTION_05">
+				<Original>Move the cargo to the ship</Original>
+				<English>Move the cargo to the ship</English>
+				<Russian>Перемістити груз до корабля</Russian>
 			</Key>
 			<Key ID="INFO_DATE_01">
 				<Original>July 16, 2019 %1</Original>

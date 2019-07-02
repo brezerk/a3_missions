@@ -34,6 +34,7 @@ if (isServer) then {
 		_old_unit = _this select 1; //FIXME: Should we use this instead?
 		if (_player in assault_group) then {
 			assault_group = assault_group - [_player];
+			_old_unit setVariable ["is_assault_group", false, false];
 		};
 	};
 	

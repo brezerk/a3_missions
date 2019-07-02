@@ -106,10 +106,7 @@ Fn_Local_FailTasks = {
 		//'t_civ_police',
 		't_civ_weapon_stash',
 		't_libirate_0',
-		't_libirate_1',
-		't_libirate_2',
-		't_libirate_3',
-		't_libirate_4'
+		't_libirate_1'
 	];
 };
 
@@ -128,11 +125,18 @@ Fn_Local_CheckIfCivPlayerDetected = {
 	_detected;
 };
 
+Fn_Local_Switch_Side = {
+	params['_side'];
+	private _player = player; 
+	[player] joinSilent createGroup [_side, true];
+	selectNoPlayer; 
+	selectPlayer _player;
+};
+
 player addEventHandler
 [
 	"Killed",
 	{
-		private['_sides', '_side', '_group'];
 		player setVariable ["is_civilian", false, true];
 		player setVariable ["weapon_fiered", false, false];
 		deleteVehicle trgCivPlayerDetected;
@@ -140,25 +144,31 @@ player addEventHandler
 		//deleteVehicle trgCivPoliceStation;
 		deleteVehicle trgCivStash01;
 		deleteVehicle trgCivStash02;
+		deleteVehicle trgCivPlayerDetected;
 
-		_sides = [civilian, east] - [playerSide];
+
+		systemChat format ["player side is %1", playerSide];
+		
+		private _sides = [civilian, east] - [playerSide];
 		//_sides = [civilian];
-		_side = selectRandom _sides;
+		private _side = selectRandom _sides;
 		//_group = createGroup [_side, true];
 		
+		
+		systemChat format ["new side is %1", _side];
 		switch (_side) do
 		{
-			case civilian:
-			{
-				//systemChat "switched";
-				[player] joinSilent s_civ_group;
-				player setVariable ["is_civilian", true, true];
-			};
 			case east:
 			{
 				//systemChat "switched";
-				[player] joinSilent s_east_group;
+				[east] call Fn_Local_Switch_Side;
 				player setVariable ["is_civilian", false, true];
+			};
+			case civilian:
+			{
+				//systemChat "switched";
+				[civilian] call Fn_Local_Switch_Side;
+				player setVariable ["is_civilian", true, true];
 			};
 		};
 	}
@@ -168,7 +178,8 @@ player addEventHandler
 [
    "Respawn",
    {
-		switch (playerSide) do
+		systemChat format ["spawn player side is %1", playerSide];
+		switch (side player) do
 		{
 			case east:
 			{
@@ -201,8 +212,7 @@ player addEventHandler
     {
 		if (playerSide == civilian) then {
 			if (primaryWeapon player != "" || secondaryWeapon player != "" || handgunWeapon player != "") then {
-				[player] joinSilent (createGroup [west, true]);
-				
+				[west] call Fn_Local_Switch_Side;
 				trgCivPlayerDetected = createTrigger ["EmptyDetector", getPos player];
 				trgCivPlayerDetected setTriggerArea [0, 0, 0, false];
 				trgCivPlayerDetected setTriggerActivation ["NONE", "PRESENT", false];
@@ -224,7 +234,7 @@ player addEventHandler
 		if (player getVariable ["is_civilian", false]) then {
 			if (!(player getVariable ["weapon_fiered", false])) then {
 				if (primaryWeapon player == "" && secondaryWeapon player == "" && handgunWeapon player == "") then {
-					[player] joinSilent (createGroup [civilian, true]);
+					[civilian] call Fn_Local_Switch_Side;
 					deleteVehicle trgCivPlayerDetected;
 				};
 			};

@@ -2,7 +2,7 @@
 comment "Exported from Arsenal by brezerk";
 
 comment "[!] UNIT MUST BE LOCAL [!]";
-if (!local player) exitWith {};
+if (!local player) exitWith {systemChat "not local?";};
 
 comment "Remove existing items";
 removeAllWeapons player;

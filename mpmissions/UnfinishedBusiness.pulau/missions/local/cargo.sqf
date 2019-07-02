@@ -37,7 +37,7 @@ if (hasInterface) then {
 				0,
 				true
 		] call BIS_fnc_taskCreate;
-		['t_civ_weapon_stash', "boat"] call BIS_fnc_taskSetType;
+		['t_civ_weapon_stash', "search"] call BIS_fnc_taskSetType;
 		
 		trgCivStash01 = createTrigger ["EmptyDetector", getMarkerPos "civ_stash_01"];
 		trgCivStash01 setTriggerArea [25, 25, 0, false];
@@ -96,12 +96,12 @@ if (hasInterface) then {
 	
 	Fn_Task_Civilian_FloodedShip_Enter_Area = {
 		[ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_09', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;
-		if (player getVariable ["is_civilian", false]) then {
+		/*if (player getVariable ["is_civilian", false]) then {
 			_task = ['t_civ_boat', player] call BIS_fnc_taskReal;
 			if (!isNull _task) then {
 				_task setTaskState "Succeeded";
 			};
-		};
+		};*/
 		call Fn_Task_Civilian_Danger_Enter_Area;
 	};
 	

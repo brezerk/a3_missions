@@ -104,7 +104,7 @@ if (isServer) then {
 		//params ["_markerPos"];
 		
 		private _center = selectRandom avaliable_pois select 1;
-		private _myPlaces = selectBestPlaces [_center, 1000, "((waterDepth factor [10,20])/(1 + waterDepth))", 15, 1];
+		private _myPlaces = selectBestPlaces [_center, 2000, "((waterDepth factor [10,30])/(1 + waterDepth))", 15, 1];
 
 		private _markerPos = selectRandom _myPlaces select 0;
 
@@ -139,10 +139,13 @@ if (isServer) then {
 		];
 		{
 			private _center = _x select 1;
-			private _myPlaces = selectBestPlaces [_center, 200, "((waterDepth factor [1,1.4])/(1 + waterDepth))", 15, 2];
+			private _myPlaces = selectBestPlaces [_center, 600, "((waterDepth factor [1,1.4])/(1 + waterDepth))", 15, 2];
 			{
 				private _pos = _x select 0;
-				selectRandom _boats createVehicle (_pos);
+				private _obj = selectRandom _boats createVehicle (_pos);
+				_obj addItemCargoGlobal ["V_RebreatherIA", 5];
+				_obj addItemCargoGlobal ["I_Assault_Diver", 5];
+				_obj addItemCargoGlobal ["G_I_Diving", 5];
 			} forEach _myPlaces;
 		
 		} forEach avaliable_pois;
@@ -166,37 +169,65 @@ if (isServer) then {
 		clearItemCargoGlobal _obj;
 		clearBackpackCargoGlobal _obj;
 			
-		_obj addWeaponCargoGlobal ["CUP_hgun_M9", 2];
-		_obj addWeaponCargoGlobal ["Binocular", 3];
-		_obj addWeaponCargoGlobal ["CUP_arifle_M4A1", 2];
-		_obj addWeaponCargoGlobal ["CUP_arifle_M16A4_Base", 2];
-		_obj addWeaponCargoGlobal ["CUP_srifle_M14", 2];
-		_obj addMagazineCargoGlobal ["CUP_15Rnd_9x19_M9", 10];
-		_obj addMagazineCargoGlobal ["CUP_7Rnd_45ACP_1911", 10];
-		_obj addMagazineCargoGlobal ["CUP_30Rnd_556x45_Stanag", 10];
-		_obj addMagazineCargoGlobal ["CUP_20Rnd_762x51_DMR", 5];
-		_obj addItemCargoGlobal ["ACE_EarPlugs", 5];
-		_obj addItemCargoGlobal ["ItemCompass", 4];
-		_obj addItemCargoGlobal ["ACE_fieldDressing", 20];
-		_obj addItemCargoGlobal ["ACE_morphine", 10];
-		_obj addItemCargoGlobal ["ACE_epinephrine", 6];
-		_obj addItemCargoGlobal ["ACE_bloodIV", 20];
-		_obj addBackpackCargoGlobal ["B_Kitbag_tan", 5];
+		_action_id = [
+			_obj,
+			{ [_caller] remoteExec ["Fn_Task_Civilian_AddCargoToBoat", 2]; },
+			"simpleTasks\types\boat",
+			"ACTION_05",
+			"",
+			30,
+			false
+		] call BrezBlock_fnc_Attach_Hold_Action;	
 			
-		if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
-				_obj addItemCargoGlobal ["ACRE_PRC148", 2];
-				_obj addItemCargoGlobal ["ACRE_PRC343", 6];
-			} else {
-				if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
-					_obj addItemCargoGlobal ["tf_anprc148jem", 2];
-					_obj addItemCargoGlobal ["tf_anprc152", 6];
-				} else {
-					comment "Fallback to native arma3 radio";
-					_obj addItemCargoGlobal ["ItemRadio", 6];
-				};
-		};
 		//_target setPosASL [getPos _target select 0, getPos _target select 1, 0];
-		_obj addAction [localize 'ACTION_03', { private['_target']; _target = _this select 0; _target attachTo [invisble_01, [0,0,0]]; }, nil, 1, false, true, "", "alive _this", 5];
+		//_obj addAction [localize 'ACTION_04', { private['_target']; _target = _this select 0; _target tachTo [invisble_01, [0,0,0]]; }, nil, 1, false, true, "", "alive _this", 5];
+		//_obj addAction [localize 'ACTION_05', { [_this select 1] call Fn_Task_Civilian_AddCargoToBoat; }, nil, 1, false, true, "", "alive _this", 5];
 		_obj;
+	};
+	
+	Fn_Task_Civilian_AddCargoToBoat = {
+		params['_caller'];
+		private _obj = nearestObjects [_caller, ["Ship"], 150];
+		if ((count _obj) == 0) then {
+			[["No Boat nearby", "PLAIN"]] remoteExec ["cutText", _caller];
+		} else {
+			if (_caller getVariable ["is_civilian", false]) then {
+				_task = ['t_civ_boat', _caller] call BIS_fnc_taskReal;
+				if (!isNull _task) then {
+					_task setTaskState "Succeeded";
+				};
+			};
+			_obj = _obj select 0;
+			_obj addWeaponCargoGlobal ["CUP_hgun_M9", 2];
+			_obj addWeaponCargoGlobal ["Binocular", 3];
+			_obj addWeaponCargoGlobal ["CUP_arifle_M4A1", 2];
+			_obj addWeaponCargoGlobal ["CUP_arifle_M16A4_Base", 2];
+			_obj addWeaponCargoGlobal ["CUP_srifle_M14", 2];
+			_obj addMagazineCargoGlobal ["CUP_15Rnd_9x19_M9", 10];
+			_obj addMagazineCargoGlobal ["CUP_7Rnd_45ACP_1911", 10];
+			_obj addMagazineCargoGlobal ["CUP_30Rnd_556x45_Stanag", 10];
+			_obj addMagazineCargoGlobal ["CUP_20Rnd_762x51_DMR", 5];
+			_obj addItemCargoGlobal ["ACE_EarPlugs", 5];
+			_obj addItemCargoGlobal ["ItemCompass", 4];
+			_obj addItemCargoGlobal ["ACE_fieldDressing", 20];
+			_obj addItemCargoGlobal ["ACE_morphine", 10];
+			_obj addItemCargoGlobal ["ACE_epinephrine", 6];
+			_obj addItemCargoGlobal ["ACE_bloodIV", 20];
+			_obj addBackpackCargoGlobal ["B_Kitbag_tan", 5];
+				
+			if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
+					_obj addItemCargoGlobal ["ACRE_PRC148", 2];
+					_obj addItemCargoGlobal ["ACRE_PRC343", 6];
+				} else {
+					if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
+						_obj addItemCargoGlobal ["tf_anprc148jem", 2];
+						_obj addItemCargoGlobal ["tf_anprc152", 6];
+					} else {
+						comment "Fallback to native arma3 radio";
+						_obj addItemCargoGlobal ["ItemRadio", 6];
+					};
+			};
+			[["Done", "PLAIN"]] remoteExec ["cutText", _caller];
+		};
 	};
 };

@@ -65,6 +65,4 @@ if (hasInterface) then {
 		] call BIS_fnc_taskCreate;
 		['t_scat_eliminate_surv', "kill"] call BIS_fnc_taskSetType;
 	};
-	
-	sleep 5;
 };

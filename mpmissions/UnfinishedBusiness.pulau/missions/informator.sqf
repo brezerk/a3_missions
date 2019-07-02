@@ -80,10 +80,10 @@ if (isServer) then {
 		_obj disableAi "MOVE";
 		_action_id = [
 			_obj,
-			{ _this call Fn_Task_Create_Informator_Complete; },
+			{ _this remoteExec ["Fn_Task_Create_Informator_Complete", 2]; },
 			"simpleTasks\types\talk",
 			"ACTION_02",
-			"&& alive _target"
+			"&& alive _target && _caller getVariable ['is_assault_group', false]"
 		] call BrezBlock_fnc_Attach_Hold_Action;
 		
 		if (hasInterface) then {
