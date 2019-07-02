@@ -29,8 +29,8 @@ if (hasInterface) then {
 			[
 				civilian,
 				_task,
-				[format[localize "TASK_09_DESC", _forEachIndex, _x select 0],
-				format[localize "TASK_09_TITLE", _x select 0],
+				[format[localize "TASK_CIV_03_DESC", _forEachIndex, _x select 0],
+				format[localize "TASK_CIV_03_TITLE", _x select 0],
 				localize "TASK_ORIG_03"],
 				objNull,
 				"CREATED",

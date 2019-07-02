@@ -152,16 +152,6 @@
 				<English>Solomon Maru is a leader of the "Red Sokol" group. Under the guise of AOC forces, his gangsters killed Rіchardo Gonzales and cut the whole city &lt;marker name = 'wp_kambani'&gt;Kambani&lt;/marker&gt;. In the latter, it was seen on the &lt;marker name='wp_air_field_01'&gt;Gurun airfield&lt;/marker&gt; with a bunch of his bandits.</English>
 				<Russian>Solomon Maru -- лідер угруппованя "Червоні Соколи". Під прикриттям сил AOC його бандити вбили президента Rіchardo Gonzales і вирізали ціле місто &lt;marker name = 'wp_kambani'&gt;Kambani&lt;/marker&gt;. В останне його бачили на &lt;marker name='wp_air_field_01'&gt;аеродромі Gurun&lt;/marker&gt; з купою охорони.</Russian>
 			</Key>
-			<Key ID="TASK_09_TITLE">
-				<Original>Liberate the %1</Original>
-				<English>Liberate the %</English>
-				<Russian>Звільнити %1</Russian>
-			</Key>
-			<Key ID="TASK_09_DESC">
-				<Original>Liberate the the &lt;marker name = 'wp_city_%1'&gt;%2&lt;/marker&gt; settlement by evisting all bandits.</Original>
-				<English>Liberate the the &lt;marker name = 'wp_city_%1'&gt;%2&lt;/marker&gt; settlement by evisting all bandits.</English>
-				<Russian>Звільнити поселення &lt;marker name = 'wp_city_%1'&gt;%2&lt;/marker&gt; від бандитів.</Russian>
-			</Key>
 			<Key ID="TASK_AOC_01_TITLE">
 				<Original>Defend AA</Original>
 				<English>Defend AA</English>
@@ -203,24 +193,24 @@
 				<Russian>У минулий шторм затонув вантажний корабель. Продукують, що на цьому човні перевозили зброю. Я повинен знайти водолазне обладнання та перевірити уламки. Але потрібно бути обережним і уникати патрульних катерів.</Russian>
 			</Key>
 			<Key ID="TASK_CIV_02_TITLE">
-				<Original>Optional: Police Station</Original>
-				<English>Optional: Police Station</English>
-				<Russian>Додаткове: Police Station</Russian>
+				<Original>Optional: Wapon stash</Original>
+				<English>Optional: Wapon stash</English>
+				<Russian>Додаткове: Wapon stash</Russian>
 			</Key>
 			<Key ID="TASK_CIV_02_DESC">
-				<Original>I need to check the police station. Police are very relaxed this days and maybe I will be able to steal some weapon.</Original>
-				<English>I need to check the police station. Police are very relaxed this days and maybe I will be able to steal some weapon.</English>
-				<Russian>Потрібно перевірити поліцейський участок. Поліція дуже розслабилась і можливо я зможу поцупити якусь зброю.</Russian>
+				<Original>The time has come for the revolution! I need to find a hidden weapon stash. Rodrigo gave me the coordinates of two stashes: &lt;marker name = 'civ_stash_00'&gt;Lopez&lt;/marker&gt; and &lt;marker name = 'civ_stash_01'&gt;Maria&lt;/marker&gt;.</Original>
+				<English>The time has come for the revolution! I need to find a hidden weapon stash. Rodrigo gave me the coordinates of two stashes: &lt;marker name = 'civ_stash_00'&gt;Lopez&lt;/marker&gt; and &lt;marker name = 'civ_stash_01'&gt;Maria&lt;/marker&gt;.</English>
+				<Russian>Настав час революції! Потрібно знайти прихований склад зброї. Родріго надав мені координати двох складів: &lt;marker name = 'civ_stash_00'&gt;Лопес&lt;/marker&gt; та &lt;marker name = 'civ_stash_01'&gt;Марія&lt;/marker&gt;.</Russian>
 			</Key>
 			<Key ID="TASK_CIV_03_TITLE">
-				<Original>Sunken ship</Original>
-				<English>Sunken ship</English>
-				<Russian>Затонулий корабель</Russian>
+				<Original>Liberate the %1</Original>
+				<English>Liberate the %1</English>
+				<Russian>Звільнити %1</Russian>
 			</Key>
 			<Key ID="TASK_CIV_03_DESC">
-				<Original>Last storm sunk cargo ship. There were some rumors about carrying weapons on this boat. I have to find diving equipment and check the wreckage. But I need to be careful and avoid patrol boats.</Original>
-				<English>Last storm sunk cargo ship. There were some rumors about carrying weapons on this boat. I have to find diving equipment and check the wreckage. But I need to be careful and avoid patrol boats.</English>
-				<Russian>У минулий шторм затонув вантажний корабель. Продукують, що на цьому човні перевозили зброю. Я повинен знайти водолазне обладнання та перевірити уламки. Але потрібно бути обережним і уникати патрульних катерів.</Russian>
+				<Original>Liberate the the &lt;marker name = 'wp_city_%1'&gt;%2&lt;/marker&gt; settlement by eliminating all bandits forces.</Original>
+				<English>Liberate the the &lt;marker name = 'wp_city_%1'&gt;%2&lt;/marker&gt; settlement by eliminating all bandits forces.</English>
+				<Russian>Звільнити поселення &lt;marker name = 'wp_city_%1'&gt;%2&lt;/marker&gt; від бандитів.</Russian>
 			</Key>
 			<Key ID="TASK_CIV_04_TITLE">
 				<Original>Sunken ship</Original>
@@ -301,6 +291,11 @@
 				<Original>Sunken ship.</Original>
 				<English>Sunken ship.</English>
 				<Russian>Затонулий корабель.</Russian>
+			</Key>
+			<Key ID="INFO_SUBLOC_10">
+				<Original>Hidden weapon stash.</Original>
+				<English>Hidden weapon stash.</English>
+				<Russian>Прихований склад зброї.</Russian>
 			</Key>
 			<Key ID="STR_RADIO_CALL_01">
 				<Original>Welcome on board to AF101. Buckle up,</Original>

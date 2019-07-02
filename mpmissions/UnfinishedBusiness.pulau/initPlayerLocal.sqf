@@ -44,7 +44,7 @@ player setVariable ["is_civilian", false, true];
 #include "missions\local\leader.sqf";
 #include "missions\local\csat.sqf";
 #include "missions\local\cargo.sqf";
-#include "missions\local\police.sqf";
+//#include "missions\local\police.sqf";
 #include "missions\civilian\liberate.sqf";
 
 Fn_Local_SetPersonalTaskState = {
@@ -103,7 +103,8 @@ Fn_Local_FailTasks = {
 		't_destroy_comtower',
 		't_kill_leader',
 		't_civ_boat',
-		't_civ_police',
+		//'t_civ_police',
+		't_civ_weapon_stash',
 		't_libirate_0',
 		't_libirate_1',
 		't_libirate_2',
@@ -136,7 +137,9 @@ player addEventHandler
 		player setVariable ["weapon_fiered", false, false];
 		deleteVehicle trgCivPlayerDetected;
 		deleteVehicle trgCivFloodedShip;
-		deleteVehicle trgCivPoliceStation;
+		//deleteVehicle trgCivPoliceStation;
+		deleteVehicle trgCivStash01;
+		deleteVehicle trgCivStash02;
 
 		_sides = [civilian, east] - [playerSide];
 		//_sides = [civilian];
@@ -184,7 +187,8 @@ player addEventHandler
 				} forEach allMapMarkers;
 				player setPos getMarkerPos selectRandom _civ_spawn_markers;
 				call Fn_Local_Create_Task_Civilian_FloodedShip;
-				call Fn_Local_Create_Task_Civilian_Police;
+				call Fn_Local_Create_Task_Civilian_WaponStash;
+				//call Fn_Local_Create_Task_Civilian_Police;
 				call Fn_Local_Create_Task_Civilian_Liberate_MissionIntro;
 			};
 		};

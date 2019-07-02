@@ -42,6 +42,6 @@ if (isServer) then {
 	[avaliable_pois] call Fn_Patrols_CreateMilitary_Traffic;
 	
 	//Spawn stashes
-	call Fn_Task_Create_Civilian_Stash;
+	call Fn_Task_Create_Civilian_WaponStash;
 	call Fn_Task_Create_Civilian_FloodedShip;
 };

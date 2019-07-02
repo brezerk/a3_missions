@@ -25,6 +25,40 @@ Spawn start objectives, triggers for informator contact
 
 if (hasInterface) then {
 
+	Fn_Local_Create_Task_Civilian_WaponStash = {
+		[
+				player,
+				"t_civ_weapon_stash",
+				[localize "TASK_CIV_02_DESC",
+				localize "TASK_CIV_02_TITLE",
+				localize "TASK_ORIG_01"],
+				objNull,
+				"CREATED",
+				0,
+				true
+		] call BIS_fnc_taskCreate;
+		['t_civ_weapon_stash', "boat"] call BIS_fnc_taskSetType;
+		
+		trgCivStash01 = createTrigger ["EmptyDetector", getMarkerPos "civ_stash_01"];
+		trgCivStash01 setTriggerArea [25, 25, 0, false];
+		trgCivStash01 setTriggerActivation ["ANYPLAYER", "PRESENT", true];
+		trgCivStash01 setTriggerStatements [
+			"(vehicle player) in thisList",
+			"call Fn_Task_Civilian_WaponStash_Enter_Area;",
+			"call Fn_Task_Civilian_Danger_Leave_Area;"
+		];
+		
+		trgCivStash02 = createTrigger ["EmptyDetector", getMarkerPos "civ_stash_02"];
+		trgCivStash02 setTriggerArea [25, 25, 0, false];
+		trgCivStash02 setTriggerActivation ["ANYPLAYER", "PRESENT", true];
+		trgCivStash02 setTriggerStatements [
+			"(vehicle player) in thisList",
+			"call Fn_Task_Civilian_WaponStash_Enter_Area;",
+			"call Fn_Task_Civilian_Danger_Leave_Area;"
+		];
+	
+	};
+
 	Fn_Local_Create_Task_Civilian_FloodedShip = {
 		[
 				player,
@@ -32,37 +66,54 @@ if (hasInterface) then {
 				[localize "TASK_CIV_01_DESC",
 				localize "TASK_CIV_01_TITLE",
 				localize "TASK_ORIG_01"],
-				locationFloodedShip,
+				getMarkerPos "civ_ship_01",
 				"CREATED",
 				0,
 				true
 		] call BIS_fnc_taskCreate;
 		['t_civ_boat', "boat"] call BIS_fnc_taskSetType;
 	
-		trgCivFloodedShip = createTrigger ["EmptyDetector", locationFloodedShip];
+		trgCivFloodedShip = createTrigger ["EmptyDetector", getMarkerPos "civ_ship_01"];
 		trgCivFloodedShip setTriggerArea [50, 50, 0, false];
 		trgCivFloodedShip setTriggerActivation ["ANYPLAYER", "PRESENT", true];
 		trgCivFloodedShip setTriggerStatements [
 			"(vehicle player) in thisList",
 			"call Fn_Task_Civilian_FloodedShip_Enter_Area;",
-			"call Fn_Task_Civilian_FloodedShip_Leave_Area;"
+			"call Fn_Task_Civilian_Danger_Leave_Area;"
 		];
 	};
 	
+	Fn_Task_Civilian_WaponStash_Enter_Area = {
+		[ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_10', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;
+		if (player getVariable ["is_civilian", false]) then {
+			_task = ['t_civ_weapon_stash', player] call BIS_fnc_taskReal;
+			if (!isNull _task) then {
+				_task setTaskState "Succeeded";
+			};
+		};
+		call Fn_Task_Civilian_Danger_Enter_Area;
+	};
+	
 	Fn_Task_Civilian_FloodedShip_Enter_Area = {
-		private['_task'];
 		[ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_09', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;
 		if (player getVariable ["is_civilian", false]) then {
 			_task = ['t_civ_boat', player] call BIS_fnc_taskReal;
 			if (!isNull _task) then {
 				_task setTaskState "Succeeded";
 			};
+		};
+		call Fn_Task_Civilian_Danger_Enter_Area;
+	};
+	
+	
+	Fn_Task_Civilian_Danger_Enter_Area = {
+		if (player getVariable ["is_civilian", false]) then {
 			//systemChat "You are on danger waters";
 			[player] joinSilent (createGroup [west, true]);
 		};
 	};
 	
-	Fn_Task_Civilian_FloodedShip_Leave_Area = {
+	Fn_Task_Civilian_Danger_Leave_Area = {
 		if (player getVariable ["is_civilian", false]) then {
 			if (primaryWeapon player == "" && secondaryWeapon player == "" && handgunWeapon player == "") then {
 				//systemChat "Ok. Claim down.";
