@@ -120,13 +120,15 @@ if (isServer) then {
 
 		_obj addMagazineCargoGlobal ["CUP_15Rnd_9x19_M9", 10];
 		_obj addMagazineCargoGlobal ["CUP_7Rnd_45ACP_1911", 10];
-		_obj addMagazineCargoGlobal ["CUP_30Rnd_556x45_Stanag", 10];
-		_obj addMagazineCargoGlobal ["CUP_20Rnd_762x51_DMR", 5];
-		_obj addMagazineCargoGlobal ["CUP_1Rnd_HE_M203", 5];
+		_obj addMagazineCargoGlobal ["CUP_30Rnd_556x45_Stanag", 16];
+		_obj addMagazineCargoGlobal ["CUP_20Rnd_762x51_DMR", 8];
+		_obj addMagazineCargoGlobal ["CUP_1Rnd_HE_M203", 10];
 		_obj addMagazineCargoGlobal ["CUP_M72A6_M", 4];
 		_obj addMagazineCargoGlobal ["CUP_Stinger_M", 4];
 		_obj addMagazineCargoGlobal ["CUP_100Rnd_TE4_Green_Tracer_556x45_M249", 4];
 
+		_obj addItemCargoGlobal ["CUP_optic_LeupoldMk4", 2];
+		_obj addItemCargoGlobal ["CUP_bipod_Harris_1A2_L", 2];
 		_obj addItemCargoGlobal ["ACE_EarPlugs", 5];
 		_obj addItemCargoGlobal ["ItemCompass", 4];
 		_obj addItemCargoGlobal ["ACE_fieldDressing", 20];
