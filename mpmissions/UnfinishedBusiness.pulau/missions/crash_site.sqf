@@ -63,6 +63,10 @@ if (isServer) then {
 			_boom setVelocity [0,0,-50];
 		};
 		
+		private _mark = createMarker ["wp_crash_site", _markerPos];
+		_mark setMarkerType "hd_destroy";
+		_mark setMarkerAlpha 0;
+		
 		//spawn creater and wreck
 		private _crater = "CraterLong" createVehicle (_markerPos); 
 		private _obj = "Land_UWreck_MV22_F" createVehicle (_markerPos); 
@@ -105,18 +109,34 @@ if (isServer) then {
 		_obj addWeaponCargoGlobal ["CUP_hgun_M9", 2];
 		_obj addWeaponCargoGlobal ["Binocular", 3];
 		_obj addWeaponCargoGlobal ["CUP_arifle_M4A1", 2];
+		_obj addWeaponCargoGlobal ["CUP_arifle_M4A1_GL_carryhandle", 2];
 		_obj addWeaponCargoGlobal ["CUP_arifle_M16A4_Base", 2];
 		_obj addWeaponCargoGlobal ["CUP_srifle_M14", 2];
+		_obj addWeaponCargoGlobal ["CUP_launch_M72A6", 2];	
+		_obj addWeaponCargoGlobal ["CUP_launch_FIM92Stinger", 2];	
+		_obj addWeaponCargoGlobal ["CUP_srifle_M14_DMR", 1];
+		_obj addWeaponCargoGlobal ["CUP_lmg_m249_para", 1];
+		_obj addWeaponCargoGlobal ["ACE_VMH3", 2];
+
 		_obj addMagazineCargoGlobal ["CUP_15Rnd_9x19_M9", 10];
 		_obj addMagazineCargoGlobal ["CUP_7Rnd_45ACP_1911", 10];
 		_obj addMagazineCargoGlobal ["CUP_30Rnd_556x45_Stanag", 10];
 		_obj addMagazineCargoGlobal ["CUP_20Rnd_762x51_DMR", 5];
+		_obj addMagazineCargoGlobal ["CUP_1Rnd_HE_M203", 5];
+		_obj addMagazineCargoGlobal ["CUP_M72A6_M", 4];
+		_obj addMagazineCargoGlobal ["CUP_Stinger_M", 4];
+		_obj addMagazineCargoGlobal ["CUP_100Rnd_TE4_Green_Tracer_556x45_M249", 4];
+
 		_obj addItemCargoGlobal ["ACE_EarPlugs", 5];
 		_obj addItemCargoGlobal ["ItemCompass", 4];
 		_obj addItemCargoGlobal ["ACE_fieldDressing", 20];
 		_obj addItemCargoGlobal ["ACE_morphine", 10];
 		_obj addItemCargoGlobal ["ACE_epinephrine", 6];
 		_obj addItemCargoGlobal ["ACE_bloodIV", 20];
+		_obj addItemCargoGlobal ["CUP_HandGrenade_M67", 10];
+		_obj addItemCargoGlobal ["CUP_H_USMC_LWH_WDL", 10];
+		_obj addItemCargoGlobal ["ACE_DefusalKit", 4];
+		
 		_obj addBackpackCargoGlobal ["B_Kitbag_tan", 5];
 			
 		if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
@@ -128,7 +148,7 @@ if (isServer) then {
 					_obj addItemCargoGlobal ["tf_anprc152", 6];
 				} else {
 					comment "Fallback to native arma3 radio";
-					_obj addItemCargoGlobal ["ItemRadio", 6];
+					_obj addItemCargoGlobal ["ItemRadio", 10];
 				};
 		};
 		_obj;
@@ -202,6 +222,20 @@ if (isServer) then {
 	[] execVM "missions\regroup.sqf";
 	[] execVM "missions\assoult_group_is_dead.sqf";
 	[] execVM "missions\informator.sqf";
+	
+	[
+		west,
+		"t_us_rescue",
+		[
+		format [localize "TASK_09_DESC", D_LOCATION, D_LOCATION],
+		format [localize "TASK_09_TITLE"],
+		localize "TASK_ORIG_01"],
+		getPos us_liberty_01,
+		"CREATED",
+		0,
+		true
+	] call BIS_fnc_taskCreate;
+	['t_us_rescue', "run"] call BIS_fnc_taskSetType;
 		
 	//Send vehicles on patrol
 	[vehicle_patrol_group, avaliable_locations] call Fn_Patrols_Create_Random_Waypoints;
@@ -219,8 +253,6 @@ if (isServer) then {
 			"call Fn_Task_Create_AA; call Fn_Task_Create_KillLeader; deleteVehicle trgRegroupIsDone;",
 			""
 	];
-	
-
 	
 	execVM "missions\ping.sqf";
 };

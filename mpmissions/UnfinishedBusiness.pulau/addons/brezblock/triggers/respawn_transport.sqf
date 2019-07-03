@@ -55,7 +55,7 @@ if (isServer) then {
 					//player found withing 500m
 					if (isPlayer _x) exitWith {};
 					_counter = _counter + 1;
-				} forEach nearestObjects [_vehicle, ["SoldierEB", "SoldierGB", "SoldierWB"], 500];
+				} forEach nearestObjects [_vehicle, ["SoldierEB", "SoldierGB", "SoldierWB"], 600];
 			} else {
 				_counter = 0;
 			};

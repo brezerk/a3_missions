@@ -27,7 +27,11 @@ if (isServer) then {
 		
 	['t_arrive_to_island', 'FAILED'] call BIS_fnc_taskSetState;
 		
-	sleep 4;
+	sleep 2;
+	
+	us_heli_01 setVehicleLock "UNLOCKED";
+	us_boat_01 setVehicleLock "UNLOCKED";
+	us_boat_02 setVehicleLock "UNLOCKED";
 	
 	[] execVM "missions\crash_site.sqf";
 };

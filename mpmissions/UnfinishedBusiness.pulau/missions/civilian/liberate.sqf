@@ -32,7 +32,7 @@ if (hasInterface) then {
 				[format[localize "TASK_CIV_03_DESC", _forEachIndex, _x select 0],
 				format[localize "TASK_CIV_03_TITLE", _x select 0],
 				localize "TASK_ORIG_03"],
-				getMarkerPos format["wp_city_%s", _forEachIndex],
+				getMarkerPos (format ["wp_city_%1", _forEachIndex]),
 				"CREATED",
 				0,
 				true
@@ -41,28 +41,26 @@ if (hasInterface) then {
 						
 		} forEach avaliable_pois;
 		
-		if (isNil "trgCivLiberate00") then {
-			trgCivLiberate00 = createTrigger ["EmptyDetector", getMarkerPos "wp_city_0"];
-			trgCivLiberate00 setTriggerArea [250, 250, 0, false];
-			trgCivLiberate00 setTriggerActivation ["WEST SEIZED", "PRESENT", false];
-			trgCivLiberate00 setTriggerTimeout [5, 10, 20, true];
-			trgCivLiberate00 setTriggerStatements ["this", "call Fn_Task_Civilian_Liberate_LiberateCity0;", ""];
-		};
 		
-		if (isNil "trgCivLiberate01") then {
-			trgCivLiberate01 = createTrigger ["EmptyDetector", getMarkerPos "wp_city_1"];
-			trgCivLiberate01 setTriggerArea [250, 250, 0, false];
-			trgCivLiberate01 setTriggerActivation ["WEST SEIZED", "PRESENT", false];
-			trgCivLiberate01 setTriggerTimeout [5, 10, 20, true];
-			trgCivLiberate01 setTriggerStatements ["this", "call Fn_Task_Civilian_Liberate_LiberateCity1;", ""];
-		};
+		trgCivLiberate00 = createTrigger ["EmptyDetector", getMarkerPos "wp_city_0"];
+		trgCivLiberate00 setTriggerArea [250, 250, 0, false];
+		trgCivLiberate00 setTriggerActivation ["WEST SEIZED", "PRESENT", false];
+		trgCivLiberate00 setTriggerTimeout [5, 10, 20, true];
+		trgCivLiberate00 setTriggerStatements ["this", "call Fn_Task_Civilian_Liberate_LiberateCity0;", ""];
+
+		trgCivLiberate01 = createTrigger ["EmptyDetector", getMarkerPos "wp_city_1"];
+		trgCivLiberate01 setTriggerArea [250, 250, 0, false];
+		trgCivLiberate01 setTriggerActivation ["WEST SEIZED", "PRESENT", false];
+		trgCivLiberate01 setTriggerTimeout [5, 10, 20, true];
+		trgCivLiberate01 setTriggerStatements ["this", "call Fn_Task_Civilian_Liberate_LiberateCity1;", ""];
+
 	};
 	
 	Fn_Task_Civilian_Liberate_LiberateCity0 = {
 		if (player getVariable ["is_civilian", false]) then {
 			_task = ['t_libirate_0', player] call BIS_fnc_taskReal;
 			if (!isNull _task) then {
-				["TaskSucceeded",[localize "TASK_CIV_03_DONE"]] call BIS_fnc_showNotification;
+				["TaskSucceeded",["", localize "TASK_CIV_03_DONE"]] call BIS_fnc_showNotification;
 				_task setTaskState "Succeeded";
 			};
 		};
@@ -72,7 +70,7 @@ if (hasInterface) then {
 		if (player getVariable ["is_civilian", false]) then {
 			_task = ['t_libirate_1', player] call BIS_fnc_taskReal;
 			if (!isNull _task) then {
-				["TaskSucceeded",[localize "TASK_CIV_03_DONE"]] call BIS_fnc_showNotification;
+				["TaskSucceeded",["", localize "TASK_CIV_03_DONE"]] call BIS_fnc_showNotification;
 				_task setTaskState "Succeeded";
 			};
 		};

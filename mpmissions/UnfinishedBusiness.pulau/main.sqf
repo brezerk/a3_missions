@@ -121,6 +121,7 @@ if (isServer) then {
 	call Fn_Create_MissionIntro;
 	
 	[Fn_Spawn_UAZ, 'wp_spawn_uaz_01', 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
+	[Fn_Spawn_UAZ, 'wp_spawn_uaz_02', 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
 	
 			//spawn creater and wreck
 			//"Crater" createVehicle (_markerPos); 

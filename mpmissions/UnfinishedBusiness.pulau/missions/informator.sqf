@@ -83,7 +83,7 @@ if (isServer) then {
 			{ _this remoteExec ["Fn_Task_Create_Informator_Complete", 2]; },
 			"simpleTasks\types\talk",
 			"ACTION_02",
-			"&& alive _target && _caller getVariable ['is_assault_group', false]"
+			"&& alive _target && (_this getVariable ['is_assault_group', false])"
 		] call BrezBlock_fnc_Attach_Hold_Action;
 		
 		if (hasInterface) then {

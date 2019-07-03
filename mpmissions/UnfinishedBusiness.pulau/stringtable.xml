@@ -152,6 +152,16 @@
 				<English>Solomon Maru is a leader of the "Red Sokol" group. Under the guise of AOC forces, his gangsters killed Rіchardo Gonzales and cut the whole city &lt;marker name = 'wp_kambani'&gt;Kambani&lt;/marker&gt;. In the latter, it was seen on the &lt;marker name='wp_air_field_01'&gt;Gurun airfield&lt;/marker&gt; with a bunch of his bandits.</English>
 				<Russian>Solomon Maru -- лідер угруппованя "Червоні Соколи". Під прикриттям сил AOC його бандити вбили президента Rіchardo Gonzales і вирізали ціле місто &lt;marker name = 'wp_kambani'&gt;Kambani&lt;/marker&gt;. В останне його бачили на &lt;marker name='wp_air_field_01'&gt;аеродромі Gurun&lt;/marker&gt; з купою охорони.</Russian>
 			</Key>
+			<Key ID="TASK_09_TITLE">
+				<Original>Rescue mission</Original>
+				<English>Rescue mission</English>
+				<Russian>Рятувальна місія</Russian>
+			</Key>
+			<Key ID="TASK_09_DESC">
+				<Original>Couple survivors are scattered over the &lt;marker name = 'wp_air_field_%1_01'&gt;%2 island&lt;/marker&gt;. Find and bring them back to USS "Freedom".</Original>
+				<English>Couple survivors are scattered over the &lt;marker name = 'wp_air_field_%1_01'&gt;%2 island&lt;/marker&gt;. Find and bring them back to USS "Freedom".</English>
+				<Russian>Декілька виживших розкидані по &lt;marker name = 'wp_air_field_%1_01'&gt;острову %2&lt;/marker&gt;, знайдить їх та поверніть на борт USS "Freedom".</Russian>
+			</Key>
 			<Key ID="TASK_AOC_01_TITLE">
 				<Original>Defend AA</Original>
 				<English>Defend AA</English>

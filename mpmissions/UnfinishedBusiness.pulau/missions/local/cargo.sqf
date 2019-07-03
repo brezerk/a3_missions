@@ -39,19 +39,19 @@ if (hasInterface) then {
 		] call BIS_fnc_taskCreate;
 		['t_civ_weapon_stash', "search"] call BIS_fnc_taskSetType;
 		
-		trgCivStash01 = createTrigger ["EmptyDetector", getMarkerPos "civ_stash_01"];
-		trgCivStash01 setTriggerArea [25, 25, 0, false];
-		trgCivStash01 setTriggerActivation ["ANYPLAYER", "PRESENT", true];
-		trgCivStash01 setTriggerStatements [
+		trgCivStash00 = createTrigger ["EmptyDetector", getMarkerPos "civ_stash_00"];
+		trgCivStash00 setTriggerArea [50, 50, 0, false];
+		trgCivStash00 setTriggerActivation ["ANYPLAYER", "PRESENT", true];
+		trgCivStash00 setTriggerStatements [
 			"(vehicle player) in thisList",
 			"call Fn_Task_Civilian_WaponStash_Enter_Area;",
 			"call Fn_Task_Civilian_Danger_Leave_Area;"
 		];
 		
-		trgCivStash02 = createTrigger ["EmptyDetector", getMarkerPos "civ_stash_02"];
-		trgCivStash02 setTriggerArea [25, 25, 0, false];
-		trgCivStash02 setTriggerActivation ["ANYPLAYER", "PRESENT", true];
-		trgCivStash02 setTriggerStatements [
+		trgCivStash01 = createTrigger ["EmptyDetector", getMarkerPos "civ_stash_01"];
+		trgCivStash01 setTriggerArea [50, 50, 0, false];
+		trgCivStash01 setTriggerActivation ["ANYPLAYER", "PRESENT", true];
+		trgCivStash01 setTriggerStatements [
 			"(vehicle player) in thisList",
 			"call Fn_Task_Civilian_WaponStash_Enter_Area;",
 			"call Fn_Task_Civilian_Danger_Leave_Area;"
@@ -88,6 +88,7 @@ if (hasInterface) then {
 		if (player getVariable ["is_civilian", false]) then {
 			_task = ['t_civ_weapon_stash', player] call BIS_fnc_taskReal;
 			if (!isNull _task) then {
+				["TaskSucceeded",["", localize "TASK_CIV_02_TITLE"]] call BIS_fnc_showNotification;
 				_task setTaskState "Succeeded";
 			};
 		};
@@ -109,7 +110,7 @@ if (hasInterface) then {
 	Fn_Task_Civilian_Danger_Enter_Area = {
 		if (player getVariable ["is_civilian", false]) then {
 			//systemChat "You are on danger waters";
-			[player] joinSilent (createGroup [west, true]);
+			[west] call Fn_Local_Switch_Side;
 		};
 	};
 	
@@ -117,7 +118,7 @@ if (hasInterface) then {
 		if (player getVariable ["is_civilian", false]) then {
 			if (primaryWeapon player == "" && secondaryWeapon player == "" && handgunWeapon player == "") then {
 				//systemChat "Ok. Claim down.";
-				[player] joinSilent (createGroup [civilian, true]);
+				[civilian] call Fn_Local_Switch_Side;
 			};
 		};
 	};

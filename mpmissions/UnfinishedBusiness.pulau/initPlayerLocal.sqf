@@ -96,6 +96,7 @@ Fn_Local_FailTasks = {
 			if (!(taskState _task in ["Succeeded", "Failed"])) then { _task setTaskState "Canceled"; };
 		};
 	} forEach [
+		't_us_rescue',
 		't_scat_defend_aa',
 		't_scat_defend_comm_tower',
 		't_scat_eliminate_surv',
@@ -145,17 +146,31 @@ player addEventHandler
 		deleteVehicle trgCivStash01;
 		deleteVehicle trgCivStash02;
 		deleteVehicle trgCivPlayerDetected;
+		deleteVehicle trgCivLiberate00;
+		deleteVehicle trgCivLiberate01;
 
 
-		systemChat format ["player side is %1", playerSide];
+		//systemChat format ["player side is %1", playerSide];
 		
-		private _sides = [civilian, east] - [playerSide];
+		private _sides = [civilian, east, west];
+		
+		if (!(alive csat_comm_tower_01)) then {
+			_sides = _sides - [east];
+		};
+		
+		if (count (nearestObjects [us_liberty_01, ["Ship", "Helicopter"], 100]) <= 0) then {
+			_sides = _sides - [west];
+		};
+
+		if (count _sides > 2) then {
+			_sides = _sides - [playerSide];
+		};
 		//_sides = [civilian];
 		private _side = selectRandom _sides;
 		//_group = createGroup [_side, true];
 		
 		
-		systemChat format ["new side is %1", _side];
+		//systemChat format ["new side is %1", _side];
 		switch (_side) do
 		{
 			case east:
@@ -170,6 +185,12 @@ player addEventHandler
 				[civilian] call Fn_Local_Switch_Side;
 				player setVariable ["is_civilian", true, true];
 			};
+			case west:
+			{
+				//systemChat "switched";
+				[west] call Fn_Local_Switch_Side;
+				player setVariable ["is_civilian", false, true];
+			};
 		};
 	}
 ];
@@ -178,7 +199,7 @@ player addEventHandler
 [
    "Respawn",
    {
-		systemChat format ["spawn player side is %1", playerSide];
+		//systemChat format ["spawn player side is %1", playerSide];
 		switch (side player) do
 		{
 			case east:
@@ -201,6 +222,13 @@ player addEventHandler
 				call Fn_Local_Create_Task_Civilian_WaponStash;
 				//call Fn_Local_Create_Task_Civilian_Police;
 				call Fn_Local_Create_Task_Civilian_Liberate_MissionIntro;
+			};
+			case west:
+			{
+				private _pos = getMarkerPos "respawn_west";
+				[] execVM "gear\east.sqf";
+				player setPos [_pos select 0, _pos select 1, ((_pos select 2) + 20)];
+				call Fn_Local_Create_EAST_MissionIntro;
 			};
 		};
    }

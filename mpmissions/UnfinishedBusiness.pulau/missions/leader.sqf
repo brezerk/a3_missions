@@ -28,7 +28,7 @@ if (isServer) then {
 
 	Fn_Task_Create_KillLeader = {
 		private['_trg'];
-		_trg = createTrigger ["EmptyDetector", getPos target_01];
+		_trg = createTrigger ["EmptyDetector", getPos target_Gurun_01];
 		_trg setTriggerArea [0, 0, 0, false];
 		_trg setTriggerActivation ["NONE", "PRESENT", false];
 		_trg setTriggerStatements [

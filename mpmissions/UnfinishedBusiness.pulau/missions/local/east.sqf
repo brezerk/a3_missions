@@ -17,36 +17,29 @@
  ***************************************************************************/
 
 /*
-Spawn start objectives, triggers for informator contact
+Spawn start objectives, triggers for game intro and players allocation
 */
 
 //Player side triggers
 // Client side code
 if (hasInterface) then {
-
-	
-	Fn_Local_Create_KillLeader = {
-		params['_location'];
-		private ["_trg"];
-		_trg = createTrigger ["EmptyDetector", getMarkerPos format["wp_air_field_%1_01", _location]];
-		_trg setTriggerArea [500, 500, 0, false];
-		_trg setTriggerActivation ["ANYPLAYER", "PRESENT", true];
-		_trg setTriggerStatements [
-			"(vehicle player) in thisList",
-			format["[ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_07', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;", _location],
-			""
-		];
-		[
-			west,
-			"t_kill_leader",
-			[localize "TASK_08_DESC",
-			localize "TASK_08_TITLE",
-			localize "TASK_ORIG_01"],
-			getMarkerPos format["wp_air_field_%1_01", _location],
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_kill_leader', "kill"] call BIS_fnc_taskSetType;
+	Fn_Local_Create_EAST_MissionIntro = {
+		if (!alive us_airplane_01) then {
+			[
+				player,
+				"t_us_rescue",
+				[
+				format [localize "TASK_09_DESC", D_LOCATION, D_LOCATION],
+				format [localize "TASK_09_TITLE"],
+				localize "TASK_ORIG_01"],
+				getPos us_liberty_01,
+				"CREATED",
+				0,
+				true
+			] call BIS_fnc_taskCreate;
+			['t_us_rescue', "run"] call BIS_fnc_taskSetType;
+		};
 	};
+	
+
 };
