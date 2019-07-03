@@ -43,6 +43,7 @@ player setVariable ["is_civilian", false, true];
 #include "missions\local\aa.sqf";
 #include "missions\local\leader.sqf";
 #include "missions\local\csat.sqf";
+#include "missions\local\east.sqf";
 #include "missions\local\cargo.sqf";
 //#include "missions\local\police.sqf";
 #include "missions\civilian\liberate.sqf";
@@ -165,10 +166,10 @@ player addEventHandler
 		if (count _sides > 2) then {
 			_sides = _sides - [playerSide];
 		};
+		
 		//_sides = [civilian];
 		private _side = selectRandom _sides;
 		//_group = createGroup [_side, true];
-		
 		
 		//systemChat format ["new side is %1", _side];
 		switch (_side) do
@@ -227,7 +228,7 @@ player addEventHandler
 			{
 				private _pos = getMarkerPos "respawn_west";
 				[] execVM "gear\east.sqf";
-				player setPos [_pos select 0, _pos select 1, ((_pos select 2) + 20)];
+				player setPos [_pos select 0, _pos select 1, 8];
 				call Fn_Local_Create_EAST_MissionIntro;
 			};
 		};

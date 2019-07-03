@@ -47,8 +47,7 @@ if (isServer) then {
 	
 	Fn_Task_KillLeader_Complete = {
 		['t_kill_leader', 'SUCCEEDED'] call BIS_fnc_taskSetState;
-		sleep 5;
-		call Fn_Endgame_Win;
+		call Fn_Endgame_LeaderKilled;
 	};
 
 };

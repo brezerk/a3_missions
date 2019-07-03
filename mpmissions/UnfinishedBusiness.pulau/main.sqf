@@ -83,6 +83,22 @@ if (isServer) then {
 		};
 	};
 	
+	Fn_Endgame_EvacPoint = {
+		if (alive csat_comm_tower_01 || alive csat_aa_01) then {
+			"EndAssaultGroupResqued_EASTWon_GUERWon" call Fn_Endgame;
+		} else {
+			"EndAssaultGroupResqued_EASTDefited_GUERWon" call Fn_Endgame;
+		};
+	};
+	
+	Fn_Endgame_LeaderKilled = {
+		if (alive csat_comm_tower_01 || alive csat_aa_01) then {
+			"EndAssaultGroupResqued_EASTWon_GUERDefited" call Fn_Endgame;
+		} else {
+			"EndAssaultGroupResqued_EASTDefited_GUERDefited" call Fn_Endgame;
+		};
+	};
+	
 	Fn_Spawn_UAZ = {
         params ["_spawnposition"];
         private ["_pos", "_vec"];

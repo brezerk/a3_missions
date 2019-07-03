@@ -41,7 +41,7 @@ OnLoadName		= "Unfinished Business v0.8.11";
 respawn = "BASE";
 // Delay in seconds before playable unit respawns.
 //respawnDelay = "10"; // 900
-respawnDelay = "5";
+respawnDelay = "30";
 // Respawn templates from CfgRespawnTemplates. You can combine any number of them together.
 respawnTemplates[] = {"Counter", "Base", "ace_spectator"};
 // 0 to disable the score table (it can still be opened manually by pressing 'P' key).
@@ -114,24 +114,6 @@ class CfgSounds
 
 class CfgDebriefing
 {  
-	class End1
-	{
-		title = "The Hostages got rescued!";
-		subtitle = "";
-		description = "The Hostage-takers got annihilated!";
-		pictureBackground = "";
-		picture = "b_inf";
-		pictureColor[] = {0.0,0.3,0.6,1};
-	};
-	class End2
-	{
-		title = "The SWAT Team got wiped out!";
-		subtitle = "";
-		description = "No dinner at home tonight for these hostages.";
-		pictureBackground = "";
-		picture = "b_inf";
-		pictureColor[] = {0.0,0.3,0.6,1};
-	};
 	class EndAssaultGroupEvicted
 	{
 		title = $STR_END_01_TITLE;
@@ -139,7 +121,43 @@ class CfgDebriefing
 		description = $STR_END_01_DESC;
 		pictureBackground = "";
 		picture = "flag_CSAT";
-		pictureColor[] = {0.0,0.3,0.6,1};
+		pictureColor[] = {0.0,0.0,0.6,1};
+	};
+	class EndAssaultGroupResqued_EASTWon_GUERWon
+	{
+		title = $STR_END_02_TITLE;
+		subtitle = "";
+		description = $STR_END_02_DESC;
+		pictureBackground = "";
+		picture = "flag_CSAT";
+		pictureColor[] = {0.0,0.0,0.0,1};
+	};
+	class EndAssaultGroupResqued_EASTDefited_GUERWon
+	{
+		title = $STR_END_03_TITLE;
+		subtitle = "";
+		description = $STR_END_03_DESC;
+		pictureBackground = "";
+		picture = "flag_CSAT";
+		pictureColor[] = {0.0,0.0,0.0,1};
+	};
+	class EndAssaultGroupResqued_EASTWon_GUERDefited
+	{
+		title = $STR_END_04_TITLE;
+		subtitle = "";
+		description = $STR_END_04_DESC;
+		pictureBackground = "";
+		picture = "flag_WEST";
+		pictureColor[] = {0.0,0.0,0.0,1};
+	};
+	class EndAssaultGroupResqued_EASTDefited_GUERDefited
+	{
+		title = $STR_END_05_TITLE;
+		subtitle = "";
+		description = $STR_END_05_DESC;
+		pictureBackground = "";
+		picture = "flag_EAST";
+		pictureColor[] = {0.0,0.0,0.0,1};
 	};
 };
 

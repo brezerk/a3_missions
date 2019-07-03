@@ -48,9 +48,9 @@
 				<Russian>Наказ</Russian>
 			</Key>
 			<Key ID="BRIEFING_05_DESC">
-				<Original>Your order: Get to the  &lt;marker name = 'wp_air_field_01'&gt;Gurun airfield&lt;/marker&gt; and report to the officer. You will have to plan you operation to eliminate the rebel leader Moracio Goaz on the base near the &lt;marker name = 'wp_target_01'&gt;Monuet airfield&lt;/marker&gt;.</Original>
-				<English>Your order: Get to the  &lt;marker name = 'wp_air_field_01'&gt;Gurun airfield&lt;/marker&gt; and report to the officer. You will have to plan you operation to eliminate the rebel leader Moracio Goaz on the base near the &lt;marker name = 'wp_target_01'&gt;Monuet airfield&lt;/marker&gt;.</English>
-				<Russian>Ваш наказ: Прибути до &lt;marker name='wp_air_field_01'&gt;аеродрому Gurun&lt;/marker&gt; та доповісти команидру. Ви повинні спланувати ліквідацію ватажка бунтівників Moracio Goaz на базі біля &lt;marker name='wp_target_01'&gt;аеродрому Monuet&lt;/marker&gt;.</Russian>
+				<Original>Your order: Get to the  &lt;marker name = 'wp_air_field_01'&gt;Gurun airfield&lt;/marker&gt; and report to the officer. Ensure the security of the civilian population and facilitate the peaceful settlement of the conflict.</Original>
+				<English>Your order: Get to the  &lt;marker name = 'wp_air_field_01'&gt;Gurun airfield&lt;/marker&gt; and report to the officer. Ensure the security of the civilian population and facilitate the peaceful settlement of the conflict.</English>
+				<Russian>Ваш наказ: Прибути до &lt;marker name='wp_air_field_01'&gt;аеродрому Gurun&lt;/marker&gt; та доповісти команидру. Забезпечити безпеку мирного населення та сприяти мирному врегулюванню конфлікта.</Russian>
 			</Key>
 			<Key ID="BRIEFING_06_TITLE">
 				<Original>Weather</Original>
@@ -68,9 +68,9 @@
 				<Russian>Обстановка</Russian>
 			</Key>
 			<Key ID="BRIEFING_07_DESC">
-				<Original>The situation is moderately complex. No active military actions are currently registered. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</Original>
-				<English>The situation is moderately complex. No active military actions are currently registered. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</English>
-				<Russian>Обстановка складна, помірна. Активних бойових дій на цей час не зареєстровано. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</Russian>
+				<Original>The situation is complex. Different bandit groups conduct a situational battle for cities and villages. At this time, сeasefire mode enforced. Active actions in the last 24 years have not been registered. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</Original>
+				<English>The situation is complex. Different bandit groups conduct a situational battle for cities and villages. At this time, сeasefire mode enforced. Active actions in the last 24 years have not been registered. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</English>
+				<Russian>Обстановка складна: різні угрупповання бандитів проводять ситуативні бої за міста та села. На цей час діє рішення про принення вогню. Активних дї за останні 24 роки не зареєстровано. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</Russian>
 			</Key>
 			<Key ID="TASK_01_TITLE">
 				<Original>Eliminate rebel leader</Original>
@@ -372,25 +372,45 @@
 				<English>US Assault group was eliminated. AOC and Bandit groups are controlling Pulau islands for now.</English>
 				<Russian>Штурмову группу США було ліквідовано. Сили AOC разом з группами бандитів контролюють острови Пулау і по цей день.</Russian>
 			</Key>
-			<Key ID="STR_END_02_TITLE">
-				<Original>US Assault group was eliminated</Original>
-				<English>US Assault group was eliminated</English>
-				<Russian>Штурмову группу США було ліквідовано</Russian>
-			</Key>
-			<Key ID="STR_END_02_DESC">
-				<Original>US Assault group was eliminated. AOC and Bandit groups are controlling Pulau islands for now.</Original>
-				<English>US Assault group was eliminated. AOC and Bandit groups are controlling Pulau islands for now.</English>
-				<Russian>Штурмову группу США було ліквідовано. Сили AOC разом з группами бандитів контролюють острови Пулау.</Russian>
-			</Key>
 			<Key ID="STR_END_03_TITLE">
-				<Original>Assault group was eliminated</Original>
-				<English>Assault group was eliminated</English>
-				<Russian>Штурмову группу ліквідовано</Russian>
+				<Original>US Assault group was resqued</Original>
+				<English>US Assault group was resqued</English>
+				<Russian>Штурмову група США було врятовано</Russian>
 			</Key>
 			<Key ID="STR_END_03_DESC">
-				<Original>US Assault group was eliminated. AOC and Bandit groups are controlling Pulau islands for now.</Original>
-				<English>US Assault group was eliminated. AOC and Bandit groups are controlling Pulau islands for now.</English>
+				<Original>US Assault group was rescued. AOC forces lost its foothold and began withdrawing of the military forces. Bandit groups are still controlling Pulau islands.</Original>
+				<English>US Assault group was rescued. AOC forces lost its foothold and began withdrawing of the military forces. Bandit groups are still controlling Pulau islands.</English>
+				<Russian>Штурмову група США було врятовано. Сили АОС втратили свої позиції і почали виводити військову силу. Бандитські групи все ще контролюють острови Пулау.</Russian>
+			</Key>
+			<Key ID="STR_END_02_TITLE">
+				<Original>US Assault group was resqued</Original>
+				<English>US Assault group was resqued</English>
+				<Russian>Штурмову група США було врятовано</Russian>
+			</Key>
+			<Key ID="STR_END_02_DESC">
+				<Original>US Assault group was rescued. AOC and Bandit groups are controlling Pulau islands for now.</Original>
+				<English>US Assault group was rescued. AOC and Bandit groups are controlling Pulau islands for now.</English>
 				<Russian>Штурмову группу США було ліквідовано. Сили AOC разом з группами бандитів контролюють острови Пулау і по цей день.</Russian>
+			</Key>
+			<Key ID="STR_END_04_TITLE">
+				<Original>Bandit leader was eliminated</Original>
+				<English>Bandit leader was eliminated</English>
+				<Russian>Лідера бандитів було ліквідовано</Russian>
+			</Key>
+			<Key ID="STR_END_04_DESC">
+				<Original>Bandit leader was eliminated. AOC forces are continue invasion into Pulau.</Original>
+				<English>Bandit leader was eliminated. AOC forces are continue invasion into Pulau..</English>
+				<Russian>Лідера бандитів було ліквідовано. Сили AOC продовжують вторгнення в Pulau.</Russian>
+			</Key>
+			<Key ID="STR_END_05_TITLE">
+				<Original>Bandit leader was eliminated</Original>
+				<English>Bandit leader was eliminated</English>
+				<Russian>Лідера бандитів було ліквідовано</Russian>
+			</Key>
+			<Key ID="STR_END_05_DESC">
+				<Original>Bandit leader was eliminated. AOC forces lost its foothold and began withdrawing of the military forces.</Original>
+				<English>Bandit leader was eliminated. AOC forces lost its foothold and began withdrawing of the military forces.</English>
+				<Russian>Лідера бандитів було ліквідовано. Сили АОС втратили свої позиції і почали виводити військову силу.</Russian>
 			</Key>
 		</Container>
 	</Package>
