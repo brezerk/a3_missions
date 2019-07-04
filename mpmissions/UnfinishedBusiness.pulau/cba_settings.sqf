@@ -25,9 +25,9 @@ force ace_advanced_fatigue_enabled = true;
 force ace_advanced_fatigue_enableStaminaBar = true;
 force ace_advanced_fatigue_loadFactor = 0.3;
 force ace_advanced_fatigue_performanceFactor = 0.3;
-force ace_advanced_fatigue_recoveryFactor = 2;
+force ace_advanced_fatigue_recoveryFactor = 2.5;
 force ace_advanced_fatigue_swayFactor = 1;
-force ace_advanced_fatigue_terrainGradientFactor = 1;
+force ace_advanced_fatigue_terrainGradientFactor = 0.5;
 
 // ACE Logistics
 force ace_repair_engineerSetting_repair = 0;
@@ -36,7 +36,7 @@ force ace_repair_engineerSetting_repair = 0;
 force ace_medical_amountOfReviveLives = -1;
 force ace_medical_increaseTrainingInLocations = true;
 ace_medical_menu_useMenu = 1;
-force ace_medical_preventInstaDeath = true;
+force ace_medical_preventInstaDeath = false;
 
 // GRAD Trenches
 grad_trenches_functions_stopBuildingAtFatigueMax = true;
@@ -47,4 +47,4 @@ force ace_finger_enabled = true;
 // ACEX Field Rations
 force acex_field_rations_enabled = true;
 force acex_field_rations_timeWithoutWater = 2;
-force acex_field_rations_timeWithoutFood = 3;
+force acex_field_rations_timeWithoutFood = 4;

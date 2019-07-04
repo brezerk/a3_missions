@@ -258,7 +258,7 @@ if (isServer) then {
 	];
 	
 	trgEvacPoint = createTrigger ["EmptyDetector", getPos us_liberty_01];
-	trgEvacPoint setTriggerArea [150, 150, 0, false];
+	trgEvacPoint setTriggerArea [1600, 1600, 0, false];
 	trgEvacPoint setTriggerActivation ["WEST", "PRESENT", false];
 	trgEvacPoint setTriggerStatements [
 			"({alive _x && side _x == west} count (allPlayers -  entities 'HeadlessClient_F' ) == {alive _x && _x inArea thisTrigger && side _x == west} count (allPlayers - entities 'HeadlessClient_F' )) && ({alive _x && side _x == west} count allPlayers) > 0",

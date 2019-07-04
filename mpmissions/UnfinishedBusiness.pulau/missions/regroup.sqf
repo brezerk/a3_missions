@@ -23,31 +23,6 @@ Spawn start objectives, triggers for informator contact
 if (isServer) then {
 	task_complete_regroup = false;
 	
-	/*
-	"PUB_fnc_kickFromAssaultGroup" addPublicVariableEventHandler {(_this select 1) call EventHander_Player_Killed};
-	
-	EventHander_Player_Killed = {
-		private ["_player", "_old_unit"];
-		_player = _this select 0;
-		_old_unit = _this select 1; //FIXME: Should we use this instead?
-		if (_old_unit in assault_group) then {
-			assault_group = assault_group - [_player];
-			_old_unit setVariable ["is_assault_group", false, false];
-		};
-	};
-	*/
-	
-	addMissionEventHandler ["EntityKilled", {
-		params ["_killed"];
-		if (isPlayer _x) then {
-			["PLayer Killed"] remoteExec ["systemChat", -2]; 
-			if (_killed in assault_group) then {
-				assault_group = assault_group - [_killed];
-				_killed setVariable ["is_assault_group", false, false];
-			};
-		};
-	}];
-	
 	addMissionEventHandler ["HandleDisconnect", {
 		params ["_unit", "_id", "_uid", "_name"];
 		if (_unit in assault_group) then {
@@ -79,7 +54,7 @@ if (isServer) then {
 				};
 			};
 		} forEach assault_group;
-		if ((_count != 0) && (_count == count assault_group)) exitWith {
+		if ((_count != 0) && (_count >= count assault_group)) exitWith {
 			task_complete_regroup = true;
 		};
 	};
