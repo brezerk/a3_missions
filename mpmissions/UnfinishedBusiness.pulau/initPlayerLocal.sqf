@@ -201,7 +201,7 @@ player addEventHandler
    "Respawn",
    {
 		//systemChat format ["spawn player side is %1", playerSide];
-		switch (side player) do
+		switch (playerSide) do
 		{
 			case east:
 			{

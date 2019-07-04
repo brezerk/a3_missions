@@ -78,8 +78,9 @@ if (isServer) then {
 		_obj addMagazineCargoGlobal ["CUP_30Rnd_545x39_AK74_plum_M", 15];
 		_obj addMagazineCargoGlobal ["CUP_8Rnd_B_Beneli_74Slug", 25];
 		_obj addMagazineCargoGlobal ["CUP_8Rnd_B_Beneli_74Pellets", 25];
-		_obj addItemCargoGlobal ["ACE_EarPlugs", 5];
+		_obj addItemCargoGlobal ["ACE_EarPlugs", 10];
 		_obj addItemCargoGlobal ["ItemCompass", 4];
+		_obj addItemCargoGlobal ["ACE_EntrenchingTool", 4];
 		_obj addItemCargoGlobal ["ACE_fieldDressing", 20];
 		_obj addItemCargoGlobal ["ACE_morphine", 10];
 		_obj addItemCargoGlobal ["ACE_epinephrine", 6];
@@ -211,8 +212,9 @@ if (isServer) then {
 			_obj addMagazineCargoGlobal ["CUP_20Rnd_762x51_DMR", 5];
 			_obj addMagazineCargoGlobal ["CUP_OG7_M", 5];
 			_obj addMagazineCargoGlobal ["CUP_PG7V_M", 5];
-			_obj addItemCargoGlobal ["ACE_EarPlugs", 5];
+			_obj addItemCargoGlobal ["ACE_EarPlugs", 10];
 			_obj addItemCargoGlobal ["ItemCompass", 4];
+			_obj addItemCargoGlobal ["ACE_EntrenchingTool", 4];
 			_obj addItemCargoGlobal ["ACE_fieldDressing", 20];
 			_obj addItemCargoGlobal ["ACE_morphine", 10];
 			_obj addItemCargoGlobal ["ACE_epinephrine", 6];

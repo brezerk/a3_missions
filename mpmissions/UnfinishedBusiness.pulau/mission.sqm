@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=40;
+		nextID=42;
 	};
 	class Camera
 	{
-		pos[]={8926.9785,427.18625,8720.2119};
-		dir[]={-0.21300885,-0.95844734,0.19001849};
-		up[]={-0.71518987,0.28538391,0.63799691};
-		aside[]={0.66571653,-2.8498471e-007,0.74626189};
+		pos[]={8978.4307,769.10175,8700.3223};
+		dir[]={0.0035275142,-0.99994999,0.0093569355};
+		up[]={0.35274154,0.00999978,0.93566734};
+		aside[]={0.93571413,0,-0.35275918};
 	};
 };
 binarizationWanted=0;
@@ -8102,7 +8102,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[""CUP_arifle_M16A4_Base"",""CUP_launch_M72A6"",""FirstAidKit"",""Medikit""],[2,1,10,1]],[[""CUP_30Rnd_556x45_Stanag"",""CUP_M72A6_M"",""SmokeShell"",""SmokeShellOrange"",""Chemlight_red""],[20,2,2,2,2]],[[""ToolKit""],[1]],[[""CUP_B_USMC_MOLLE""],[4]]],false]";
+							value="[[[[""CUP_arifle_M16A4_Base"",""CUP_launch_M72A6"",""FirstAidKit"",""Medikit""],[2,1,10,1]],[[""CUP_30Rnd_556x45_Stanag"",""CUP_M72A6_M"",""SmokeShell"",""SmokeShellOrange"",""Chemlight_red""],[20,2,2,2,2]],[[""ToolKit"",""ACE_bodyBag"",""ACE_EntrenchingTool"",""ACE_DefusalKit"",""ACE_EarPlugs""],[1,10,4,4,10]],[[""CUP_B_USMC_MOLLE""],[4]]],false]";
 						};
 					};
 				};
@@ -8211,7 +8211,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={10179.536,9.9018116,9704.416};
+				position[]={10179.536,9.9016228,9704.416};
 				angles[]={0,2.3561945,0};
 			};
 			side="Empty";
@@ -8223,7 +8223,7 @@ class Mission
 			};
 			id=2249;
 			type="CUP_B_MH6J_USA";
-			atlOffset=0.019573212;
+			atlOffset=0.019384384;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8241,7 +8241,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[""CUP_arifle_M4A1"",""FirstAidKit""],[1,4]],[[""CUP_30Rnd_556x45_Stanag"",""SmokeShell"",""SmokeShellOrange"",""Chemlight_red""],[10,2,2,2]],[[],[]],[[],[]]],false]";
+							value="[[[[""CUP_arifle_M4A1"",""FirstAidKit"",""ACE_VMH3""],[1,4,2]],[[""CUP_30Rnd_556x45_Stanag"",""SmokeShell"",""SmokeShellOrange"",""Chemlight_red""],[10,2,2,2]],[[""ACE_bodyBag"",""ACE_EntrenchingTool"",""ACE_DefusalKit"",""ACE_EarPlugs""],[10,5,5,15]],[[],[]]],false]";
 						};
 					};
 				};
@@ -8260,7 +8260,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={10195.011,8.8714018,9688.084};
+						position[]={10194.951,8.8708735,9688.1074};
 						angles[]={0,3.926991,0};
 					};
 					side="West";
@@ -8271,14 +8271,14 @@ class Mission
 					};
 					id=2254;
 					type="CUP_B_USMC_Pilot";
-					atlOffset=0.079908371;
+					atlOffset=0.079395294;
 				};
 				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={10195.011,8.8714018,9688.084};
+						position[]={10194.951,8.8708735,9688.1074};
 						angles[]={0,3.926991,0};
 					};
 					side="West";
@@ -8288,7 +8288,7 @@ class Mission
 					};
 					id=2255;
 					type="CUP_B_USMC_Pilot";
-					atlOffset=0.079908371;
+					atlOffset=0.079395294;
 				};
 			};
 			class Attributes
@@ -8327,14 +8327,14 @@ class Mission
 				};
 			};
 			id=2252;
-			atlOffset=0.079023361;
+			atlOffset=0.079395294;
 		};
 		class Item287
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={10194.987,12.456545,9688.1963};
+				position[]={10194.987,12.456917,9688.1963};
 				angles[]={0,3.926991,0};
 			};
 			side="West";
@@ -8345,7 +8345,7 @@ class Mission
 			};
 			id=2253;
 			type="CUP_B_MV22_USMC";
-			atlOffset=0.079023361;
+			atlOffset=0.079395294;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8363,7 +8363,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+							value="[[[[],[]],[[],[]],[[""ACE_EarPlugs""],[15]],[[],[]]],false]";
 						};
 					};
 				};
@@ -13454,7 +13454,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[""CUP_arifle_M16A4_Base"",""CUP_launch_M72A6"",""FirstAidKit"",""Medikit""],[2,1,10,1]],[[""CUP_30Rnd_556x45_Stanag"",""CUP_M72A6_M"",""SmokeShell"",""SmokeShellOrange"",""Chemlight_red""],[20,2,2,2,2]],[[""ToolKit""],[1]],[[""CUP_B_USMC_MOLLE""],[4]]],false]";
+							value="[[[[""CUP_arifle_M16A4_Base"",""CUP_launch_M72A6"",""FirstAidKit"",""Medikit"",""ACE_VMH3""],[2,1,10,1,2]],[[""CUP_30Rnd_556x45_Stanag"",""CUP_M72A6_M"",""SmokeShell"",""SmokeShellOrange"",""Chemlight_red""],[20,2,2,2,2]],[[""ToolKit"",""ACE_EntrenchingTool"",""ACE_DefusalKit"",""ACE_EarPlugs"",""ACE_bodyBag""],[1,5,4,10,10]],[[""CUP_B_USMC_MOLLE""],[4]]],false]";
 						};
 					};
 				};

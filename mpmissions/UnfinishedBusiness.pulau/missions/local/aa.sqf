@@ -33,31 +33,33 @@ if (hasInterface) then {
 		"[ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_06', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;",
 		""
 	];
-
+	
 	Fn_Local_Create_MissionAA = {
-		[
-			west,
-			"t_destroy_aa",
-			[localize "TASK_06_DESC",
-			localize "TASK_06_TITLE",
-			localize "TASK_ORIG_01"],
-			getMarkerPos "wp_aa",
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_destroy_aa', "destroy"] call BIS_fnc_taskSetType;
-		[
-			west,
-			"t_destroy_comtower",
-			[localize "TASK_07_DESC",
-			localize "TASK_07_TITLE",
-			localize "TASK_ORIG_01"],
-			getMarkerPos "wp_aa",
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_destroy_comtower', "destroy"] call BIS_fnc_taskSetType;
+		if (playerSide == west) then {
+			[
+				player,
+				"t_destroy_aa",
+				[localize "TASK_06_DESC",
+				localize "TASK_06_TITLE",
+				localize "TASK_ORIG_01"],
+				getMarkerPos "wp_aa",
+				"CREATED",
+				0,
+				true
+			] call BIS_fnc_taskCreate;
+			['t_destroy_aa', "destroy"] call BIS_fnc_taskSetType;
+			[
+				player,
+				"t_destroy_comtower",
+				[localize "TASK_07_DESC",
+				localize "TASK_07_TITLE",
+				localize "TASK_ORIG_01"],
+				getMarkerPos "wp_aa",
+				"CREATED",
+				0,
+				true
+			] call BIS_fnc_taskCreate;
+			['t_destroy_comtower', "destroy"] call BIS_fnc_taskSetType;
+		};
 	};
 };

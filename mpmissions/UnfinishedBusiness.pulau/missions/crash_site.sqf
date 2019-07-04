@@ -129,7 +129,8 @@ if (isServer) then {
 
 		_obj addItemCargoGlobal ["CUP_optic_LeupoldMk4", 2];
 		_obj addItemCargoGlobal ["CUP_bipod_Harris_1A2_L", 2];
-		_obj addItemCargoGlobal ["ACE_EarPlugs", 5];
+		_obj addItemCargoGlobal ["ACE_EntrenchingTool", 4];
+		_obj addItemCargoGlobal ["ACE_EarPlugs", 10];
 		_obj addItemCargoGlobal ["ItemCompass", 4];
 		_obj addItemCargoGlobal ["ACE_fieldDressing", 20];
 		_obj addItemCargoGlobal ["ACE_morphine", 10];
@@ -200,7 +201,7 @@ if (isServer) then {
 	//let them fall a bit
 	sleep 2;
 		
-	private _ret = [_crashSitePos, 3000, 2] call BrezBlock_fnc_GetAllCitiesInRange;
+	private _ret = [_crashSitePos, 3000, 3] call BrezBlock_fnc_GetAllCitiesInRange;
 	//Get all POI in the range of 3000m
 	avaliable_locations = _ret select 0;
 	avaliable_pois = _ret select 1;

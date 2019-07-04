@@ -26,7 +26,7 @@ if (hasInterface) then {
 	Fn_Local_Create_SCAT_MissionIntro = {
 		if (canFire csat_aa_01) then {
 			[
-				east,
+				player,
 				"t_scat_defend_aa",
 				[localize "TASK_AOC_01_DESC",
 				localize "TASK_AOC_01_TITLE",
@@ -40,7 +40,7 @@ if (hasInterface) then {
 		};
 		if (alive csat_comm_tower_01) then {
 			[
-				east,
+				player,
 				"t_scat_defend_comm_tower",
 				[localize "TASK_AOC_02_DESC",
 				localize "TASK_AOC_02_TITLE",
@@ -53,7 +53,7 @@ if (hasInterface) then {
 			['t_scat_defend_comm_tower', "defend"] call BIS_fnc_taskSetType;
 		};
 		[
-			east,
+			player,
 			"t_scat_eliminate_surv",
 			[localize "TASK_AOC_03_DESC",
 			localize "TASK_AOC_03_TITLE",

@@ -30,7 +30,7 @@ if (hasInterface) then {
 	Fn_Local_Create_MissionIntro = {
 		params['_location'];
 		[
-			west,
+			player,
 			"t_arrive_to_island",
 			[
 			format [localize "TASK_02_DESC", _location, _location],

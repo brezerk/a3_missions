@@ -20,6 +20,6 @@ private ["_group"];
 //Remove unit if it was in the assault group
 call Fn_Local_FailTasks;
 
-PUB_fnc_kickFromAssaultGroup = [player, _this select 0];
-publicVariableServer "PUB_fnc_kickFromAssaultGroup";
+//PUB_fnc_kickFromAssaultGroup = [player, _this select 0];
+//publicVariableServer "PUB_fnc_kickFromAssaultGroup";
 

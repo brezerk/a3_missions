@@ -23,20 +23,40 @@ Spawn start objectives, triggers for informator contact
 if (isServer) then {
 	task_complete_regroup = false;
 	
+	/*
 	"PUB_fnc_kickFromAssaultGroup" addPublicVariableEventHandler {(_this select 1) call EventHander_Player_Killed};
 	
-	/*
-	Event Handler for loaded or unloaded box
-	*/
 	EventHander_Player_Killed = {
 		private ["_player", "_old_unit"];
 		_player = _this select 0;
 		_old_unit = _this select 1; //FIXME: Should we use this instead?
-		if (_player in assault_group) then {
+		if (_old_unit in assault_group) then {
 			assault_group = assault_group - [_player];
 			_old_unit setVariable ["is_assault_group", false, false];
 		};
 	};
+	*/
+	
+	addMissionEventHandler ["EntityKilled", {
+		params ["_killed"];
+		if (isPlayer _x) then {
+			["PLayer Killed"] remoteExec ["systemChat", -2]; 
+			if (_killed in assault_group) then {
+				assault_group = assault_group - [_killed];
+				_killed setVariable ["is_assault_group", false, false];
+			};
+		};
+	}];
+	
+	addMissionEventHandler ["HandleDisconnect", {
+		params ["_unit", "_id", "_uid", "_name"];
+		if (_unit in assault_group) then {
+			assault_group = assault_group - [_unit];
+			_unit setVariable ["is_assault_group", false, false];
+		};
+		//do not transfer to AI
+		false;
+	}];
 	
 	while { !task_complete_regroup } do {
 		private ["_count"];
@@ -45,13 +65,18 @@ if (isServer) then {
 		//Check if assault group members are in the same area
 		{	
 			//Move trigger if member is still alive
-			if (alive _x) exitWith {
-				_count = 1;
-				{
-					if (_x getVariable ["is_assault_group", false]) then {
-						_count = _count + 1;
-					};
-				} forEach nearestObjects [_x, ["SoldierWB"], 15];
+			if (!alive _x) then {
+				assault_group = assault_group - [_x];
+				_x setVariable ["is_assault_group", false, false];
+			} else {
+				if (alive _x) exitWith {
+					_count = 1;
+					{
+						if (_x getVariable ["is_assault_group", false]) then {
+							_count = _count + 1;
+						};
+					} forEach nearestObjects [_x, ["SoldierWB"], 25];
+				};
 			};
 		} forEach assault_group;
 		if ((_count != 0) && (_count == count assault_group)) exitWith {
@@ -59,5 +84,5 @@ if (isServer) then {
 		};
 	};
 	
-	 ['t_regroup', 'SUCCEEDED'] call BIS_fnc_taskSetState;
+	['t_regroup', 'SUCCEEDED'] call BIS_fnc_taskSetState;
 };

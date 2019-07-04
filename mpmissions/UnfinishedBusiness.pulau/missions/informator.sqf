@@ -48,22 +48,24 @@ if (isServer) then {
 	*/
 	Fn_Task_Create_Informator = {
 		{
-			private _builing = nearestBuilding (_x select 1);
-			private _pos = selectRandom (_builing buildingPos -1);
-			private _class = selectRandom [
-					'C_man_polo_1_F',
-					'C_man_polo_2_F',
-					'C_man_polo_3_F',
-					'C_man_polo_4_F',
-					'C_man_polo_5_F',
-					'C_man_polo_6_F',
-					'C_man_1_1_F',
-					'C_man_1_2_F',
-					'C_man_1_3_F'
-				];
-			private _group = createGroup [civilian, true];
-			private _unit = _group createUnit [_class, _pos, [], 0, "FORM"];
-			[_unit] call Fn_Task_Create_Informator_Attach_Action;
+			for "_i" from 1 to 5 do {
+				private _builing = nearestBuilding (_x select 1);
+				private _pos = selectRandom (_builing buildingPos -1);
+				private _class = selectRandom [
+						'C_man_polo_1_F',
+						'C_man_polo_2_F',
+						'C_man_polo_3_F',
+						'C_man_polo_4_F',
+						'C_man_polo_5_F',
+						'C_man_polo_6_F',
+						'C_man_1_1_F',
+						'C_man_1_2_F',
+						'C_man_1_3_F'
+					];
+				private _group = createGroup [civilian, true];
+				private _unit = _group createUnit [_class, _pos, [], 0, "FORM"];
+				[_unit] call Fn_Task_Create_Informator_Attach_Action;
+			};
 		} forEach avaliable_pois;
 	};
 	

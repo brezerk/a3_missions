@@ -23,8 +23,6 @@ Spawn start objectives, triggers for informator contact
 //Player side triggers
 // Client side code
 if (hasInterface) then {
-
-	
 	Fn_Local_Create_KillLeader = {
 		params['_location'];
 		private ["_trg"];
@@ -36,17 +34,19 @@ if (hasInterface) then {
 			format["[ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_07', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;", _location],
 			""
 		];
-		[
-			west,
-			"t_kill_leader",
-			[localize "TASK_08_DESC",
-			localize "TASK_08_TITLE",
-			localize "TASK_ORIG_01"],
-			getMarkerPos format["wp_air_field_%1_01", _location],
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_kill_leader', "kill"] call BIS_fnc_taskSetType;
+		if (playerSide == west) then {
+			[
+				player,
+				"t_kill_leader",
+				[localize "TASK_08_DESC",
+				localize "TASK_08_TITLE",
+				localize "TASK_ORIG_01"],
+				getMarkerPos format["wp_air_field_%1_01", _location],
+				"CREATED",
+				0,
+				true
+			] call BIS_fnc_taskCreate;
+			['t_kill_leader', "kill"] call BIS_fnc_taskSetType;
+		};
 	};
 };

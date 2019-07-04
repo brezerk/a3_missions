@@ -20,6 +20,7 @@
 Spawn start objectives, triggers for informator contact
 */
 
+/*
 _id = _this select 0; 
 _caller = _this select 1; 
 _uid  = _this select 2; 
@@ -33,3 +34,4 @@ if (_caller != "__SERVER__") then {
 		};
 	} forEach (playableUnits + switchableUnits);
 };
+*/

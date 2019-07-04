@@ -27,7 +27,7 @@ if (hasInterface) then {
 		{
 			private _task = format["t_libirate_%1", _forEachIndex];
 			[
-				civilian,
+				player,
 				_task,
 				[format[localize "TASK_CIV_03_DESC", _forEachIndex, _x select 0],
 				format[localize "TASK_CIV_03_TITLE", _x select 0],
