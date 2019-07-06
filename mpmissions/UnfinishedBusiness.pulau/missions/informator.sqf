@@ -82,7 +82,7 @@ if (isServer) then {
 		_obj disableAi "MOVE";
 		_action_id = [
 			_obj,
-			{ _this remoteExec ["Fn_Task_Create_Informator_Complete", 2]; },
+			{ call "Fn_Task_Create_Informator_Complete"; },
 			"simpleTasks\types\talk",
 			"ACTION_02",
 			"&& alive _target && (_this getVariable ['is_assault_group', false])"
