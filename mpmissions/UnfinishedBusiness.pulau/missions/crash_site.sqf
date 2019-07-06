@@ -221,12 +221,7 @@ if (isServer) then {
 	//Send vehicles on patrol
 	call Fn_Patrols_Create_Random_Waypoints;
 	
-	sleep 60;
-	[_crashSitePos, rebel_jeep_04, rebel_grp_01] call Fn_Patrols_Create_Transport_Sentry;
-	[_crashSitePos, rebel_jeep_03] call Fn_Patrols_Create_Sentry;
-	call Fn_Task_Create_CSAT_Triggers;
-	
-	trgRegroupIsDone = createTrigger ["EmptyDetector", getMarkerPos format["wp_air_field_%1_01", D_LOCATION]];
+	trgRegroupIsDone = createTrigger ["EmptyDetector", getMarkerPos (format["wp_air_field_%1_01", D_LOCATION])];
 	trgRegroupIsDone setTriggerArea [0, 0, 0, false];
 	trgRegroupIsDone setTriggerActivation ["NONE", "PRESENT", false];
 	trgRegroupIsDone setTriggerStatements [
@@ -244,5 +239,11 @@ if (isServer) then {
 			""
 	];
 	
+	sleep 60;
+	[_crashSitePos, rebel_jeep_04, rebel_grp_01] call Fn_Patrols_Create_Transport_Sentry;
+	[_crashSitePos, rebel_jeep_03] call Fn_Patrols_Create_Sentry;
+	
+	call Fn_Task_Create_CSAT_Triggers;
+
 	execVM "missions\ping.sqf";
 };
