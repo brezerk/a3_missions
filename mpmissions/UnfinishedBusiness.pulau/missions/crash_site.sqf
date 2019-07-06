@@ -63,10 +63,6 @@ if (isServer) then {
 			_boom setVelocity [0,0,-50];
 		};
 		
-		private _mark = createMarker ["wp_crash_site", _markerPos];
-		_mark setMarkerType "hd_destroy";
-		_mark setMarkerAlpha 0;
-		
 		//spawn creater and wreck
 		private _crater = "CraterLong" createVehicle (_markerPos); 
 		private _obj = "Land_UWreck_MV22_F" createVehicle (_markerPos); 
@@ -157,15 +153,9 @@ if (isServer) then {
 		_obj;
 	};
 	
-	private _markers = [];
-	{
-		if (_x find format["wp_jet_crash_%1", D_LOCATION] >= 0) then {
-			_markers pushBack _x;
-		};
-	} forEach allMapMarkers;
 	
-	//spawn wreck
-	private _crashSitePos = getMarkerPos (selectRandom _markers);
+	_crashSitePos = getMarkerPos "wp_crash_site";
+	
 	[_crashSitePos] call Fn_Task_Create_C130J_CrashSite;
 	[_crashSitePos] call Fn_Task_Create_C130J_SpawnRandomCargo;	
 	//heli patrol
@@ -201,18 +191,6 @@ if (isServer) then {
 	//let them fall a bit
 	sleep 2;
 		
-	private _ret = [_crashSitePos, 3000, 3] call BrezBlock_fnc_GetAllCitiesInRange;
-	//Get all POI in the range of 3000m
-	avaliable_locations = _ret select 0;
-	avaliable_pois = _ret select 1;
-	
-	publicVariable "avaliable_pois";
-	
-	[_crashSitePos, 900] execVM "addons\brezblock\utils\controller.sqf";
-	execVM "missions\create_locations.sqf";
-	[getMarkerPos "wp_aa", 600] execVM "addons\brezblock\utils\controller.sqf";
-	[getMarkerPos "wp_air_field_Gurun_01", 600] execVM "addons\brezblock\utils\controller.sqf";
-		
 	//create tasks assigned to assault_group
 	{
 		_x setVariable ["ACE_isUnconscious", false, true];
@@ -241,7 +219,7 @@ if (isServer) then {
 	['t_us_rescue', "run"] call BIS_fnc_taskSetType;
 		
 	//Send vehicles on patrol
-	[vehicle_patrol_group, avaliable_locations] call Fn_Patrols_Create_Random_Waypoints;
+	call Fn_Patrols_Create_Random_Waypoints;
 	
 	sleep 60;
 	[_crashSitePos, rebel_jeep_04, rebel_grp_01] call Fn_Patrols_Create_Transport_Sentry;

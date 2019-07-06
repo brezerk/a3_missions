@@ -136,6 +136,31 @@ if (isServer) then {
 	
 	call Fn_Create_MissionIntro;
 	
+	private _markers = [];
+	{
+		if (_x find format["wp_jet_crash_%1", D_LOCATION] >= 0) then {
+			_markers pushBack _x;
+		};
+	} forEach allMapMarkers;
+	
+	//Create crash site marker
+	private _crashSitePos = getMarkerPos (selectRandom _markers);
+	private _mark = createMarker ["wp_crash_site", _crashSitePos];
+	_mark setMarkerType "hd_destroy";
+	_mark setMarkerAlpha 0;
+	
+	private _ret = [_crashSitePos, 3000, 3] call BrezBlock_fnc_GetAllCitiesInRange;
+	//Get all POI in the range of 3000m
+	avaliable_locations = _ret select 0;
+	avaliable_pois = _ret select 1;
+	
+	publicVariable "avaliable_pois";
+	
+	[_crashSitePos, 900] execVM "addons\brezblock\utils\controller.sqf";
+	execVM "missions\create_locations.sqf";
+	[getMarkerPos "wp_aa", 600] execVM "addons\brezblock\utils\controller.sqf";
+	[getMarkerPos "wp_air_field_Gurun_01", 600] execVM "addons\brezblock\utils\controller.sqf";
+	
 	[Fn_Spawn_UAZ, 'wp_spawn_uaz_01', 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
 	[Fn_Spawn_UAZ, 'wp_spawn_uaz_02', 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
 	

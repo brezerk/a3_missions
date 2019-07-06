@@ -29,7 +29,7 @@ if (isServer) then {
 			//cleanup disconnected? members
 			if (!alive _x) then {
 				assault_group = assault_group - [_x];
-				_x setVariable ["is_assault_group", false, false];
+				_x setVariable ["is_assault_group", false, true];
 			};
 		} forEach assault_group;
 		// Send ping

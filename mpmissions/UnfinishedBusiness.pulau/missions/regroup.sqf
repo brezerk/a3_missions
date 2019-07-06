@@ -27,7 +27,7 @@ if (isServer) then {
 		params ["_unit", "_id", "_uid", "_name"];
 		if (_unit in assault_group) then {
 			assault_group = assault_group - [_unit];
-			_unit setVariable ["is_assault_group", false, false];
+			_unit setVariable ["is_assault_group", false, true];
 		};
 		//do not transfer to AI
 		false;
@@ -42,7 +42,7 @@ if (isServer) then {
 			//Move trigger if member is still alive
 			if (!alive _x) then {
 				assault_group = assault_group - [_x];
-				_x setVariable ["is_assault_group", false, false];
+				_x setVariable ["is_assault_group", false, true];
 			} else {
 				if (alive _x) exitWith {
 					_count = 1;

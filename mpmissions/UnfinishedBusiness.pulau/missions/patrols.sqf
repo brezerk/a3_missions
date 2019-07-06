@@ -19,6 +19,63 @@
 
 if (isServer) then { 
 
+	Fn_Task_Spawn_Civilean_Cars = {
+		params['_poi'];
+		//Create civ vehicle patrols
+		private _vehicles = [
+			'C_Van_01_box_F',
+			'C_Van_01_transport_F',
+			'C_SUV_01_F',
+			'C_Offroad_01_F',
+			'C_Truck_02_fuel_F',
+			'C_Truck_02_box_F',
+			'C_Truck_02_transport_F',
+			'C_Truck_02_covered_F',
+			'CUP_C_Skoda_White_CIV',
+			'CUP_C_Skoda_Blue_CIV',
+			'CUP_C_Dutsan_Tubeframe',
+			'CUP_C_Dutsan_Covered',
+			'CUP_C_Tractor_CIV',
+			'CUP_C_Volha_Blue_TKCIV',
+			'CUP_C_V3S_Open_TKC',
+			'CUP_C_V3S_Covered_TKC'
+		];
+		
+		{ 
+			private _center = _x select 1;
+			private _roads = _center nearRoads 150;
+			
+			private _good_roads = [];
+			
+			{
+				private _pos = position _x;
+				if ((count (nearestObjects [_pos, ["Car", "Truck"], 5]) == 0) and (count (nearestTerrainObjects [_pos, ["TREE", "BUILDING", "HOUSE", "FENCE", "WALL", "ROCK", "ROCKS"], 5, false, true]) == 0)) then {
+					_good_roads append [_x];
+				};
+				if (count _good_roads >= 10) exitWith {};
+			} forEach _roads;
+			
+			for "_i" from 0 to ((random 3) + 2) do {
+				private _class = selectRandom _vehicles;
+				private _road = selectRandom _good_roads;
+				_good_roads = _good_roads - [_road];
+				private _pos = position _road;
+				private _dir = getDir _road;
+				private _connected = roadsConnectedto (_road);
+				
+				if (count _connected > 0) then {
+					private _connected_pos = getPos (_connected select 0);
+					_dir = [_pos, _connected_pos] call BIS_fnc_DirTo;	
+				};
+				
+				_pos = [_pos, 3, _dir + 90] call BIS_Fnc_relPos;
+				
+				private _vehicle = createVehicle [_class, _pos];
+				_vehicle setDir _dir;
+			};
+		} forEach _poi;
+	};
+
 	Fn_Patrols_CreateCivilean_Traffic = {
 		params['_poi'];
 		//Create civ vehicle patrols
@@ -42,24 +99,38 @@ if (isServer) then {
 		];
 		
 		{ 
-			for "_i" from 0 to (random 2) do {
-				sleep 1;
-				private _class = selectRandom _vehicles;
-				private _pos = [_x select 1, 0, 90, 15, 0, 0, 0] call BIS_fnc_findSafePos;
-				private _crew = [_pos, civilian, [_class]] call BIS_fnc_spawnGroup;
-				if (isNull _crew) then {
-					[format ["ERROR: %1", _class]] remoteExec ["systemChat"];
-				} else {
-					private _units = units _crew;
-					{
-						private _vehicle = assignedVehicle _x;
-						if (!isNull _vehicle) exitWith {
-							vehicle_patrol_group append [_vehicle];
-							vehicle_refuel_group append [_vehicle];
-							vehicle_confiscate_group append [_vehicle];
-						};
-					} forEach _units;
+			private _center = _x select 1;
+			private _roads = _center nearRoads 150;
+			
+			private _good_roads = [];
+			
+			{
+				private _pos = position _x;
+				if ((count (nearestObjects [_pos, ["Car", "Truck"], 5]) == 0) and (count (nearestTerrainObjects [_pos, ["TREE", "BUILDING", "HOUSE", "FENCE", "WALL", "ROCK", "ROCKS"], 5, false, true]) == 0)) then {
+					_good_roads append [_x];
 				};
+				if (count _good_roads >= 10) exitWith {};
+			} forEach _roads;
+			
+			for "_i" from 0 to (random 3) do {
+				private _class = selectRandom _vehicles;
+				private _road = selectRandom _good_roads;
+				_good_roads = _good_roads - [_road];
+				private _pos = position _road;
+				private _connected = roadsConnectedto (_road);
+				
+				private _vehicle = createVehicle [_class, _pos];
+				
+				if (count _connected > 0) then {
+					private _connected_pos = getPos (_connected select 0);
+					private _dir = [_pos, _connected_pos] call BIS_fnc_DirTo;
+							
+					_vehicle setDir _dir;
+				};
+				 
+				private _crew = createVehicleCrew (_vehicle);
+				vehicle_patrol_group append [_vehicle];
+				vehicle_refuel_group append [_vehicle];
 			};
 		} forEach _poi;
 	};
@@ -104,29 +175,48 @@ if (isServer) then {
 			};
 		};
 		{ 
-			for "_i" from 0 to (random 2) do {
+			private _center = _x select 1;
+			private _roads = _center nearRoads 150;
+			
+			private _good_roads = [];
+			
+			{
+				private _pos = position _x;
+				if ((count (nearestObjects [_pos, ["Car", "Truck"], 5]) == 0) and (count (nearestTerrainObjects [_pos, ["TREE", "BUILDING", "HOUSE", "FENCE", "WALL", "ROCK", "ROCKS"], 5, false, true]) == 0)) then {
+					_good_roads append [_x];
+				};
+				if (count _good_roads >= 10) exitWith {};
+			} forEach _roads;
+			
+			for "_i" from 0 to ((random 2) + 1) do {
 				private _class = selectRandom _vehicles;
-				private _pos = [_x select 1, 0, 90, 15, 0, 0, 0] call BIS_fnc_findSafePos;
-				//[format ["W: %1 %2", _pos, _class]] remoteExec ["systemChat"];
-				private _crew = [_pos, independent, [_class]] call BIS_fnc_spawnGroup;
-				_units = units _crew;
-				{
-					_vehicle = assignedVehicle _x;
-					if (!isNull _vehicle) exitWith {
-						vehicle_patrol_group append [_vehicle];
-						vehicle_refuel_group append [_vehicle];
-						vehicle_confiscate_group append [_vehicle];
-					};
-					[format ["ERROR: %1", _class]] remoteExec ["systemChat"];
-				} forEach _units;
+				private _road = selectRandom _good_roads;
+				_good_roads = _good_roads - [_road];
+				private _pos = position _road;
+				private _connected = roadsConnectedto (_road);
+				
+				private _vehicle = createVehicle [_class, _pos];
+				_vehicle limitSpeed 35; 
+				
+				if (count _connected > 0) then {
+					private _connected_pos = getPos (_connected select 0);
+					private _dir = [_pos, _connected_pos] call BIS_fnc_DirTo;
+							
+					_vehicle setDir _dir;
+				};
+				 
+				private _crew = createVehicleCrew (_vehicle);
+				vehicle_patrol_group append [_vehicle];
+				vehicle_refuel_group append [_vehicle];
 			};
 		} forEach _poi;
 	};
 		
 	// Create random waypoints for enemy and civilian vehicles
 	Fn_Patrols_Create_Random_Waypoints = {
-		params ["_vehicles", "_lcs_array"];
-		private ["_wp", "_pos"];
+		private _ret = [(getMarkerPos "wp_crash_site"), 4000, 6] call BrezBlock_fnc_GetAllCitiesInRange;
+		private _lcs_array = _ret select 1;
+	
 		private _wp_array = [];
 		{
 			_wp_array append [_x select 1];
@@ -135,13 +225,13 @@ if (isServer) then {
 		{
 			_wp_avalible = _wp_array;
 			//include airfield
-			_wp_avalible append [getMarkerPos format ["wp_air_field_%s_01", D_LOCATION]];
+			//_wp_avalible append [getMarkerPos (format ["wp_air_field_%s_01", D_LOCATION])];
 			private _group = group driver _x;
 			for "_i" from 0 to (round (count _wp_array / 2)) do {
-				_pos = selectRandom _wp_avalible;
+				private _pos = selectRandom _wp_avalible;
 				if (isNil "_pos") exitWith {};
-				_wp_avalible = _wp_avalible - [_pos];
-				_wp = _group addWaypoint [_pos, 0];
+				private _wp_avalible = _wp_avalible - [_pos];
+				private _wp = _group addWaypoint [_pos, 0];
 				_wp setWaypointCombatMode "YELLOW";
 				_wp setWaypointBehaviour "SAFE";
 				_wp setWaypointSpeed "LIMITED";
@@ -149,14 +239,14 @@ if (isServer) then {
 				_wp setWaypointType "MOVE";
 			};
 			
-			_pos = selectRandom _wp_array;
-			_wp = _group addWaypoint [_pos, 0];
+			private _pos = selectRandom _wp_array;
+			private _wp = _group addWaypoint [_pos, 0];
 			_wp setWaypointCombatMode "YELLOW";
-			_wp setWaypointBehaviour "SAFE";
-			_wp setWaypointSpeed "LIMITED";
+			_wp setWaypointBehaviour "UNCHANGED";
+			_wp setWaypointSpeed "UNCHANGED";
 			_wp setWaypointFormation "NO CHANGE";
 			_wp setWaypointType "CYCLE";
-		} forEach _vehicles;
+		} forEach vehicle_patrol_group;
 	};
 	
 	Fn_Patrols_Create_Random_SeaWaypoints = {

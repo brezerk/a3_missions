@@ -35,12 +35,17 @@ if (isServer) then {
 		_mark = createMarker [format ["respawn_civilian_%1", _forEachIndex], _pos];
 		_mark setMarkerType "hd_destroy";
 		_mark setMarkerAlpha 0;
-	} forEach avaliable_pois; 
-		
-	//Spawn vehicles
-	[avaliable_pois] call Fn_Patrols_CreateCivilean_Traffic;
-	[avaliable_pois] call Fn_Patrols_CreateMilitary_Traffic;
+	} forEach avaliable_pois;
+
+	//Select cities for spawn
+	private _ret = [(getMarkerPos "wp_crash_site"), 4000, 6] call BrezBlock_fnc_GetAllCitiesInRange;
+	private _pois = _ret select 1;
 	
+	[_pois] call Fn_Patrols_CreateCivilean_Traffic;
+	[_pois] call Fn_Patrols_CreateMilitary_Traffic;
+	[_pois] call Fn_Task_Spawn_Boats;
+	[_pois] call Fn_Task_Spawn_Civilean_Cars;
+
 	//Spawn stashes
 	call Fn_Task_Create_Civilian_WaponStash;
 	call Fn_Task_Create_Civilian_FloodedShip;
