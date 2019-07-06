@@ -167,7 +167,7 @@ player addEventHandler
 			_sides = _sides - [playerSide];
 		};
 		
-		//_sides = [civilian];
+		_sides = [civilian];
 		private _side = selectRandom _sides;
 		//_group = createGroup [_side, true];
 		

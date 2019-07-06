@@ -120,6 +120,7 @@ if (isServer) then {
 				private _connected = roadsConnectedto (_road);
 				
 				private _vehicle = createVehicle [_class, _pos];
+				_vehicle limitSpeed 30; 
 				
 				if (count _connected > 0) then {
 					private _connected_pos = getPos (_connected select 0);
@@ -235,6 +236,7 @@ if (isServer) then {
 				_wp setWaypointCombatMode "YELLOW";
 				_wp setWaypointBehaviour "SAFE";
 				_wp setWaypointSpeed "LIMITED";
+				_wp setWaypointCompletionRadius 20;
 				_wp setWaypointFormation "NO CHANGE";
 				_wp setWaypointType "MOVE";
 			};
@@ -244,6 +246,7 @@ if (isServer) then {
 			_wp setWaypointCombatMode "YELLOW";
 			_wp setWaypointBehaviour "UNCHANGED";
 			_wp setWaypointSpeed "UNCHANGED";
+			_wp setWaypointCompletionRadius 20;
 			_wp setWaypointFormation "NO CHANGE";
 			_wp setWaypointType "CYCLE";
 		} forEach vehicle_patrol_group;
@@ -274,6 +277,7 @@ if (isServer) then {
 				_wp setWaypointBehaviour "SAFE";
 				_wp setWaypointSpeed "LIMITED";
 				_wp setWaypointFormation "NO CHANGE";
+				_wp setWaypointCompletionRadius 20;
 				_wp setWaypointType "MOVE";
 			};
 			_marker = selectRandom _wp_array;
@@ -281,6 +285,7 @@ if (isServer) then {
 			_wp setWaypointCombatMode "YELLOW";
 			_wp setWaypointBehaviour "SAFE";
 			_wp setWaypointSpeed "LIMITED";
+			_wp setWaypointCompletionRadius 20;
 			_wp setWaypointFormation "NO CHANGE";
 			_wp setWaypointType "CYCLE";
 		} forEach _vehicles;

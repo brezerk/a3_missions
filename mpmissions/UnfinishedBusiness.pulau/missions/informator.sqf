@@ -48,11 +48,16 @@ if (isServer) then {
 	*/
 	Fn_Task_Create_Informator = {
 		{
-			for "_i" from 1 to 5 do {
+			private _size_x = getNumber (configFile >> "CfgWorlds" >> worldName >> "Names" >> (_x select 0) >> "radiusA");
+			private _size_y = getNumber (configFile >> "CfgWorlds" >> worldName >> "Names" >> (_x select 0) >> "radiusB");
+			private _base_count = 4 - D_DIFFICLTY + (round((_size_x max _size_y)/100));
+			
+			for "_i" from 1 to _base_count do {
 				private _center = _x select 1;
-				private _pos = [_center, 5, 100, 3, 0, 0, 0] call BIS_fnc_findSafePos;
+				private _pos = [_center, 0, 150, 1, 0, 0, 0] call BIS_fnc_findSafePos;
 				private _builing = nearestBuilding (_pos);
 				_pos = selectRandom (_builing buildingPos -1);
+				if (isNil "_pos") exitWith {};
 				private _class = selectRandom [
 						'C_man_polo_1_F',
 						'C_man_polo_2_F',
