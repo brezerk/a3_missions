@@ -49,8 +49,10 @@ if (isServer) then {
 	Fn_Task_Create_Informator = {
 		{
 			for "_i" from 1 to 5 do {
-				private _builing = nearestBuilding (_x select 1);
-				private _pos = selectRandom (_builing buildingPos -1);
+				private _center = _x select 1;
+				private _pos = [_center, 5, 100, 3, 0, 0, 0] call BIS_fnc_findSafePos;
+				private _builing = nearestBuilding (_pos);
+				_pos = selectRandom (_builing buildingPos -1);
 				private _class = selectRandom [
 						'C_man_polo_1_F',
 						'C_man_polo_2_F',
