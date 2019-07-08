@@ -176,10 +176,14 @@ if (isServer) then {
 	{
 		private _ace_kill = _killed getVariable "ace_medical_lastDamageSource";
 		if (!isNil "_ace_kill") then {
-			if (side _ace_kill == civilian) then {
-				_ace_kill setVariable ["is_civilian", false, true];
-				[west] remoteExec ["Fn_Local_Switch_Side"];
-				[format ["Killed ACE by %1", name _ace_kill]] remoteExec ["systemChat"];
+			if (isPlayer _ace_kill) then {
+				["is player!"] remoteExec ["systemChat"];
+				if ((side _ace_kill) == civilian) then {
+					["is civ!!"] remoteExec ["systemChat"];
+					_ace_kill setVariable ["is_civilian", false, true];
+					[west] remoteExec ["Fn_Local_Switch_Side", _ace_kill];
+					[format ["Killed ACE by %1", name _ace_kill]] remoteExec ["systemChat"];
+				};
 			};
 		};
 	}];
