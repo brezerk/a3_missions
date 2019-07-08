@@ -246,6 +246,7 @@ player addEventHandler [
 			if ((_v_side == east) or (_v_side == independent)) then {
 				player setVariable ["is_civilian", false, true];
 				[west] call Fn_Local_Switch_Side;
+				doGetOut player;
 			};
 		};
 	}
