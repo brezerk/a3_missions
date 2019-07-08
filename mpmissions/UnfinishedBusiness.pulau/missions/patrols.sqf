@@ -58,6 +58,7 @@ if (isServer) then {
 			for "_i" from 0 to ((random 3) + 2) do {
 				private _class = selectRandom _vehicles;
 				private _road = selectRandom _good_roads;
+				if (isNil "_road") exitWith {};
 				_good_roads = _good_roads - [_road];
 				private _pos = position _road;
 				private _dir = getDir _road;
@@ -116,6 +117,7 @@ if (isServer) then {
 				private _class = selectRandom _vehicles;
 				private _road = selectRandom _good_roads;
 				_good_roads = _good_roads - [_road];
+				if (isNil "_road") exitWith {};
 				private _pos = position _road;
 				private _connected = roadsConnectedto (_road);
 				
@@ -192,6 +194,7 @@ if (isServer) then {
 			for "_i" from 0 to ((random 2) + 1) do {
 				private _class = selectRandom _vehicles;
 				private _road = selectRandom _good_roads;
+				if (isNil "_road") exitWith {};
 				_good_roads = _good_roads - [_road];
 				private _pos = position _road;
 				private _connected = roadsConnectedto (_road);

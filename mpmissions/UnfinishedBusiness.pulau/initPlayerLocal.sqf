@@ -237,6 +237,20 @@ player addEventHandler
    }
 ];
 
+player addEventHandler [
+	"GetInMan", 
+	{
+		params ["_unit", "_role", "_vehicle", "_turret"];
+		if (playerSide == civilian) then {
+			private _v_side = side _vehicle;
+			if ((_v_side == east) or (_v_side == independent)) then {
+				player setVariable ["is_civilian", false, true];
+				[west] call Fn_Local_Switch_Side;
+			};
+		};
+	}
+];
+
 player addEventHandler
 [
     "Take",
