@@ -179,9 +179,9 @@ if (isServer) then {
 		if (isNull _instigator) then {_instigator = _killer}; // player driven vehicle road kill
 		private _ace_kill = _killed getVariable "ace_medical_lastDamageSource";
 		if (!isNil "_ace_kill") then {
-			systemChat format ["Killed ACE by %1", name _ace_kill];
+			[format ["Killed ACE by %1", name _ace_kill]] remoteExec ["systemChat"];
 		};
-		systemChat format ["Killed By %1", name _instigator];
+		[format ["Killed By %1", name _instigator]] remoteExec ["systemChat"];
 	}];
 	
 	
