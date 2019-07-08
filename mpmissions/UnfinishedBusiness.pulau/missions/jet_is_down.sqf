@@ -25,8 +25,6 @@ if (isServer) then {
 		remoteExecCall ["Fn_Local_Jet_GetOut", _x];
 	} forEach assault_group;
 		
-	['t_arrive_to_island', 'FAILED'] call BIS_fnc_taskSetState;
-		
 	sleep 2;
 	
 	us_heli_01 setVehicleLock "UNLOCKED";

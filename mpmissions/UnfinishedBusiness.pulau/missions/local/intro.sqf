@@ -44,5 +44,10 @@ if (hasInterface) then {
 		['t_arrive_to_island', "land"] call BIS_fnc_taskSetType;
 	};
 	
-
+	Fn_Local_MissionIntro_Fail = {
+		_task = ['t_arrive_to_island', player] call BIS_fnc_taskReal;
+		if (!isNull _task) then {
+			_task setTaskState "Failed";
+		};
+	};
 };

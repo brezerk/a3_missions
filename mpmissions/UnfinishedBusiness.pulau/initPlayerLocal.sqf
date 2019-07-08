@@ -45,6 +45,7 @@ player setVariable ["is_civilian", false, true];
 #include "missions\local\csat.sqf";
 #include "missions\local\east.sqf";
 #include "missions\local\cargo.sqf";
+#include "missions\local\crash_site.sqf";
 //#include "missions\local\police.sqf";
 #include "missions\civilian\liberate.sqf";
 
@@ -149,6 +150,7 @@ player addEventHandler
 		deleteVehicle trgCivPlayerDetected;
 		deleteVehicle trgCivLiberate00;
 		deleteVehicle trgCivLiberate01;
+		deleteVehicle trgEastCrashSite;
 
 
 		//systemChat format ["player side is %1", playerSide];

@@ -20,32 +20,6 @@
 Crash site side-mission code
 */
 
-// Intended to be executed on player side
-Fn_Task_C130J_CrashSite_Info = {
-	if (!isDedicated) then {
-		params['_markerPos'];
-		private ["_trg"];
-				
-		_trg = createTrigger ["EmptyDetector", _markerPos];
-		_trg setTriggerArea [50, 50, 0, false];
-		_trg setTriggerActivation ["ANYPLAYER", "PRESENT", true];
-		_trg setTriggerStatements [
-			"(vehicle player) in thisList",
-			"[ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_01', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;",
-			""
-		];
-		
-		_trg = createTrigger ["EmptyDetector", _markerPos];
-		_trg setTriggerArea [18, 18, 0, false];
-		_trg setTriggerActivation ["ANYPLAYER", "PRESENT", false];
-		_trg setTriggerStatements [
-			"this",
-			"['t_crash_site', 'SUCCEEDED'] call BIS_fnc_taskSetState;",
-			""
-		];
-	};
-};
-
 // Server-only code
 if (isServer) then {
 	/*

@@ -172,6 +172,19 @@ if (isServer) then {
 	//[_markerPos] call Fn_Task_Civilian_FloodedShip_SpawnRandomCargo;
 	
 	
+	addMissionEventHandler ["EntityKilled",
+	{
+		params ["_killed", "_killer", "_instigator"];
+		if (isNull _instigator) then {_instigator = UAVControl vehicle _killer select 0}; // UAV/UGV player operated road kill
+		if (isNull _instigator) then {_instigator = _killer}; // player driven vehicle road kill
+		private _ace_kill = _killed getVariable "ace_medical_lastDamageSource";
+		if (!isNil "_ace_kill") then {
+			systemChat format ["Killed ACE by %1", name _ace_kill];
+		};
+		systemChat format ["Killed By %1", name _instigator];
+	}];
+	
+	
 };
 
 // We need to end game if all players are no longer alive
