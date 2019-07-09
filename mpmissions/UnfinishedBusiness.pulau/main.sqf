@@ -58,7 +58,7 @@ if (isServer) then {
 	mission_plane_send = false;
 	
 	publicVariable "D_LOCATION";
-	publicVariable "D_DIFFICLTY";
+	//publicVariable "D_DIFFICLTY";
 	
 	publicVariable "mission_requested";
 	publicVariable "mission_plane_send";
@@ -130,6 +130,20 @@ if (isServer) then {
 
         };
         _vec;
+	};
+	
+	"PUB_fnc_missionPlanned" addPublicVariableEventHandler {(_this select 1) call EventHander_MissionPlanned};
+	
+	/*
+	Event Handler for loaded or unloaded box
+	*/
+	EventHander_MissionPlanned = {
+		private ["_difficlty", "_location"];
+		if (!mission_requested) then {
+			D_DIFFICLTY = _difficlty;
+			D_LOCATION = _location;
+			mission_requested = true;
+		};
 	};
 
 	#include "missions\patrols.sqf";

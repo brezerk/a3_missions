@@ -37,4 +37,7 @@ if (!mission_requested) then {
 	closeDialog 1;
 
 	mission_requested = true;
+
+	PUB_fnc_missionPlanned = [D_DIFFICLTY, D_LOCATION];
+	publicVariableServer "PUB_fnc_missionPlanned";
 };
