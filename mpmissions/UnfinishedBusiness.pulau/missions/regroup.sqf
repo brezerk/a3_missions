@@ -59,5 +59,8 @@ if (isServer) then {
 		};
 	};
 	
-	['t_regroup', 'SUCCEEDED'] call BIS_fnc_taskSetState;
+	{
+		remoteExecCall ["Fn_Local_RegroupMission_Complete", _x];
+	} forEach assault_group;
+
 };

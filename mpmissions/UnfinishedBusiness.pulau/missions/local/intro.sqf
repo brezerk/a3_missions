@@ -47,6 +47,7 @@ if (hasInterface) then {
 	Fn_Local_MissionIntro_Fail = {
 		_task = ['t_arrive_to_island', player] call BIS_fnc_taskReal;
 		if (!isNull _task) then {
+			["TaskFailed",["", localize "TASK_04_TITLE"]] call BIS_fnc_showNotification;
 			_task setTaskState "Failed";
 		};
 	};

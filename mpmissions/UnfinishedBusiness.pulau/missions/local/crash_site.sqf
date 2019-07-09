@@ -43,10 +43,10 @@ if (hasInterface) then {
 			""
 		];
 			
-		trgEastCrashSite = createTrigger ["EmptyDetector", _markerPos];
-		trgEastCrashSite setTriggerArea [15, 15, 0, false];
-		trgEastCrashSite setTriggerActivation ["ANYPLAYER", "PRESENT", false];
-		trgEastCrashSite setTriggerStatements [
+		trgWestCrashSite = createTrigger ["EmptyDetector", _markerPos];
+		trgWestCrashSite setTriggerArea [50, 50, 0, false];
+		trgWestCrashSite setTriggerActivation ["ANYPLAYER", "PRESENT", false];
+		trgWestCrashSite setTriggerStatements [
 			"(vehicle player) in thisList",
 			"call Fn_Local_CrashSite_Complete;",
 			""
@@ -56,6 +56,7 @@ if (hasInterface) then {
 	Fn_Local_CrashSite_Complete = {
 		_task = ['t_crash_site', player] call BIS_fnc_taskReal;
 		if (!isNull _task) then {
+			["TaskSucceeded",["", localize "TASK_04_TITLE"]] call BIS_fnc_showNotification;
 			_task setTaskState "Succeeded";
 		};
 	};

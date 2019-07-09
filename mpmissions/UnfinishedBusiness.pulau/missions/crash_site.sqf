@@ -178,19 +178,9 @@ if (isServer) then {
 	[] execVM "missions\assoult_group_is_dead.sqf";
 	[] execVM "missions\informator.sqf";
 	
-	[
-		west,
-		"t_us_rescue",
-		[
-		format [localize "TASK_09_DESC", D_LOCATION, D_LOCATION],
-		format [localize "TASK_09_TITLE"],
-		localize "TASK_ORIG_01"],
-		getPos us_liberty_01,
-		"CREATED",
-		0,
-		true
-	] call BIS_fnc_taskCreate;
-	['t_us_rescue', "run"] call BIS_fnc_taskSetType;
+	{
+		remoteExecCall ["Fn_Local_Create_RescueMission", _x];
+	} forEach  (playableUnits + switchableUnits);
 		
 	//Send vehicles on patrol
 	call Fn_Patrols_Create_Random_Waypoints;

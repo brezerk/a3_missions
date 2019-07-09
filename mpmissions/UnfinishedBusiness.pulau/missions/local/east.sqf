@@ -40,6 +40,4 @@ if (hasInterface) then {
 			['t_us_rescue', "run"] call BIS_fnc_taskSetType;
 		};
 	};
-	
-
 };

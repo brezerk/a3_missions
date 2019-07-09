@@ -36,18 +36,7 @@ if (hasInterface) then {
 	Fn_Local_Jet_Player_Land = {
 		call Fn_Local_MissionIntro_Fail;
 		player setUnconscious false;
-		[
-			player,
-			"t_regroup",
-			[localize "TASK_03_DESC",
-			localize "TASK_03_TITLE",
-			localize "TASK_ORIG_01"],
-			objNull,
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_regroup', "meet"] call BIS_fnc_taskSetType;
 		call Fn_Local_Create_Mission_CrashSite;
+		call Fn_Local_Create_RegroupMission;
 	};
 };

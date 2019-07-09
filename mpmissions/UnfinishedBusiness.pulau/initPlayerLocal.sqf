@@ -46,8 +46,10 @@ player setVariable ["is_civilian", false, true];
 #include "missions\local\east.sqf";
 #include "missions\local\cargo.sqf";
 #include "missions\local\crash_site.sqf";
+#include "missions\local\resсue.sqf";
 //#include "missions\local\police.sqf";
 #include "missions\civilian\liberate.sqf";
+#include "missions\local\regroup.sqf";
 
 Fn_Local_SetPersonalTaskState = {
 	params['_name', '_state'];
@@ -150,7 +152,7 @@ player addEventHandler
 		deleteVehicle trgCivPlayerDetected;
 		deleteVehicle trgCivLiberate00;
 		deleteVehicle trgCivLiberate01;
-		deleteVehicle trgEastCrashSite;
+		deleteVehicle trgWestCrashSite;
 
 		private _sides = [civilian, east, west];
 		
