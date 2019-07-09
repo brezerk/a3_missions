@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=681;
+	toggles=553;
 	class ItemIDProvider
 	{
-		nextID=3755;
+		nextID=3756;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=74;
+		nextID=76;
 	};
 	class Camera
 	{
-		pos[]={7339.4922,79.087624,6998.2144};
-		dir[]={-0.34291986,-0.70870399,0.61657298};
-		up[]={-0.34446996,0.70550275,0.61935949};
-		aside[]={0.87393588,-1.7043203e-007,0.48605952};
+		pos[]={998.32703,10.373636,9468.3867};
+		dir[]={0.65555346,-0.078003488,-0.75112438};
+		up[]={0.05129553,0.99695277,-0.058773968};
+		aside[]={-0.75341922,1.4505349e-007,-0.65755773};
 	};
 };
 binarizationWanted=0;
@@ -92,7 +92,8 @@ addons[]=
 	"A3_Structures_F_EPA_Mil_Scrapyard",
 	"CUP_AirVehicles_UH1H",
 	"A3_Data_F_Curator_Virtual",
-	"CUP_WheeledVehicles_LR"
+	"CUP_WheeledVehicles_LR",
+	"A3_Structures_F_EPC_Civ_InfoBoards"
 };
 class AddonsMetaData
 {
@@ -522,7 +523,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=559;
+		items=560;
 		class Item0
 		{
 			dataType="Marker";
@@ -7153,7 +7154,6 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						name="us_leader_01";
 						isPlayable=1;
 					};
 					id=2187;
@@ -14875,6 +14875,24 @@ class Mission
 				};
 				nAttributes=3;
 			};
+		};
+		class Item559
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1000.452,9.8748016,9465.6953};
+				angles[]={0,2.3561945,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="us_leader_01";
+			};
+			id=3755;
+			type="MapBoard_seismic_F";
+			atlOffset=0.020498276;
 		};
 	};
 	class Connections

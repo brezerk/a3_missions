@@ -57,6 +57,10 @@ if (isServer) then {
 	mission_requested = false;
 	mission_plane_send = false;
 	
+	publicVariable "D_LOCATION";
+	publicVariable "mission_requested";
+	publicVariable "mission_plane_send";
+	
 	pings = [];
 	
 	assault_group = [];
@@ -137,21 +141,17 @@ if (isServer) then {
 	// skip random time
 	skipTime ((random 5) + 6);
 	
-	us_leader_01 addAction ["Request mission", {execVM "ui\settingsDialog.sqf"}];
+	us_leader_01 addAction ["Plan mission", {execVM "ui\settingsDialog.sqf"}];
 	
 	waitUntil {
 		sleep 3;
 		{
-			[["Wait for mission to be requested by Commander", "PLAIN"]] remoteExecCall["cutText", _x];
+			[["Wait for mission to be planned by Commander", "PLAIN"]] remoteExecCall["cutText", _x];
 		} forEach (playableUnits + switchableUnits);
 		mission_requested;
 	};
 	
 	us_leader_01 removeAction 0;
-	
-	publicVariable "D_LOCATION";
-	publicVariable "mission_requested";
-	publicVariable "mission_plane_send";
 	
 	call Fn_Create_MissionIntro;
 	
