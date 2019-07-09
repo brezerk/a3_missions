@@ -43,7 +43,7 @@ player setVariable ["is_civilian", false, true];
 #include "missions\local\aa.sqf";
 #include "missions\local\leader.sqf";
 #include "missions\local\csat.sqf";
-#include "missions\local\east.sqf";
+#include "missions\local\west.sqf";
 #include "missions\local\cargo.sqf";
 #include "missions\local\crash_site.sqf";
 #include "missions\local\rescue.sqf";
@@ -203,7 +203,7 @@ player addEventHandler
 			case west:
 			{
 				private _pos = getMarkerPos "respawn_west";
-				[] execVM "gear\east.sqf";
+				[] execVM "gear\west.sqf";
 				player setPos [_pos select 0, _pos select 1, 8];
 				call Fn_Local_Create_EAST_MissionIntro;
 			};

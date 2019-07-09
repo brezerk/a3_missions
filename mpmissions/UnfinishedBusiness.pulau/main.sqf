@@ -137,16 +137,19 @@ if (isServer) then {
 	skipTime ((random 5) + 6);
 	
 	us_leader_01 addAction ["Request mission", {execVM "ui\settingsDialog.sqf"}];
-	us_leader_02 addAction ["Request mission", {execVM "ui\settingsDialog.sqf"}];
 	
-	waitUntil {mission_requested};
+	waitUntil {
+		sleep 3;
+		{
+			[["Wait for mission to be requested by Commander", "PLAIN"]] remoteExecCall["cutText", _x];
+		} forEach (playableUnits + switchableUnits);
+		mission_requested;
+	};
 	
 	us_leader_01 removeAction 0;
-	us_leader_02 removeAction 0;
 	
 	publicVariable "D_LOCATION";
-	
-	sleep 2;
+	publicVariable "mission_requested";
 	
 	call Fn_Create_MissionIntro;
 	
