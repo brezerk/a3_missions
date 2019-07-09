@@ -152,9 +152,6 @@ player addEventHandler
 		deleteVehicle trgCivLiberate01;
 		deleteVehicle trgEastCrashSite;
 
-
-		//systemChat format ["player side is %1", playerSide];
-		
 		private _sides = [civilian, east, west];
 		
 		if (!(alive csat_comm_tower_01)) then {
@@ -169,11 +166,9 @@ player addEventHandler
 			_sides = _sides - [playerSide];
 		};
 		
-		_sides = [civilian];
+		//_sides = [civilian];
 		private _side = selectRandom _sides;
-		//_group = createGroup [_side, true];
-		
-		//systemChat format ["new side is %1", _side];
+
 		switch (_side) do
 		{
 			case east:
@@ -202,7 +197,6 @@ player addEventHandler
 [
    "Respawn",
    {
-		//systemChat format ["spawn player side is %1", playerSide];
 		switch (playerSide) do
 		{
 			case east:
@@ -290,7 +284,6 @@ player addEventHandler
 [
     "Put",
     {
-		//systemChat format ["%1 %2", player getVariable ["is_civilian", false], player getVariable ["weapon_fiered", false]];
 		if (player getVariable ["is_civilian", false]) then {
 			if (!(player getVariable ["weapon_fiered", false])) then {
 				if (primaryWeapon player == "" && secondaryWeapon player == "" && handgunWeapon player == "") then {
