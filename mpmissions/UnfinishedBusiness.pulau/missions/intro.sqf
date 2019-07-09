@@ -66,9 +66,9 @@ if (isServer) then {
 		];
 			
 		if (hasInterface) then {
-			[D_LOCATION] remoteExecCall ["Fn_Local_Create_MissionIntro"];
+			remoteExecCall ["Fn_Local_Create_MissionIntro"];
 		} else {
-			[D_LOCATION] remoteExecCall ["Fn_Local_Create_MissionIntro", -2];
+			remoteExecCall ["Fn_Local_Create_MissionIntro", -2];
 		}
 	}; // Fn_Create_MissionIntro
 	
@@ -100,6 +100,7 @@ if (isServer) then {
 	
 	Fn_MissionIntro_SendAirplane = {
 		private ['_wp', '_group', '_markerPos'];
+		mission_plane_send = true;
 		us_airplane_01 lock 2;
 		{
 			if (isPlayer _x) then {

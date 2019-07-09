@@ -23,20 +23,25 @@ Spawn start objectives, triggers for game intro and players allocation
 //Player side triggers
 // Client side code
 if (hasInterface) then {
+	if (alive us_airplane_01) then {
+		if ((mission_requested) && (!mission_plane_send)) then {
+			call Fn_Local_Create_MissionIntro;
+		};
+	};
+
 	Fn_Local_MakeEnemies = {
 		playSound "radio_chatter_02";
 	};
 
 	Fn_Local_Create_MissionIntro = {
-		params['_location'];
 		[
 			player,
 			"t_arrive_to_island",
 			[
-			format [localize "TASK_02_DESC", _location, _location],
-			format [localize "TASK_02_TITLE", _location],
+			format [localize "TASK_02_DESC", D_LOCATION, D_LOCATION],
+			format [localize "TASK_02_TITLE", D_LOCATION],
 			localize "TASK_ORIG_01"],
-			getMarkerPos format["wp_air_field_%1_01", _location],
+			getMarkerPos format["wp_air_field_%1_01", D_LOCATION],
 			"CREATED",
 			0,
 			true

@@ -55,6 +55,7 @@ if (isServer) then {
 	// Global variables
 	
 	mission_requested = false;
+	mission_plane_send = false;
 	
 	pings = [];
 	
@@ -150,6 +151,7 @@ if (isServer) then {
 	
 	publicVariable "D_LOCATION";
 	publicVariable "mission_requested";
+	publicVariable "mission_plane_send";
 	
 	call Fn_Create_MissionIntro;
 	
