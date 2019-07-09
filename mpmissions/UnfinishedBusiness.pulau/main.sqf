@@ -58,6 +58,8 @@ if (isServer) then {
 	mission_plane_send = false;
 	
 	publicVariable "D_LOCATION";
+	publicVariable "D_DIFFICLTY";
+	
 	publicVariable "mission_requested";
 	publicVariable "mission_plane_send";
 	
@@ -140,8 +142,6 @@ if (isServer) then {
 	
 	// skip random time
 	skipTime ((random 5) + 6);
-	
-	us_leader_01 addAction ["Plan mission", {execVM "ui\settingsDialog.sqf"}, nil, 1, false, false, "", "!mission_requested", 5];
 	
 	waitUntil {
 		sleep 3;

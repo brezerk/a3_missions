@@ -23,6 +23,11 @@ Spawn start objectives, triggers for game intro and players allocation
 //Player side triggers
 // Client side code
 if (hasInterface) then {
+
+	if (!mission_requested) then {
+		us_leader_01 addAction ["Plan mission", {execVM "ui\settingsDialog.sqf"}, nil, 1, false, false, "", "!mission_requested", 5];
+	};
+
 	if (alive us_airplane_01) then {
 		if ((mission_requested) && (!mission_plane_send)) then {
 			call Fn_Local_Create_MissionIntro;
