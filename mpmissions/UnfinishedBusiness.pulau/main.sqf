@@ -183,7 +183,6 @@ if (isServer) then {
 					[west] remoteExec ["Fn_Local_Switch_Side", _ace_kill];
 				};
 			};
-			[format ["Killed ACE by %1", name _ace_kill]] remoteExec ["systemChat"];
 		};
 	}];
 	
