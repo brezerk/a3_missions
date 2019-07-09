@@ -20,24 +20,22 @@ if (!mission_requested) then {
 	private _cbDiff = lbCurSel 2101;
 	private _cbLocation = lbCurSel 2100;
 
-	D_DIFFICLTY = _cbDiff;
+	_D_DIFFICLTY = _cbDiff;
 
 	switch (_cbLocation) do {
 		case 0: {
-			D_LOCATION = selectRandom ["Gurun", "Monyet"];
+			_D_LOCATION = selectRandom ["Gurun", "Monyet"];
 		};
 		case 1: {
-			D_LOCATION = "Gurun";
+			_D_LOCATION = "Gurun";
 		};
 		case 2: {
-			D_LOCATION = "Monyet";
+			_D_LOCATION = "Monyet";
 		};
 	};
 
 	closeDialog 1;
 
-	mission_requested = true;
-
-	PUB_fnc_missionPlanned = [D_DIFFICLTY, D_LOCATION];
+	PUB_fnc_missionPlanned = [_D_DIFFICLTY, _D_LOCATION];
 	publicVariableServer "PUB_fnc_missionPlanned";
 };
