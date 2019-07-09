@@ -15,40 +15,26 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
  ***************************************************************************/
-
-/*
-Spawn start objectives, triggers for game intro and players allocation
-*/
-
-//Player side triggers
-// Client side code
-if (hasInterface) then {
-	Fn_Local_MakeEnemies = {
-		playSound "radio_chatter_02";
-	};
-
-	Fn_Local_Create_MissionIntro = {
-		params['_location'];
-		[
-			player,
-			"t_arrive_to_island",
-			[
-			format [localize "TASK_02_DESC", _location, _location],
-			format [localize "TASK_02_TITLE", _location],
-			localize "TASK_ORIG_01"],
-			getMarkerPos format["wp_air_field_%1_01", _location],
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_arrive_to_island', "land"] call BIS_fnc_taskSetType;
+ 
+ 
+private _settingsDialog = createDialog "SettingsDialogControl";
+ 
+if (!isNil "_settingsDialog") then {
+	private _dialog = findDisplay 3773;
+ 
+	private _cbDiff = _dialog displayCtrl 2101;
+	if (!isNil "_cbDiff") then {
+		_cbDiff lbAdd "Easy";
+		_cbDiff lbAdd "Hardcore";
+		_cbDiff lbAdd "Nightmare";
+		_cbDiff lbSetCurSel  0;
 	};
 	
-	Fn_Local_MissionIntro_Fail = {
-		private _task = ['t_arrive_to_island', player] call BIS_fnc_taskReal;
-		if (!isNull _task) then {
-			["TaskFailed",["", (format [localize "TASK_02_TITLE", D_LOCATION])]] call BIS_fnc_showNotification;
-			_task setTaskState "Failed";
-		};
+	private _cbLocation = _dialog displayCtrl 2100;
+	if (!isNil "_cbLocation") then {
+		_cbLocation lbAdd "Random";
+		_cbLocation lbAdd "Gurun";
+		_cbLocation lbAdd "Monyet";
+		_cbLocation lbSetCurSel 0;
 	};
 };

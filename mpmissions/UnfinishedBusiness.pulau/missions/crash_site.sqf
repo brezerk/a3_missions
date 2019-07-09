@@ -67,9 +67,9 @@ if (isServer) then {
 	*/
 	Fn_Task_Create_C130J_SpawnRandomCargo = {
 		params ["_markerPos"];
-		private ["_obj"];
 		
-		_obj = "B_supplyCrate_F" createVehicle ([((_markerPos select 0) + (round(random 25) - 10)), ((_markerPos select 1) + (round(random 25) - 10)), (_markerPos select 2)]);
+		private _pos = [_markerPos, 0, 35, 4, 0, 0, 0] call BIS_fnc_findSafePos;
+		private _obj = "B_supplyCrate_F" createVehicle (_pos);
 		
 		clearWeaponCargoGlobal _obj;
 		clearMagazineCargoGlobal _obj;

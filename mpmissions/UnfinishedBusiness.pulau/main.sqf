@@ -18,6 +18,7 @@
 
 real_weather_init = false;
 
+
 [] execVM "addons\code43\real_weather.sqf";
 
 if (isServer) then {
@@ -44,13 +45,16 @@ if (isServer) then {
 	s_indep_group = createGroup independent; publicVariable "s_indep_group";
 	s_civ_group = createGroup civilian; publicVariable "s_civ_group";
 	
+	
+	D_DIFFICLTY = nil;
+	D_LOCATION = nil;
 	// Defaines (should be an UI option at mission startup);
-	D_DIFFICLTY = 0; //0 easy, 1 medium, 2 hard
+	// Fixme should be diff dependent
 	D_FRACTION_INDEP = "CUP_I_NAPA"; //posible CUP_I_TK_GUE, IND_F, IND_F, IND_G_F
 	
-	D_LOCATION = "Gurun"; //selectRandom ["Gurun", "Monyet"];
-
 	// Global variables
+	
+	mission_requested = false;
 	
 	pings = [];
 	
@@ -131,6 +135,16 @@ if (isServer) then {
 	
 	// skip random time
 	skipTime ((random 5) + 6);
+	
+	us_leader_01 addAction ["Request mission", {execVM "ui\settingsDialog.sqf"}];
+	us_leader_02 addAction ["Request mission", {execVM "ui\settingsDialog.sqf"}];
+	
+	waitUntil {mission_requested};
+	
+	us_leader_01 removeAction 0;
+	us_leader_02 removeAction 0;
+	
+	publicVariable "D_LOCATION";
 	
 	sleep 2;
 	

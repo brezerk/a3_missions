@@ -64,28 +64,6 @@ Fn_Local_SetPersonalTaskState = {
 	};
 };
 
-Fn_Local_ConfiscateVehicle = {
-	params["_vehicle"];
-	private["_driver"];
-	if (alive _vehicle) then {
-		_driver = driver _vehicle;
-		if (!isNull _driver) then {
-			if ((!isPlayer _driver) && (alive _driver)) then {
-				doGetOut driver _vehicle;
-			};
-		};
-	};
-};
-
-Fn_Local_AddAction_ConfiscateVehicles = {
-	params ["_vehicles"];
-	{
-		if (alive _x) then {
-			_x addAction [localize 'ACTION_03', "call Fn_Local_ConfiscateVehicle;", this, 1, false, true, "", "alive _this", 5];
-		}
-	} forEach _vehicles;
-};
-
 Fn_Local_FailTasks = {
 	private ['_task'];
 	{
@@ -303,8 +281,6 @@ sleep 5;
 
 [[west], [east,independent,civilian]] call ace_spectator_fnc_updateSides;
 
-//FIXME
-//[[civ_veh_01, civ_veh_02, civ_veh_03, civ_veh_04]] call Fn_Local_AddAction_ConfiscateVehicles;
 
 
 

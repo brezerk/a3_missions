@@ -22,14 +22,14 @@ class Header
 {
 	gameType   =  Coop;	// Game type
 	minPlayers =  1;	// minimum number of players the mission supports
-	maxPlayers = 15;	// maximum number of players the mission supports
+	maxPlayers = 16;	// maximum number of players the mission supports
 };
 
 // Disable AI
 disabledAI = 1;
 
 author			= "brezerk@brezblock.org.ua";
-OnLoadName		= "Unfinished Business v0.8.41";
+OnLoadName		= "Unfinished Business v0.8.52";
 //OnLoadMission	= $STR_ONLOAD_INFO_01;
 //briefingName    = $STR_ONLOAD_INFO_02;
 // FIXME: https://feedback.bistudio.com/T67181
@@ -176,4 +176,5 @@ class CfgFunctions {
 	};
 };
 
-//#include "compositions\compositions.cfg"
+#include "ui\settingsDialogControls.hpp"
+#include "ui\settingsDialog.hpp"

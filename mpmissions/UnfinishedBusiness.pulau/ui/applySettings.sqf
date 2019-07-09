@@ -15,40 +15,26 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
  ***************************************************************************/
+ 
+if (!mission_requested) then { 
+	private _cbDiff = lbCurSel 2101;
+	private _cbLocation = lbCurSel 2100;
 
-/*
-Spawn start objectives, triggers for game intro and players allocation
-*/
+	D_DIFFICLTY = _cbDiff;
 
-//Player side triggers
-// Client side code
-if (hasInterface) then {
-	Fn_Local_MakeEnemies = {
-		playSound "radio_chatter_02";
-	};
-
-	Fn_Local_Create_MissionIntro = {
-		params['_location'];
-		[
-			player,
-			"t_arrive_to_island",
-			[
-			format [localize "TASK_02_DESC", _location, _location],
-			format [localize "TASK_02_TITLE", _location],
-			localize "TASK_ORIG_01"],
-			getMarkerPos format["wp_air_field_%1_01", _location],
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_arrive_to_island', "land"] call BIS_fnc_taskSetType;
-	};
-	
-	Fn_Local_MissionIntro_Fail = {
-		private _task = ['t_arrive_to_island', player] call BIS_fnc_taskReal;
-		if (!isNull _task) then {
-			["TaskFailed",["", (format [localize "TASK_02_TITLE", D_LOCATION])]] call BIS_fnc_showNotification;
-			_task setTaskState "Failed";
+	switch (_cbLocation) do {
+		case 0: {
+			D_LOCATION = selectRandom ["Gurun", "Monyet"];
+		};
+		case 1: {
+			D_LOCATION = "Gurun";
+		};
+		case 2: {
+			D_LOCATION = "Monyet";
 		};
 	};
+
+	closeDialog 1;
+
+	mission_requested = true;
 };
