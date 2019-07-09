@@ -46,7 +46,7 @@ player setVariable ["is_civilian", false, true];
 #include "missions\local\east.sqf";
 #include "missions\local\cargo.sqf";
 #include "missions\local\crash_site.sqf";
-#include "missions\local\resсue.sqf";
+#include "missions\local\rescue.sqf";
 //#include "missions\local\police.sqf";
 #include "missions\civilian\liberate.sqf";
 #include "missions\local\regroup.sqf";
