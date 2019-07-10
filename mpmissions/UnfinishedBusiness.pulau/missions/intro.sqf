@@ -101,6 +101,7 @@ if (isServer) then {
 	Fn_MissionIntro_SendAirplane = {
 		private ['_wp', '_group', '_markerPos'];
 		mission_plane_send = true;
+		publicVariable "mission_plane_send";
 		us_airplane_01 lock 2;
 		{
 			if (isPlayer _x) then {

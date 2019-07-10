@@ -43,6 +43,7 @@ if (hasInterface) then {
 	};
 
 	Fn_Local_Create_MissionIntro = {
+		us_leader_01 removeAction 0;
 		[
 			player,
 			"t_arrive_to_island",

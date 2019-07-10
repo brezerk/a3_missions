@@ -278,9 +278,9 @@
 				<Russian>Спланувати міссію</Russian>
 			</Key>
 			<Key ID="INFO_WAIT_01">
-				<Original>Зачекайте, поки лідер гриппи запланує місію</Original>
-				<English>Зачекайте, поки лідер гриппи запланує місію</English>
-				<Russian>Wait for mission to be planned by the team leader</Russian>
+				<Original>Wait for mission to be planned by the team leader</Original>
+				<English>Wait for mission to be planned by the team leader</English>
+				<Russian>Зачекайте, поки лідер гриппи запланує місію</Russian>
 			</Key>
 			<Key ID="INFO_DATE_01">
 				<Original>July 16, 2019 %1</Original>

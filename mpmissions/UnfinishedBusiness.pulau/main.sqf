@@ -58,8 +58,6 @@ if (isServer) then {
 	mission_plane_send = false;
 	
 	//publicVariable "D_DIFFICLTY";
-	publicVariable "D_LOCATION";
-	publicVariable "mission_requested";
 	publicVariable "mission_plane_send";
 	
 	pings = [];
@@ -144,6 +142,8 @@ if (isServer) then {
 			D_DIFFICLTY = _difficlty;
 			D_LOCATION = _location;
 			mission_requested = true;
+			publicVariable "D_LOCATION";
+			publicVariable "mission_requested";
 		};
 	};
 
@@ -165,8 +165,6 @@ if (isServer) then {
 		} forEach (playableUnits + switchableUnits);
 		mission_requested;
 	};
-	
-	us_leader_01 removeAction 0;
 	
 	call Fn_Create_MissionIntro;
 	
