@@ -21,6 +21,7 @@ if (!mission_requested) then {
 	private _cbLocation = lbCurSel 2100;
 
 	_D_DIFFICLTY = _cbDiff;
+	_D_LOCATION = nil;
 
 	switch (_cbLocation) do {
 		case 0: {

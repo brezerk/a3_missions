@@ -8,7 +8,7 @@ class EditorData
 	toggles=553;
 	class ItemIDProvider
 	{
-		nextID=3756;
+		nextID=3758;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=76;
+		nextID=78;
 	};
 	class Camera
 	{
-		pos[]={998.32703,10.373636,9468.3867};
-		dir[]={0.65555346,-0.078003488,-0.75112438};
-		up[]={0.05129553,0.99695277,-0.058773968};
-		aside[]={-0.75341922,1.4505349e-007,-0.65755773};
+		pos[]={952.2597,162.50763,9617.2939};
+		dir[]={0.26406029,-0.60203576,-0.7535575};
+		up[]={0.19909412,0.7984696,-0.56816161};
+		aside[]={-0.94374532,-4.7218055e-007,-0.3307071};
 	};
 };
 binarizationWanted=0;
@@ -523,7 +523,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=560;
+		items=562;
 		class Item0
 		{
 			dataType="Marker";
@@ -3669,59 +3669,65 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={5783.1641,59.030029,6260.25};
+				position[]={1056.4229,-0.3421154,9393.6738};
+				angles[]={0,2.0943952,0};
 			};
 			isPlayable=1;
 			id=1560;
 			type="ace_spectator_virtual";
-			atlOffset=3.0517578e-005;
+			atlOffset=19.160255;
 		};
 		class Item144
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={5772.4951,59.030029,6247.9395};
+				position[]={1051.0961,-2.2810249,9409.0684};
+				angles[]={0,2.0943952,0};
 			};
 			isPlayable=1;
 			id=1561;
 			type="ace_spectator_virtual";
-			atlOffset=3.0517578e-005;
+			atlOffset=19.160255;
 		};
 		class Item145
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={5756.7559,59.029999,6237.6611};
+				position[]={1050.0645,-2.9510689,9427.8379};
+				angles[]={0,2.0943952,0};
 			};
 			isPlayable=1;
 			id=1562;
 			type="ace_spectator_virtual";
+			atlOffset=19.160229;
 		};
 		class Item146
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={5745.4126,59.030029,6247.1191};
+				position[]={1063.9269,-2.1526222,9432.9326};
+				angles[]={0,2.0943952,0};
 			};
 			isPlayable=1;
 			id=1563;
 			type="ace_spectator_virtual";
-			atlOffset=3.0517578e-005;
+			atlOffset=19.160255;
 		};
 		class Item147
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={5735.9746,59.030029,6259.4287};
+				position[]={1079.3063,-1.1427116,9434.9512};
+				angles[]={0,2.0943952,0};
 			};
 			isPlayable=1;
 			id=1564;
 			type="ace_spectator_virtual";
-			atlOffset=3.0517578e-005;
+			atlOffset=19.160255;
 		};
 		class Item148
 		{
@@ -10303,10 +10309,12 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={5757.3848,59.029999,6270.1489};
+				position[]={1077.8848,-0.61444283,9411.0498};
+				angles[]={0,5.2359877,0};
 			};
 			id=2553;
 			type="ModuleCurator_F";
+			atlOffset=19.160225;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -12204,12 +12212,14 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={5757.5269,59.029999,6300.627};
+				position[]={1104.2089,1.8037758,9395.6875};
+				angles[]={0,2.0943952,0};
 			};
 			isPlayer=1;
 			description="Zeus";
 			id=3692;
 			type="VirtualCurator_F";
+			atlOffset=19.160229;
 		};
 		class Item546
 		{
@@ -14893,6 +14903,25 @@ class Mission
 			id=3755;
 			type="MapBoard_seismic_F";
 			atlOffset=0.020498276;
+		};
+		class Item560
+		{
+			dataType="Marker";
+			position[]={2676.0249,11.756598,4997.9175};
+			name="wp_waypoint_Monyet_01";
+			type="b_installation";
+			angle=211.25998;
+			id=3756;
+			atlOffset=6.7565975;
+		};
+		class Item561
+		{
+			dataType="Marker";
+			position[]={1138.2008,6.2635498,2672.1033};
+			name="wp_air_field_Monyet_01";
+			type="n_hq";
+			id=3757;
+			atlOffset=-1.0564504;
 		};
 	};
 	class Connections

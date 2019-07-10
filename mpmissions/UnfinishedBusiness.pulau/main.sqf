@@ -57,9 +57,8 @@ if (isServer) then {
 	mission_requested = false;
 	mission_plane_send = false;
 	
-	publicVariable "D_LOCATION";
 	//publicVariable "D_DIFFICLTY";
-	
+	publicVariable "D_LOCATION";
 	publicVariable "mission_requested";
 	publicVariable "mission_plane_send";
 	
@@ -132,13 +131,15 @@ if (isServer) then {
         _vec;
 	};
 	
-	"PUB_fnc_missionPlanned" addPublicVariableEventHandler {(_this select 1) call EventHander_MissionPlanned};
+	"PUB_fnc_missionPlanned" addPublicVariableEventHandler {
+		(_this select 1) call EventHander_MissionPlanned;
+	};
 	
 	/*
 	Event Handler for loaded or unloaded box
 	*/
 	EventHander_MissionPlanned = {
-		private ["_difficlty", "_location"];
+		params ["_difficlty", "_location"];
 		if (!mission_requested) then {
 			D_DIFFICLTY = _difficlty;
 			D_LOCATION = _location;
@@ -160,7 +161,7 @@ if (isServer) then {
 	waitUntil {
 		sleep 3;
 		{
-			[["Wait for mission to be planned by Commander", "PLAIN"]] remoteExecCall["cutText", _x];
+			remoteExecCall["Fn_Local_WaitForPlanning", _x];
 		} forEach (playableUnits + switchableUnits);
 		mission_requested;
 	};

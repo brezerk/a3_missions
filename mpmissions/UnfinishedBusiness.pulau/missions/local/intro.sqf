@@ -25,13 +25,17 @@ Spawn start objectives, triggers for game intro and players allocation
 if (hasInterface) then {
 
 	if (!mission_requested) then {
-		us_leader_01 addAction ["Plan mission", {execVM "ui\settingsDialog.sqf"}, nil, 1, false, false, "", "!mission_requested", 5];
+		us_leader_01 addAction [localize "ACTION_06", {execVM "ui\settingsDialog.sqf"}, nil, 1, false, false, "", "!mission_requested", 5];
 	};
 
 	if (alive us_airplane_01) then {
 		if ((mission_requested) && (!mission_plane_send)) then {
 			call Fn_Local_Create_MissionIntro;
 		};
+	};
+	
+	Fn_Local_WaitForPlanning = {
+		cutText [localize "INFO_WAIT_01", "PLAIN"]
 	};
 
 	Fn_Local_MakeEnemies = {
