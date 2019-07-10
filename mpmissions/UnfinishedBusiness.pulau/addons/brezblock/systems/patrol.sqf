@@ -122,7 +122,7 @@ if (isServer) then {
 	private _grp = [_pos, _side, _cfg] call BIS_fnc_spawnGroup;
 	
 	_grp deleteGroupWhenEmpty true;
-	[_grp, _center, _radius, (round (_radius / 15) + 5), "MOVE", "SAFE", "YELLOW", "LIMITED", "STAG COLUMN", "", [5,15,30]] call CBA_fnc_taskPatrol;
+	[_grp, _center, _radius, (round (_radius / 15)), "MOVE", "SAFE", "YELLOW", "LIMITED", "STAG COLUMN", "", [5,15,30]] call CBA_fnc_taskPatrol;
 	
 	_grp;
 };

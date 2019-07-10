@@ -75,6 +75,7 @@ if (isServer) then {
 				_vehicle setDir _dir;
 			};
 		} forEach _poi;
+		publicVariable "vehicle_confiscate_group";
 	};
 
 	Fn_Patrols_CreateCivilean_Traffic = {
@@ -131,11 +132,10 @@ if (isServer) then {
 					_vehicle setDir _dir;
 				};
 				 
-				_vehicle addAction [localize 'ACTION_03', "call Fn_Patrol_ConfiscateVehicle;", nil, 1, false, true, "", "alive _this", 5];
-				 
 				private _crew = createVehicleCrew (_vehicle);
 				vehicle_patrol_group append [_vehicle];
 				vehicle_refuel_group append [_vehicle];
+				vehicle_confiscate_group append [_vehicle];
 			};
 		} forEach _poi;
 	};
@@ -337,16 +337,4 @@ if (isServer) then {
 		_wp setWaypointSpeed "NORMAL";
 	};
 	
-	Fn_Patrol_ConfiscateVehicle = {
-		params ["_target", "_caller", "_actionId", "_arguments"];
-		private["_driver"];
-		if (alive _target) then {
-			_driver = driver _target;
-			if (!isNull _driver) then {
-				if ((!isPlayer _driver) && (alive _driver)) then {
-					doGetOut _driver;
-				};
-			};
-		};
-	};
 };

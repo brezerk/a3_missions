@@ -31,7 +31,7 @@ if (isServer) then {
 	
 	private _grp = createGroup [civilian, true];
 	
-	for "_i" from 0 to (round (_radius / 25) + 2) do
+	for "_i" from 0 to (round (_radius / 25)) do
 	{
 		private _pos = [_center, 5, _radius, 3, 0, 0, 0] call BIS_fnc_findSafePos;
 		private _obj = _grp createUnit ["ModuleCivilianPresenceSafeSpot_F", _pos, [], 0, "NONE"];
@@ -40,7 +40,7 @@ if (isServer) then {
 		_obj setVariable ["#terminal",    false];
 	};
 	
-	for "_i" from 0 to (round (_radius / 25) + 2) do
+	for "_i" from 0 to (round (_radius / 25) + 1) do
 	{
 		private _pos = [_center, 5, _radius, 3, 0, 0, 0] call BIS_fnc_findSafePos;
 		private _obj = _grp createUnit ["ModuleCivilianPresenceUnit_F", _pos, [], 0, "NONE"];

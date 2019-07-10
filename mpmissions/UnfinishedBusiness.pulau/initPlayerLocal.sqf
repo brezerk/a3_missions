@@ -54,6 +54,8 @@ player setVariable ["is_civilian", false, true];
 #include "missions\civilian\liberate.sqf";
 #include "missions\local\regroup.sqf";
 
+execVM "missions\local\patrols.sqf";
+
 Fn_Local_SetPersonalTaskState = {
 	params['_name', '_state'];
 	private ['_task'];

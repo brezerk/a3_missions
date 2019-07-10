@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=78;
+		nextID=80;
 	};
 	class Camera
 	{
@@ -14910,9 +14910,9 @@ class Mission
 			position[]={2676.0249,11.756598,4997.9175};
 			name="wp_waypoint_Monyet_01";
 			type="b_installation";
-			angle=211.25998;
+			angle=211.25996;
 			id=3756;
-			atlOffset=6.7565975;
+			atlOffset=6.7565985;
 		};
 		class Item561
 		{
