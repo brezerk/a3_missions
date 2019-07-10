@@ -1,0 +1,16 @@
+
+ * Ambulance + gear dynamic spawn;
+ * Food and water source dynamic spawn (if ACEX is enabled);
+ * AOC dynamic spawn;
+ 
+ * Mobile strike force to purge captured location + ping;
+ * Dynamic road check points;
+ 
+ * Rebel missions?
+    * Radio comm each town?
+	* Patrol Aria?
+	* Delivery?
+	* Defend fuel depot?
+	* Defend weapon stash?
+	* Defend rebel leader?
+	

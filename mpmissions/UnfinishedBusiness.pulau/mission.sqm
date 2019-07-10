@@ -14910,7 +14910,7 @@ class Mission
 			position[]={2676.0249,11.756598,4997.9175};
 			name="wp_waypoint_Monyet_01";
 			type="b_installation";
-			angle=211.25996;
+			angle=211.25995;
 			id=3756;
 			atlOffset=6.7565985;
 		};

@@ -27,7 +27,7 @@ if (hasInterface) then {
 
 	vehicle_confiscate_group = [];
 
-	Fn_Patrol_ConfiscateVehicle = {
+	Fn_Local_Patrols_ConfiscateVehicle = {
 		params ["_target", "_caller", "_actionId", "_arguments"];
 		private["_driver"];
 		if (alive _target) then {
@@ -41,14 +41,10 @@ if (hasInterface) then {
 	};
 	
 	while {count vehicle_confiscate_group == 0} do {
-		systemChat "not yet...";
 		sleep 10;
 	};
 		
 	{
-		systemChat "add...";
-		_x addAction [localize 'ACTION_03', "call Fn_Local_Patrols_ConfiscateVehicle;", nil, 1, false, true, "", "alive _this", 5];
+		_x addAction [localize 'ACTION_03', "call Fn_Local_Patrols_ConfiscateVehicle;", nil, 1, false, true, "", "alive _this", 10];
 	} forEach vehicle_confiscate_group;
-
-	systemChat "done!";
 };
