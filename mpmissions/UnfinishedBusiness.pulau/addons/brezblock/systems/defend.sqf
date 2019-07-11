@@ -37,7 +37,52 @@ if (isServer) then {
 			
 			};
 			case east: {
-			
+				switch (D_FRACTION_EAST) do {
+					case "CUP_O_SLA": {
+						_units = [
+							'CUP_O_sla_Soldier',
+							'CUP_O_SLA_Soldier_Backpack',
+							'CUP_O_sla_Soldier_GL',
+							'CUP_O_sla_Soldier_AR',
+							'CUP_O_sla_Medic',
+							'CUP_O_sla_Soldier_AT',
+							'CUP_O_sla_Sniper',
+							'CUP_O_sla_Soldier_MG',
+							'CUP_O_sla_Engineer',
+							'CUP_O_sla_Soldier_AMG',
+							'CUP_O_sla_Soldier_LAT'
+						];
+					};
+					case "CUP_O_TK": {
+						_units = [
+							'CUP_O_TK_Soldier',
+							'CUP_O_TK_Soldier_SL',
+							'CUP_O_TK_Soldier_LAT',
+							'CUP_O_TK_Medic',
+							'CUP_O_TK_Soldier_AMG',
+							'CUP_O_TK_Soldier_AT',
+							'CUP_O_TK_Soldier_AA',
+							'CUP_O_TK_Soldier_MG',
+							'CUP_O_TK_Soldier_GL',
+							'CUP_O_TK_Soldier_AR'
+						];
+					};
+					case "CUP_O_ChDKZ": {
+						_units = [
+							'CUP_O_TK_Soldier',
+							'CUP_O_TK_Soldier_LAT',
+							'CUP_O_TK_Medic',
+							'CUP_O_TK_Soldier_AT',
+							'CUP_O_TK_Soldier_AAT',
+							'CUP_O_TK_Soldier_MG',
+							'CUP_O_TK_Soldier_AMG',
+							'CUP_O_TK_Soldier_AA',
+							'CUP_O_TK_Soldier_SL',
+							'CUP_O_TK_Soldier_AR',
+							'CUP_O_TK_Soldier_GL'
+						];
+					};
+				};
 			};
 			case resistance: {
 				switch (D_FRACTION_INDEP) do

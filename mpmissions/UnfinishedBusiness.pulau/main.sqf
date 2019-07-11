@@ -51,7 +51,7 @@ if (isServer) then {
 	// Defaines (should be an UI option at mission startup);
 	// Fixme should be diff dependent
 	D_FRACTION_INDEP = "CUP_I_NAPA"; //posible CUP_I_TK_GUE, IND_F, IND_F, IND_G_F
-	
+	D_FRACTION_EAST = "CUP_O_SLA"; //possible CUP_O_TK, CUP_O_ChDKZ, 
 	// Global variables
 	
 	mission_requested = false;
@@ -192,6 +192,7 @@ if (isServer) then {
 	execVM "missions\create_locations.sqf";
 	[getMarkerPos "wp_aa", 600] execVM "addons\brezblock\utils\controller.sqf";
 	[getMarkerPos "wp_air_field_Gurun_01", 600] execVM "addons\brezblock\utils\controller.sqf";
+	[getMarkerPos "respawn_east", 500] execVM "addons\brezblock\utils\controller.sqf";
 	
 	[Fn_Spawn_UAZ, 'wp_spawn_uaz_01', 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
 	[Fn_Spawn_UAZ, 'wp_spawn_uaz_02', 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
