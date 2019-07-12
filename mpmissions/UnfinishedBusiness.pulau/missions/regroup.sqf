@@ -45,7 +45,7 @@ if (isServer) then {
 				_x setVariable ["is_assault_group", false, true];
 			} else {
 				if (alive _x) exitWith {
-					_count = 1;
+					_count = 0;
 					{
 						if (_x getVariable ["is_assault_group", false]) then {
 							_count = _count + 1;
@@ -55,7 +55,8 @@ if (isServer) then {
 			};
 		} forEach assault_group;
 		if ((_count != 0) && (_count >= count assault_group)) exitWith {
-			task_complete_regroup = true;
+			systemChat format ["Got %1, expected %2", _count, count assault_group];
+			//task_complete_regroup = true;
 		};
 	};
 	
