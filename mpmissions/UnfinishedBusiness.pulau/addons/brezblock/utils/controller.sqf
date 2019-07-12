@@ -30,7 +30,12 @@ if (isServer) then {
 		private['_grp'];
 		switch(markerBrush _marker) do
 		{
-			case "Solid": {_grp = [_x] call BrezBlock_fnc_CreateCivilianPresence;};
+			case "Solid": {
+				_grp = [_x] call BrezBlock_fnc_CreateCivilianPresence;
+				if (isClass(configFile >> "CfgPatches" >> "acex_field_rations")) then {
+					[_x] call BrezBlock_fnc_CreateCivilianSupply;
+				};
+			};
 			case "SolidBorder": {_grp = [_x] call BrezBlock_fnc_CreateDefend;};
 			case "DiagGrid": {_grp = [_x] call BrezBlock_fnc_CreatePatrol;};
 		};

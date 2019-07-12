@@ -1,6 +1,6 @@
 
  * Ambulance + gear dynamic spawn;
- * Food and water source dynamic spawn (if ACEX is enabled);
+ * AOC gear dynamic spawn;
  
  * Mobile strike force to purge captured location + ping;
  * Dynamic road check points;
