@@ -26,7 +26,6 @@ if (isServer) then {
 	params['_marker'];
 	private['_i'];
 	
-	private _radius = (getMarkerSize _marker select 0);
 	private _center = getMarkerPos _marker;
 	private _roads = _center nearRoads 25;
 	private _good_roads = [];
@@ -49,38 +48,37 @@ if (isServer) then {
 			private _connected_pos = getPos (_connected select 0);
 			_dir = [_pos, _connected_pos] call BIS_fnc_DirTo;	
 		};
-		
-		private _rel_pos = [_pos, 3, _dir + 90] call BIS_Fnc_relPos;
-		private _obj = "Land_WoodenCrate_01_F" createVehicle (_rel_pos);
-		
+					
+		_pos = [_pos, 3, _dir + 90] call BIS_Fnc_relPos;
+					
+		private _vehicle = createVehicle ["CUP_O_LR_Ambulance_TKA", _pos];
+		_vehicle setDir _dir;
 			
+		clearWeaponCargoGlobal _vehicle;
+		clearMagazineCargoGlobal _vehicle;
+		clearItemCargoGlobal _vehicle;
+		clearBackpackCargoGlobal _vehicle;
+		
+		_vehicle addItemCargoGlobal ["ACE_fieldDressing", 10];
+		_vehicle addItemCargoGlobal ["ACE_bloodIV", 4];
+		_vehicle addItemCargoGlobal ["ACE_morphine", 2];
+		_vehicle addItemCargoGlobal ["ACE_bodyBag", 10];
+		_vehicle addItemCargoGlobal ["ACE_epinephrine", 2];
+	};
+	
+	private _builing = nearestBuilding (_center);
+	private _pos = selectRandom (_builing buildingPos -1);
+	if (!isNil "_pos") then {
+		private _obj = "ACE_medicalSupplyCrate" createVehicle (_pos);
 		clearWeaponCargoGlobal _obj;
 		clearMagazineCargoGlobal _obj;
 		clearItemCargoGlobal _obj;
 		clearBackpackCargoGlobal _obj;
-		
-		_obj addWeaponCargoGlobal ["ACE_Banana", 10];
-		_obj addWeaponCargoGlobal ["ACE_SpraypaintBlue", 2];
-		_obj addWeaponCargoGlobal ["ACE_Can_Franta", 2];
-		_obj addWeaponCargoGlobal ["ACE_Can_RedGull", 4];
-		_obj addWeaponCargoGlobal ["ACE_Can_Spirit", 2];
-		_obj addWeaponCargoGlobal ["ACE_Humanitarian_Ration", 10];
-		_obj addWeaponCargoGlobal ["ACE_MRE_MeatballsPasta", 2];
-		_obj addWeaponCargoGlobal ["ACE_MRE_LambCurry", 6];
-		_obj addWeaponCargoGlobal ["ACE_MRE_SteakVegetables", 1];
-		_obj addWeaponCargoGlobal ["ACE_MRE_CreamTomatoSoup", 2];
-		_obj addWeaponCargoGlobal ["ACE_MRE_CreamChickenSoup", 6];
-		_obj addWeaponCargoGlobal ["ACE_MRE_ChickenHerbDumplings", 3];
-		_obj addWeaponCargoGlobal ["ACE_MRE_ChickenTikkaMasala", 5];
-		_obj addWeaponCargoGlobal ["ACE_MRE_BeefStew", 5];
-		_obj addWeaponCargoGlobal ["ACE_rope15", 2];
-		_obj addWeaponCargoGlobal ["ACE_WaterBottle", 15];
-		
-		private _rel_pos = [_pos, 3, _dir - 90] call BIS_Fnc_relPos;
-		private _class = selectRandom ['Land_StallWater_F', 'Land_WaterTank_04_F', 'Land_ConcreteWell_01_F'];
-		_obj = _class createVehicle (_rel_pos);
-		if (isClass(configFile >> "CfgPatches" >> "acex_field_rations")) then {
-			_obj setVariable ["acex_field_rations_currentWaterSupply", 300, true];
-		};
-	};
+
+		_obj addItemCargoGlobal ["ACE_fieldDressing", 20];
+		_obj addItemCargoGlobal ["ACE_bloodIV", 8];
+		_obj addItemCargoGlobal ["ACE_morphine", 6];
+		_obj addItemCargoGlobal ["ACE_bodyBag", 10];
+		_obj addItemCargoGlobal ["ACE_epinephrine", 2];
+	};	
 };

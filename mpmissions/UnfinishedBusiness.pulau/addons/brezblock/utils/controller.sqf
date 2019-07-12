@@ -31,10 +31,21 @@ if (isServer) then {
 		switch(markerBrush _marker) do
 		{
 			case "Solid": {
+				private _pos = getMarkerPos _marker;
 				_grp = [_x] call BrezBlock_fnc_CreateCivilianPresence;
 				if (isClass(configFile >> "CfgPatches" >> "acex_field_rations")) then {
 					[_x] call BrezBlock_fnc_CreateCivilianSupply;
 				};
+				{
+					if (markerType _x == "loc_Hospital") then {
+						
+						private _range = getMarkerSize _marker select 0;
+						if ((_pos distance2D (getMarkerPos _x)) <= _range) then {
+							systemChat "Ok. Do hopitak!";
+							[_x] call BrezBlock_fnc_CreateCivilianHospital;
+						};
+					};
+				} forEach allMapMarkers;
 			};
 			case "SolidBorder": {_grp = [_x] call BrezBlock_fnc_CreateDefend;};
 			case "DiagGrid": {_grp = [_x] call BrezBlock_fnc_CreatePatrol;};

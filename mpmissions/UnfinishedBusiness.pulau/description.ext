@@ -170,6 +170,7 @@ class CfgFunctions {
 			class Attach_Hold_Action {file = "addons\brezblock\actions\attach_hold.sqf";};
 			class CreateCivilianPresence {file = "addons\brezblock\systems\civilian.sqf";};
 			class CreateCivilianSupply {file = "addons\brezblock\systems\supply_civilian.sqf";};
+			class CreateCivilianHospital {file = "addons\brezblock\systems\hospital_civilian.sqf";};
 			class CreatePatrol {file = "addons\brezblock\systems\patrol.sqf";};
 			class CreateDefend {file = "addons\brezblock\systems\defend.sqf";};
 			class GetAllCitiesInRange {file = "addons\brezblock\utils\get_cities.sqf";};

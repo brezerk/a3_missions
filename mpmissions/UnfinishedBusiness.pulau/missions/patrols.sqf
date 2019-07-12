@@ -43,7 +43,7 @@ if (isServer) then {
 		
 		{ 
 			private _center = _x select 1;
-			private _roads = _center nearRoads 150;
+			private _roads = _center nearRoads 100;
 			
 			private _good_roads = [];
 			
@@ -102,7 +102,7 @@ if (isServer) then {
 		
 		{ 
 			private _center = _x select 1;
-			private _roads = _center nearRoads 150;
+			private _roads = _center nearRoads 100;
 			
 			private _good_roads = [];
 			
