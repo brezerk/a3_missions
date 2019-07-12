@@ -23,6 +23,7 @@ if (hasInterface) then {
 		{
 			_uri = _uri + format["<marker name = 'wp_city_%1'>%2</marker> ", _forEachIndex, _x select 0];
 		} forEach _pois;
+		
 		[
 			player,
 			"t_find_informator",

@@ -26,7 +26,7 @@ if (hasInterface) then {
 	Fn_Local_Create_RescueMission = {
 		if (playerSide == west) then {
 			[
-				west,
+				player,
 				"t_us_rescue",
 				[
 				format [localize "TASK_09_DESC", D_LOCATION, D_LOCATION],
