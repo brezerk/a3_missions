@@ -55,8 +55,8 @@ if (isServer) then {
 			};
 		} forEach assault_group;
 		if ((_count != 0) && (_count >= count assault_group)) exitWith {
-			systemChat format ["Got %1, expected %2", _count, count assault_group];
-			//task_complete_regroup = true;
+			//systemChat format ["Got %1, expected %2", _count, count assault_group];
+			task_complete_regroup = true;
 		};
 	};
 	
