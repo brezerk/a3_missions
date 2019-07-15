@@ -27,7 +27,7 @@ if (isServer) then {
 
 	BrezBlock_fnc_Cotroller_Process_Marker = {
 		params['_marker'];
-		private['_grp'];
+		private _grp = objNull;
 		switch(markerBrush _marker) do
 		{
 			case "Solid": {
@@ -47,8 +47,12 @@ if (isServer) then {
 					};
 				} forEach allMapMarkers;
 			};
-			case "SolidBorder": {_grp = [_x] call BrezBlock_fnc_CreateDefend;};
-			case "DiagGrid": {_grp = [_x] call BrezBlock_fnc_CreatePatrol;};
+			case "SolidBorder": {_grp = [_marker] call BrezBlock_fnc_CreateDefend;};
+			case "DiagGrid": {_grp = [_marker] call BrezBlock_fnc_CreatePatrol;};
+			case "Horizontal": {
+				_marker setMarkerAlpha 1;
+				[_marker] call BrezBlock_fnc_CreateCheckPoint;
+			};
 		};
 		_grp;
 	};
@@ -58,7 +62,7 @@ if (isServer) then {
 		if (markerType _x in ["ellipse", "square"]) then {
 			if ((_pos distance2D (getMarkerPos _x)) <= _range) then {
 				private _grp = [_x] call BrezBlock_fnc_Cotroller_Process_Marker;
-				deleteMarker _x;
+				//deleteMarker _x;
 //				_x setMarkerAlpha 1;
 			};
 		};

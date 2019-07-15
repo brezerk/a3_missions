@@ -2,7 +2,6 @@
  * AOC gear dynamic spawn;
  
  * Mobile strike force to purge captured location + ping;
- * Dynamic road check points;
  
  * Rebel missions?
     * Radio comm each town?

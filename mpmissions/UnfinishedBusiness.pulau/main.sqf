@@ -190,14 +190,14 @@ if (isServer) then {
 	
 	publicVariable "avaliable_pois";
 	
-	[_crashSitePos, 900] execVM "addons\brezblock\utils\controller.sqf";
-	execVM "missions\create_locations.sqf";
+	//[_crashSitePos, 900] execVM "addons\brezblock\utils\controller.sqf";
+	//execVM "missions\create_locations.sqf";
 	[getMarkerPos "wp_aa", 600] execVM "addons\brezblock\utils\controller.sqf";
-	[getMarkerPos "wp_air_field_Gurun_01", 600] execVM "addons\brezblock\utils\controller.sqf";
-	[getMarkerPos "respawn_east", 500] execVM "addons\brezblock\utils\controller.sqf";
+	//[getMarkerPos "wp_air_field_Gurun_01", 600] execVM "addons\brezblock\utils\controller.sqf";
+	//[getMarkerPos "respawn_east", 500] execVM "addons\brezblock\utils\controller.sqf";
 	
-	[Fn_Spawn_UAZ, 'wp_spawn_uaz_01', 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
-	[Fn_Spawn_UAZ, 'wp_spawn_uaz_02', 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
+	//[Fn_Spawn_UAZ, 'wp_spawn_uaz_01', 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
+	//[Fn_Spawn_UAZ, 'wp_spawn_uaz_02', 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
 	
 			//spawn creater and wreck
 			//"Crater" createVehicle (_markerPos); 
