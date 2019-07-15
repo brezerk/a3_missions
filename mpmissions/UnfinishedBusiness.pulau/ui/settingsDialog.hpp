@@ -26,6 +26,18 @@ Settings dialog control
 class SettingsDialogControl {
 	idd = 3773;
 	class controls {
+		class bkrDialog: IGUIBack
+		{
+			idc = 1801;
+			x = 0.417501 * safezoneW + safezoneX;
+			y = 0.368 * safezoneH + safezoneY;
+			w = 0.211406 * safezoneW;
+			h = 0.209 * safezoneH;
+			colorBackground[] = 
+			{
+				0, 0, 0, 0.7
+			};
+		};
 		class frmDialog: RscFrame
 		{
 			idc = 1800;
@@ -33,18 +45,12 @@ class SettingsDialogControl {
 			y = 0.368 * safezoneH + safezoneY;
 			w = 0.211406 * safezoneW;
 			h = 0.209 * safezoneH;
-			colorBackground[] = 
-			{
-				0,
-				0,
-				0,
-				0.8
-			};
+			text = "";
 		};
 		class lxlDifficlty: RscText
 		{
 			idc = 1000;
-			text = "Select difficlty level:"; //--- ToDo: Localize;
+			text = $STR_FROM_01_INFO_01;
 			x = 0.422656 * safezoneW + safezoneX;
 			y = 0.379 * safezoneH + safezoneY;
 			w = 0.195937 * safezoneW;
@@ -53,7 +59,7 @@ class SettingsDialogControl {
 		class lblLocation: RscText
 		{
 			idc = 1001;
-			text = "Select mission location:"; //--- ToDo: Localize;
+			text = $STR_FROM_01_INFO_02;
 			x = 0.422656 * safezoneW + safezoneX;
 			y = 0.445 * safezoneH + safezoneY;
 			w = 0.201094 * safezoneW;
@@ -80,12 +86,16 @@ class SettingsDialogControl {
 		class bntStart: RscButton
 		{
 			idc = 1600;
-			text = "Start mission"; //--- ToDo: Localize;
+			text = $STR_FROM_01_CMD_01;
 			x = 0.427812 * safezoneW + safezoneX;
 			y = 0.522 * safezoneH + safezoneY;
 			w = 0.190781 * safezoneW;
 			h = 0.033 * safezoneH;
 			action = "execVM 'ui\applySettings.sqf';";
+			colorBackground[] = 
+			{
+				0, 0, 0, 0.9
+			};
 		};
 	};
 

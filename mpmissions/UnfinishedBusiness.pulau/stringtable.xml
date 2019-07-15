@@ -422,6 +422,41 @@
 				<English>Bandit leader was eliminated. AOC forces lost its foothold and began withdrawing of the military forces.</English>
 				<Russian>Лідера бандитів було ліквідовано. Сили АОС втратили свої позиції і почали виводити військову силу.</Russian>
 			</Key>
+			<Key ID="STR_FROM_01_INFO_01">
+				<Original>Select difficlty level:</Original>
+				<English>Select difficlty level:</English>
+				<Russian>Оберіть рівень складності:</Russian>
+			</Key>
+			<Key ID="STR_FROM_01_INFO_02">
+				<Original>Select mission location:</Original>
+				<English>Select mission location:</English>
+				<Russian>Оберіть локацію місії:</Russian>
+			</Key>
+			<Key ID="STR_FROM_01_CMD_01">
+				<Original>Start mission</Original>
+				<English>Start mission</English>
+				<Russian>Почати місію</Russian>
+			</Key>
+			<Key ID="FROM_01_DIF_SELECT_01">
+				<Original>Easy</Original>
+				<English>Easy</English>
+				<Russian>Легка</Russian>
+			</Key>
+			<Key ID="FROM_01_DIF_SELECT_02">
+				<Original>Hardcore</Original>
+				<English>Hardcore</English>
+				<Russian>Хардкор</Russian>
+			</Key>
+			<Key ID="FROM_01_DIF_SELECT_03">
+				<Original>Nightmare</Original>
+				<English>Nightmare</English>
+				<Russian>Кошмар</Russian>
+			</Key>
+			<Key ID="FROM_02_DIF_SELECT_01">
+				<Original>Random</Original>
+				<English>Random</English>
+				<Russian>Випадково</Russian>
+			</Key>
 		</Container>
 	</Package>
 </Project>

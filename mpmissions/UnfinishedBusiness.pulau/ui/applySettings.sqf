@@ -25,13 +25,13 @@ if (!mission_requested) then {
 
 	switch (_cbLocation) do {
 		case 0: {
-			_D_LOCATION = selectRandom ["Gurun", "Monyet"];
+			_D_LOCATION = selectRandom [D_LOCATIONS];
 		};
 		case 1: {
-			_D_LOCATION = "Gurun";
+			_D_LOCATION = D_LOCATIONS select 0;
 		};
 		case 2: {
-			_D_LOCATION = "Monyet";
+			_D_LOCATION = D_LOCATIONS select 1;
 		};
 	};
 

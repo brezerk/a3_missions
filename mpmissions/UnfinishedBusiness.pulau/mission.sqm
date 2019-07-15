@@ -16,11 +16,11 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=86;
+		nextID=88;
 	};
 	class Camera
 	{
-		pos[]={5374.8545,224.6312,9093.959};
+		pos[]={5426.3159,134.13657,9006.4941};
 		dir[]={-0.24167871,-0.96150935,-0.13116044};
 		up[]={-0.8450501,0.27486834,-0.45861322};
 		aside[]={-0.47701612,-2.3478642e-006,0.87895358};
@@ -499,7 +499,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=497;
+		items=495;
 		class Item0
 		{
 			dataType="Marker";
@@ -8475,22 +8475,7 @@ class Mission
 		class Item486
 		{
 			dataType="Marker";
-			position[]={5404.2998,41.629883,9002.3779};
-			name="wp_patrol_B_7";
-			markerType="ELLIPSE";
-			type="ellipse";
-			colorName="ColorEAST";
-			fillName="SolidBorder";
-			a=25;
-			b=25;
-			drawBorder=1;
-			id=3769;
-			atlOffset=0.00016403198;
-		};
-		class Item487
-		{
-			dataType="Marker";
-			position[]={5434.9849,39.963379,8976.6006};
+			position[]={5416.9487,40.784424,8985.7617};
 			name="wp_patrol_B_8";
 			markerType="ELLIPSE";
 			type="ellipse";
@@ -8500,24 +8485,9 @@ class Mission
 			b=25;
 			drawBorder=1;
 			id=3770;
-			atlOffset=-1.4371033;
+			atlOffset=-1.0802116;
 		};
-		class Item488
-		{
-			dataType="Marker";
-			position[]={5522.0835,37.572998,8980.7539};
-			name="wp_patrol_B_9";
-			markerType="ELLIPSE";
-			type="ellipse";
-			colorName="ColorEAST";
-			fillName="SolidBorder";
-			a=25;
-			b=25;
-			drawBorder=1;
-			id=3771;
-			atlOffset=-0.23163605;
-		};
-		class Item489
+		class Item487
 		{
 			dataType="Marker";
 			position[]={5477.6152,39.981358,8950.7432};
@@ -8532,7 +8502,7 @@ class Mission
 			id=3772;
 			atlOffset=-3.8146973e-006;
 		};
-		class Item490
+		class Item488
 		{
 			dataType="Marker";
 			position[]={5490.0283,38.268555,9018.1465};
@@ -8547,21 +8517,21 @@ class Mission
 			id=3773;
 			atlOffset=-3.8146973e-006;
 		};
-		class Item491
+		class Item489
 		{
 			dataType="Marker";
-			position[]={5376.5557,27.365,8983.5908};
+			position[]={5376.5562,27.365,8983.5908};
 			name="wp_patrol_A_33";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorEAST";
 			fillName="DiagGrid";
-			a=50;
-			b=50;
+			a=25;
+			b=25;
 			id=3775;
-			atlOffset=-14.832792;
+			atlOffset=-14.832811;
 		};
-		class Item492
+		class Item490
 		{
 			dataType="Marker";
 			position[]={5437.8862,26.563913,8994.8887};
@@ -8575,21 +8545,21 @@ class Mission
 			id=3776;
 			atlOffset=-14.832792;
 		};
-		class Item493
+		class Item491
 		{
 			dataType="Marker";
-			position[]={5493.4058,25.250486,8977.458};
+			position[]={5502.8535,25.135986,8973.7363};
 			name="wp_patrol_A_51";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorEAST";
 			fillName="DiagGrid";
-			a=50;
-			b=50;
+			a=25;
+			b=25;
 			id=3777;
-			atlOffset=-14.832792;
+			atlOffset=-14.93811;
 		};
-		class Item494
+		class Item492
 		{
 			dataType="Marker";
 			position[]={6528.1836,27.266846,6901.1011};
@@ -8604,10 +8574,10 @@ class Mission
 			id=3778;
 			atlOffset=-0.23254204;
 		};
-		class Item495
+		class Item493
 		{
 			dataType="Marker";
-			position[]={6477.9995,31.018799,6923.5195};
+			position[]={6479.936,31.035767,6921.583};
 			name="wp_patrol_B_13";
 			markerType="ELLIPSE";
 			type="ellipse";
@@ -8617,9 +8587,9 @@ class Mission
 			b=25;
 			drawBorder=1;
 			id=3779;
-			atlOffset=-0.22959709;
+			atlOffset=-0.22554016;
 		};
-		class Item496
+		class Item494
 		{
 			dataType="Marker";
 			position[]={6505.0635,15.007195,6914.5654};

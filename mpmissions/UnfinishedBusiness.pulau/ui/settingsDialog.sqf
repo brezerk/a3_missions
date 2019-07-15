@@ -24,17 +24,18 @@ if (!isNil "_settingsDialog") then {
  
 	private _cbDiff = _dialog displayCtrl 2101;
 	if (!isNil "_cbDiff") then {
-		_cbDiff lbAdd "Easy";
-		_cbDiff lbAdd "Hardcore";
-		_cbDiff lbAdd "Nightmare";
-		_cbDiff lbSetCurSel  0;
+		_cbDiff lbAdd (localize "FROM_01_DIF_SELECT_01");
+		_cbDiff lbAdd (localize "FROM_01_DIF_SELECT_02");
+		_cbDiff lbAdd (localize "FROM_01_DIF_SELECT_03");
+		_cbDiff lbSetCurSel 0;
 	};
 	
 	private _cbLocation = _dialog displayCtrl 2100;
 	if (!isNil "_cbLocation") then {
-		_cbLocation lbAdd "Random";
-		_cbLocation lbAdd "Gurun";
-		_cbLocation lbAdd "Monyet";
+		_cbLocation lbAdd (localize "FROM_02_DIF_SELECT_01");
+		{
+			_cbLocation lbAdd _x;
+		} forEach D_LOCATIONS;
 		_cbLocation lbSetCurSel 0;
 	};
 };
