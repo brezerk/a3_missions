@@ -33,7 +33,13 @@ if (isServer) then {
 	{
 		private _pos = position _x;
 		if ((count (nearestObjects [_pos, ["Car", "Truck"], 10]) == 0) and (count (nearestTerrainObjects [_pos, ["TREE", "BUILDING", "HOUSE", "FENCE", "WALL", "ROCK", "ROCKS"], 10, false, true]) == 0)) then {
-			_good_roads append [_x];
+			private _bbox = boundingboxReal _x;
+			private _a = _bbox select 0;
+			private _b = _bbox select 1;
+			private _size = _a distance _b;
+			if (_size >= 25) then {
+				_good_roads append [_x];
+			};
 		};
 		if (count _good_roads >= 4) exitWith {};
 	} forEach _roads;

@@ -68,6 +68,7 @@ if (isServer) then {
 	vehicle_confiscate_group = [];
 	vehicle_refuel_group = [];
 	vehicle_patrol_group = [];
+	checkpoint_gate_group = [];
 	
 	//POIs
 	avaliable_locations = [];
@@ -183,29 +184,21 @@ if (isServer) then {
 	_mark setMarkerType "hd_destroy";
 	_mark setMarkerAlpha 0;
 	
-	private _ret = [_crashSitePos, 3000, 3] call BrezBlock_fnc_GetAllCitiesInRange;
+	private _ret = [_crashSitePos, 3000, 2] call BrezBlock_fnc_GetAllCitiesInRange;
 	//Get all POI in the range of 3000m
 	avaliable_locations = _ret select 0;
 	avaliable_pois = _ret select 1;
 	
 	publicVariable "avaliable_pois";
 	
-	//[_crashSitePos, 900] execVM "addons\brezblock\utils\controller.sqf";
-	//execVM "missions\create_locations.sqf";
+	[_crashSitePos, 900] execVM "addons\brezblock\utils\controller.sqf";
+	execVM "missions\create_locations.sqf";
 	[getMarkerPos "wp_aa", 600] execVM "addons\brezblock\utils\controller.sqf";
-	//[getMarkerPos "wp_air_field_Gurun_01", 600] execVM "addons\brezblock\utils\controller.sqf";
-	//[getMarkerPos "respawn_east", 500] execVM "addons\brezblock\utils\controller.sqf";
+	[getMarkerPos "wp_air_field_Gurun_01", 600] execVM "addons\brezblock\utils\controller.sqf";
+	[getMarkerPos "respawn_east", 150] execVM "addons\brezblock\utils\controller.sqf";
 	
-	//[Fn_Spawn_UAZ, 'wp_spawn_uaz_01', 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
-	//[Fn_Spawn_UAZ, 'wp_spawn_uaz_02', 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
-	
-			//spawn creater and wreck
-			//"Crater" createVehicle (_markerPos); 
-			//private _obj = "Land_Wreck_Traw_F" createVehicle ([((_markerPos select 0) - 5), ((_markerPos select 1) + 20), 0]); 
-			//_obj = "Land_Wreck_Traw2_F" createVehicle ([((_markerPos select 0) - 5), ((_markerPos select 1) - 10), 0]); 
-			
-	//[_markerPos] call Fn_Task_Civilian_FloodedShip_SpawnRandomCargo;
-	
+	[Fn_Spawn_UAZ, 'wp_spawn_uaz_01', 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
+	[Fn_Spawn_UAZ, 'wp_spawn_uaz_02', 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
 	
 	addMissionEventHandler ["EntityKilled",
 	{

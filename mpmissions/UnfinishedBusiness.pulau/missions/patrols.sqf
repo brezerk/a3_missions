@@ -49,13 +49,19 @@ if (isServer) then {
 			
 			{
 				private _pos = position _x;
-				if ((count (nearestObjects [_pos, ["Car", "Truck"], 5]) == 0) and (count (nearestTerrainObjects [_pos, ["TREE", "BUILDING", "HOUSE", "FENCE", "WALL", "ROCK", "ROCKS"], 5, false, true]) == 0)) then {
-					_good_roads append [_x];
+				if ((count (nearestObjects [_pos, ["Car", "Truck"], 10]) == 0) and (count (nearestTerrainObjects [_pos, ["TREE", "BUILDING", "HOUSE", "FENCE", "WALL", "ROCK", "ROCKS"], 5, false, true]) == 0)) then {
+					private _bbox = boundingboxReal _x;
+					private _a = _bbox select 0;
+					private _b = _bbox select 1;
+					private _size = _a distance _b;
+					if (_size >= 25) then {
+						_good_roads append [_x];
+					};
 				};
 				if (count _good_roads >= 10) exitWith {};
 			} forEach _roads;
 			
-			for "_i" from 0 to ((random 3) + 2) do {
+			for "_i" from 0 to ((random 3) + 1) do {
 				private _class = selectRandom _vehicles;
 				private _road = selectRandom _good_roads;
 				if (isNil "_road") exitWith {};
@@ -109,7 +115,13 @@ if (isServer) then {
 			{
 				private _pos = position _x;
 				if ((count (nearestObjects [_pos, ["Car", "Truck"], 5]) == 0) and (count (nearestTerrainObjects [_pos, ["TREE", "BUILDING", "HOUSE", "FENCE", "WALL", "ROCK", "ROCKS"], 5, false, true]) == 0)) then {
-					_good_roads append [_x];
+					private _bbox = boundingboxReal _x;
+					private _a = _bbox select 0;
+					private _b = _bbox select 1;
+					private _size = _a distance _b;
+					if (_size >= 25) then {
+						_good_roads append [_x];
+					};
 				};
 				if (count _good_roads >= 10) exitWith {};
 			} forEach _roads;
@@ -188,7 +200,13 @@ if (isServer) then {
 			{
 				private _pos = position _x;
 				if ((count (nearestObjects [_pos, ["Car", "Truck"], 5]) == 0) and (count (nearestTerrainObjects [_pos, ["TREE", "BUILDING", "HOUSE", "FENCE", "WALL", "ROCK", "ROCKS"], 5, false, true]) == 0)) then {
-					_good_roads append [_x];
+					private _bbox = boundingboxReal _x;
+					private _a = _bbox select 0;
+					private _b = _bbox select 1;
+					private _size = _a distance _b;
+					if (_size >= 25) then {
+						_good_roads append [_x];
+					};
 				};
 				if (count _good_roads >= 10) exitWith {};
 			} forEach _roads;

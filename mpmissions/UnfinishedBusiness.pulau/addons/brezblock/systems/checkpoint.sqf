@@ -241,7 +241,13 @@ if (isServer) then {
 	{
 		private _pos = position _x;
 		if ((count (nearestObjects [_pos, ["Car", "Truck"], 10]) == 0) and (count (nearestTerrainObjects [_pos, ["TREE", "BUILDING", "HOUSE", "FENCE", "WALL", "ROCK", "ROCKS"], 10, false, true]) == 0)) then {
-			_good_roads append [_x];
+			private _bbox = boundingboxReal _x;
+			private _a = _bbox select 0;
+			private _b = _bbox select 1;
+			private _size = _a distance _b;
+			if (_size >= 25) then {
+				_good_roads append [_x];
+			};
 		};
 		if (count _good_roads >= 4) exitWith {};
 	} forEach _roads;
@@ -265,10 +271,13 @@ if (isServer) then {
 		_vehicle = createVehicle ["Land_HBarrier_01_line_3_green_F", _o_pos];
 		_vehicle setDir _dir;
 		
+		/*
 		_o_pos = [_pos, 1, _dir + 90] call BIS_Fnc_relPos;
 		_o_pos = [_o_pos, -6.5, _dir] call BIS_Fnc_relPos;
-		_vehicle = createVehicle ["Land_BarGate_F", _o_pos];
+		_vehicle = createVehicle ["Land_BarGate_01_open_F", _o_pos];
 		_vehicle setDir _dir;
+		checkpoint_gate_group append [_vehicle];
+		*/
 		
 		//https://community.bistudio.com/wiki/Arma_3_CfgMarkerColors
 		switch (getMarkerColor _marker) do
@@ -293,23 +302,6 @@ if (isServer) then {
 		_def_marker setMarkerColor (getMarkerColor _marker);
 		[_def_marker] call BrezBlock_fnc_CreateDefend;
 		deleteMarker _def_marker;
-		
-		
-		
-		
-		//"Land_BagBunker_01_small_green_F";
-		//"Land_HBarrier_01_line_3_green_F";
-		/*
-		private _cfg = [_side, _count] call _Fn_BrezBlock_CreateRandomDefendSquad;
-		private _pos = [_center, 5, _radius, 3, 0, 0, 0] call BIS_fnc_findSafePos;
-	
-		//http://arma3scriptingtutorials.blogspot.com/2014/02/config-viewer-what-is-it-and-how-to-use.html
-		//_grp = [_pos, _side, configfile >> "CfgGroups" >> "Indep" >> D_FRACTION_INDEP >> "Infantry" >> _cfg] call BIS_fnc_spawnGroup;
-		private _grp = [_pos, _side, _cfg] call BIS_fnc_spawnGroup;
-	
-		_grp deleteGroupWhenEmpty true;
-		[_grp, _center, _radius] call CBA_fnc_taskDefend;
-	
-		_grp;*/
+
 	};
 };
