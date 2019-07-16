@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=90;
+		nextID=92;
 	};
 	class Camera
 	{
@@ -2550,7 +2550,7 @@ class Mission
 			position[]={6655.353,-0.19434738,10641.488};
 			name="wp_waypoint_Gurun_01";
 			type="b_installation";
-			angle=196.25995;
+			angle=31.259941;
 			id=1614;
 			atlOffset=21.997463;
 		};
@@ -6486,10 +6486,12 @@ class Mission
 		class Item354
 		{
 			dataType="Marker";
-			position[]={6057.8779,50.457718,5546.4521};
+			position[]={6057.8779,50.458,5546.4521};
 			name="marker_36";
 			type="loc_Hospital";
+			alpha=0;
 			id=2494;
+			atlOffset=0.0002822876;
 		};
 		class Item355
 		{
@@ -6497,6 +6499,7 @@ class Mission
 			position[]={7332.9712,1.5187793,7047.332};
 			name="marker_37";
 			type="loc_Hospital";
+			alpha=0;
 			id=2495;
 		};
 		class Item356
@@ -6505,6 +6508,7 @@ class Mission
 			position[]={4875.5879,16.187084,7203.2861};
 			name="marker_38";
 			type="loc_Hospital";
+			alpha=0;
 			id=2496;
 			atlOffset=-1.9073486e-006;
 		};
@@ -6514,6 +6518,7 @@ class Mission
 			position[]={3448.6772,1.4044092,8957.25};
 			name="marker_39";
 			type="loc_Hospital";
+			alpha=0;
 			id=2497;
 		};
 		class Item358
@@ -6522,6 +6527,7 @@ class Mission
 			position[]={3762.5303,2.1099999,10505.545};
 			name="marker_40";
 			type="loc_Hospital";
+			alpha=0;
 			id=2498;
 		};
 		class Item359
@@ -6530,6 +6536,7 @@ class Mission
 			position[]={4600.2456,2.3485889,10190.406};
 			name="marker_41";
 			type="loc_Hospital";
+			alpha=0;
 			id=2499;
 		};
 		class Item360
@@ -6538,6 +6545,7 @@ class Mission
 			position[]={5580.4243,5.0333471,9713.624};
 			name="marker_42";
 			type="loc_Hospital";
+			alpha=0;
 			id=2500;
 			atlOffset=0.057877064;
 		};

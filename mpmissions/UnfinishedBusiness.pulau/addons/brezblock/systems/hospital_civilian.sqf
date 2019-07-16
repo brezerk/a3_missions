@@ -29,10 +29,12 @@ if (isServer) then {
 	private _center = getMarkerPos _marker;
 	private _roads = _center nearRoads 25;
 	private _good_roads = [];
+	
+	_marker setMarkerAlpha 1;
 			
 	{
 		private _pos = position _x;
-		if ((count (nearestObjects [_pos, ["Car", "Truck"], 10]) == 0) and (count (nearestTerrainObjects [_pos, ["TREE", "BUILDING", "HOUSE", "FENCE", "WALL", "ROCK", "ROCKS"], 10, false, true]) == 0)) then {
+		if ((count (nearestObjects [_pos, ["Car", "Truck"], 5]) == 0) and (count (nearestTerrainObjects [_pos, ["TREE", "BUILDING", "HOUSE", "FENCE", "WALL", "ROCK", "ROCKS"], 5, false, true]) == 0)) then {
 			private _bbox = boundingboxReal _x;
 			private _a = _bbox select 0;
 			private _b = _bbox select 1;
@@ -58,6 +60,7 @@ if (isServer) then {
 		_pos = [_pos, 3, _dir + 90] call BIS_Fnc_relPos;
 					
 		private _vehicle = createVehicle ["CUP_O_LR_Ambulance_TKA", _pos];
+		_vehicle setObjectTextureGlobal [0, "cup\wheeledvehicles\cup_wheeledvehicles_lr\data\textures\civ_r_lr_base_co.paa"];
 		_vehicle setDir _dir;
 			
 		clearWeaponCargoGlobal _vehicle;
