@@ -27,7 +27,7 @@ if (isServer) then {
 	private['_i'];
 	
 	private _center = getMarkerPos _marker;
-	private _roads = _center nearRoads 25;
+	private _roads = _center nearRoads 50;
 	private _good_roads = [];
 	
 	_marker setMarkerAlpha 1;
@@ -61,6 +61,7 @@ if (isServer) then {
 					
 		private _vehicle = createVehicle ["CUP_O_LR_Ambulance_TKA", _pos];
 		_vehicle setObjectTextureGlobal [0, "cup\wheeledvehicles\cup_wheeledvehicles_lr\data\textures\civ_r_lr_base_co.paa"];
+		_vehicle setVariable ["ace_medical_medicClass", 1, true];
 		_vehicle setDir _dir;
 			
 		clearWeaponCargoGlobal _vehicle;
