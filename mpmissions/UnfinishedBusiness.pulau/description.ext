@@ -29,7 +29,7 @@ class Header
 disabledAI = 1;
 
 author			= "brezerk@brezblock.org.ua";
-OnLoadName		= "Unfinished Business v0.8.71";
+OnLoadName		= "Unfinished Business v0.8.92";
 //OnLoadMission	= $STR_ONLOAD_INFO_01;
 //briefingName    = $STR_ONLOAD_INFO_02;
 // FIXME: https://feedback.bistudio.com/T67181
