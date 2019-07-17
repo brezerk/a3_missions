@@ -42,6 +42,19 @@ if (isServer) then {
 		csat_comm_tower_01 = createVehicle [_class, _pos];
 		publicVariable "csat_aa_01";
 		publicVariable "csat_comm_tower_01";
+		switch (D_DIFFICLTY) do {
+			case 0: {
+				_class = "CUP_O_UH1H_slick_SLA";
+			};
+			case 1: {
+				_class = "CUP_O_UH1H_armed_SLA";
+			};
+			case 2: {
+				_class = "CUP_O_UH1H_gunship_SLA";
+			};
+		};
+		
+		_vehicle = createVehicle [_class, (getMarkerPos format["wp_%1_AOC_helicopter", D_LOCATION])];
 	};
 	
 	Fn_Task_Create_CSAT_Triggers = {

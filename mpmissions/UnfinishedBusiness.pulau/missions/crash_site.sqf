@@ -47,14 +47,6 @@ if (isServer) then {
 		_fire = "test_EmptyObjectForFireBig" createVehicle (_markerPos); 
 		_fire attachTo [_crater, [0, -6, 0]];
 		
-		/* does not seems to be working now?
-		_fire = "ModuleEffectsSmoke_F" createVehicle (_markerPos); 
-		_fire setVariable ["ParticleDensity",40 ,true];
-		_fire setVariable ["ParticleSize", 15,true];
-		_fire setVariable ["EffectSize", 5, true];
-		_fire setVariable ["ParticleLifeTime", 180, true];
-		*/
-		
 		[_markerPos] remoteExec ["Fn_Task_C130J_CrashSite_Info"];
 	};
 	
@@ -133,12 +125,7 @@ if (isServer) then {
 	[_crashSitePos] call Fn_Task_Create_C130J_CrashSite;
 	[_crashSitePos] call Fn_Task_Create_C130J_SpawnRandomCargo;	
 	//heli patrol
-	[_crashSitePos, rebel_heli_01] call Fn_Patrols_CreateLoiter;
-	
-	//Additional random cargos
-	//for "_i" from 1 to 5 do {
-	//	[selectRandom _markers] call Fn_Task_Create_C130J_SpawnRandomCargo;
-	//};
+	[_crashSitePos] call Fn_Patrols_CreateLoiter;
 	
 	private _free_landing_markers = [];
 	{
@@ -157,7 +144,7 @@ if (isServer) then {
 		_x setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 180 + random 100)];
 		remoteExecCall ["Fn_Local_Jet_Player_DoParadrop", _x];
 		_x setVariable ["ACE_isUnconscious", true, true];
-		[getPos _x, 400] execVM "addons\brezblock\utils\controller.sqf";
+		//[getPos _x, 400] execVM "addons\brezblock\utils\controller.sqf";
 	} forEach assault_group;
 		
 	{deleteVehicle _x} foreach crew us_airplane_01; deleteVehicle us_airplane_01;

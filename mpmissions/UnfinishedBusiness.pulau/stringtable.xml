@@ -88,9 +88,9 @@
 				<Russian>Прибути до аеродрому %1</Russian>
 			</Key>
 			<Key ID="TASK_02_DESC">
-				<Original>Get to the &lt;marker name = 'wp_%1_airfield_01'&gt;%2 airfield&lt;/marker&gt; and report to the officer.</Original>
-				<English>Get to the &lt;marker name = 'wp_%1_airfield_01'&gt;%2 airfield&lt;/marker&gt; and report to the officer.</English>
-				<Russian>Прибути до &lt;marker name='wp_%1_airfield_01'&gt;аеродрому %2&lt;/marker&gt; та доповісти команидру.</Russian>
+				<Original>Get to the &lt;marker name = 'wp_%1_airfield'&gt;%2 airfield&lt;/marker&gt; and report to the officer.</Original>
+				<English>Get to the &lt;marker name = 'wp_%1_airfield'&gt;%2 airfield&lt;/marker&gt; and report to the officer.</English>
+				<Russian>Прибути до &lt;marker name='wp_%1_airfield'&gt;аеродрому %2&lt;/marker&gt; та доповісти команидру.</Russian>
 			</Key>
 			<Key ID="TASK_03_TITLE">
 				<Original>Regroup</Original>
@@ -158,9 +158,9 @@
 				<Russian>Рятувальна місія</Russian>
 			</Key>
 			<Key ID="TASK_09_DESC">
-				<Original>Couple survivors are scattered over the &lt;marker name = 'wp_%1_airfield_01'&gt;%2 island&lt;/marker&gt;. Find and bring them back to USS "Freedom".</Original>
-				<English>Couple survivors are scattered over the &lt;marker name = 'wp_%1_airfield_01'&gt;%2 island&lt;/marker&gt;. Find and bring them back to USS "Freedom".</English>
-				<Russian>Декілька виживших розкидані по &lt;marker name = 'wp_%1_airfield_01'&gt;острову %2&lt;/marker&gt;, знайдить їх та поверніть на борт USS "Freedom".</Russian>
+				<Original>Couple survivors are scattered over the &lt;marker name = 'wp_%1_airfield'&gt;%2 island&lt;/marker&gt;. Find and bring them back to USS "Freedom".</Original>
+				<English>Couple survivors are scattered over the &lt;marker name = 'wp_%1_airfield'&gt;%2 island&lt;/marker&gt;. Find and bring them back to USS "Freedom".</English>
+				<Russian>Декілька виживших розкидані по &lt;marker name = 'wp_%1_airfield'&gt;острову %2&lt;/marker&gt;, знайдить їх та поверніть на борт USS "Freedom".</Russian>
 			</Key>
 			<Key ID="TASK_AOC_01_TITLE">
 				<Original>Defend AA</Original>

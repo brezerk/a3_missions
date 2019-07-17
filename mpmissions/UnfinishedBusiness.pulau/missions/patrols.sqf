@@ -126,7 +126,7 @@ if (isServer) then {
 				if (count _good_roads >= 10) exitWith {};
 			} forEach _roads;
 			
-			for "_i" from 0 to (random 3) do {
+			for "_i" from 0 to (random 2) do {
 				private _class = selectRandom _vehicles;
 				private _road = selectRandom _good_roads;
 				_good_roads = _good_roads - [_road];
@@ -211,7 +211,7 @@ if (isServer) then {
 				if (count _good_roads >= 10) exitWith {};
 			} forEach _roads;
 			
-			for "_i" from 0 to ((random 2) + 1) do {
+			for "_i" from 0 to (random 2) do {
 				private _class = selectRandom _vehicles;
 				private _road = selectRandom _good_roads;
 				if (isNil "_road") exitWith {};
@@ -220,7 +220,7 @@ if (isServer) then {
 				private _connected = roadsConnectedto (_road);
 				
 				private _vehicle = createVehicle [_class, _pos];
-				_vehicle limitSpeed 35; 
+				_vehicle limitSpeed 45;
 				
 				if (count _connected > 0) then {
 					private _connected_pos = getPos (_connected select 0);
@@ -315,14 +315,31 @@ if (isServer) then {
 	};
 	
 	Fn_Patrols_CreateLoiter = {
-		params ['_markerPos', '_vehicle'];
-		private ['_wp'];
-		_wp = group _vehicle addWaypoint [_markerPos, 0];
+		params ['_markerPos'];
+		
+		private _class = objNull;
+		
+		switch (D_DIFFICLTY) do {
+			case 0: {
+				_class = "CUP_I_UH60L_RACS";
+			};
+			case 1: {
+				_class = "CUP_I_UH60L_RACS";
+			};
+			case 2: {
+				_class = "CUP_I_Mi24D_D_Dynamic_AAF";
+			};
+		};
+		
+		private _vehicle = createVehicle [_class, (getMarkerPos format["wp_%1_patrol_heli", D_LOCATION])];
+		private _crew = createVehicleCrew (_vehicle);
+		vehicle_refuel_group append [_vehicle];
+		private _wp = group _vehicle addWaypoint [_markerPos, 0];
 		_wp setWaypointType "loiter";
 		_wp setWaypointSpeed "NORMAL";
 		_wp setWaypointLoiterType "Circle_L";
 		_wp setWaypointLoiterRadius 500;
-		_vehicle flyInHeight 100;
+		_vehicle flyInHeight 130;
 	};
 	
 	Fn_Patrols_Create_Transport_Sentry = {

@@ -29,11 +29,11 @@ if (isServer) then {
 	_markerPos = getMarkerPos format["wp_waypoint_%1_01", D_LOCATION];
 	private _vel = velocity us_airplane_01;
 	us_airplane_01 setPosASL [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 1500)];
-	us_airplane_01 setDir (markerDir format["wp_%1_airfield_01", D_LOCATION]);
+	us_airplane_01 setDir (markerDir format["wp_%1_airfield", D_LOCATION]);
 	us_airplane_01 setVelocity _vel;
 	_group = group us_airplane_01;
 	deleteWaypoint [_group, 0]; 
-	_wp = _group addWaypoint [getMarkerPos format["wp_%1_airfield_01", D_LOCATION], 0, 0];
+	_wp = _group addWaypoint [getMarkerPos format["wp_%1_airfield", D_LOCATION], 0, 0];
 	_wp setWaypointCombatMode "YELLOW";
 	_wp setWaypointBehaviour "SAFE";
 	_wp setWaypointSpeed "LIMITED";

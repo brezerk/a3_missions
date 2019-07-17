@@ -37,7 +37,7 @@ if (isServer) then {
 					[_x] call BrezBlock_fnc_CreateCivilianSupply;
 				};
 				{
-					if (markerType _x == "loc_Hospital") then {
+					if ((markerType _x) == "loc_Hospital") then {
 						
 						private _range = getMarkerSize _marker select 0;
 						if ((_pos distance2D (getMarkerPos _x)) <= _range) then {
@@ -46,7 +46,19 @@ if (isServer) then {
 					};
 				} forEach allMapMarkers;
 			};
-			case "SolidBorder": {_grp = [_marker] call BrezBlock_fnc_CreateDefend;};
+			case "SolidBorder": {
+				private _pos = getMarkerPos _marker;
+				_grp = [_marker] call BrezBlock_fnc_CreateDefend;
+				{
+					if ((markerType _x) in ["b_armor", "o_armor", "n_armor"]) then {
+						private _range = getMarkerSize _marker select 0;
+						if ((_pos distance2D (getMarkerPos _x)) <= _range) then {
+							[_x] call BrezBlock_fnc_CreateArmor;
+							deleteMarker _x;
+						};
+					};
+				} forEach allMapMarkers;
+			};
 			case "DiagGrid": {_grp = [_marker] call BrezBlock_fnc_CreatePatrol;};
 			case "Horizontal": {
 				//_marker setMarkerAlpha 1;

@@ -32,7 +32,7 @@ if (isServer) then {
 
 	Fn_Create_MissionIntro = {
 		private ['_trg'];
-		_trg = createTrigger ["EmptyDetector", getMarkerPos "USS Liberty" ];
+		_trg = createTrigger ["EmptyDetector", getMarkerPos "respawn_west" ];
 		_trg setTriggerArea [0, 0, 0, false];
 		_trg setTriggerActivation ["NONE", "PRESENT", false];
 		_trg setTriggerStatements [
@@ -40,7 +40,7 @@ if (isServer) then {
 			"call Fn_MissionIntro_SendAirplane;",
 			""
 		];
-		_trg = createTrigger ["EmptyDetector", getMarkerPos format["wp_%1_airfield_01", D_LOCATION] ];
+		_trg = createTrigger ["EmptyDetector", getMarkerPos format["wp_%1_airfield", D_LOCATION] ];
 		_trg setTriggerArea [0, 0, 0, false];
 		_trg setTriggerActivation ["NONE", "PRESENT", false];
 		_trg setTriggerStatements [
@@ -48,7 +48,7 @@ if (isServer) then {
 			"execVM 'missions\jet_is_down.sqf';",
 			""
 		];
-		_trg = createTrigger ["EmptyDetector", getPos csat_aa_01];
+		_trg = createTrigger ["EmptyDetector", getMarkerPos format["wp_%1_aa", D_LOCATION]];
 		_trg setTriggerArea [1500, 1500, 0, false];
 		_trg setTriggerActivation ["WEST", "PRESENT", false];
 		_trg setTriggerStatements [
@@ -56,7 +56,7 @@ if (isServer) then {
 			"call Fn_MissionIntro_MakeEnemies;",
 			""
 		];
-		_trg = createTrigger ["EmptyDetector", getPos csat_aa_01];
+		_trg = createTrigger ["EmptyDetector", getMarkerPos format["wp_%1_aa", D_LOCATION]];
 		_trg setTriggerArea [900, 900, 0, false];
 		_trg setTriggerActivation ["WEST", "PRESENT", false];
 		_trg setTriggerStatements [
