@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=94;
+		nextID=96;
 	};
 	class Camera
 	{
@@ -1407,7 +1407,7 @@ class Mission
 			position[]={5438.8999,41.341,8985.5498};
 			name="wp_Gurun_aa";
 			type="n_antiair";
-			angle=349.37418;
+			angle=349.37415;
 			id=1041;
 			atlOffset=-0.00033187866;
 		};

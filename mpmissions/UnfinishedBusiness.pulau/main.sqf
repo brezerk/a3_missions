@@ -200,6 +200,9 @@ if (isServer) then {
 	[Fn_Spawn_UAZ, 'wp_spawn_uaz_01', 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
 	[Fn_Spawn_UAZ, 'wp_spawn_uaz_02', 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
 	*/
+	
+	call Fn_Task_Spawn_CSAT_Objectives;
+	
 	addMissionEventHandler ["EntityKilled",
 	{
 		params ["_killed", "_killer", "_instigator"];
