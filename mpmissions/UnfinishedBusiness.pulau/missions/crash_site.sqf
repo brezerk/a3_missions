@@ -185,7 +185,7 @@ if (isServer) then {
 	//Send vehicles on patrol
 	call Fn_Patrols_Create_Random_Waypoints;
 	
-	trgRegroupIsDone = createTrigger ["EmptyDetector", getMarkerPos (format["wp_air_field_%1_01", D_LOCATION])];
+	trgRegroupIsDone = createTrigger ["EmptyDetector", getMarkerPos (format["wp_%1_airfield_01", D_LOCATION])];
 	trgRegroupIsDone setTriggerArea [0, 0, 0, false];
 	trgRegroupIsDone setTriggerActivation ["NONE", "PRESENT", false];
 	trgRegroupIsDone setTriggerStatements [

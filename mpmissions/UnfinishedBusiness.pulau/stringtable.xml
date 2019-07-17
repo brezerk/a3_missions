@@ -88,9 +88,9 @@
 				<Russian>Прибути до аеродрому %1</Russian>
 			</Key>
 			<Key ID="TASK_02_DESC">
-				<Original>Get to the &lt;marker name = 'wp_air_field_%1_01'&gt;%2 airfield&lt;/marker&gt; and report to the officer.</Original>
-				<English>Get to the &lt;marker name = 'wp_air_field_%1_01'&gt;%2 airfield&lt;/marker&gt; and report to the officer.</English>
-				<Russian>Прибути до &lt;marker name='wp_air_field_%1_01'&gt;аеродрому %2&lt;/marker&gt; та доповісти команидру.</Russian>
+				<Original>Get to the &lt;marker name = 'wp_%1_airfield_01'&gt;%2 airfield&lt;/marker&gt; and report to the officer.</Original>
+				<English>Get to the &lt;marker name = 'wp_%1_airfield_01'&gt;%2 airfield&lt;/marker&gt; and report to the officer.</English>
+				<Russian>Прибути до &lt;marker name='wp_%1_airfield_01'&gt;аеродрому %2&lt;/marker&gt; та доповісти команидру.</Russian>
 			</Key>
 			<Key ID="TASK_03_TITLE">
 				<Original>Regroup</Original>
@@ -128,9 +128,9 @@
 				<Russian>Додатково: Знищіть ППО</Russian>
 			</Key>
 			<Key ID="TASK_06_DESC">
-				<Original>AOC is messing the things. Their air defense battery covers the island. We need to destroy &lt;marker name = 'wp_aa'&gt;it&lt;/marker&gt;.</Original>
-				<English>AOC is messing the things. Their air defense battery covers the island. We need to destroy &lt;marker name = 'wp_aa'&gt;it&lt;/marker&gt;.</English>
-				<Russian>AOC влізле не в своє діло. Їх батарея ППО прикриває острів. Нам потрібно вивести &lt;marker name = 'wp_aa'&gt;ППО&lt;/marker&gt; з ладу.</Russian>
+				<Original>AOC is messing the things. Their air defense battery covers the island. We need to destroy &lt;marker name = 'wp_%1_aa'&gt;it&lt;/marker&gt;.</Original>
+				<English>AOC is messing the things. Their air defense battery covers the island. We need to destroy &lt;marker name = 'wp_%1_aa'&gt;it&lt;/marker&gt;.</English>
+				<Russian>AOC влізле не в своє діло. Їх батарея ППО прикриває острів. Нам потрібно вивести &lt;marker name = 'wp_%1_aa'&gt;ППО&lt;/marker&gt; з ладу.</Russian>
 			</Key>
 			<Key ID="TASK_07_TITLE">
 				<Original>Optional: Destroy commtower</Original>
@@ -138,9 +138,9 @@
 				<Russian>Додатково: Знищіть Вежу</Russian>
 			</Key>
 			<Key ID="TASK_07_DESC">
-				<Original>AOC is coordinating communication between Solomon Maru's thug groups. We need to destroy the &lt;marker name = 'wp_aa'&gt;communication tower&lt;/marker&gt;.</Original>
-				<English>AOC is coordinating communication between Solomon Maru's thug groups. We need to destroy the &lt;marker name = 'wp_aa'&gt;communication tower&lt;/marker&gt;.</English>
-				<Russian>AOC координую зв'язок між бандами Solomon Maru. Потрібно вивести &lt;marker name = 'wp_aa'&gt;комунікаційну вежу&lt;/marker&gt; з ладу.</Russian>
+				<Original>AOC is coordinating communication between Solomon Maru's thug groups. We need to destroy the &lt;marker name = 'wp_%1_commtower'&gt;communication tower&lt;/marker&gt;.</Original>
+				<English>AOC is coordinating communication between Solomon Maru's thug groups. We need to destroy the &lt;marker name = 'wp_%1_commtower'&gt;communication tower&lt;/marker&gt;.</English>
+				<Russian>AOC координую зв'язок між бандами Solomon Maru. Потрібно вивести &lt;marker name = 'wp_%1_commtower'&gt;комунікаційну вежу&lt;/marker&gt; з ладу.</Russian>
 			</Key>
 			<Key ID="TASK_08_TITLE">
 				<Original>Eliminate the dictator</Original>
@@ -158,9 +158,9 @@
 				<Russian>Рятувальна місія</Russian>
 			</Key>
 			<Key ID="TASK_09_DESC">
-				<Original>Couple survivors are scattered over the &lt;marker name = 'wp_air_field_%1_01'&gt;%2 island&lt;/marker&gt;. Find and bring them back to USS "Freedom".</Original>
-				<English>Couple survivors are scattered over the &lt;marker name = 'wp_air_field_%1_01'&gt;%2 island&lt;/marker&gt;. Find and bring them back to USS "Freedom".</English>
-				<Russian>Декілька виживших розкидані по &lt;marker name = 'wp_air_field_%1_01'&gt;острову %2&lt;/marker&gt;, знайдить їх та поверніть на борт USS "Freedom".</Russian>
+				<Original>Couple survivors are scattered over the &lt;marker name = 'wp_%1_airfield_01'&gt;%2 island&lt;/marker&gt;. Find and bring them back to USS "Freedom".</Original>
+				<English>Couple survivors are scattered over the &lt;marker name = 'wp_%1_airfield_01'&gt;%2 island&lt;/marker&gt;. Find and bring them back to USS "Freedom".</English>
+				<Russian>Декілька виживших розкидані по &lt;marker name = 'wp_%1_airfield_01'&gt;острову %2&lt;/marker&gt;, знайдить їх та поверніть на борт USS "Freedom".</Russian>
 			</Key>
 			<Key ID="TASK_AOC_01_TITLE">
 				<Original>Defend AA</Original>
@@ -168,9 +168,9 @@
 				<Russian>Захистить ППО</Russian>
 			</Key>
 			<Key ID="TASK_AOC_01_DESC">
-				<Original>Our air defense battery covers the island. We need to defend &lt;marker name = 'wp_aa'&gt;it&lt;/marker&gt;.</Original>
-				<English>Our air defense battery covers the island. We need to defend &lt;marker name = 'wp_aa'&gt;it&lt;/marker&gt;.</English>
-				<Russian>Наша батарея ППО прикриває острів. Нам потрібно захистити &lt;marker name = 'wp_aa'&gt;ППО&lt;/marker&gt;.</Russian>
+				<Original>Our air defense battery covers the island. We need to defend &lt;marker name = 'wp_%1_aa'&gt;it&lt;/marker&gt;.</Original>
+				<English>Our air defense battery covers the island. We need to defend &lt;marker name = 'wp_%1_aa'&gt;it&lt;/marker&gt;.</English>
+				<Russian>Наша батарея ППО прикриває острів. Нам потрібно захистити &lt;marker name = 'wp_%1_aa'&gt;ППО&lt;/marker&gt;.</Russian>
 			</Key>
 			<Key ID="TASK_AOC_02_TITLE">
 				<Original>Defend commtower</Original>
@@ -178,9 +178,9 @@
 				<Russian>Захистить Вежу</Russian>
 			</Key>
 			<Key ID="TASK_AOC_02_DESC">
-				<Original>We need to defend &lt;marker name = 'wp_radio'&gt;commtower&lt;/marker&gt;.</Original>
-				<English>We need to defend &lt;marker name = 'wp_radio'&gt;commtower&lt;/marker&gt;.</English>
-				<Russian>Нам потрібно захистити &lt;marker name = 'wp_radio'&gt;радіо вежу&lt;/marker&gt;.</Russian>
+				<Original>We need to defend &lt;marker name = 'wp_%1_commtower'&gt;commtower&lt;/marker&gt;.</Original>
+				<English>We need to defend &lt;marker name = 'wp_%1_commtower'&gt;commtower&lt;/marker&gt;.</English>
+				<Russian>Нам потрібно захистити &lt;marker name = 'wp_%1_commtower'&gt;радіо вежу&lt;/marker&gt;.</Russian>
 			</Key>
 			<Key ID="TASK_AOC_03_TITLE">
 				<Original>Eliminate survivors</Original>

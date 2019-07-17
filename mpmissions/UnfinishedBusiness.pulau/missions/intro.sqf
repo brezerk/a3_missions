@@ -40,7 +40,7 @@ if (isServer) then {
 			"call Fn_MissionIntro_SendAirplane;",
 			""
 		];
-		_trg = createTrigger ["EmptyDetector", getMarkerPos format["wp_air_field_%1_01", D_LOCATION] ];
+		_trg = createTrigger ["EmptyDetector", getMarkerPos format["wp_%1_airfield_01", D_LOCATION] ];
 		_trg setTriggerArea [0, 0, 0, false];
 		_trg setTriggerActivation ["NONE", "PRESENT", false];
 		_trg setTriggerStatements [

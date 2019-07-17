@@ -190,16 +190,16 @@ if (isServer) then {
 	avaliable_pois = _ret select 1;
 	
 	publicVariable "avaliable_pois";
-	
+	/*
 	[_crashSitePos, 900] execVM "addons\brezblock\utils\controller.sqf";
 	execVM "missions\create_locations.sqf";
-	[getMarkerPos "wp_aa", 600] execVM "addons\brezblock\utils\controller.sqf";
-	[getMarkerPos "wp_air_field_Gurun_01", 600] execVM "addons\brezblock\utils\controller.sqf";
+	[getMarkerPos (format ["wp_%1_aa", D_LOCATION]), 600] execVM "addons\brezblock\utils\controller.sqf";
+	[getMarkerPos (format ["wp_%1_airfield_01", D_LOCATION]), 600] execVM "addons\brezblock\utils\controller.sqf";
 	[getMarkerPos "respawn_east", 150] execVM "addons\brezblock\utils\controller.sqf";
 	
 	[Fn_Spawn_UAZ, 'wp_spawn_uaz_01', 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
 	[Fn_Spawn_UAZ, 'wp_spawn_uaz_02', 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
-	
+	*/
 	addMissionEventHandler ["EntityKilled",
 	{
 		params ["_killed", "_killer", "_instigator"];

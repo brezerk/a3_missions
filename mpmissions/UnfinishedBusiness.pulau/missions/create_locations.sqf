@@ -37,6 +37,8 @@ if (isServer) then {
 		_mark setMarkerAlpha 0;
 	} forEach avaliable_pois;
 
+	call Fn_Task_Spawn_CSAT_Objectives;
+
 	//Select cities for spawn
 	private _ret = [(getMarkerPos "wp_crash_site"), 4000, 6] call BrezBlock_fnc_GetAllCitiesInRange;
 	private _pois = _ret select 1;

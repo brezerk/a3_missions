@@ -24,11 +24,12 @@ Spawn start objectives, triggers for game intro and players allocation
 // Client side code
 if (hasInterface) then {
 	Fn_Local_Create_SCAT_MissionIntro = {
+		private _marker = format ["wp_%1_aa", D_LOCATION];
 		if (canFire csat_aa_01) then {
 			[
 				player,
 				"t_scat_defend_aa",
-				[localize "TASK_AOC_01_DESC",
+				[format [localize "TASK_AOC_01_DESC", D_LOCATION],
 				localize "TASK_AOC_01_TITLE",
 				localize "TASK_ORIG_01"],
 				getPos csat_aa_01,
@@ -42,7 +43,7 @@ if (hasInterface) then {
 			[
 				player,
 				"t_scat_defend_comm_tower",
-				[localize "TASK_AOC_02_DESC",
+				[format [localize "TASK_AOC_02_DESC", D_LOCATION],
 				localize "TASK_AOC_02_TITLE",
 				localize "TASK_ORIG_02"],
 				getPos csat_comm_tower_01,

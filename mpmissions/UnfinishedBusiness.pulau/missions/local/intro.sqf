@@ -51,7 +51,7 @@ if (hasInterface) then {
 			format [localize "TASK_02_DESC", D_LOCATION, D_LOCATION],
 			format [localize "TASK_02_TITLE", D_LOCATION],
 			localize "TASK_ORIG_01"],
-			getMarkerPos format["wp_air_field_%1_01", D_LOCATION],
+			getMarkerPos format["wp_%1_airfield_01", D_LOCATION],
 			"CREATED",
 			0,
 			true

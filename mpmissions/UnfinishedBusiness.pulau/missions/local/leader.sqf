@@ -26,7 +26,7 @@ if (hasInterface) then {
 	Fn_Local_Create_KillLeader = {
 		params['_location'];
 		private ["_trg"];
-		_trg = createTrigger ["EmptyDetector", getMarkerPos format["wp_air_field_%1_01", _location]];
+		_trg = createTrigger ["EmptyDetector", getMarkerPos format["wp_%1_airfield_01", _location]];
 		_trg setTriggerArea [500, 500, 0, false];
 		_trg setTriggerActivation ["ANYPLAYER", "PRESENT", true];
 		_trg setTriggerStatements [
@@ -41,7 +41,7 @@ if (hasInterface) then {
 				[localize "TASK_08_DESC",
 				localize "TASK_08_TITLE",
 				localize "TASK_ORIG_01"],
-				getMarkerPos format["wp_air_field_%1_01", _location],
+				getMarkerPos format["wp_%1_airfield_01", _location],
 				"CREATED",
 				0,
 				true

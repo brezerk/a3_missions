@@ -27,6 +27,22 @@ if (hasInterface) then {};
 if (isServer) then {
 	task_complete_commtower = false;
 	task_complete_aa = false;
+	csat_aa_01 = objNull;
+	csat_comm_tower_01 = objNull;
+	
+	Fn_Task_Spawn_CSAT_Objectives = {
+		private _marker = format ["wp_%1_aa", D_LOCATION];
+		private _pos = getMarkerPos _marker;
+		private _class = "CUP_O_2S6_RU";
+		csat_aa_01 = createVehicle [_class, _pos];
+		csat_aa_01 setDir (markerDir _marker);
+		private _crew = createVehicleCrew (csat_aa_01);
+		_pos = getMarkerPos format ["wp_%1_commtower", D_LOCATION];
+		_class = "Land_Communication_F";
+		csat_comm_tower_01 = createVehicle [_class, _pos];
+		publicVariable "csat_aa_01";
+		publicVariable "csat_comm_tower_01";
+	};
 	
 	Fn_Task_Create_CSAT_Triggers = {
 		private['_trg'];

@@ -25,7 +25,7 @@ Spawn start objectives, triggers for informator contact
 if (hasInterface) then {
 
 	private ["_trg"];
-	_trg = createTrigger ["EmptyDetector", getMarkerPos "wp_aa"];
+	_trg = createTrigger ["EmptyDetector", getMarkerPos (format ["wp_%1_aa", D_LOCATION])];
 	_trg setTriggerArea [180, 180, 0, false];
 	_trg setTriggerActivation ["ANYPLAYER", "PRESENT", true];
 	_trg setTriggerStatements [
@@ -39,10 +39,10 @@ if (hasInterface) then {
 			[
 				player,
 				"t_destroy_aa",
-				[localize "TASK_06_DESC",
+				[format [localize "TASK_06_DESC", D_LOCATION],
 				localize "TASK_06_TITLE",
 				localize "TASK_ORIG_01"],
-				getMarkerPos "wp_aa",
+				getMarkerPos (format ["wp_%1_aa", D_LOCATION]),
 				"CREATED",
 				0,
 				true
@@ -51,10 +51,10 @@ if (hasInterface) then {
 			[
 				player,
 				"t_destroy_comtower",
-				[localize "TASK_07_DESC",
+				[format [localize "TASK_07_DESC", D_LOCATION],
 				localize "TASK_07_TITLE",
 				localize "TASK_ORIG_01"],
-				getMarkerPos "wp_aa",
+				getMarkerPos (format ["wp_%1_commtower", D_LOCATION]),
 				"CREATED",
 				0,
 				true
