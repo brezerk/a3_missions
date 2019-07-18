@@ -23,6 +23,14 @@ Spawn start objectives, triggers for informator contact
 
 if (isServer) then {
 
+	Fn_Task_Attack_City = {
+		params['_marker'];
+		private _crashSitePos = (getMarkerPos _marker);
+		systemChat _marker;
+		[_crashSitePos] call Fn_Patrols_Create_Transport_Sentry;
+		[_crashSitePos] call Fn_Patrols_Create_Sentry;
+	};
+
 	//Create markers
 	{ 
 		private _mark = createMarker [format ["wp_city_%1", _forEachIndex], _x select 1];
@@ -35,6 +43,12 @@ if (isServer) then {
 		_mark = createMarker [format ["respawn_civilian_%1", _forEachIndex], _pos];
 		_mark setMarkerType "hd_destroy";
 		_mark setMarkerAlpha 0;
+		
+		private _trg = createTrigger ["EmptyDetector", getMarkerPos (format ["wp_city_%1", _forEachIndex])];
+		_trg setTriggerArea [250, 250, 0, false];
+		_trg setTriggerActivation ["WEST SEIZED", "PRESENT", false];
+		_trg setTriggerTimeout [0, 5, 10, true];
+		_trg setTriggerStatements ["this", format ["['wp_city_%1'] call Fn_Task_Attack_City;", _forEachIndex], ""];
 	} forEach avaliable_pois;
 
 	call Fn_Task_Spawn_CSAT_Objectives;

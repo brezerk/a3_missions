@@ -220,7 +220,7 @@ if (isServer) then {
 				private _connected = roadsConnectedto (_road);
 				
 				private _vehicle = createVehicle [_class, _pos];
-				_vehicle limitSpeed 45;
+				_vehicle limitSpeed 40;
 				
 				if (count _connected > 0) then {
 					private _connected_pos = getPos (_connected select 0);
@@ -337,20 +337,136 @@ if (isServer) then {
 		private _wp = group _vehicle addWaypoint [_markerPos, 0];
 		_wp setWaypointType "loiter";
 		_wp setWaypointSpeed "NORMAL";
+		_wp setWaypointCombatMode "RED";
 		_wp setWaypointLoiterType "Circle_L";
 		_wp setWaypointLoiterRadius 500;
 		_vehicle flyInHeight 130;
 	};
 	
 	Fn_Patrols_Create_Transport_Sentry = {
-		params ['_markerPos', '_vehicle', '_group'];
-		private ['_wp'];
+		params ['_markerPos'];
+		
+		private _vehicles = [];
+		private _task_force = [];
+		switch (D_FRACTION_INDEP) do
+		{
+			case 'IND_F': {
+				_vehicles = [
+					'I_Truck_02_transport_F'
+				];
+				_task_force = [
+					'I_soldier_F',
+					'I_soldier_F',
+					'I_soldier_F',
+					'I_soldier_F',
+					'I_soldier_F',
+					'I_Soldier_AT_F',
+					'I_Soldier_GL_F',
+					'I_Soldier_AR_F',
+					'I_support_MG_F',
+					'I_Soldier_lite_F',
+					'I_medic_F'
+				];
+			};
+			case 'IND_G_F': {
+				_vehicles = [
+					'I_Truck_02_transport_F'
+				];
+				_task_force = [
+					'I_G_Soldier_F',
+					'I_G_Soldier_F',
+					'I_G_Soldier_F',
+					'I_G_Soldier_F',
+					'I_G_Soldier_F',
+					'I_G_Soldier_lite_F',
+					'I_G_medic_F',
+					'I_G_Soldier_SL_F',
+					'I_G_Soldier_AR_F',
+					'I_G_medic_F',
+					'I_G_Soldier_GL_F'
+				];
+			};
+			case 'CUP_I_NAPA': {
+				_vehicles = [
+					'CUP_V3S_Open_NAPA'
+				];
+				_task_force = [
+					'CUP_I_GUE_Soldier_AKS74',
+					'CUP_I_GUE_Soldier_AKM',
+					'CUP_I_GUE_Soldier_AKS74',
+					'CUP_I_GUE_Soldier_AKM',
+					'CUP_I_GUE_Soldier_AKSU',
+					'CUP_I_GUE_Soldier_MG',
+					'CUP_I_GUE_Soldier_AR',
+					'CUP_I_GUE_Soldier_AT',
+					'CUP_I_GUE_Saboteur',
+					'CUP_I_GUE_Medic',
+					'CUP_I_GUE_Officer'
+				];
+			};
+			case 'CUP_I_RACS': {
+				_vehicles = [
+					'CUP_V3S_Open_NAPA'
+				];
+				
+				_task_force = [
+					'CUP_I_RACS_Soldier_Light_Mech',
+					'CUP_I_RACS_Soldier_AMG_Mech',
+					'CUP_I_RACS_Soldier_Mech',
+					'CUP_I_RACS_Soldier_Light_Mech',
+					'CUP_I_RACS_Soldier_Light_Mech',
+					'CUP_I_RACS_Medic_Mech',
+					'CUP_I_RACS_AR_Mech',
+					'CUP_I_RACS_Soldier_Light_Mech',
+					'CUP_I_RACS_M_Mech',
+					'CUP_I_RACS_Soldier_Light_Mech',
+					'CUP_I_RACS_SL_Mech'
+				];
+			};
+			case 'CUP_I_TK_GUE': {
+				_vehicles = [
+					'CUP_I_V3S_Open_TKG'
+				];
+				_task_force = [
+					'CUP_I_TK_GUE_Soldier',
+					'CUP_I_TK_GUE_Soldier_AK_74S',
+					'CUP_I_TK_GUE_Guerilla_Enfield',
+					'CUP_I_TK_GUE_Guerilla_Enfield',
+					'CUP_I_TK_GUE_Guerilla_Medic',
+					'CUP_I_TK_GUE_Soldier_M16A2',
+					'CUP_I_TK_GUE_Soldier_AR',
+					'CUP_I_TK_GUE_Soldier_MG',
+					'CUP_I_TK_GUE_Sniper',
+					'CUP_I_TK_GUE_Soldier',
+					'CUP_I_TK_GUE_Soldier_AK_74S'
+				];
+			};
+		};
+		
+		private _center = getMarkerPos (format["wp_%1_spawn_point", D_LOCATION]);
+		private _pos = [];
+		private _good = false;
+		private _class = selectRandom _vehicles;
+		
+		while {!_good} do {
+			_pos = [_center, 5, 50, 5, 0, 0, 0] call BIS_fnc_findSafePos;
+			if ((count (nearestObjects [_pos, ["Car", "Truck"], 5]) == 0) and (count (nearestTerrainObjects [_pos, ["TREE", "BUILDING", "HOUSE", "FENCE", "WALL", "ROCK", "ROCKS"], 5, false, true]) == 0)) then {
+				_good = true;
+			};
+		};
+		
+		private _vehicle = createVehicle [_class, _pos];
+		_vehicle limitSpeed 40;
+		private _crew = createVehicleCrew (_vehicle);
+		
+		private _group = [_pos, independent, _task_force,[],[],[],[],[],180] call BIS_fnc_spawnGroup;
+		
 		{
 			_x assignAsCargo _vehicle;
 			_x moveInCargo _vehicle;
 		} forEach units _group;
 			
-		_wp = group _vehicle addWaypoint [_markerPos, 0];
+		private _wp = group _vehicle addWaypoint [_markerPos, 0];
 		_wp setWaypointType "TR UNLOAD";
 		_wp setWaypointCombatMode "WHITE";
 		_wp setWaypointBehaviour "SAFE";
@@ -363,9 +479,62 @@ if (isServer) then {
 	};
 	
 	Fn_Patrols_Create_Sentry = {
-		params ['_markerPos', '_vehicle'];
-		private ['_wp'];
-		_wp = group _vehicle addWaypoint [_markerPos, 0];
+		params ['_markerPos'];
+		private _vehicles = [];
+		switch (D_FRACTION_INDEP) do
+		{
+			case 'IND_F': {
+				_vehicles = [
+					'CUP_I_LR_MG_AAF',
+					'CUP_I_LR_SF_GMG_AAF',
+					'CUP_I_LR_SF_HMG_AAF'
+				];
+			};
+			case 'IND_G_F': {
+				_vehicles = [
+					'I_G_Offroad_01_AT_F',
+					'I_G_Offroad_01_F',
+					'I_G_Offroad_01_armed_F'
+				];
+			};
+			case 'CUP_I_NAPA': {
+				_vehicles = [
+					'CUP_I_Datsun_PK',
+					'CUP_I_Datsun_PK_Random',
+					'CUP_I_Datsun_PK'
+				];
+			};
+			case 'CUP_I_RACS': {
+				_vehicles = [
+					'CUP_I_LR_MG_RACS'
+				];
+			};
+			case 'CUP_I_TK_GUE': {
+				_vehicles = [
+					'CUP_I_Datsun_PK_TK',
+					'CUP_I_Datsun_PK_TK_Random',
+					'CUP_I_Datsun_PK'
+				];
+			};
+		};
+		
+		private _class = selectRandom _vehicles;
+		private _center = getMarkerPos (format["wp_%1_spawn_point", D_LOCATION]);
+		private _pos = [];
+		private _good = false;
+		
+		while {!_good} do {
+			_pos = [_center, 5, 50, 5, 0, 0, 0] call BIS_fnc_findSafePos;
+			if ((count (nearestObjects [_pos, ["Car", "Truck"], 5]) == 0) and (count (nearestTerrainObjects [_pos, ["TREE", "BUILDING", "HOUSE", "FENCE", "WALL", "ROCK", "ROCKS"], 5, false, true]) == 0)) then {
+				_good = true;
+			};
+		};
+		
+		private _vehicle = createVehicle [_class, _pos];
+		_vehicle limitSpeed 40;
+		private _crew = createVehicleCrew (_vehicle);
+		
+		private _wp = group _vehicle addWaypoint [_markerPos, 0];
 		_wp setWaypointType "SENTRY";
 		_wp setWaypointCombatMode "WHITE";
 		_wp setWaypointBehaviour "SAFE";
