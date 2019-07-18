@@ -362,9 +362,9 @@ if (isServer) then {
 					'I_soldier_F',
 					'I_Soldier_AT_F',
 					'I_Soldier_GL_F',
-					'I_Soldier_AR_F',
-					'I_support_MG_F',
-					'I_Soldier_lite_F',
+					//'I_Soldier_AR_F',
+					//'I_support_MG_F',
+					//'I_Soldier_lite_F',
 					'I_medic_F'
 				];
 			};
@@ -379,9 +379,9 @@ if (isServer) then {
 					'I_G_Soldier_F',
 					'I_G_Soldier_F',
 					'I_G_Soldier_lite_F',
-					'I_G_medic_F',
-					'I_G_Soldier_SL_F',
-					'I_G_Soldier_AR_F',
+					//'I_G_medic_F',
+					//'I_G_Soldier_SL_F',
+					//'I_G_Soldier_AR_F',
 					'I_G_medic_F',
 					'I_G_Soldier_GL_F'
 				];
@@ -395,10 +395,10 @@ if (isServer) then {
 					'CUP_I_GUE_Soldier_AKM',
 					'CUP_I_GUE_Soldier_AKS74',
 					'CUP_I_GUE_Soldier_AKM',
-					'CUP_I_GUE_Soldier_AKSU',
-					'CUP_I_GUE_Soldier_MG',
+					//'CUP_I_GUE_Soldier_AKSU',
+					//'CUP_I_GUE_Soldier_MG',
 					'CUP_I_GUE_Soldier_AR',
-					'CUP_I_GUE_Soldier_AT',
+					//'CUP_I_GUE_Soldier_AT',
 					'CUP_I_GUE_Saboteur',
 					'CUP_I_GUE_Medic',
 					'CUP_I_GUE_Officer'
@@ -416,9 +416,9 @@ if (isServer) then {
 					'CUP_I_RACS_Soldier_Light_Mech',
 					'CUP_I_RACS_Soldier_Light_Mech',
 					'CUP_I_RACS_Medic_Mech',
-					'CUP_I_RACS_AR_Mech',
-					'CUP_I_RACS_Soldier_Light_Mech',
-					'CUP_I_RACS_M_Mech',
+					//'CUP_I_RACS_AR_Mech',
+					//'CUP_I_RACS_Soldier_Light_Mech',
+					//'CUP_I_RACS_M_Mech',
 					'CUP_I_RACS_Soldier_Light_Mech',
 					'CUP_I_RACS_SL_Mech'
 				];
@@ -434,9 +434,9 @@ if (isServer) then {
 					'CUP_I_TK_GUE_Guerilla_Enfield',
 					'CUP_I_TK_GUE_Guerilla_Medic',
 					'CUP_I_TK_GUE_Soldier_M16A2',
-					'CUP_I_TK_GUE_Soldier_AR',
-					'CUP_I_TK_GUE_Soldier_MG',
-					'CUP_I_TK_GUE_Sniper',
+					//'CUP_I_TK_GUE_Soldier_AR',
+					//'CUP_I_TK_GUE_Soldier_MG',
+					//'CUP_I_TK_GUE_Sniper',
 					'CUP_I_TK_GUE_Soldier',
 					'CUP_I_TK_GUE_Soldier_AK_74S'
 				];
