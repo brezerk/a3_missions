@@ -513,8 +513,8 @@
 				<Russian>%1: Солдата США бачили за координатами: %2 %3</Russian>
 			</Key>
 			<Key ID="KARMA_DROP_01">
-				<Original>US Soldier has killed a civilian. The rumors are spreading over the island now ...</Original>
-				<English>US Soldier has killed a civilian. The rumors are spreading over the island now ...</English>
+				<Original>American Soldier has killed a civilian. The rumors are spreading over the island now ...</Original>
+				<English>American Soldier has killed a civilian. The rumors are spreading over the island now ...</English>
 				<Russian>Американський солдат убив цивільного. Чутки поширюються островом ...</Russian>
 			</Key>
 			

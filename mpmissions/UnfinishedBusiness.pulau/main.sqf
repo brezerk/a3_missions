@@ -203,7 +203,7 @@ if (isServer) then {
 	addMissionEventHandler ["EntityKilled",
 	{
 		params ["_killed", "_killer", "_instigator"];
-		if ((side _killed == east) || (side _killed == independent)) then {
+		if (((side _killed) == east) || ((side _killed) == independent)) then {
 			private _ace_kill = _killed getVariable "ace_medical_lastDamageSource";
 			if (!isNil "_ace_kill") then {
 				if (isPlayer _ace_kill) then {
@@ -214,7 +214,7 @@ if (isServer) then {
 				};
 			};
 		};
-		if (side _killed == civilian) then {
+		if ((side _killed) == civilian) then {
 			private _ace_kill = _killed getVariable "ace_medical_lastDamageSource";
 			if (!isNil "_ace_kill") then {
 				if (isPlayer _ace_kill) then {

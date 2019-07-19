@@ -50,58 +50,29 @@ if (isServer) then {
 		{
 			private _size_x = getNumber (configFile >> "CfgWorlds" >> worldName >> "Names" >> (_x select 0) >> "radiusA");
 			private _size_y = getNumber (configFile >> "CfgWorlds" >> worldName >> "Names" >> (_x select 0) >> "radiusB");
-			private _base_count = 4 - D_DIFFICLTY + (round((_size_x max _size_y)/100));
+			private _base_count = 5 - D_DIFFICLTY + (round((_size_x max _size_y)/100));
 			
 			for "_i" from 1 to _base_count do {
 				private _center = _x select 1;
 				private _pos = [_center, 0, 150, 1, 0, 0, 0] call BIS_fnc_findSafePos;
 				private _builing = nearestBuilding (_pos);
 				_pos = selectRandom (_builing buildingPos -1);
-				if (isNil "_pos") exitWith {};
-				private _class = selectRandom [
-						'C_man_polo_1_F',
-						'C_man_polo_2_F',
-						'C_man_polo_3_F',
-						'C_man_polo_4_F',
-						'C_man_polo_5_F',
-						'C_man_polo_6_F',
-						'C_man_1_1_F',
-						'C_man_1_2_F',
-						'C_man_1_3_F'
-					];
-				private _group = createGroup [civilian, true];
-				private _unit = _group createUnit [_class, _pos, [], 0, "FORM"];
-				[_unit] call Fn_Task_Create_Informator_Attach_Action;
-			};
-		} forEach avaliable_pois;
-	};
-	
-	Fn_Task_Create_Delaitor = {
-		{
-			private _size_x = getNumber (configFile >> "CfgWorlds" >> worldName >> "Names" >> (_x select 0) >> "radiusA");
-			private _size_y = getNumber (configFile >> "CfgWorlds" >> worldName >> "Names" >> (_x select 0) >> "radiusB");
-			private _base_count = 4 - D_DIFFICLTY + (round((_size_x max _size_y)/100));
-			
-			for "_i" from 1 to _base_count do {
-				private _center = _x select 1;
-				private _pos = [_center, 0, 150, 1, 0, 0, 0] call BIS_fnc_findSafePos;
-				private _builing = nearestBuilding (_pos);
-				_pos = selectRandom (_builing buildingPos -1);
-				if (isNil "_pos") exitWith {};
-				private _class = selectRandom [
-						'C_man_polo_1_F',
-						'C_man_polo_2_F',
-						'C_man_polo_3_F',
-						'C_man_polo_4_F',
-						'C_man_polo_5_F',
-						'C_man_polo_6_F',
-						'C_man_1_1_F',
-						'C_man_1_2_F',
-						'C_man_1_3_F'
-					];
-				private _group = createGroup [civilian, true];
-				private _unit = _group createUnit [_class, _pos, [], 0, "FORM"];
-				[_unit] call Fn_Task_Create_Informator_Attach_Delaite_Action;
+				if (!isNil "_pos") then {
+					private _class = selectRandom [
+							'C_man_polo_1_F',
+							'C_man_polo_2_F',
+							'C_man_polo_3_F',
+							'C_man_polo_4_F',
+							'C_man_polo_5_F',
+							'C_man_polo_6_F',
+							'C_man_1_1_F',
+							'C_man_1_2_F',
+							'C_man_1_3_F'
+						];
+					private _group = createGroup [civilian, true];
+					private _unit = _group createUnit [_class, _pos, [], 0, "FORM"];
+					[_unit] call Fn_Task_Create_Informator_Attach_Action;
+				};
 			};
 		} forEach avaliable_pois;
 	};
@@ -119,10 +90,12 @@ if (isServer) then {
 		_obj disableAi "MOVE";
 		_action_id = [
 			_obj,
-			{ call Fn_Task_Create_Informator_Complete; },
+			{ [name _target] call Fn_Task_Create_Informator_Complete; },
 			"simpleTasks\types\talk",
 			"ACTION_02",
-			"&& alive _target && (_this getVariable ['is_assault_group', false])"
+			"&& alive _target",
+			6,
+			false
 		] call BrezBlock_fnc_Attach_Hold_Action;
 		
 		if (hasInterface) then {
@@ -132,28 +105,5 @@ if (isServer) then {
 		};
 	};	
 	
-		/*
-	Select random Informator unit. Disable MOVE and place the trigger
-		Arguments: None
-		Usage: call Fn_Task_Create_Informator_Attach_Action
-	*/
-	Fn_Task_Create_Informator_Attach_Delaite_Action = {
-		params['_obj'];
-		private['_action_id'];
-		
-		_obj setBehaviour "CARELESS";
-		_obj disableAi "MOVE";
-		_action_id = [
-			_obj,
-			{ [name _target] call Fn_Local_Find_Assault_Group; },
-			"simpleTasks\types\talk",
-			"ACTION_07",
-			"&& alive _target",
-			6,
-			false
-		] call BrezBlock_fnc_Attach_Hold_Action;
-	};	
-	
 	call Fn_Task_Create_Informator;
-	call Fn_Task_Create_Delaitor;
 };
