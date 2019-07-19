@@ -44,7 +44,7 @@ if (isServer) then {
 							};
 						};
 					};
-				} forEach nearestObjects [_player, ["SoldierEB", "SoldierGB", "SoldierWB"], 500];
+				} forEach nearestObjects [_player, ["SoldierEB", "SoldierGB", "SoldierWB"], 800];
 			};
 		} forEach (playableUnits + switchableUnits);
 	};

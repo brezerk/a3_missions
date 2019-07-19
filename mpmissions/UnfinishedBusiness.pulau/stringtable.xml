@@ -317,6 +317,11 @@
 				<English>Mission planning</English>
 				<Russian>Спланувати міссію</Russian>
 			</Key>
+			<Key ID="ACTION_07">
+				<Original>Ask about the US military</Original>
+				<English>Ask about the US military</English>
+				<Russian>Спитати про військових США</Russian>
+			</Key>
 			<Key ID="INFO_WAIT_01">
 				<Original>Wait for mission to be planned by the team leader</Original>
 				<English>Wait for mission to be planned by the team leader</English>
@@ -497,6 +502,22 @@
 				<English>Random</English>
 				<Russian>Випадково</Russian>
 			</Key>
+			<Key ID="INFO_PING_01">
+				<Original>%1: I've told you everything I know, come later!</Original>
+				<English>%1: I've told you everything I know, come later!</English>
+				<Russian>%1: Я вже розказав тобі все що знав, приходить пізніше!</Russian>
+			</Key>
+			<Key ID="INFO_PING_02">
+				<Original>%1: USA Soldier was seen at grid: %2 %3</Original>
+				<English>%1: USA Soldier was seen at grid: %2 %3</English>
+				<Russian>%1: Солдата США бачили за координатами: %2 %3</Russian>
+			</Key>
+			<Key ID="KARMA_DROP_01">
+				<Original>US Soldier has killed a civilian. The rumors are spreading over the island now ...</Original>
+				<English>US Soldier has killed a civilian. The rumors are spreading over the island now ...</English>
+				<Russian>Американський солдат убив цивільного. Чутки поширюються островом ...</Russian>
+			</Key>
+			
 		</Container>
 	</Package>
 </Project>

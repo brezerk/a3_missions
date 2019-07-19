@@ -24,6 +24,7 @@ waitUntil { !isNull player }; // Wait for player to initialize
 
 mission_requested = false;
 mission_plane_send = false;
+informator_told = false;
 
 //tickets
 [player, 3] call BIS_fnc_respawnTickets;

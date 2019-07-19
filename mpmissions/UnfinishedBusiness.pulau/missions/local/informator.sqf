@@ -50,6 +50,32 @@ if (hasInterface) then {
 		} forEach _lcs;
 	};
 	
+	Fn_Local_Find_Assault_Group = {
+		params['_name'];
+		if (!informator_told) then {
+			informator_told = true;
+			{
+				if ((side _x) == west) then {
+					if (_x != player) then {
+						if (!(_x getVariable ["is_civilian", false])) then {
+							private _pos = getPos _x;
+							
+							_pos = mapGridPosition [((_pos select 0) + (round(random 600) - 300)), ((_pos select 1) + (round(random 600) - 300)), _pos select 2];
+							systemChat format[localize "INFO_PING_02", _name, _pos];
+						};
+					};
+				};
+			} forEach (playableUnits + switchableUnits);
+			execVM 'missions\local\informator_reset.sqf';
+		} else {
+			systemChat format[localize "INFO_PING_01", _name];
+		};
+	};
+	
+	Fn_Local_CarmaKillCiv = {
+		systemChat format[localize "KARMA_DROP_01"];
+	};
+	
 	Fn_Task_Create_Informator_Complete = {
 		if ((playerSide == west) and (player getVariable ["is_assault_group", false])) then {
 			PUB_fnc_informatorFound = [player, _this select 0];

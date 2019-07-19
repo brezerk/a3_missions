@@ -71,9 +71,7 @@ if (hasInterface) then {
 				_title = localize "TASK_AOC_04_TITLE";
 			};
 		};
-		systemChat "ok?";
 		if (!isNull _task) then {
-			systemChat "go!";
 			["TaskSucceeded",["", _title]] call BIS_fnc_showNotification;
 			_task setTaskState "Succeeded";
 		};

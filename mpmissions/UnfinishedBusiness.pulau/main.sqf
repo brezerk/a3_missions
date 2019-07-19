@@ -203,12 +203,25 @@ if (isServer) then {
 	addMissionEventHandler ["EntityKilled",
 	{
 		params ["_killed", "_killer", "_instigator"];
-		private _ace_kill = _killed getVariable "ace_medical_lastDamageSource";
-		if (!isNil "_ace_kill") then {
-			if (isPlayer _ace_kill) then {
-				if ((side _ace_kill) == civilian) then {
-					_ace_kill setVariable ["is_civilian", false, true];
-					[west] remoteExec ["Fn_Local_Switch_Side", _ace_kill];
+		if ((side _killed == east) || (side _killed == independent)) then {
+			private _ace_kill = _killed getVariable "ace_medical_lastDamageSource";
+			if (!isNil "_ace_kill") then {
+				if (isPlayer _ace_kill) then {
+					if ((side _ace_kill) == civilian) then {
+						_ace_kill setVariable ["is_civilian", false, true];
+						[west] remoteExec ["Fn_Local_Switch_Side", _ace_kill];
+					};
+				};
+			};
+		};
+		if (side _killed == civilian) then {
+			private _ace_kill = _killed getVariable "ace_medical_lastDamageSource";
+			if (!isNil "_ace_kill") then {
+				if (isPlayer _ace_kill) then {
+					if ((side _ace_kill) == west) then {
+						pings pushBackUnique (mapGridPosition _player);
+						remoteExec ["Fn_Local_CarmaKillCiv", _ace_kill];
+					};
 				};
 			};
 		};
