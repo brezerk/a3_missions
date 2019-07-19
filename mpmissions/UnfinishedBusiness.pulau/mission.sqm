@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=100;
+		nextID=102;
 	};
 	class Camera
 	{
-		pos[]={6478.9468,194.1868,6807.2842};
-		dir[]={-0.18066062,-0.70649648,0.68431675};
-		up[]={-0.18033972,0.70770532,0.6831004};
-		aside[]={0.96690154,7.8068115e-007,0.2552633};
+		pos[]={4838.1904,473.31104,7233.9946};
+		dir[]={-0.62039316,-0.49578106,0.60784739};
+		up[]={-0.35417846,0.86840522,0.34701756};
+		aside[]={0.69991052,5.6927092e-007,0.71434945};
 	};
 };
 binarizationWanted=0;
@@ -1710,7 +1710,7 @@ class Mission
 			position[]={6655.353,-0.19434738,10641.488};
 			name="wp_waypoint_Gurun_01";
 			type="b_installation";
-			angle=122.05897;
+			angle=122.05896;
 			id=1614;
 			atlOffset=21.997463;
 		};
@@ -6782,7 +6782,7 @@ class Mission
 			position[]={2974.2585,6.7565985,5172.9678};
 			name="wp_waypoint_Monyet_01";
 			type="b_installation";
-			angle=212.98087;
+			angle=212.9808;
 			id=3756;
 			atlOffset=11.727064;
 		};
@@ -7157,7 +7157,7 @@ class Mission
 			position[]={5394.6729,43.042,8990.5029};
 			name="wp_marker_51";
 			type="o_armor";
-			angle=351.99692;
+			angle=351.99683;
 			id=3813;
 			atlOffset=0.0059814453;
 		};
@@ -7216,7 +7216,7 @@ class Mission
 			position[]={5522.9351,1.808,9783.9424};
 			name="wp_marker_57";
 			type="n_armor";
-			angle=207.12596;
+			angle=207.12595;
 			id=3819;
 			atlOffset=0.00042665005;
 		};

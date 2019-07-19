@@ -185,7 +185,7 @@ if (isServer) then {
 	trgEvacPoint setTriggerArea [1600, 1600, 0, false];
 	trgEvacPoint setTriggerActivation ["WEST", "PRESENT", false];
 	trgEvacPoint setTriggerStatements [
-			"({alive _x && side _x == west} count (allPlayers -  entities 'HeadlessClient_F' ) == {alive _x && _x inArea thisTrigger && side _x == west} count (allPlayers - entities 'HeadlessClient_F' )) && ({alive _x && side _x == west} count allPlayers) > 0",
+			"({alive _x && side _x == west} count (allPlayers -  entities 'HeadlessClient_F' ) == {alive _x && _x inArea thisTrigger && side _x == west} count (allPlayers - entities 'HeadlessClient_F' )) && (({alive _x && side _x == west} count allPlayers) > 0) && (count assault_group > 0)",
 			"['t_us_rescue', 'SUCCEEDED'] call BIS_fnc_taskSetState; call Fn_Endgame_EvacPoint;",
 			""
 	];

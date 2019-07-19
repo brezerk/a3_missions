@@ -190,7 +190,13 @@ if (isServer) then {
 		case "ColorEAST": { _side = east; };
 		case "ColorGUER": { _side = resistance; };
 		case "ColorWEST": { _side = civilian; };
+		default {
+			systemChat format ["Error: %1", _marker];
+		};
 	};
+	
+	if (isNil "_side") exitWith {};
+	
 	private _cfg = [_side, _count] call _Fn_BrezBlock_CreateRandomDefendSquad;
 	private _pos = [_center, 5, _radius, 3, 0, 0, 0] call BIS_fnc_findSafePos;
 	

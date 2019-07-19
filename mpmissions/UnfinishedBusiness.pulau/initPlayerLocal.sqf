@@ -32,7 +32,6 @@ mission_plane_send = false;
 {if (_x find "wp_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
 {if (_x find "respawn_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
 
-
 //playSound "RadioAmbient2";
 
 player setVariable ["weapon_fiered", false, false];
@@ -94,7 +93,13 @@ Fn_Local_FailTasks = {
 		//'t_civ_police',
 		't_civ_weapon_stash',
 		't_libirate_0',
-		't_libirate_1'
+		't_libirate_1',
+		't_us_rescue_crash',
+		't_us_rescue_city_0',
+		't_us_rescue_city_1',
+		't_east_crash',
+		't_east_city_0',
+		't_east_city_1'
 	];
 };
 
@@ -125,6 +130,7 @@ player addEventHandler
 [
 	"Killed",
 	{
+		player setVariable ["is_assault_group", false, true];
 		player setVariable ["is_civilian", false, true];
 		player setVariable ["weapon_fiered", false, false];
 		deleteVehicle trgCivPlayerDetected;
@@ -151,7 +157,7 @@ player addEventHandler
 			_sides = _sides - [playerSide];
 		};
 		
-		//_sides = [civilian];
+		_sides = [west];
 		private _side = selectRandom _sides;
 
 		switch (_side) do

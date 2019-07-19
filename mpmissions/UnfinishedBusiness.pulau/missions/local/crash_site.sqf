@@ -54,9 +54,27 @@ if (hasInterface) then {
 	};
 	
 	Fn_Local_CrashSite_Complete = {
-		_task = ['t_crash_site', player] call BIS_fnc_taskReal;
+		private _title = "";
+		private _task = objNull;
+		switch (playerSide) do {
+			case west: {
+				if (player getVariable ["is_assault_group", false]) then {
+					_task = ['t_crash_site', player] call BIS_fnc_taskReal;
+					_title = localize "TASK_04_TITLE";
+				} else {
+					_task = ['t_us_rescue_crash', player] call BIS_fnc_taskReal;
+					_title = localize "TASK_10_TITLE";
+				};
+			};
+			case east: {
+				_task = ['t_east_crash', player] call BIS_fnc_taskReal;
+				_title = localize "TASK_AOC_04_TITLE";
+			};
+		};
+		systemChat "ok?";
 		if (!isNull _task) then {
-			["TaskSucceeded",["", localize "TASK_04_TITLE"]] call BIS_fnc_showNotification;
+			systemChat "go!";
+			["TaskSucceeded",["", _title]] call BIS_fnc_showNotification;
 			_task setTaskState "Succeeded";
 		};
 	};

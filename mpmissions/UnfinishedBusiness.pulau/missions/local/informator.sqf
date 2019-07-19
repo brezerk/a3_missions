@@ -51,8 +51,10 @@ if (hasInterface) then {
 	};
 	
 	Fn_Task_Create_Informator_Complete = {
-		PUB_fnc_informatorFound = [player, _this select 0];
-		publicVariableServer "PUB_fnc_informatorFound";
-		['t_find_informator', 'SUCCEEDED'] call BIS_fnc_taskSetState;
+		if ((playerSide == west) and (player getVariable ["is_assault_group", false])) then {
+			PUB_fnc_informatorFound = [player, _this select 0];
+			publicVariableServer "PUB_fnc_informatorFound";
+			['t_find_informator', 'SUCCEEDED'] call BIS_fnc_taskSetState;
+		};
 	};
 };

@@ -65,5 +65,41 @@ if (hasInterface) then {
 			true
 		] call BIS_fnc_taskCreate;
 		['t_scat_eliminate_surv', "kill"] call BIS_fnc_taskSetType;
+		[
+			player,
+			"t_east_crash",
+			[format [localize "TASK_10_DESC", D_LOCATION, D_LOCATION],
+			format [localize "TASK_10_TITLE"],
+			localize "TASK_ORIG_01"],
+			getMarkerPos "wp_crash_site",
+			"CREATED",
+			0,
+			true
+		] call BIS_fnc_taskCreate;
+		['t_east_crash', "search"] call BIS_fnc_taskSetType;
+		{
+			private _task = format["t_east_city_%1", _forEachIndex];
+			[
+				player,
+				_task,
+				[format[localize "TASK_11_DESC", _forEachIndex, _x select 0],
+				format[localize "TASK_11_TITLE", _x select 0],
+				localize "TASK_ORIG_01"],
+				getMarkerPos (format ["wp_city_%1", _forEachIndex]),
+				"CREATED",
+				0,
+				true
+			] call BIS_fnc_taskCreate;
+			[_task, "talk"] call BIS_fnc_taskSetType;			
+		} forEach avaliable_pois;
+				
+		trgWestCrashSite = createTrigger ["EmptyDetector", _markerPos];
+		trgWestCrashSite setTriggerArea [50, 50, 0, false];
+		trgWestCrashSite setTriggerActivation ["ANYPLAYER", "PRESENT", false];
+		trgWestCrashSite setTriggerStatements [
+			"(vehicle player) in thisList",
+			"call Fn_Local_CrashSite_Complete;",
+			""
+		];
 	};
 };
