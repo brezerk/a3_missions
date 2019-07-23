@@ -158,7 +158,7 @@ player addEventHandler
 			_sides = _sides - [playerSide];
 		};
 		
-		_sides = [west];
+		//_sides = [west];
 		private _side = selectRandom _sides;
 
 		switch (_side) do
