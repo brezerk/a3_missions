@@ -20,6 +20,7 @@ real_weather_init = false;
 
 D_LOCATIONS = ['Gurun']; //, 'Monyet'];
 
+D_DEBUG = true;
 
 [] execVM "addons\code43\real_weather.sqf";
 
@@ -154,6 +155,7 @@ if (isServer) then {
 	#include "missions\intro.sqf";
 	#include "missions\aa.sqf";
 	#include "missions\leader.sqf";
+	#include "missions\liberate.sqf";
 	#include "missions\civilian\cargo.sqf";
 	
 	waitUntil {real_weather_init};
@@ -191,10 +193,10 @@ if (isServer) then {
 	
 	publicVariable "avaliable_pois";
 
-	[_crashSitePos, 900] execVM "addons\brezblock\utils\controller.sqf";
+	//[_crashSitePos, 900] execVM "addons\brezblock\utils\controller.sqf";
 	execVM "missions\create_locations.sqf";
 	[getMarkerPos (format ["wp_%1_aa", D_LOCATION]), 600] execVM "addons\brezblock\utils\controller.sqf";
-	[getMarkerPos (format ["wp_%1_airfield", D_LOCATION]), 600] execVM "addons\brezblock\utils\controller.sqf";
+	//[getMarkerPos (format ["wp_%1_airfield", D_LOCATION]), 600] execVM "addons\brezblock\utils\controller.sqf";
 	[getMarkerPos "respawn_east", 150] execVM "addons\brezblock\utils\controller.sqf";
 	
 	[Fn_Spawn_UAZ, 'wp_spawn_uaz_01', 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';

@@ -26,7 +26,7 @@ player addItemToUniform "ACE_EarPlugs";
 for "_i" from 1 to 3 do {player addItemToUniform "ACE_CableTie";};
 for "_i" from 1 to 5 do {player addItemToUniform "ACE_morphine";};
 for "_i" from 1 to 15 do {player addItemToUniform "ACE_fieldDressing";};
-
+for "_i" from 1 to (random 15) do {player addItemToUniform "ACE_Banana";};
 //player addVest "CUP_V_B_RRV_DA1";
 {
 	for "_i" from 1 to 3 do {player addItemToVest _x;};

@@ -20,60 +20,62 @@
 Spawn start objectives, triggers for game intro and players allocation
 */
 
-//Player side triggers
-// Client side code
-if (hasInterface) then {
-	Fn_Local_Create_Task_Civilian_Liberate_MissionIntro = {
-		{
-			private _task = format["t_libirate_%1", _forEachIndex];
-			[
-				player,
-				_task,
-				[format[localize "TASK_CIV_03_DESC", _forEachIndex, _x select 0],
-				format[localize "TASK_CIV_03_TITLE", _x select 0],
-				localize "TASK_ORIG_03"],
-				getMarkerPos (format ["wp_city_%1", _forEachIndex]),
-				"CREATED",
-				0,
-				true
-			] call BIS_fnc_taskCreate;
-			[_task, "kill"] call BIS_fnc_taskSetType;
-						
-		} forEach avaliable_pois;
-		
+// Server side code
+if (isServer) then {
+
+	trgCivLiberate00 = objNull;
+	trgCivLiberate01 = objNull;
+
+	Fn_Create_Logic_CivilianLiberateCity = {
 		
 		trgCivLiberate00 = createTrigger ["EmptyDetector", getMarkerPos "wp_city_0"];
 		trgCivLiberate00 setTriggerArea [100, 100, 0, false];
 		trgCivLiberate00 setTriggerActivation ["WEST SEIZED", "PRESENT", false];
 		trgCivLiberate00 setTriggerTimeout [5, 10, 20, true];
-		trgCivLiberate00 setTriggerStatements ["this", "call Fn_Task_Civilian_Liberate_LiberateCity0;", ""];
+		trgCivLiberate00 setTriggerStatements ["this", "['wp_city_0'] call Fn_Create_CivilianRebelGroups;", ""];
 
 		trgCivLiberate01 = createTrigger ["EmptyDetector", getMarkerPos "wp_city_1"];
 		trgCivLiberate01 setTriggerArea [100, 100, 0, false];
 		trgCivLiberate01 setTriggerActivation ["WEST SEIZED", "PRESENT", false];
 		trgCivLiberate01 setTriggerTimeout [5, 10, 20, true];
-		trgCivLiberate01 setTriggerStatements ["this", "call Fn_Task_Civilian_Liberate_LiberateCity1;", ""];
+		trgCivLiberate01 setTriggerStatements ["this", "['wp_city_1'] call Fn_Create_CivilianRebelGroups;", ""];
 
 	};
 	
-	Fn_Task_Civilian_Liberate_LiberateCity0 = {
-		if (player getVariable ["is_civilian", false]) then {
-			_task = ['t_libirate_0', player] call BIS_fnc_taskReal;
-			if (!isNull _task) then {
-				["TaskSucceeded",["", localize "TASK_CIV_03_DONE"]] call BIS_fnc_showNotification;
-				_task setTaskState "Succeeded";
-			};
+	Fn_Create_CivilianRebelGroups = {
+		params ["_marker"];
+		private _center = getMarkerPos _marker;
+		
+		private _pos = [_center, 5, 100, 3, 0, 0, 0] call BIS_fnc_findSafePos;
+		private _group = [_pos, WEST, 5] call BIS_fnc_spawnGroup;
+		_group deleteGroupWhenEmpty true;
+		
+		{
+			[_x] execVM "gear\civilian_rebel.sqf";
+			[_x] remoteExecCall ["Fn_Local_Attach_Recruit_Action"];
+		} forEach units _group;
+		
+		_group setBehaviour "SAFE";
+		_group setCombatMode "YELLOW";
+		
+		[_group, _center, 150] call CBA_fnc_taskDefend;
+		
+		for "_i" from 0 to 2 do {
+			_pos = [_center, 5, 100, 3, 0, 0, 0] call BIS_fnc_findSafePos;
+			_group = [_pos, WEST, 3] call BIS_fnc_spawnGroup;
+			_group deleteGroupWhenEmpty true;
+			
+			{
+				[_x] execVM "gear\civilian_rebel.sqf";
+				[_x] remoteExecCall ["Fn_Local_Attach_Recruit_Action"];
+			} forEach units _group;
+			
+			_group setBehaviour "SAFE";
+			_group setCombatMode "YELLOW";
+			
+			[_group, _center, 150, (round (150 / 15)), "MOVE", "SAFE", "YELLOW", "LIMITED", "STAG COLUMN", "", [5,15,30]] call CBA_fnc_taskPatrol;
 		};
-	};
-	
-	Fn_Task_Civilian_Liberate_LiberateCity1 = {
-		if (player getVariable ["is_civilian", false]) then {
-			_task = ['t_libirate_1', player] call BIS_fnc_taskReal;
-			if (!isNull _task) then {
-				["TaskSucceeded",["", localize "TASK_CIV_03_DONE"]] call BIS_fnc_showNotification;
-				_task setTaskState "Succeeded";
-			};
-		};
+
 	};
 	
 };

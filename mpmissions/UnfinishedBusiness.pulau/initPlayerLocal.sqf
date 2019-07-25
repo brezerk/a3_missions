@@ -53,6 +53,7 @@ player setVariable ["is_civilian", false, true];
 //#include "missions\local\police.sqf";
 #include "missions\civilian\liberate.sqf";
 #include "missions\local\regroup.sqf";
+#include "missions\local\recruit.sqf";
 
 execVM "missions\local\patrols.sqf";
 
@@ -158,7 +159,9 @@ player addEventHandler
 			_sides = _sides - [playerSide];
 		};
 		
-		//_sides = [west];
+		if (D_DEBUG) then {
+			_sides = [east];
+		};
 		private _side = selectRandom _sides;
 
 		switch (_side) do

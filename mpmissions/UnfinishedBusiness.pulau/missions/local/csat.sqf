@@ -23,6 +23,9 @@ Spawn start objectives, triggers for game intro and players allocation
 //Player side triggers
 // Client side code
 if (hasInterface) then {
+
+	recruted_units = [];
+
 	Fn_Local_Create_SCAT_MissionIntro = {
 		private _marker = format ["wp_%1_aa", D_LOCATION];
 		if (canFire csat_aa_01) then {
@@ -93,7 +96,7 @@ if (hasInterface) then {
 			[_task, "talk"] call BIS_fnc_taskSetType;			
 		} forEach avaliable_pois;
 				
-		trgWestCrashSite = createTrigger ["EmptyDetector", _markerPos];
+		trgWestCrashSite = createTrigger ["EmptyDetector", (getMarkerPos "crash_site")];
 		trgWestCrashSite setTriggerArea [50, 50, 0, false];
 		trgWestCrashSite setTriggerActivation ["ANYPLAYER", "PRESENT", false];
 		trgWestCrashSite setTriggerStatements [
@@ -101,5 +104,15 @@ if (hasInterface) then {
 			"call Fn_Local_CrashSite_Complete;",
 			""
 		];
+		
+		{
+			[_x, player] call Fn_Local_Dismiss_Group;
+		} forEach recruted_units;
+		
+		recruted_units = [];
+		{
+			removeAllActions _x;
+			[_x] call Fn_Local_Attach_Recruit_Action;
+		} forEach (nearestObjects [getMarkerPos "respawn_east", ["SoldierWB"], 150]);
 	};
 };

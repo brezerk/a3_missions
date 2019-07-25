@@ -48,5 +48,7 @@ if (isServer) then {
 			};
 		} forEach (playableUnits + switchableUnits);
 	};
-	"EndAssaultGroupEvicted" call Fn_Endgame;
+	if (!D_DEBUG) then {
+		"EndAssaultGroupEvicted" call Fn_Endgame;
+	};
 };

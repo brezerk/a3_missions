@@ -25,7 +25,7 @@ if (!mission_requested) then {
 
 	switch (_cbLocation) do {
 		case 0: {
-			_D_LOCATION = selectRandom [D_LOCATIONS];
+			_D_LOCATION = selectRandom D_LOCATIONS;
 		};
 		case 1: {
 			_D_LOCATION = D_LOCATIONS select 0;
