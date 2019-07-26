@@ -279,6 +279,8 @@ if (isServer) then {
 		checkpoint_gate_group append [_vehicle];
 		*/
 		
+		//CUP_I_V3S_Covered_TKG
+		
 		//https://community.bistudio.com/wiki/Arma_3_CfgMarkerColors
 		switch (getMarkerColor _marker) do
 		{
