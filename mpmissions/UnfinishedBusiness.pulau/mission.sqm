@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=110;
+		nextID=112;
 	};
 	class Camera
 	{
-		pos[]={5585.8354,184.36777,6637.9946};
-		dir[]={0.65276152,-0.50698113,-0.56302267};
-		up[]={0.3839485,0.86192036,-0.33116227};
-		aside[]={-0.65317899,-8.0675818e-007,-0.75729018};
+		pos[]={5562.2739,184.36777,7804.583};
+		dir[]={-0.016007958,-0.53567159,-0.84435236};
+		up[]={-0.010152876,0.84438825,-0.53562671};
+		aside[]={-0.99989343,-1.0375998e-006,0.018954746};
 	};
 };
 binarizationWanted=0;
@@ -6901,7 +6901,7 @@ class Mission
 		class Item434
 		{
 			dataType="Marker";
-			position[]={6480.3677,31.0448,6915.5366};
+			position[]={6489.5649,29.921875,6916.5127};
 			name="wp_patrol_B_13";
 			markerType="ELLIPSE";
 			type="ellipse";
@@ -6911,7 +6911,7 @@ class Mission
 			b=25;
 			drawBorder=1;
 			id=3779;
-			atlOffset=-0.21953964;
+			atlOffset=-1.9771614;
 		};
 		class Item435
 		{

@@ -543,9 +543,9 @@
 				<Russian>%1: Ні, Я не буду помирати за ніщо, Американець! Дай мені 5 бананів.</Russian>
 			</Key>
 			<Key ID="INFO_NOT_JOINED_03">
-				<Original>%1: No, your rank is not allowing you to lead more than 3 units!</Original>
-				<English>%1: No, your rank is not allowing you to lead more than 3 units!</English>
-				<Russian>%1: Ні, твій ранг не дозволяє тобі керувати групою більше за 3 людини!</Russian>
+				<Original>%1: No, your rank is not allowing you to lead more than 2 units!</Original>
+				<English>%1: No, your rank is not allowing you to lead more than 2 units!</English>
+				<Russian>%1: Ні, твій ранг не дозволяє тобі керувати групою більше за 2 людини!</Russian>
 			</Key>
 			<Key ID="KARMA_DROP_01">
 				<Original>American Soldier has killed a civilian. The rumors are spreading over the island now ...</Original>

@@ -144,7 +144,9 @@ player addEventHandler
 		deleteVehicle trgCivLiberate00;
 		deleteVehicle trgCivLiberate01;
 		deleteVehicle trgWestCrashSite;
-
+		
+		[player] call Fn_Local_Dismiss_Group;
+		
 		private _sides = [civilian, east, west];
 		
 		if (!(alive csat_comm_tower_01)) then {

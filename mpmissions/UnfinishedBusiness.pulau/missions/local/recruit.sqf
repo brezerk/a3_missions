@@ -20,6 +20,9 @@
 Local player script
 */
 if (hasInterface) then {
+
+	recruit_group = grpNull;
+
 	Fn_Local_Attach_Recruit_Action = {
 		params ['_object'];
 		_object addAction 
@@ -47,7 +50,7 @@ if (hasInterface) then {
 				_this call Fn_Local_Dismiss;
 			},
 			[],
-			1.5, 
+			2, 
 			true, 
 			true, 
 			"",
@@ -58,16 +61,24 @@ if (hasInterface) then {
 		[
 			localize "ACTION_10", 
 			{
-				_this call Fn_Local_Dismiss_Group;
+				(_this select 1) call Fn_Local_Dismiss_Group;
 			},
 			[],
-			2, 
+			1.5, 
 			true, 
 			true, 
 			"",
 			"alive _target && (side _this == side _target)", // _target, _this, _originalTarget
 			3
 		];
+	};
+	
+	Fn_Local_Join = {
+		params ["_target", "_caller"];
+		recruit_group = group _caller;
+		_target setVariable ["joined", true, true];
+		[_target] join _caller; 
+		(group _caller) selectLeader _caller; 
 	};
 	
 	Fn_Local_Reqruit = {
@@ -77,8 +88,7 @@ if (hasInterface) then {
 				case west: {
 					if (_caller getVariable ["is_civilian", false]) then {
 						//will join for free
-						_target setVariable ["joined", true, true];
-						[_target] join _caller;
+						[_target, _caller] call Fn_Local_Join;
 						removeAllActions _target;
 						[_target] call Fn_Local_Attach_Dismiss_Action;
 					} else {
@@ -88,8 +98,7 @@ if (hasInterface) then {
 							for "_i" from 1 to 5 do {
 								_caller removeItem "ACE_Banana";
 							};
-							_target setVariable ["joined", true, true];
-							[_target] join _caller; 
+							[_target, _caller] call Fn_Local_Join;
 							removeAllActions _target;
 							[_target] call Fn_Local_Attach_Dismiss_Action;
 						} else {
@@ -98,12 +107,10 @@ if (hasInterface) then {
 					};
 				};
 				case east: {
-					if (count (units (group _caller)) <= 3) then {
-						recruted_units pushBackUnique _target;
+					if (count (units (group _caller)) <= 2) then {
 						//will join for free
 						//FIXME: not more than 3
-						_target setVariable ["joined", true, true];
-						[_target] join _caller;
+						[_target, _caller] call Fn_Local_Join;
 						removeAllActions _target;
 					} else {
 						systemChat format[localize "INFO_NOT_JOINED_03", name _target];
@@ -128,22 +135,23 @@ if (hasInterface) then {
 	};
 	
 	Fn_Local_Dismiss_Group = {
-		params ["_target", "_caller"];
-		if ((_target getVariable ["joined", false])) then {
-			private _group = createGroup [(side _caller), true];
+		params ["_caller"];
+		private _units = units recruit_group;
+		if (count _units > 2) then {
+			private _group = createGroup [(side (_units select 1)), true];
 			{
 				if (!(_x in playableunits) && !(_x in switchableunits)) then {
-					[_x] joinSilent _group;
-					_x setVariable ["joined", false, true];
-					removeAllActions _target;
-					[_x] call Fn_Local_Attach_Recruit_Action;
+					if (_x getVariable ["joined", false]) then {
+						[_x] joinSilent _group;
+						_x setVariable ["joined", false, true];
+						removeAllActions _x;
+						[_x] call Fn_Local_Attach_Recruit_Action;
+					};
 				};
-			} forEach (units (group _caller));
+			} forEach _units;
 			_group setBehaviour "SAFE";
 			_group setCombatMode "YELLOW";
 			[_group, getPos _caller, 100] call CBA_fnc_taskDefend;
-		} else {
-			systemChat format[localize "INFO_NOT_JOINED_01", name _target];
 		};
 	};
 };
