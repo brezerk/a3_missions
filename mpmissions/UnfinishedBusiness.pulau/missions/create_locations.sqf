@@ -37,7 +37,7 @@ if (isServer) then {
 		_mark setMarkerType "hd_destroy";
 		_mark setMarkerAlpha 0;
 		
-		//[_x select 1, 900] execVM "addons\brezblock\utils\controller.sqf";
+		[_x select 1, 900] execVM "addons\brezblock\utils\controller.sqf";
 		
 		private _pos = [_x select 1, 5, 150, 3, 0, 0, 0] call BIS_fnc_findSafePos;
 		_mark = createMarker [format ["respawn_civilian_%1", _forEachIndex], _pos];
