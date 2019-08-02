@@ -20,7 +20,7 @@ real_weather_init = false;
 
 D_LOCATIONS = ['Gurun']; //, 'Monyet'];
 
-D_DEBUG = true;
+D_DEBUG = false;
 
 [] execVM "addons\code43\real_weather.sqf";
 

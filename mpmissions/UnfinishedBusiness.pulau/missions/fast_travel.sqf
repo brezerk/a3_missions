@@ -50,8 +50,8 @@ if (isServer) then {
 		{
 			remoteExecCall ["Fn_Local_FastTravel_Wokeup_Express", _x];
 		} forEach assault_group;
-		//us_airplane_01 setVehicleArmor 0;
-		sleep 3;
+
+		sleep 6;
 		us_airplane_01 setDamage [1, true];
 	} else {
 		{
@@ -59,7 +59,5 @@ if (isServer) then {
 		} forEach assault_group;
 		
 	};
-	//sleep 3;
-	//
-	
+
 };
