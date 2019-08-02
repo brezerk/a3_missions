@@ -20,7 +20,7 @@ real_weather_init = false;
 
 D_LOCATIONS = ['Gurun']; //, 'Monyet'];
 
-D_DEBUG = false;
+D_DEBUG = true;
 
 [] execVM "addons\code43\real_weather.sqf";
 
@@ -205,27 +205,37 @@ if (isServer) then {
 	addMissionEventHandler ["EntityKilled",
 	{
 		params ["_killed", "_killer", "_instigator"];
-		if (((side _killed) == east) || ((side _killed) == independent)) then {
-			private _ace_kill = _killed getVariable "ace_medical_lastDamageSource";
-			if (!isNil "_ace_kill") then {
-				if (isPlayer _ace_kill) then {
-					if ((side _ace_kill) == civilian) then {
-						_ace_kill setVariable ["is_civilian", false, true];
-						[west] remoteExec ["Fn_Local_Switch_Side", _ace_kill];
+		
+		private _group = group _killed;
+		
+		if (_group != grpNull) then {	
+			private _killed_side = side _group;
+			systemChat format ["%1", _killed_side];
+			
+			if ((_killed_side == east) || (_killed_side == independent)) then {
+				private _ace_kill = _killed getVariable "ace_medical_lastDamageSource";
+				if (!isNil "_ace_kill") then {
+					if (isPlayer _ace_kill) then {
+						if ((side _ace_kill) == civilian) then {
+							_ace_kill setVariable ["is_civilian", false, true];
+							[west] remoteExec ["Fn_Local_Switch_Side", _ace_kill];
+						};
 					};
 				};
 			};
-		};
-		if ((side _killed) == civilian) then {
-			private _ace_kill = _killed getVariable "ace_medical_lastDamageSource";
-			if (!isNil "_ace_kill") then {
-				if (isPlayer _ace_kill) then {
-					if ((side _ace_kill) == west) then {
-						pings pushBackUnique (mapGridPosition _player);
-						remoteExec ["Fn_Local_CarmaKillCiv", _ace_kill];
+			if (_killed_side == civilian) then {
+				private _ace_kill = _killed getVariable "ace_medical_lastDamageSource";
+				if (!isNil "_ace_kill") then {
+					if (isPlayer _ace_kill) then {
+						if ((side _ace_kill) == west) then {
+							pings pushBackUnique (mapGridPosition _player);
+							remoteExec ["Fn_Local_CarmaKillCiv", _ace_kill];
+						};
 					};
 				};
 			};
+		} else {
+			systemChat "Error: Can't group";
 		};
 	}];
 	

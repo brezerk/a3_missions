@@ -74,6 +74,12 @@ if (isServer) then {
 					[_unit] call Fn_Task_Create_Informator_Attach_Action;
 				};
 			};
+			
+			if (hasInterface) then {
+				[avaliable_locations, avaliable_pois] remoteExecCall ["Fn_Local_Create_MissionInformator"];
+			} else {
+				[avaliable_locations, avaliable_pois] remoteExecCall ["Fn_Local_Create_MissionInformator", -2];
+			};
 		} forEach avaliable_pois;
 	};
 	
@@ -83,6 +89,7 @@ if (isServer) then {
 		Usage: call Fn_Task_Create_Informator_Attach_Action
 	*/
 	Fn_Task_Create_Informator_Attach_Action = {
+		systemChat "ATTACH";
 		params['_obj'];
 		private['_action_id'];
 		
@@ -97,12 +104,6 @@ if (isServer) then {
 			6,
 			false
 		] call BrezBlock_fnc_Attach_Hold_Action;
-		
-		if (hasInterface) then {
-			[avaliable_locations, avaliable_pois] remoteExecCall ["Fn_Local_Create_MissionInformator"];
-		} else {
-			[avaliable_locations, avaliable_pois] remoteExecCall ["Fn_Local_Create_MissionInformator", -2];
-		};
 	};	
 	
 	call Fn_Task_Create_Informator;

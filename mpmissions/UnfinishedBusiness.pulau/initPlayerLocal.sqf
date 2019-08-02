@@ -162,7 +162,7 @@ player addEventHandler
 		};
 		
 		if (D_DEBUG) then {
-			_sides = [east];
+			_sides = [civilian];
 		};
 		private _side = selectRandom _sides;
 
