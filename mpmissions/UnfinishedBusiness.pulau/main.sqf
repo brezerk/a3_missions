@@ -18,6 +18,9 @@
 
 real_weather_init = false;
 
+connected_users = [];
+connected_user_ids = [];
+
 D_LOCATIONS = ['Gurun', 'Monyet']; //, 'Monyet'];
 
 D_DEBUG = false;
@@ -25,6 +28,22 @@ D_DEBUG = false;
 [] execVM "addons\code43\real_weather.sqf";
 
 if (isServer) then {
+
+	onPlayerConnected {}; // 1.58 bug, must be called before below mission event will work
+	onPlayerDisconnected {}; // 1.58 bug, must be called before below mission event will work
+	
+	addMissionEventHandler ["PlayerConnected",
+	{
+		params ["_id", "_uid", "_name", "_jip", "_owner", "_idstr"];
+
+		if (_name != "__SERVER__") then {
+			connected_users pushBackUnique [_name, _id, format ["_USER_DEFINED #%1/", _id]];
+			publicVariable "connected_users";
+		};
+
+		systemChat "CONNECTED";
+	}];
+
 	_westHQ = createCenter west;
 	_eastHQ = createCenter east;
 	_indepHQ = createCenter independent;
@@ -165,6 +184,17 @@ if (isServer) then {
 	// skip random time
 	skipTime ((random 5) + 6);
 	
+	// Create base marker
+	private _mark = createMarker ["mrk_base_west_01", getPos us_liberty_01];
+	_mark setMarkerType "b_naval";
+	_mark setMarkerText 'USS "Democracy"';
+	
+	_mark = createMarker ["mrk_base_west_02", getPos us_liberty_01];
+	_mark setMarkerSize [2000, 2000];
+	_mark setMarkerBrush "BDiagonal";
+	_mark setMarkerShape "ellipse";
+	_mark setMarkerColor "ColorWEST";
+	
 	waitUntil {
 		sleep 3;
 		{
@@ -190,7 +220,7 @@ if (isServer) then {
 	
 	//Create crash site marker
 	private _crashSitePos = getMarkerPos (selectRandom _markers);
-	private _mark = createMarker ["wp_crash_site", _crashSitePos];
+	_mark = createMarker ["wp_crash_site", _crashSitePos];
 	_mark setMarkerType "hd_destroy";
 	_mark setMarkerAlpha 0;
 	
@@ -224,7 +254,6 @@ if (isServer) then {
 	_mark setMarkerShape "ellipse";
 	_mark setMarkerColor "ColorEAST";
 	[_mark] call BrezBlock_fnc_CreatePatrol;
-	
 	
 	private _ret = [_crashSitePos, 3000, 2] call BrezBlock_fnc_GetAllCitiesInRange;
 	//Get all POI in the range of 3000m
@@ -280,6 +309,7 @@ if (isServer) then {
 			systemChat "Error: Can't group";
 		};
 	}];
+	
 	
 	
 };

@@ -8,19 +8,19 @@ class EditorData
 	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=4532;
+		nextID=4538;
 	};
 	class MarkerIDProvider
 	{
-		nextID=71;
+		nextID=74;
 	};
 	class LayerIndexProvider
 	{
-		nextID=118;
+		nextID=122;
 	};
 	class Camera
 	{
-		pos[]={2419.0256,52.25684,5345.4995};
+		pos[]={2452.9231,81.065872,5394.8994};
 		dir[]={-0.66925502,-0.25075328,-0.69960701};
 		up[]={-0.17343713,0.9679907,-0.18130349};
 		aside[]={-0.72267628,-6.7851215e-007,0.69132751};
@@ -265,7 +265,7 @@ class ScenarioData
 	disabledAI=1;
 	class Header
 	{
-		gameType="Coop";
+		gameType="LastMan";
 		minPlayers=1;
 		maxPlayers=6;
 	};
@@ -357,7 +357,7 @@ class Mission
 	class Intel
 	{
 		briefingName="UnfinishedBusiness";
-		overviewText="Unfinished Business";
+		overviewText="US Special Forces squad goes to perform a peacekeeping mission.";
 		resistanceWest=0;
 		resistanceEast=1;
 		timeOfChanges=1800.0002;
@@ -382,7 +382,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=819;
+		items=822;
 		class Item0
 		{
 			dataType="Marker";
@@ -6495,12 +6495,12 @@ class Mission
 		class Item409
 		{
 			dataType="Marker";
-			position[]={2974.2585,6.7565985,5172.9678};
+			position[]={2934.0071,6.963623,4597.9468};
 			name="wp_waypoint_Monyet_01";
 			type="b_installation";
-			angle=212.98074;
+			angle=218.6042;
 			id=3756;
-			atlOffset=11.727064;
+			atlOffset=-0.98151684;
 		};
 		class Item410
 		{
@@ -7262,7 +7262,7 @@ class Mission
 			position[]={2380.6216,20.273514,5289.3369};
 			name="wp_spawn_uaz_Monyet_01";
 			type="o_motor_inf";
-			angle=47.949451;
+			angle=47.94944;
 			id=3956;
 			atlOffset=15.208572;
 		};
@@ -7272,7 +7272,7 @@ class Mission
 			position[]={2374.7258,20.664551,5323.0044};
 			name="wp_spawn_uaz_Monyet_02";
 			type="o_motor_inf";
-			angle=154.81035;
+			angle=154.81033;
 			id=3957;
 			atlOffset=16.052999;
 		};
@@ -9845,7 +9845,7 @@ class Mission
 		class Item724
 		{
 			dataType="Marker";
-			position[]={2216.5193,6.0058517,6319.7842};
+			position[]={2216.519,6.006,6319.7842};
 			name="wp_patrol_A_146";
 			markerType="ELLIPSE";
 			type="ellipse";
@@ -9854,7 +9854,7 @@ class Mission
 			a=100;
 			b=100;
 			id=4210;
-			atlOffset=7.6293945e-006;
+			atlOffset=0.0001616478;
 		};
 		class Item725
 		{
@@ -10716,7 +10716,7 @@ class Mission
 			};
 			id=4495;
 			type="Land_PillboxWall_01_6m_F";
-			atlOffset=2.8610229e-005;
+			atlOffset=2.7656555e-005;
 		};
 		class Item783
 		{
@@ -10750,7 +10750,7 @@ class Mission
 			};
 			id=4497;
 			type="Land_PillboxWall_01_6m_F";
-			atlOffset=2.8610229e-005;
+			atlOffset=2.9563904e-005;
 		};
 		class Item785
 		{
@@ -10944,7 +10944,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2408.6194,12.390982,5241.0908};
-				angles[]={-0,5.3133168,6.2365522};
+				angles[]={0,5.3133168,6.2365522};
 			};
 			side="Empty";
 			flags=4;
@@ -11194,7 +11194,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2403.6162,5.0187144,5299.8477};
-				angles[]={-0,3.1928239,0};
+				angles[]={0,3.1928239,0};
 			};
 			side="Empty";
 			flags=4;
@@ -11228,7 +11228,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2408.5427,5.4915352,5298.9771};
-				angles[]={-0,4.5279183,6.2798738};
+				angles[]={0,4.5279183,6.2798738};
 			};
 			side="Empty";
 			flags=4;
@@ -11374,6 +11374,41 @@ class Mission
 			id=4531;
 			type="CUP_O_Ural_Reammo_SLA";
 			atlOffset=-0.0125103;
+		};
+		class Item819
+		{
+			dataType="Marker";
+			position[]={1450.5067,7.7922363,4574.3257};
+			name="wp_marker_80";
+			type="n_armor";
+			angle=46.3881;
+			id=4535;
+			atlOffset=-1.0967255e-005;
+		};
+		class Item820
+		{
+			dataType="Marker";
+			position[]={1421.5292,7.7910156,4585.4365};
+			name="wp_marker_81";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorGUER";
+			fillName="SolidBorder";
+			a=50;
+			b=50;
+			drawBorder=1;
+			id=4536;
+			atlOffset=-0.0074152946;
+		};
+		class Item821
+		{
+			dataType="Marker";
+			position[]={1129.4036,8.4275436,2556.1223};
+			name="wp_marker_82";
+			type="n_armor";
+			angle=86.911301;
+			id=4537;
+			atlOffset=-1.0490417e-005;
 		};
 	};
 	class Connections

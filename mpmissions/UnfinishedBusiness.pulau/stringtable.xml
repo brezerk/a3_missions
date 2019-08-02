@@ -2,6 +2,16 @@
 <Project name="BrezBlock.org.ua">
 	<Package name="UnfinishedBusiness">
 		<Container name="l18n">
+			<Key ID="STR_ONLOAD_INFO_01">
+				<Original>US Special Forces squad goes to perform a peacekeeping mission</Original>
+				<English>US Special Forces squad goes to perform a peacekeeping mission.</English>
+				<Russian>Група спецназу США вирушае виконувати миротворчу місію.</Russian>
+			</Key>
+			<Key ID="STR_ONLOAD_INFO_02">
+				<Original>The situation is complex. Different bandit groups are conducting situational battles for the cities and villages. At this time, сeasefire mode is enforced by AOC military forces conducting peacekeeping operations. However this looks more like an invasion: AOC already built two military bases over the island and actively continue to strengthen its military presence. Active actions in the past 24 hours has not been registered.</Original>
+				<English>The situation is complex. Different bandit groups are conducting situational battles for the cities and villages. At this time, сeasefire mode is enforced by AOC military forces conducting peacekeeping operations. However this looks more like an invasion: AOC already built two military bases over the island and actively continue to strengthen its military presence. Active actions in the past 24 hours has not been registered.</English>
+				<Russian>Обстановка складна: різні угрупповання бандитів проводять ситуативні бої за міста та села. На цей час діє рішення про принення вогню яке нав'якують військові сили АОС, що проводять миротворчі дії. Однак це більше схоже на вторгнення: AOC вже побудував дві військові бази на острові й активно продовжує зміцнювати свою військову присутність. Активних дій за останні 24 години не зареєстровано.</Russian>
+			</Key>
 			<Key ID="BRIEFING_01_TITLE">
 				<Original>Gaming conventions</Original>
 				<English>Gaming conventions</English>
@@ -18,9 +28,9 @@
 				<Russian>Острів Pulau Monuet</Russian>
 			</Key>
 			<Key ID="BRIEFING_02_DESC">
-				<Original>Large tropical island. Has several smaller islands of on the north. Currently under the control of 'Red Sokol' bandits group lead by Moracio Goaz.</Original>
-				<English>Large tropical island. Has several smaller islands of on the north. Currently under the control of 'Red Sokol' bandits group lead by Moracio Goaz.</English>
-				<Russian>Великий тропічний острів. Має кілька невеликих островів на півночі. В даний час під контролем бандитів 'Червоного Сокола' очолює Moracio Goaz.</Russian>
+				<Original>Large tropical island. Has several smaller islands of on the north.</Original>
+				<English>Large tropical island. Has several smaller islands of on the north.</English>
+				<Russian>Великий тропічний острів. Має кілька невеликих островів на півночі.</Russian>
 			</Key>
 			<Key ID="BRIEFING_03_TITLE">
 				<Original>Pulau Gurun island</Original>
@@ -28,9 +38,9 @@
 				<Russian>Острів Pulau Gurun</Russian>
 			</Key>
 			<Key ID="BRIEFING_03_DESC">
-				<Original>Large tropical island. Has several smaller islands of on the south. Currently under the control of pro American group lead by Rіchardo Gonzales.</Original>
-				<English>Large tropical island. Has several smaller islands of on the south. Currently under the control of pro American group lead by Rіchardo Gonzales.</English>
-				<Russian>Великий тропічний острів. Має кілька невеликих островів на півдні. В даний час під контролем про американської групи яку очолює Rіchardo Gonzales.</Russian>
+				<Original>Large tropical island. Has several smaller islands of on the south.</Original>
+				<English>Large tropical island. Has several smaller islands of on the south.</English>
+				<Russian>Великий тропічний острів. Має кілька невеликих островів на півдні.</Russian>
 			</Key>
 			<Key ID="BRIEFING_04_TITLE">
 				<Original>Resources</Original>
@@ -48,19 +58,61 @@
 				<Russian>Наказ</Russian>
 			</Key>
 			<Key ID="BRIEFING_05_DESC">
-				<Original>Your order: Get to the  &lt;marker name = 'wp_air_field_01'&gt;Gurun airfield&lt;/marker&gt; and report to the officer. Ensure the security of the civilian population and facilitate the peaceful settlement of the conflict.</Original>
-				<English>Your order: Get to the  &lt;marker name = 'wp_air_field_01'&gt;Gurun airfield&lt;/marker&gt; and report to the officer. Ensure the security of the civilian population and facilitate the peaceful settlement of the conflict.</English>
-				<Russian>Ваш наказ: Прибути до &lt;marker name='wp_air_field_01'&gt;аеродрому Gurun&lt;/marker&gt; та доповісти команидру. Забезпечити безпеку мирного населення та сприяти мирному врегулюванню конфлікта.</Russian>
+				<Original>Your order: Get to the airfield and report to the officer. Ensure the security of the civilian population and facilitate the peaceful settlement of the conflict.&lt;br /&gt;&lt;br /&gt;Secondary objective: to scout AOC positions and keep eye on its military forces.</Original>
+				<English>Your order: Get to the airfield and report to the officer. Ensure the security of the civilian population and facilitate the peaceful settlement of the conflict.&lt;br /&gt;&lt;br /&gt;Secondary objective: to scout AOC positions and keep eye on its military forces.</English>
+				<Russian>Ваш наказ: Прибути до аеродрому та доповісти команидру. Забезпечити безпеку мирного населення та сприяти мирному врегулюванню конфлікта.&lt;br /&gt;&lt;br /&gt;Другорядна ціль: розвідати позиції АОС та слідкувати за її військовими силами.</Russian>
 			</Key>
 			<Key ID="BRIEFING_06_TITLE">
-				<Original>Weather</Original>
-				<English>Weather</English>
-				<Russian>Погода</Russian>
+				<Original>Fractions</Original>
+				<English>Fractions</English>
+				<Russian>Фракції</Russian>
 			</Key>
 			<Key ID="BRIEFING_06_DESC">
-				<Original>Small fog, strong east wind.</Original>
-				<English>Small fog, strong east wind.</English>
-				<Russian>Невеликий туман, сильний східний вітер.</Russian>
+				<Original>&lt;h2&gt;US Special Forces Group (US SFG)&lt;/h2&gt;&lt;br /&gt;
+US Special Forces Group is conducting peacekeeping operations. It is also has to scout AOC positions and keep eye on its military forces. 
+&lt;font color='#FFD700'&gt;This group is the main story line for this mission.&lt;/font&gt; The mission will ends as soon as the last member of this group will be killed.
+&lt;br /&gt;&lt;br /&gt;
+&lt;h2&gt;US Rescue Squad (US RQ)&lt;/h2&gt;&lt;br /&gt;
+US Rescue Squad will try to help US Special Forces group if it will be forced to leave the island. &lt;font color='#FFD700'&gt;It's primary mission to find and rescue any US military survivours&lt;/font&gt;.
+&lt;br /&gt;&lt;br /&gt;
+&lt;h2&gt;Army Corps of Cahri (AOC)&lt;/h2&gt;&lt;br /&gt;
+Pro Russian military group from the Cahri islands. Is lead by odious leader named Puhlo Pu. They are trying to expand their military presence over the region. Despite to "peacefull measures" they are extreamly invading the island with military force. To save it's influence US needs to stop or restrict AOC operations over the region. &lt;font color='#FFD700'&gt;More likely AOC will try to provoke US for a conflict&lt;/font&gt;.
+&lt;br /&gt;&lt;br /&gt;
+&lt;h2&gt;Pulau National Guard (PNG)&lt;/h2&gt;&lt;br /&gt;
+The former leader of the Pulau islands had formed Pulau National Guard to defend and control the territory. After his death different military officers prononced themself as the leaders on Pulau Nation. Unfortunately this turns out into civil war. According to the latest repots NPG has been disbanded and tunrned into several bandit groups. Most noticed are lead by Marcio Moraz, Gonsales Capito and Solomon Maru. &lt;font color='#FFD700'&gt;We do have information that some of this leaders are supported by AOC&lt;/font&gt;. Currently they are figting over the island for the dominance.
+&lt;br /&gt;&lt;br /&gt;
+&lt;h2&gt;Civilean Rebels (CR)&lt;/h2&gt;&lt;br /&gt;
+The most of civilians are sitting at homes or safehouses wating situation to resolve. However there are some groups for the people who dislike both former NPG leaders and AOC forces. &lt;font color='#FFD700'&gt;They might wish to establish connection to US to liberate the island&lt;/font&gt;.</Original>
+				<English>&lt;h2&gt;US Special Forces Group (US SFG)&lt;/h2&gt;&lt;br /&gt;
+US Special Forces Group is conducting peacekeeping operations. It is also has to scout AOC positions and keep eye on its military forces. 
+&lt;font color='#FFD700'&gt;This group is the main story line for this mission.&lt;/font&gt; The mission will ends as soon as the last member of this group will be killed.
+&lt;br /&gt;&lt;br /&gt;
+&lt;h2&gt;US Rescue Squad (US RQ)&lt;/h2&gt;&lt;br /&gt;
+US Rescue Squad will try to help US Special Forces group if it will be forced to leave the island. &lt;font color='#FFD700'&gt;It's primary mission to find and rescue any US military survivours&lt;/font&gt;.
+&lt;br /&gt;&lt;br /&gt;
+&lt;h2&gt;Army Corps of Cahri (AOC)&lt;/h2&gt;&lt;br /&gt;
+Pro Russian military group from the Cahri islands. Is lead by odious leader named Puhlo Pu. They are trying to expand their military presence over the region. Despite to "peacefull measures" they are extreamly invading the island with military force. To save it's influence US needs to stop or restrict AOC operations over the region. &lt;font color='#FFD700'&gt;More likely AOC will try to provoke US for a conflict&lt;/font&gt;.
+&lt;br /&gt;&lt;br /&gt;
+&lt;h2&gt;Pulau National Guard (PNG)&lt;/h2&gt;&lt;br /&gt;
+The former leader of the Pulau islands had formed Pulau National Guard to defend and control the territory. After his death different military officers prononced themself as the leaders on Pulau Nation. Unfortunately this turns out into civil war. According to the latest repots NPG has been disbanded and tunrned into several bandit groups. Most noticed are lead by Marcio Moraz, Gonsales Capito and Solomon Maru. &lt;font color='#FFD700'&gt;We do have information that some of this leaders are supported by AOC&lt;/font&gt;. Currently they are figting over the island for the dominance.
+&lt;br /&gt;&lt;br /&gt;
+&lt;h2&gt;Civilean Rebels (CR)&lt;/h2&gt;&lt;br /&gt;
+The most of civilians are sitting at homes or safehouses wating situation to resolve. However there are some groups for the people who dislike both former NPG leaders and AOC forces. &lt;font color='#FFD700'&gt;They might wish to establish connection to US to liberate the island&lt;/font&gt;.</English>
+				<Russian>&lt;h2&gt;Група спеціальних сил США (US SFG)&lt;/h2&gt;&lt;br /&gt;
+Група спеціальних сил США проводить миротворчу операцію. Вона також має завдання розвідати позиції АОС та слідкувати за її військовими силами.
+&lt;font color='#FFD700'&gt;Ця група є головною сюжетною лінією цієї місії.&lt;/font&gt; Місія закінчується, як тільки буде вбитий останній член цієї групи.
+&lt;br /&gt;&lt;br /&gt;
+&lt;h2&gt;Рятувальний загін США(US RQ)&lt;/h2&gt;&lt;br /&gt;
+Рятувальний загін США намагатиметься допомогти групі спецназу США, якщо його змусять покинути острів. &lt;font color='#FFD700'&gt;Основна місія - знайти та врятувати виживших американських військових&lt;/font&gt;.
+&lt;br /&gt;&lt;br /&gt;
+&lt;h2&gt;Армійський корпус Сахрі (AOC)&lt;/h2&gt;&lt;br /&gt;
+Проросійська військова група з островів Сахрі. Очолює одіозний лідер на ім’я Пухло Пу. Вони намагаються розширити свою військову присутність у регіоні. Незважаючи на "миролюбні заходи", вони швидко накоплюють на острові величезні військові сили. Щоб зберегти свій вплив, США потребують припинення або обмеження операцій AOC над регіоном. &lt;font color='#FFD700'&gt;Скоріш за все, АОС спробує спровокувати бійців США на конфлікт&lt;/font&gt;. 
+&lt;br /&gt;&lt;br /&gt;
+&lt;h2&gt;Національна гвардія Пулау (НГП)&lt;/h2&gt;&lt;br /&gt;
+Колишній ватажок островів Пулау сформував Національну гвардію Пулау для захисту та контролю території. Після його смерті різні військові офіцери виголошували себе лідерами нації Пулау. На жаль, це перетворилось на громадянську війну. За останніми данними, НГП було розформовано та перетворено на кілька бандитських груп. Найбільш помітні очолюються Марсіо Мороз, Гонсалес Капіто та Соломон Мару. &lt;font color='#FFD700'&gt;У нас є інформація, що деякі з цих лідерів підтримуються AOC&lt;/font&gt;. В даний час вони розбираються поміж собою.
+&lt;br /&gt;&lt;br /&gt;
+&lt;h2&gt;Цивільні повстанці (CR)&lt;/h2&gt;&lt;br /&gt;
+Більшість місцевих жителів сидять у будинках чи сховищах і очікують на вирішення ситуації. Однак є деякі групи людей, які не люблять колишніх лідерів НГП та сили AOC. &lt;font color='#FFD700'&gt;Вони, можливо, хотіли б встановити зв’язок із силами США що б визволити острів&lt;/font&gt;.</Russian>
 			</Key>
 			<Key ID="BRIEFING_07_TITLE">
 				<Original>Situation</Original>
@@ -68,9 +120,9 @@
 				<Russian>Обстановка</Russian>
 			</Key>
 			<Key ID="BRIEFING_07_DESC">
-				<Original>The situation is complex. Different bandit groups conduct a situational battle for cities and villages. At this time, сeasefire mode enforced. Active actions in the last 24 years have not been registered. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</Original>
-				<English>The situation is complex. Different bandit groups conduct a situational battle for cities and villages. At this time, сeasefire mode enforced. Active actions in the last 24 years have not been registered. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</English>
-				<Russian>Обстановка складна: різні угрупповання бандитів проводять ситуативні бої за міста та села. На цей час діє рішення про принення вогню. Активних дї за останні 24 роки не зареєстровано. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</Russian>
+				<Original>The situation is complex. Different bandit groups are conducting situational battles for the cities and villages. At this time, сeasefire mode is enforced by AOC military forces conducting peacekeeping operations. However this looks more like an invasion: AOC already built two military bases over the island and actively continue to strengthen its military presence. Active actions in the past 24 hours has not been registered. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</Original>
+				<English>The situation is complex. Different bandit groups are conducting situational battles for the cities and villages. At this time, сeasefire mode is enforced by AOC military forces conducting peacekeeping operations. However this looks more like an invasion: AOC already built two military bases over the island and actively continue to strengthen its military presence. Active actions in the past 24 hours has not been registered. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</English>
+				<Russian>Обстановка складна: різні угрупповання бандитів проводять ситуативні бої за міста та села. На цей час діє рішення про принення вогню яке нав'якують військові сили АОС, що проводять миротворчі дії. Однак це більше схоже на вторгнення: AOC вже побудував дві військові бази на острові й активно продовжує зміцнювати свою військову присутність. Активних дій за останні 24 години не зареєстровано. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</Russian>
 			</Key>
 			<Key ID="TASK_01_TITLE">
 				<Original>Eliminate rebel leader</Original>

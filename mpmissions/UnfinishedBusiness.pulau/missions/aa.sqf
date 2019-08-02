@@ -59,6 +59,29 @@ if (isServer) then {
 		
 		[(format ["wp_east_supply_%1_01", D_LOCATION])] call Fn_Task_Create_SupplyBox;
 		[(format ["wp_east_supply_%1_02", D_LOCATION])] call Fn_Task_Create_SupplyBox;
+		
+		_mark = createMarker ["mrk_base_east_01", getMarkerPos format ["respawn_east_%1", D_LOCATION]];
+		_mark setMarkerType "hd_warning";
+		_mark setMarkerText 'AOC Base "Alpha"';
+		_mark setMarkerColor "ColorEAST";
+		
+		_mark = createMarker ["mrk_base_east_02", getMarkerPos format ["respawn_east_%1", D_LOCATION]];
+		_mark setMarkerSize [300, 300];
+		_mark setMarkerBrush "BDiagonal";
+		_mark setMarkerShape "ellipse";
+		_mark setMarkerColor "ColorEAST";
+		
+		_mark = createMarker ["mrk_base_east_11", getMarkerPos format ["wp_%1_aa", D_LOCATION]];
+		_mark setMarkerType "hd_warning";
+		_mark setMarkerText 'AOC Base "Bravo"';
+		_mark setMarkerColor "ColorEAST";
+		
+		_mark = createMarker ["mrk_base_east_12", getMarkerPos format ["wp_%1_aa", D_LOCATION]];
+		_mark setMarkerSize [500, 500];
+		_mark setMarkerBrush "BDiagonal";
+		_mark setMarkerShape "ellipse";
+		_mark setMarkerColor "ColorEAST";
+		
 	};
 	
 	Fn_Task_Create_CSAT_Triggers = {
@@ -87,6 +110,16 @@ if (isServer) then {
 		} else {
 			remoteExecCall ["Fn_Local_Create_MissionAA", -2];
 		};
+		private _mark = createMarker ["mrk_base_east_31", getMarkerPos format ["wp_%1_commtower", D_LOCATION]];
+		_mark setMarkerType "hd_warning";
+		_mark setMarkerText 'AOC Commtower';
+		_mark setMarkerColor "ColorEAST";
+		
+		_mark = createMarker ["mrk_base_east_32", getMarkerPos format ["wp_%1_commtower", D_LOCATION]];
+		_mark setMarkerSize [150, 150];
+		_mark setMarkerBrush "BDiagonal";
+		_mark setMarkerShape "ellipse";
+		_mark setMarkerColor "ColorEAST";
 	};
 	
 	Fn_Task_AA_Complete = {

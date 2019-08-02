@@ -56,6 +56,17 @@ if (isServer) then {
 			[D_LOCATION] remoteExecCall ["Fn_Local_Create_KillLeader", -2];
 		};
 		
+		private _mark = createMarker ["mrk_base_indep_01", getMarkerPos format ["wp_leader_%1", D_LOCATION]];
+		_mark setMarkerType "hd_flag";
+		_mark setMarkerText 'PNG Base "Delta"';
+		_mark setMarkerColor "colorIndependent";
+		
+		_mark = createMarker ["mrk_base_indep_02", getMarkerPos format ["wp_leader_%1", D_LOCATION]];
+		_mark setMarkerSize [300, 300];
+		_mark setMarkerBrush "BDiagonal";
+		_mark setMarkerShape "ellipse";
+		_mark setMarkerColor "colorIndependent";
+		
 	};
 	
 	Fn_Task_KillLeader_Complete = {

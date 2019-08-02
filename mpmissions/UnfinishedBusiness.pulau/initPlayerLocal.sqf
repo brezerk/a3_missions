@@ -26,10 +26,15 @@ mission_requested = false;
 mission_plane_send = false;
 informator_told = false;
 
+connected_users = [];
+connected_user_ids = [];
+
 //tickets
 [player, 3] call BIS_fnc_respawnTickets;
 
 // hide markers
+
+//FIXME: should we remove all wp_ markers instead deleteMarkerLocal?
 {if (_x find "wp_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
 {if (_x find "respawn_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
 
@@ -56,6 +61,7 @@ player setVariable ["is_civilian", false, true];
 #include "missions\local\recruit.sqf";
 
 execVM "missions\local\patrols.sqf";
+execVM "addons\brezblock\utils\marker_manager.sqf";
 
 Fn_Local_SetPersonalTaskState = {
 	params['_name', '_state'];
