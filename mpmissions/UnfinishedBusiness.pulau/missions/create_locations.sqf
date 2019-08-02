@@ -25,10 +25,21 @@ if (isServer) then {
 
 	Fn_Task_Attack_City = {
 		params['_marker'];
-		private _crashSitePos = (getMarkerPos _marker);
-		systemChat _marker;
-		[_crashSitePos] call Fn_Patrols_Create_Transport_Sentry;
-		[_crashSitePos] call Fn_Patrols_Create_Sentry;
+		private _pos = (getMarkerPos _marker);
+
+		private _grp = createGroup [independent, true];
+		
+		private _vech0 = [_pos] call Fn_Patrols_Create_Sentry;
+		private _vech1 = [_pos] call Fn_Patrols_Create_Transport_Sentry;
+		
+		[driver _vech0] joinSilent _grp;
+		[driver _vech1] joinSilent _grp;
+		
+		private _wp = _grp addWaypoint [_pos, 0];
+		_wp setWaypointType "TR UNLOAD";
+		_wp setWaypointCombatMode "WHITE";
+		_wp setWaypointBehaviour "SAFE";
+		_wp setWaypointSpeed "NORMAL";
 	};
 
 	//Create markers

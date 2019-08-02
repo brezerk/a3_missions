@@ -492,6 +492,11 @@
 				<English>Select mission location:</English>
 				<Russian>Оберіть локацію місії:</Russian>
 			</Key>
+			<Key ID="STR_FROM_01_INFO_03">
+				<Original>Select mission start type:</Original>
+				<English>Select mission start type:</English>
+				<Russian>Оберіть тип початку місії:</Russian>
+			</Key>
 			<Key ID="STR_FROM_01_CMD_01">
 				<Original>Start mission</Original>
 				<English>Start mission</English>
@@ -512,10 +517,20 @@
 				<English>Nightmare</English>
 				<Russian>Кошмар</Russian>
 			</Key>
-			<Key ID="FROM_02_DIF_SELECT_01">
+			<Key ID="FROM_01_LOC_SELECT_01">
 				<Original>Random</Original>
 				<English>Random</English>
 				<Russian>Випадково</Russian>
+			</Key>
+			<Key ID="FROM_01_START_SELECT_01">
+				<Original>Default</Original>
+				<English>Default</English>
+				<Russian>Звичайний</Russian>
+			</Key>
+			<Key ID="FROM_01_START_SELECT_02">
+				<Original>Express</Original>
+				<English>Express</English>
+				<Russian>Експресс</Russian>
 			</Key>
 			<Key ID="INFO_PING_01">
 				<Original>%1: I've told you everything I know, come later!</Original>

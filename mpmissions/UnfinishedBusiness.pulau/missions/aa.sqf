@@ -40,6 +40,7 @@ if (isServer) then {
 		_pos = getMarkerPos format ["wp_%1_commtower", D_LOCATION];
 		_class = "Land_Communication_F";
 		csat_comm_tower_01 = createVehicle [_class, _pos];
+		csat_comm_tower_01 setVectorUp [0,0,1];
 		publicVariable "csat_aa_01";
 		publicVariable "csat_comm_tower_01";
 		switch (D_DIFFICLTY) do {

@@ -17,11 +17,13 @@
  ***************************************************************************/
  
 if (!mission_requested) then { 
+	private _cbStart = lbCurSel 2102;
 	private _cbDiff = lbCurSel 2101;
 	private _cbLocation = lbCurSel 2100;
 
 	_D_DIFFICLTY = _cbDiff;
 	_D_LOCATION = nil;
+	_D_START_TYPE = _cbStart;
 
 	switch (_cbLocation) do {
 		case 0: {
@@ -37,6 +39,6 @@ if (!mission_requested) then {
 
 	closeDialog 1;
 
-	PUB_fnc_missionPlanned = [_D_DIFFICLTY, _D_LOCATION];
+	PUB_fnc_missionPlanned = [_D_DIFFICLTY, _D_LOCATION, _D_START_TYPE];
 	publicVariableServer "PUB_fnc_missionPlanned";
 };

@@ -32,10 +32,17 @@ if (!isNil "_settingsDialog") then {
 	
 	private _cbLocation = _dialog displayCtrl 2100;
 	if (!isNil "_cbLocation") then {
-		_cbLocation lbAdd (localize "FROM_02_DIF_SELECT_01");
+		_cbLocation lbAdd (localize "FROM_01_LOC_SELECT_01");
 		{
 			_cbLocation lbAdd _x;
 		} forEach D_LOCATIONS;
 		_cbLocation lbSetCurSel 0;
+	};
+	
+	private _cbStart = _dialog displayCtrl 2102;
+	if (!isNil "_cbStart") then {
+		_cbStart lbAdd (localize "FROM_01_START_SELECT_01");
+		_cbStart lbAdd (localize "FROM_01_START_SELECT_02");
+		_cbStart lbSetCurSel 0;
 	};
 };

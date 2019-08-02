@@ -30,4 +30,10 @@ if (hasInterface) then {
 			[1, 5] execVM "addons\brezblock\utils\fade.sqf";
 		};
 	};
+	
+	Fn_Local_FastTravel_Wokeup_Express = {
+		if (alive player) then {
+			[1, 5] execVM "addons\brezblock\utils\fade.sqf";
+		};
+	};
 };

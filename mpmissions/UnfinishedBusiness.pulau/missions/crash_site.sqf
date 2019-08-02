@@ -191,8 +191,20 @@ if (isServer) then {
 	];
 	
 	sleep 60;
-	[_crashSitePos] call Fn_Patrols_Create_Transport_Sentry;
-	[_crashSitePos] call Fn_Patrols_Create_Sentry;
+	
+	private _grp = createGroup [independent, true];
+	
+	private _vech0 = [_crashSitePos] call Fn_Patrols_Create_Sentry;
+	private _vech1 = [_crashSitePos] call Fn_Patrols_Create_Transport_Sentry;
+	
+	[driver _vech0] joinSilent _grp;
+	[driver _vech1] joinSilent _grp;
+	
+	private _wp = _grp addWaypoint [_crashSitePos, 0];
+	_wp setWaypointType "TR UNLOAD";
+	_wp setWaypointCombatMode "WHITE";
+	_wp setWaypointBehaviour "SAFE";
+	_wp setWaypointSpeed "NORMAL";
 	
 	call Fn_Task_Create_CSAT_Triggers;
 

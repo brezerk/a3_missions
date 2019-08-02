@@ -465,7 +465,7 @@ if (isServer) then {
 			_x assignAsCargo _vehicle;
 			_x moveInCargo _vehicle;
 		} forEach units _group;
-			
+		
 		private _wp = group _vehicle addWaypoint [_markerPos, 0];
 		_wp setWaypointType "TR UNLOAD";
 		_wp setWaypointCombatMode "WHITE";
@@ -476,6 +476,8 @@ if (isServer) then {
 		_wp setWaypointType "SENTRY";
 		_wp setWaypointCombatMode "RED";
 		_wp setWaypointBehaviour "STEALTH";
+		
+		_vehicle;
 	};
 	
 	Fn_Patrols_Create_Sentry = {
@@ -539,6 +541,8 @@ if (isServer) then {
 		_wp setWaypointCombatMode "WHITE";
 		_wp setWaypointBehaviour "SAFE";
 		_wp setWaypointSpeed "NORMAL";
+		
+		_vehicle;
 	};
 	
 };

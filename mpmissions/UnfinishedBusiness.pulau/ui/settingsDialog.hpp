@@ -32,7 +32,7 @@ class SettingsDialogControl {
 			x = 0.417501 * safezoneW + safezoneX;
 			y = 0.368 * safezoneH + safezoneY;
 			w = 0.211406 * safezoneW;
-			h = 0.209 * safezoneH;
+			h = 0.275 * safezoneH;
 			colorBackground[] = 
 			{
 				0, 0, 0, 0.7
@@ -44,10 +44,10 @@ class SettingsDialogControl {
 			x = 0.417501 * safezoneW + safezoneX;
 			y = 0.368 * safezoneH + safezoneY;
 			w = 0.211406 * safezoneW;
-			h = 0.209 * safezoneH;
+			h = 0.275 * safezoneH;
 			text = "";
 		};
-		class lxlDifficlty: RscText
+		class lblDifficlty: RscText
 		{
 			idc = 1000;
 			text = $STR_FROM_01_INFO_01;
@@ -63,6 +63,15 @@ class SettingsDialogControl {
 			x = 0.422656 * safezoneW + safezoneX;
 			y = 0.445 * safezoneH + safezoneY;
 			w = 0.201094 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
+		class lblStart: RscText
+		{
+			idc = 1002;
+			text = $STR_FROM_01_INFO_03;
+			x = 0.422656 * safezoneW + safezoneX;
+			y = 0.512 * safezoneH + safezoneY;
+			w = 0.195937 * safezoneW;
 			h = 0.022 * safezoneH;
 		};
 		class cbLocation: RscCombo
@@ -83,12 +92,21 @@ class SettingsDialogControl {
 			w = 0.190781 * safezoneW;
 			h = 0.022 * safezoneH;
 		};
+		class cbStart: RscCombo
+		{
+			idc = 2102;
+			text = "Default"; //--- ToDo: Localize;
+			x = 0.427812 * safezoneW + safezoneX;
+			y = 0.545 * safezoneH + safezoneY;
+			w = 0.190781 * safezoneW;
+			h = 0.022 * safezoneH;
+		};
 		class bntStart: RscButton
 		{
 			idc = 1600;
 			text = $STR_FROM_01_CMD_01;
 			x = 0.427812 * safezoneW + safezoneX;
-			y = 0.522 * safezoneH + safezoneY;
+			y = 0.592 * safezoneH + safezoneY;
 			w = 0.190781 * safezoneW;
 			h = 0.033 * safezoneH;
 			action = "execVM 'ui\applySettings.sqf';";

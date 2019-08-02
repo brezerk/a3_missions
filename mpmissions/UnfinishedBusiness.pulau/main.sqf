@@ -51,6 +51,7 @@ if (isServer) then {
 	
 	D_DIFFICLTY = nil;
 	D_LOCATION = nil;
+	D_START_TYPE = nil;
 	// Defaines (should be an UI option at mission startup);
 	// Fixme should be diff dependent
 	D_FRACTION_INDEP = "CUP_I_NAPA"; //posible CUP_I_TK_GUE, IND_F, IND_F, IND_G_F
@@ -141,10 +142,11 @@ if (isServer) then {
 	Event Handler for loaded or unloaded box
 	*/
 	EventHander_MissionPlanned = {
-		params ["_difficlty", "_location"];
+		params ["_difficlty", "_location", "_start_type"];
 		if (!mission_requested) then {
 			D_DIFFICLTY = _difficlty;
 			D_LOCATION = _location;
+			D_START_TYPE = _start_type;
 			mission_requested = true;
 			publicVariable "D_LOCATION";
 			publicVariable "mission_requested";
@@ -186,6 +188,38 @@ if (isServer) then {
 	_mark setMarkerType "hd_destroy";
 	_mark setMarkerAlpha 0;
 	
+	_markers = [];
+	{
+		if ((markerType _x) in ["o_mortar"]) then {
+			if (_x find D_LOCATION >= 0) then {
+				if ((_crashSitePos distance2D (getMarkerPos _x)) <= 3000) then {
+				_markers append [_x];
+				};
+			};
+		};
+	} forEach allMapMarkers;
+	private _radioSitePos = getMarkerPos (selectRandom _markers);
+	_mark = createMarker [format ["wp_%1_commtower", D_LOCATION], _radioSitePos];
+	_mark setMarkerType "hd_destroy";
+	_mark setMarkerAlpha 1;
+	
+	_mark = createMarker ["wp_defend_commtower", _radioSitePos];
+	_mark setMarkerAlpha 0;
+	_mark setMarkerSize [25, 25];
+	_mark setMarkerBrush "SolidBorder";
+	_mark setMarkerShape "ellipse";
+	_mark setMarkerColor "ColorEAST";
+	[_mark] call BrezBlock_fnc_CreateDefend;
+	
+	_mark = createMarker ["wp_patrol_commtower", _radioSitePos];
+	_mark setMarkerAlpha 0;
+	_mark setMarkerSize [50, 50];
+	_mark setMarkerBrush "DiagGrid";
+	_mark setMarkerShape "ellipse";
+	_mark setMarkerColor "ColorEAST";
+	[_mark] call BrezBlock_fnc_CreatePatrol;
+	
+	
 	private _ret = [_crashSitePos, 3000, 2] call BrezBlock_fnc_GetAllCitiesInRange;
 	//Get all POI in the range of 3000m
 	avaliable_locations = _ret select 0;
@@ -194,13 +228,15 @@ if (isServer) then {
 	publicVariable "avaliable_pois";
 
 	[_crashSitePos, 900] execVM "addons\brezblock\utils\controller.sqf";
+
 	execVM "missions\create_locations.sqf";
+	
 	[getMarkerPos (format ["wp_%1_aa", D_LOCATION]), 600] execVM "addons\brezblock\utils\controller.sqf";
 	[getMarkerPos (format ["wp_%1_airfield", D_LOCATION]), 600] execVM "addons\brezblock\utils\controller.sqf";
-	[getMarkerPos "respawn_east", 150] execVM "addons\brezblock\utils\controller.sqf";
+	[getMarkerPos (format ["respawn_east_%1", D_LOCATION]), 150] execVM "addons\brezblock\utils\controller.sqf";
 	
-	[Fn_Spawn_UAZ, 'wp_spawn_uaz_01', 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
-	[Fn_Spawn_UAZ, 'wp_spawn_uaz_02', 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
+	[Fn_Spawn_UAZ, (format ["wp_spawn_uaz_%1_01", D_LOCATION]), 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
+	[Fn_Spawn_UAZ, (format ["wp_spawn_uaz_%1_02", D_LOCATION]), 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
 	
 	addMissionEventHandler ["EntityKilled",
 	{

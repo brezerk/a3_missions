@@ -219,7 +219,7 @@ player addEventHandler
 			};
 			case west:
 			{
-				private _pos = getMarkerPos "respawn_west";
+				private _pos = getMarkerPos format ["respawn_west_%1", D_LOCATION];
 				[] execVM "gear\west.sqf";
 				player setPos [_pos select 0, _pos select 1, 8];
 				call Fn_Local_Create_EAST_MissionIntro;
