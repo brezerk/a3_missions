@@ -161,9 +161,9 @@ player addEventHandler
 			_sides = _sides - [playerSide];
 		};
 		
-		if (D_DEBUG) then {
-			_sides = [civilian];
-		};
+		//if (D_DEBUG) then {
+		//	_sides = [civilian];
+		//};
 		private _side = selectRandom _sides;
 
 		switch (_side) do
@@ -199,7 +199,7 @@ player addEventHandler
 			case east:
 			{
 				[] execVM "gear\csat.sqf";
-				player setPos getMarkerPos "respawn_east";
+				player setPos getMarkerPos (format ["respawn_east_%1", D_LOCATION]);
 				call Fn_Local_Create_SCAT_MissionIntro;
 			};
 			case civilian:
@@ -219,7 +219,7 @@ player addEventHandler
 			};
 			case west:
 			{
-				private _pos = getMarkerPos format ["respawn_west_%1", D_LOCATION];
+				private _pos = getMarkerPos "respawn_west";
 				[] execVM "gear\west.sqf";
 				player setPos [_pos select 0, _pos select 1, 8];
 				call Fn_Local_Create_EAST_MissionIntro;

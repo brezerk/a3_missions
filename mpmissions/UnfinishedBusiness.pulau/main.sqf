@@ -18,7 +18,7 @@
 
 real_weather_init = false;
 
-D_LOCATIONS = ['Gurun']; //, 'Monyet'];
+D_LOCATIONS = ['Gurun', 'Monyet']; //, 'Monyet'];
 
 D_DEBUG = false;
 
@@ -173,6 +173,12 @@ if (isServer) then {
 		mission_requested;
 	};
 	
+	{
+			remoteExecCall["Fn_Local_Planned", _x];
+	} forEach (playableUnits + switchableUnits);
+	
+	[[us_liberty_01, "Land_Destroyer_01_hull_04_F"] call BIS_fnc_Destroyer01GetShipPart, 1, false] call BIS_fnc_Destroyer01AnimateHangarDoors;
+	
 	call Fn_Create_MissionIntro;
 	
 	private _markers = [];
@@ -201,7 +207,7 @@ if (isServer) then {
 	private _radioSitePos = getMarkerPos (selectRandom _markers);
 	_mark = createMarker [format ["wp_%1_commtower", D_LOCATION], _radioSitePos];
 	_mark setMarkerType "hd_destroy";
-	_mark setMarkerAlpha 1;
+	_mark setMarkerAlpha 0;
 	
 	_mark = createMarker ["wp_defend_commtower", _radioSitePos];
 	_mark setMarkerAlpha 0;

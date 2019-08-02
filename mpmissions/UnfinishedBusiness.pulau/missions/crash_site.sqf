@@ -144,7 +144,7 @@ if (isServer) then {
 		_x setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 180 + random 100)];
 		remoteExecCall ["Fn_Local_Jet_Player_DoParadrop", _x];
 		_x setVariable ["ACE_isUnconscious", true, true];
-		//[getPos _x, 400] execVM "addons\brezblock\utils\controller.sqf";
+		[getPos _x, 300] execVM "addons\brezblock\utils\controller.sqf";
 	} forEach assault_group;
 		
 	{deleteVehicle _x} foreach crew us_airplane_01; deleteVehicle us_airplane_01;

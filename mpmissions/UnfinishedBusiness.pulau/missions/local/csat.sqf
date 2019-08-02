@@ -108,6 +108,6 @@ if (hasInterface) then {
 				removeAllActions _x;
 				[_x] call Fn_Local_Attach_Recruit_Action;
 			};
-		} forEach (nearestObjects [getMarkerPos "respawn_east", ["SoldierWB"], 150]);
+		} forEach (nearestObjects [getMarkerPos (format ["respawn_east_%1", D_LOCATION]), ["SoldierWB"], 150]);
 	};
 };

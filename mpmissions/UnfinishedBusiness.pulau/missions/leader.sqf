@@ -26,13 +26,26 @@ if (hasInterface) then { };
 
 if (isServer) then {
 
+	target_leader_01 = objNull;
+
 	Fn_Task_Create_KillLeader = {
+	
+		private _center = getMarkerPos (format ["wp_leader_%1", D_LOCATION]);
+		private _pos = [_center, 0, 50, 1, 0, 0, 0] call BIS_fnc_findSafePos;
+		private _builing = nearestBuilding (_center);
+		_pos = selectRandom (_builing buildingPos -1);
+		if (!isNil "_pos") then {
+			private _class = "I_C_Soldier_Camo_F";
+			private _group = createGroup [independent, true];
+			target_leader_01 = _group createUnit [_class, _pos, [], 0, "FORM"];
+		};
+	
 		private['_trg'];
-		_trg = createTrigger ["EmptyDetector", getPos target_Gurun_01];
+		_trg = createTrigger ["EmptyDetector", getPos target_leader_01];
 		_trg setTriggerArea [0, 0, 0, false];
 		_trg setTriggerActivation ["NONE", "PRESENT", false];
 		_trg setTriggerStatements [
-			format["!alive target_%1_01;", D_LOCATION],
+			format["!alive target_leader_01;", D_LOCATION],
 			"if (isServer) then { call Fn_Task_KillLeader_Complete };",
 			""
 		];

@@ -1,6 +1,4 @@
 
- * AOC gear dynamic spawn; 
- 
  * Rebel missions?
     * Radio comm each town?
 	* Patrol Aria?

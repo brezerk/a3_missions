@@ -37,6 +37,10 @@ if (hasInterface) then {
 	Fn_Local_WaitForPlanning = {
 		cutText [localize "INFO_WAIT_01", "PLAIN DOWN", 2];
 	};
+	
+	Fn_Local_Planned = {
+		cutText [localize "INFO_WAIT_02", "PLAIN DOWN", 2];
+	};
 
 	Fn_Local_MakeEnemies = {
 		playSound "radio_chatter_02";

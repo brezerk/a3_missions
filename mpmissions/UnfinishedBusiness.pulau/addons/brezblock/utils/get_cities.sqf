@@ -35,10 +35,10 @@ if (isServer) then {
 	{
 		case "Gurun": {
 			_blacklist = [
-				'Pulau Monyet',
 				'Monyet Airfield',
-				'Pulau Gurun',
 				'Gurun airfield',
+				'Pulau Gurun',
+				'Pulau Monyet',
 				'Mabau',
 				'Ahiolo',
 				'Selamat',
@@ -59,6 +59,33 @@ if (isServer) then {
 				'Tinobu',
 				'Kolaka',
 				'Nurul'
+			];
+		};
+		case "Monyet": {
+			_blacklist = [
+				'Monyet Airfield',
+				'Gurun airfield',
+				'Pulau Gurun',
+				'Pulau Monyet',
+				'Mandomai',
+				'Mabau',
+				'Ahiolo',
+				'Selamat',
+				'Boano',
+				'Liat',
+				'Pasowe',
+				'Seliu',
+				'Moko',
+				'Lepar',
+				'Balalon',
+				'Bibung',
+				'Loholoho',
+				'Kinandal',
+				'Mambani',
+				'Minanga',
+				'Monse',
+				'Lalomo',
+				'Apal'
 			];
 		};
 		case "Stratis": {
