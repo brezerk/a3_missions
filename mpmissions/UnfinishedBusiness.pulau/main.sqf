@@ -43,6 +43,19 @@ if (isServer) then {
 
 		systemChat "CONNECTED";
 	}];
+	
+	addMissionEventHandler ["PlayerDisconnected",
+	{
+		params ["_id", "_uid", "_name", "_jip", "_owner", "_idstr"];
+
+		{
+			if (getPlayerUID _x == _uid) exitWith {
+				assault_group = assault_group - [_x];
+			};
+		} forEach (playableUnits + switchableUnits);
+
+		systemChat "DISCONNECTED";
+	}];
 
 	_westHQ = createCenter west;
 	_eastHQ = createCenter east;
