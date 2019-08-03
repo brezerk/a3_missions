@@ -51,12 +51,13 @@ waitUntil
 				systemChat "My marker. ok";
 			} else {
 				if ((_marker find "_USER_DEFINED #") >= 0) then {
-					{
+					systemChat format ["FOUND %1",  _marker];
+					/*{
 						if ((_marker find _x select 2) >= 0) exitWith {
 							_x setMarkerAlphaLocal 1;
 						};
 					} forEach _nearest_players;
-					_x setMarkerAlphaLocal 0;
+					_x setMarkerAlphaLocal 0;*/
 				};
 			};
 		} forEach allMapMarkers;
