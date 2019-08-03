@@ -27,7 +27,7 @@ waitUntil
  while { isNil "_my_marker_tag" } do {
 	{
 		if ((_x select 0) == (name player)) then {
-			_my_marker_tag = _x select 1;
+			_my_marker_tag = _x select 2;
 		};
 	} forEach connected_users;
 	if (D_DEBUG) then {
