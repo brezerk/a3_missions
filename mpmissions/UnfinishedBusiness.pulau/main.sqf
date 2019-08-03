@@ -43,9 +43,9 @@ if (isServer) then {
 		reverse _parts;
 		{
 
-			if((_forEachIndex % 3) == 0 && _forEachIndex != 0) then {
-				_value pushBack ",";
-			};
+			//if((_forEachIndex % 3) == 0 && _forEachIndex != 0) then {
+			//	_value pushBack ",";
+			//};
 			_value pushBack _x;
 		} forEach _parts;
 		reverse _value;
