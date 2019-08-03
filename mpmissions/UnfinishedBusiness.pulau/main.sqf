@@ -34,12 +34,12 @@ if (isServer) then {
 	
 	addMissionEventHandler ["PlayerConnected",
 	{
-		params ["_id", "_uid", "_name", "_jip", "_owner", "_idstr"];
+		params ["_id", "_uid", "_name", "_jip", "_owner"];
 		diag_log "Client connected";
 		diag_log _this;
 
 		if (_name != "__SERVER__") then {
-			connected_users pushBackUnique [_name, _idstr, format ["_USER_DEFINED #%1/", (str _id)]];
+			connected_users pushBackUnique [_name, _id, format ["_USER_DEFINED #%1/", (str _id)]];
 			publicVariable "connected_users";
 		};
 
