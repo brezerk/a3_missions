@@ -40,9 +40,11 @@ waitUntil
 	systemChat format ["ok my tag: %1", _my_marker_tag];
  };
  
+ scopeName "main";
  while { true } do {
  
 	if (side player == west) then {
+		scopeName "marker";
 		{
 			private _marker = _x;
 			if ((_marker find "_USER_DEFINED #") >= 0) then {
@@ -53,9 +55,11 @@ waitUntil
 					systemChat "Found ny marker. Skip..";
 				} else {
 					systemChat format ["FOUND %1",  _marker];
+					scopeName "player";
 					{
-						if (_id == _x select 1) exitWith {
+						if (_id == _x select 1) then {
 							_x setMarkerAlphaLocal 1;
+							breakTo "marker";
 						};
 					} forEach _nearest_players;
 					_x setMarkerAlphaLocal 0;
