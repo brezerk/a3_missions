@@ -44,6 +44,12 @@ grad_trenches_functions_stopBuildingAtFatigueMax = true;
 // ACE Pointing
 force ace_finger_enabled = true;
 
+// ACE View Distance Limiter
+force ace_viewdistance_limitViewDistance = 3500;
+ace_viewdistance_viewDistanceAirVehicle = 7;
+ace_viewdistance_viewDistanceLandVehicle = 5;
+ace_viewdistance_viewDistanceOnFoot = 4;
+
 // ACEX Field Rations
 force acex_field_rations_enabled = true;
 force acex_field_rations_timeWithoutWater = 2;

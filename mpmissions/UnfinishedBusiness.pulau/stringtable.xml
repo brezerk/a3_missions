@@ -490,34 +490,34 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>Гру замкнено. Спробуйте пізніше.</Russian>
 			</Key>
 			<Key ID="STR_END_01_TITLE">
-				<Original>Assault group was eliminated</Original>
-				<English>Assault group was eliminated</English>
-				<Russian>Штурмову группу ліквідовано</Russian>
+				<Original>US Special Forces were eliminated</Original>
+				<English>US Special Forces were eliminated</English>
+				<Russian>Cпецназ США ліквідовано</Russian>
 			</Key>
 			<Key ID="STR_END_01_DESC">
-				<Original>US Assault group was eliminated. AOC and Bandit groups are controlling Pulau islands for now.</Original>
-				<English>US Assault group was eliminated. AOC and Bandit groups are controlling Pulau islands for now.</English>
-				<Russian>Штурмову группу США було ліквідовано. Сили AOC разом з группами бандитів контролюють острови Пулау і по цей день.</Russian>
+				<Original>US Special Forces Group was eliminated. AOC and Bandit groups are controlling Pulau islands for now.</Original>
+				<English>US Special Forces Group was eliminated. AOC and Bandit groups are controlling Pulau islands for now.</English>
+				<Russian>Групу спеціальних сил США було ліквідовано. Сили AOC разом з группами бандитів контролюють острови Пулау і по цей день.</Russian>
 			</Key>
 			<Key ID="STR_END_03_TITLE">
-				<Original>US Assault group was resqued</Original>
-				<English>US Assault group was resqued</English>
-				<Russian>Штурмову група США було врятовано</Russian>
+				<Original>US Special Forces were resqued</Original>
+				<English>US Special Forces were resqued</English>
+				<Russian>Cпецназ США було врятовано</Russian>
 			</Key>
 			<Key ID="STR_END_03_DESC">
-				<Original>US Assault group was rescued. AOC forces lost its foothold and began withdrawing of the military forces. Bandit groups are still controlling Pulau islands.</Original>
-				<English>US Assault group was rescued. AOC forces lost its foothold and began withdrawing of the military forces. Bandit groups are still controlling Pulau islands.</English>
-				<Russian>Штурмову група США було врятовано. Сили АОС втратили свої позиції і почали виводити військову силу. Бандитські групи все ще контролюють острови Пулау.</Russian>
+				<Original>US Special Forces Group was rescued. AOC forces lost its foothold and began withdrawing of the military forces. Bandit groups are still controlling Pulau islands.</Original>
+				<English>US Special Forces Group was rescued. AOC forces lost its foothold and began withdrawing of the military forces. Bandit groups are still controlling Pulau islands.</English>
+				<Russian>Групу спеціальних сил США було врятовано. Сили АОС втратили свої позиції і почали виводити військову силу. Бандитські групи все ще контролюють острови Пулау.</Russian>
 			</Key>
 			<Key ID="STR_END_02_TITLE">
-				<Original>US Assault group was resqued</Original>
-				<English>US Assault group was resqued</English>
-				<Russian>Штурмову група США було врятовано</Russian>
+				<Original>US Special Forces were resqued</Original>
+				<English>US Special Forces were resqued</English>
+				<Russian>Cпецназ США було врятовано</Russian>
 			</Key>
 			<Key ID="STR_END_02_DESC">
-				<Original>US Assault group was rescued. AOC and Bandit groups are controlling Pulau islands for now.</Original>
-				<English>US Assault group was rescued. AOC and Bandit groups are controlling Pulau islands for now.</English>
-				<Russian>Штурмову группу США було ліквідовано. Сили AOC разом з группами бандитів контролюють острови Пулау і по цей день.</Russian>
+				<Original>US Special Forces Group was rescued. AOC and Bandit groups are controlling Pulau islands for now.</Original>
+				<English>US Special Forces Group was rescued. AOC and Bandit groups are controlling Pulau islands for now.</English>
+				<Russian>Групу спеціальних сил США було врятовано. Сили AOC разом з группами бандитів контролюють острови Пулау і по цей день.</Russian>
 			</Key>
 			<Key ID="STR_END_04_TITLE">
 				<Original>Bandit leader was eliminated</Original>
