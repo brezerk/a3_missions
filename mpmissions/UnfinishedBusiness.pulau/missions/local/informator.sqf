@@ -51,6 +51,9 @@ if (hasInterface) then {
 	};
 	
 	Fn_Local_Find_Assault_Group = {
+		if (D_DEBUG) then {
+			systemChat "Searching...";
+		};
 		params['_name'];
 		if (!informator_told) then {
 			informator_told = true;
@@ -59,7 +62,6 @@ if (hasInterface) then {
 					if (_x != player) then {
 						if (!(_x getVariable ["is_civilian", false])) then {
 							private _pos = getPos _x;
-							
 							_pos = mapGridPosition [((_pos select 0) + (round(random 600) - 300)), ((_pos select 1) + (round(random 600) - 300)), _pos select 2];
 							systemChat format[localize "INFO_PING_02", _name, _pos];
 						};
@@ -76,7 +78,7 @@ if (hasInterface) then {
 		systemChat format[localize "KARMA_DROP_01"];
 	};
 	
-	Fn_Task_Create_Informator_Complete = {
+	Fn_Local_Informator_Complete = {
 		params['_name'];
 		if ((playerSide == west) and (player getVariable ["is_assault_group", false])) then {
 			PUB_fnc_informatorFound = [player, _this select 0];

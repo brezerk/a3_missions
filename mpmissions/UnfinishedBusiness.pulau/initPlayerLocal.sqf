@@ -26,9 +26,6 @@ mission_requested = false;
 mission_plane_send = false;
 informator_told = false;
 
-connected_users = [];
-connected_user_ids = [];
-
 //tickets
 [player, 3] call BIS_fnc_respawnTickets;
 

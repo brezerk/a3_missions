@@ -19,12 +19,20 @@
  private _my_marker_tag = nil;
  private _nearest_players = [];
  
+waitUntil 
+{
+  !isNil "connected_users"
+};
+ 
  while { isNil "_my_marker_tag" } do {
 	{
 		if ((_x select 0) == (name player)) then {
 			_my_marker_tag = _x select 2;
 		};
 	} forEach connected_users;
+	if (D_DEBUG) then {
+		systemChat "Getting user id...";
+	};
 	sleep 1;
  };
  
@@ -40,7 +48,7 @@
 			//_USER_DEFINED #<PlayerID>/
 			if ((_marker find _my_marker_tag) >= 0) then {
 				//skip me
-				//systemChat "ok";
+				systemChat "My marker. ok";
 			} else {
 				if ((_marker find "_USER_DEFINED #") >= 0) then {
 					{

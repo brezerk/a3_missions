@@ -97,7 +97,7 @@ if (isServer) then {
 		_obj disableAi "MOVE";
 		_action_id = [
 			_obj,
-			{ [name _target] call Fn_Task_Create_Informator_Complete; },
+			{ [name _target] call Fn_Local_Informator_Complete; },
 			"simpleTasks\types\talk",
 			"ACTION_02",
 			"&& alive _target",

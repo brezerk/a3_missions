@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=124;
+		nextID=126;
 	};
 	class Camera
 	{
-		pos[]={959.29688,11.826611,9464.6182};
-		dir[]={0.5376606,-0.23095481,-0.81105632};
-		up[]={0.12769474,0.97290337,-0.19262607};
-		aside[]={-0.83357501,-9.1838592e-007,-0.55258483};
+		pos[]={616.21533,323.66156,9413.79};
+		dir[]={0.88908672,-0.45790845,0.0087472657};
+		up[]={0.45799145,0.88891798,0.0045061135};
+		aside[]={0.0098354099,-1.1484371e-007,-1.0000502};
 	};
 };
 binarizationWanted=0;
@@ -3180,7 +3180,7 @@ class Mission
 			};
 			id=2249;
 			type="CUP_B_MH6J_USA";
-			atlOffset=29.322002;
+			atlOffset=29.322006;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -8003,7 +8003,7 @@ class Mission
 			name="wp_paradrop_Monyet_30";
 			type="b_recon";
 			id=4040;
-			atlOffset=1.8119812e-005;
+			atlOffset=0.32316685;
 		};
 		class Item560
 		{

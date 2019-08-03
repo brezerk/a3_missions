@@ -18,9 +18,6 @@
 
 real_weather_init = false;
 
-connected_users = [];
-connected_user_ids = [];
-
 D_LOCATIONS = ['Gurun', 'Monyet']; //, 'Monyet'];
 
 D_DEBUG = true;
@@ -28,6 +25,9 @@ D_DEBUG = true;
 [] execVM "addons\code43\real_weather.sqf";
 
 if (isServer) then {
+
+	connected_users = [];
+
 
 	onPlayerConnected {}; // 1.58 bug, must be called before below mission event will work
 	onPlayerDisconnected {}; // 1.58 bug, must be called before below mission event will work
