@@ -20,7 +20,7 @@ real_weather_init = false;
 
 D_LOCATIONS = ['Gurun', 'Monyet']; //, 'Monyet'];
 
-D_DEBUG = true;
+D_DEBUG = false;
 
 [] execVM "addons\code43\real_weather.sqf";
 
@@ -205,6 +205,7 @@ systemChat format ["%1", baz2];
 	#include "missions\leader.sqf";
 	#include "missions\liberate.sqf";
 	#include "missions\civilian\cargo.sqf";
+	#include "missions\independent\objectives.sqf";
 	
 	waitUntil {real_weather_init};
 	
@@ -281,6 +282,8 @@ systemChat format ["%1", baz2];
 	_mark setMarkerShape "ellipse";
 	_mark setMarkerColor "ColorEAST";
 	[_mark] call BrezBlock_fnc_CreatePatrol;
+	
+	[_crashSitePos] call Fn_Task_Spawn_Indep_Objectives;
 	
 	private _ret = [_crashSitePos, 3000, 2] call BrezBlock_fnc_GetAllCitiesInRange;
 	//Get all POI in the range of 3000m

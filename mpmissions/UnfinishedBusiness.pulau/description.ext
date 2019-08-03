@@ -163,6 +163,7 @@ class CfgDebriefing
 };
 
 class CfgFunctions {
+	#include "addons\LARs\spawnComp\functions\functions.cpp"
 	class BrezBlock
 	{
 		class common
@@ -183,3 +184,4 @@ class CfgFunctions {
 
 #include "ui\settingsDialogControls.hpp"
 #include "ui\settingsDialog.hpp"
+#include "compositions\compositions.cfg"

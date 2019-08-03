@@ -271,6 +271,19 @@ if (isServer) then {
 		_vehicle = createVehicle ["Land_HBarrier_01_line_3_green_F", _o_pos];
 		_vehicle setDir _dir;
 		
+		
+		_o_pos = [_pos, 5, _dir + 90] call BIS_Fnc_relPos;
+		_o_pos = [_o_pos, 7, _dir] call BIS_Fnc_relPos;
+		
+		private _obj = "Land_WoodenCrate_01_F" createVehicle (_o_pos);
+			
+		clearWeaponCargoGlobal _obj;
+		clearMagazineCargoGlobal _obj;
+		clearItemCargoGlobal _obj;
+		clearBackpackCargoGlobal _obj;
+		
+		_obj addWeaponCargoGlobal ["ACE_Banana", ((random 15) + 10)];
+		
 		/*
 		_o_pos = [_pos, 1, _dir + 90] call BIS_Fnc_relPos;
 		_o_pos = [_o_pos, -6.5, _dir] call BIS_Fnc_relPos;

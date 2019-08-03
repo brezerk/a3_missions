@@ -59,7 +59,7 @@ if (isServer) then {
 		clearItemCargoGlobal _obj;
 		clearBackpackCargoGlobal _obj;
 		
-		_obj addWeaponCargoGlobal ["ACE_Banana", (random 8)];
+		_obj addWeaponCargoGlobal ["ACE_Banana", (random 5)];
 		_obj addWeaponCargoGlobal ["ACE_SpraypaintBlue", 2];
 		_obj addWeaponCargoGlobal ["ACE_Can_Franta", 2];
 		_obj addWeaponCargoGlobal ["ACE_Can_RedGull", 4];
