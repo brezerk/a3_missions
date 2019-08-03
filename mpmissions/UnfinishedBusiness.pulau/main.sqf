@@ -27,10 +27,9 @@ D_DEBUG = true;
 if (isServer) then {
 
 	connected_users = [];
-
-
-	onPlayerConnected {}; // 1.58 bug, must be called before below mission event will work
-	onPlayerDisconnected {}; // 1.58 bug, must be called before below mission event will work
+	
+	//onPlayerConnected {}; // 1.58 bug, must be called before below mission event will work
+	//onPlayerDisconnected {}; // 1.58 bug, must be called before below mission event will work
 	
 	addMissionEventHandler ["PlayerConnected",
 	{
