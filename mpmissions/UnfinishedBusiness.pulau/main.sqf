@@ -37,7 +37,7 @@ if (isServer) then {
 		params ["_id", "_uid", "_name", "_jip", "_owner", "_idstr"];
 
 		if (_name != "__SERVER__") then {
-			connected_users pushBackUnique [_name, _id, format ["_USER_DEFINED #%1/", _id]];
+			connected_users pushBackUnique [_name, _idstr, format ["_USER_DEFINED #%1/", _idstr]];
 			publicVariable "connected_users";
 		};
 
