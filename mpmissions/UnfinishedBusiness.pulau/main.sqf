@@ -23,7 +23,7 @@ connected_user_ids = [];
 
 D_LOCATIONS = ['Gurun', 'Monyet']; //, 'Monyet'];
 
-D_DEBUG = false;
+D_DEBUG = true;
 
 [] execVM "addons\code43\real_weather.sqf";
 
