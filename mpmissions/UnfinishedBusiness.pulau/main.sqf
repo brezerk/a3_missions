@@ -39,7 +39,7 @@ if (isServer) then {
 		diag_log _this;
 
 		if (_name != "__SERVER__") then {
-			connected_users pushBackUnique [_name, _idstr, format ["_USER_DEFINED #%1/", _idstr]];
+			connected_users pushBackUnique [_name, _idstr, format ["_USER_DEFINED #%1/", (str _id)]];
 			publicVariable "connected_users";
 		};
 
