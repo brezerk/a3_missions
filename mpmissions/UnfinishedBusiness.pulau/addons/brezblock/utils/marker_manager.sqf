@@ -27,7 +27,7 @@ waitUntil
  while { isNil "_my_marker_tag" } do {
 	{
 		if ((_x select 0) == (name player)) then {
-			_my_marker_tag = _x select 2;
+			_my_marker_tag = _x select 1;
 		};
 	} forEach connected_users;
 	if (D_DEBUG) then {
@@ -45,19 +45,20 @@ waitUntil
 	if (side player == west) then {
 		{
 			private _marker = _x;
-			//_USER_DEFINED #<PlayerID>/
-			if ((_marker find _my_marker_tag) >= 0) then {
-				//skip me
-				systemChat "My marker. ok";
-			} else {
-				if ((_marker find "_USER_DEFINED #") >= 0) then {
+			if ((_marker find "_USER_DEFINED #") >= 0) then {
+				private _id = [_marker, "#"] call CBA_fnc_split select 1;
+				_id = (([_id, "/"] call CBA_fnc_split 0) call parseNumber) call CBA_fnc_formatNumber;
+				
+				if (_id == _my_marker_tag) then {
+					systemChat "Found ny marker. Skip..";
+				} else {
 					systemChat format ["FOUND %1",  _marker];
-					/*{
-						if ((_marker find _x select 2) >= 0) exitWith {
+					{
+						if (_id == _x select 1) exitWith {
 							_x setMarkerAlphaLocal 1;
 						};
 					} forEach _nearest_players;
-					_x setMarkerAlphaLocal 0;*/
+					_x setMarkerAlphaLocal 0;
 				};
 			};
 		} forEach allMapMarkers;

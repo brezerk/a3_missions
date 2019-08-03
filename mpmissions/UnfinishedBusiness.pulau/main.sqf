@@ -26,51 +26,17 @@ D_DEBUG = true;
 
 if (isServer) then {
 
-	fn_toCashString = {
-		params["_cash"];
-		
-		_numDigits = 1;
-		while{(_cash / (10 ^ _numDigits)) > 1} do {
-			_numDigits = _numDigits + 1;
-		};
-		_value = [];
-		_parts = [];
-		for "_i" from _numDigits-1 to 1 step -1 do {
-			_digit = floor(_cash / (10 ^ _i));
-			_cash = _cash - (_digit * (10 ^ _i));
-			_parts pushback str(_digit);
-		};
-		reverse _parts;
-		{
-
-			//if((_forEachIndex % 3) == 0 && _forEachIndex != 0) then {
-			//	_value pushBack ",";
-			//};
-			_value pushBack _x;
-		} forEach _parts;
-		reverse _value;
-
-		_value joinString ""
-		
-	};
-
-	KKNou_fnc_floatToString = {
-		if (_this < 0) then {
-			str ceil _this + (str (_this - ceil _this) select [2])
-		} else {
-			str floor _this + (str (_this - floor _this) select [1])
-		};
-	};
-
-	KK_fnc_intToString = {
-		_s = "";
-		while {_this >= 10} do {
-			_this = _this / 10;
-			_s = format ["%1%2", round ((_this % floor _this) * 10), _s];
-			_this = floor _this;
-		};
-		format ["%1%2", _this, _s];
-	};
+/*
+systemChat "-----";
+foo = 1894381069;
+baz = 0;
+baz2 = 0;
+bar = foo call CBA_fnc_formatNumber;
+baz2 = parseNumber "1894381069";
+baz2 = baz2 call CBA_fnc_formatNumber;
+systemChat format ["%1", bar];
+systemChat format ["%1", baz2];
+*/
 
 	connected_users = [];
 	
@@ -79,12 +45,13 @@ if (isServer) then {
 	
 	addMissionEventHandler ["PlayerConnected",
 	{
+		// 1.58 bug, idstr is empty on linux host
 		params ["_id", "_uid", "_name", "_jip", "_owner"];
 		diag_log "Client connected";
 		diag_log _this;
 
 		if (_name != "__SERVER__") then {
-			connected_users pushBackUnique [_name, _id, format ["_USER_DEFINED #%1/", (_id call fn_toCashString)]];
+			connected_users pushBackUnique [_name, (_id call CBA_fnc_formatNumber), format ["_USER_DEFINED #%1/", (_id call CBA_fnc_formatNumber)]];
 			publicVariable "connected_users";
 		};
 
