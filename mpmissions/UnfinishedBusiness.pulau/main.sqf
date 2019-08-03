@@ -84,7 +84,7 @@ if (isServer) then {
 		diag_log _this;
 
 		if (_name != "__SERVER__") then {
-			connected_users pushBackUnique [_name, _id, format ["_USER_DEFINED #%1/", ((_id * 10) call fn_toCashString)]];
+			connected_users pushBackUnique [_name, _id, format ["_USER_DEFINED #%1/", (_id call fn_toCashString)]];
 			publicVariable "connected_users";
 		};
 
