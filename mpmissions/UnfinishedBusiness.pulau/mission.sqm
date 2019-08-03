@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=126;
+		nextID=128;
 	};
 	class Camera
 	{
@@ -8003,7 +8003,7 @@ class Mission
 			name="wp_paradrop_Monyet_30";
 			type="b_recon";
 			id=4040;
-			atlOffset=0.32316685;
+			atlOffset=1.8119812e-005;
 		};
 		class Item560
 		{

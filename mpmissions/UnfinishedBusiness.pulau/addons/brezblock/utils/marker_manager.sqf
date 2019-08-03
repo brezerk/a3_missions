@@ -49,7 +49,9 @@ waitUntil
 			private _marker = _x;
 			if ((_marker find "_USER_DEFINED #") >= 0) then {
 				private _id = [_marker, "#"] call CBA_fnc_split select 1;
-				_id = (([_id, "/"] call CBA_fnc_split 0) call parseNumber) call CBA_fnc_formatNumber;
+				_id = ([_id, "/"] call CBA_fnc_split) select 0;
+				_id = parseNumber _id;
+				_id = _id call CBA_fnc_formatNumber;
 				
 				if (_id == _my_marker_tag) then {
 					systemChat "Found ny marker. Skip..";
