@@ -26,6 +26,17 @@ D_DEBUG = true;
 
 if (isServer) then {
 
+
+	KK_fnc_intToString = {
+		_s = "";
+		while {_this >= 10} do {
+			_this = _this / 10;
+			_s = format ["%1%2", round ((_this % floor _this) * 10), _s];
+			_this = floor _this;
+		};
+		format ["%1%2", _this, _s];
+	};
+
 	connected_users = [];
 	
 	//onPlayerConnected {}; // 1.58 bug, must be called before below mission event will work
@@ -38,7 +49,7 @@ if (isServer) then {
 		diag_log _this;
 
 		if (_name != "__SERVER__") then {
-			connected_users pushBackUnique [_name, _id, format ["_USER_DEFINED #%1/", (str _id)]];
+			connected_users pushBackUnique [_name, _id, format ["_USER_DEFINED #%1/", (_id call KK_fnc_intToString)]];
 			publicVariable "connected_users";
 		};
 
