@@ -219,7 +219,10 @@ if (isServer) then {
 			_obj addItemCargoGlobal ["ACE_morphine", 10];
 			_obj addItemCargoGlobal ["ACE_epinephrine", 6];
 			_obj addItemCargoGlobal ["ACE_bloodIV", 20];
+			_obj addItemCargoGlobal ["ClaymoreDirectionalMine_Remote_Mag", 6];
+			_obj addItemCargoGlobal ["DemoCharge_Remote_Mag", 4];
 			_obj addBackpackCargoGlobal ["B_Kitbag_tan", 5];
+			
 				
 			if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
 					_obj addItemCargoGlobal ["ACRE_PRC148", 2];

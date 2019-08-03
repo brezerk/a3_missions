@@ -8,7 +8,7 @@ class EditorData
 	toggles=9;
 	class ItemIDProvider
 	{
-		nextID=4538;
+		nextID=4540;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=122;
+		nextID=124;
 	};
 	class Camera
 	{
-		pos[]={2452.9231,81.065872,5394.8994};
-		dir[]={-0.66925502,-0.25075328,-0.69960701};
-		up[]={-0.17343713,0.9679907,-0.18130349};
-		aside[]={-0.72267628,-6.7851215e-007,0.69132751};
+		pos[]={959.29688,11.826611,9464.6182};
+		dir[]={0.5376606,-0.23095481,-0.81105632};
+		up[]={0.12769474,0.97290337,-0.19262607};
+		aside[]={-0.83357501,-9.1838592e-007,-0.55258483};
 	};
 };
 binarizationWanted=0;
@@ -2704,6 +2704,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
+						isPlayer=1;
 						isPlayable=1;
 					};
 					id=2187;
@@ -3059,7 +3060,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[""CUP_arifle_M16A4_Base"",""CUP_launch_M72A6"",""FirstAidKit"",""Medikit""],[2,1,10,1]],[[""CUP_30Rnd_556x45_Stanag"",""CUP_M72A6_M"",""SmokeShell"",""SmokeShellOrange"",""Chemlight_red""],[20,2,2,2,2]],[[""ToolKit"",""ACE_bodyBag"",""ACE_EntrenchingTool"",""ACE_DefusalKit"",""ACE_EarPlugs""],[1,10,4,4,10]],[[""CUP_B_USMC_MOLLE""],[4]]],false]";
+							value="[[[[""CUP_arifle_M16A4_Base"",""CUP_launch_M72A6"",""FirstAidKit""],[1,1,10]],[[""CUP_30Rnd_556x45_Stanag"",""CUP_M72A6_M"",""SmokeShell"",""SmokeShellOrange"",""Chemlight_red""],[35,2,2,15,2]],[[""ToolKit"",""ACE_bodyBag"",""ACE_EntrenchingTool"",""ACE_DefusalKit"",""ACE_EarPlugs""],[1,10,4,4,10]],[[""CUP_B_USMC_MOLLE""],[4]]],false]";
 						};
 					};
 				};
@@ -3168,7 +3169,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={1007.3156,9.9195766,9458.7861};
+				position[]={1007.316,9.9198132,9458.7861};
 				angles[]={0,2.3561945,0};
 			};
 			side="Empty";
@@ -3179,7 +3180,7 @@ class Mission
 			};
 			id=2249;
 			type="CUP_B_MH6J_USA";
-			atlOffset=29.321783;
+			atlOffset=29.322002;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -3197,7 +3198,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[""CUP_arifle_M4A1"",""FirstAidKit"",""ACE_VMH3""],[1,4,2]],[[""CUP_30Rnd_556x45_Stanag"",""SmokeShell"",""SmokeShellOrange"",""Chemlight_red""],[10,2,2,2]],[[""ACE_bodyBag"",""ACE_EntrenchingTool"",""ACE_DefusalKit"",""ACE_EarPlugs""],[10,5,5,15]],[[],[]]],false]";
+							value="[[[[""CUP_arifle_M4A1"",""FirstAidKit"",""ACE_VMH3""],[1,4,2]],[[""CUP_30Rnd_556x45_Stanag"",""SmokeShell"",""SmokeShellOrange"",""Chemlight_red""],[35,2,15,2]],[[""ACE_bodyBag"",""ACE_EntrenchingTool"",""ACE_DefusalKit"",""ACE_EarPlugs""],[10,5,5,15]],[[],[]]],false]";
 						};
 					};
 				};
@@ -6392,7 +6393,6 @@ class Mission
 				position[]={1104.2089,1.8037758,9395.6875};
 				angles[]={0,2.0943952,0};
 			};
-			isPlayer=1;
 			description="Zeus";
 			id=3692;
 			type="VirtualCurator_F";
@@ -6450,7 +6450,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[""CUP_arifle_M16A4_Base"",""CUP_launch_M72A6"",""FirstAidKit"",""Medikit"",""ACE_VMH3""],[2,1,10,1,2]],[[""CUP_30Rnd_556x45_Stanag"",""CUP_M72A6_M"",""SmokeShell"",""SmokeShellOrange"",""Chemlight_red""],[20,2,2,2,2]],[[""ToolKit"",""ACE_EntrenchingTool"",""ACE_DefusalKit"",""ACE_EarPlugs"",""ACE_bodyBag""],[1,5,4,10,10]],[[""CUP_B_USMC_MOLLE""],[4]]],false]";
+							value="[[[[""CUP_arifle_M16A4_Base"",""CUP_launch_M72A6"",""FirstAidKit"",""ACE_VMH3""],[2,1,10,2]],[[""CUP_30Rnd_556x45_Stanag"",""CUP_M72A6_M"",""SmokeShell"",""SmokeShellOrange"",""Chemlight_red""],[35,2,2,15,2]],[[""ToolKit"",""ACE_EntrenchingTool"",""ACE_DefusalKit"",""ACE_EarPlugs"",""ACE_bodyBag""],[1,5,4,10,10]],[[""CUP_B_USMC_MOLLE""],[4]]],false]";
 						};
 					};
 				};
