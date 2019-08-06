@@ -30,16 +30,16 @@ if (isServer) then {
 	task_complete_wind = false;
 	task_complete_lab = false;
 	
-	idep_ammo_01 = objNull;
-	idep_fuel_01 = objNull;
-	idep_wind_01 = objNull;
-	idep_lab_01 = objNull;
+	indep_ammo_01 = objNull;
+	indep_fuel_01 = objNull;
+	indep_wind_01 = objNull;
+	indep_lab_01 = objNull;
 	
 	Fn_Task_Spawn_Indep_Objectives = {
 		params['_center'];
-		
-		private _classes = ["Land_Research_HQ_F", "Land_Cargo_HQ_V4_F", "Land_wpp_Turbine_V1_off_F", "Land_dp_smallTank_F"];
-		
+		//Land_Research_HQ_F, Land_Cargo_HQ_V4_F
+		//private _classes = ["Land_Medevac_house_V1_F", "Land_Cargo_Patrol_V1_F", "Land_wpp_Turbine_V1_off_F", "Land_dp_smallTank_F"];
+		private _classes = ["Land_Cargo_Patrol_V1_F", "Land_dp_smallTank_F"];
 		_markers = [];
 		{
 			if ((markerType _x) in ["n_mortar"]) then {
@@ -52,40 +52,175 @@ if (isServer) then {
 		} forEach allMapMarkers;
 		
 		for "_i" from 1 to 2 do {
-			private _marker = selectRandom _markers;
-			private _pos = getMarkerPos (_marker);
+			private _marker = selectRandom (_markers);
+			private _center = getMarkerPos (_marker);
+			private _dir = markerDir _marker;
+			
+			//_dir = markerDir _marker;
+			private _pos = [_center, 9, _dir + 90] call BIS_Fnc_relPos;
+			private _obj = createVehicle ["CUP_O_Ural_Reammo_RU", _pos, [], 0, "CAN_COLLIDE"];
+			_obj setDir _dir;
+			
 			_markers = _markers - [_marker];
 			
-			_marker = createMarker [format ["mrk_objective_0%1", _i], _pos];
+			_marker = createMarker [format ["mrk_objective_0%1", _i], _center];
 			_marker setMarkerType "hd_destroy";
-			_marker setMarkerAlpha 1;
+			_marker setMarkerAlpha 0;
 			
-			private _unitRef = ["defence_point", _pos, [0,0,0], 0, true] call LARs_fnc_spawnComp;
+			private _unitRef = ["defence_point", _center, [0,0,0], 0, true] call LARs_fnc_spawnComp;
 			
 			private _class = selectRandom (_classes);
 			_classes = _classes - [_class];
 			switch (_class) do {
-				case 'Land_Research_HQ_F': {
-					private _obj = createVehicle [_class, _pos];
+				case 'Land_Medevac_house_V1_F': {
+					private _obj = createVehicle [_class, _center];
 					_obj setVectorUp [0,0,1];
+					//_obj setDir _dir;
+					private _pos = selectRandom (_obj buildingPos -1);
+					if (!isNil "_pos") then {
+						private _group = createGroup [independent, true];
+						indep_lab_01 = _group createUnit ["C_scientist_F", _pos, [], 0, "FORM"];
+						indep_lab_01 allowDamage true;
+					};
+					private _trg = createTrigger ["EmptyDetector", getPos indep_lab_01];
+					_trg setTriggerArea [0, 0, 0, false];
+					_trg setTriggerActivation ["NONE", "PRESENT", false];
+					_trg setTriggerStatements [
+						"!alive indep_lab_01",
+						"call Fn_Task_DestroyAmmo_Complete; deleteVehicle thisTrigger;",
+						""
+					];
 				};
-				case 'Land_Cargo_HQ_V4_F': {
-					private _obj = createVehicle [_class, _pos];
+				case 'Land_Cargo_Patrol_V1_F': {
+					private _obj = createVehicle [_class, _center];
 					_obj setVectorUp [0,0,1];
+
+					private _dir = markerDir _marker;
+					private _pos = [_center, 8, _dir] call BIS_Fnc_relPos;
+					indep_ammo_01 = createVehicle ["B_Slingload_01_Ammo_F", _pos, [], 0, "CAN_COLLIDE"]; // Land_Pallet_MilBoxes_F
+					indep_ammo_01 setDir (_dir + 90);
+					indep_ammo_01 allowDamage true;
+					private _trg = createTrigger ["EmptyDetector", getPos indep_ammo_01];
+					_trg setTriggerArea [0, 0, 0, false];
+					_trg setTriggerActivation ["NONE", "PRESENT", false];
+					_trg setTriggerStatements [
+						"!alive indep_ammo_01",
+						"call Fn_Task_DestroyAmmo_Complete; deleteVehicle thisTrigger;",
+						""
+					];
 				};
 				case 'Land_wpp_Turbine_V1_off_F': {
-					idep_wind_01 = createVehicle [_class, _pos];
-					idep_wind_01 setVectorUp [0,0,1];
+					indep_wind_01 = createVehicle [_class, _center];
+					indep_wind_01 setVectorUp [0,0,1];
+					indep_wind_01 allowDamage true;
+					private _trg = createTrigger ["EmptyDetector", getPos indep_wind_01];
+					_trg setTriggerArea [0, 0, 0, false];
+					_trg setTriggerActivation ["NONE", "PRESENT", false];
+					_trg setTriggerStatements [
+						"!alive indep_wind_01",
+						"call Fn_Task_DestroyWindMill_Complete; deleteVehicle thisTrigger;",
+						""
+					];
 				};
 				case 'Land_dp_smallTank_F': {
-					idep_fuel_01 = createVehicle [_class, _pos];
-					idep_fuel_01 setVectorUp [0,0,1];
+					indep_fuel_01 = createVehicle [_class, _center];
+					indep_fuel_01 setVectorUp [0,0,1];
+					indep_fuel_01 allowDamage true;
+					private _trg = createTrigger ["EmptyDetector", getPos indep_fuel_01];
+					_trg setTriggerArea [0, 0, 0, false];
+					_trg setTriggerActivation ["NONE", "PRESENT", false];
+					_trg setTriggerStatements [
+						"!alive indep_fuel_01",
+						"call Fn_Task_DestroyFuel_Complete; deleteVehicle thisTrigger;",
+						""
+					];
 				};
 			};
+			_mark = createMarker ["wp_defend_obj", _center];
+			_mark setMarkerAlpha 0;
+			_mark setMarkerSize [25, 25];
+			_mark setMarkerBrush "SolidBorder";
+			_mark setMarkerShape "ellipse";
+			_mark setMarkerColor "ColorGUER";
+			[_mark] call BrezBlock_fnc_CreateDefend;
+			[_mark] call BrezBlock_fnc_CreateDefend;
+			deleteMarker _mark;
+			
+			_mark = createMarker ["wp_defend_obj", _center];
+			_mark setMarkerAlpha 0;
+			_mark setMarkerSize [50, 50];
+			_mark setMarkerBrush "DiagGrid";
+			_mark setMarkerShape "ellipse";
+			_mark setMarkerColor "ColorGUER";
+			[_mark] call BrezBlock_fnc_CreatePatrol;
+			[_mark] call BrezBlock_fnc_CreatePatrol;
+			deleteMarker _mark;
 		};
-		
-		// 
-		// CUP_O_Ural_Reammo_RU
-	
 	};
+	
+	Fn_Create_Mission_DestroyAmmo = {
+		if (!isNull indep_ammo_01) then {
+			{
+				[(getPos indep_ammo_01)] remoteExecCall ["Fn_Local_Create_Mission_DestroyAmmo", _x];
+			} forEach assault_group;
+		};
+	};
+	
+	Fn_Create_Mission_DestroyFuel = {
+		if (!isNull indep_fuel_01) then {
+			{
+				[(getPos indep_fuel_01)] remoteExecCall ["Fn_Local_Create_Mission_DestroyFuel", _x];
+			} forEach assault_group;
+		};
+	};
+	
+	Fn_Create_Mission_DestroyWindMill = {
+		if (!isNull indep_wind_01) then {
+			{
+				[(getPos indep_wind_01)] remoteExecCall ["Fn_Local_Create_Mission_DestroyWindMill", _x];
+			} forEach assault_group;
+		};
+	};
+	
+	Fn_Create_Mission_KillDoctor = {
+		if (!isNull indep_lab_01) then {
+			{
+				[(getPos indep_lab_01)] remoteExecCall ["Fn_Local_Create_Mission_KillDoctor", _x];
+			} forEach assault_group;
+		};
+	};
+	
+	Fn_Task_DestroyAmmo_Complete = {
+		if (!isNull indep_ammo_01) then {
+			{
+				[(getPos indep_ammo_01)] remoteExecCall ["Fn_Local_Task_DestroyAmmo_Complete", _x];
+			} forEach assault_group;
+		};
+	};
+	
+	Fn_Task_DestroyFuel_Complete = {
+		if (!isNull indep_fuel_01) then {
+			{
+				[(getPos indep_fuel_01)] remoteExecCall ["Fn_Local_Task_DestroyFuel_Complete", _x];
+			} forEach assault_group;
+		};
+	};
+	
+	Fn_Task_DestroyWindMill_Complete = {
+		if (!isNull indep_wind_01) then {
+			{
+				[(getPos indep_wind_01)] remoteExecCall ["Fn_Local_Task_DestroyWindMill_Complete", _x];
+			} forEach assault_group;
+		};
+	};
+	
+	Fn_Task_KillDoctor_Complete = {
+		if (!isNull indep_lab_01) then {
+			{
+				[(getPos indep_lab_01)] remoteExecCall ["Fn_Local_Task_KillDoctor_Complete", _x];
+			} forEach assault_group;
+		};
+	};
+	
+	
 };

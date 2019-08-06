@@ -54,7 +54,8 @@ if (isServer) then {
 			
 			for "_i" from 1 to _base_count do {
 				private _center = _x select 1;
-				private _pos = [_center, 0, 150, 1, 0, 0, 0] call BIS_fnc_findSafePos;
+				//private _pos = [_center, 0, 150, 1, 0, 0, 0] call BIS_fnc_findSafePos;
+				private _pos = [[[_center, 50]],[]] call BIS_fnc_randomPos;
 				private _builing = nearestBuilding (_pos);
 				_pos = selectRandom (_builing buildingPos -1);
 				if (!isNil "_pos") then {
@@ -80,6 +81,15 @@ if (isServer) then {
 			} else {
 				[avaliable_locations, avaliable_pois] remoteExecCall ["Fn_Local_Create_MissionInformator", -2];
 			};
+			
+			trgRegroupIsDone = createTrigger ["EmptyDetector", getMarkerPos (format["wp_%1_airfield_01", D_LOCATION])];
+			trgRegroupIsDone setTriggerArea [0, 0, 0, false];
+			trgRegroupIsDone setTriggerActivation ["NONE", "PRESENT", false];
+			trgRegroupIsDone setTriggerStatements [
+					"task_complete_intormator && task_complete_regroup",
+					"call Fn_Informator_Complete; deleteVehicle trgRegroupIsDone;",
+					""
+			];
 		} forEach avaliable_pois;
 	};
 	
@@ -107,4 +117,13 @@ if (isServer) then {
 	};	
 	
 	call Fn_Task_Create_Informator;
+	
+	Fn_Informator_Complete = {
+		call Fn_Task_Create_AA;
+		call Fn_Task_Create_KillLeader;
+		call Fn_Create_Mission_DestroyAmmo;
+		call Fn_Create_Mission_DestroyFuel;
+		call Fn_Create_Mission_DestroyWindMill;
+		call Fn_Create_Mission_KillDoctor;
+	};
 };

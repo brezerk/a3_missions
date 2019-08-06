@@ -106,8 +106,8 @@ class CfgSounds
 
 		// subtitle delay in seconds, subtitle text
 		titles[] = {
-			0, $STR_RADIO_CALL_05,
-			6, $STR_RADIO_CALL_06,
+			0, $STR_RADIO_CALL_06,
+			6, $STR_RADIO_CALL_05,
 			12, $STR_RADIO_CALL_07
 		};
 	};

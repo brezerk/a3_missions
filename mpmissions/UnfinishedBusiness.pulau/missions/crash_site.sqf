@@ -144,7 +144,7 @@ if (isServer) then {
 		private _markerPos = getMarkerPos _marker;
 		//parachute
 		_x setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 180 + random 100)];
-		remoteExecCall ["Fn_Local_Jet_Player_DoParadrop", _x];
+		[D_DIFFICLTY] remoteExecCall ["Fn_Local_Jet_Player_DoParadrop", _x];
 		_x setVariable ["ACE_isUnconscious", true, true];
 		[getPos _x, 300] execVM "addons\brezblock\utils\controller.sqf";
 	} forEach assault_group;
@@ -173,15 +173,6 @@ if (isServer) then {
 		
 	//Send vehicles on patrol
 	call Fn_Patrols_Create_Random_Waypoints;
-	
-	trgRegroupIsDone = createTrigger ["EmptyDetector", getMarkerPos (format["wp_%1_airfield_01", D_LOCATION])];
-	trgRegroupIsDone setTriggerArea [0, 0, 0, false];
-	trgRegroupIsDone setTriggerActivation ["NONE", "PRESENT", false];
-	trgRegroupIsDone setTriggerStatements [
-			"task_complete_intormator && task_complete_regroup",
-			"call Fn_Task_Create_AA; call Fn_Task_Create_KillLeader; deleteVehicle trgRegroupIsDone;",
-			""
-	];
 	
 	trgEvacPoint = createTrigger ["EmptyDetector", getPos us_liberty_01];
 	trgEvacPoint setTriggerArea [1600, 1600, 0, false];

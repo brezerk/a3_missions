@@ -35,8 +35,8 @@ force ace_repair_engineerSetting_repair = 0;
 // ACE Medical
 force ace_medical_amountOfReviveLives = -1;
 force ace_medical_increaseTrainingInLocations = true;
-ace_medical_menu_useMenu = 0;
-//force ace_medical_preventInstaDeath = false;
+ace_medical_menu_useMenu = 1;
+force ace_medical_preventInstaDeath = false;
 
 // GRAD Trenches
 grad_trenches_functions_stopBuildingAtFatigueMax = true;

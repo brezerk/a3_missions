@@ -8,9 +8,9 @@
 				<Russian>Група спецназу США вирушае виконувати миротворчу місію.</Russian>
 			</Key>
 			<Key ID="STR_ONLOAD_INFO_02">
-				<Original>The situation is complex. Different bandit groups are conducting situational battles for the cities and villages. At this time, сeasefire mode is enforced by AOC military forces conducting peacekeeping operations. However this looks more like an invasion: AOC already built two military bases over the island and actively continue to strengthen its military presence. Active actions in the past 24 hours has not been registered.</Original>
-				<English>The situation is complex. Different bandit groups are conducting situational battles for the cities and villages. At this time, сeasefire mode is enforced by AOC military forces conducting peacekeeping operations. However this looks more like an invasion: AOC already built two military bases over the island and actively continue to strengthen its military presence. Active actions in the past 24 hours has not been registered.</English>
-				<Russian>Обстановка складна: різні угрупповання бандитів проводять ситуативні бої за міста та села. На цей час діє рішення про принення вогню яке нав'якують військові сили АОС, що проводять миротворчі дії. Однак це більше схоже на вторгнення: AOC вже побудував дві військові бази на острові й активно продовжує зміцнювати свою військову присутність. Активних дій за останні 24 години не зареєстровано.</Russian>
+				<Original>Following the death of the former dictator, the Pulau National Guard (PNG) has broken up into several gangs, which are conducting situational battles over the cities and villages. Under the guise of a "peacekeeping operation", the Army of Sahri (AOC), led by General Puhlo Pu, started an military invasion. A ceasefire decision is currently in effect. US Special Task Force sould ensure the security of civilians and to facilitate a peaceful resolution of the conflict.</Original>
+				<English>Following the death of the former dictator, the Pulau National Guard (PNG) has broken up into several gangs, which are conducting situational battles over the cities and villages. Under the guise of a "peacekeeping operation", the Army of Sahri (AOC), led by General Puhlo Pu, started an military invasion. A ceasefire decision is currently in effect. US Special Task Force sould ensure the security of civilians and to facilitate a peaceful resolution of the conflict.</English>
+				<Russian>Після смерті колишнього диктатору Національна Гвардія Пулау (НГП) розвалилась на декілька бандитських угруповань які ведуть ситуативні бої за міста та села. Під прикриттям "миротворчої операції" Армія Островів Сахрі (AOC) на чолі з генералом Пухло Пу розпочала військове вторгнення. На цей час діє рішення про припинення вогню. Задача групи спеціального призначення США забезпечити безпеку мирного населення та сприяти мирному врегулюванню конфлікту.</Russian>
 			</Key>
 			<Key ID="BRIEFING_01_TITLE">
 				<Original>Gaming conventions</Original>
@@ -28,9 +28,9 @@
 				<Russian>Острів Pulau Monuet</Russian>
 			</Key>
 			<Key ID="BRIEFING_02_DESC">
-				<Original>Large tropical island. Has several smaller islands of on the north.</Original>
-				<English>Large tropical island. Has several smaller islands of on the north.</English>
-				<Russian>Великий тропічний острів. Має кілька невеликих островів на півночі.</Russian>
+				<Original>Large tropical island. Has several smaller islands of on the north.&lt;br /&gt;&lt;br /&gt;&lt;font color='#FFD700'&gt;Local currency: Bananas&lt;/font&gt;.</Original>
+				<English>Large tropical island. Has several smaller islands of on the north.&lt;br /&gt;&lt;br /&gt;&lt;font color='#FFD700'&gt;Local currency: Bananas&lt;/font&gt;.</English>
+				<Russian>Великий тропічний острів. Має кілька невеликих островів на півночі.&lt;br /&gt;&lt;br /&gt;&lt;font color='#FFD700'&gt;Місцева валюта: Банани&lt;/font&gt;.</Russian>
 			</Key>
 			<Key ID="BRIEFING_03_TITLE">
 				<Original>Pulau Gurun island</Original>
@@ -38,9 +38,9 @@
 				<Russian>Острів Pulau Gurun</Russian>
 			</Key>
 			<Key ID="BRIEFING_03_DESC">
-				<Original>Large tropical island. Has several smaller islands of on the south.</Original>
-				<English>Large tropical island. Has several smaller islands of on the south.</English>
-				<Russian>Великий тропічний острів. Має кілька невеликих островів на півдні.</Russian>
+				<Original>Large tropical island. Has several smaller islands of on the south.&lt;br /&gt;&lt;br /&gt;&lt;font color='#FFD700'&gt;Local currency: Bananas&lt;/font&gt;.</Original>
+				<English>Large tropical island. Has several smaller islands of on the south.&lt;br /&gt;&lt;br /&gt;&lt;font color='#FFD700'&gt;Local currency: Bananas&lt;/font&gt;.</English>
+				<Russian>Великий тропічний острів. Має кілька невеликих островів на півдні.&lt;br /&gt;&lt;br /&gt;&lt;font color='#FFD700'&gt;Місцева валюта: Банани&lt;/font&gt;.</Russian>
 			</Key>
 			<Key ID="BRIEFING_04_TITLE">
 				<Original>Resources</Original>
@@ -48,9 +48,9 @@
 				<Russian>Ресурси</Russian>
 			</Key>
 			<Key ID="BRIEFING_04_DESC">
-				<Original>Your staff is a unit of the 35rd Airmobile Brigade USMC.</Original>
-				<English>Your staff is a unit of the 35rd Airmobile Brigade USMC.</English>
-				<Russian>У Вашому розпорядженні особовий склад підрозділу 35-ї аеромобільної бригади США.</Russian>
+				<Original>Your staff is a unit of the United States Army 160th Special Operations Aviation Regiment (Airborne).</Original>
+				<English>Your staff is a unit of the United States Army 160th Special Operations Aviation Regiment (Airborne).</English>
+				<Russian>У Вашому розпорядженні особовий склад з 160-й авіаційний полк спеціального назначення США.</Russian>
 			</Key>
 			<Key ID="BRIEFING_05_TITLE">
 				<Original>Order</Original>
@@ -68,7 +68,7 @@
 				<Russian>Фракції</Russian>
 			</Key>
 			<Key ID="BRIEFING_06_DESC">
-				<Original>&lt;h2&gt;US Special Forces Group (US SFG)&lt;/h2&gt;&lt;br /&gt;
+				<Original>&lt;h2&gt;United States Army 160th Special Operations Aviation Regiment (Airborne) (160th SOAR (A))&lt;/h2&gt;&lt;br /&gt;
 US Special Forces Group is conducting peacekeeping operations. It is also has to scout AOC positions and keep eye on its military forces. 
 &lt;font color='#FFD700'&gt;This group is the main story line for this mission.&lt;/font&gt; The mission will ends as soon as the last member of this group will be killed.
 &lt;br /&gt;&lt;br /&gt;
@@ -83,7 +83,7 @@ The former leader of the Pulau islands had formed Pulau National Guard to defend
 &lt;br /&gt;&lt;br /&gt;
 &lt;h2&gt;Civilean Rebels (CR)&lt;/h2&gt;&lt;br /&gt;
 The most of civilians are sitting at homes or safehouses wating situation to resolve. However there are some groups for the people who dislike both former NPG leaders and AOC forces. &lt;font color='#FFD700'&gt;They might wish to establish connection to US to liberate the island&lt;/font&gt;.</Original>
-				<English>&lt;h2&gt;US Special Forces Group (US SFG)&lt;/h2&gt;&lt;br /&gt;
+				<English>&lt;h2&gt;United States Army 160th Special Operations Aviation Regiment (Airborne) (160th SOAR (A))&lt;/h2&gt;&lt;br /&gt;
 US Special Forces Group is conducting peacekeeping operations. It is also has to scout AOC positions and keep eye on its military forces. 
 &lt;font color='#FFD700'&gt;This group is the main story line for this mission.&lt;/font&gt; The mission will ends as soon as the last member of this group will be killed.
 &lt;br /&gt;&lt;br /&gt;
@@ -98,14 +98,14 @@ The former leader of the Pulau islands had formed Pulau National Guard to defend
 &lt;br /&gt;&lt;br /&gt;
 &lt;h2&gt;Civilean Rebels (CR)&lt;/h2&gt;&lt;br /&gt;
 The most of civilians are sitting at homes or safehouses wating situation to resolve. However there are some groups for the people who dislike both former NPG leaders and AOC forces. &lt;font color='#FFD700'&gt;They might wish to establish connection to US to liberate the island&lt;/font&gt;.</English>
-				<Russian>&lt;h2&gt;Група спеціальних сил США (US SFG)&lt;/h2&gt;&lt;br /&gt;
+				<Russian>&lt;h2&gt;160-й окремий авіаційний (десантний) повний спеціальний назначення (160 ОАП) США&lt;/h2&gt;&lt;br /&gt;
 Група спеціальних сил США проводить миротворчу операцію. Вона також має завдання розвідати позиції АОС та слідкувати за її військовими силами.
 &lt;font color='#FFD700'&gt;Ця група є головною сюжетною лінією цієї місії.&lt;/font&gt; Місія закінчується, як тільки буде вбитий останній член цієї групи.
 &lt;br /&gt;&lt;br /&gt;
 &lt;h2&gt;Рятувальний загін США(US RQ)&lt;/h2&gt;&lt;br /&gt;
 Рятувальний загін США намагатиметься допомогти групі спецназу США, якщо його змусять покинути острів. &lt;font color='#FFD700'&gt;Основна місія - знайти та врятувати виживших американських військових&lt;/font&gt;.
 &lt;br /&gt;&lt;br /&gt;
-&lt;h2&gt;Армійський корпус Сахрі (AOC)&lt;/h2&gt;&lt;br /&gt;
+&lt;h2&gt;Армія Островів Сахрі (AOC) (AOC)&lt;/h2&gt;&lt;br /&gt;
 Проросійська військова група з островів Сахрі. Очолює одіозний лідер на ім’я Пухло Пу. Вони намагаються розширити свою військову присутність у регіоні. Незважаючи на "миролюбні заходи", вони швидко накоплюють на острові величезні військові сили. Щоб зберегти свій вплив, США потребують припинення або обмеження операцій AOC над регіоном. &lt;font color='#FFD700'&gt;Скоріш за все, АОС спробує спровокувати бійців США на конфлікт&lt;/font&gt;. 
 &lt;br /&gt;&lt;br /&gt;
 &lt;h2&gt;Національна гвардія Пулау (НГП)&lt;/h2&gt;&lt;br /&gt;
@@ -120,9 +120,9 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>Обстановка</Russian>
 			</Key>
 			<Key ID="BRIEFING_07_DESC">
-				<Original>The situation is complex. Different bandit groups are conducting situational battles for the cities and villages. At this time, сeasefire mode is enforced by AOC military forces conducting peacekeeping operations. However this looks more like an invasion: AOC already built two military bases over the island and actively continue to strengthen its military presence. Active actions in the past 24 hours has not been registered. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</Original>
-				<English>The situation is complex. Different bandit groups are conducting situational battles for the cities and villages. At this time, сeasefire mode is enforced by AOC military forces conducting peacekeeping operations. However this looks more like an invasion: AOC already built two military bases over the island and actively continue to strengthen its military presence. Active actions in the past 24 hours has not been registered. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</English>
-				<Russian>Обстановка складна: різні угрупповання бандитів проводять ситуативні бої за міста та села. На цей час діє рішення про принення вогню яке нав'якують військові сили АОС, що проводять миротворчі дії. Однак це більше схоже на вторгнення: AOC вже побудував дві військові бази на острові й активно продовжує зміцнювати свою військову присутність. Активних дій за останні 24 години не зареєстровано. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</Russian>
+				<Original>Situation: Following the death of the former dictator, the Pulau National Guard (PNG) has broken up into several gangs, which are conducting situational battles over the cities and villages. Under the guise of a "peacekeeping operation", the Army of Sahri (AOC), led by General Puhlo Pu, started an military invasion. A ceasefire decision is currently in effect. US Special Task Force sould ensure the security of civilians and to facilitate a peaceful resolution of the conflict. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</Original>
+				<English>Situation: Following the death of the former dictator, the Pulau National Guard (PNG) has broken up into several gangs, which are conducting situational battles over the cities and villages. Under the guise of a "peacekeeping operation", the Army of Sahri (AOC), led by General Puhlo Pu, started an military invasion. A ceasefire decision is currently in effect. US Special Task Force sould ensure the security of civilians and to facilitate a peaceful resolution of the conflict. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</English>
+				<Russian>Обстановка: Після смерті колишнього диктатору Національна Гвардія Пулау (НГП) розвалилась на декілька бандитських угруповань які ведуть ситуативні бої за міста та села. Під прикриттям "миротворчої операції" Армія Островів Сахрі (AOC) на чолі з генералом Пухло Пу розпочала військове вторгнення. На цей час діє рішення про припинення вогню. Задача групи спеціального призначення США забезпечити безпеку мирного населення та сприяти мирному врегулюванню конфлікту. Активних дій за останні 24 години не зареєстровано. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</Russian>
 			</Key>
 			<Key ID="TASK_01_TITLE">
 				<Original>Eliminate rebel leader</Original>
@@ -233,6 +233,46 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Original>Ask locals at &lt;marker name = 'wp_city_%1'&gt;%2&lt;/marker&gt; settlement. Maybe someone saw our guys.</Original>
 				<English>Ask locals at &lt;marker name = 'wp_city_%1'&gt;%2&lt;/marker&gt; settlement. Maybe someone saw our guys.</English>
 				<Russian>Запитайте місцевих жителів поселення &lt;marker name = 'wp_city_%1'&gt;%2&lt;/marker&gt;. Можливо, хтось побачив наших хлопців.</Russian>
+			</Key>
+			<Key ID="TASK_12_TITLE">
+				<Original>Optional: Destroy weapon stash</Original>
+				<English>Optional: Destroy weapon stash</English>
+				<Russian>Додаткове: Знищіть сховище зброї</Russian>
+			</Key>
+			<Key ID="TASK_12_DESC">
+				<Original>As per information given by locals, AOC is supplying PNG with weaponry and ammunition. We need to find and destroy weapon stash to prevent new PNG reinforces coming in action.</Original>
+				<English>As per information given by locals, AOC is supplying PNG with weaponry and ammunition. We need to find and destroy weapon stash to prevent new PNG reinforces coming in action.</English>
+				<Russian>Згідно з інформацією місцевих жителів, AOC постачає PNG зброєю та боєприпасами. Нам потрібно знайти та знищити сховища зброї, щоб запобігти появі нових підсилень ПНГ.</Russian>
+			</Key>
+			<Key ID="TASK_13_TITLE">
+				<Original>Optional: Destroy fuel tank</Original>
+				<English>Optional: Destroy fuel tank</English>
+				<Russian>Додаткове: Знищіть сховище ГСМ</Russian>
+			</Key>
+			<Key ID="TASK_13_DESC">
+				<Original>A large fuel storage facility is located nearby. If we can undermine it, this will reduce the mobility of PNG groups.</Original>
+				<English>A large fuel storage facility is located nearby. If we can undermine it, this will reduce the mobility of PNG groups.</English>
+				<Russian>Велике сховище ГСМ розташовано неподалік. Якщо ми зможемо підірвати його, то це знизить мобільність груп ПНГ.</Russian>
+			</Key>
+			<Key ID="TASK_14_TITLE">
+				<Original>Optional: Destroy windmill</Original>
+				<English>Optional: Destroy windmill</English>
+				<Russian>Додаткове: Знищіть вітряк</Russian>
+			</Key>
+			<Key ID="TASK_14_DESC">
+				<Original>A large windmill provides power to the PNG bases. If it fails, it will essentially hit the local infrastructure.</Original>
+				<English>A large windmill provides power to the PNG bases. If it fails, it will essentially hit the local infrastructure.</English>
+				<Russian>Великий вітряк забезпечує живленням бази ПНГ. Якщо він вийде з ладу це суттево вдаріть по інфраструктурі.</Russian>
+			</Key>
+			<Key ID="TASK_15_TITLE">
+				<Original>Optional: Kill the scientist</Original>
+				<English>Optional: Kill the scientist</English>
+				<Russian>Додаткове: Вбийте науковця</Russian>
+			</Key>
+			<Key ID="TASK_15_DESC">
+				<Original>As per information given by locals there is a drug laboratory running by the scientific criminal nearby. Eliminate the criminal to stop NPG receiving cash flow.</Original>
+				<English>As per information given by locals there is a drug laboratory running by the scientific criminal nearby. Eliminate the criminal to stop NPG receiving cash flow.</English>
+				<Russian>За інформацією місцевих жителів поблизу є лабораторія наркотиків, якою керує науковий злочинець. Усуньте злочинця, щоб припинити фінансування ПНГ.</Russian>
 			</Key>
 			<Key ID="TASK_AOC_01_TITLE">
 				<Original>Defend AA</Original>

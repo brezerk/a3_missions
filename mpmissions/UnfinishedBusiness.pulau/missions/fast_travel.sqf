@@ -51,13 +51,14 @@ if (isServer) then {
 			remoteExecCall ["Fn_Local_FastTravel_Wokeup_Express", _x];
 		} forEach assault_group;
 
-		sleep 6;
+		sleep 8;
+		us_airplane_01 setHitPointDamage ["hitHull", 1.0, true];
+		sleep 1;
 		us_airplane_01 setDamage [1, true];
 	} else {
 		{
 			remoteExecCall ["Fn_Local_FastTravel_Wokeup", _x];
 		} forEach assault_group;
-		
 	};
 
 };

@@ -24,8 +24,9 @@ if (hasInterface) then {
 	};
 		
 	Fn_Local_Jet_Player_DoParadrop = {
+		params ['_diffclty'];
 		private ['_dmgType'];
-		[] execVM "gear\player.sqf";
+		[_diffclty] execVM "gear\player.sqf";
 		//do some damage
 		_dmgType = ["leg_l", "leg_r", "hand_r", "hand_l", "head"];
 		[player, 1, selectRandom _dmgType, "bullet"] call ace_medical_fnc_addDamageToUnit;

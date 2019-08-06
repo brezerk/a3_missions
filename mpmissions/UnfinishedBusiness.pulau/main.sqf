@@ -89,6 +89,7 @@ systemChat format ["%1", baz2];
 	EAST setFriend [WEST, 1];
 	WEST setFriend [EAST, 1];
 	
+	//fixme cleanup
 	s_west_group = createGroup west; publicVariable "s_west_group";
 	s_east_group = createGroup east; publicVariable "s_east_group";
 	s_indep_group = createGroup independent; publicVariable "s_indep_group";
@@ -274,6 +275,7 @@ systemChat format ["%1", baz2];
 	_mark setMarkerShape "ellipse";
 	_mark setMarkerColor "ColorEAST";
 	[_mark] call BrezBlock_fnc_CreateDefend;
+	deleteMarker _mark;
 	
 	_mark = createMarker ["wp_patrol_commtower", _radioSitePos];
 	_mark setMarkerAlpha 0;
@@ -282,6 +284,7 @@ systemChat format ["%1", baz2];
 	_mark setMarkerShape "ellipse";
 	_mark setMarkerColor "ColorEAST";
 	[_mark] call BrezBlock_fnc_CreatePatrol;
+	deleteMarker _mark;
 	
 	[_crashSitePos] call Fn_Task_Spawn_Indep_Objectives;
 	

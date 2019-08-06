@@ -62,4 +62,26 @@ if (hasInterface) then {
 			['t_destroy_comtower', "destroy"] call BIS_fnc_taskSetType;
 		};
 	};
+	
+	Fn_Local_Task_AA_Complete = {
+		switch (playerSide) do {
+			case west: {
+				['t_destroy_aa', 'Succeeded', localize "TASK_06_TITLE"] call Fn_Local_SetPersonalTaskState;
+			};
+			case east: {
+				['t_scat_defend_aa', 'Failed', localize "TASK_06_TITLE"] call Fn_Local_SetPersonalTaskState;
+			};
+		};
+	};
+	
+	Fn_Local_Task_Commtower_Complete = {
+		switch (playerSide) do {
+			case west: {
+				['t_destroy_comtower', 'Succeeded', localize "TASK_07_TITLE"] call Fn_Local_SetPersonalTaskState;
+			};
+			case east: {
+				['t_scat_defend_comm_tower', 'Failed', localize "TASK_07_TITLE"] call Fn_Local_SetPersonalTaskState;
+			};
+		};
+	};
 };

@@ -91,7 +91,7 @@ if (isServer) then {
 		_trg setTriggerActivation ["NONE", "PRESENT", false];
 		_trg setTriggerStatements [
 			"!alive csat_aa_01 || !canFire csat_aa_01;",
-			"if (isServer) then { call Fn_Task_AA_Complete };",
+			"call Fn_Task_AA_Complete; deleteVehicle thisTrigger;",
 			""
 		];
 		_trg = createTrigger ["EmptyDetector", getPos csat_comm_tower_01];
@@ -99,7 +99,7 @@ if (isServer) then {
 		_trg setTriggerActivation ["NONE", "PRESENT", false];
 		_trg setTriggerStatements [
 			"!alive csat_comm_tower_01;",
-			"if (isServer) then { call Fn_Task_Commtower_Complete };",
+			"call Fn_Task_Commtower_Complete; deleteVehicle thisTrigger;",
 			""
 		];
 	};
@@ -123,14 +123,21 @@ if (isServer) then {
 	};
 	
 	Fn_Task_AA_Complete = {
-		['t_destroy_aa', 'SUCCEEDED'] call BIS_fnc_taskSetState;
-		['t_scat_defend_aa', 'FAILED'] call BIS_fnc_taskSetState;
+		if (hasInterface) then {
+			remoteExecCall ["Fn_Local_Task_AA_Complete"];
+		} else {
+			remoteExecCall ["Fn_Local_Task_AA_Complete", -2];
+		};
+
 		task_complete_aa = true;
 	};
 	
 	Fn_Task_Commtower_Complete = {
-		['t_destroy_comtower', 'SUCCEEDED'] call BIS_fnc_taskSetState;
-		['t_scat_defend_comm_tower', 'FAILED'] call BIS_fnc_taskSetState;
+		if (hasInterface) then {
+			remoteExecCall ["Fn_Local_Task_Commtower_Complete"];
+		} else {
+			remoteExecCall ["Fn_Local_Task_Commtower_Complete", -2];
+		};
 		task_complete_commtower = true;
 	};
 	

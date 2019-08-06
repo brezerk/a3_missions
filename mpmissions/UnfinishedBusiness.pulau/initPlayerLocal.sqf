@@ -56,20 +56,17 @@ player setVariable ["is_civilian", false, true];
 #include "missions\civilian\liberate.sqf";
 #include "missions\local\regroup.sqf";
 #include "missions\local\recruit.sqf";
+#include "missions\local\independent\objectives.sqf";
 
 execVM "missions\local\patrols.sqf";
 execVM "addons\brezblock\utils\marker_manager.sqf";
 
 Fn_Local_SetPersonalTaskState = {
-	params['_name', '_state'];
-	private ['_task'];
-	systemChat format ["CHeck %1 %2", _name, _state];
-	_task = [_name, player] call BIS_fnc_taskReal;
+	params['_name', '_state', '_title'];
+	private _task = [_name, player] call BIS_fnc_taskReal;
 	if (!isNull _task) then {
-		systemChat "SET";
+		[format["Task%1", _state],["", _title]] call BIS_fnc_showNotification;
 		_task setTaskState _state;
-	} else {
-		systemChat "NUL?";
 	};
 };
 

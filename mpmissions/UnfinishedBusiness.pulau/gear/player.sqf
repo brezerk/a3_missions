@@ -1,4 +1,36 @@
 
+params ["_diffclty"];
+
+private _chance_lost_primary = 0;
+private _chance_lost_primary_attachments = 0;
+private _chance_lost_primary_ammo = 0;
+private _chance_lost_radio = 0;
+private _chance_lost_map = 0;
+
+switch(_diffclty) do {
+	case 0: {
+		_chance_lost_primary = 30;
+		_chance_lost_primary_ammo = 50;
+		_chance_lost_primary_attachments = 40;
+		_chance_lost_radio = 50;
+		_chance_lost_map = 0;
+	};
+	case 1: {
+		_chance_lost_primary = 60;
+		_chance_lost_primary_ammo = 80;
+		_chance_lost_primary_attachments = 40;
+		_chance_lost_radio = 50;
+		_chance_lost_map = 0;
+	};
+	case 2: {
+		_chance_lost_primary = 100;
+		_chance_lost_primary_ammo = 100;
+		_chance_lost_primary_attachments = 100;
+		_chance_lost_radio = 100;
+		_chance_lost_map = 100;
+	};
+};
+
 comment "Exported from Arsenal by brezerk";
 
 comment "[!] UNIT MUST BE LOCAL [!]";
@@ -6,55 +38,54 @@ if (!local player) exitWith {};
 
 private _pWeap = primaryWeapon player;
 private _pWeapMagazine = primaryWeaponMagazine player;
+private _pWeapItems = primaryWeaponItems player;
 
 private _hWeap = handgunWeapon player;
 private _hWeapMagazine = handgunMagazine player;
 private _hWeapItems = handgunItems player; 
 
-//remove everything
-removeAllWeapons player;
-removeAllItems player;
-removeAllAssignedItems player;
-//removeUniform player;
-//removeVest player;
-removeBackpack player;
-//removeHeadgear player;
-//removeGoggles player;
-			
-//player forceAddUniform "CUP_U_B_FR_DirAction";
-player addItemToUniform "ACE_EarPlugs";
-for "_i" from 1 to 3 do {player addItemToUniform "ACE_CableTie";};
-for "_i" from 1 to 5 do {player addItemToUniform "ACE_morphine";};
-for "_i" from 1 to 15 do {player addItemToUniform "ACE_fieldDressing";};
-for "_i" from 1 to (random 15) do {player addItemToUniform "ACE_Banana";};
-//player addVest "CUP_V_B_RRV_DA1";
-{
-	for "_i" from 1 to 3 do {player addItemToVest _x;};
-} forEach _pWeapMagazine;
-{
-	for "_i" from 1 to 3 do {player addItemToVest _x;};
-} forEach _hWeapMagazine;
-for "_i" from 1 to 2 do {player addItemToVest "CUP_HandGrenade_M67";};
-for "_i" from 1 to 2 do {player addItemToVest "Chemlight_green";};
-for "_i" from 1 to 2 do {player addItemToVest "Chemlight_red";};
-for "_i" from 1 to 3 do {player addItemToVest "SmokeShellRed";};
+player removeWeapon _pWeap;
 
-player addItemToVest "ACE_Canteen";
-			
-player addBackpack "B_Parachute";
-			
-player addWeapon _hWeap;
 {
-	 player addHandgunItem _x;
-} forEach _hWeapItems;
+	if (_x in _pWeapMagazine) then {
+		if ((random 100) <= _chance_lost_primary_ammo) then {	
+			player removeMagazine _x;
+		};
+	};
+} forEach magazines player;
 
-//ACEX
-//player addHeadgear "CUP_H_FR_ECH";	
-//player addGoggles "CUP_G_Oakleys_Clr";
-			
-player linkItem "ItemMap";
-player linkItem "ItemWatch";
-			
-player setSpeaker "NoVoice";
+if ((random 100) > _chance_lost_primary) then {
+	player addWeapon _pWeap;
+} else {
+	{
+		if ((random 100) > _chance_lost_primary_attachments) then {
+			player addPrimaryWeaponItem _x;
+		};
+	} forEach _pWeapItems;
+};
+
+if ((random 100) <= _chance_lost_map) then {
+	player unassignItem "ItemMap";
+	player removeItem "ItemMap";
+};
+
+player unassignItem "ItemCompass";
+player removeItem "ItemCompass";
+
+if ((random 100) <= _chance_lost_radio) then {
+	if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
+		player unassignItem "ACRE_PRC152";
+		player removeItem "ACRE_PRC152";
+	} else {
+		if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
+			player unassignItem "tf_anprc152";
+			player removeItem "tf_anprc152";
+		} else {
+			comment "Fallback to native arma3 radio";
+			player unassignItem "ItemRadio";
+			player removeItem "ItemRadio";
+		};
+	};
+};
 
 player action ["openParachute", player];
