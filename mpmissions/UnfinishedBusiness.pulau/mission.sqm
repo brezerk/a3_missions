@@ -8,22 +8,22 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=6787;
+		nextID=6794;
 	};
 	class MarkerIDProvider
 	{
-		nextID=75;
+		nextID=77;
 	};
 	class LayerIndexProvider
 	{
-		nextID=246;
+		nextID=292;
 	};
 	class Camera
 	{
-		pos[]={3432.6641,20.404606,8811.2998};
-		dir[]={0.76912713,-0.63298857,-0.089441977};
-		up[]={0.62872702,0.77414316,-0.073113285};
-		aside[]={-0.1155158,-4.5820489e-006,-0.99341547};
+		pos[]={1250.4926,142.93867,2698.1289};
+		dir[]={-0.0099879066,-0.99994999,-0.00048716925};
+		up[]={-0.99876267,0.00999978,-0.048715562};
+		aside[]={-0.048717998,0,0.99881262};
 	};
 };
 binarizationWanted=0;
@@ -382,7 +382,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=911;
+		items=915;
 		class Item0
 		{
 			dataType="Marker";
@@ -12483,6 +12483,45 @@ class Mission
 			};
 			id=6778;
 			atlOffset=29.602001;
+		};
+		class Item911
+		{
+			dataType="Marker";
+			position[]={5852.1719,58.535,6399.584};
+			name="wp_Gurun_cesna01";
+			type="c_plane";
+			angle=269.84195;
+			id=6787;
+			atlOffset=-0.00032424927;
+		};
+		class Item912
+		{
+			dataType="Marker";
+			position[]={5832.4692,59.029999,6371.9111};
+			name="wp_Gurun_heli01";
+			type="c_air";
+			angle=266.522;
+			id=6788;
+		};
+		class Item913
+		{
+			dataType="Marker";
+			position[]={1207.3199,7.1939998,2627.075};
+			name="wp_Monyet_heli01";
+			type="c_air";
+			angle=359.43994;
+			id=6789;
+			atlOffset=-0.1260004;
+		};
+		class Item914
+		{
+			dataType="Marker";
+			position[]={1095.276,7.6129999,2587.0559};
+			name="wp_Monyet_cesna01";
+			type="c_plane";
+			angle=0.43499994;
+			id=6790;
+			atlOffset=-0.076600552;
 		};
 	};
 	class Connections

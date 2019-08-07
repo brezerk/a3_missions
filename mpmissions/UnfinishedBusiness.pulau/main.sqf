@@ -306,6 +306,12 @@ systemChat format ["%1", baz2];
 	[Fn_Spawn_UAZ, (format ["wp_spawn_uaz_%1_01", D_LOCATION]), 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
 	[Fn_Spawn_UAZ, (format ["wp_spawn_uaz_%1_02", D_LOCATION]), 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
 	
+	private _obj = createVehicle ["C_Plane_Civil_01_F", (getMarkerPos (format ["wp_%1_cesna01", D_LOCATION])), [], 0, "CAN_COLLIDE"];
+	_obj setDir (markerDir (format ["wp_%1_cesna01", D_LOCATION]));
+			
+	_obj = createVehicle ["C_Heli_Light_01_civil_F", (getMarkerPos (format ["wp_%1_heli01", D_LOCATION])), [], 0, "CAN_COLLIDE"];
+	_obj setDir (markerDir (format ["wp_%1_heli01", D_LOCATION]));
+	
 	addMissionEventHandler ["EntityKilled",
 	{
 		params ["_killed", "_killer", "_instigator"];
