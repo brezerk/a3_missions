@@ -22,7 +22,7 @@ class Header
 {
 	gameType   = LastMan;	// Game type
 	minPlayers = 1;	// minimum number of players the mission supports
-	maxPlayers = 16;	// maximum number of players the mission supports
+	maxPlayers = 15;	// maximum number of players the mission supports
 };
 
 // Disable AI
