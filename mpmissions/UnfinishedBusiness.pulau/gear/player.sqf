@@ -33,8 +33,8 @@ switch(_diffclty) do {
 
 comment "Exported from Arsenal by brezerk";
 
-comment "[!] UNIT MUST BE LOCAL [!]";
-if (!local player) exitWith {};
+//comment "[!] UNIT MUST BE LOCAL [!]";
+//if (!local player) exitWith {};
 
 private _pWeap = primaryWeapon player;
 private _pWeapMagazine = primaryWeaponMagazine player;
@@ -43,6 +43,8 @@ private _pWeapItems = primaryWeaponItems player;
 private _hWeap = handgunWeapon player;
 private _hWeapMagazine = handgunMagazine player;
 private _hWeapItems = handgunItems player; 
+
+player action ["openParachute", player];
 
 player removeWeapon _pWeap;
 
@@ -88,4 +90,4 @@ if ((random 100) <= _chance_lost_radio) then {
 	};
 };
 
-player action ["openParachute", player];
+

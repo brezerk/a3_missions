@@ -99,7 +99,6 @@ if (isServer) then {
 		Usage: call Fn_Task_Create_Informator_Attach_Action
 	*/
 	Fn_Task_Create_Informator_Attach_Action = {
-		systemChat "ATTACH";
 		params['_obj'];
 		private['_action_id'];
 		
