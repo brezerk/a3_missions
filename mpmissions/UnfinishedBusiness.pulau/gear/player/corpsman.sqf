@@ -1,4 +1,6 @@
 
+waitUntil { !isNull player }; // Wait for player to initialize
+
 comment "Exported from Arsenal by brezerk";
 
 comment "[!] UNIT MUST BE LOCAL [!]";
