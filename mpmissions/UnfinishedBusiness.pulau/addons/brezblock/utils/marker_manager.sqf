@@ -50,7 +50,9 @@ waitUntil
 			systemChat format ["name: %1 id: %2", _x select 0, (_x select 2)];
 		} forEach connected_users;
 	};
-	systemChat "Refresh local list";
+	if (D_DEBUG) then {
+		systemChat "Refresh local list";
+	};
 	_nearest_players = [];
 	private _nearest = nearestObjects [player, ["SoldierWB"], 25];
 	{
@@ -59,7 +61,7 @@ waitUntil
 		};
 	} forEach _nearest;
 	
-	while { _tick < 10 } do {
+	while { _tick < 15 } do {
 		if (side player == west) then {
 			scopeName "marker";
 			{

@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=292;
+		nextID=338;
 	};
 	class Camera
 	{
@@ -12509,7 +12509,7 @@ class Mission
 			position[]={1207.3199,7.1939998,2627.075};
 			name="wp_Monyet_heli01";
 			type="c_air";
-			angle=359.43994;
+			angle=359.43985;
 			id=6789;
 			atlOffset=-0.1260004;
 		};
@@ -12519,7 +12519,7 @@ class Mission
 			position[]={1095.276,7.6129999,2587.0559};
 			name="wp_Monyet_cesna01";
 			type="c_plane";
-			angle=0.43499994;
+			angle=0.43499985;
 			id=6790;
 			atlOffset=-0.076600552;
 		};

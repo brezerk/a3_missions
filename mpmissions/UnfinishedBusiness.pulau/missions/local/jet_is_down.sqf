@@ -26,12 +26,12 @@ if (hasInterface) then {
 	Fn_Local_Jet_Player_DoParadrop = {
 		params ['_diffclty'];
 		private ['_dmgType'];
-		[_diffclty] execVM "gear\player.sqf";
 		//do some damage
 		_dmgType = ["leg_l", "leg_r", "hand_r", "hand_l", "head"];
 		[player, 1, selectRandom _dmgType, "bullet"] call ace_medical_fnc_addDamageToUnit;
 		[1, 3] execVM "addons\brezblock\utils\fade.sqf";
 		player setUnconscious true;
+		[_diffclty] execVM "gear\player.sqf";
 	};
 		
 	Fn_Local_Jet_Player_Land = {

@@ -143,7 +143,7 @@ if (isServer) then {
 		_free_landing_markers = _free_landing_markers - [_marker];
 		private _markerPos = getMarkerPos _marker;
 		//parachute
-		_x setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 180 + random 100)];
+		_x setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 200 + random 100)];
 		_x setVariable ["ACE_isUnconscious", true, true];
 		[D_DIFFICLTY] remoteExecCall ["Fn_Local_Jet_Player_DoParadrop", _x];
 		[getPos _x, 300] execVM "addons\brezblock\utils\controller.sqf";

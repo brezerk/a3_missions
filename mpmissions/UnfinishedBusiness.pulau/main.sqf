@@ -43,33 +43,7 @@ systemChat format ["%1", baz2];
 	//onPlayerConnected {}; // 1.58 bug, must be called before below mission event will work
 	//onPlayerDisconnected {}; // 1.58 bug, must be called before below mission event will work
 	
-	addMissionEventHandler ["PlayerConnected",
-	{
-		// 1.58 bug, idstr is empty on linux host
-		params ["_id", "_uid", "_name", "_jip", "_owner"];
-		diag_log "Client connected";
-		diag_log _this;
 
-		if (_name != "__SERVER__") then {
-			connected_users pushBackUnique [_name, (_id call CBA_fnc_formatNumber), format ["_USER_DEFINED #%1/", (_id call CBA_fnc_formatNumber)]];
-			publicVariable "connected_users";
-		};
-
-		systemChat "CONNECTED";
-	}];
-	
-	addMissionEventHandler ["PlayerDisconnected",
-	{
-		params ["_id", "_uid", "_name", "_jip", "_owner", "_idstr"];
-
-		{
-			if (getPlayerUID _x == _uid) exitWith {
-				assault_group = assault_group - [_x];
-			};
-		} forEach (playableUnits + switchableUnits);
-
-		systemChat "DISCONNECTED";
-	}];
 
 	_westHQ = createCenter west;
 	_eastHQ = createCenter east;
@@ -122,6 +96,40 @@ systemChat format ["%1", baz2];
 	//POIs
 	avaliable_locations = [];
 	avaliable_pois = [];
+	
+	addMissionEventHandler ["PlayerConnected",
+	{
+		// 1.58 bug, idstr is empty on linux host
+		params ["_id", "_uid", "_name", "_jip", "_owner"];
+		diag_log "Client connected";
+		diag_log _this;
+
+		if (_name != "__SERVER__") then {
+			connected_users pushBackUnique [_name, (_id call CBA_fnc_formatNumber), format ["_USER_DEFINED #%1/", (_id call CBA_fnc_formatNumber)]];
+			publicVariable "connected_users";
+		};
+		
+		publicVariable "D_LOCATION";
+		publicVariable "locationFloodedShip";
+		publicVariable "mission_plane_send";
+		publicVariable "mission_requested";
+		publicVariable "vehicle_confiscate_group";
+
+		systemChat "CONNECTED";
+	}];
+	
+	addMissionEventHandler ["PlayerDisconnected",
+	{
+		params ["_id", "_uid", "_name", "_jip", "_owner", "_idstr"];
+
+		{
+			if (getPlayerUID _x == _uid) exitWith {
+				assault_group = assault_group - [_x];
+			};
+		} forEach (playableUnits + switchableUnits);
+
+		systemChat "DISCONNECTED";
+	}];
 
 	Fn_Endgame = {
 		params["_endingType"];

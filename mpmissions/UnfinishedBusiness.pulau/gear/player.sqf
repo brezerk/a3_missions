@@ -12,14 +12,14 @@ switch(_diffclty) do {
 		_chance_lost_primary = 30;
 		_chance_lost_primary_ammo = 50;
 		_chance_lost_primary_attachments = 40;
-		_chance_lost_radio = 50;
+		_chance_lost_radio = 60;
 		_chance_lost_map = 0;
 	};
 	case 1: {
 		_chance_lost_primary = 60;
 		_chance_lost_primary_ammo = 80;
 		_chance_lost_primary_attachments = 40;
-		_chance_lost_radio = 50;
+		_chance_lost_radio = 80;
 		_chance_lost_map = 0;
 	};
 	case 2: {
@@ -43,8 +43,6 @@ private _pWeapItems = primaryWeaponItems player;
 private _hWeap = handgunWeapon player;
 private _hWeapMagazine = handgunMagazine player;
 private _hWeapItems = handgunItems player; 
-
-player action ["openParachute", player];
 
 player removeWeapon _pWeap;
 
@@ -90,4 +88,6 @@ if ((random 100) <= _chance_lost_radio) then {
 	};
 };
 
+sleep 1;
 
+player action ["openParachute", player];
