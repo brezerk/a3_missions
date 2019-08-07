@@ -72,7 +72,7 @@ waitUntil
 					_id = parseNumber _id;
 					_id = _id call CBA_fnc_formatNumber;
 					
-					if (_id != _my_marker_tag) then {
+					if (_id == _my_marker_tag) then {
 						if (D_DEBUG) then {
 							systemChat "Found ny marker. Skip..";
 						};

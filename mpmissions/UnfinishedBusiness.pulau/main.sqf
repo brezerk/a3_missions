@@ -25,26 +25,6 @@ D_DEBUG = false;
 [] execVM "addons\code43\real_weather.sqf";
 
 if (isServer) then {
-
-/*
-systemChat "-----";
-foo = 1894381069;
-baz = 0;
-baz2 = 0;
-bar = foo call CBA_fnc_formatNumber;
-baz2 = parseNumber "1894381069";
-baz2 = baz2 call CBA_fnc_formatNumber;
-systemChat format ["%1", bar];
-systemChat format ["%1", baz2];
-*/
-
-	connected_users = [];
-	
-	//onPlayerConnected {}; // 1.58 bug, must be called before below mission event will work
-	//onPlayerDisconnected {}; // 1.58 bug, must be called before below mission event will work
-	
-
-
 	_westHQ = createCenter west;
 	_eastHQ = createCenter east;
 	_indepHQ = createCenter independent;
@@ -69,6 +49,14 @@ systemChat format ["%1", baz2];
 	s_indep_group = createGroup independent; publicVariable "s_indep_group";
 	s_civ_group = createGroup civilian; publicVariable "s_civ_group";
 	
+	[ 
+		true, 
+		[
+			[ independent , 0.1, 0.2, 0.6, 0.5 ],
+			[ WEST		  , 0.5, 0.4, 0.8, 0.6 ], 
+			[ EAST		  , 0.4, 0.3, 0.7, 0.5 ] 
+		]
+	] call BIS_fnc_EXP_camp_dynamicAISkill;
 	
 	D_DIFFICLTY = nil;
 	D_LOCATION = nil;
@@ -77,16 +65,14 @@ systemChat format ["%1", baz2];
 	// Fixme should be diff dependent
 	D_FRACTION_INDEP = "CUP_I_NAPA"; //posible CUP_I_TK_GUE, IND_F, IND_F, IND_G_F
 	D_FRACTION_EAST = "CUP_O_SLA"; //possible CUP_O_TK, CUP_O_ChDKZ, 
-	// Global variables
-	
+
+	// Global variables	
 	mission_requested = false;
 	mission_plane_send = false;
-	
-	//publicVariable "D_DIFFICLTY";
-	publicVariable "mission_plane_send";
-	
+
+	// Global arrays
 	pings = [];
-	
+	connected_users = [];
 	assault_group = [];
 	vehicle_confiscate_group = [];
 	vehicle_refuel_group = [];
@@ -101,34 +87,34 @@ systemChat format ["%1", baz2];
 	{
 		// 1.58 bug, idstr is empty on linux host
 		params ["_id", "_uid", "_name", "_jip", "_owner"];
-		diag_log "Client connected";
-		diag_log _this;
-
+		if (D_DEBUG) then {
+			diag_log "Client connected";
+			diag_log _this;
+		};
 		if (_name != "__SERVER__") then {
 			connected_users pushBackUnique [_name, (_id call CBA_fnc_formatNumber), format ["_USER_DEFINED #%1/", (_id call CBA_fnc_formatNumber)]];
 			publicVariable "connected_users";
+			publicVariable "D_LOCATION";
+			publicVariable "locationFloodedShip";
+			publicVariable "mission_plane_send";
+			publicVariable "mission_requested";
+			publicVariable "vehicle_confiscate_group";
 		};
-		
-		publicVariable "D_LOCATION";
-		publicVariable "locationFloodedShip";
-		publicVariable "mission_plane_send";
-		publicVariable "mission_requested";
-		publicVariable "vehicle_confiscate_group";
-
-		systemChat "CONNECTED";
 	}];
 	
 	addMissionEventHandler ["PlayerDisconnected",
 	{
 		params ["_id", "_uid", "_name", "_jip", "_owner", "_idstr"];
-
+		if (D_DEBUG) then {
+			diag_log "Client disconnected";
+			diag_log _this;
+		};
 		{
 			if (getPlayerUID _x == _uid) exitWith {
 				assault_group = assault_group - [_x];
 			};
 		} forEach (playableUnits + switchableUnits);
 
-		systemChat "DISCONNECTED";
 	}];
 
 	Fn_Endgame = {
@@ -241,7 +227,7 @@ systemChat format ["%1", baz2];
 	};
 	
 	{
-			remoteExecCall["Fn_Local_Planned", _x];
+		remoteExecCall["Fn_Local_Planned", _x];
 	} forEach (playableUnits + switchableUnits);
 	
 	[[us_liberty_01, "Land_Destroyer_01_hull_04_F"] call BIS_fnc_Destroyer01GetShipPart, 1, false] call BIS_fnc_Destroyer01AnimateHangarDoors;
@@ -356,9 +342,6 @@ systemChat format ["%1", baz2];
 			systemChat "Error: Can't group";
 		};
 	}];
-	
-	
-	
 };
 
 // We need to end game if all players are no longer alive
