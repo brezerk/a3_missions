@@ -132,7 +132,7 @@ if (isServer) then {
 	private _free_landing_markers = [];
 	{
 		if (_x find format["wp_paradrop_%1_", D_LOCATION] >= 0) then {
-			if (_crashSitePos distance2D getMarkerPos _x <= 2000) then {
+			if (_crashSitePos distance2D getMarkerPos _x <= 1800) then {
 				_free_landing_markers pushBack _x;
 			};
 		};
@@ -144,8 +144,8 @@ if (isServer) then {
 		private _markerPos = getMarkerPos _marker;
 		//parachute
 		_x setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 180 + random 100)];
-		[D_DIFFICLTY] remoteExecCall ["Fn_Local_Jet_Player_DoParadrop", _x];
 		_x setVariable ["ACE_isUnconscious", true, true];
+		[D_DIFFICLTY] remoteExecCall ["Fn_Local_Jet_Player_DoParadrop", _x];
 		[getPos _x, 300] execVM "addons\brezblock\utils\controller.sqf";
 	} forEach assault_group;
 		
