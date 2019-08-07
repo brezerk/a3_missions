@@ -19,8 +19,8 @@
 [ 
 	true, 
 	[
-		[ independent , 0.1, 0.2, 0.4, 0.3 ],
-		[ WEST		  , 0.5, 0.4, 0.8, 0.6 ], 
-		[ EAST		  , 0.4, 0.3, 0.7, 0.5 ] 
+		[ independent , 0.1, 0.1, 0.4, 0.3 ],
+		[ WEST		  , 0.3, 0.3, 0.5, 0.5 ], 
+		[ EAST		  , 0.3, 0.3, 0.5, 0.5 ] 
 	]
 ] call BIS_fnc_EXP_camp_dynamicAISkill;

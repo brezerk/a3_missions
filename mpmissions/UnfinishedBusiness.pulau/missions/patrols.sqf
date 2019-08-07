@@ -321,13 +321,13 @@ if (isServer) then {
 		
 		switch (D_DIFFICLTY) do {
 			case 0: {
-				_class = "CUP_I_UH60L_RACS";
+				_class = "CUP_I_UH1H_TK_GUE";
 			};
 			case 1: {
-				_class = "CUP_I_UH60L_RACS";
+				_class = "CUP_I_UH1H_armed_TK_GUE";
 			};
 			case 2: {
-				_class = "CUP_I_Mi24D_D_Dynamic_AAF";
+				_class = "CUP_I_UH1H_gunship_TK_GUE";
 			};
 		};
 		
