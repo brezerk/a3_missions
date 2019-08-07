@@ -158,7 +158,6 @@ if (isServer) then {
 	{
 		_x setVariable ["ACE_isUnconscious", false, true];
 		remoteExecCall ["Fn_Local_Jet_Player_Land", _x];
-		[_x, true] remoteExecCall ["allowDamage"];
 	} forEach assault_group;
 		
 	sleep 5;
@@ -169,6 +168,7 @@ if (isServer) then {
 	
 	{
 		remoteExecCall ["Fn_Local_Create_RescueMission", _x];
+		[_x, true] remoteExecCall ["allowDamage"];
 	} forEach  (playableUnits + switchableUnits);
 		
 	//Send vehicles on patrol
