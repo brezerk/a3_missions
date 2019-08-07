@@ -49,15 +49,6 @@ if (isServer) then {
 	s_indep_group = createGroup independent; publicVariable "s_indep_group";
 	s_civ_group = createGroup civilian; publicVariable "s_civ_group";
 	
-	[ 
-		true, 
-		[
-			[ independent , 0.1, 0.2, 0.4, 0.3 ],
-			[ WEST		  , 0.5, 0.4, 0.8, 0.6 ], 
-			[ EAST		  , 0.4, 0.3, 0.7, 0.5 ] 
-		]
-	] call BIS_fnc_EXP_camp_dynamicAISkill;
-	
 	D_DIFFICLTY = nil;
 	D_LOCATION = nil;
 	D_START_TYPE = nil;
