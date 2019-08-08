@@ -84,6 +84,7 @@ if (hasInterface) then {
 			PUB_fnc_informatorFound = [player, _this select 0];
 			publicVariableServer "PUB_fnc_informatorFound";
 			['t_find_informator', 'SUCCEEDED'] call BIS_fnc_taskSetState;
+			call Fn_Local_Create_Task_West_WaponStash;
 		};
 		[_name] call Fn_Local_Find_Assault_Group;
 	};

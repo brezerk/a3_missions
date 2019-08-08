@@ -198,6 +198,7 @@ if (isServer) then {
 	_wp setWaypointCombatMode "WHITE";
 	_wp setWaypointBehaviour "SAFE";
 	_wp setWaypointSpeed "NORMAL";
+	_wp setWaypointCompletionRadius 50;
 	
 	call Fn_Task_Create_CSAT_Triggers;
 

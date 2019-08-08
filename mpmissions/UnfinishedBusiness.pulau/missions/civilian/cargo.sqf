@@ -30,7 +30,7 @@ if (isServer) then {
 		
 		{
 			private _center = _x select 1;
-			private _myPlaces = selectBestPlaces [_center, 1500, "(1 + forest * 10 + trees) * (1 - sea) * (1 - houses) * (1 - meadow)", 15, 1];
+			private _myPlaces = selectBestPlaces [_center, 600, "(1 + forest * 10 + trees) * (1 - sea) * (1 - houses) * (1 - meadow)", 15, 1];
 
 			private _markerPos = selectRandom _myPlaces select 0;
 

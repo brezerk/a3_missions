@@ -274,6 +274,16 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<English>As per information given by locals there is a drug laboratory running by the scientific criminal nearby. Eliminate the criminal to stop NPG receiving cash flow.</English>
 				<Russian>За інформацією місцевих жителів поблизу є лабораторія наркотиків, якою керує науковий злочинець. Усуньте злочинця, щоб припинити фінансування ПНГ.</Russian>
 			</Key>
+			<Key ID="TASK_16_TITLE">
+				<Original>Optional: Wapon stash</Original>
+				<English>Optional: Wapon stash</English>
+				<Russian>Додаткове: Wapon stash</Russian>
+			</Key>
+			<Key ID="TASK_16_DESC">
+				<Original>Rebel leader passed me the coordinates of the two weapon stashes: &lt;marker name = 'civ_stash_00'&gt;Lopez&lt;/marker&gt; and &lt;marker name = 'civ_stash_01'&gt;Maria&lt;/marker&gt;.</Original>
+				<English>Rebel leader passed me the coordinates of the two weapon stashes: &lt;marker name = 'civ_stash_00'&gt;Lopez&lt;/marker&gt; and &lt;marker name = 'civ_stash_01'&gt;Maria&lt;/marker&gt;.</English>
+				<Russian>Лідер повстанців передав мені координати двох складів: &lt;marker name = 'civ_stash_00'&gt;Лопес&lt;/marker&gt; та &lt;marker name = 'civ_stash_01'&gt;Марія&lt;/marker&gt;.</Russian>
+			</Key>
 			<Key ID="TASK_AOC_01_TITLE">
 				<Original>Defend AA</Original>
 				<English>Defend AA</English>

@@ -94,6 +94,7 @@ Fn_Local_FailTasks = {
 		't_civ_boat',
 		//'t_civ_police',
 		't_civ_weapon_stash',
+		't_rebel_weapon_stash',
 		't_libirate_0',
 		't_libirate_1',
 		't_us_rescue_crash',
@@ -102,6 +103,7 @@ Fn_Local_FailTasks = {
 		't_east_crash',
 		't_east_city_0',
 		't_east_city_1'
+		
 	];
 };
 

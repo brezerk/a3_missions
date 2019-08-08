@@ -25,6 +25,42 @@ Spawn start objectives, triggers for informator contact
 
 if (hasInterface) then {
 
+	Fn_Local_Create_Task_West_WaponStash = {
+		_task = ["t_rebel_weapon_stash", player] call BIS_fnc_taskReal;
+		if (isNull _task) then {
+			[
+				player,
+				"t_rebel_weapon_stash",
+				[localize "TASK_16_DESC",
+				localize "TASK_16_TITLE",
+				localize "TASK_ORIG_01"],
+				objNull,
+				"CREATED",
+				0,
+				true
+			] call BIS_fnc_taskCreate;
+			['t_rebel_weapon_stash', "search"] call BIS_fnc_taskSetType;
+			
+			trgCivStash00 = createTrigger ["EmptyDetector", getMarkerPos "civ_stash_00"];
+			trgCivStash00 setTriggerArea [50, 50, 0, false];
+			trgCivStash00 setTriggerActivation ["ANYPLAYER", "PRESENT", true];
+			trgCivStash00 setTriggerStatements [
+				"(vehicle player) in thisList",
+				"call Fn_Task_Civilian_WaponStash_Enter_Area;",
+				"call Fn_Task_Civilian_Danger_Leave_Area;"
+			];
+			
+			trgCivStash01 = createTrigger ["EmptyDetector", getMarkerPos "civ_stash_01"];
+			trgCivStash01 setTriggerArea [50, 50, 0, false];
+			trgCivStash01 setTriggerActivation ["ANYPLAYER", "PRESENT", true];
+			trgCivStash01 setTriggerStatements [
+				"(vehicle player) in thisList",
+				"call Fn_Task_Civilian_WaponStash_Enter_Area;",
+				"call Fn_Task_Civilian_Danger_Leave_Area;"
+			];
+		};
+	};
+
 	Fn_Local_Create_Task_Civilian_WaponStash = {
 		[
 				player,

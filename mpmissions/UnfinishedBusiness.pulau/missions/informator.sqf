@@ -118,6 +118,11 @@ if (isServer) then {
 	call Fn_Task_Create_Informator;
 	
 	Fn_Informator_Complete = {
+		if (hasInterface) then {
+			remoteExecCall ["Fn_Local_Create_Task_West_WaponStash"];
+		} else {
+			remoteExecCall ["Fn_Local_Create_Task_West_WaponStash", -2];
+		};
 		call Fn_Task_Create_AA;
 		call Fn_Task_Create_KillLeader;
 		call Fn_Create_Mission_DestroyAmmo;
