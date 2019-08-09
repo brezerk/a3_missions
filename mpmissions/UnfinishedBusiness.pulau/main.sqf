@@ -60,8 +60,16 @@ if (isServer) then {
 	// Global variables	
 	mission_requested = false;
 	mission_plane_send = false;
+	
+	//Objects
+	obj_east_comtower = objNull;
+	obj_east_antiair = objNull;
+	
+	//Task states
+	task_complete_commtower = false;
+	task_complete_antiair = false;
 
-	// Global arrays
+	//Global arrays
 	pings = [];
 	connected_users = [];
 	assault_group = [];
@@ -129,7 +137,7 @@ if (isServer) then {
 	};
 	
 	Fn_Endgame_EvacPoint = {
-		if (alive csat_comm_tower_01 || alive csat_aa_01) then {
+		if (alive obj_east_comtower || alive obj_east_antiair) then {
 			"EndAssaultGroupResqued_EASTWon_GUERWon" call Fn_Endgame;
 		} else {
 			"EndAssaultGroupResqued_EASTDefited_GUERWon" call Fn_Endgame;
@@ -137,33 +145,11 @@ if (isServer) then {
 	};
 	
 	Fn_Endgame_LeaderKilled = {
-		if (alive csat_comm_tower_01 || alive csat_aa_01) then {
+		if (alive obj_east_comtower || alive obj_east_antiair) then {
 			"EndAssaultGroupResqued_EASTWon_GUERDefited" call Fn_Endgame;
 		} else {
 			"EndAssaultGroupResqued_EASTDefited_GUERDefited" call Fn_Endgame;
 		};
-	};
-	
-	Fn_Spawn_UAZ = {
-        params ["_spawnposition"];
-        private ["_pos", "_vec"];
-        _vec = objNull;
-        if (isServer) then {
-                _vec = selectRandom [
-                        "CUP_O_UAZ_Unarmed_SLA",
-                        "CUP_O_UAZ_Militia_SLA",
-                        "CUP_O_UAZ_Open_SLA",
-                        "CUP_O_UAZ_MG_SLA",
-                        "CUP_O_UAZ_AGS30_SLA",
-						"CUP_O_UAZ_SPG9_SLA",
-						"CUP_O_UAZ_METIS_SLA"
-                ];
-                _pos = getMarkerPos _spawnposition findEmptyPosition [0, 15, _vec];
-                _vec = createVehicle [_vec, _pos, [], 0];
-                _vec setDir (markerDir _spawnposition);
-
-        };
-        _vec;
 	};
 	
 	"PUB_fnc_missionPlanned" addPublicVariableEventHandler {
@@ -182,16 +168,31 @@ if (isServer) then {
 			mission_requested = true;
 			publicVariable "D_LOCATION";
 			publicVariable "mission_requested";
+			//Remove unneeded markers
+			{
+				if (_x != D_LOCATION) then {
+					private _filter = format ["wp_%1", _x];
+					{
+						if (_x find _filter >= 0) then {deleteMarker _x};
+					} forEach allMapMarkers;
+				};
+			} forEach D_LOCATIONS;
 		};
 	};
 
 	#include "missions\patrols.sqf";
 	#include "missions\intro.sqf";
-	#include "missions\aa.sqf";
 	#include "missions\leader.sqf";
 	#include "missions\liberate.sqf";
 	#include "missions\civilian\cargo.sqf";
+	#include "missions\civilian\transport.sqf";
 	#include "missions\independent\objectives.sqf";
+	#include "missions\east\comtower.sqf";
+	#include "missions\east\aa.sqf";
+	#include "missions\east\supply.sqf";
+	#include "missions\east\transport.sqf";
+	#include "missions\east\helicopter.sqf";
+	#include "missions\west\planning.sqf";
 	
 	waitUntil {real_weather_init};
 	
@@ -199,15 +200,7 @@ if (isServer) then {
 	skipTime ((random 5) + 6);
 	
 	// Create base marker
-	private _mark = createMarker ["mrk_base_west_01", getPos us_liberty_01];
-	_mark setMarkerType "b_naval";
-	_mark setMarkerText 'USS "Democracy"';
-	
-	_mark = createMarker ["mrk_base_west_02", getPos us_liberty_01];
-	_mark setMarkerSize [2000, 2000];
-	_mark setMarkerBrush "BDiagonal";
-	_mark setMarkerShape "ellipse";
-	_mark setMarkerColor "ColorWEST";
+	[getPos us_liberty_01] call Fn_West_MissionPlanning_CreateMarkers_Base;
 	
 	waitUntil {
 		sleep 3;
@@ -223,80 +216,12 @@ if (isServer) then {
 	
 	[[us_liberty_01, "Land_Destroyer_01_hull_04_F"] call BIS_fnc_Destroyer01GetShipPart, 1, false] call BIS_fnc_Destroyer01AnimateHangarDoors;
 	
+	call Fn_West_MissionPlanning_CreateMarkers_EastBase;
+	
 	call Fn_Create_MissionIntro;
 	
-	private _markers = [];
-	{
-		if (_x find format["wp_jet_crash_%1", D_LOCATION] >= 0) then {
-			_markers pushBack _x;
-		};
-	} forEach allMapMarkers;
-	
-	//Create crash site marker
-	private _crashSitePos = getMarkerPos (selectRandom _markers);
-	_mark = createMarker ["wp_crash_site", _crashSitePos];
-	_mark setMarkerType "hd_destroy";
-	_mark setMarkerAlpha 0;
-	
-	_markers = [];
-	{
-		if ((markerType _x) in ["o_mortar"]) then {
-			if (_x find D_LOCATION >= 0) then {
-				if ((_crashSitePos distance2D (getMarkerPos _x)) <= 3000) then {
-				_markers append [_x];
-				};
-			};
-		};
-	} forEach allMapMarkers;
-	private _radioSitePos = getMarkerPos (selectRandom _markers);
-	_mark = createMarker [format ["wp_%1_commtower", D_LOCATION], _radioSitePos];
-	_mark setMarkerType "hd_destroy";
-	_mark setMarkerAlpha 0;
-	
-	_mark = createMarker ["wp_defend_commtower", _radioSitePos];
-	_mark setMarkerAlpha 0;
-	_mark setMarkerSize [25, 25];
-	_mark setMarkerBrush "SolidBorder";
-	_mark setMarkerShape "ellipse";
-	_mark setMarkerColor "ColorEAST";
-	[_mark] call BrezBlock_fnc_CreateDefend;
-	deleteMarker _mark;
-	
-	_mark = createMarker ["wp_patrol_commtower", _radioSitePos];
-	_mark setMarkerAlpha 0;
-	_mark setMarkerSize [50, 50];
-	_mark setMarkerBrush "DiagGrid";
-	_mark setMarkerShape "ellipse";
-	_mark setMarkerColor "ColorEAST";
-	[_mark] call BrezBlock_fnc_CreatePatrol;
-	deleteMarker _mark;
-	
-	[_crashSitePos] call Fn_Task_Spawn_Indep_Objectives;
-	
-	private _ret = [_crashSitePos, 3000, 2] call BrezBlock_fnc_GetAllCitiesInRange;
-	//Get all POI in the range of 3000m
-	avaliable_locations = _ret select 0;
-	avaliable_pois = _ret select 1;
-	
-	publicVariable "avaliable_pois";
-
-	[_crashSitePos, 900] execVM "addons\brezblock\utils\controller.sqf";
-
 	execVM "missions\create_locations.sqf";
-	
-	[getMarkerPos (format ["wp_%1_aa", D_LOCATION]), 600] execVM "addons\brezblock\utils\controller.sqf";
-	[getMarkerPos (format ["wp_%1_airfield", D_LOCATION]), 600] execVM "addons\brezblock\utils\controller.sqf";
-	[getMarkerPos (format ["respawn_east_%1", D_LOCATION]), 150] execVM "addons\brezblock\utils\controller.sqf";
-	
-	[Fn_Spawn_UAZ, (format ["wp_spawn_uaz_%1_01", D_LOCATION]), 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
-	[Fn_Spawn_UAZ, (format ["wp_spawn_uaz_%1_02", D_LOCATION]), 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
-	
-	private _obj = createVehicle ["C_Plane_Civil_01_F", (getMarkerPos (format ["wp_%1_cesna01", D_LOCATION])), [], 0, "CAN_COLLIDE"];
-	_obj setDir (markerDir (format ["wp_%1_cesna01", D_LOCATION]));
-			
-	_obj = createVehicle ["C_Heli_Light_01_civil_F", (getMarkerPos (format ["wp_%1_heli01", D_LOCATION])), [], 0, "CAN_COLLIDE"];
-	_obj setDir (markerDir (format ["wp_%1_heli01", D_LOCATION]));
-	
+		
 	addMissionEventHandler ["EntityKilled",
 	{
 		params ["_killed", "_killer", "_instigator"];
@@ -334,6 +259,3 @@ if (isServer) then {
 		};
 	}];
 };
-
-// We need to end game if all players are no longer alive
-//[] execVM "addons\brezblock\triggers\end_game.sqf";

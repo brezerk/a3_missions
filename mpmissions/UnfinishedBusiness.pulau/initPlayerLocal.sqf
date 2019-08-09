@@ -151,7 +151,7 @@ player addEventHandler
 		
 		private _sides = [civilian, east, west];
 		
-		if (!(alive csat_comm_tower_01)) then {
+		if (!(alive obj_east_comtower)) then {
 			_sides = _sides - [east];
 		};
 		
@@ -200,8 +200,8 @@ player addEventHandler
 		{
 			case east:
 			{
-				[] execVM "gear\csat.sqf";
-				player setPos getMarkerPos (format ["respawn_east_%1", D_LOCATION]);
+				[] execVM "gear\east.sqf";
+				player setPos getMarkerPos "respawn_east";
 				call Fn_Local_Create_SCAT_MissionIntro;
 			};
 			case civilian:

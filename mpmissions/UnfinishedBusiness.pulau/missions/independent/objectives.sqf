@@ -38,35 +38,19 @@ if (isServer) then {
 	Fn_Task_Spawn_Indep_Objectives = {
 		params['_center'];
 		//Land_Research_HQ_F, Land_Cargo_HQ_V4_F
-		//private _classes = ["Land_Medevac_house_V1_F", "Land_Cargo_Patrol_V1_F", "Land_wpp_Turbine_V1_off_F", "Land_dp_smallTank_F"];
-		private _classes = ["Land_Cargo_Patrol_V1_F", "Land_dp_smallTank_F"];
-		_markers = [];
-		{
-			if ((markerType _x) in ["n_mortar"]) then {
-				if (_x find D_LOCATION >= 0) then {
-					if ((_center distance2D (getMarkerPos _x)) <= 3000) then {
-						_markers append [_x];
-					};
-				};
-			};
-		} forEach allMapMarkers;
+		private _classes = ["Land_Medevac_house_V1_F", "Land_Cargo_Patrol_V1_F", "Land_wpp_Turbine_V1_off_F", "Land_dp_smallTank_F"];
+		private _markers = [_center, ["n_mortar"], 3000] call BrezBlock_fnc_GetAllMarkerTypesInRange;
 		
 		for "_i" from 1 to 2 do {
 			private _marker = selectRandom (_markers);
 			private _center = getMarkerPos (_marker);
 			private _dir = markerDir _marker;
-			
-			//_dir = markerDir _marker;
 			private _pos = [_center, 9, _dir + 90] call BIS_Fnc_relPos;
 			private _obj = createVehicle ["CUP_O_Ural_Reammo_RU", _pos, [], 0, "CAN_COLLIDE"];
 			_obj setDir _dir;
 			
 			_markers = _markers - [_marker];
-			
-			_marker = createMarker [format ["mrk_objective_0%1", _i], _center];
-			_marker setMarkerType "hd_destroy";
-			_marker setMarkerAlpha 0;
-			
+						
 			private _unitRef = ["defence_point", _center, [0,0,0], 0, true] call LARs_fnc_spawnComp;
 			
 			private _class = selectRandom (_classes);
@@ -136,25 +120,27 @@ if (isServer) then {
 					];
 				};
 			};
-			_mark = createMarker ["wp_defend_obj", _center];
-			_mark setMarkerAlpha 0;
-			_mark setMarkerSize [25, 25];
-			_mark setMarkerBrush "SolidBorder";
-			_mark setMarkerShape "ellipse";
-			_mark setMarkerColor "ColorGUER";
-			[_mark] call BrezBlock_fnc_CreateDefend;
-			[_mark] call BrezBlock_fnc_CreateDefend;
-			deleteMarker _mark;
 			
-			_mark = createMarker ["wp_defend_obj", _center];
-			_mark setMarkerAlpha 0;
-			_mark setMarkerSize [50, 50];
-			_mark setMarkerBrush "DiagGrid";
-			_mark setMarkerShape "ellipse";
-			_mark setMarkerColor "ColorGUER";
-			[_mark] call BrezBlock_fnc_CreatePatrol;
-			[_mark] call BrezBlock_fnc_CreatePatrol;
-			deleteMarker _mark;
+			deleteMarker _marker;
+			_marker = createMarker ["wp_defend_obj", _center];
+			_marker setMarkerAlpha 0;
+			_marker setMarkerSize [25, 25];
+			_marker setMarkerBrush "SolidBorder";
+			_marker setMarkerShape "ellipse";
+			_marker setMarkerColor "ColorGUER";
+			[_marker] call BrezBlock_fnc_CreateDefend;
+			[_marker] call BrezBlock_fnc_CreateDefend;
+			deleteMarker _marker;
+			
+			_marker = createMarker ["wp_defend_obj", _center];
+			_marker setMarkerAlpha 0;
+			_marker setMarkerSize [50, 50];
+			_marker setMarkerBrush "DiagGrid";
+			_marker setMarkerShape "ellipse";
+			_marker setMarkerColor "ColorGUER";
+			[_marker] call BrezBlock_fnc_CreatePatrol;
+			[_marker] call BrezBlock_fnc_CreatePatrol;
+			deleteMarker _marker;
 		};
 	};
 	

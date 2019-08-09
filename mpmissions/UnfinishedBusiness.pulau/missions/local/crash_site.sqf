@@ -19,7 +19,7 @@
 // Intended to be executed on player side
 if (hasInterface) then {
 	Fn_Local_Create_Mission_CrashSite = {
-		private _markerPos = getMarkerPos "wp_crash_site";
+		private _markerPos = getMarkerPos "mrk_west_crashsite";
 		
 		[
 			player,

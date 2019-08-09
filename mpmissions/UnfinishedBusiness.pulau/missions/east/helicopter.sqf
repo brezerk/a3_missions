@@ -22,29 +22,23 @@ Spawn start objectives, triggers for informator contact
 
 //Player side triggers
 // Client side code
-if (hasInterface) then {
-	Fn_Local_Create_KillLeader = {
-		private _trg = createTrigger ["EmptyDetector", getMarkerPos "mrk_airfield"];
-		_trg setTriggerArea [500, 500, 0, false];
-		_trg setTriggerActivation ["ANYPLAYER", "PRESENT", true];
-		_trg setTriggerStatements [
-			"(vehicle player) in thisList",
-			"[ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_07', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;",
-			""
-		];
-		if (playerSide == west) then {
-			[
-				player,
-				"t_kill_leader",
-				[format [localize "TASK_01_DESC", D_LOCATION],
-				localize "TASK_01_TITLE",
-				localize "TASK_ORIG_01"],
-				getMarkerPos "mrk_airfield",
-				"CREATED",
-				0,
-				true
-			] call BIS_fnc_taskCreate;
-			['t_kill_leader', "kill"] call BIS_fnc_taskSetType;
+if (hasInterface) then {};
+
+if (isServer) then {
+	
+	Fn_Spawn_East_Helicopter = {
+		private _class = "";
+		switch (D_DIFFICLTY) do {
+			case 0: {
+				_class = "CUP_O_UH1H_slick_SLA";
+			};
+			case 1: {
+				_class = "CUP_O_UH1H_armed_SLA";
+			};
+			case 2: {
+				_class = "CUP_O_UH1H_gunship_SLA";
+			};
 		};
+		private _vehicle = createVehicle [_class, (getMarkerPos format["wp_%1_east_helicopter", D_LOCATION])];
 	};
 };

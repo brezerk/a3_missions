@@ -52,10 +52,10 @@ if (hasInterface) then {
 			player,
 			"t_arrive_to_island",
 			[
-			format [localize "TASK_02_DESC", D_LOCATION, D_LOCATION],
+			format [localize "TASK_02_DESC", D_LOCATION],
 			format [localize "TASK_02_TITLE", D_LOCATION],
 			localize "TASK_ORIG_01"],
-			getMarkerPos format["wp_%1_airfield", D_LOCATION],
+			getMarkerPos "mrk_airfield",
 			"CREATED",
 			0,
 			true

@@ -8,7 +8,7 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=6794;
+		nextID=6816;
 	};
 	class MarkerIDProvider
 	{
@@ -16,11 +16,11 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=338;
+		nextID=614;
 	};
 	class Camera
 	{
-		pos[]={1250.4926,142.93867,2698.1289};
+		pos[]={1426.7732,1546.1415,3329.9834};
 		dir[]={-0.0099879066,-0.99994999,-0.00048716925};
 		up[]={-0.99876267,0.00999978,-0.048715562};
 		aside[]={-0.048717998,0,0.99881262};
@@ -382,12 +382,12 @@ class Mission
 	};
 	class Entities
 	{
-		items=915;
+		items=937;
 		class Item0
 		{
 			dataType="Marker";
 			position[]={4376.5034,4.822998,8893.5332};
-			name="wp_paradrop_Gurun_01";
+			name="wp_Gurun_paradrop_01";
 			type="b_recon";
 			id=67;
 			atlOffset=-9.3599615;
@@ -396,7 +396,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4114.6084,0.96618652,8782.6045};
-			name="wp_paradrop_Gurun_02";
+			name="wp_Gurun_paradrop_02";
 			type="b_recon";
 			id=88;
 			atlOffset=-7.2617111;
@@ -405,7 +405,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5499.9087,10.848022,8390.8818};
-			name="wp_paradrop_Gurun_03";
+			name="wp_Gurun_paradrop_03";
 			type="b_recon";
 			id=89;
 			atlOffset=-10.997553;
@@ -414,7 +414,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3639.3662,-1.6549997,8281.2393};
-			name="wp_paradrop_Gurun_07";
+			name="wp_Gurun_paradrop_07";
 			type="b_recon";
 			id=93;
 			atlOffset=-6.1486716;
@@ -423,7 +423,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3292.2163,0.08605957,10010.539};
-			name="wp_paradrop_Gurun_09";
+			name="wp_Gurun_paradrop_09";
 			type="b_recon";
 			id=95;
 			atlOffset=-5.3473659;
@@ -432,7 +432,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3162.7073,9.177166,10249.828};
-			name="wp_paradrop_Gurun_10";
+			name="wp_Gurun_paradrop_10";
 			type="b_recon";
 			id=96;
 			atlOffset=10.50388;
@@ -441,7 +441,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3383.7,6.0483398,9724.6006};
-			name="wp_paradrop_Gurun_13";
+			name="wp_Gurun_paradrop_13";
 			type="b_recon";
 			id=99;
 			atlOffset=-3.6802073;
@@ -450,7 +450,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3218.5955,-0.74462891,9528.5215};
-			name="wp_paradrop_Gurun_15";
+			name="wp_Gurun_paradrop_15";
 			type="b_recon";
 			id=101;
 			atlOffset=0.64537108;
@@ -459,7 +459,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6187.9731,-1.0650001,9581.6973};
-			name="wp_paradrop_Gurun_16";
+			name="wp_Gurun_paradrop_16";
 			type="b_recon";
 			id=102;
 			atlOffset=7.8082085e-005;
@@ -468,7 +468,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4829.5991,3.4610596,9487.6885};
-			name="wp_paradrop_Gurun_18";
+			name="wp_Gurun_paradrop_18";
 			type="b_recon";
 			id=104;
 			atlOffset=5.0067902e-006;
@@ -477,7 +477,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5312.3711,-6.0239258,8242.6982};
-			name="wp_paradrop_Gurun_19";
+			name="wp_Gurun_paradrop_19";
 			type="b_recon";
 			id=105;
 			atlOffset=-10.177781;
@@ -486,7 +486,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5134.7588,-0.92287511,10390.825};
-			name="wp_paradrop_Gurun_20";
+			name="wp_Gurun_paradrop_20";
 			type="b_recon";
 			id=106;
 			atlOffset=1.798785;
@@ -495,7 +495,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5135.7349,3.5339999,9171.9756};
-			name="wp_jet_crash_Gurun_01";
+			name="wp_Gurun_crashsite_01";
 			type="b_plane";
 			id=112;
 			atlOffset=4.4822693e-005;
@@ -504,7 +504,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4016.3711,8.6920004,9400.5068};
-			name="wp_jet_crash_Gurun_02";
+			name="wp_Gurun_crashsite_02";
 			type="b_plane";
 			id=113;
 			atlOffset=-1.0797424;
@@ -513,7 +513,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4446.5698,31.417999,9761.4756};
-			name="wp_jet_crash_Gurun_03";
+			name="wp_Gurun_crashsite_03";
 			type="b_plane";
 			id=114;
 			atlOffset=24.970421;
@@ -522,7 +522,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5374.5239,4.4219999,9433.4736};
-			name="wp_jet_crash_Gurun_04";
+			name="wp_Gurun_crashsite_04";
 			type="b_plane";
 			id=115;
 			atlOffset=0.00031280518;
@@ -531,7 +531,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3851.2666,2.5,8553.1865};
-			name="wp_jet_crash_Gurun_05";
+			name="wp_Gurun_crashsite_05";
 			type="b_plane";
 			id=116;
 			atlOffset=-2.371213;
@@ -540,7 +540,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3713.3191,6.0739999,9126.4658};
-			name="wp_jet_crash_Gurun_07";
+			name="wp_Gurun_crashsite_07";
 			type="b_plane";
 			id=118;
 			atlOffset=-2.5671182;
@@ -549,7 +549,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5513.7046,48.097778,5967.585};
-			name="wp_jet_crash_Gurun_08";
+			name="wp_Gurun_crashsite_08";
 			type="b_plane";
 			id=119;
 			atlOffset=-14.221363;
@@ -558,7 +558,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4542.5962,4.5900002,9135.8916};
-			name="wp_jet_crash_Gurun_10";
+			name="wp_Gurun_crashsite_10";
 			type="b_plane";
 			id=121;
 			atlOffset=-1.7341108;
@@ -1553,12 +1553,12 @@ class Mission
 		class Item82
 		{
 			dataType="Marker";
-			position[]={6044.1636,-0.21838379,10678.371};
-			name="wp_waypoint_Gurun_01";
+			position[]={6044.1641,-0.21799999,10678.371};
+			name="wp_Gurun_waypoint";
 			type="b_installation";
-			angle=195.24123;
+			angle=195.24097;
 			id=1614;
-			atlOffset=23.467848;
+			atlOffset=23.468279;
 		};
 		class Item83
 		{
@@ -1611,7 +1611,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6536.6851,18.879,6909.9512};
-			name="respawn_east_Gurun";
+			name="wp_Gurun_east_respawn";
 			type="o_hq";
 			id=1720;
 			atlOffset=-8.6210003;
@@ -2278,7 +2278,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4143.9253,3.4934082,9640.917};
-			name="wp_paradrop_Gurun_04";
+			name="wp_Gurun_paradrop_04";
 			type="b_recon";
 			id=90;
 			atlOffset=-7.9611158;
@@ -2299,8 +2299,8 @@ class Mission
 		class Item129
 		{
 			dataType="Marker";
-			position[]={4536.2969,-0.85559082,10149.501};
-			name="wp_patrol_11";
+			position[]={428.83057,-7.640337,11828.643};
+			name="wp_XXX_indep_patrol_01";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorGUER";
@@ -2308,7 +2308,7 @@ class Mission
 			a=100;
 			b=100;
 			id=2096;
-			atlOffset=-4.5365014;
+			atlOffset=15.996035;
 		};
 		class Item130
 		{
@@ -2575,16 +2575,17 @@ class Mission
 		class Item149
 		{
 			dataType="Marker";
-			position[]={4346.188,1.7976245,10250.089};
-			name="wp_patrol_B_1";
+			position[]={637.32446,-0.51526451,11825.379};
+			name="wp_XXX_indep_defend_01";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorGUER";
 			fillName="SolidBorder";
-			a=50;
-			b=50;
+			a=100;
+			b=100;
 			drawBorder=1;
 			id=2163;
+			atlOffset=18.652418;
 		};
 		class Item150
 		{
@@ -3086,15 +3087,15 @@ class Mission
 		class Item169
 		{
 			dataType="Marker";
-			position[]={4533.105,2.3452148,10188.479};
-			name="wp_civ_test_13";
+			position[]={225.11743,1.3915157,12049.187};
+			name="wp_XXX_civpresence_01";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorCIV";
 			a=100;
 			b=100;
 			id=2270;
-			atlOffset=5.0067902e-006;
+			atlOffset=21.774302;
 		};
 		class Item170
 		{
@@ -3122,7 +3123,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6837.2275,13.530003,8308.3604};
-			name="wp_jet_crash_Gurun_12";
+			name="wp_Gurun_crashsite_12";
 			type="b_plane";
 			id=2287;
 			atlOffset=0.00012397766;
@@ -3131,7 +3132,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6633.2764,35.188683,7875.8711};
-			name="wp_jet_crash_Gurun_13";
+			name="wp_Gurun_crashsite_13";
 			type="b_plane";
 			id=2288;
 			atlOffset=0.00012207031;
@@ -3140,7 +3141,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={7038.1694,10.760132,7684.2422};
-			name="wp_jet_crash_Gurun_14";
+			name="wp_Gurun_crashsite_14";
 			type="b_plane";
 			id=2289;
 			atlOffset=-1.5046921;
@@ -3149,7 +3150,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6954.5776,13.035156,7338.6694};
-			name="wp_jet_crash_Gurun_15";
+			name="wp_Gurun_crashsite_15";
 			type="b_plane";
 			id=2290;
 			atlOffset=-1.4239922;
@@ -3158,7 +3159,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6452.9307,20.778442,7285.8369};
-			name="wp_jet_crash_Gurun_16";
+			name="wp_Gurun_crashsite_16";
 			type="b_plane";
 			id=2292;
 			atlOffset=-3.2264442;
@@ -3167,7 +3168,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={7088.7915,2.8355713,2977.6436};
-			name="wp_jet_crash_Gurun_17";
+			name="wp_Gurun_crashsite_17";
 			type="b_plane";
 			id=2293;
 			atlOffset=-3.2814603;
@@ -3176,7 +3177,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6398.2065,73.936371,4284.7593};
-			name="wp_jet_crash_Gurun_18";
+			name="wp_Gurun_crashsite_18";
 			type="b_plane";
 			id=2294;
 		};
@@ -3184,7 +3185,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5153.4937,43.405029,5391.0757};
-			name="wp_jet_crash_Gurun_19";
+			name="wp_Gurun_crashsite_19";
 			type="b_plane";
 			id=2295;
 			atlOffset=-24.899246;
@@ -3193,7 +3194,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4564.0845,23.318115,6932.2642};
-			name="wp_jet_crash_Gurun_20";
+			name="wp_Gurun_crashsite_20";
 			type="b_plane";
 			id=2296;
 			atlOffset=-11.642921;
@@ -3202,7 +3203,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6025.5493,22.172173,7661.7695};
-			name="wp_jet_crash_Gurun_21";
+			name="wp_Gurun_crashsite_21";
 			type="b_plane";
 			id=2297;
 			atlOffset=0.00012397766;
@@ -3211,7 +3212,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6035.75,20.750221,8074.8677};
-			name="wp_jet_crash_Gurun_22";
+			name="wp_Gurun_crashsite_22";
 			type="b_plane";
 			id=2298;
 			atlOffset=0.00012397766;
@@ -3220,7 +3221,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5382.9526,19.208673,7697.4688};
-			name="wp_jet_crash_Gurun_23";
+			name="wp_Gurun_crashsite_23";
 			type="b_plane";
 			id=2299;
 			atlOffset=0.00012397766;
@@ -3229,7 +3230,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5637.9512,27.774643,7335.3706};
-			name="wp_jet_crash_Gurun_24";
+			name="wp_Gurun_crashsite_24";
 			type="b_plane";
 			id=2300;
 			atlOffset=0.00012397766;
@@ -3238,7 +3239,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5218.0313,17.617798,6979.8579};
-			name="wp_jet_crash_Gurun_25";
+			name="wp_Gurun_crashsite_25";
 			type="b_plane";
 			id=2301;
 			atlOffset=5.531311e-005;
@@ -3247,7 +3248,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4336.6621,16.854557,7444.2817};
-			name="wp_jet_crash_Gurun_26";
+			name="wp_Gurun_crashsite_26";
 			type="b_plane";
 			id=2302;
 			atlOffset=0.00012397766;
@@ -3256,7 +3257,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4532.5874,4.1089211,7774.5547};
-			name="wp_jet_crash_Gurun_27";
+			name="wp_Gurun_crashsite_27";
 			type="b_plane";
 			id=2303;
 			atlOffset=0.00012397766;
@@ -3265,7 +3266,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4879.6543,30.766514,8261.5684};
-			name="wp_jet_crash_Gurun_28";
+			name="wp_Gurun_crashsite_28";
 			type="b_plane";
 			id=2304;
 			atlOffset=0.00012397766;
@@ -3274,7 +3275,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6038.9219,65.317314,4486.3335};
-			name="wp_jet_crash_Gurun_29";
+			name="wp_Gurun_crashsite_29";
 			type="b_plane";
 			id=2305;
 			atlOffset=1.8890114;
@@ -3283,7 +3284,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4917.645,16.940826,7705.2583};
-			name="wp_jet_crash_Gurun_30";
+			name="wp_Gurun_crashsite_30";
 			type="b_plane";
 			id=2306;
 			atlOffset=7.6293945e-006;
@@ -3292,7 +3293,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5600.0337,57.115601,5547.8467};
-			name="wp_jet_crash_Gurun_32";
+			name="wp_Gurun_crashsite_32";
 			type="b_plane";
 			id=2308;
 			atlOffset=-9.750061;
@@ -3301,7 +3302,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5422.8369,34.2052,6529.9004};
-			name="wp_jet_crash_Gurun_33";
+			name="wp_Gurun_crashsite_33";
 			type="b_plane";
 			id=2309;
 			atlOffset=-13.008354;
@@ -3310,7 +3311,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5892.2295,25.209192,9061.6836};
-			name="wp_jet_crash_Gurun_36";
+			name="wp_Gurun_crashsite_36";
 			type="b_plane";
 			id=2312;
 			atlOffset=0.00012397766;
@@ -3319,7 +3320,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6263.25,18.581068,8803.9209};
-			name="wp_jet_crash_Gurun_37";
+			name="wp_Gurun_crashsite_37";
 			type="b_plane";
 			id=2313;
 			atlOffset=0.00012397766;
@@ -3328,7 +3329,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6098.6001,29.968628,5896.3018};
-			name="wp_jet_crash_Gurun_38";
+			name="wp_Gurun_crashsite_38";
 			type="b_plane";
 			id=2314;
 			atlOffset=-19.301052;
@@ -3337,7 +3338,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6004.9922,11.43446,8510.6641};
-			name="wp_jet_crash_Gurun_39";
+			name="wp_Gurun_crashsite_39";
 			type="b_plane";
 			id=2315;
 			atlOffset=-6.192543;
@@ -3346,7 +3347,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5654.1245,-1.2481645,8141.271};
-			name="wp_jet_crash_Gurun_41";
+			name="wp_Gurun_crashsite_41";
 			type="b_plane";
 			id=2317;
 			atlOffset=-10.245095;
@@ -3355,7 +3356,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4187.2324,2.185622,8013.6943};
-			name="wp_jet_crash_Gurun_43";
+			name="wp_Gurun_crashsite_43";
 			type="b_plane";
 			id=2319;
 			atlOffset=0.00012397766;
@@ -3364,7 +3365,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5188.0234,8.3312988,8080.376};
-			name="wp_paradrop_Gurun_22";
+			name="wp_Gurun_paradrop_22";
 			type="b_recon";
 			id=2321;
 			atlOffset=-40.375935;
@@ -3373,7 +3374,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5712.3799,14.600342,7669.6436};
-			name="wp_paradrop_Gurun_24";
+			name="wp_Gurun_paradrop_24";
 			type="b_recon";
 			id=2323;
 			atlOffset=-8.0692558;
@@ -3382,7 +3383,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6155.6011,6.7506104,7057.5381};
-			name="wp_paradrop_Gurun_25";
+			name="wp_Gurun_paradrop_25";
 			type="b_recon";
 			id=2324;
 			atlOffset=-18.222328;
@@ -3391,7 +3392,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6389.9824,5.9783783,7687.2188};
-			name="wp_paradrop_Gurun_26";
+			name="wp_Gurun_paradrop_26";
 			type="b_recon";
 			id=2325;
 			atlOffset=-9.7346497;
@@ -3400,7 +3401,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6680.9414,-5.0756707,7511.4717};
-			name="wp_paradrop_Gurun_27";
+			name="wp_Gurun_paradrop_27";
 			type="b_recon";
 			id=2326;
 			atlOffset=-9.7346497;
@@ -3409,7 +3410,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6887.9336,9.4035645,8042.6191};
-			name="wp_paradrop_Gurun_28";
+			name="wp_Gurun_paradrop_28";
 			type="b_recon";
 			id=2327;
 			atlOffset=-7.6193104;
@@ -3418,7 +3419,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6653.6035,10.991943,8150.019};
-			name="wp_paradrop_Gurun_29";
+			name="wp_Gurun_paradrop_29";
 			type="b_recon";
 			id=2328;
 			atlOffset=-14.517433;
@@ -3427,7 +3428,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6497.3857,9.7838135,8276.9473};
-			name="wp_paradrop_Gurun_30";
+			name="wp_Gurun_paradrop_30";
 			type="b_recon";
 			id=2329;
 			atlOffset=-15.372965;
@@ -3436,7 +3437,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3823.5669,16.292019,7524.0137};
-			name="wp_paradrop_Gurun_31";
+			name="wp_Gurun_paradrop_31";
 			type="b_recon";
 			id=2330;
 		};
@@ -3444,7 +3445,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6824.146,-11.439386,8779.7793};
-			name="wp_paradrop_Gurun_32";
+			name="wp_Gurun_paradrop_32";
 			type="b_recon";
 			id=2331;
 			atlOffset=-9.7346497;
@@ -3453,7 +3454,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={7269.1758,-11.787872,8396.3262};
-			name="wp_paradrop_Gurun_33";
+			name="wp_Gurun_paradrop_33";
 			type="b_recon";
 			id=2332;
 			atlOffset=-9.7346497;
@@ -3462,7 +3463,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6871.1533,13.336792,6930.0361};
-			name="wp_paradrop_Gurun_34";
+			name="wp_Gurun_paradrop_34";
 			type="b_recon";
 			id=2333;
 			atlOffset=-1.4211378;
@@ -3471,7 +3472,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6898.5195,7.6605225,6740.7612};
-			name="wp_paradrop_Gurun_35";
+			name="wp_Gurun_paradrop_35";
 			type="b_recon";
 			id=2334;
 			atlOffset=-2.0380487;
@@ -3480,7 +3481,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6745.9224,20.676252,6137.5039};
-			name="wp_paradrop_Gurun_38";
+			name="wp_Gurun_paradrop_38";
 			type="b_recon";
 			id=2337;
 			atlOffset=1.9073486e-006;
@@ -3489,7 +3490,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6568.7383,17.395142,6398.332};
-			name="wp_paradrop_Gurun_39";
+			name="wp_Gurun_paradrop_39";
 			type="b_recon";
 			id=2338;
 			atlOffset=-11.368599;
@@ -3498,7 +3499,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6488.2749,30.404812,6084.4121};
-			name="wp_paradrop_Gurun_40";
+			name="wp_Gurun_paradrop_40";
 			type="b_recon";
 			id=2339;
 			atlOffset=-9.7346497;
@@ -3507,7 +3508,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6988.7578,-2.1658936,5819.209};
-			name="wp_paradrop_Gurun_41";
+			name="wp_Gurun_paradrop_41";
 			type="b_recon";
 			id=2340;
 			atlOffset=-0.38743651;
@@ -3516,7 +3517,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6673.9766,-0.57793456,5732.6899};
-			name="wp_paradrop_Gurun_42";
+			name="wp_Gurun_paradrop_42";
 			type="b_recon";
 			id=2341;
 		};
@@ -3524,7 +3525,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={7501.4868,-12.09086,6305.5273};
-			name="wp_paradrop_Gurun_43";
+			name="wp_Gurun_paradrop_43";
 			type="b_recon";
 			id=2342;
 			atlOffset=-9.7346497;
@@ -3533,7 +3534,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={7204.8003,-9.3897791,5421.0664};
-			name="wp_paradrop_Gurun_44";
+			name="wp_Gurun_paradrop_44";
 			type="b_recon";
 			id=2343;
 			atlOffset=-9.7346497;
@@ -3542,7 +3543,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={7220.9956,-8.5053282,5016.3965};
-			name="wp_paradrop_Gurun_45";
+			name="wp_Gurun_paradrop_45";
 			type="b_recon";
 			id=2344;
 			atlOffset=-9.7346497;
@@ -3551,7 +3552,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6601.3076,44.868679,4944.0234};
-			name="wp_paradrop_Gurun_46";
+			name="wp_Gurun_paradrop_46";
 			type="b_recon";
 			id=2345;
 			atlOffset=-9.7346497;
@@ -3560,7 +3561,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3819.0515,0,7163.5952};
-			name="wp_paradrop_Gurun_48";
+			name="wp_Gurun_paradrop_48";
 			type="b_recon";
 			id=2347;
 			atlOffset=4.0139503;
@@ -3569,7 +3570,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4153.4395,-2.0430262,6507.2578};
-			name="wp_paradrop_Gurun_49";
+			name="wp_Gurun_paradrop_49";
 			type="b_recon";
 			id=2348;
 		};
@@ -3577,7 +3578,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4470.7734,20.354614,6717.6245};
-			name="wp_paradrop_Gurun_50";
+			name="wp_Gurun_paradrop_50";
 			type="b_recon";
 			id=2349;
 			atlOffset=-7.4386597e-005;
@@ -3585,16 +3586,17 @@ class Mission
 		class Item224
 		{
 			dataType="Marker";
-			position[]={4495.5029,-1.820503,5400.3823};
-			name="wp_paradrop_Gurun_51";
+			position[]={4495.5029,-1.821,5400.3818};
+			name="wp_Gurun_paradrop_51";
 			type="b_recon";
 			id=2350;
+			atlOffset=-0.00056409836;
 		};
 		class Item225
 		{
 			dataType="Marker";
 			position[]={4753.7642,0,4737.9106};
-			name="wp_paradrop_Gurun_52";
+			name="wp_Gurun_paradrop_52";
 			type="b_recon";
 			id=2351;
 			atlOffset=4.3058815;
@@ -3603,7 +3605,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5791.9932,13.051147,4013.9351};
-			name="wp_paradrop_Gurun_55";
+			name="wp_Gurun_paradrop_55";
 			type="b_recon";
 			id=2354;
 			atlOffset=-0.48528385;
@@ -3612,7 +3614,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5187.4609,0,4762.4131};
-			name="wp_paradrop_Gurun_56";
+			name="wp_Gurun_paradrop_56";
 			type="b_recon";
 			id=2355;
 			atlOffset=-22.979557;
@@ -3621,7 +3623,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={7086.1167,-2.6869044,4462.5146};
-			name="wp_paradrop_Gurun_57";
+			name="wp_Gurun_paradrop_57";
 			type="b_recon";
 			id=2356;
 		};
@@ -3629,7 +3631,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5411.2671,-3.5933838,3903.5337};
-			name="wp_paradrop_Gurun_58";
+			name="wp_Gurun_paradrop_58";
 			type="b_recon";
 			id=2357;
 			atlOffset=-17.988911;
@@ -3638,7 +3640,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4899.4473,-2.9985719,4086.709};
-			name="wp_paradrop_Gurun_59";
+			name="wp_Gurun_paradrop_59";
 			type="b_recon";
 			id=2358;
 		};
@@ -3646,7 +3648,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4071.604,-8.7662287,5824.9233};
-			name="wp_paradrop_Gurun_60";
+			name="wp_Gurun_paradrop_60";
 			type="b_recon";
 			id=2359;
 		};
@@ -3654,7 +3656,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6020.3477,3.1539297,7329.6108};
-			name="wp_paradrop_Gurun_61";
+			name="wp_Gurun_paradrop_61";
 			type="b_recon";
 			id=2360;
 			atlOffset=-9.7346497;
@@ -3663,7 +3665,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4176.5112,11.748901,6935.5664};
-			name="wp_paradrop_Gurun_62";
+			name="wp_Gurun_paradrop_62";
 			type="b_recon";
 			id=2361;
 			atlOffset=-8.2969666e-005;
@@ -3672,7 +3674,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4860.6265,52.887939,5855.3262};
-			name="wp_paradrop_Gurun_63";
+			name="wp_Gurun_paradrop_63";
 			type="b_recon";
 			id=2362;
 			atlOffset=-11.127426;
@@ -3681,7 +3683,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4965.1172,-15.1698,4345.7021};
-			name="wp_paradrop_Gurun_65";
+			name="wp_Gurun_paradrop_65";
 			type="b_recon";
 			id=2364;
 			atlOffset=-31.232359;
@@ -3690,7 +3692,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6314.6694,5.4390869,3911.0295};
-			name="wp_paradrop_Gurun_66";
+			name="wp_Gurun_paradrop_66";
 			type="b_recon";
 			id=2365;
 			atlOffset=-36.913925;
@@ -3699,7 +3701,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={7584.1504,-12.006813,7914.6943};
-			name="wp_paradrop_Gurun_67";
+			name="wp_Gurun_paradrop_67";
 			type="b_recon";
 			id=2366;
 			atlOffset=-9.7346497;
@@ -3974,8 +3976,9 @@ class Mission
 		class Item258
 		{
 			dataType="Marker";
-			position[]={5636.4609,41.365356,6727.4004};
+			position[]={5636.4609,41.365002,6727.3999};
 			name="wp_patrol_A_30";
+			text="2";
 			markerType="ELLIPSE";
 			type="ellipse";
 			colorName="ColorGUER";
@@ -3983,7 +3986,7 @@ class Mission
 			a=100;
 			b=100;
 			id=2401;
-			atlOffset=-9.6830635;
+			atlOffset=-9.6834183;
 		};
 		class Item259
 		{
@@ -4591,7 +4594,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={7019.208,-10.141312,6367.2324};
-			name="wp_jet_crash_Gurun_34";
+			name="wp_Gurun_crashsite_34";
 			type="b_plane";
 			id=2514;
 			atlOffset=-17.517027;
@@ -4600,7 +4603,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6268.4399,8.71772,6701.6982};
-			name="wp_jet_crash_Gurun_35";
+			name="wp_Gurun_crashsite_35";
 			type="b_plane";
 			id=2515;
 			atlOffset=-17.517027;
@@ -4609,7 +4612,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6930.2549,-7.0443316,5349.6035};
-			name="wp_jet_crash_Gurun_40";
+			name="wp_Gurun_crashsite_40";
 			type="b_plane";
 			id=2516;
 			atlOffset=-17.517027;
@@ -4618,7 +4621,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6248.3047,-17.047028,5114.4326};
-			name="wp_jet_crash_Gurun_42";
+			name="wp_Gurun_crashsite_42";
 			type="b_plane";
 			id=2517;
 			atlOffset=-69.959976;
@@ -4627,7 +4630,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6568.1992,33.914696,4658.207};
-			name="wp_jet_crash_Gurun_44";
+			name="wp_Gurun_crashsite_44";
 			type="b_plane";
 			id=2518;
 			atlOffset=-17.517025;
@@ -4636,7 +4639,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5601.356,37.474022,4790.5967};
-			name="wp_jet_crash_Gurun_45";
+			name="wp_Gurun_crashsite_45";
 			type="b_plane";
 			id=2519;
 			atlOffset=-17.517029;
@@ -4645,7 +4648,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5412.8008,9.9463768,4289.1221};
-			name="wp_jet_crash_Gurun_46";
+			name="wp_Gurun_crashsite_46";
 			type="b_plane";
 			id=2520;
 			atlOffset=-17.517027;
@@ -4654,7 +4657,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4827.0786,1.3849945,5304.1064};
-			name="wp_jet_crash_Gurun_47";
+			name="wp_Gurun_crashsite_47";
 			type="b_plane";
 			id=2521;
 			atlOffset=-17.517027;
@@ -4663,7 +4666,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6716.6357,12.101982,3791.6587};
-			name="wp_jet_crash_Gurun_48";
+			name="wp_Gurun_crashsite_48";
 			type="b_plane";
 			id=2522;
 			atlOffset=-17.517027;
@@ -4672,7 +4675,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6592.2705,3.1788483,3314.2544};
-			name="wp_jet_crash_Gurun_49";
+			name="wp_Gurun_crashsite_49";
 			type="b_plane";
 			id=2523;
 			atlOffset=-17.517027;
@@ -4681,7 +4684,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5919.2612,-1.4691486,3623.0742};
-			name="wp_jet_crash_Gurun_50";
+			name="wp_Gurun_crashsite_50";
 			type="b_plane";
 			id=2524;
 			atlOffset=-17.517027;
@@ -4690,7 +4693,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6199.7607,-20.479279,3138.575};
-			name="wp_paradrop_Gurun_68";
+			name="wp_Gurun_paradrop_68";
 			type="b_recon";
 			id=2525;
 			atlOffset=-36.94582;
@@ -4699,7 +4702,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5715.2617,-38.688629,3184.4744};
-			name="wp_paradrop_Gurun_69";
+			name="wp_Gurun_paradrop_69";
 			type="b_recon";
 			id=2526;
 			atlOffset=-36.94582;
@@ -4708,7 +4711,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6480.2598,-38.707897,2541.8752};
-			name="wp_paradrop_Gurun_70";
+			name="wp_Gurun_paradrop_70";
 			type="b_recon";
 			id=2527;
 			atlOffset=-36.94582;
@@ -4717,7 +4720,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={7255.46,-38.384262,2200.1755};
-			name="wp_paradrop_Gurun_71";
+			name="wp_Gurun_paradrop_71";
 			type="b_recon";
 			id=2528;
 			atlOffset=-36.94582;
@@ -4726,7 +4729,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={7576.7588,-37.677349,2613.2754};
-			name="wp_paradrop_Gurun_72";
+			name="wp_Gurun_paradrop_72";
 			type="b_recon";
 			id=2529;
 			atlOffset=-36.94582;
@@ -4735,7 +4738,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={7072.228,10.860995,2522.0654};
-			name="wp_paradrop_Gurun_73";
+			name="wp_Gurun_paradrop_73";
 			type="b_recon";
 			id=2530;
 			atlOffset=9.5367432e-007;
@@ -4744,7 +4747,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6626.626,-15.328318,2951.9714};
-			name="wp_paradrop_Gurun_74";
+			name="wp_Gurun_paradrop_74";
 			type="b_recon";
 			id=2531;
 			atlOffset=-36.94582;
@@ -4863,7 +4866,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6774.96,22.020439,2686.9841};
-			name="wp_paradrop_Gurun_75";
+			name="wp_Gurun_paradrop_75";
 			type="b_recon";
 			id=2540;
 			atlOffset=1.9073486e-006;
@@ -5749,7 +5752,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6511.2441,27.548,6901.0898};
-			name="wp_spawn_uaz_Gurun_01";
+			name="wp_Gurun_east_transport_spawn_01";
 			type="o_motor_inf";
 			angle=104.99991;
 			id=3640;
@@ -6050,7 +6053,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6506.7441,29.679001,6922.3809};
-			name="wp_spawn_uaz_Gurun_02";
+			name="wp_Gurun_east_transport_spawn_02";
 			type="o_motor_inf";
 			angle=60;
 			id=3731;
@@ -6143,12 +6146,12 @@ class Mission
 		class Item403
 		{
 			dataType="Marker";
-			position[]={2934.0071,6.963623,4597.9468};
-			name="wp_waypoint_Monyet_01";
+			position[]={2934.0071,6.9640002,4597.9468};
+			name="wp_Monyet_waypoint";
 			type="b_installation";
-			angle=218.6042;
+			angle=218.60394;
 			id=3756;
-			atlOffset=-0.98151684;
+			atlOffset=-0.98113966;
 		};
 		class Item404
 		{
@@ -6539,7 +6542,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6474.5659,31.233,6914.061};
-			name="wp_Gurun_AOC_helicopter";
+			name="wp_Gurun_east_helicopter";
 			type="o_air";
 			id=3815;
 			atlOffset=-0.00012969971;
@@ -6691,7 +6694,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1566.8153,5.7883091,3457.8613};
-			name="wp_jet_crash_Monyet_01";
+			name="wp_Monyet_crashsite_01";
 			type="b_plane";
 			id=3904;
 		};
@@ -6699,7 +6702,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4802.8887,59.902832,6306.8398};
-			name="wp_radio_Gurun_01";
+			name="wp_Gurun_east_comtower_01";
 			type="o_mortar";
 			id=3929;
 			atlOffset=1.1444092e-005;
@@ -6708,7 +6711,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5025.7842,48.792351,6239.3252};
-			name="wp_radio_Gurun_02";
+			name="wp_Gurun_east_comtower_02";
 			type="o_mortar";
 			id=3930;
 			atlOffset=0.0005569458;
@@ -6717,7 +6720,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6558.728,14.33753,8578.7793};
-			name="wp_radio_Gurun_03";
+			name="wp_Gurun_east_comtower_03";
 			type="o_mortar";
 			id=3931;
 			atlOffset=0.0005569458;
@@ -6726,7 +6729,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4358.2813,1.4248807,9278.1836};
-			name="wp_radio_Gurun_04";
+			name="wp_Gurun_east_comtower_04";
 			type="o_mortar";
 			id=3932;
 			atlOffset=0.0005569458;
@@ -6735,7 +6738,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3629.9949,1.6787014,9962.6992};
-			name="wp_radio_Gurun_05";
+			name="wp_Gurun_east_comtower_05";
 			type="o_mortar";
 			id=3933;
 			atlOffset=0.0005569458;
@@ -6744,7 +6747,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5140.8662,11.430542,5060.8823};
-			name="wp_radio_Gurun_06";
+			name="wp_Gurun_east_comtower_06";
 			type="o_mortar";
 			id=3934;
 			atlOffset=-0.46292305;
@@ -6753,7 +6756,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6111.4795,58.481529,4674.479};
-			name="wp_radio_Gurun_07";
+			name="wp_Gurun_east_comtower_07";
 			type="o_mortar";
 			id=3935;
 			atlOffset=0.0005569458;
@@ -6762,7 +6765,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3320.5801,7.3608398,10421.074};
-			name="wp_radio_Gurun_08";
+			name="wp_Gurun_east_comtower_08";
 			type="o_mortar";
 			id=3938;
 			atlOffset=-0.00012922287;
@@ -6771,7 +6774,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3444.4417,6.786375,10606.459};
-			name="wp_radio_Gurun_09";
+			name="wp_Gurun_east_comtower_09";
 			type="o_mortar";
 			id=3939;
 			atlOffset=0.0005569458;
@@ -6780,7 +6783,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5072.5674,8.8269043,5100.4409};
-			name="wp_radio_Gurun_11";
+			name="wp_Gurun_east_comtower_11";
 			type="o_mortar";
 			id=3941;
 			atlOffset=0.00028038025;
@@ -6789,7 +6792,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4797.1719,57.510792,6340.7764};
-			name="wp_radio_Gurun_12";
+			name="wp_Gurun_east_comtower_12";
 			type="o_mortar";
 			id=3942;
 			atlOffset=1.1444092e-005;
@@ -6798,7 +6801,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4858.6328,11.21215,6782.7891};
-			name="wp_radio_Gurun_13";
+			name="wp_Gurun_east_comtower_13";
 			type="o_mortar";
 			id=3943;
 			atlOffset=1.1444092e-005;
@@ -6807,7 +6810,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4130.5596,3.3647671,7680.4321};
-			name="wp_radio_Gurun_14";
+			name="wp_Gurun_east_comtower_14";
 			type="o_mortar";
 			id=3944;
 			atlOffset=1.1444092e-005;
@@ -6816,7 +6819,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5963.7168,11.697824,9400.8477};
-			name="wp_radio_Gurun_15";
+			name="wp_Gurun_east_comtower_15";
 			type="o_mortar";
 			id=3945;
 			atlOffset=1.1444092e-005;
@@ -6825,7 +6828,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={7190.4131,3.8091984,5697.7046};
-			name="wp_radio_Gurun_16";
+			name="wp_Gurun_east_comtower_16";
 			type="o_mortar";
 			id=3946;
 			atlOffset=1.1444092e-005;
@@ -6834,7 +6837,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={7211.8569,1.8617554,5605.5591};
-			name="wp_radio_Gurun_17";
+			name="wp_Gurun_east_comtower_17";
 			type="o_mortar";
 			id=3947;
 			atlOffset=4.6372414e-005;
@@ -6843,7 +6846,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5583.228,32.451,9227.5645};
-			name="wp_waypoint_express_Gurun_01";
+			name="wp_Gurun_waypoint_express";
 			type="b_installation";
 			angle=193.62695;
 			id=3950;
@@ -6853,7 +6856,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2111.1311,22.195999,3534.1411};
-			name="wp_waypoint_express_Monyet_02";
+			name="wp_Monyet_waypoint_express";
 			type="b_installation";
 			angle=212.981;
 			id=3951;
@@ -6863,7 +6866,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5966.1519,59.029999,6208.4189};
-			name="wp_leader_Gurun";
+			name="wp_Gurun_leader";
 			type="n_hq";
 			id=3952;
 		};
@@ -6897,38 +6900,38 @@ class Mission
 		class Item469
 		{
 			dataType="Marker";
-			position[]={2380.6216,20.273514,5289.3369};
-			name="wp_spawn_uaz_Monyet_01";
+			position[]={2380.6221,20.274,5289.3369};
+			name="wp_Monyet_east_transport_spawn_01";
 			type="o_motor_inf";
-			angle=47.94944;
+			angle=47.948982;
 			id=3956;
-			atlOffset=15.208572;
+			atlOffset=15.209026;
 		};
 		class Item470
 		{
 			dataType="Marker";
-			position[]={2374.7258,20.664551,5323.0044};
-			name="wp_spawn_uaz_Monyet_02";
+			position[]={2374.7261,20.665001,5323.0039};
+			name="wp_Monyet_east_transport_spawn_02";
 			type="o_motor_inf";
-			angle=154.81033;
+			angle=154.80995;
 			id=3957;
-			atlOffset=16.052999;
+			atlOffset=16.053452;
 		};
 		class Item471
 		{
 			dataType="Marker";
-			position[]={2401.7686,22.086592,5252.3945};
-			name="wp_Monyet_AOC_helicopter";
+			position[]={2401.769,22.087,5252.395};
+			name="wp_Monyet_east_helicopter";
 			type="o_air";
-			angle=262.3718;
+			angle=262.37201;
 			id=3958;
-			atlOffset=10.611676;
+			atlOffset=10.612122;
 		};
 		class Item472
 		{
 			dataType="Marker";
 			position[]={1467.545,8.1400356,3674.0581};
-			name="wp_jet_crash_Monyet_02";
+			name="wp_Monyet_crashsite_02";
 			type="b_plane";
 			id=3959;
 		};
@@ -6936,7 +6939,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1488.092,10.466102,4119.6855};
-			name="wp_jet_crash_Monyet_03";
+			name="wp_Monyet_crashsite_03";
 			type="b_plane";
 			id=3960;
 		};
@@ -6944,7 +6947,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1672.7097,-12.4652,4281.8896};
-			name="wp_jet_crash_Monyet_04";
+			name="wp_Monyet_crashsite_04";
 			type="b_plane";
 			id=3961;
 			atlOffset=-24.404734;
@@ -6953,7 +6956,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1755.8859,2.7679834,4083.0806};
-			name="wp_jet_crash_Monyet_05";
+			name="wp_Monyet_crashsite_05";
 			type="b_plane";
 			id=3962;
 		};
@@ -6961,7 +6964,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2236.0083,-8.9280796,4255.1807};
-			name="wp_jet_crash_Monyet_06";
+			name="wp_Monyet_crashsite_06";
 			type="b_plane";
 			id=3963;
 			atlOffset=-17.516832;
@@ -6970,7 +6973,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2616.9063,-9.5215292,3817.0386};
-			name="wp_jet_crash_Monyet_07";
+			name="wp_Monyet_crashsite_07";
 			type="b_plane";
 			id=3964;
 			atlOffset=-17.516832;
@@ -6979,7 +6982,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2601.4941,-7.4304705,3455.9561};
-			name="wp_jet_crash_Monyet_08";
+			name="wp_Monyet_crashsite_08";
 			type="b_plane";
 			id=3965;
 			atlOffset=-17.516832;
@@ -6988,7 +6991,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2977.988,-12.485,3213.7671};
-			name="wp_jet_crash_Monyet_09";
+			name="wp_Monyet_crashsite_09";
 			type="b_plane";
 			id=3966;
 			atlOffset=-17.517097;
@@ -6997,7 +7000,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2782.0354,-11.492223,4087.8501};
-			name="wp_jet_crash_Monyet_10";
+			name="wp_Monyet_crashsite_10";
 			type="b_plane";
 			id=3967;
 			atlOffset=-17.516832;
@@ -7006,7 +7009,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2408.2488,5,4401.1489};
-			name="wp_jet_crash_Monyet_11";
+			name="wp_Monyet_crashsite_11";
 			type="b_plane";
 			id=3968;
 		};
@@ -7014,7 +7017,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3116.6963,-11.76362,4308.0225};
-			name="wp_jet_crash_Monyet_12";
+			name="wp_Monyet_crashsite_12";
 			type="b_plane";
 			id=3969;
 			atlOffset=-17.516832;
@@ -7023,7 +7026,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2663.1421,-12.516832,4942.1182};
-			name="wp_jet_crash_Monyet_13";
+			name="wp_Monyet_crashsite_13";
 			type="b_plane";
 			id=3970;
 			atlOffset=-17.516832;
@@ -7032,7 +7035,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2172.6409,3.9467456,4801.5879};
-			name="wp_jet_crash_Monyet_14";
+			name="wp_Monyet_crashsite_14";
 			type="b_plane";
 			id=3971;
 		};
@@ -7040,7 +7043,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2040.5139,-2.6374073,5015.4287};
-			name="wp_jet_crash_Monyet_15";
+			name="wp_Monyet_crashsite_15";
 			type="b_plane";
 			id=3972;
 			atlOffset=-16.453506;
@@ -7049,7 +7052,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1935.0559,16.656155,4801.0913};
-			name="wp_jet_crash_Monyet_16";
+			name="wp_Monyet_crashsite_16";
 			type="b_plane";
 			id=3973;
 		};
@@ -7057,7 +7060,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1509.4399,-9.6213722,5400.0762};
-			name="wp_jet_crash_Monyet_17";
+			name="wp_Monyet_crashsite_17";
 			type="b_plane";
 			id=3974;
 			atlOffset=-17.516832;
@@ -7066,7 +7069,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1742.8225,-12.918369,5741.3428};
-			name="wp_jet_crash_Monyet_18";
+			name="wp_Monyet_crashsite_18";
 			type="b_plane";
 			id=3975;
 			atlOffset=-17.516832;
@@ -7075,7 +7078,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2206.5657,9.2335587,5553.7144};
-			name="wp_jet_crash_Monyet_19";
+			name="wp_Monyet_crashsite_19";
 			type="b_plane";
 			id=3976;
 		};
@@ -7083,7 +7086,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1982.8103,-4.6125422,6062.7939};
-			name="wp_jet_crash_Monyet_20";
+			name="wp_Monyet_crashsite_20";
 			type="b_plane";
 			id=3977;
 			atlOffset=-17.516832;
@@ -7092,7 +7095,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1711.9985,-11.613153,6194.8975};
-			name="wp_jet_crash_Monyet_21";
+			name="wp_Monyet_crashsite_21";
 			type="b_plane";
 			id=3978;
 			atlOffset=-17.516832;
@@ -7101,7 +7104,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2101.7031,-11.357008,6463.5078};
-			name="wp_jet_crash_Monyet_22";
+			name="wp_Monyet_crashsite_22";
 			type="b_plane";
 			id=3979;
 			atlOffset=-17.516832;
@@ -7110,7 +7113,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1802.2688,-13.474588,6782.7578};
-			name="wp_jet_crash_Monyet_23";
+			name="wp_Monyet_crashsite_23";
 			type="b_plane";
 			id=3980;
 			atlOffset=-17.516832;
@@ -7119,7 +7122,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2154.5444,-12.01084,7044.7632};
-			name="wp_jet_crash_Monyet_24";
+			name="wp_Monyet_crashsite_24";
 			type="b_plane";
 			id=3981;
 			atlOffset=-17.275351;
@@ -7128,7 +7131,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3007.9341,-12.767824,2622.0564};
-			name="wp_jet_crash_Monyet_25";
+			name="wp_Monyet_crashsite_25";
 			type="b_plane";
 			id=3982;
 			atlOffset=-17.516832;
@@ -7137,7 +7140,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3553.5388,-12.516832,2762.4683};
-			name="wp_jet_crash_Monyet_26";
+			name="wp_Monyet_crashsite_26";
 			type="b_plane";
 			id=3983;
 			atlOffset=-17.516832;
@@ -7146,7 +7149,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3525.291,-9.5090103,2188.1946};
-			name="wp_jet_crash_Monyet_27";
+			name="wp_Monyet_crashsite_27";
 			type="b_plane";
 			id=3984;
 			atlOffset=-19.410715;
@@ -7155,7 +7158,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4026.9309,-9.8446865,2273.0295};
-			name="wp_jet_crash_Monyet_28";
+			name="wp_Monyet_crashsite_28";
 			type="b_plane";
 			id=3985;
 			atlOffset=-17.516832;
@@ -7164,7 +7167,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3629.7627,-9.1260853,1727.425};
-			name="wp_jet_crash_Monyet_29";
+			name="wp_Monyet_crashsite_29";
 			type="b_plane";
 			id=3986;
 			atlOffset=-17.516832;
@@ -7173,7 +7176,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4420.0879,-9.7591858,1530.8459};
-			name="wp_jet_crash_Monyet_30";
+			name="wp_Monyet_crashsite_30";
 			type="b_plane";
 			id=3987;
 			atlOffset=-17.516832;
@@ -7182,7 +7185,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4285.3916,6.4872589,997.42456};
-			name="wp_jet_crash_Monyet_31";
+			name="wp_Monyet_crashsite_31";
 			type="b_plane";
 			id=3988;
 			atlOffset=-4.2915344e-006;
@@ -7191,7 +7194,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4172.584,11.204348,862.69702};
-			name="wp_jet_crash_Monyet_32";
+			name="wp_Monyet_crashsite_32";
 			type="b_plane";
 			id=3989;
 			atlOffset=-9.5367432e-007;
@@ -7200,7 +7203,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3633.4985,-10.109806,850.79297};
-			name="wp_jet_crash_Monyet_33";
+			name="wp_Monyet_crashsite_33";
 			type="b_plane";
 			id=3990;
 			atlOffset=-17.516832;
@@ -7209,7 +7212,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3490.9475,-8.4278507,1262.8235};
-			name="wp_jet_crash_Monyet_34";
+			name="wp_Monyet_crashsite_34";
 			type="b_plane";
 			id=3991;
 			atlOffset=-17.516832;
@@ -7218,7 +7221,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1361.4619,6.8656754,3031.834};
-			name="wp_jet_crash_Monyet_35";
+			name="wp_Monyet_crashsite_35";
 			type="b_plane";
 			id=3992;
 			atlOffset=-4.7683716e-007;
@@ -7227,7 +7230,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3100.8,1.474,1643.1949};
-			name="wp_jet_crash_Monyet_36";
+			name="wp_Monyet_crashsite_36";
 			type="b_plane";
 			id=3993;
 			atlOffset=-18.39167;
@@ -7236,7 +7239,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2910.0386,-16.271708,1130.6133};
-			name="wp_jet_crash_Monyet_37";
+			name="wp_Monyet_crashsite_37";
 			type="b_plane";
 			id=3994;
 			atlOffset=-27.11775;
@@ -7245,7 +7248,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2688.3669,-13.563128,800.02148};
-			name="wp_jet_crash_Monyet_38";
+			name="wp_Monyet_crashsite_38";
 			type="b_plane";
 			id=3995;
 			atlOffset=-17.516832;
@@ -7254,7 +7257,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3034.0039,-5.6845274,495.39185};
-			name="wp_jet_crash_Monyet_40";
+			name="wp_Monyet_crashsite_40";
 			type="b_plane";
 			id=3997;
 			atlOffset=-17.516832;
@@ -7263,7 +7266,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3059.3899,7.7473755,616.46338};
-			name="wp_jet_crash_Monyet_41";
+			name="wp_Monyet_crashsite_41";
 			type="b_plane";
 			id=3998;
 			atlOffset=4.4345856e-005;
@@ -7272,7 +7275,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2357.6931,-6.7354794,1154.1365};
-			name="wp_jet_crash_Monyet_42";
+			name="wp_Monyet_crashsite_42";
 			type="b_plane";
 			id=3999;
 			atlOffset=-17.516832;
@@ -7281,7 +7284,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2482.5627,-17.062645,1750.8237};
-			name="wp_jet_crash_Monyet_43";
+			name="wp_Monyet_crashsite_43";
 			type="b_plane";
 			id=4000;
 			atlOffset=-27.811584;
@@ -7290,7 +7293,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2316.293,2.0214844,1897.4736};
-			name="wp_jet_crash_Monyet_44";
+			name="wp_Monyet_crashsite_44";
 			type="b_plane";
 			id=4001;
 			atlOffset=-5.9682322;
@@ -7299,7 +7302,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1888.0178,-2.7446861,1541.9744};
-			name="wp_jet_crash_Monyet_45";
+			name="wp_Monyet_crashsite_45";
 			type="b_plane";
 			id=4002;
 			atlOffset=-17.516832;
@@ -7308,7 +7311,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1719.075,8.375083,2143.8904};
-			name="wp_jet_crash_Monyet_46";
+			name="wp_Monyet_crashsite_46";
 			type="b_plane";
 			id=4003;
 		};
@@ -7316,7 +7319,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1557.1104,-15.235281,2292.7427};
-			name="wp_jet_crash_Monyet_47";
+			name="wp_Monyet_crashsite_47";
 			type="b_plane";
 			id=4004;
 			atlOffset=-17.516832;
@@ -7325,7 +7328,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1311.5983,0.87628174,1968.9514};
-			name="wp_jet_crash_Monyet_48";
+			name="wp_Monyet_crashsite_48";
 			type="b_plane";
 			id=4005;
 			atlOffset=-17.516832;
@@ -7334,7 +7337,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1213.191,-6.5999355,1790.5378};
-			name="wp_jet_crash_Monyet_49";
+			name="wp_Monyet_crashsite_49";
 			type="b_plane";
 			id=4006;
 			atlOffset=-28.346317;
@@ -7343,7 +7346,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2140.6462,-5.7474842,2442.1846};
-			name="wp_jet_crash_Monyet_50";
+			name="wp_Monyet_crashsite_50";
 			type="b_plane";
 			id=4007;
 			atlOffset=-17.516832;
@@ -7352,7 +7355,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2475.1125,5.1360698,2751.7434};
-			name="wp_jet_crash_Monyet_51";
+			name="wp_Monyet_crashsite_51";
 			type="b_plane";
 			id=4008;
 		};
@@ -7360,7 +7363,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3297.0435,-11.450586,3655.5125};
-			name="wp_jet_crash_Monyet_52";
+			name="wp_Monyet_crashsite_52";
 			type="b_plane";
 			id=4009;
 			atlOffset=-17.516832;
@@ -7369,7 +7372,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3901.9282,-12.34251,2865.6035};
-			name="wp_jet_crash_Monyet_53";
+			name="wp_Monyet_crashsite_53";
 			type="b_plane";
 			id=4010;
 			atlOffset=-17.516832;
@@ -7378,7 +7381,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3471.8777,6.0924683,3198.0325};
-			name="wp_paradrop_Monyet_01";
+			name="wp_Monyet_paradrop_01";
 			type="b_recon";
 			id=4011;
 			atlOffset=1.8119812e-005;
@@ -7387,7 +7390,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3708.0254,-8.9258137,3607.1843};
-			name="wp_paradrop_Monyet_02";
+			name="wp_Monyet_paradrop_02";
 			type="b_recon";
 			id=4012;
 			atlOffset=1.8119812e-005;
@@ -7396,7 +7399,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4244.231,-4.1061001,3043.6721};
-			name="wp_paradrop_Monyet_03";
+			name="wp_Monyet_paradrop_03";
 			type="b_recon";
 			id=4013;
 			atlOffset=1.8119812e-005;
@@ -7405,7 +7408,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3452.3345,-5.673861,4309.7148};
-			name="wp_paradrop_Monyet_04";
+			name="wp_Monyet_paradrop_04";
 			type="b_recon";
 			id=4014;
 			atlOffset=1.8119812e-005;
@@ -7414,7 +7417,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3176.7842,9.9459276,3954.7266};
-			name="wp_paradrop_Monyet_05";
+			name="wp_Monyet_paradrop_05";
 			type="b_recon";
 			id=4015;
 			atlOffset=1.8119812e-005;
@@ -7423,7 +7426,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3382.8262,-6.085928,4607.6064};
-			name="wp_paradrop_Monyet_06";
+			name="wp_Monyet_paradrop_06";
 			type="b_recon";
 			id=4016;
 			atlOffset=1.8119812e-005;
@@ -7432,7 +7435,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2615.7537,-4.5325546,5583.2036};
-			name="wp_paradrop_Monyet_07";
+			name="wp_Monyet_paradrop_07";
 			type="b_recon";
 			id=4017;
 			atlOffset=1.8119812e-005;
@@ -7441,7 +7444,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1913.2246,8.3364,5466.5293};
-			name="wp_paradrop_Monyet_08";
+			name="wp_Monyet_paradrop_08";
 			type="b_recon";
 			id=4018;
 			atlOffset=1.8119812e-005;
@@ -7450,7 +7453,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1838.7517,18.34903,5176.084};
-			name="wp_paradrop_Monyet_09";
+			name="wp_Monyet_paradrop_09";
 			type="b_recon";
 			id=4019;
 			atlOffset=1.7166138e-005;
@@ -7459,7 +7462,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1548.307,6.9619446,5012.2432};
-			name="wp_paradrop_Monyet_10";
+			name="wp_Monyet_paradrop_10";
 			type="b_recon";
 			id=4020;
 			atlOffset=-2.4318695e-005;
@@ -7468,7 +7471,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1468.8689,12.097592,5680.0186};
-			name="wp_paradrop_Monyet_11";
+			name="wp_Monyet_paradrop_11";
 			type="b_recon";
 			id=4021;
 			atlOffset=1.8119812e-005;
@@ -7477,7 +7480,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1146.1525,-7.052321,5640.2998};
-			name="wp_paradrop_Monyet_12";
+			name="wp_Monyet_paradrop_12";
 			type="b_recon";
 			id=4022;
 			atlOffset=1.8119812e-005;
@@ -7486,7 +7489,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1183.389,-5.4335914,5091.6812};
-			name="wp_paradrop_Monyet_13";
+			name="wp_Monyet_paradrop_13";
 			type="b_recon";
 			id=4023;
 			atlOffset=1.8119812e-005;
@@ -7495,7 +7498,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2444.4658,-7.9754252,6275.8027};
-			name="wp_paradrop_Monyet_14";
+			name="wp_Monyet_paradrop_14";
 			type="b_recon";
 			id=4024;
 			atlOffset=1.8119812e-005;
@@ -7504,7 +7507,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2558.658,-0.0079530664,7075.147};
-			name="wp_paradrop_Monyet_15";
+			name="wp_Monyet_paradrop_15";
 			type="b_recon";
 			id=4025;
 			atlOffset=1.8119812e-005;
@@ -7513,7 +7516,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2203.6697,-20.165379,7556.7393};
-			name="wp_paradrop_Monyet_16";
+			name="wp_Monyet_paradrop_16";
 			type="b_recon";
 			id=4026;
 			atlOffset=1.9073486e-005;
@@ -7522,7 +7525,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1761.7964,-0.92861837,7360.627};
-			name="wp_paradrop_Monyet_17";
+			name="wp_Monyet_paradrop_17";
 			type="b_recon";
 			id=4027;
 			atlOffset=1.8119812e-005;
@@ -7531,7 +7534,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1431.6324,-5.1344776,7097.4883};
-			name="wp_paradrop_Monyet_18";
+			name="wp_Monyet_paradrop_18";
 			type="b_recon";
 			id=4028;
 		};
@@ -7539,7 +7542,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1434.1149,-0.71140403,6501.7046};
-			name="wp_paradrop_Monyet_19";
+			name="wp_Monyet_paradrop_19";
 			type="b_recon";
 			id=4029;
 			atlOffset=1.8119812e-005;
@@ -7548,7 +7551,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2112.0393,3.9898863,6268.6885};
-			name="wp_paradrop_Monyet_21";
+			name="wp_Monyet_paradrop_21";
 			type="b_recon";
 			id=4031;
 			atlOffset=1.8119812e-005;
@@ -7557,7 +7560,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1697.8733,8.0619097,6538.4414};
-			name="wp_paradrop_Monyet_22";
+			name="wp_Monyet_paradrop_22";
 			type="b_recon";
 			id=4032;
 			atlOffset=1.8119812e-005;
@@ -7566,7 +7569,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1605.8916,6.915216,5970.0454};
-			name="wp_paradrop_Monyet_23";
+			name="wp_Monyet_paradrop_23";
 			type="b_recon";
 			id=4033;
 			atlOffset=1.8119812e-005;
@@ -7575,7 +7578,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1710.1538,7.4844322,5418.9443};
-			name="wp_paradrop_Monyet_24";
+			name="wp_Monyet_paradrop_24";
 			type="b_recon";
 			id=4034;
 			atlOffset=1.8119812e-005;
@@ -7584,7 +7587,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2298.4907,9.6089191,5096.228};
-			name="wp_paradrop_Monyet_25";
+			name="wp_Monyet_paradrop_25";
 			type="b_recon";
 			id=4035;
 			atlOffset=1.8119812e-005;
@@ -7593,7 +7596,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2601.3477,6.1913676,5200.4902};
-			name="wp_paradrop_Monyet_26";
+			name="wp_Monyet_paradrop_26";
 			type="b_recon";
 			id=4036;
 			atlOffset=1.8119812e-005;
@@ -7602,7 +7605,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2832.2146,6.1671376,4704.0029};
-			name="wp_paradrop_Monyet_27";
+			name="wp_Monyet_paradrop_27";
 			type="b_recon";
 			id=4037;
 			atlOffset=1.8119812e-005;
@@ -7611,7 +7614,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2561.6289,7.446064,4704.0029};
-			name="wp_paradrop_Monyet_28";
+			name="wp_Monyet_paradrop_28";
 			type="b_recon";
 			id=4038;
 			atlOffset=1.8119812e-005;
@@ -7620,7 +7623,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2526.8748,4.8874035,4175.2441};
-			name="wp_paradrop_Monyet_29";
+			name="wp_Monyet_paradrop_29";
 			type="b_recon";
 			id=4039;
 			atlOffset=1.8119812e-005;
@@ -7629,7 +7632,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2842.1443,7.0011969,4346.5327};
-			name="wp_paradrop_Monyet_30";
+			name="wp_Monyet_paradrop_30";
 			type="b_recon";
 			id=4040;
 			atlOffset=1.8119812e-005;
@@ -7638,7 +7641,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2973.7129,5.0663548,3634.0737};
-			name="wp_paradrop_Monyet_31";
+			name="wp_Monyet_paradrop_31";
 			type="b_recon";
 			id=4041;
 			atlOffset=1.8119812e-005;
@@ -7647,7 +7650,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3423.0337,3.230377,3976.6501};
-			name="wp_paradrop_Monyet_32";
+			name="wp_Monyet_paradrop_32";
 			type="b_recon";
 			id=4042;
 			atlOffset=1.8119812e-005;
@@ -7656,7 +7659,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3490.0598,6.464891,3502.5051};
-			name="wp_paradrop_Monyet_33";
+			name="wp_Monyet_paradrop_33";
 			type="b_recon";
 			id=4043;
 			atlOffset=1.8119812e-005;
@@ -7665,7 +7668,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3199.615,6.4041195,3348.594};
-			name="wp_paradrop_Monyet_34";
+			name="wp_Monyet_paradrop_34";
 			type="b_recon";
 			id=4044;
 			atlOffset=1.8119812e-005;
@@ -7674,7 +7677,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3231.887,11.57932,2936.5093};
-			name="wp_paradrop_Monyet_35";
+			name="wp_Monyet_paradrop_35";
 			type="b_recon";
 			id=4045;
 			atlOffset=1.8119812e-005;
@@ -7683,7 +7686,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3668.7957,6.3515859,2996.0874};
-			name="wp_paradrop_Monyet_36";
+			name="wp_Monyet_paradrop_36";
 			type="b_recon";
 			id=4046;
 			atlOffset=1.8119812e-005;
@@ -7692,7 +7695,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3845.0486,14.672445,3162.4109};
-			name="wp_paradrop_Monyet_37";
+			name="wp_Monyet_paradrop_37";
 			type="b_recon";
 			id=4047;
 			atlOffset=1.8119812e-005;
@@ -7701,7 +7704,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3976.6177,1.3670654,2608.8281};
-			name="wp_paradrop_Monyet_38";
+			name="wp_Monyet_paradrop_38";
 			type="b_recon";
 			id=4048;
 			atlOffset=-6.5969725;
@@ -7710,7 +7713,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4341.5361,4.4390073,2251.3586};
-			name="wp_paradrop_Monyet_39";
+			name="wp_Monyet_paradrop_39";
 			type="b_recon";
 			id=4049;
 			atlOffset=1.8119812e-005;
@@ -7719,7 +7722,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4135.4937,7.7703342,1921.1946};
-			name="wp_paradrop_Monyet_40";
+			name="wp_Monyet_paradrop_40";
 			type="b_recon";
 			id=4050;
 			atlOffset=1.8119812e-005;
@@ -7728,7 +7731,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3812.7778,5.3889003,2330.7964};
-			name="wp_paradrop_Monyet_41";
+			name="wp_Monyet_paradrop_41";
 			type="b_recon";
 			id=4051;
 			atlOffset=1.8119812e-005;
@@ -7737,7 +7740,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3353.5269,6.3108554,2469.8123};
-			name="wp_paradrop_Monyet_42";
+			name="wp_Monyet_paradrop_42";
 			type="b_recon";
 			id=4052;
 			atlOffset=1.8119812e-005;
@@ -7746,7 +7749,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3055.6345,4.2949095,2350.6553};
-			name="wp_paradrop_Monyet_43";
+			name="wp_Monyet_paradrop_43";
 			type="b_recon";
 			id=4053;
 			atlOffset=1.8119812e-005;
@@ -7755,7 +7758,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2827.251,7.6368299,2003.1145};
-			name="wp_paradrop_Monyet_44";
+			name="wp_Monyet_paradrop_44";
 			type="b_recon";
 			id=4054;
 			atlOffset=1.8119812e-005;
@@ -7764,7 +7767,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2655.9626,-0.071098819,2291.0771};
-			name="wp_paradrop_Monyet_45";
+			name="wp_Monyet_paradrop_45";
 			type="b_recon";
 			id=4055;
 			atlOffset=1.8119812e-005;
@@ -7773,7 +7776,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2444.9558,1.6096811,2308.4546};
-			name="wp_paradrop_Monyet_46";
+			name="wp_Monyet_paradrop_46";
 			type="b_recon";
 			id=4056;
 			atlOffset=1.8119812e-005;
@@ -7782,7 +7785,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2400.2717,13.447289,1993.1851};
-			name="wp_paradrop_Monyet_47";
+			name="wp_Monyet_paradrop_47";
 			type="b_recon";
 			id=4057;
 			atlOffset=1.9073486e-005;
@@ -7791,7 +7794,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3179.7563,-1.4543751,1171.4985};
-			name="wp_paradrop_Monyet_50";
+			name="wp_Monyet_paradrop_50";
 			type="b_recon";
 			id=4060;
 			atlOffset=1.8119812e-005;
@@ -7800,7 +7803,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3365.939,6.0588851,935.66748};
-			name="wp_paradrop_Monyet_51";
+			name="wp_Monyet_paradrop_51";
 			type="b_recon";
 			id=4061;
 			atlOffset=1.8119812e-005;
@@ -7809,7 +7812,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3832.637,4.9781551,578.19727};
-			name="wp_paradrop_Monyet_52";
+			name="wp_Monyet_paradrop_52";
 			type="b_recon";
 			id=4062;
 			atlOffset=1.8119812e-005;
@@ -7818,7 +7821,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2953.4644,16.585196,834.50317};
-			name="wp_paradrop_Monyet_53";
+			name="wp_Monyet_paradrop_53";
 			type="b_recon";
 			id=4063;
 		};
@@ -7826,7 +7829,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3487.5786,-6.7690411,526.06567};
-			name="wp_paradrop_Monyet_54";
+			name="wp_Monyet_paradrop_54";
 			type="b_recon";
 			id=4064;
 			atlOffset=1.8119812e-005;
@@ -7835,7 +7838,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3706.0322,-1.8359109,1149.1575};
-			name="wp_paradrop_Monyet_55";
+			name="wp_Monyet_paradrop_55";
 			type="b_recon";
 			id=4065;
 			atlOffset=1.8119812e-005;
@@ -7844,7 +7847,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3845.0488,-3.4116836,1340.3042};
-			name="wp_paradrop_Monyet_56";
+			name="wp_Monyet_paradrop_56";
 			type="b_recon";
 			id=4066;
 			atlOffset=1.8119812e-005;
@@ -7853,7 +7856,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4118.1167,-3.8894961,257.96265};
-			name="wp_paradrop_Monyet_57";
+			name="wp_Monyet_paradrop_57";
 			type="b_recon";
 			id=4067;
 			atlOffset=1.8119812e-005;
@@ -7862,7 +7865,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4808.2339,-7.1543617,503.72388};
-			name="wp_paradrop_Monyet_58";
+			name="wp_Monyet_paradrop_58";
 			type="b_recon";
 			id=4068;
 			atlOffset=1.8119812e-005;
@@ -7871,7 +7874,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4605.479,1.2225342,1517.4771};
-			name="wp_paradrop_Monyet_59";
+			name="wp_Monyet_paradrop_59";
 			type="b_recon";
 			id=4069;
 			atlOffset=-1.4511864;
@@ -7880,7 +7883,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4813.1987,-10.336882,1422.2249};
-			name="wp_paradrop_Monyet_60";
+			name="wp_Monyet_paradrop_60";
 			type="b_recon";
 			id=4070;
 			atlOffset=1.8119812e-005;
@@ -7889,7 +7892,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4319.1938,13.766329,1290.6555};
-			name="wp_paradrop_Monyet_61";
+			name="wp_Monyet_paradrop_61";
 			type="b_recon";
 			id=4071;
 			atlOffset=1.8119812e-005;
@@ -7898,7 +7901,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4624.5332,-0.48069477,1787.1423};
-			name="wp_paradrop_Monyet_62";
+			name="wp_Monyet_paradrop_62";
 			type="b_recon";
 			id=4072;
 			atlOffset=1.8119812e-005;
@@ -7907,7 +7910,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4358.9131,9.8369093,1931.124};
-			name="wp_paradrop_Monyet_63";
+			name="wp_Monyet_paradrop_63";
 			type="b_recon";
 			id=4073;
 			atlOffset=1.8119812e-005;
@@ -7916,7 +7919,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4674.1821,-9.842536,2251.3586};
-			name="wp_paradrop_Monyet_64";
+			name="wp_Monyet_paradrop_64";
 			type="b_recon";
 			id=4074;
 			atlOffset=1.8119812e-005;
@@ -7925,7 +7928,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4666.7354,-4.7383728,2502.0842};
-			name="wp_paradrop_Monyet_65";
+			name="wp_Monyet_paradrop_65";
 			type="b_recon";
 			id=4075;
 			atlOffset=1.8119812e-005;
@@ -7934,7 +7937,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={585.612,-6.3634605,2114.8242};
-			name="wp_paradrop_Monyet_66";
+			name="wp_Monyet_paradrop_66";
 			type="b_recon";
 			id=4076;
 			atlOffset=1.8119812e-005;
@@ -7943,7 +7946,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={719.66345,-3.6499832,1605.925};
-			name="wp_paradrop_Monyet_67";
+			name="wp_Monyet_paradrop_67";
 			type="b_recon";
 			id=4077;
 			atlOffset=1.8119812e-005;
@@ -7952,7 +7955,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={935.63525,8.8811226,1970.8425};
-			name="wp_paradrop_Monyet_68";
+			name="wp_Monyet_paradrop_68";
 			type="b_recon";
 			id=4078;
 			atlOffset=1.8119812e-005;
@@ -7961,7 +7964,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1090.3125,9.6463852,1607.4177};
-			name="wp_paradrop_Monyet_69";
+			name="wp_Monyet_paradrop_69";
 			type="b_recon";
 			id=4079;
 			atlOffset=5.7220459e-006;
@@ -7970,7 +7973,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1489.2183,11.754913,1958.4309};
-			name="wp_paradrop_Monyet_70";
+			name="wp_Monyet_paradrop_70";
 			type="b_recon";
 			id=4080;
 			atlOffset=1.8119812e-005;
@@ -7979,7 +7982,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1206.2207,20.789436,2231.4983};
-			name="wp_paradrop_Monyet_71";
+			name="wp_Monyet_paradrop_71";
 			type="b_recon";
 			id=4081;
 			atlOffset=1.9073486e-005;
@@ -7988,7 +7991,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1519.0074,19.555367,1459.4612};
-			name="wp_paradrop_Monyet_72";
+			name="wp_Monyet_paradrop_72";
 			type="b_recon";
 			id=4082;
 			atlOffset=1.7166138e-005;
@@ -7997,7 +8000,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={955.49487,-9.5016699,1216.1836};
-			name="wp_paradrop_Monyet_73";
+			name="wp_Monyet_paradrop_73";
 			type="b_recon";
 			id=4083;
 			atlOffset=1.8119812e-005;
@@ -8006,7 +8009,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2070.1082,-6.250967,786.72217};
-			name="wp_paradrop_Monyet_74";
+			name="wp_Monyet_paradrop_74";
 			type="b_recon";
 			id=4084;
 			atlOffset=1.8119812e-005;
@@ -8015,7 +8018,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2370.4827,8.299408,913.32715};
-			name="wp_paradrop_Monyet_75";
+			name="wp_Monyet_paradrop_75";
 			type="b_recon";
 			id=4085;
 			atlOffset=1.8119812e-005;
@@ -8024,7 +8027,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2236.4314,6.9627132,1449.5332};
-			name="wp_paradrop_Monyet_76";
+			name="wp_Monyet_paradrop_76";
 			type="b_recon";
 			id=4086;
 			atlOffset=1.8119812e-005;
@@ -8033,7 +8036,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2598.8665,-0.79439592,1365.1304};
-			name="wp_paradrop_Monyet_77";
+			name="wp_Monyet_paradrop_77";
 			type="b_recon";
 			id=4087;
 			atlOffset=1.8119812e-005;
@@ -8042,7 +8045,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2824.7686,8.5883093,975.38672};
-			name="wp_paradrop_Monyet_78";
+			name="wp_Monyet_paradrop_78";
 			type="b_recon";
 			id=4088;
 			atlOffset=1.8119812e-005;
@@ -8051,7 +8054,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2539.2881,-3.2914193,545.92529};
-			name="wp_paradrop_Monyet_80";
+			name="wp_Monyet_paradrop_80";
 			type="b_recon";
 			id=4090;
 			atlOffset=1.8119812e-005;
@@ -8060,7 +8063,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2874.4167,-9.9026136,352.29712};
-			name="wp_paradrop_Monyet_81";
+			name="wp_Monyet_paradrop_81";
 			type="b_recon";
 			id=4091;
 			atlOffset=1.8119812e-005;
@@ -8069,7 +8072,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3202.0986,-0.25998187,2025.4563};
-			name="wp_paradrop_Monyet_82";
+			name="wp_Monyet_paradrop_82";
 			type="b_recon";
 			id=4092;
 			atlOffset=1.8119812e-005;
@@ -8078,7 +8081,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3452.825,8.4789076,1586.0669};
-			name="wp_paradrop_Monyet_83";
+			name="wp_Monyet_paradrop_83";
 			type="b_recon";
 			id=4093;
 			atlOffset=1.8119812e-005;
@@ -8087,7 +8090,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3780.5063,5.0019479,1960.9146};
-			name="wp_paradrop_Monyet_84";
+			name="wp_Monyet_paradrop_84";
 			type="b_recon";
 			id=4094;
 			atlOffset=1.8119812e-005;
@@ -8096,7 +8099,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2757.7434,12.376739,2963.8191};
-			name="wp_paradrop_Monyet_85";
+			name="wp_Monyet_paradrop_85";
 			type="b_recon";
 			id=4095;
 			atlOffset=1.8119812e-005;
@@ -8105,7 +8108,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2288.5632,7.2879758,3832.6707};
-			name="wp_paradrop_Monyet_86";
+			name="wp_Monyet_paradrop_86";
 			type="b_recon";
 			id=4096;
 			atlOffset=1.8119812e-005;
@@ -8114,7 +8117,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1998.1184,4.9999471,2792.5305};
-			name="wp_paradrop_Monyet_87";
+			name="wp_Monyet_paradrop_87";
 			type="b_recon";
 			id=4097;
 			atlOffset=1.8119812e-005;
@@ -8123,7 +8126,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1916.198,9.9000034,3519.8833};
-			name="wp_paradrop_Monyet_88";
+			name="wp_Monyet_paradrop_88";
 			type="b_recon";
 			id=4098;
 			atlOffset=1.8119812e-005;
@@ -8132,7 +8135,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1697.7439,3.1794627,3832.6707};
-			name="wp_paradrop_Monyet_89";
+			name="wp_Monyet_paradrop_89";
 			type="b_recon";
 			id=4099;
 			atlOffset=1.8119812e-005;
@@ -8141,7 +8144,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1178.9148,-0.93045914,3365.9729};
-			name="wp_paradrop_Monyet_90";
+			name="wp_Monyet_paradrop_90";
 			type="b_recon";
 			id=4100;
 			atlOffset=1.8119812e-005;
@@ -8150,7 +8153,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1238.4933,9.9743071,4277.0264};
-			name="wp_paradrop_Monyet_91";
+			name="wp_Monyet_paradrop_91";
 			type="b_recon";
 			id=4101;
 			atlOffset=1.8119812e-005;
@@ -8159,7 +8162,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1926.1277,11.473621,4564.9893};
-			name="wp_paradrop_Monyet_92";
+			name="wp_Monyet_paradrop_92";
 			type="b_recon";
 			id=4102;
 			atlOffset=1.8119812e-005;
@@ -8168,7 +8171,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1975.7764,13.569626,4252.2021};
-			name="wp_paradrop_Monyet_93";
+			name="wp_Monyet_paradrop_93";
 			type="b_recon";
 			id=4103;
 			atlOffset=1.8119812e-005;
@@ -8177,7 +8180,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2343.1768,8.0147171,4043.677};
-			name="wp_paradrop_Monyet_94";
+			name="wp_Monyet_paradrop_94";
 			type="b_recon";
 			id=4104;
 			atlOffset=1.8119812e-005;
@@ -8186,7 +8189,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={885.98718,-5.3585906,3313.8413};
-			name="wp_paradrop_Monyet_95";
+			name="wp_Monyet_paradrop_95";
 			type="b_recon";
 			id=4105;
 			atlOffset=1.8119812e-005;
@@ -8195,7 +8198,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1059.7578,-2.5193567,4103.2549};
-			name="wp_paradrop_Monyet_96";
+			name="wp_Monyet_paradrop_96";
 			type="b_recon";
 			id=4106;
 			atlOffset=1.8119812e-005;
@@ -8204,7 +8207,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1186.3621,-3.5709591,4691.5918};
-			name="wp_paradrop_Monyet_97";
+			name="wp_Monyet_paradrop_97";
 			type="b_recon";
 			id=4107;
 			atlOffset=1.8119812e-005;
@@ -9133,7 +9136,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2244.6741,13.891,2081.6799};
-			name="wp_radio_Monyet_01";
+			name="wp_Monyet_east_comtower_01";
 			type="o_mortar";
 			angle=160.14494;
 			id=4181;
@@ -9143,7 +9146,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1206.0217,3.2897274,1323.4746};
-			name="wp_radio_Monyet_02";
+			name="wp_Monyet_east_comtower_02";
 			type="o_mortar";
 			angle=322.53052;
 			id=4182;
@@ -9153,7 +9156,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1760.6953,7.2267537,2053.2129};
-			name="wp_radio_Monyet_03";
+			name="wp_Monyet_east_comtower_03";
 			type="o_mortar";
 			angle=160.14494;
 			id=4183;
@@ -9163,7 +9166,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2185.9446,1.5843506,1289.0508};
-			name="wp_radio_Monyet_04";
+			name="wp_Monyet_east_comtower_04";
 			type="o_mortar";
 			angle=160.14494;
 			id=4184;
@@ -9173,7 +9176,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2981.5938,4.8466063,1254.7375};
-			name="wp_radio_Monyet_05";
+			name="wp_Monyet_east_comtower_05";
 			type="o_mortar";
 			angle=160.14494;
 			id=4185;
@@ -9183,7 +9186,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3273.6499,1.2344102,212.29395};
-			name="wp_radio_Monyet_06";
+			name="wp_Monyet_east_comtower_06";
 			type="o_mortar";
 			angle=160.14494;
 			id=4186;
@@ -9193,7 +9196,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2427.9414,7.6427135,7072.0708};
-			name="wp_radio_Monyet_07";
+			name="wp_Monyet_east_comtower_07";
 			type="o_mortar";
 			angle=160.14494;
 			id=4187;
@@ -9203,7 +9206,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1884.1335,4.2926254,6293.9668};
-			name="wp_radio_Monyet_08";
+			name="wp_Monyet_east_comtower_08";
 			type="o_mortar";
 			angle=160.14494;
 			id=4188;
@@ -9213,7 +9216,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1403.1924,5.8506937,4974.9736};
-			name="wp_radio_Monyet_09";
+			name="wp_Monyet_east_comtower_09";
 			type="o_mortar";
 			angle=160.14494;
 			id=4189;
@@ -9223,7 +9226,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3655.6223,6.4953613,3527.3965};
-			name="wp_radio_Monyet_10";
+			name="wp_Monyet_east_comtower_10";
 			type="o_mortar";
 			angle=160.14494;
 			id=4190;
@@ -9233,7 +9236,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3387.0972,3.888392,1937.9758};
-			name="wp_radio_Monyet_11";
+			name="wp_Monyet_east_comtower_11";
 			type="o_mortar";
 			angle=160.14494;
 			id=4191;
@@ -9243,7 +9246,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4579.8101,4.3781586,966.84375};
-			name="wp_radio_Monyet_12";
+			name="wp_Monyet_east_comtower_12";
 			type="o_mortar";
 			angle=160.14494;
 			id=4192;
@@ -9253,7 +9256,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3446.1394,2.5166025,316.10669};
-			name="wp_radio_Monyet_13";
+			name="wp_Monyet_east_comtower_13";
 			type="o_mortar";
 			angle=160.14494;
 			id=4193;
@@ -9263,7 +9266,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3517.9824,4.0807238,399.44092};
-			name="wp_radio_Monyet_14";
+			name="wp_Monyet_east_comtower_14";
 			type="o_mortar";
 			angle=160.14494;
 			id=4194;
@@ -9273,7 +9276,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2573.7144,5.362577,4031.3577};
-			name="wp_radio_Monyet_15";
+			name="wp_Monyet_east_comtower_15";
 			type="o_mortar";
 			angle=160.14494;
 			id=4195;
@@ -9283,7 +9286,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2174.8149,5.8313122,5106.4321};
-			name="wp_radio_Monyet_16";
+			name="wp_Monyet_east_comtower_16";
 			type="o_mortar";
 			angle=160.14494;
 			id=4196;
@@ -9502,12 +9505,12 @@ class Mission
 		class Item718
 		{
 			dataType="Marker";
-			position[]={2406.4097,20.102757,5296.6074};
-			name="respawn_east_Monyet";
+			position[]={2406.4099,20.103001,5296.6069};
+			name="wp_Monyet_east_respawn";
 			type="o_hq";
-			angle=252.20483;
+			angle=252.205;
 			id=4212;
-			atlOffset=9.5958538;
+			atlOffset=9.5961018;
 		};
 		class Item719
 		{
@@ -9672,7 +9675,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1109.187,8.7399998,2543.6069};
-			name="wp_leader_Monyet";
+			name="wp_Monyet_leader";
 			type="n_hq";
 			id=4226;
 			atlOffset=-9.059906e-005;
@@ -9762,39 +9765,39 @@ class Mission
 		class Item738
 		{
 			dataType="Marker";
-			position[]={6536.9438,27.50021,6912.1196};
-			name="wp_east_supply_Gurun_01";
-			type="o_hq";
+			position[]={6536.9438,27.5,6912.1201};
+			name="wp_Gurun_east_supply_01";
+			type="o_service";
 			id=4234;
-			atlOffset=-5.7220459e-006;
+			atlOffset=-0.0002155304;
 		};
 		class Item739
 		{
 			dataType="Marker";
-			position[]={5426.8047,41.476074,8982.3271};
-			name="wp_east_supply_Gurun_02";
+			position[]={5426.8052,41.476002,8982.3271};
+			name="wp_Gurun_east_supply_02";
 			type="o_hq";
 			id=4235;
-			atlOffset=-1.1444092e-005;
+			atlOffset=-7.6293945e-005;
 		};
 		class Item740
 		{
 			dataType="Marker";
-			position[]={1762.3352,34.915161,3097.5898};
-			name="wp_east_supply_Monyet_01";
+			position[]={1762.335,34.915001,3097.5901};
+			name="wp_Monyet_east_supply_02";
 			type="o_hq";
 			id=4236;
-			atlOffset=-0.0054397583;
+			atlOffset=-0.0055999756;
 		};
 		class Item741
 		{
 			dataType="Marker";
-			position[]={2406.6917,19.296778,5298.1519};
-			name="wp_east_supply_Monyet_02";
-			type="o_hq";
-			angle=252.20483;
+			position[]={2406.6919,19.297001,5298.1519};
+			name="wp_Monyet_east_supply_01";
+			type="o_service";
+			angle=252.205;
 			id=4238;
-			atlOffset=8.810113;
+			atlOffset=8.8102903;
 		};
 		class Item742
 		{
@@ -11043,7 +11046,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3777.4561,5,2215.937};
-			name="wp_objective_Monyet_01";
+			name="wp_Monyet_indep_infrastructure_01";
 			type="n_mortar";
 			id=4609;
 		};
@@ -11051,7 +11054,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3334.5239,4.7138977,2768.7905};
-			name="wp_objective_Monyet_02";
+			name="wp_Monyet_indep_infrastructure_02";
 			type="n_mortar";
 			id=4634;
 			atlOffset=1.8119812e-005;
@@ -11060,7 +11063,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4292.9248,11.230713,1063.3245};
-			name="wp_objective_Monyet_03";
+			name="wp_Monyet_indep_infrastructure_03";
 			type="n_mortar";
 			id=4659;
 			atlOffset=-0.13624191;
@@ -11069,7 +11072,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1340.6021,4.0240383,2500.4473};
-			name="wp_objective_Monyet_04";
+			name="wp_Monyet_indep_infrastructure_04";
 			type="n_mortar";
 			id=4732;
 		};
@@ -11077,7 +11080,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1994.9419,10.049399,2573.3584};
-			name="wp_objective_Monyet_05";
+			name="wp_Monyet_indep_infrastructure_05";
 			type="n_mortar";
 			id=4758;
 		};
@@ -11085,7 +11088,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2356.2122,3.2707567,2529.1047};
-			name="wp_objective_Monyet_06";
+			name="wp_Monyet_indep_infrastructure_06";
 			type="n_mortar";
 			id=4783;
 		};
@@ -11093,7 +11096,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2511.8242,6.1107116,2675.0325};
-			name="wp_objective_Monyet_07";
+			name="wp_Monyet_indep_infrastructure_07";
 			type="n_mortar";
 			id=4808;
 		};
@@ -11101,7 +11104,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2681.3062,12.045105,2554.2817};
-			name="wp_objective_Monyet_08";
+			name="wp_Monyet_indep_infrastructure_08";
 			type="n_mortar";
 			id=4833;
 		};
@@ -11109,7 +11112,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2701.1355,8.909605,2223.5552};
-			name="wp_objective_Monyet_09";
+			name="wp_Monyet_indep_infrastructure_09";
 			type="n_mortar";
 			id=4858;
 		};
@@ -11117,7 +11120,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3724.0188,7.9789505,1792.6597};
-			name="wp_objective_Monyet_10";
+			name="wp_Monyet_indep_infrastructure_10";
 			type="n_mortar";
 			id=4883;
 		};
@@ -11125,7 +11128,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1970.0571,9.9563007,3914.8491};
-			name="wp_objective_Monyet_11";
+			name="wp_Monyet_indep_infrastructure_11";
 			type="n_mortar";
 			id=4908;
 		};
@@ -11133,7 +11136,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2306.3242,5.3969235,3708.0044};
-			name="wp_objective_Monyet_12";
+			name="wp_Monyet_indep_infrastructure_12";
 			type="n_mortar";
 			id=4933;
 		};
@@ -11141,7 +11144,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={2603.8477,2.1839721,4411.5283};
-			name="wp_objective_Monyet_13";
+			name="wp_Monyet_indep_infrastructure_13";
 			type="n_mortar";
 			id=4958;
 		};
@@ -11149,7 +11152,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1584.5988,9.9508915,4868.7495};
-			name="wp_objective_Monyet_14";
+			name="wp_Monyet_indep_infrastructure_14";
 			type="n_mortar";
 			id=4983;
 		};
@@ -11157,7 +11160,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1759.718,16.469316,5281.2031};
-			name="wp_objective_Monyet_15";
+			name="wp_Monyet_indep_infrastructure_15";
 			type="n_mortar";
 			id=5008;
 		};
@@ -11165,7 +11168,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1980.802,10.027239,6653.0303};
-			name="wp_objective_Monyet_16";
+			name="wp_Monyet_indep_infrastructure_16";
 			type="n_mortar";
 			id=5033;
 		};
@@ -11173,7 +11176,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1750.8704,7.5330811,6456.6924};
-			name="wp_objective_Monyet_17";
+			name="wp_Monyet_indep_infrastructure_17";
 			type="n_mortar";
 			id=5058;
 			atlOffset=-0.057487011;
@@ -11182,7 +11185,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1955.7023,5.0087209,6996.3838};
-			name="wp_objective_Monyet_18";
+			name="wp_Monyet_indep_infrastructure_18";
 			type="n_mortar";
 			id=5107;
 		};
@@ -11291,7 +11294,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3553.252,2.5079999,9643.7158};
-			name="wp_objective_Gurun_01";
+			name="wp_Gurun_indep_infrastructure_01";
 			type="n_mortar";
 			id=5197;
 			atlOffset=-0.00016641617;
@@ -11314,7 +11317,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3687.1475,4.0580831,9739.5977};
-			name="wp_objective_Gurun_02";
+			name="wp_Gurun_indep_infrastructure_02";
 			type="n_mortar";
 			id=5255;
 			atlOffset=-0.00016641617;
@@ -11337,7 +11340,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3987.6147,13.629286,8603.291};
-			name="wp_objective_Gurun_03";
+			name="wp_Gurun_indep_infrastructure_03";
 			type="n_mortar";
 			id=5313;
 			atlOffset=-0.00016593933;
@@ -11360,7 +11363,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={3971.8062,5.5846004,8461.8955};
-			name="wp_objective_Gurun_04";
+			name="wp_Gurun_indep_infrastructure_04";
 			type="n_mortar";
 			id=5371;
 			atlOffset=-0.00016641617;
@@ -11383,7 +11386,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4254.5698,9.6764011,7457.2529};
-			name="wp_objective_Gurun_05";
+			name="wp_Gurun_indep_infrastructure_05";
 			type="n_mortar";
 			id=5429;
 			atlOffset=-0.00016593933;
@@ -11406,7 +11409,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5207.084,40.421669,6488.0664};
-			name="wp_objective_Gurun_06";
+			name="wp_Gurun_indep_infrastructure_06";
 			type="n_mortar";
 			id=5487;
 			atlOffset=-0.00016784668;
@@ -11429,7 +11432,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6494.7524,60.589638,4042.1235};
-			name="wp_objective_Gurun_07";
+			name="wp_Gurun_indep_infrastructure_07";
 			type="n_mortar";
 			id=5602;
 			atlOffset=-0.00016784668;
@@ -11452,7 +11455,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6805.8799,26.562841,2915.5005};
-			name="wp_objective_Gurun_08";
+			name="wp_Gurun_indep_infrastructure_08";
 			type="n_mortar";
 			id=5717;
 			atlOffset=-0.00016593933;
@@ -11475,7 +11478,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6146.4541,26.256104,3395.9941};
-			name="wp_objective_Gurun_09";
+			name="wp_Gurun_indep_infrastructure_09";
 			type="n_mortar";
 			id=5832;
 			atlOffset=-0.00016593933;
@@ -11498,7 +11501,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5927.1963,18.90769,3743.3474};
-			name="wp_objective_Gurun_10";
+			name="wp_Gurun_indep_infrastructure_10";
 			type="n_mortar";
 			id=5890;
 			atlOffset=-0.00016593933;
@@ -11521,7 +11524,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5416.9883,35.995205,4520.8608};
-			name="wp_objective_Gurun_11";
+			name="wp_Gurun_indep_infrastructure_11";
 			type="n_mortar";
 			id=6005;
 			atlOffset=-0.00016784668;
@@ -11544,7 +11547,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5562.6123,58.554321,4779.7334};
-			name="wp_objective_Gurun_12";
+			name="wp_Gurun_indep_infrastructure_12";
 			type="n_mortar";
 			id=6063;
 			atlOffset=-0.00016784668;
@@ -11567,7 +11570,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5301.2373,38.12878,6798.5054};
-			name="wp_objective_Gurun_13";
+			name="wp_Gurun_indep_infrastructure_13";
 			type="n_mortar";
 			id=6121;
 			atlOffset=-0.00016784668;
@@ -11590,7 +11593,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4325.6699,11.359732,6818.7437};
-			name="wp_objective_Gurun_14";
+			name="wp_Gurun_indep_infrastructure_14";
 			type="n_mortar";
 			id=6179;
 			atlOffset=-0.00016593933;
@@ -11613,7 +11616,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={4012.9644,22.462191,7424.5244};
-			name="wp_objective_Gurun_15";
+			name="wp_Gurun_indep_infrastructure_15";
 			type="n_mortar";
 			id=6237;
 			atlOffset=-0.00016593933;
@@ -11636,7 +11639,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5469.7144,12.35483,9282.084};
-			name="wp_objective_Gurun_16";
+			name="wp_Gurun_indep_infrastructure_16";
 			type="n_mortar";
 			id=6295;
 			atlOffset=-0.00016689301;
@@ -11659,7 +11662,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5725.6558,22.271473,9341.9795};
-			name="wp_objective_Gurun_17";
+			name="wp_Gurun_indep_infrastructure_17";
 			type="n_mortar";
 			id=6410;
 			atlOffset=-0.00016593933;
@@ -11682,7 +11685,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6772.5039,15.829268,7924.3545};
-			name="wp_objective_Gurun_18";
+			name="wp_Gurun_indep_infrastructure_18";
 			type="n_mortar";
 			id=6468;
 			atlOffset=-0.00016498566;
@@ -11705,7 +11708,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6710.7959,21.145386,7652.1768};
-			name="wp_objective_Gurun_19";
+			name="wp_Gurun_indep_infrastructure_19";
 			type="n_mortar";
 			id=6526;
 			atlOffset=-0.00016593933;
@@ -11728,7 +11731,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6654.2842,14.657206,7263.4424};
-			name="wp_objective_Gurun_20";
+			name="wp_Gurun_indep_infrastructure_20";
 			type="n_mortar";
 			id=6584;
 			atlOffset=-0.00016689301;
@@ -11751,7 +11754,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6806.5503,22.509079,6334.3652};
-			name="wp_objective_Gurun_21";
+			name="wp_Gurun_indep_infrastructure_21";
 			type="n_mortar";
 			id=6642;
 			atlOffset=-0.00016593933;
@@ -11774,7 +11777,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={6968.4741,17.498272,6000.3296};
-			name="wp_objective_Gurun_22";
+			name="wp_Gurun_indep_infrastructure_22";
 			type="n_mortar";
 			id=6757;
 			atlOffset=-0.00016593933;
@@ -12488,7 +12491,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5852.1719,58.535,6399.584};
-			name="wp_Gurun_cesna01";
+			name="wp_Gurun_cesna";
 			type="c_plane";
 			angle=269.84195;
 			id=6787;
@@ -12498,7 +12501,7 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={5832.4692,59.029999,6371.9111};
-			name="wp_Gurun_heli01";
+			name="wp_Gurun_heli";
 			type="c_air";
 			angle=266.522;
 			id=6788;
@@ -12507,9 +12510,9 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1207.3199,7.1939998,2627.075};
-			name="wp_Monyet_heli01";
+			name="wp_Monyet_heli";
 			type="c_air";
-			angle=359.43985;
+			angle=359.43991;
 			id=6789;
 			atlOffset=-0.1260004;
 		};
@@ -12517,11 +12520,234 @@ class Mission
 		{
 			dataType="Marker";
 			position[]={1095.276,7.6129999,2587.0559};
-			name="wp_Monyet_cesna01";
+			name="wp_Monyet_cesna";
 			type="c_plane";
-			angle=0.43499985;
+			angle=0.43499947;
 			id=6790;
 			atlOffset=-0.076600552;
+		};
+		class Item915
+		{
+			dataType="Marker";
+			position[]={599.35364,-11.048656,11407.87};
+			name="wp_XXX_east_comtower_01";
+			type="o_mortar";
+			angle=359.93301;
+			id=6794;
+			atlOffset=7.3304405;
+		};
+		class Item916
+		{
+			dataType="Marker";
+			position[]={241.2887,-2.1937513,11121.001};
+			name="wp_XXX_paradrop_01";
+			type="b_recon";
+			id=6795;
+			atlOffset=8.7522316;
+		};
+		class Item917
+		{
+			dataType="Marker";
+			position[]={246.05823,11.254979,10976.215};
+			name="wp_XXX_crashsite_01";
+			type="b_plane";
+			id=6796;
+			atlOffset=28.994526;
+		};
+		class Item918
+		{
+			dataType="Marker";
+			position[]={473.65979,2.5115938,11120.399};
+			name="wp_XXX_waypoint";
+			type="b_installation";
+			angle=179.59094;
+			id=6797;
+			atlOffset=25.070263;
+		};
+		class Item919
+		{
+			dataType="Marker";
+			position[]={474.21155,2.559041,10993.322};
+			name="wp_XXX_waypoint_express";
+			type="b_installation";
+			angle=180.01199;
+			id=6798;
+			atlOffset=26.42828;
+		};
+		class Item920
+		{
+			dataType="Marker";
+			position[]={640.65747,-16.437103,11767.318};
+			name="wp_XXX_indep_armor_01";
+			type="n_armor";
+			angle=179.83897;
+			id=6799;
+			atlOffset=2.6381092;
+		};
+		class Item921
+		{
+			dataType="Marker";
+			position[]={820.12622,-13.639807,11881.602};
+			name="wp_XXX_indep_infrastructure_01";
+			type="n_mortar";
+			id=6800;
+			atlOffset=7.0974827;
+		};
+		class Item922
+		{
+			dataType="Marker";
+			position[]={938.76978,-20.452318,11784.779};
+			name="wp_XXX_airfield";
+			type="n_hq";
+			id=6801;
+			atlOffset=3.0569572;
+		};
+		class Item923
+		{
+			dataType="Marker";
+			position[]={943.80054,-16.888731,11650.989};
+			name="wp_XXX_spawn_point";
+			type="u_installation";
+			id=6802;
+			atlOffset=5.2889576;
+		};
+		class Item924
+		{
+			dataType="Marker";
+			position[]={942.55835,-10.974916,11884.01};
+			name="wp_XXX_leader";
+			type="n_hq";
+			id=6803;
+			atlOffset=5.1023922;
+		};
+		class Item925
+		{
+			dataType="Marker";
+			position[]={554.82098,-22.045,12062.508};
+			name="wp_XXX_cesna";
+			type="c_plane";
+			angle=269.84195;
+			id=6804;
+			atlOffset=3.060667;
+		};
+		class Item926
+		{
+			dataType="Marker";
+			position[]={425.65601,-19.761999,12060.228};
+			name="wp_XXX_heli";
+			type="c_air";
+			angle=270.21991;
+			id=6805;
+			atlOffset=2.6386013;
+		};
+		class Item927
+		{
+			dataType="Marker";
+			position[]={818.3396,-23.897038,11780.342};
+			name="wp_XXX_patrol_heli";
+			type="n_air";
+			id=6806;
+			atlOffset=2.6381092;
+		};
+		class Item928
+		{
+			dataType="Marker";
+			position[]={849.92493,-9.6444521,11416.302};
+			name="wp_XXX_east_respawn";
+			type="o_hq";
+			id=6807;
+			atlOffset=7.3304396;
+		};
+		class Item929
+		{
+			dataType="Marker";
+			position[]={843.38538,-10.306883,11264.643};
+			name="wp_XXX_east_supply_01";
+			type="o_service";
+			id=6808;
+			atlOffset=12.571716;
+		};
+		class Item930
+		{
+			dataType="Marker";
+			position[]={714.63,-13.41512,11261.385};
+			name="wp_XXX_east_transport_spawn_01";
+			type="o_motor_inf";
+			angle=175.85196;
+			id=6809;
+			atlOffset=8.858573;
+		};
+		class Item931
+		{
+			dataType="Marker";
+			position[]={222.80542,-9.0702858,11824.804};
+			name="wp_XXX_indep_checkpoint_01";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorGUER";
+			fillName="Horizontal";
+			a=100;
+			b=100;
+			id=6810;
+			atlOffset=2.6376238;
+		};
+		class Item932
+		{
+			dataType="Marker";
+			position[]={188.27893,-9.3290224,11365.521};
+			name="wp_XXX_east_patrol_01";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorEAST";
+			fillName="DiagGrid";
+			a=100;
+			b=100;
+			id=6811;
+			atlOffset=7.3305178;
+		};
+		class Item933
+		{
+			dataType="Marker";
+			position[]={411.59192,-14.464522,11364.152};
+			name="wp_XXX_east_defend_01";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorEAST";
+			fillName="SolidBorder";
+			a=100;
+			b=100;
+			drawBorder=1;
+			id=6812;
+			atlOffset=7.3304396;
+		};
+		class Item934
+		{
+			dataType="Marker";
+			position[]={418.26331,-16.503647,11309.804};
+			name="wp_XXX_east_armor_01";
+			type="o_armor";
+			angle=179.24001;
+			id=6813;
+			atlOffset=7.3304405;
+		};
+		class Item935
+		{
+			dataType="Marker";
+			position[]={599.91565,-13.077432,11268.924};
+			name="wp_XXX_aa";
+			type="o_antiair";
+			angle=359.49588;
+			id=6814;
+			atlOffset=7.3304377;
+		};
+		class Item936
+		{
+			dataType="Marker";
+			position[]={721.95471,-9.7008486,11411.627};
+			name="wp_XXX_east_helicopter";
+			type="o_air";
+			id=6815;
+			atlOffset=10.543611;
 		};
 	};
 	class Connections

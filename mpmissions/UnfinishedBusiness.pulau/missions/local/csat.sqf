@@ -26,28 +26,28 @@ if (hasInterface) then {
 
 	Fn_Local_Create_SCAT_MissionIntro = {
 		private _marker = format ["wp_%1_aa", D_LOCATION];
-		if (canFire csat_aa_01) then {
+		if (canFire obj_east_antiair) then {
 			[
 				player,
 				"t_scat_defend_aa",
 				[format [localize "TASK_AOC_01_DESC", D_LOCATION],
 				localize "TASK_AOC_01_TITLE",
 				localize "TASK_ORIG_01"],
-				getPos csat_aa_01,
+				getPos obj_east_antiair,
 				"CREATED",
 				0,
 				true
 			] call BIS_fnc_taskCreate;
 			['t_scat_defend_aa', "defend"] call BIS_fnc_taskSetType;
 		};
-		if (alive csat_comm_tower_01) then {
+		if (alive obj_east_comtower) then {
 			[
 				player,
 				"t_scat_defend_comm_tower",
 				[format [localize "TASK_AOC_02_DESC", D_LOCATION],
 				localize "TASK_AOC_02_TITLE",
 				localize "TASK_ORIG_02"],
-				getPos csat_comm_tower_01,
+				getPos obj_east_comtower,
 				"CREATED",
 				0,
 				true
@@ -72,7 +72,7 @@ if (hasInterface) then {
 			[format [localize "TASK_10_DESC", D_LOCATION, D_LOCATION],
 			format [localize "TASK_10_TITLE"],
 			localize "TASK_ORIG_01"],
-			getMarkerPos "wp_crash_site",
+			getMarkerPos "mrk_west_crashsite",
 			"CREATED",
 			0,
 			true
@@ -86,7 +86,7 @@ if (hasInterface) then {
 				[format[localize "TASK_11_DESC", _forEachIndex, _x select 0],
 				format[localize "TASK_11_TITLE", _x select 0],
 				localize "TASK_ORIG_01"],
-				getMarkerPos (format ["wp_city_%1", _forEachIndex]),
+				getMarkerPos (format ["mrk_city_%1", _forEachIndex]),
 				"CREATED",
 				0,
 				true

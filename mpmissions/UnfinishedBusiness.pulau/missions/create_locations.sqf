@@ -42,9 +42,25 @@ if (isServer) then {
 		_wp setWaypointSpeed "NORMAL";
 	};
 
+	private _crashSitePos = getMarkerPos "mrk_west_crashsite";
+
+	call Fn_Spawn_East_AntiAir;
+	[_crashSitePos] call Fn_Spawn_East_Comtower;
+	call Fn_Spawn_East_Helicopter;
+	[_crashSitePos] call Fn_Task_Spawn_Indep_Objectives;
+	
+	private _ret = [_crashSitePos, 3000, 2] call BrezBlock_fnc_GetAllCitiesInRange;
+	//Get all POI in the range of 3000m
+	avaliable_locations = _ret select 0;
+	avaliable_pois = _ret select 1;
+	
+	publicVariable "avaliable_pois";
+
+	[_crashSitePos, 900] execVM "addons\brezblock\utils\controller.sqf";
+
 	//Create markers
 	{ 
-		private _mark = createMarker [format ["wp_city_%1", _forEachIndex], _x select 1];
+		private _mark = createMarker [format ["mrk_city_%1", _forEachIndex], _x select 1];
 		_mark setMarkerType "hd_destroy";
 		_mark setMarkerAlpha 0;
 		
@@ -55,17 +71,22 @@ if (isServer) then {
 		_mark setMarkerType "hd_destroy";
 		_mark setMarkerAlpha 0;
 		
-		private _trg = createTrigger ["EmptyDetector", getMarkerPos (format ["wp_city_%1", _forEachIndex])];
+		private _trg = createTrigger ["EmptyDetector", getMarkerPos (format ["mrk_city_%1", _forEachIndex])];
 		_trg setTriggerArea [250, 250, 0, false];
 		_trg setTriggerActivation ["WEST SEIZED", "PRESENT", false];
 		_trg setTriggerTimeout [0, 5, 10, true];
-		_trg setTriggerStatements ["this", format ["['wp_city_%1'] call Fn_Task_Attack_City;", _forEachIndex], ""];
+		_trg setTriggerStatements ["this", format ["['mrk_city_%1'] call Fn_Task_Attack_City;", _forEachIndex], ""];
 	} forEach avaliable_pois;
 
-	call Fn_Task_Spawn_CSAT_Objectives;
+	[getMarkerPos "mrk_east_base_02", 600] execVM "addons\brezblock\utils\controller.sqf";
+	[getMarkerPos "mrk_airfield", 600] execVM "addons\brezblock\utils\controller.sqf";
+	[getMarkerPos "mrk_east_base_01", 150] execVM "addons\brezblock\utils\controller.sqf";
+	
+	call Fn_Spawn_Civ_Air_Transport;
+	call Fn_Spawn_East_Transport;
 
 	//Select cities for spawn
-	private _ret = [(getMarkerPos "wp_crash_site"), 4000, 6] call BrezBlock_fnc_GetAllCitiesInRange;
+	private _ret = [_crashSitePos, 4000, 6] call BrezBlock_fnc_GetAllCitiesInRange;
 	private _pois = _ret select 1;
 	
 	[_pois] call Fn_Patrols_CreateCivilean_Traffic;
@@ -78,4 +99,5 @@ if (isServer) then {
 	call Fn_Task_Create_Civilian_FloodedShip;
 	
 	call Fn_Create_Logic_CivilianLiberateCity;
+
 };

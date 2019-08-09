@@ -30,7 +30,7 @@ if (isServer) then {
 
 	Fn_Task_Create_KillLeader = {
 	
-		private _center = getMarkerPos (format ["wp_leader_%1", D_LOCATION]);
+		private _center = getMarkerPos "mrk_leader";
 		private _pos = [_center, 0, 50, 1, 0, 0, 0] call BIS_fnc_findSafePos;
 		private _builing = nearestBuilding (_center);
 		_pos = selectRandom (_builing buildingPos -1);
@@ -40,8 +40,7 @@ if (isServer) then {
 			target_leader_01 = _group createUnit [_class, _pos, [], 0, "FORM"];
 		};
 	
-		private['_trg'];
-		_trg = createTrigger ["EmptyDetector", getPos target_leader_01];
+		private _trg = createTrigger ["EmptyDetector", getPos target_leader_01];
 		_trg setTriggerArea [0, 0, 0, false];
 		_trg setTriggerActivation ["NONE", "PRESENT", false];
 		_trg setTriggerStatements [
@@ -51,21 +50,21 @@ if (isServer) then {
 		];
 		
 		if (hasInterface) then {
-			[D_LOCATION] remoteExecCall ["Fn_Local_Create_KillLeader"];
+			remoteExecCall ["Fn_Local_Create_KillLeader"];
 		} else {
-			[D_LOCATION] remoteExecCall ["Fn_Local_Create_KillLeader", -2];
+			remoteExecCall ["Fn_Local_Create_KillLeader", -2];
 		};
 		
-		private _mark = createMarker ["mrk_base_indep_01", getMarkerPos format ["wp_leader_%1", D_LOCATION]];
-		_mark setMarkerType "hd_flag";
-		_mark setMarkerText 'PNG Base "Delta"';
-		_mark setMarkerColor "colorIndependent";
+		private _marker = createMarker ["mrk_base_indep_01", _center];
+		_marker setMarkerType "hd_flag";
+		_marker setMarkerText 'Base "Delta"';
+		_marker setMarkerColor "colorIndependent";
 		
-		_mark = createMarker ["mrk_base_indep_02", getMarkerPos format ["wp_leader_%1", D_LOCATION]];
-		_mark setMarkerSize [300, 300];
-		_mark setMarkerBrush "BDiagonal";
-		_mark setMarkerShape "ellipse";
-		_mark setMarkerColor "colorIndependent";
+		_marker = createMarker ["mrk_base_indep_02", _center];
+		_marker setMarkerSize [300, 300];
+		_marker setMarkerBrush "BDiagonal";
+		_marker setMarkerShape "ellipse";
+		_marker setMarkerColor "colorIndependent";
 		
 	};
 	

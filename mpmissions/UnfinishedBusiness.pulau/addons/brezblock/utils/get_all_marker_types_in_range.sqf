@@ -15,36 +15,18 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
  ***************************************************************************/
-
-/*
-Spawn start objectives, triggers for informator contact
-*/
-
-//Player side triggers
-// Client side code
-if (hasInterface) then {
-	Fn_Local_Create_KillLeader = {
-		private _trg = createTrigger ["EmptyDetector", getMarkerPos "mrk_airfield"];
-		_trg setTriggerArea [500, 500, 0, false];
-		_trg setTriggerActivation ["ANYPLAYER", "PRESENT", true];
-		_trg setTriggerStatements [
-			"(vehicle player) in thisList",
-			"[ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_07', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;",
-			""
-		];
-		if (playerSide == west) then {
-			[
-				player,
-				"t_kill_leader",
-				[format [localize "TASK_01_DESC", D_LOCATION],
-				localize "TASK_01_TITLE",
-				localize "TASK_ORIG_01"],
-				getMarkerPos "mrk_airfield",
-				"CREATED",
-				0,
-				true
-			] call BIS_fnc_taskCreate;
-			['t_kill_leader', "kill"] call BIS_fnc_taskSetType;
+ 
+ params["_center", "_types", "_distance"];
+ private _markers = [];
+ 
+{
+	if ((markerType _x) in _types) then {
+		if (_x find D_LOCATION >= 0) then {
+			if ((_center distance2D (getMarkerPos _x)) <= _distance) then {
+				_markers append [_x];
+			};
 		};
 	};
-};
+} forEach allMapMarkers;
+
+_markers;

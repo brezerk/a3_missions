@@ -28,17 +28,17 @@ if (isServer) then {
 
 	Fn_Create_Logic_CivilianLiberateCity = {
 		
-		trgCivLiberate00 = createTrigger ["EmptyDetector", getMarkerPos "wp_city_0"];
+		trgCivLiberate00 = createTrigger ["EmptyDetector", getMarkerPos "mrk_city_0"];
 		trgCivLiberate00 setTriggerArea [100, 100, 0, false];
 		trgCivLiberate00 setTriggerActivation ["WEST SEIZED", "PRESENT", false];
 		trgCivLiberate00 setTriggerTimeout [5, 10, 20, true];
-		trgCivLiberate00 setTriggerStatements ["this", "['wp_city_0'] call Fn_Create_CivilianRebelGroups;", ""];
+		trgCivLiberate00 setTriggerStatements ["this", "['mrk_city_0'] call Fn_Create_CivilianRebelGroups;", ""];
 
-		trgCivLiberate01 = createTrigger ["EmptyDetector", getMarkerPos "wp_city_1"];
+		trgCivLiberate01 = createTrigger ["EmptyDetector", getMarkerPos "mrk_city_1"];
 		trgCivLiberate01 setTriggerArea [100, 100, 0, false];
 		trgCivLiberate01 setTriggerActivation ["WEST SEIZED", "PRESENT", false];
 		trgCivLiberate01 setTriggerTimeout [5, 10, 20, true];
-		trgCivLiberate01 setTriggerStatements ["this", "['wp_city_1'] call Fn_Create_CivilianRebelGroups;", ""];
+		trgCivLiberate01 setTriggerStatements ["this", "['mrk_city_1'] call Fn_Create_CivilianRebelGroups;", ""];
 
 	};
 	

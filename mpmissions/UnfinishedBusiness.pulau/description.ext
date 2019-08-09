@@ -178,6 +178,7 @@ class CfgFunctions {
 			class CreateCheckPoint {file = "addons\brezblock\systems\checkpoint.sqf";};
 			class CreateArmor {file = "addons\brezblock\systems\armor.sqf";};
 			class GetAllCitiesInRange {file = "addons\brezblock\utils\get_cities.sqf";};
+			class GetAllMarkerTypesInRange {file = "addons\brezblock\utils\get_all_marker_types_in_range.sqf";};
 		};
 	};
 };

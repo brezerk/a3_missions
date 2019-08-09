@@ -32,7 +32,7 @@ if (hasInterface) then {
 				[format[localize "TASK_CIV_03_DESC", _forEachIndex, _x select 0],
 				format[localize "TASK_CIV_03_TITLE", _x select 0],
 				localize "TASK_ORIG_03"],
-				getMarkerPos (format ["wp_city_%1", _forEachIndex]),
+				getMarkerPos (format ["mrk_city_%1", _forEachIndex]),
 				"CREATED",
 				0,
 				true
@@ -42,13 +42,13 @@ if (hasInterface) then {
 		} forEach avaliable_pois;
 		
 		
-		trgCivLiberate00 = createTrigger ["EmptyDetector", getMarkerPos "wp_city_0"];
+		trgCivLiberate00 = createTrigger ["EmptyDetector", getMarkerPos "mrk_city_0"];
 		trgCivLiberate00 setTriggerArea [100, 100, 0, false];
 		trgCivLiberate00 setTriggerActivation ["WEST SEIZED", "PRESENT", false];
 		trgCivLiberate00 setTriggerTimeout [5, 10, 20, true];
 		trgCivLiberate00 setTriggerStatements ["this", "call Fn_Task_Civilian_Liberate_LiberateCity0;", ""];
 
-		trgCivLiberate01 = createTrigger ["EmptyDetector", getMarkerPos "wp_city_1"];
+		trgCivLiberate01 = createTrigger ["EmptyDetector", getMarkerPos "mrk_city_1"];
 		trgCivLiberate01 setTriggerArea [100, 100, 0, false];
 		trgCivLiberate01 setTriggerActivation ["WEST SEIZED", "PRESENT", false];
 		trgCivLiberate01 setTriggerTimeout [5, 10, 20, true];

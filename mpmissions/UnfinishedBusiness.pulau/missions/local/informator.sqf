@@ -21,7 +21,7 @@ if (hasInterface) then {
 		params['_lcs', '_pois'];
 		private _uri = "";
 		{
-			_uri = _uri + format["<marker name = 'wp_city_%1'>%2</marker> ", _forEachIndex, _x select 0];
+			_uri = _uri + format["<marker name = 'mrk_city_%1'>%2</marker> ", _forEachIndex, _x select 0];
 		} forEach _pois;
 		
 		[

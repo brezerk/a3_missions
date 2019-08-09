@@ -121,8 +121,10 @@ if (isServer) then {
 		_obj;
 	};
 	
+
 	
-	_crashSitePos = getMarkerPos "wp_crash_site";
+	
+	private _crashSitePos = getMarkerPos "mrk_west_crashsite";
 	
 	[_crashSitePos] call Fn_Task_Create_C130J_CrashSite;
 	[_crashSitePos] call Fn_Task_Create_C130J_SpawnRandomCargo;	
@@ -131,7 +133,7 @@ if (isServer) then {
 	
 	private _free_landing_markers = [];
 	{
-		if (_x find format["wp_paradrop_%1_", D_LOCATION] >= 0) then {
+		if (_x find format["wp_%1_paradrop", D_LOCATION] >= 0) then {
 			if (_crashSitePos distance2D getMarkerPos _x <= 1800) then {
 				_free_landing_markers pushBack _x;
 			};
@@ -183,6 +185,13 @@ if (isServer) then {
 			""
 	];
 	
+	//Cleanup unneded markers
+	{
+		if (_x find "wp_" >= 0) then {
+			deleteMarker _x;
+		};
+	} forEach allMapMarkers;
+	
 	sleep 60;
 	
 	private _grp = createGroup [independent, true];
@@ -199,8 +208,6 @@ if (isServer) then {
 	_wp setWaypointBehaviour "SAFE";
 	_wp setWaypointSpeed "NORMAL";
 	_wp setWaypointCompletionRadius 50;
-	
-	call Fn_Task_Create_CSAT_Triggers;
 
 	execVM "missions\ping.sqf";
 };

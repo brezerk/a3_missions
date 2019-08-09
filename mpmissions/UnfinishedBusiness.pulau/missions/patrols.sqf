@@ -238,7 +238,7 @@ if (isServer) then {
 		
 	// Create random waypoints for enemy and civilian vehicles
 	Fn_Patrols_Create_Random_Waypoints = {
-		private _ret = [(getMarkerPos "wp_crash_site"), 4000, 6] call BrezBlock_fnc_GetAllCitiesInRange;
+		private _ret = [(getMarkerPos "mrk_west_crashsite"), 4000, 6] call BrezBlock_fnc_GetAllCitiesInRange;
 		private _lcs_array = _ret select 1;
 	
 		private _wp_array = [];

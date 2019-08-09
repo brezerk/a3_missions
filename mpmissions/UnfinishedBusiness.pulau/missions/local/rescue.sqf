@@ -46,7 +46,7 @@ if (hasInterface) then {
 					format [localize "TASK_10_DESC", D_LOCATION, D_LOCATION],
 					format [localize "TASK_10_TITLE"],
 					localize "TASK_ORIG_01"],
-					getMarkerPos "wp_crash_site",
+					getMarkerPos "mrk_west_crashsite",
 					"CREATED",
 					0,
 					true
@@ -60,7 +60,7 @@ if (hasInterface) then {
 						[format[localize "TASK_11_DESC", _forEachIndex, _x select 0],
 						format[localize "TASK_11_TITLE", _x select 0],
 						localize "TASK_ORIG_01"],
-						getMarkerPos (format ["wp_city_%1", _forEachIndex]),
+						getMarkerPos (format ["mrk_city_%1", _forEachIndex]),
 						"CREATED",
 						0,
 						true
@@ -68,7 +68,7 @@ if (hasInterface) then {
 					[_task, "talk"] call BIS_fnc_taskSetType;			
 				} forEach avaliable_pois;
 				
-				trgWestCrashSite = createTrigger ["EmptyDetector", getMarkerPos "wp_crash_site"];
+				trgWestCrashSite = createTrigger ["EmptyDetector", getMarkerPos "mrk_west_crashsite"];
 				trgWestCrashSite setTriggerArea [50, 50, 0, false];
 				trgWestCrashSite setTriggerActivation ["ANYPLAYER", "PRESENT", false];
 				trgWestCrashSite setTriggerStatements [

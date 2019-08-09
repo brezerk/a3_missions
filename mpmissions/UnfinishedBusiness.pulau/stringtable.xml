@@ -130,9 +130,9 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>Ліквідувати ватажка бунтівників</Russian>
 			</Key>
 			<Key ID="TASK_01_DESC">
-				<Original>Eliminate the rebel leader Moracio Goaz on the base near the &lt;marker name = 'wp_target_01'&gt;Monuet airfield&lt;/marker&gt;.</Original>
-				<English>Eliminate the rebel leader Moracio Goaz on the base near the &lt;marker name = 'wp_target_01'&gt;Monuet airfield&lt;/marker&gt;.</English>
-				<Russian>Ліквідувати ватажка бунтівників Moracio Goaz на базі біля &lt;marker name='wp_target_01'&gt;аеродрому Monuet&lt;/marker&gt;.</Russian>
+				<Original>Eliminate the rebel leader Solomon Maru on the base near the &lt;marker name = 'mrk_airfield'&gt;%1 airfield&lt;/marker&gt;.</Original>
+				<English>Eliminate the rebel leader Solomon Maru on the base near the &lt;marker name = 'mrk_airfield'&gt;%1 airfield&lt;/marker&gt;.</English>
+				<Russian>Ліквідувати ватажка бунтівників Solomon Maru на базі біля &lt;marker name='mrk_airfield'&gt;аеродрому %1&lt;/marker&gt;.</Russian>
 			</Key>
 			<Key ID="TASK_02_TITLE">
 				<Original>Get to the %1 airfield</Original>
@@ -140,9 +140,9 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>Прибути до аеродрому %1</Russian>
 			</Key>
 			<Key ID="TASK_02_DESC">
-				<Original>Get to the &lt;marker name = 'wp_%1_airfield'&gt;%2 airfield&lt;/marker&gt; and report to the officer.</Original>
-				<English>Get to the &lt;marker name = 'wp_%1_airfield'&gt;%2 airfield&lt;/marker&gt; and report to the officer.</English>
-				<Russian>Прибути до &lt;marker name='wp_%1_airfield'&gt;аеродрому %2&lt;/marker&gt; та доповісти команидру.</Russian>
+				<Original>Get to the &lt;marker name = 'mrk_airfield'&gt;%1 airfield&lt;/marker&gt; and report to the officer.</Original>
+				<English>Get to the &lt;marker name = 'mrk_airfield'&gt;%1 airfield&lt;/marker&gt; and report to the officer.</English>
+				<Russian>Прибути до &lt;marker name='mrk_airfield'&gt;аеродрому %1&lt;/marker&gt; та доповісти команидру.</Russian>
 			</Key>
 			<Key ID="TASK_03_TITLE">
 				<Original>Regroup</Original>
@@ -190,9 +190,9 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>Додатково: Знищіть Вежу</Russian>
 			</Key>
 			<Key ID="TASK_07_DESC">
-				<Original>AOC is coordinating communication between Solomon Maru's thug groups. We need to destroy the &lt;marker name = 'wp_%1_commtower'&gt;communication tower&lt;/marker&gt;.</Original>
-				<English>AOC is coordinating communication between Solomon Maru's thug groups. We need to destroy the &lt;marker name = 'wp_%1_commtower'&gt;communication tower&lt;/marker&gt;.</English>
-				<Russian>AOC координую зв'язок між бандами Solomon Maru. Потрібно вивести &lt;marker name = 'wp_%1_commtower'&gt;комунікаційну вежу&lt;/marker&gt; з ладу.</Russian>
+				<Original>AOC is coordinating communication between Solomon Maru's thug groups. We need to destroy the &lt;marker name = 'mrk_east_commtower'&gt;communication tower&lt;/marker&gt;.</Original>
+				<English>AOC is coordinating communication between Solomon Maru's thug groups. We need to destroy the &lt;marker name = 'mrk_east_commtower'&gt;communication tower&lt;/marker&gt;.</English>
+				<Russian>AOC координую зв'язок між бандами Solomon Maru. Потрібно вивести &lt;marker name = 'mrk_east_commtower'&gt;комунікаційну вежу&lt;/marker&gt; з ладу.</Russian>
 			</Key>
 			<Key ID="TASK_08_TITLE">
 				<Original>Eliminate the dictator</Original>
@@ -220,9 +220,9 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>Місце катастрофи</Russian>
 			</Key>
 			<Key ID="TASK_10_DESC">
-				<Original>Explore &lt;marker name = 'wp_crash_site'&gt;crash site&lt;/marker&gt;. May be among the rubbles you will find survivors. However, the enemy also searches for crash site. Be careful.</Original>
-				<English>Explore &lt;marker name = 'wp_crash_site'&gt;crash site&lt;/marker&gt;. May be among the rubbles you will find survivors. However, the enemy also searches for crash site. Be careful.</English>
-				<Russian>Огляньте &lt;marker name = 'wp_crash_site'&gt;місце катастрофи&lt;/marker&gt;. Можливо серед уламків знайдуться виживші. Проте ворог теж його шукає. Будьте обережними.</Russian>
+				<Original>Explore &lt;marker name = 'mrk_west_crashsite'&gt;crash site&lt;/marker&gt;. May be among the rubbles you will find survivors. However, the enemy also searches for crash site. Be careful.</Original>
+				<English>Explore &lt;marker name = 'mrk_west_crashsite'&gt;crash site&lt;/marker&gt;. May be among the rubbles you will find survivors. However, the enemy also searches for crash site. Be careful.</English>
+				<Russian>Огляньте &lt;marker name = 'mrk_west_crashsite'&gt;місце катастрофи&lt;/marker&gt;. Можливо серед уламків знайдуться виживші. Проте ворог теж його шукає. Будьте обережними.</Russian>
 			</Key>
 			<Key ID="TASK_11_TITLE">
 				<Original>Ask locals at %1</Original>
@@ -230,9 +230,9 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>Запитайте місцевих у %1</Russian>
 			</Key>
 			<Key ID="TASK_11_DESC">
-				<Original>Ask locals at &lt;marker name = 'wp_city_%1'&gt;%2&lt;/marker&gt; settlement. Maybe someone saw our guys.</Original>
-				<English>Ask locals at &lt;marker name = 'wp_city_%1'&gt;%2&lt;/marker&gt; settlement. Maybe someone saw our guys.</English>
-				<Russian>Запитайте місцевих жителів поселення &lt;marker name = 'wp_city_%1'&gt;%2&lt;/marker&gt;. Можливо, хтось побачив наших хлопців.</Russian>
+				<Original>Ask locals at &lt;marker name = 'mrk_city_%1'&gt;%2&lt;/marker&gt; settlement. Maybe someone saw our guys.</Original>
+				<English>Ask locals at &lt;marker name = 'mrk_city_%1'&gt;%2&lt;/marker&gt; settlement. Maybe someone saw our guys.</English>
+				<Russian>Запитайте місцевих жителів поселення &lt;marker name = 'mrk_city_%1'&gt;%2&lt;/marker&gt;. Можливо, хтось побачив наших хлопців.</Russian>
 			</Key>
 			<Key ID="TASK_12_TITLE">
 				<Original>Optional: Destroy weapon stash</Original>
@@ -300,9 +300,9 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>Захистить Вежу</Russian>
 			</Key>
 			<Key ID="TASK_AOC_02_DESC">
-				<Original>We need to defend &lt;marker name = 'wp_%1_commtower'&gt;commtower&lt;/marker&gt;.</Original>
-				<English>We need to defend &lt;marker name = 'wp_%1_commtower'&gt;commtower&lt;/marker&gt;.</English>
-				<Russian>Нам потрібно захистити &lt;marker name = 'wp_%1_commtower'&gt;радіо вежу&lt;/marker&gt;.</Russian>
+				<Original>We need to defend &lt;marker name = 'mrk_east_commtower'&gt;commtower&lt;/marker&gt;.</Original>
+				<English>We need to defend &lt;marker name = 'mrk_east_commtower'&gt;commtower&lt;/marker&gt;.</English>
+				<Russian>Нам потрібно захистити &lt;marker name = 'mrk_east_commtower'&gt;радіо вежу&lt;/marker&gt;.</Russian>
 			</Key>
 			<Key ID="TASK_AOC_03_TITLE">
 				<Original>Eliminate survivors</Original>
@@ -320,9 +320,9 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>Додатково: Місце катастрофи</Russian>
 			</Key>
 			<Key ID="TASK_AOC_04_DESC">
-				<Original>Explore &lt;marker name = 'wp_crash_site'&gt;crash site&lt;/marker&gt;. More likely survivors will try to scan the debris.</Original>
-				<English>Explore &lt;marker name = 'wp_crash_site'&gt;crash site&lt;/marker&gt;. More likely survivors will try to scan the debris.</English>
-				<Russian>Огляньте &lt;marker name = 'wp_crash_site'&gt;місце катастрофи&lt;/marker&gt;. Iмовірно, що виживші спробують обшукати уламки.</Russian>
+				<Original>Explore &lt;marker name = 'mrk_west_crashsite'&gt;crash site&lt;/marker&gt;. More likely survivors will try to scan the debris.</Original>
+				<English>Explore &lt;marker name = 'mrk_west_crashsite'&gt;crash site&lt;/marker&gt;. More likely survivors will try to scan the debris.</English>
+				<Russian>Огляньте &lt;marker name = 'mrk_west_crashsite'&gt;місце катастрофи&lt;/marker&gt;. Iмовірно, що виживші спробують обшукати уламки.</Russian>
 			</Key>
 			<Key ID="TASK_AOC_05_TITLE">
 				<Original>Ask locals at %1</Original>
@@ -330,9 +330,9 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>Запитайте місцевих у %1</Russian>
 			</Key>
 			<Key ID="TASK_AOC_05_DESC">
-				<Original>Ask locals at &lt;marker name = 'wp_city_%1'&gt;%2&lt;/marker&gt; settlement. Maybe someone saw survivors.</Original>
-				<English>Ask locals at &lt;marker name = 'wp_city_%1'&gt;%2&lt;/marker&gt; settlement. Maybe someone saw survivors.</English>
-				<Russian>Запитайте місцевих жителів поселення &lt;marker name = 'wp_city_%1'&gt;%2&lt;/marker&gt;. Можливо, хтось бачив виживших Американців.</Russian>
+				<Original>Ask locals at &lt;marker name = 'mrk_city_%1'&gt;%2&lt;/marker&gt; settlement. Maybe someone saw survivors.</Original>
+				<English>Ask locals at &lt;marker name = 'mrk_city_%1'&gt;%2&lt;/marker&gt; settlement. Maybe someone saw survivors.</English>
+				<Russian>Запитайте місцевих жителів поселення &lt;marker name = 'mrk_city_%1'&gt;%2&lt;/marker&gt;. Можливо, хтось бачив виживших Американців.</Russian>
 			</Key>
 			<Key ID="TASK_CIV_01_TITLE">
 				<Original>Optional: Sunken ship</Original>
@@ -360,9 +360,9 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>Звільнити %1</Russian>
 			</Key>
 			<Key ID="TASK_CIV_03_DESC">
-				<Original>Liberate the the &lt;marker name = 'wp_city_%1'&gt;%2&lt;/marker&gt; settlement by eliminating all bandits forces.</Original>
-				<English>Liberate the the &lt;marker name = 'wp_city_%1'&gt;%2&lt;/marker&gt; settlement by eliminating all bandits forces.</English>
-				<Russian>Звільнити поселення &lt;marker name = 'wp_city_%1'&gt;%2&lt;/marker&gt; від бандитів.</Russian>
+				<Original>Liberate the the &lt;marker name = 'mrk_city_%1'&gt;%2&lt;/marker&gt; settlement by eliminating all bandits forces.</Original>
+				<English>Liberate the the &lt;marker name = 'mrk_city_%1'&gt;%2&lt;/marker&gt; settlement by eliminating all bandits forces.</English>
+				<Russian>Звільнити поселення &lt;marker name = 'mrk_city_%1'&gt;%2&lt;/marker&gt; від бандитів.</Russian>
 			</Key>
 			<Key ID="TASK_CIV_03_DONE">
 				<Original>Settlement liberated</Original>

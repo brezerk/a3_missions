@@ -26,19 +26,14 @@ if (isServer) then {
 	} forEach assault_group;
 	sleep 8;
 	skipTime 1;
-	_markerPos = [];
-	if (D_START_TYPE == 1) then {
-		_markerPos = getMarkerPos format["wp_waypoint_express_%1_01", D_LOCATION];
-	} else {
-		_markerPos = getMarkerPos format["wp_waypoint_%1_01", D_LOCATION];
-	};
+	_markerPos = getMarkerPos "mrk_flight_waypoint";
 	private _vel = velocity us_airplane_01;
 	us_airplane_01 setPosASL [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 1500)];
-	us_airplane_01 setDir (markerDir format["wp_waypoint_%1_01", D_LOCATION]);
+	us_airplane_01 setDir (markerDir "mrk_flight_waypoint");
 	us_airplane_01 setVelocity _vel;
 	_group = group us_airplane_01;
 	deleteWaypoint [_group, 0]; 
-	_wp = _group addWaypoint [getMarkerPos format["wp_%1_airfield", D_LOCATION], 0, 0];
+	_wp = _group addWaypoint [getMarkerPos "mrk_airfield", 0, 0];
 	_wp setWaypointCombatMode "YELLOW";
 	_wp setWaypointBehaviour "SAFE";
 	_wp setWaypointSpeed "LIMITED";
@@ -50,11 +45,6 @@ if (isServer) then {
 		{
 			remoteExecCall ["Fn_Local_FastTravel_Wokeup_Express", _x];
 		} forEach assault_group;
-
-		sleep 8;
-		us_airplane_01 setHitPointDamage ["hitHull", 1.0, true];
-		sleep 1;
-		us_airplane_01 setDamage [1, true];
 	} else {
 		{
 			remoteExecCall ["Fn_Local_FastTravel_Wokeup", _x];

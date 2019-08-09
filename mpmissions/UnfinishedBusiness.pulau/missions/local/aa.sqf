@@ -54,7 +54,7 @@ if (hasInterface) then {
 				[format [localize "TASK_07_DESC", D_LOCATION],
 				localize "TASK_07_TITLE",
 				localize "TASK_ORIG_01"],
-				getMarkerPos (format ["wp_%1_commtower", D_LOCATION]),
+				getMarkerPos "mrk_east_commtower",
 				"CREATED",
 				0,
 				true

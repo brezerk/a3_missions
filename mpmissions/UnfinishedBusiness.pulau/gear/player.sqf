@@ -74,12 +74,18 @@ player removeItem "ItemCompass";
 
 if ((random 100) <= _chance_lost_radio) then {
 	if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
+		player unassignItem "ItemRadio";
+		player removeItem "ItemRadio";
 		player unassignItem "ACRE_PRC152";
 		player removeItem "ACRE_PRC152";
+		player removeWeapon "ACRE_PRC152";
 	} else {
 		if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
+			player unassignItem "ItemRadio";
+			player removeItem "ItemRadio";
 			player unassignItem "tf_anprc152";
 			player removeItem "tf_anprc152";
+			player removeWeapon "tf_anprc152";
 		} else {
 			comment "Fallback to native arma3 radio";
 			player unassignItem "ItemRadio";
@@ -88,6 +94,6 @@ if ((random 100) <= _chance_lost_radio) then {
 	};
 };
 
-sleep 1;
+sleep 3;
 
 player action ["openParachute", player];

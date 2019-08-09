@@ -22,29 +22,47 @@ Spawn start objectives, triggers for informator contact
 
 //Player side triggers
 // Client side code
-if (hasInterface) then {
-	Fn_Local_Create_KillLeader = {
-		private _trg = createTrigger ["EmptyDetector", getMarkerPos "mrk_airfield"];
-		_trg setTriggerArea [500, 500, 0, false];
-		_trg setTriggerActivation ["ANYPLAYER", "PRESENT", true];
+if (hasInterface) then {};
+
+if (isServer) then {
+	
+	Fn_Spawn_East_AntiAir = {
+		private _marker = "mrk_aa";
+		private _pos = getMarkerPos _marker;
+		private _class = "CUP_O_2S6_RU";
+		obj_east_antiair = createVehicle [_class, _pos];
+		obj_east_antiair setDir (markerDir _marker);
+		private _crew = createVehicleCrew (obj_east_antiair);
+		
+		publicVariable "obj_east_antiair";
+		
+		private['_trg'];
+		_trg = createTrigger ["EmptyDetector", getPos obj_east_antiair];
+		_trg setTriggerArea [0, 0, 0, false];
+		_trg setTriggerActivation ["NONE", "PRESENT", false];
 		_trg setTriggerStatements [
-			"(vehicle player) in thisList",
-			"[ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_07', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;",
+			"!alive obj_east_antiair || !canFire obj_east_antiair;",
+			"call Fn_Task_AA_Complete; deleteVehicle thisTrigger;",
 			""
 		];
-		if (playerSide == west) then {
-			[
-				player,
-				"t_kill_leader",
-				[format [localize "TASK_01_DESC", D_LOCATION],
-				localize "TASK_01_TITLE",
-				localize "TASK_ORIG_01"],
-				getMarkerPos "mrk_airfield",
-				"CREATED",
-				0,
-				true
-			] call BIS_fnc_taskCreate;
-			['t_kill_leader', "kill"] call BIS_fnc_taskSetType;
+	};
+
+	Fn_Task_Create_AA = {
+		if (hasInterface) then {
+			remoteExecCall ["Fn_Local_Create_MissionAA"];
+		} else {
+			remoteExecCall ["Fn_Local_Create_MissionAA", -2];
 		};
 	};
+	
+	Fn_Task_AA_Complete = {
+		if (hasInterface) then {
+			remoteExecCall ["Fn_Local_Task_AA_Complete"];
+		} else {
+			remoteExecCall ["Fn_Local_Task_AA_Complete", -2];
+		};
+
+		task_complete_antiair = true;
+	};
+
 };
