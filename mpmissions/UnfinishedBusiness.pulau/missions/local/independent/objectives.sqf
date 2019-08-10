@@ -28,7 +28,7 @@ if (hasInterface) then {
 		if (playerSide == west) then {
 			[
 				player,
-				"t_destroy_ammo",
+				"t_west_destroy_ammo",
 				[format [localize "TASK_12_DESC", D_LOCATION],
 				localize "TASK_12_TITLE",
 				localize "TASK_ORIG_01"],
@@ -37,6 +37,7 @@ if (hasInterface) then {
 				0,
 				true
 			] call BIS_fnc_taskCreate;
+			['t_west_destroy_ammo', "destroy"] call BIS_fnc_taskSetType;
 		};
 	};
 	Fn_Local_Create_Mission_DestroyFuel = {
@@ -44,7 +45,7 @@ if (hasInterface) then {
 		if (playerSide == west) then {
 			[
 				player,
-				"t_destroy_fuel",
+				"t_west_destroy_fuel",
 				[format [localize "TASK_13_DESC", D_LOCATION],
 				localize "TASK_13_TITLE",
 				localize "TASK_ORIG_01"],
@@ -53,6 +54,7 @@ if (hasInterface) then {
 				0,
 				true
 			] call BIS_fnc_taskCreate;
+			['t_west_destroy_fuel', "destroy"] call BIS_fnc_taskSetType;
 		};
 	};
 	Fn_Local_Create_Mission_DestroyWindMill = {
@@ -60,7 +62,7 @@ if (hasInterface) then {
 		if (playerSide == west) then {
 			[
 				player,
-				"t_destroy_windmill",
+				"t_west_destroy_windmill",
 				[format [localize "TASK_14_DESC", D_LOCATION],
 				localize "TASK_14_TITLE",
 				localize "TASK_ORIG_01"],
@@ -69,6 +71,7 @@ if (hasInterface) then {
 				0,
 				true
 			] call BIS_fnc_taskCreate;
+			['t_west_destroy_windmill', "destroy"] call BIS_fnc_taskSetType;
 		};
 	};
 	Fn_Local_Create_Mission_KillDoctor = {
@@ -76,7 +79,7 @@ if (hasInterface) then {
 		if (playerSide == west) then {
 			[
 				player,
-				"t_kill_doctor",
+				"t_west_kill_doctor",
 				[format [localize "TASK_15_DESC", D_LOCATION],
 				localize "TASK_15_TITLE",
 				localize "TASK_ORIG_01"],
@@ -85,13 +88,14 @@ if (hasInterface) then {
 				0,
 				true
 			] call BIS_fnc_taskCreate;
+			['t_west_kill_doctor', "kill"] call BIS_fnc_taskSetType;
 		};
 	};
 	
 	Fn_Local_Task_KillDoctor_Complete = {
 		switch (playerSide) do {
 			case west: {
-				['t_kill_doctor', 'Succeeded', localize "TASK_15_TITLE"] call Fn_Local_SetPersonalTaskState;
+				['t_west_kill_doctor', 'Succeeded', localize "TASK_15_TITLE"] call Fn_Local_SetPersonalTaskState;
 			};
 			case independent: {
 				['t_indep_defend_doctor', 'Failed', localize "TASK_15_TITLE"] call Fn_Local_SetPersonalTaskState;
@@ -102,7 +106,7 @@ if (hasInterface) then {
 	Fn_Local_Task_DestroyWindMill_Complete = {
 		switch (playerSide) do {
 			case west: {
-				['t_destroy_windmill', 'Succeeded', localize "TASK_14_TITLE"] call Fn_Local_SetPersonalTaskState;
+				['t_west_destroy_windmill', 'Succeeded', localize "TASK_14_TITLE"] call Fn_Local_SetPersonalTaskState;
 			};
 			case independent: {
 				['t_indep_defend_windmill', 'Failed', localize "TASK_14_TITLE"] call Fn_Local_SetPersonalTaskState;
@@ -113,7 +117,7 @@ if (hasInterface) then {
 	Fn_Local_Task_DestroyFuel_Complete = {
 		switch (playerSide) do {
 			case west: {
-				['t_destroy_fuel', 'Succeeded', localize "TASK_13_TITLE"] call Fn_Local_SetPersonalTaskState;
+				['t_west_destroy_fuel', 'Succeeded', localize "TASK_13_TITLE"] call Fn_Local_SetPersonalTaskState;
 			};
 			case independent: {
 				['t_indep_defend_fuel', 'Failed', localize "TASK_13_TITLE"] call Fn_Local_SetPersonalTaskState;
@@ -124,7 +128,7 @@ if (hasInterface) then {
 	Fn_Local_Task_DestroyAmmo_Complete = {
 		switch (playerSide) do {
 			case west: {
-				['t_destroy_ammo', 'Succeeded', localize "TASK_12_TITLE"] call Fn_Local_SetPersonalTaskState;
+				['t_west_destroy_ammo', 'Succeeded', localize "TASK_12_TITLE"] call Fn_Local_SetPersonalTaskState;
 			};
 			case independent: {
 				['t_indep_defend_ammo', 'Failed', localize "TASK_12_TITLE"] call Fn_Local_SetPersonalTaskState;

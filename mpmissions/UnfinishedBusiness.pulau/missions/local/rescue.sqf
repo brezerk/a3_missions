@@ -27,9 +27,9 @@ if (hasInterface) then {
 		if (playerSide == west) then {
 			[
 				player,
-				"t_us_rescue",
+				"t_west_rescue",
 				[
-				format [localize "TASK_09_DESC", D_LOCATION, D_LOCATION],
+				format [localize "TASK_09_DESC", D_LOCATION],
 				format [localize "TASK_09_TITLE"],
 				localize "TASK_ORIG_01"],
 				getPos us_liberty_01,
@@ -37,11 +37,11 @@ if (hasInterface) then {
 				0,
 				true
 			] call BIS_fnc_taskCreate;
-			['t_us_rescue', "run"] call BIS_fnc_taskSetType;
+			['t_west_rescue', "run"] call BIS_fnc_taskSetType;
 			if (!(player getVariable ["is_assault_group", false])) then {
 				[
 					player,
-					"t_us_rescue_crash",
+					"t_west_rescue_crash",
 					[
 					format [localize "TASK_10_DESC", D_LOCATION, D_LOCATION],
 					format [localize "TASK_10_TITLE"],
@@ -51,9 +51,9 @@ if (hasInterface) then {
 					0,
 					true
 				] call BIS_fnc_taskCreate;
-				['t_us_rescue_crash', "search"] call BIS_fnc_taskSetType;
+				['t_west_rescue_crash', "search"] call BIS_fnc_taskSetType;
 				{
-					private _task = format["t_us_rescue_city_%1", _forEachIndex];
+					private _task = format["t_west_rescue_city_%1", _forEachIndex];
 					[
 						player,
 						_task,

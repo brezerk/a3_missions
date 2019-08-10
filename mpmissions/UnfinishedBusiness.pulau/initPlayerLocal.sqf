@@ -47,7 +47,7 @@ player setVariable ["is_civilian", false, true];
 #include "missions\local\informator.sqf";
 #include "missions\local\aa.sqf";
 #include "missions\local\leader.sqf";
-#include "missions\local\csat.sqf";
+#include "missions\local\east.sqf";
 #include "missions\local\west.sqf";
 #include "missions\local\cargo.sqf";
 #include "missions\local\crash_site.sqf";
@@ -84,26 +84,29 @@ Fn_Local_FailTasks = {
 			if (!(taskState _task in ["Succeeded", "Failed"])) then { _task setTaskState "Canceled"; };
 		};
 	} forEach [
-		't_us_rescue',
-		't_scat_defend_aa',
-		't_scat_defend_comm_tower',
-		't_scat_eliminate_surv',
-		't_destroy_aa',
-		't_destroy_comtower',
-		't_kill_leader',
+		't_west_rescue',
+		't_east_defend_aa',
+		't_east_defend_commtower',
+		't_east_eliminate_survivals',
+		't_west_destroy_aa',
+		't_west_destroy_comtower',
+		't_west_kill_leader',
 		't_civ_boat',
 		//'t_civ_police',
 		't_civ_weapon_stash',
-		't_rebel_weapon_stash',
-		't_libirate_0',
-		't_libirate_1',
-		't_us_rescue_crash',
-		't_us_rescue_city_0',
-		't_us_rescue_city_1',
+		't_civ_weapon_stash',
+		't_civ_libirate_0',
+		't_civ_libirate_1',
+		't_west_rescue_crash',
+		't_west_rescue_city_0',
+		't_west_rescue_city_1',
 		't_east_crash',
 		't_east_city_0',
-		't_east_city_1'
-		
+		't_east_city_1',
+		't_west_destroy_windmill',
+		't_west_destroy_fuel',
+		't_west_kill_doctor',
+		't_west_destroy_ammo'
 	];
 };
 

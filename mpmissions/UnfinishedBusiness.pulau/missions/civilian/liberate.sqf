@@ -25,7 +25,7 @@ Spawn start objectives, triggers for game intro and players allocation
 if (hasInterface) then {
 	Fn_Local_Create_Task_Civilian_Liberate_MissionIntro = {
 		{
-			private _task = format["t_libirate_%1", _forEachIndex];
+			private _task = format["t_civ_libirate_%1", _forEachIndex];
 			[
 				player,
 				_task,
@@ -58,7 +58,7 @@ if (hasInterface) then {
 	
 	Fn_Task_Civilian_Liberate_LiberateCity0 = {
 		if (player getVariable ["is_civilian", false]) then {
-			_task = ['t_libirate_0', player] call BIS_fnc_taskReal;
+			_task = ['t_civ_libirate_0', player] call BIS_fnc_taskReal;
 			if (!isNull _task) then {
 				["TaskSucceeded",["", localize "TASK_CIV_03_DONE"]] call BIS_fnc_showNotification;
 				_task setTaskState "Succeeded";
@@ -68,7 +68,7 @@ if (hasInterface) then {
 	
 	Fn_Task_Civilian_Liberate_LiberateCity1 = {
 		if (player getVariable ["is_civilian", false]) then {
-			_task = ['t_libirate_1', player] call BIS_fnc_taskReal;
+			_task = ['t_civ_libirate_1', player] call BIS_fnc_taskReal;
 			if (!isNull _task) then {
 				["TaskSucceeded",["", localize "TASK_CIV_03_DONE"]] call BIS_fnc_showNotification;
 				_task setTaskState "Succeeded";

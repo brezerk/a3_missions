@@ -25,7 +25,7 @@ Spawn start objectives, triggers for informator contact
 if (hasInterface) then {
 
 	private ["_trg"];
-	_trg = createTrigger ["EmptyDetector", getMarkerPos (format ["wp_%1_aa", D_LOCATION])];
+	_trg = createTrigger ["EmptyDetector", getMarkerPos "mrk_aa"];
 	_trg setTriggerArea [180, 180, 0, false];
 	_trg setTriggerActivation ["ANYPLAYER", "PRESENT", true];
 	_trg setTriggerStatements [
@@ -38,20 +38,20 @@ if (hasInterface) then {
 		if (playerSide == west) then {
 			[
 				player,
-				"t_destroy_aa",
-				[format [localize "TASK_06_DESC", D_LOCATION],
+				"t_west_destroy_aa",
+				[localize "TASK_06_DESC",
 				localize "TASK_06_TITLE",
 				localize "TASK_ORIG_01"],
-				getMarkerPos (format ["wp_%1_aa", D_LOCATION]),
+				getMarkerPos "mrk_aa",
 				"CREATED",
 				0,
 				true
 			] call BIS_fnc_taskCreate;
-			['t_destroy_aa', "destroy"] call BIS_fnc_taskSetType;
+			['t_west_destroy_aa', "destroy"] call BIS_fnc_taskSetType;
 			[
 				player,
-				"t_destroy_comtower",
-				[format [localize "TASK_07_DESC", D_LOCATION],
+				"t_west_destroy_comtower",
+				[localize "TASK_07_DESC",
 				localize "TASK_07_TITLE",
 				localize "TASK_ORIG_01"],
 				getMarkerPos "mrk_east_commtower",
@@ -59,28 +59,28 @@ if (hasInterface) then {
 				0,
 				true
 			] call BIS_fnc_taskCreate;
-			['t_destroy_comtower', "destroy"] call BIS_fnc_taskSetType;
+			['t_west_destroy_comtower', "destroy"] call BIS_fnc_taskSetType;
 		};
 	};
 	
 	Fn_Local_Task_AA_Complete = {
 		switch (playerSide) do {
 			case west: {
-				['t_destroy_aa', 'Succeeded', localize "TASK_06_TITLE"] call Fn_Local_SetPersonalTaskState;
+				['t_west_destroy_aa', 'Succeeded', localize "TASK_06_TITLE"] call Fn_Local_SetPersonalTaskState;
 			};
 			case east: {
-				['t_scat_defend_aa', 'Failed', localize "TASK_06_TITLE"] call Fn_Local_SetPersonalTaskState;
+				['t_east_defend_aa', 'Failed', localize "TASK_06_TITLE"] call Fn_Local_SetPersonalTaskState;
 			};
 		};
 	};
 	
-	Fn_Local_Task_Commtower_Complete = {
+	Fn_Local_Task_Destroy_Commtower_Complete = {
 		switch (playerSide) do {
 			case west: {
-				['t_destroy_comtower', 'Succeeded', localize "TASK_07_TITLE"] call Fn_Local_SetPersonalTaskState;
+				['t_west_destroy_comtower', 'Succeeded', localize "TASK_07_TITLE"] call Fn_Local_SetPersonalTaskState;
 			};
 			case east: {
-				['t_scat_defend_comm_tower', 'Failed', localize "TASK_07_TITLE"] call Fn_Local_SetPersonalTaskState;
+				['t_east_defend_commtower', 'Failed', localize "TASK_07_TITLE"] call Fn_Local_SetPersonalTaskState;
 			};
 		};
 	};

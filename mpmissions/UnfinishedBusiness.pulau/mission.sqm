@@ -16,11 +16,11 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=614;
+		nextID=798;
 	};
 	class Camera
 	{
-		pos[]={1426.7732,1546.1415,3329.9834};
+		pos[]={1355.7855,1797.0985,3312.8813};
 		dir[]={-0.0099879066,-0.99994999,-0.00048716925};
 		up[]={-0.99876267,0.00999978,-0.048715562};
 		aside[]={-0.048717998,0,0.99881262};
@@ -12512,7 +12512,7 @@ class Mission
 			position[]={1207.3199,7.1939998,2627.075};
 			name="wp_Monyet_heli";
 			type="c_air";
-			angle=359.43991;
+			angle=359.43982;
 			id=6789;
 			atlOffset=-0.1260004;
 		};
@@ -12522,7 +12522,7 @@ class Mission
 			position[]={1095.276,7.6129999,2587.0559};
 			name="wp_Monyet_cesna";
 			type="c_plane";
-			angle=0.43499947;
+			angle=0.43499929;
 			id=6790;
 			atlOffset=-0.076600552;
 		};
@@ -12636,7 +12636,7 @@ class Mission
 			position[]={425.65601,-19.761999,12060.228};
 			name="wp_XXX_heli";
 			type="c_air";
-			angle=270.21991;
+			angle=270.21985;
 			id=6805;
 			atlOffset=2.6386013;
 		};

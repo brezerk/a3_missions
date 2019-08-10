@@ -35,7 +35,7 @@ if (hasInterface) then {
 		if (playerSide == west) then {
 			[
 				player,
-				"t_kill_leader",
+				"t_west_kill_leader",
 				[format [localize "TASK_01_DESC", D_LOCATION],
 				localize "TASK_01_TITLE",
 				localize "TASK_ORIG_01"],
@@ -44,7 +44,7 @@ if (hasInterface) then {
 				0,
 				true
 			] call BIS_fnc_taskCreate;
-			['t_kill_leader', "kill"] call BIS_fnc_taskSetType;
+			['t_west_kill_leader', "kill"] call BIS_fnc_taskSetType;
 		};
 	};
 };

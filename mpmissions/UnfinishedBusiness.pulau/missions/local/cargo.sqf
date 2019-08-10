@@ -26,11 +26,11 @@ Spawn start objectives, triggers for informator contact
 if (hasInterface) then {
 
 	Fn_Local_Create_Task_West_WaponStash = {
-		_task = ["t_rebel_weapon_stash", player] call BIS_fnc_taskReal;
+		_task = ["t_civ_weapon_stash", player] call BIS_fnc_taskReal;
 		if (isNull _task) then {
 			[
 				player,
-				"t_rebel_weapon_stash",
+				"t_civ_weapon_stash",
 				[localize "TASK_16_DESC",
 				localize "TASK_16_TITLE",
 				localize "TASK_ORIG_01"],
@@ -39,7 +39,7 @@ if (hasInterface) then {
 				0,
 				true
 			] call BIS_fnc_taskCreate;
-			['t_rebel_weapon_stash', "search"] call BIS_fnc_taskSetType;
+			['t_civ_weapon_stash', "search"] call BIS_fnc_taskSetType;
 			
 			trgCivStash00 = createTrigger ["EmptyDetector", getMarkerPos "civ_stash_00"];
 			trgCivStash00 setTriggerArea [50, 50, 0, false];

@@ -180,9 +180,9 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>Додатково: Знищіть ППО</Russian>
 			</Key>
 			<Key ID="TASK_06_DESC">
-				<Original>AOC is messing the things. Their air defense battery covers the island. We need to destroy &lt;marker name = 'wp_%1_aa'&gt;it&lt;/marker&gt;.</Original>
-				<English>AOC is messing the things. Their air defense battery covers the island. We need to destroy &lt;marker name = 'wp_%1_aa'&gt;it&lt;/marker&gt;.</English>
-				<Russian>AOC влізле не в своє діло. Їх батарея ППО прикриває острів. Нам потрібно вивести &lt;marker name = 'wp_%1_aa'&gt;ППО&lt;/marker&gt; з ладу.</Russian>
+				<Original>AOC is messing the things. Their air defense battery covers the island. We need to destroy &lt;marker name = 'mrk_aa'&gt;it&lt;/marker&gt;.</Original>
+				<English>AOC is messing the things. Their air defense battery covers the island. We need to destroy &lt;marker name = 'mrk_aa'&gt;it&lt;/marker&gt;.</English>
+				<Russian>AOC влізле не в своє діло. Їх батарея ППО прикриває острів. Нам потрібно вивести &lt;marker name = 'mrk_aa'&gt;ППО&lt;/marker&gt; з ладу.</Russian>
 			</Key>
 			<Key ID="TASK_07_TITLE">
 				<Original>Optional: Destroy commtower</Original>
@@ -210,9 +210,9 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>Рятувальна місія</Russian>
 			</Key>
 			<Key ID="TASK_09_DESC">
-				<Original>Couple survivors are scattered over the &lt;marker name = 'wp_%1_airfield'&gt;%2 island&lt;/marker&gt;. Find and bring them back to USS "Freedom".</Original>
-				<English>Couple survivors are scattered over the &lt;marker name = 'wp_%1_airfield'&gt;%2 island&lt;/marker&gt;. Find and bring them back to USS "Freedom".</English>
-				<Russian>Декілька виживших розкидані по &lt;marker name = 'wp_%1_airfield'&gt;острову %2&lt;/marker&gt;, знайдить їх та поверніть на борт USS "Freedom".</Russian>
+				<Original>Couple survivors are scattered over the &lt;marker name = 'mrk_airfield'&gt;%1 island&lt;/marker&gt;. Find and bring them back to USS "Freedom".</Original>
+				<English>Couple survivors are scattered over the &lt;marker name = 'mrk_airfield'&gt;%1 island&lt;/marker&gt;. Find and bring them back to USS "Freedom".</English>
+				<Russian>Декілька виживших розкидані по &lt;marker name = 'mrk_airfield'&gt;острову %1&lt;/marker&gt;, знайдить їх та поверніть на борт USS "Freedom".</Russian>
 			</Key>
 			<Key ID="TASK_10_TITLE">
 				<Original>Crash site</Original>
@@ -290,9 +290,9 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>Захистить ППО</Russian>
 			</Key>
 			<Key ID="TASK_AOC_01_DESC">
-				<Original>Our air defense battery covers the island. We need to defend &lt;marker name = 'wp_%1_aa'&gt;it&lt;/marker&gt;.</Original>
-				<English>Our air defense battery covers the island. We need to defend &lt;marker name = 'wp_%1_aa'&gt;it&lt;/marker&gt;.</English>
-				<Russian>Наша батарея ППО прикриває острів. Нам потрібно захистити &lt;marker name = 'wp_%1_aa'&gt;ППО&lt;/marker&gt;.</Russian>
+				<Original>Our air defense battery covers the island. We need to defend &lt;marker name = 'mrk_aa'&gt;it&lt;/marker&gt;.</Original>
+				<English>Our air defense battery covers the island. We need to defend &lt;marker name = 'mrk_aa'&gt;it&lt;/marker&gt;.</English>
+				<Russian>Наша батарея ППО прикриває острів. Нам потрібно захистити &lt;marker name = 'mrk_aa'&gt;ППО&lt;/marker&gt;.</Russian>
 			</Key>
 			<Key ID="TASK_AOC_02_TITLE">
 				<Original>Defend commtower</Original>

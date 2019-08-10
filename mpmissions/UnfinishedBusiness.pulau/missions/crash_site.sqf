@@ -145,7 +145,7 @@ if (isServer) then {
 		_free_landing_markers = _free_landing_markers - [_marker];
 		private _markerPos = getMarkerPos _marker;
 		//parachute
-		_x setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 200 + random 100)];
+		_x setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 300 + random 100)];
 		_x setVariable ["ACE_isUnconscious", true, true];
 		[D_DIFFICLTY] remoteExecCall ["Fn_Local_Jet_Player_DoParadrop", _x];
 		[getPos _x, 300] execVM "addons\brezblock\utils\controller.sqf";
@@ -181,7 +181,7 @@ if (isServer) then {
 	trgEvacPoint setTriggerActivation ["WEST", "PRESENT", false];
 	trgEvacPoint setTriggerStatements [
 			"({alive _x && side _x == west} count (allPlayers -  entities 'HeadlessClient_F' ) == {alive _x && _x inArea thisTrigger && side _x == west} count (allPlayers - entities 'HeadlessClient_F' )) && (({alive _x && side _x == west} count allPlayers) > 0) && (count assault_group > 0)",
-			"['t_us_rescue', 'SUCCEEDED'] call BIS_fnc_taskSetState; call Fn_Endgame_EvacPoint;",
+			"['t_west_rescue', 'SUCCEEDED'] call BIS_fnc_taskSetState; call Fn_Endgame_EvacPoint;",
 			""
 	];
 	

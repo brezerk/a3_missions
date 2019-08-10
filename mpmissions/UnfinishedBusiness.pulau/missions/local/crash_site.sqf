@@ -62,7 +62,7 @@ if (hasInterface) then {
 					_task = ['t_crash_site', player] call BIS_fnc_taskReal;
 					_title = localize "TASK_04_TITLE";
 				} else {
-					_task = ['t_us_rescue_crash', player] call BIS_fnc_taskReal;
+					_task = ['t_west_rescue_crash', player] call BIS_fnc_taskReal;
 					_title = localize "TASK_10_TITLE";
 				};
 			};
