@@ -31,28 +31,28 @@ if (isServer) then {
 	
 	private _grp = createGroup [civilian, true];
 	
-	for "_i" from 0 to (round (_radius / 25)) do
-	{
+	_placeCivSpot = {
+		params['_grp', '_center', '_radius'];
 		private _pos = [_center, 5, _radius, 3, 0, 0, 0] call BIS_fnc_findSafePos;
+
 		private _obj = _grp createUnit ["ModuleCivilianPresenceSafeSpot_F", _pos, [], 0, "NONE"];
-		_obj setVariable ["#capacity",    3];
-		_obj setVariable ["#usebuilding", true];
-		_obj setVariable ["#terminal",    false];
+		_obj setVariable ["#capacity",1];
+		_obj setVariable ["#usebuilding",false];
+		_obj setVariable ["#terminal",false];
+
+		_obj = _grp createUnit ["ModuleCivilianPresenceUnit_F", _pos, [], 0, "NONE"];
 	};
 	
-	for "_i" from 0 to (round (_radius / 25) + 1) do
+	for "_i" from 0 to (round (_radius / 25) + 2) do
 	{
-		private _pos = [_center, 5, _radius, 3, 0, 0, 0] call BIS_fnc_findSafePos;
-		private _obj = _grp createUnit ["ModuleCivilianPresenceUnit_F", _pos, [], 0, "NONE"];
-		_obj setVariable ["#capacity",    3];
-		_obj setVariable ["#usebuilding", false];
-		_obj setVariable ["#terminal",    false];
+		
+		[_grp, _center, _radius] call _placeCivSpot;
 	};
 	
 	private _pos = [_center, 5, _radius, 3, 0, 0, 0] call BIS_fnc_findSafePos;
 	private _obj = _grp createUnit ["ModuleCivilianPresence_F", _pos, [], 0, "NONE"];
 	_obj setVariable ["#area", [_center, _radius, _radius, 0, true, -1]];  // https://community.bistudio.com/wiki/inAreaArray 
-	_obj setVariable ["#debug",        false ]; // Debug mode on
+	_obj setVariable ["#debug",        D_DEBUG ]; // Debug mode on
 	_obj setVariable ["#useagents",    true ];
 	_obj setVariable ["#usepanicmode", false];
 	_obj setVariable ["#unitcount",    (round (_radius / 25))];
