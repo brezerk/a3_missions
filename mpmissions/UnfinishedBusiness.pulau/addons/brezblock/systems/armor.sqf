@@ -19,7 +19,7 @@
 /*
 Create CBA defend
 	Arguments: [_marker]
-	Usage: [_marker] call BrezBlock_fnc_CreateDefend;
+	Usage: [_marker] call BrezBlock_fnc_CreateArmor;
 	Return: Group
 */
 if (isServer) then {

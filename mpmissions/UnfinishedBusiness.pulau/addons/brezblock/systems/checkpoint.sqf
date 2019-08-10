@@ -19,7 +19,7 @@
 /*
 Create CBA defend
 	Arguments: [_marker]
-	Usage: [_marker] call BrezBlock_fnc_CreateDefend;
+	Usage: [_marker] call BrezBlock_fnc_CreateCheckpoint;
 	Return: Group
 */
 if (isServer) then {
@@ -307,14 +307,7 @@ if (isServer) then {
 		_vehicle setDir (_dir + 180);
 		private _crew = createVehicleCrew (_vehicle);
 		
-		private _def_marker = createMarker [format ["wp_defend_%1", _marker], _pos];
-		_def_marker setMarkerAlpha 0;
-		_def_marker setMarkerSize [25, 25];
-		_def_marker setMarkerBrush "SolidBorder";
-		_def_marker setMarkerShape "ellipse";
-		_def_marker setMarkerColor (getMarkerColor _marker);
-		[_def_marker] call BrezBlock_fnc_CreateDefend;
-		deleteMarker _def_marker;
+		[_pos, _side, 3, 50] call BrezBlock_fnc_CreateDefend;
 
 	};
 };

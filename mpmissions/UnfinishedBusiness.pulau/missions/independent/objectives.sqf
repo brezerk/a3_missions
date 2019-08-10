@@ -121,26 +121,10 @@ if (isServer) then {
 				};
 			};
 			
-			deleteMarker _marker;
-			_marker = createMarker ["wp_defend_obj", _center];
-			_marker setMarkerAlpha 0;
-			_marker setMarkerSize [25, 25];
-			_marker setMarkerBrush "SolidBorder";
-			_marker setMarkerShape "ellipse";
-			_marker setMarkerColor "ColorGUER";
-			[_marker] call BrezBlock_fnc_CreateDefend;
-			[_marker] call BrezBlock_fnc_CreateDefend;
-			deleteMarker _marker;
+			[_center, resistance, 2, 150] call BrezBlock_fnc_CreatePatrol;
+			[_center, resistance, 2, 150] call BrezBlock_fnc_CreatePatrol;
 			
-			_marker = createMarker ["wp_defend_obj", _center];
-			_marker setMarkerAlpha 0;
-			_marker setMarkerSize [50, 50];
-			_marker setMarkerBrush "DiagGrid";
-			_marker setMarkerShape "ellipse";
-			_marker setMarkerColor "ColorGUER";
-			[_marker] call BrezBlock_fnc_CreatePatrol;
-			[_marker] call BrezBlock_fnc_CreatePatrol;
-			deleteMarker _marker;
+			[_center, resistance, 5, 50] call BrezBlock_fnc_CreateDefend;
 		};
 	};
 	

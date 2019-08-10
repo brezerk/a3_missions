@@ -24,8 +24,7 @@ Spawn start objectives, triggers for informator contact
 // Client side code
 if (hasInterface) then {
 
-	private ["_trg"];
-	_trg = createTrigger ["EmptyDetector", getMarkerPos "mrk_aa"];
+	private _trg = createTrigger ["EmptyDetector", getMarkerPos "mrk_aa"];
 	_trg setTriggerArea [180, 180, 0, false];
 	_trg setTriggerActivation ["ANYPLAYER", "PRESENT", true];
 	_trg setTriggerStatements [

@@ -48,7 +48,7 @@ if (isServer) then {
 			};
 			case "SolidBorder": {
 				private _pos = getMarkerPos _marker;
-				_grp = [_marker] call BrezBlock_fnc_CreateDefend;
+				_grp = [_marker] call BrezBlock_fnc_MarkerCreateDefend;
 				{
 					if ((markerType _x) in ["b_armor", "o_armor", "n_armor"]) then {
 						private _range = getMarkerSize _marker select 0;
@@ -59,7 +59,7 @@ if (isServer) then {
 					};
 				} forEach allMapMarkers;
 			};
-			case "DiagGrid": {_grp = [_marker] call BrezBlock_fnc_CreatePatrol;};
+			case "DiagGrid": {_grp = [_marker] call BrezBlock_fnc_MarkerCreatePatrol;};
 			case "Horizontal": {
 				//_marker setMarkerAlpha 1;
 				[_marker] call BrezBlock_fnc_CreateCheckPoint;

@@ -18,14 +18,13 @@
 
 /*
 Create CBA defend
-	Arguments: [_marker]
-	Usage: [_marker] call BrezBlock_fnc_CreateDefend;
+	Arguments: [_center, _side, _count, _radius]
+	Usage: [_center, _side, _count, _radius] call BrezBlock_fnc_CreateDefend;
 	Return: Group
 */
 if (isServer) then {
 
-	params['_marker'];
-	private['_side'];
+	params['_center', '_side', '_count', '_radius'];
 
 	_Fn_BrezBlock_CreateRandomDefendSquad = {
 		params['_side', '_count'];
@@ -177,26 +176,7 @@ if (isServer) then {
 		};
 		_grp;
 	};
-	
-	private _radius = getMarkerSize _marker select 0;
-	private _center = getMarkerPos _marker;
-	
-	private _count = round (_radius / 25) + D_DIFFICLTY + 3;
-	
-	//https://community.bistudio.com/wiki/Arma_3_CfgMarkerColors
-	switch (getMarkerColor _marker) do
-	{
-		case "ColorWEST": { _side = west; };
-		case "ColorEAST": { _side = east; };
-		case "ColorGUER": { _side = resistance; };
-		case "ColorWEST": { _side = civilian; };
-		default {
-			systemChat format ["Error: %1", _marker];
-		};
-	};
-	
-	if (isNil "_side") exitWith {};
-	
+		
 	private _cfg = [_side, _count] call _Fn_BrezBlock_CreateRandomDefendSquad;
 	private _pos = [_center, 5, _radius, 3, 0, 0, 0] call BIS_fnc_findSafePos;
 	

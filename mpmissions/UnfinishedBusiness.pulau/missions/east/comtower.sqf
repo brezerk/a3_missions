@@ -56,25 +56,11 @@ if (isServer) then {
 		//Publist to every client
 		publicVariable "obj_east_comtower";
 		
-		//FIXME: No need to create marker, really, why? Just spawn them directly.
-		_marker = createMarker ["wp_defend_commtower", _center];
-		_marker setMarkerAlpha 0;
-		_marker setMarkerSize [25, 25];
-		_marker setMarkerBrush "SolidBorder";
-		_marker setMarkerShape "ellipse";
-		_marker setMarkerColor "ColorEAST";
-		[_marker] call BrezBlock_fnc_CreateDefend;
-		deleteMarker _marker;
+		[_center, east, 5, 50] call BrezBlock_fnc_CreateDefend;
 	
-		//FIXME: No need to create marker, really, why? Just spawn them directly.
-		_marker = createMarker ["wp_patrol_commtower", _center];
-		_marker setMarkerAlpha 0;
-		_marker setMarkerSize [50, 50];
-		_marker setMarkerBrush "DiagGrid";
-		_marker setMarkerShape "ellipse";
-		_marker setMarkerColor "ColorEAST";
-		[_marker] call BrezBlock_fnc_CreatePatrol;
-		deleteMarker _marker;
+		[_center, east, 2, 50] call BrezBlock_fnc_CreatePatrol;
+		[_center, east, 2, 200] call BrezBlock_fnc_CreatePatrol;
+		
 		
 		private _trg = createTrigger ["EmptyDetector", getPos obj_east_comtower];
 		_trg setTriggerArea [0, 0, 0, false];

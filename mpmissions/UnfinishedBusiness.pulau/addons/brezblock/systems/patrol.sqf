@@ -18,13 +18,12 @@
 
 /*
 Create CBA patrol
-	Arguments: [_marker]
-	Usage: [_marker] call BrezBlock_fnc_CreatePatrol;
+	Arguments: [_center, _side, _count, _radius]
+	Usage: [_center, _side, _count, _radius] call BrezBlock_fnc_CreatePatrol;
 	Return: Group
 */
 if (isServer) then {
-	params['_marker'];
-	private['_side'];
+	params['_center', '_side', '_count', '_radius'];
 
 	_Fn_BrezBlock_CreateRandomPatrolSquad = {
 		params['_side', '_count'];
@@ -132,20 +131,7 @@ if (isServer) then {
 		};
 		_grp;
 	};
-	
-	private _radius = getMarkerSize _marker select 0;
-	private _center = getMarkerPos _marker;
 
-	private _count = round (_radius / 50) + D_DIFFICLTY;
-	
-	//https://community.bistudio.com/wiki/Arma_3_CfgMarkerColors
-	switch (getMarkerColor _marker) do
-	{
-		case "ColorWEST": { _side = west; };
-		case "ColorEAST": { _side = east; };
-		case "ColorGUER": { _side = resistance; };
-		case "ColorWEST": { _side = civilian; };
-	};
 	private _cfg = [_side, _count] call _Fn_BrezBlock_CreateRandomPatrolSquad;
 	private _pos = [_center, 5, _radius, 3, 0, 0, 0] call BIS_fnc_findSafePos;
 	//http://arma3scriptingtutorials.blogspot.com/2014/02/config-viewer-what-is-it-and-how-to-use.html
