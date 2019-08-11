@@ -46,7 +46,7 @@ if (isServer) then {
 		_fire attachTo [_crater, [0, -10.5, 0]];
 		_fire = "test_EmptyObjectForFireBig" createVehicle (_markerPos); 
 		_fire attachTo [_crater, [0, -6, 0]];
-		[_center, resistance, 2, 150] call BrezBlock_fnc_CreatePatrol;
+		[_markerPos, resistance, 2, 150] call BrezBlock_fnc_CreatePatrol;
 		[_markerPos] remoteExec ["Fn_Task_C130J_CrashSite_Info"];
 	};
 	
