@@ -48,8 +48,6 @@ if (isServer) then {
 			private _pos = [_center, 9, _dir + 90] call BIS_Fnc_relPos;
 			private _obj = createVehicle ["CUP_O_Ural_Reammo_RU", _pos, [], 0, "CAN_COLLIDE"];
 			_obj setDir _dir;
-			
-			_markers = _markers - [_marker];
 						
 			private _unitRef = ["defence_point", _center, [0,0,0], 0, true] call LARs_fnc_spawnComp;
 			
@@ -123,8 +121,11 @@ if (isServer) then {
 			
 			[_center, resistance, 2, 150] call BrezBlock_fnc_CreatePatrol;
 			[_center, resistance, 2, 150] call BrezBlock_fnc_CreatePatrol;
-			
 			[_center, resistance, 5, 50] call BrezBlock_fnc_CreateDefend;
+			
+			//Remove marker
+			_markers = _markers - [_marker];
+			deleteMarker _marker;
 		};
 	};
 	

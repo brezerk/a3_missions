@@ -113,5 +113,7 @@ if (isServer) then {
 		_marker = createMarker ["mrk_west_crashsite", _center];
 		_marker setMarkerType "hd_destroy";
 		_marker setMarkerAlpha 0;
+		
+		[_center] call Fn_Task_West_SafeHouse_WaponStash;
 	};
 };

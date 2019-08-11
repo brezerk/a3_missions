@@ -40,6 +40,7 @@ for "_i" from 1 to 3 do {_this addItemToVest "CUP_6Rnd_HE_M203";};
 for "_i" from 1 to 2 do {_this addItemToVest "CUP_7Rnd_45ACP_1911";};
 _this addHeadgear "CUP_H_USMC_HelmetWDL";
 for "_i" from 1 to 2 do {_this addItemToUniform "ACE_Chemlight_UltraHiOrange";};
+_this addItemToUniform "ACE_DefusalKit";
 for "_i" from 1 to (random 15) do {_this addItemToUniform "ACE_Banana";};
 
 comment "Add items";

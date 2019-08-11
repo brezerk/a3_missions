@@ -41,7 +41,7 @@ for "_i" from 1 to 2 do {_this addItemToVest "CUP_HandGrenade_M67";};
 for "_i" from 1 to 2 do {_this addItemToVest "SmokeShellRed";};
 for "_i" from 1 to 2 do {_this addItemToUniform "ACE_Chemlight_UltraHiOrange";};
 _this addHeadgear "CUP_H_USMC_Headset_GoggleW_HelmetWDL";
-
+_this addItemToUniform "ACE_DefusalKit";
 for "_i" from 1 to (random 15) do {_this addItemToUniform "ACE_Banana";};
 
 comment "Add items";

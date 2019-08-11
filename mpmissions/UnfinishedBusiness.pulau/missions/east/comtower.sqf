@@ -35,9 +35,10 @@ if (isServer) then {
 		params['_center'];
 		
 		private _markers = [_center, ["o_mortar"], 3000] call BrezBlock_fnc_GetAllMarkerTypesInRange;
-	
-		private _center = getMarkerPos (selectRandom _markers);
-		private _marker = createMarker ["mrk_east_commtower", _center];
+		private _marker = selectRandom _markers;
+		private _center = getMarkerPos (_marker);
+		deleteMarker _marker;
+		_marker = createMarker ["mrk_east_commtower", _center];
 		_marker setMarkerType "hd_warning";
 		_marker setMarkerText 'AOC Commtower';
 		_marker setMarkerColor "ColorEAST";

@@ -8,22 +8,22 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=7661;
+		nextID=7702;
 	};
 	class MarkerIDProvider
 	{
-		nextID=77;
+		nextID=78;
 	};
 	class LayerIndexProvider
 	{
-		nextID=936;
+		nextID=1028;
 	};
 	class Camera
 	{
-		pos[]={1355.7855,1797.0985,3312.8813};
-		dir[]={-0.0099879066,-0.99994999,-0.00048716925};
-		up[]={-0.99876267,0.00999978,-0.048715562};
-		aside[]={-0.048717998,0,0.99881262};
+		pos[]={1403.0333,24.999634,6789.5078};
+		dir[]={0.73641956,-0.30440557,0.60417777};
+		up[]={0.23533991,0.9525435,0.19307935};
+		aside[]={0.63427931,6.344635e-008,-0.77310908};
 	};
 };
 binarizationWanted=0;
@@ -382,7 +382,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=939;
+		items=975;
 		class Item0
 		{
 			dataType="Logic";
@@ -2909,11 +2909,11 @@ class Mission
 		class Item156
 		{
 			dataType="Marker";
-			position[]={4964.9004,15.995969,4345.106};
+			position[]={4880.7798,4.46521,4318.2744};
 			name="wp_Gurun_paradrop_65";
 			type="b_recon";
 			id=6878;
-			atlOffset=2.0980835e-005;
+			atlOffset=-1.2700686;
 		};
 		class Item157
 		{
@@ -3167,7 +3167,7 @@ class Mission
 			position[]={6068.292,50.873047,5518.5684};
 			name="wp_Gurun_indep_armor_05";
 			type="n_motor_inf";
-			angle=228.24335;
+			angle=228.24326;
 			id=6903;
 			atlOffset=2.2888184e-005;
 		};
@@ -8092,11 +8092,11 @@ class Mission
 		class Item540
 		{
 			dataType="Marker";
-			position[]={4535.4336,-0.25446534,9381.6729};
+			position[]={4485.6519,2.0021973,9484.0029};
 			name="wp_Gurun_paradrop_62";
 			type="b_recon";
 			id=7262;
-			atlOffset=2.1964312e-005;
+			atlOffset=-2.8460841;
 		};
 		class Item541
 		{
@@ -8444,7 +8444,7 @@ class Mission
 			name="wp_Monyet_paradrop_05";
 			type="b_recon";
 			id=7298;
-			atlOffset=2.9774837;
+			atlOffset=2.9774847;
 		};
 		class Item577
 		{
@@ -8718,7 +8718,7 @@ class Mission
 			name="wp_Monyet_paradrop_91";
 			type="b_recon";
 			id=7329;
-			atlOffset=1.465538;
+			atlOffset=1.465539;
 		};
 		class Item608
 		{
@@ -9106,7 +9106,7 @@ class Mission
 			};
 			id=7358;
 			type="Land_HBarrier_01_line_5_green_F";
-			atlOffset=1.4656372;
+			atlOffset=1.4656363;
 		};
 		class Item637
 		{
@@ -9415,7 +9415,7 @@ class Mission
 			};
 			id=7377;
 			type="Land_Pallet_MilBoxes_F";
-			atlOffset=1.4655495;
+			atlOffset=1.4655504;
 		};
 		class Item656
 		{
@@ -9519,7 +9519,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2398.136,10.161369,5323.5249};
-				angles[]={-0,1.0351028,0};
+				angles[]={0,1.0351028,0};
 			};
 			side="Empty";
 			class Attributes
@@ -10303,6 +10303,7 @@ class Mission
 			a=350;
 			b=350;
 			id=7439;
+			atlOffset=9.5367432e-007;
 		};
 		class Item718
 		{
@@ -10594,10 +10595,11 @@ class Mission
 		class Item743
 		{
 			dataType="Marker";
-			position[]={3548.1382,5,2760.9189};
+			position[]={3570.9053,5.8098145,2695.1467};
 			name="wp_Monyet_crashsite_26";
 			type="b_plane";
 			id=7465;
+			atlOffset=-0.63037395;
 		};
 		class Item744
 		{
@@ -10785,11 +10787,11 @@ class Mission
 		class Item766
 		{
 			dataType="Marker";
-			position[]={3466.4771,7.2682562,3196.4832};
+			position[]={3025.1416,7.2682562,3176.6631};
 			name="wp_Monyet_paradrop_01";
 			type="b_recon";
 			id=7488;
-			atlOffset=1.465539;
+			atlOffset=2.2682562;
 		};
 		class Item767
 		{
@@ -11046,7 +11048,7 @@ class Mission
 			name="wp_Monyet_paradrop_66";
 			type="b_recon";
 			id=7517;
-			atlOffset=0.88038528;
+			atlOffset=1.4655209;
 		};
 		class Item796
 		{
@@ -11313,7 +11315,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={1756.9371,41.694965,3096.7424};
-				angles[]={-0,1.5569443,0.3571071};
+				angles[]={0,1.5569443,0.3571071};
 			};
 			side="Empty";
 			flags=4;
@@ -11446,7 +11448,7 @@ class Mission
 			name="wp_Monyet_indep_infrastructure_03";
 			type="n_mortar";
 			id=7554;
-			atlOffset=1.3292789;
+			atlOffset=1.329278;
 		};
 		class Item833
 		{
@@ -11648,7 +11650,7 @@ class Mission
 			position[]={4377.6626,6.2872982,2741.8481};
 			name="wp_Monyet_indep_armor_05";
 			type="n_motor_inf";
-			angle=228.80049;
+			angle=228.8004;
 			id=7573;
 			atlOffset=1.2872982;
 		};
@@ -11690,7 +11692,7 @@ class Mission
 			b=75;
 			drawBorder=1;
 			id=7576;
-			atlOffset=22.132748;
+			atlOffset=21.188663;
 		};
 		class Item855
 		{
@@ -12042,6 +12044,7 @@ class Mission
 			a=350;
 			b=350;
 			id=7602;
+			atlOffset=9.5367432e-007;
 		};
 		class Item881
 		{
@@ -12055,6 +12058,7 @@ class Mission
 			a=250;
 			b=250;
 			id=7603;
+			atlOffset=-9.5367432e-007;
 		};
 		class Item882
 		{
@@ -12199,7 +12203,7 @@ class Mission
 			name="wp_Monyet_paradrop_79";
 			type="b_recon";
 			id=7614;
-			atlOffset=1.8975582;
+			atlOffset=3.3159733;
 		};
 		class Item893
 		{
@@ -12431,7 +12435,7 @@ class Mission
 			position[]={1842.9938,36.677612,3058.116};
 			name="wp_Monyet_east_armor_06";
 			type="o_motor_inf";
-			angle=183.43535;
+			angle=183.43527;
 			id=7634;
 			atlOffset=-0.015701294;
 		};
@@ -12500,7 +12504,7 @@ class Mission
 			name="wp_Monyet_paradrop_53";
 			type="b_recon";
 			id=7641;
-			atlOffset=0.69973373;
+			atlOffset=0.69973469;
 		};
 		class Item920
 		{
@@ -12702,6 +12706,330 @@ class Mission
 			type="b_recon";
 			id=7660;
 			atlOffset=1.4655199;
+		};
+		class Item939
+		{
+			dataType="Marker";
+			position[]={6023.165,20.495213,7962.7954};
+			name="wp_Gurun_east_comtower_32";
+			type="o_mortar";
+			id=7663;
+			atlOffset=2.0980835e-005;
+		};
+		class Item940
+		{
+			dataType="Marker";
+			position[]={4608.2241,8.9530001,8591.959};
+			name="wp_Gurun_west_hideout_01";
+			type="b_mortar";
+			id=7664;
+			atlOffset=0.00029563904;
+		};
+		class Item941
+		{
+			dataType="Marker";
+			position[]={3691.7813,2.9556861,8972.4463};
+			name="wp_Gurun_west_hideout_02";
+			type="b_mortar";
+			id=7665;
+			atlOffset=0.00029563904;
+		};
+		class Item942
+		{
+			dataType="Marker";
+			position[]={4554.9688,11.237103,8129.0332};
+			name="wp_Gurun_west_hideout_03";
+			type="b_mortar";
+			id=7666;
+			atlOffset=0.00029659271;
+		};
+		class Item943
+		{
+			dataType="Marker";
+			position[]={4676.9053,20.932096,8144.9297};
+			name="wp_Gurun_west_hideout_04";
+			type="b_mortar";
+			id=7667;
+			atlOffset=0.00029563904;
+		};
+		class Item944
+		{
+			dataType="Marker";
+			position[]={4609.6572,3.2485948,9333.4316};
+			name="wp_Gurun_east_comtower_33";
+			type="o_mortar";
+			id=7669;
+			atlOffset=2.2888184e-005;
+		};
+		class Item945
+		{
+			dataType="Marker";
+			position[]={4418.8081,9.7313452,7981.4663};
+			name="wp_Gurun_west_hideout_05";
+			type="b_mortar";
+			id=7671;
+			atlOffset=0.00029563904;
+		};
+		class Item946
+		{
+			dataType="Marker";
+			position[]={6506.4565,14.9766,6683.4111};
+			name="wp_Gurun_west_hideout_06";
+			type="b_mortar";
+			id=7672;
+			atlOffset=0.00029563904;
+		};
+		class Item947
+		{
+			dataType="Marker";
+			position[]={6058.5444,14.059097,3585.6138};
+			name="wp_Gurun_west_hideout_07";
+			type="b_mortar";
+			id=7673;
+			atlOffset=-9.5367432e-006;
+		};
+		class Item948
+		{
+			dataType="Marker";
+			position[]={4823.4214,10.246091,4434.3735};
+			name="wp_Gurun_west_hideout_08";
+			type="b_mortar";
+			id=7674;
+			atlOffset=0.00029563904;
+		};
+		class Item949
+		{
+			dataType="Marker";
+			position[]={4966.2808,19.537064,4387.3574};
+			name="wp_Gurun_west_hideout_09";
+			type="b_mortar";
+			id=7675;
+			atlOffset=0.00029563904;
+		};
+		class Item950
+		{
+			dataType="Marker";
+			position[]={6880.4634,2.7192655,4815.4463};
+			name="wp_Gurun_west_hideout_10";
+			type="b_mortar";
+			id=7676;
+			atlOffset=0.00029563904;
+		};
+		class Item951
+		{
+			dataType="Marker";
+			position[]={6998.2134,1.7536575,4417.5518};
+			name="wp_Gurun_west_hideout_11";
+			type="b_mortar";
+			id=7678;
+			atlOffset=0.00029563904;
+		};
+		class Item952
+		{
+			dataType="Marker";
+			position[]={7008.8906,3.9267459,4651.8823};
+			name="wp_Gurun_west_hideout_12";
+			type="b_mortar";
+			id=7679;
+			atlOffset=0.00029563904;
+		};
+		class Item953
+		{
+			dataType="Marker";
+			position[]={7425.6094,2.4821854,6416.0522};
+			name="wp_Gurun_west_hideout_13";
+			type="b_mortar";
+			id=7680;
+			atlOffset=0.00029563904;
+		};
+		class Item954
+		{
+			dataType="Marker";
+			position[]={6562.957,19.843548,8302.9072};
+			name="wp_Gurun_west_hideout_14";
+			type="b_mortar";
+			id=7681;
+			atlOffset=0.00029563904;
+		};
+		class Item955
+		{
+			dataType="Marker";
+			position[]={2405.0229,4.658,1172.671};
+			name="wp_Monyet_west_hideout_01";
+			type="b_mortar";
+			id=7682;
+			atlOffset=-0.00021743774;
+		};
+		class Item956
+		{
+			dataType="Marker";
+			position[]={2180.0073,0.35978258,1679.3467};
+			name="wp_Monyet_west_hideout_02";
+			type="b_mortar";
+			id=7683;
+			atlOffset=-0.00021743774;
+		};
+		class Item957
+		{
+			dataType="Marker";
+			position[]={2295.5354,4.5613451,1758.6731};
+			name="wp_Monyet_west_hideout_03";
+			type="b_mortar";
+			id=7684;
+			atlOffset=-0.00021743774;
+		};
+		class Item958
+		{
+			dataType="Marker";
+			position[]={729.72113,4.0677381,2389.0247};
+			name="wp_Monyet_west_hideout_04";
+			type="b_mortar";
+			id=7685;
+			atlOffset=-0.00021743774;
+		};
+		class Item959
+		{
+			dataType="Marker";
+			position[]={4660.6411,2.6142163,1264.5894};
+			name="wp_Monyet_west_hideout_05";
+			type="b_mortar";
+			id=7686;
+			atlOffset=-0.00021743774;
+		};
+		class Item960
+		{
+			dataType="Marker";
+			position[]={3936.8271,4.7810378,2107.2971};
+			name="wp_Monyet_west_hideout_06";
+			type="b_mortar";
+			id=7687;
+			atlOffset=-0.00021743774;
+		};
+		class Item961
+		{
+			dataType="Marker";
+			position[]={3499.3579,4.9997826,2318.6418};
+			name="wp_Monyet_west_hideout_07";
+			type="b_mortar";
+			id=7688;
+			atlOffset=-0.00021743774;
+		};
+		class Item962
+		{
+			dataType="Marker";
+			position[]={3475.832,4.9997826,2429.0376};
+			name="wp_Monyet_west_hideout_08";
+			type="b_mortar";
+			id=7689;
+			atlOffset=-0.00021743774;
+		};
+		class Item963
+		{
+			dataType="Marker";
+			position[]={3257.46,4.9997826,2575.1594};
+			name="wp_Monyet_west_hideout_09";
+			type="b_mortar";
+			id=7690;
+			atlOffset=-0.00021743774;
+		};
+		class Item964
+		{
+			dataType="Marker";
+			position[]={3535.1597,4.9997826,2798.929};
+			name="wp_Monyet_west_hideout_10";
+			type="b_mortar";
+			id=7691;
+			atlOffset=-0.00021743774;
+		};
+		class Item965
+		{
+			dataType="Marker";
+			position[]={3457.5886,4.9997826,3112.5293};
+			name="wp_Monyet_west_hideout_11";
+			type="b_mortar";
+			id=7692;
+			atlOffset=-0.00021743774;
+		};
+		class Item966
+		{
+			dataType="Marker";
+			position[]={3067.1802,4.9997826,3245.3752};
+			name="wp_Monyet_west_hideout_12";
+			type="b_mortar";
+			id=7693;
+			atlOffset=-0.00021743774;
+		};
+		class Item967
+		{
+			dataType="Marker";
+			position[]={2683.605,4.9997826,3776.0332};
+			name="wp_Monyet_west_hideout_13";
+			type="b_mortar";
+			id=7694;
+			atlOffset=-0.00021743774;
+		};
+		class Item968
+		{
+			dataType="Marker";
+			position[]={2850.0837,4.9821162,3810.137};
+			name="wp_Monyet_west_hideout_14";
+			type="b_mortar";
+			id=7695;
+			atlOffset=-0.00021743774;
+		};
+		class Item969
+		{
+			dataType="Marker";
+			position[]={1937.109,34.737968,4181.2656};
+			name="wp_Monyet_west_hideout_15";
+			type="b_mortar";
+			id=7696;
+			atlOffset=-0.00021743774;
+		};
+		class Item970
+		{
+			dataType="Marker";
+			position[]={2561.489,5.6392713,4746.9082};
+			name="wp_Monyet_west_hideout_16";
+			type="b_mortar";
+			id=7697;
+			atlOffset=-0.00021743774;
+		};
+		class Item971
+		{
+			dataType="Marker";
+			position[]={1654.2893,7.3229895,5313.3633};
+			name="wp_Monyet_west_hideout_17";
+			type="b_mortar";
+			id=7698;
+			atlOffset=-0.00021743774;
+		};
+		class Item972
+		{
+			dataType="Marker";
+			position[]={2129.519,1.5039525,7210.4019};
+			name="wp_Monyet_west_hideout_18";
+			type="b_mortar";
+			id=7699;
+			atlOffset=-0.00021743774;
+		};
+		class Item973
+		{
+			dataType="Marker";
+			position[]={2168.8799,4.9997826,6955.4121};
+			name="wp_Monyet_west_hideout_19";
+			type="b_mortar";
+			id=7700;
+			atlOffset=-0.00021743774;
+		};
+		class Item974
+		{
+			dataType="Marker";
+			position[]={2482.0554,4.9997826,6906.9243};
+			name="wp_Monyet_west_hideout_20";
+			type="b_mortar";
+			id=7701;
+			atlOffset=-0.00021743774;
 		};
 	};
 	class Connections

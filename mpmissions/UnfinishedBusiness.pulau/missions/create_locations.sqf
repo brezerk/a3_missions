@@ -95,6 +95,7 @@ if (isServer) then {
 	[_pois] call Fn_Task_Spawn_Civilean_Cars;
 
 	//Spawn stashes
+	[_crashSitePos] call Fn_Task_West_Hidden_WaponStash;
 	call Fn_Task_Create_Civilian_WaponStash;
 	call Fn_Task_Create_Civilian_FloodedShip;
 	

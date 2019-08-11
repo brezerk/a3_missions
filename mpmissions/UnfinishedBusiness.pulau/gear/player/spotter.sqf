@@ -47,6 +47,7 @@ for "_i" from 1 to 2 do {_this addItemToVest "SmokeShellRed";};
 _this addItemToVest "CUP_10Rnd_127x99_M107";
 _this addItemToUniform "CUP_10Rnd_127x99_M107";
 for "_i" from 1 to 2 do {_this addItemToUniform "ACE_Chemlight_UltraHiOrange";};
+_this addItemToUniform "ACE_DefusalKit";
 for "_i" from 1 to (random 15) do {_this addItemToUniform "ACE_Banana";};
 
 comment "Add items";

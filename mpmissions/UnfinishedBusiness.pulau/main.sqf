@@ -193,6 +193,8 @@ if (isServer) then {
 	#include "missions\east\transport.sqf";
 	#include "missions\east\helicopter.sqf";
 	#include "missions\west\planning.sqf";
+	#include "missions\west\hiddenstash.sqf";
+	#include "missions\west\safehouse.sqf";
 	
 	waitUntil {real_weather_init};
 	
