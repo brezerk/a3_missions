@@ -27,7 +27,7 @@ if (isServer) then {
 	Fn_Task_West_Hidden_WaponStash = {
 		params['_center'];
 		
-		private _markers = [_center, ["o_mortar", "n_mortar", "b_mortar"], 3000] call BrezBlock_fnc_GetAllMarkerTypesInRange;
+		private _markers = [_center, ["o_mortar", "b_mortar"], 3000] call BrezBlock_fnc_GetAllMarkerTypesInRange;
 		
 		for "_i" from 1 to (count _markers / 2) do {
 			private _marker = selectRandom _markers;
@@ -77,8 +77,6 @@ if (isServer) then {
 		private _class = selectRandom ['B_supplyCrate_F', 'Land_WoodenCrate_01_F', 'O_CargoNet_01_ammo_F', 'I_CargoNet_01_ammo_F'];
 		
 		_obj = _class createVehicle (_pos);
-		
-
 		
 		clearWeaponCargoGlobal _obj;
 		clearMagazineCargoGlobal _obj;
