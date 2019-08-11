@@ -33,10 +33,10 @@ force ace_advanced_fatigue_terrainGradientFactor = 0.5;
 force ace_repair_engineerSetting_repair = 0;
 
 // ACE Medical
-force ace_medical_amountOfReviveLives = -1;
+force ace_medical_amountOfReviveLives = 3;
 force ace_medical_increaseTrainingInLocations = true;
 ace_medical_menu_useMenu = 1;
-force ace_medical_preventInstaDeath = false;
+force ace_medical_preventInstaDeath = true;
 
 // GRAD Trenches
 grad_trenches_functions_stopBuildingAtFatigueMax = true;
