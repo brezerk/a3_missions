@@ -127,9 +127,7 @@ if (isServer) then {
 	private _crashSitePos = getMarkerPos "mrk_west_crashsite";
 	
 	[_crashSitePos] call Fn_Task_Create_C130J_CrashSite;
-	[_crashSitePos] call Fn_Task_Create_C130J_SpawnRandomCargo;	
-	//heli patrol
-	[_crashSitePos] call Fn_Patrols_CreateLoiter;
+
 	
 	private _free_landing_markers = [];
 	{
@@ -152,9 +150,10 @@ if (isServer) then {
 	} forEach assault_group;
 		
 	{deleteVehicle _x} foreach crew us_airplane_01; deleteVehicle us_airplane_01;
-		
-	//let them fall a bit
-	sleep 2;
+	
+	[_crashSitePos] call Fn_Task_Create_C130J_SpawnRandomCargo;	
+	//heli patrol
+	[_crashSitePos] call Fn_Patrols_CreateLoiter;
 		
 	//create tasks assigned to assault_group
 	{
