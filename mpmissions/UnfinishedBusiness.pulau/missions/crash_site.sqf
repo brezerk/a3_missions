@@ -197,7 +197,7 @@ if (isServer) then {
 	private _grp = createGroup [independent, true];
 	
 	private _vech0 = [_crashSitePos] call Fn_Patrols_Create_Sentry;
-	private _vech1 = [_crashSitePos] call Fn_Patrols_Create_Transport_Sentry;
+	private _vech1 = [_crashSitePos] call Fn_Patrols_Create_Sentry; //Transport_Sentry;
 	
 	[driver _vech0] joinSilent _grp;
 	[driver _vech1] joinSilent _grp;
