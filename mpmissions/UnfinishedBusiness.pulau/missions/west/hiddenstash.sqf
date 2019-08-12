@@ -42,6 +42,9 @@ if (isServer) then {
 				_pos = [_center, 0, 60, 4, 0, 0, 0] call BIS_fnc_findSafePos;
 			} else {
 				_pos = selectRandom (_builing buildingPos -1);
+				 private _exit_pos = (_builing buildingExit 0); 
+				 private _mine = createMine ["APERSTripMine", [_exit_pos select 0, _exit_pos select 1, 0], [], 0];  
+				 _mine setDir (random 360);
 			};
 
 			if (!isNil "_pos") then {
@@ -55,18 +58,6 @@ if (isServer) then {
 				deleteMarker _marker;
 			};
 		}
-		
-		
-		/*
-		[[
-			synd_boat_01,
-			synd_boat_02
-		]] call Fn_Patrols_Create_Random_SeaWaypoints;*/
-		
-		//locationFloodedShip = _markerPos;
-		//publicVariable "locationFloodedShip";
-		
-		//call Fn_Task_Spawn_Boats;
 	};
 	
 	//APERSTripMine
@@ -74,7 +65,7 @@ if (isServer) then {
 		params ["_pos"];
 		private ["_obj"];
 		
-		private _class = selectRandom ['B_supplyCrate_F', 'Land_WoodenCrate_01_F', 'O_CargoNet_01_ammo_F', 'I_CargoNet_01_ammo_F'];
+		private _class = selectRandom ['Box_NATO_Ammo_F', 'Box_EAF_Ammo_F', 'Box_IND_Ammo_F', 'Box_East_Ammo_F', 'Box_T_East_Ammo_F'];
 		
 		_obj = _class createVehicle (_pos);
 		
@@ -82,17 +73,15 @@ if (isServer) then {
 		clearMagazineCargoGlobal _obj;
 		clearItemCargoGlobal _obj;
 		clearBackpackCargoGlobal _obj;
-			
-		_obj addWeaponCargoGlobal ["CUP_hgun_M9", 7];
-		_obj addWeaponCargoGlobal ["Binocular", 3];
-		_obj addWeaponCargoGlobal ["CUP_arifle_AK74", 5];
-		_obj addWeaponCargoGlobal ["CUP_arifle_AKS74U", 7];
-		_obj addWeaponCargoGlobal ["CUP_sgun_M1014", 25];
-		_obj addMagazineCargoGlobal ["CUP_15Rnd_9x19_M9", 25];
-		_obj addMagazineCargoGlobal ["CUP_30Rnd_545x39_AK_M", 11];
-		_obj addMagazineCargoGlobal ["CUP_30Rnd_545x39_AK74_plum_M", 15];
-		_obj addMagazineCargoGlobal ["CUP_8Rnd_B_Beneli_74Slug", 25];
-		_obj addMagazineCargoGlobal ["CUP_8Rnd_B_Beneli_74Pellets", 25];
+		
+		for "_i" from 1 to random(5) + 1 do {
+			private _class = selectRandom D_SMUGGLER_STASH_WEAPON_CONFIG;
+			_obj addWeaponCargoGlobal [_class select 0, _class select 1];
+			{
+				_obj addMagazineCargoGlobal [_x, (((random (_class select 3)) * (_class select 1)) + 3)];
+			} forEach (_class select 2);
+		};
+		
 		_obj addItemCargoGlobal ["ACE_EarPlugs", 10];
 		_obj addItemCargoGlobal ["ItemCompass", 4];
 		_obj addItemCargoGlobal ["ACE_EntrenchingTool", 4];
@@ -100,7 +89,16 @@ if (isServer) then {
 		_obj addItemCargoGlobal ["ACE_morphine", 10];
 		_obj addItemCargoGlobal ["ACE_epinephrine", 6];
 		_obj addItemCargoGlobal ["ACE_bloodIV", 20];
-		_obj addBackpackCargoGlobal ["B_Kitbag_tan", 5];
+		
+		for "_i" from 1 to random(2) + 1 do {
+			private _class = selectRandom D_SMUGGLER_STASH_ITEM_CONFIG;
+			_obj addItemCargoGlobal [_class select 0, (random (_class select 1) + 1)];
+		};
+		
+		for "_i" from 1 to random(1) + 1 do {
+			private _class = selectRandom D_SMUGGLER_STASH_BACKPACK_CONFIG;
+			_obj addBackpackCargoGlobal [_class select 0, (random (_class select 1) + 1)];
+		};
 			
 		if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
 				_obj addItemCargoGlobal ["ACRE_PRC148", 2];
@@ -115,12 +113,18 @@ if (isServer) then {
 				};
 		};
 		
-		private _dir = getDir _obj;
-		private _o_pos = [_pos, 2, _dir] call BIS_Fnc_relPos;
-		_obj = "APERSTripMine" createVehicle (_o_pos);
-		_o_pos = [_pos, -2, _dir] call BIS_Fnc_relPos;
-		_obj = "APERSTripMine" createVehicle (_o_pos);
-		
+		private _dir = getDir _obj;   
+	    private _o_pos = [];   
+	    _o_pos = [_pos, 2, _dir] call BIS_Fnc_relPos;   
+	    _obj = createMine ["APERSTripMine", _o_pos, [], 0];   
+	    _o_pos = [_pos, -2, _dir] call BIS_Fnc_relPos;   
+	    _obj = createMine ["APERSTripMine", _o_pos, [], 0];  
+	    _o_pos = [_pos, -2, _dir + 90] call BIS_Fnc_relPos;   
+	    _obj = createMine ["APERSTripMine", _o_pos, [], 0];  
+	    _obj setDir (_dir + 90);  
+	    _o_pos = [_pos, 2, _dir + 90] call BIS_Fnc_relPos;   
+	    _obj = createMine ["APERSTripMine", _o_pos, [], 0];  
+	    _obj setDir (_dir + 90);
 
 	};
 

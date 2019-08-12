@@ -179,6 +179,8 @@ if (isServer) then {
 			} forEach D_LOCATIONS;
 		};
 	};
+	
+	#include "config\stash.sqf";
 
 	#include "missions\patrols.sqf";
 	#include "missions\intro.sqf";

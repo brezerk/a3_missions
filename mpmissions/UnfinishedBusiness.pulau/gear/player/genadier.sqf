@@ -25,17 +25,13 @@ _this addPrimaryWeaponItem "CUP_acc_ANPEQ_2";
 _this addPrimaryWeaponItem "CUP_optic_CompM2_Black";
 _this addPrimaryWeaponItem "CUP_30Rnd_556x45_Stanag";
 _this addPrimaryWeaponItem "CUP_1Rnd_HE_M203";
-_this addWeapon "CUP_hgun_M9";
-_this addHandgunItem "CUP_muzzle_snds_M9";
-_this addHandgunItem "CUP_15Rnd_9x19_M9";
+_this addWeapon "CUP_hgun_Colt1911";
+_this addHandgunItem "CUP_7Rnd_45ACP_1911";
 
 comment "Add containers";
 _this forceAddUniform "CUP_U_B_USMC_MARPAT_WDL_Sleeves";
 _this addVest "CUP_V_B_MTV_noCB";
 _this addBackpack "B_Parachute";
-
-comment "Add binoculars";
-_this addWeapon "Binocular";
 
 comment "Add items to containers";
 for "_i" from 1 to 10 do {_this addItemToUniform "ACE_fieldDressing";};
@@ -46,7 +42,7 @@ for "_i" from 1 to 5 do {_this addItemToUniform "ACE_morphine";};
 for "_i" from 1 to 2 do {_this addItemToVest "CUP_HandGrenade_M67";};
 for "_i" from 1 to 2 do {_this addItemToVest "SmokeShellRed";};
 for "_i" from 1 to 2 do {_this addItemToUniform "ACE_Chemlight_UltraHiOrange";};
-for "_i" from 1 to 2 do {_this addItemToVest "CUP_15Rnd_9x19_M9";};
+for "_i" from 1 to 2 do {_this addItemToVest "CUP_7Rnd_45ACP_1911";};
 for "_i" from 1 to 3 do {_this addItemToVest "CUP_1Rnd_HE_M203";};
 for "_i" from 1 to 4 do {_this addItemToVest "CUP_30Rnd_556x45_Stanag";};
 _this addHeadgear "CUP_H_USMC_Headset_GoggleW_HelmetWDL";

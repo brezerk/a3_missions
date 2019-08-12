@@ -45,7 +45,7 @@ grad_trenches_functions_stopBuildingAtFatigueMax = true;
 force ace_finger_enabled = true;
 
 // ACE View Distance Limiter
-force ace_viewdistance_limitViewDistance = 3500;
+force ace_viewdistance_limitViewDistance = 2500;
 ace_viewdistance_viewDistanceAirVehicle = 7;
 ace_viewdistance_viewDistanceLandVehicle = 5;
 ace_viewdistance_viewDistanceOnFoot = 4;
@@ -54,3 +54,16 @@ ace_viewdistance_viewDistanceOnFoot = 4;
 force acex_field_rations_enabled = true;
 force acex_field_rations_timeWithoutWater = 2;
 force acex_field_rations_timeWithoutFood = 4;
+
+// ACE Overheating
+ace_overheating_displayTextOnJam = true;
+force ace_overheating_enabled = true;
+force ace_overheating_overheatingDispersion = true;
+ace_overheating_showParticleEffects = true;
+ace_overheating_showParticleEffectsForEveryone = true;
+force ace_overheating_unJamFailChance = 0.1;
+force ace_overheating_unJamOnreload = true;
+
+// ACE User Interface
+force ace_ui_allowSelectiveUI = true;
+ace_ui_groupBar = false;

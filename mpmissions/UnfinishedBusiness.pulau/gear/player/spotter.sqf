@@ -20,9 +20,10 @@ removeHeadgear _this;
 removeGoggles _this;
 
 comment "Add weapons";
-_this addWeapon "CUP_arifle_M4A3_black";
+_this addWeapon "CUP_arifle_M4A1_camo";
 _this addPrimaryWeaponItem "CUP_acc_ANPEQ_2";
 _this addPrimaryWeaponItem "CUP_optic_ACOG";
+this addPrimaryWeaponItem "CUP_muzzle_snds_M16_camo";
 _this addPrimaryWeaponItem "CUP_30Rnd_556x45_Stanag";
 _this addWeapon "CUP_hgun_M9";
 _this addHandgunItem "CUP_muzzle_snds_M9";
@@ -52,6 +53,7 @@ _this addItemToUniform "CUP_10Rnd_127x99_M107";
 for "_i" from 1 to 2 do {_this addItemToUniform "ACE_Chemlight_UltraHiOrange";};
 _this addItemToUniform "ACE_DefusalKit";
 for "_i" from 1 to (random 15) do {_this addItemToUniform "ACE_Banana";};
+_this addGoggles "CUP_G_Oakleys_Clr";
 
 comment "Add items";
 _this linkItem "ItemMap";
