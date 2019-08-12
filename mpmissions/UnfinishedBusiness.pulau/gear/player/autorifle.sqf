@@ -1,5 +1,8 @@
 
 waitUntil { !isNull player }; // Wait for player to initialize
+waitUntil { alive player };
+
+sleep 1;
 
 comment "Exported from Arsenal by brezerk";
 

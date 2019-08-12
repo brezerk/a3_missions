@@ -94,6 +94,6 @@ if ((random 100) <= _chance_lost_radio) then {
 	};
 };
 
-sleep 3;
+waitUntil {sleep 1; lifeState player != "INCAPACITATED"};
 
 player action ["openParachute", player];

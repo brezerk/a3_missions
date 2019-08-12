@@ -199,6 +199,7 @@ player addEventHandler
 [
    "Respawn",
    {
+		call Fn_Local_FailTasks;
 		switch (playerSide) do
 		{
 			case east:

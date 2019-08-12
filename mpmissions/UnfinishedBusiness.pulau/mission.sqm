@@ -8,7 +8,7 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=7702;
+		nextID=7704;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1074;
+		nextID=1120;
 	};
 	class Camera
 	{
-		pos[]={6454.6445,129.64764,6822.8472};
-		dir[]={0.38671905,-0.4870913,0.78307736};
-		up[]={0.21568273,0.87334943,0.43674174};
-		aside[]={0.89663327,-1.07917e-007,-0.44279766};
+		pos[]={6402.002,185.59583,6804.5454};
+		dir[]={-0.29824254,-0.95435065,0.016806824};
+		up[]={-0.9528901,0.29852173,0.053698111};
+		aside[]={0.056263972,-3.6390702e-008,0.99842286};
 	};
 };
 binarizationWanted=0;
@@ -375,7 +375,7 @@ class Mission
 		year=2018;
 		month=7;
 		day=1;
-		hour=12;
+		hour=0;
 		minute=0;
 		startFogDecay=0.014;
 		forecastFogDecay=0.014;
@@ -3160,7 +3160,7 @@ class Mission
 			position[]={6068.292,50.885975,5518.9902};
 			name="wp_Gurun_indep_armor_05";
 			type="n_motor_inf";
-			angle=228.24323;
+			angle=228.24319;
 			id=6903;
 			atlOffset=3.8146973e-006;
 		};
@@ -3814,7 +3814,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6457.3584,31.943163,6916.5562};
-				angles[]={-0,4.712389,0.016662678};
+				angles[]={0,4.712389,0.016662678};
 			};
 			side="Empty";
 			flags=4;
@@ -3948,7 +3948,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6479.0215,32.74181,6899.8887};
-				angles[]={-0,0,0.059928458};
+				angles[]={0,0,0.059928458};
 			};
 			side="Empty";
 			flags=4;
@@ -4459,7 +4459,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6515.96,29.836809,6912.291};
-				angles[]={-0,3.141593,6.2731905};
+				angles[]={0,3.141593,6.2731905};
 			};
 			side="Empty";
 			flags=4;
@@ -4476,7 +4476,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6536.1914,27.500004,6911.3438};
-				angles[]={-0,6.2254586,0};
+				angles[]={0,6.2254586,0};
 			};
 			side="Empty";
 			flags=4;
@@ -4509,7 +4509,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6536.2119,29.335854,6912.0957};
-				angles[]={-0,1.5569443,0};
+				angles[]={0,1.5569443,0};
 			};
 			side="Empty";
 			flags=4;
@@ -4526,7 +4526,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6533.9355,27.518713,6909.1533};
-				angles[]={-0,4.778491,0};
+				angles[]={0,4.778491,0};
 			};
 			side="Empty";
 			flags=4;
@@ -4543,7 +4543,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6534.3516,27.518713,6914.0684};
-				angles[]={-0,4.1757746,0};
+				angles[]={0,4.1757746,0};
 			};
 			side="Empty";
 			flags=4;
@@ -4577,7 +4577,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={6538.4785,27.503925,6909.2578};
-				angles[]={-0,5.0409007,6.2731905};
+				angles[]={0,5.0409007,6.2731905};
 			};
 			side="Empty";
 			flags=4;
@@ -4873,7 +4873,7 @@ class Mission
 			name="wp_Gurun_indep_infrastructure_20";
 			type="n_mortar";
 			id=7028;
-			atlOffset=1.9073486e-006;
+			atlOffset=9.5367432e-007;
 		};
 		class Item307
 		{
@@ -5325,7 +5325,7 @@ class Mission
 			a=350;
 			b=350;
 			id=7064;
-			atlOffset=0.43307877;
+			atlOffset=0.43307781;
 		};
 		class Item343
 		{
@@ -5568,7 +5568,7 @@ class Mission
 			name="wp_Gurun_crashsite_03";
 			type="b_plane";
 			id=7087;
-			atlOffset=3.9611549;
+			atlOffset=3.961154;
 		};
 		class Item366
 		{
@@ -7844,7 +7844,7 @@ class Mission
 			a=50;
 			b=50;
 			id=7246;
-			atlOffset=2.6226044e-006;
+			atlOffset=-7.1525574e-006;
 		};
 		class Item525
 		{
@@ -8819,6 +8819,7 @@ class Mission
 			};
 			id=7342;
 			type="Land_Cargo_Tower_V4_F";
+			atlOffset=-9.5367432e-007;
 		};
 		class Item621
 		{
@@ -8851,6 +8852,7 @@ class Mission
 			};
 			id=7344;
 			type="Land_HBarrier_01_line_5_green_F";
+			atlOffset=-4.7683716e-007;
 		};
 		class Item623
 		{
@@ -8950,7 +8952,6 @@ class Mission
 			};
 			id=7350;
 			type="Land_HBarrier_01_line_5_green_F";
-			atlOffset=-9.5367432e-007;
 		};
 		class Item629
 		{
@@ -9194,7 +9195,7 @@ class Mission
 			};
 			id=7365;
 			type="Land_PillboxWall_01_6m_F";
-			atlOffset=-9.5367432e-007;
+			atlOffset=-1.9073486e-006;
 		};
 		class Item644
 		{
@@ -9282,7 +9283,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2416.8643,5.7267284,5299.2227};
-				angles[]={-0,4.5279183,0.003311686};
+				angles[]={0,4.5279183,0.003311686};
 			};
 			side="Empty";
 			flags=4;
@@ -9365,7 +9366,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2408.5659,12.393447,5241.583};
-				angles[]={-0,5.3133168,6.2365522};
+				angles[]={0,5.3133168,6.2365522};
 			};
 			side="Empty";
 			flags=4;
@@ -9425,6 +9426,7 @@ class Mission
 			};
 			id=7379;
 			type="CUP_O_Ural_Refuel_SLA";
+			atlOffset=-0.0013027191;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -9465,7 +9467,7 @@ class Mission
 			};
 			id=7380;
 			type="CUP_O_Ural_Repair_SLA";
-			atlOffset=-9.5367432e-007;
+			atlOffset=-0.0019626617;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -9504,7 +9506,7 @@ class Mission
 			};
 			id=7381;
 			type="CUP_O_DSHKM_SLA";
-			atlOffset=1.9993238;
+			atlOffset=1.9969196;
 		};
 		class Item660
 		{
@@ -9521,6 +9523,7 @@ class Mission
 			};
 			id=7382;
 			type="CUP_O_BRDM2_SLA";
+			atlOffset=-0.0039014816;
 		};
 		class Item661
 		{
@@ -9528,7 +9531,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2406.0273,4.9999084,5298.3096};
-				angles[]={-0,6.0372772,6.2798738};
+				angles[]={0,6.0372772,6.2798738};
 			};
 			side="Empty";
 			flags=4;
@@ -9544,7 +9547,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2406.1152,6.3741789,5298.4033};
-				angles[]={-0,6.0950041,6.2798738};
+				angles[]={0,6.0950041,6.2798738};
 			};
 			side="Empty";
 			flags=4;
@@ -9568,7 +9571,7 @@ class Mission
 			};
 			id=7385;
 			type="Land_IRMaskingCover_01_F";
-			atlOffset=0.65501213;
+			atlOffset=0.65501261;
 		};
 		class Item664
 		{
@@ -9609,7 +9612,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2403.5625,5.0296421,5300.3398};
-				angles[]={-0,3.1928239,0};
+				angles[]={0,3.1928239,0};
 			};
 			side="Empty";
 			flags=4;
@@ -9642,7 +9645,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={2408.4893,5.4917145,5299.4697};
-				angles[]={-0,4.5279183,6.2798738};
+				angles[]={0,4.5279183,6.2798738};
 			};
 			side="Empty";
 			flags=4;
@@ -9781,6 +9784,7 @@ class Mission
 			};
 			id=7398;
 			type="CUP_O_Ural_Reammo_SLA";
+			atlOffset=-0.0012083054;
 		};
 		class Item677
 		{
@@ -9909,7 +9913,7 @@ class Mission
 			name="wp_Monyet_hospital_02";
 			type="loc_Hospital";
 			id=7411;
-			atlOffset=0.32114506;
+			atlOffset=3.8504825;
 		};
 		class Item690
 		{
@@ -10306,7 +10310,7 @@ class Mission
 			a=350;
 			b=350;
 			id=7441;
-			atlOffset=1.7574615;
+			atlOffset=1.7574625;
 		};
 		class Item720
 		{
@@ -11019,7 +11023,7 @@ class Mission
 			name="wp_Monyet_paradrop_66";
 			type="b_recon";
 			id=7517;
-			atlOffset=0.15392697;
+			atlOffset=1.4655185;
 		};
 		class Item796
 		{
@@ -11625,7 +11629,7 @@ class Mission
 			position[]={4383.0098,6.2872958,2743.8901};
 			name="wp_Monyet_indep_armor_05";
 			type="n_motor_inf";
-			angle=228.80037;
+			angle=228.80034;
 			id=7573;
 			atlOffset=1.2872958;
 		};
@@ -11667,7 +11671,7 @@ class Mission
 			b=75;
 			drawBorder=1;
 			id=7576;
-			atlOffset=21.089573;
+			atlOffset=22.132744;
 		};
 		class Item855
 		{
