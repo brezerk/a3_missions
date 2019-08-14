@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1304;
+		nextID=1350;
 	};
 	class Camera
 	{
@@ -1544,7 +1544,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={990.125,8.9807978,9469.9404};
-						angles[]={-0,2.0557711,-0};
+						angles[]={0,2.0557711,0};
 					};
 					side="West";
 					flags=4;
@@ -1605,7 +1605,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={991.1908,9.0948343,9471.333};
-						angles[]={-0,1.8715084,-0};
+						angles[]={0,1.8715084,0};
 					};
 					side="West";
 					flags=4;
@@ -1741,7 +1741,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={992.91229,8.873971,9473.5996};
-						angles[]={-0,2.674525,-0};
+						angles[]={0,2.674525,0};
 					};
 					side="West";
 					class Attributes
@@ -9947,7 +9947,7 @@ class Mission
 			name="wp_Monyet_hospital_02";
 			type="loc_Hospital";
 			id=7411;
-			atlOffset=0.32114506;
+			atlOffset=3.8504825;
 		};
 		class Item690
 		{
@@ -11705,7 +11705,7 @@ class Mission
 			b=75;
 			drawBorder=1;
 			id=7576;
-			atlOffset=21.089573;
+			atlOffset=22.132744;
 		};
 		class Item855
 		{

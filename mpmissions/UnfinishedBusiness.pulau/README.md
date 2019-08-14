@@ -1,5 +1,5 @@
 
-*UnfinishedBusiness* is a dynamic and pretty random survival multiplayer mission with PvP elements. 
+*UnfinishedBusiness* is a dynamic and pretty random survival multiplayer mission with PvP elements for 1-10 players. 
 
 Well, wat?
 
@@ -9,7 +9,7 @@ You are starting as one coop group and will try to acomplish the mission. This g
 
 Players who will endup being killed however are not just supposed to watch and wait. They will be assigened to different fractions who will be helping or resisting the main group.
 
-The more players are involved in the mission -- the more fun you will get.
+ The more players are involved in the mission -- the more fun you will get.
 
 ## Briefing
 
