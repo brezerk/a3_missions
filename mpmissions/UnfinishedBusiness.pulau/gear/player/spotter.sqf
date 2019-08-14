@@ -64,7 +64,7 @@ comment "Give player a radio depending on radio mod loaded";
 if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
 	_this unassignItem "ItemRadio";
 	_this removeItem "ItemRadio";
-	_this addWeapon "ACRE_PRC152";
+	_this addItemToVest "ACRE_PRC152";
 } else {
 	if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
 		_this linkItem "tf_anprc152";
