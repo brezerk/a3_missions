@@ -88,7 +88,8 @@ if (isServer) then {
 		_obj addItemCargoGlobal ["ACE_fieldDressing", 20];
 		_obj addItemCargoGlobal ["ACE_morphine", 10];
 		_obj addItemCargoGlobal ["ACE_epinephrine", 6];
-		_obj addItemCargoGlobal ["ACE_bloodIV", 20];
+		_obj addItemCargoGlobal ["ACE_bloodIV",5];
+		_obj addItemCargoGlobal ["DemoCharge_Remote_Mag", 4];
 		
 		for "_i" from 1 to random(2) + 1 do {
 			private _class = selectRandom D_SMUGGLER_STASH_ITEM_CONFIG;

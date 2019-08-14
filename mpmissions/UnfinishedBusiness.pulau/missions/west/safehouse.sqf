@@ -74,11 +74,7 @@ if (isServer) then {
 		_obj addWeaponCargoGlobal ["CUP_arifle_M4A1", 2];
 		_obj addWeaponCargoGlobal ["CUP_arifle_M4A1_GL_carryhandle", 2];
 		_obj addWeaponCargoGlobal ["CUP_arifle_M16A4_Base", 2];
-		_obj addWeaponCargoGlobal ["CUP_srifle_M14", 2];
 		_obj addWeaponCargoGlobal ["CUP_launch_M72A6", 2];	
-		_obj addWeaponCargoGlobal ["CUP_launch_FIM92Stinger", 2];	
-		_obj addWeaponCargoGlobal ["CUP_srifle_M14_DMR", 1];
-		_obj addWeaponCargoGlobal ["CUP_lmg_m249_para", 1];
 		_obj addWeaponCargoGlobal ["ACE_VMH3", 2];
 
 		_obj addMagazineCargoGlobal ["CUP_15Rnd_9x19_M9", 10];
@@ -87,18 +83,15 @@ if (isServer) then {
 		_obj addMagazineCargoGlobal ["CUP_20Rnd_762x51_DMR", 8];
 		_obj addMagazineCargoGlobal ["CUP_1Rnd_HE_M203", 10];
 		_obj addMagazineCargoGlobal ["CUP_M72A6_M", 4];
-		_obj addMagazineCargoGlobal ["CUP_Stinger_M", 4];
 		_obj addMagazineCargoGlobal ["CUP_100Rnd_TE4_Green_Tracer_556x45_M249", 4];
 
-		_obj addItemCargoGlobal ["CUP_optic_LeupoldMk4", 2];
-		_obj addItemCargoGlobal ["CUP_bipod_Harris_1A2_L", 2];
 		_obj addItemCargoGlobal ["ACE_EntrenchingTool", 4];
 		_obj addItemCargoGlobal ["ACE_EarPlugs", 10];
 		_obj addItemCargoGlobal ["ItemCompass", 4];
 		_obj addItemCargoGlobal ["ACE_fieldDressing", 20];
 		_obj addItemCargoGlobal ["ACE_morphine", 10];
 		_obj addItemCargoGlobal ["ACE_epinephrine", 6];
-		_obj addItemCargoGlobal ["ACE_bloodIV", 20];
+		_obj addItemCargoGlobal ["ACE_bloodIV", 3];
 		_obj addItemCargoGlobal ["CUP_HandGrenade_M67", 10];
 		_obj addItemCargoGlobal ["CUP_H_USMC_LWH_WDL", 10];
 		_obj addItemCargoGlobal ["ACE_DefusalKit", 4];
