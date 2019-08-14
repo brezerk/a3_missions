@@ -94,6 +94,7 @@ if ((random 100) <= _chance_lost_radio) then {
 	};
 };
 
-waitUntil {sleep 1; lifeState player != "INCAPACITATED"};
+//lifeState player != "INCAPACITATED"
+waitUntil {sleep 1; getPosATL player select 2 <= 300};
 
 player action ["openParachute", player];
