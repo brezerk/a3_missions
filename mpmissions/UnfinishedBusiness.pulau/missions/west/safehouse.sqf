@@ -112,6 +112,15 @@ if (isServer) then {
 					_obj addItemCargoGlobal ["ItemRadio", 10];
 				};
 		};
+		
+		private _group = [_pos, WEST, 3] call BIS_fnc_spawnGroup;
+		_group deleteGroupWhenEmpty true;
+		
+		{
+			[_x] execVM "gear\west_dead.sqf";
+			_x setDamage 1;
+		} forEach units _group;
+		
 		_obj;
 	};
 
