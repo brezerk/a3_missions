@@ -33,26 +33,24 @@ if (isServer) then {
 				
 		_obj addWeaponCargoGlobal ["ACE_VMH3", 2];
 
-		_obj addMagazineCargoGlobal ["CUP_15Rnd_9x19_M9", 10];
-		_obj addMagazineCargoGlobal ["CUP_7Rnd_45ACP_1911", 10];
-		_obj addMagazineCargoGlobal ["CUP_30Rnd_556x45_Stanag", 16];
-		_obj addMagazineCargoGlobal ["CUP_20Rnd_762x51_DMR", 8];
+		_obj addMagazineCargoGlobal ["CUP_15Rnd_9x19_M9", 20];
+		_obj addMagazineCargoGlobal ["CUP_7Rnd_45ACP_1911", 20];
+		_obj addMagazineCargoGlobal ["CUP_30Rnd_556x45_Stanag", 30];
+		_obj addMagazineCargoGlobal ["CUP_20Rnd_762x51_DMR", 10];
 		_obj addMagazineCargoGlobal ["CUP_1Rnd_HE_M203", 10];
-		_obj addMagazineCargoGlobal ["CUP_M72A6_M", 4];
-		_obj addMagazineCargoGlobal ["CUP_100Rnd_TE4_Green_Tracer_556x45_M249", 4];
+		_obj addMagazineCargoGlobal ["CUP_M72A6_M", 10];
+		_obj addMagazineCargoGlobal ["CUP_100Rnd_TE4_Green_Tracer_556x45_M249", 10];
 
 		_obj addItemCargoGlobal ["ACE_EntrenchingTool", 4];
 		_obj addItemCargoGlobal ["ACE_EarPlugs", 10];
-		_obj addItemCargoGlobal ["ItemCompass", 4];
-		_obj addItemCargoGlobal ["ACE_fieldDressing", 20];
-		_obj addItemCargoGlobal ["ACE_morphine", 10];
-		_obj addItemCargoGlobal ["ACE_epinephrine", 6];
-		_obj addItemCargoGlobal ["ACE_bloodIV", 3];
-		_obj addItemCargoGlobal ["CUP_HandGrenade_M67", 10];
-		_obj addItemCargoGlobal ["CUP_H_USMC_LWH_WDL", 10];
-		_obj addItemCargoGlobal ["ACE_DefusalKit", 4];
-		_obj addItemCargoGlobal ["ClaymoreDirectionalMine_Remote_Mag", 6];
-		_obj addItemCargoGlobal ["DemoCharge_Remote_Mag", 4];
+		_obj addItemCargoGlobal ["ACE_fieldDressing", 40];
+		_obj addItemCargoGlobal ["ACE_morphine", 30];
+		_obj addItemCargoGlobal ["ACE_epinephrine", 20];
+		_obj addItemCargoGlobal ["ACE_bloodIV", 10];
+		_obj addItemCargoGlobal ["CUP_HandGrenade_M67", 25];
+		_obj addItemCargoGlobal ["ACE_DefusalKit", 10];
+		_obj addItemCargoGlobal ["ClaymoreDirectionalMine_Remote_Mag", 10];
+		_obj addItemCargoGlobal ["DemoCharge_Remote_Mag", 6];
 			
 		if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
 				_obj addItemCargoGlobal ["ACRE_PRC148", 20];
