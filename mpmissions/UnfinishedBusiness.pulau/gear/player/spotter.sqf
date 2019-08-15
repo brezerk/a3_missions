@@ -35,7 +35,7 @@ _this addVest "V_BandollierB_oli";
 _this addBackpack "B_Parachute";
 
 comment "Add binoculars";
-_this addWeapon "Binocular";
+_this addWeapon "Rangefinder";
 
 comment "Add items to containers";
 _this addItemToUniform "FirstAidKit";

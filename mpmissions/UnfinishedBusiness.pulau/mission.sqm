@@ -8,7 +8,7 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=7725;
+		nextID=7726;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1396;
+		nextID=1442;
 	};
 	class Camera
 	{
-		pos[]={996.0246,11.354745,9467.2949};
-		dir[]={0.73501569,-0.51681817,-0.43914601};
-		up[]={0.44380575,0.85598594,-0.26515836};
-		aside[]={-0.51294476,3.0198134e-007,-0.85853845};
+		pos[]={1003.3835,19.861347,9453.2578};
+		dir[]={-0.077719249,-0.75100482,0.65586126};
+		up[]={-0.088385969,0.66017932,0.74587739};
+		aside[]={0.99315244,-1.101871e-007,0.11768918};
 	};
 };
 binarizationWanted=0;
@@ -69,13 +69,14 @@ addons[]=
 	"A3_Structures_F_Exp_Industrial_Port",
 	"A3_Structures_F_EPB_Civ_Camping",
 	"ace_interaction",
-	"ace_dragging"
+	"ace_dragging",
+	"A3_Weapons_F_Ammoboxes"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=30;
+		items=31;
 		class Item0
 		{
 			className="ace_spectator";
@@ -272,6 +273,13 @@ class AddonsMetaData
 			author="ACE-Team";
 			url="http://ace3mod.com/";
 		};
+		class Item30
+		{
+			className="A3_Weapons_F";
+			name="Arma 3 Alpha - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 randomSeed=6619403;
@@ -399,7 +407,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=976;
+		items=977;
 		class Item0
 		{
 			dataType="Logic";
@@ -1550,7 +1558,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
-						init="call{this execVM ""gear\player\grenadier.sqf"";}";
+						init="call{this execVM ""gear\player\genadier.sqf"";}";
 						isPlayable=1;
 					};
 					id=7708;
@@ -13034,6 +13042,45 @@ class Mission
 			id=7724;
 			type="Land_Camping_Light_F";
 			atlOffset=0.088318825;
+		};
+		class Item976
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={998.56897,9.7614775,9464.7061};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="us_base_suppy_01";
+			};
+			id=7725;
+			type="B_supplyCrate_F";
+			atlOffset=29.72271;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 	class Connections

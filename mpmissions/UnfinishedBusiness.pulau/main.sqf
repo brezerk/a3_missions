@@ -197,6 +197,7 @@ if (isServer) then {
 	#include "missions\west\planning.sqf";
 	#include "missions\west\hiddenstash.sqf";
 	#include "missions\west\safehouse.sqf";
+	#include "missions\west\supply.sqf";
 	
 	waitUntil {real_weather_init};
 	
@@ -205,6 +206,8 @@ if (isServer) then {
 	
 	// Create base marker
 	[getPos us_liberty_01] call Fn_West_MissionPlanning_CreateMarkers_Base;
+	
+	[us_base_suppy_01] call Fn_Task_West_Create_Supply;
 	
 	waitUntil {
 		sleep 3;
