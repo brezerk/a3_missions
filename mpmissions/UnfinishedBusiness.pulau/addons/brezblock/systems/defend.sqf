@@ -183,8 +183,32 @@ if (isServer) then {
 	//http://arma3scriptingtutorials.blogspot.com/2014/02/config-viewer-what-is-it-and-how-to-use.html
 	//_grp = [_pos, _side, configfile >> "CfgGroups" >> "Indep" >> D_FRACTION_INDEP >> "Infantry" >> _cfg] call BIS_fnc_spawnGroup;
 	private _grp = [_pos, _side, _cfg] call BIS_fnc_spawnGroup;
-	
 	_grp deleteGroupWhenEmpty true;
+	if (isClass(configFile >> "CfgPatches" >> "acex_main")) then {
+		{
+			private _chance = (random 100);
+			if (_chance > 80) then {
+				_x addItemToUniform "ACE_Canteen";
+			} else {
+				if (_chance > 35) then {
+					_x addItemToUniform "ACE_Canteen_Half";
+				} else {
+					_x addItemToUniform "ACE_Canteen_Empty";
+				};
+			};
+			if (_chance > 60) then {
+				_x addItemToUniform (selectRandom ["ACE_MRE_BeefStew",
+										  "ACE_MRE_ChickenTikkaMasala",
+										  "ACE_MRE_ChickenHerbDumplings",
+										  "ACE_MRE_CreamChickenSoup",
+										  "ACE_MRE_CreamTomatoSoup",
+										  "ACE_MRE_LambCurry",
+										  "ACE_MRE_MeatballsPasta",
+										  "ACE_MRE_SteakVegetables"]);
+			};
+		} forEach units _grp;
+	};
+	
 	[_grp, _center, _radius] call CBA_fnc_taskDefend;
 	
 	_grp;

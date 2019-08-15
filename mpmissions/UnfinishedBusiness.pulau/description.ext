@@ -176,6 +176,7 @@ class CfgFunctions {
 			class CreatePatrol {file = "addons\brezblock\systems\patrol.sqf";};
 			class MarkerCreatePatrol {file = "addons\brezblock\systems\marker_patrol.sqf";};
 			class CreateDefend {file = "addons\brezblock\systems\defend.sqf";};
+			class CreateGarrison {file = "addons\brezblock\systems\garrison.sqf";};
 			class MarkerCreateDefend {file = "addons\brezblock\systems\marker_defend.sqf";};
 			class CreateCheckPoint {file = "addons\brezblock\systems\checkpoint.sqf";};
 			class CreateArmor {file = "addons\brezblock\systems\armor.sqf";};

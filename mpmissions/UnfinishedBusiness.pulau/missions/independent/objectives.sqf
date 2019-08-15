@@ -121,7 +121,8 @@ if (isServer) then {
 			
 			[_center, resistance, 2, 150] call BrezBlock_fnc_CreatePatrol;
 			[_center, resistance, 2, 150] call BrezBlock_fnc_CreatePatrol;
-			[_center, resistance, 5, 50] call BrezBlock_fnc_CreateDefend;
+			[_center, resistance, 5, 20] call BrezBlock_fnc_CreateDefend;
+			[_center, resistance, 5, 20] call BrezBlock_fnc_CreateGarrison;
 			
 			//Remove marker
 			_markers = _markers - [_marker];

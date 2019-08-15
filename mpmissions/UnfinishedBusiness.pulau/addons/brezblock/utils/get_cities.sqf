@@ -81,7 +81,7 @@ if (isServer) then {
 				'Bibung',
 				'Loholoho',
 				'Kinandal',
-				'Mambani',
+				'Kambani',
 				'Minanga',
 				'Monse',
 				'Lalomo',

@@ -8,7 +8,7 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=7726;
+		nextID=7733;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1442;
+		nextID=1488;
 	};
 	class Camera
 	{
-		pos[]={1003.3835,19.861347,9453.2578};
-		dir[]={-0.077719249,-0.75100482,0.65586126};
-		up[]={-0.088385969,0.66017932,0.74587739};
-		aside[]={0.99315244,-1.101871e-007,0.11768918};
+		pos[]={1077.1897,31.720821,2466.7119};
+		dir[]={0.58501852,-0.37227067,0.72053695};
+		up[]={0.23465136,0.92812169,0.28900754};
+		aside[]={0.77633554,2.6775524e-008,-0.63032228};
 	};
 };
 binarizationWanted=0;
@@ -407,7 +407,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=977;
+		items=983;
 		class Item0
 		{
 			dataType="Logic";
@@ -9955,7 +9955,7 @@ class Mission
 			name="wp_Monyet_hospital_02";
 			type="loc_Hospital";
 			id=7411;
-			atlOffset=3.8504825;
+			atlOffset=0.32114506;
 		};
 		class Item690
 		{
@@ -11065,7 +11065,7 @@ class Mission
 			name="wp_Monyet_paradrop_66";
 			type="b_recon";
 			id=7517;
-			atlOffset=1.4655185;
+			atlOffset=0.15392697;
 		};
 		class Item796
 		{
@@ -11280,11 +11280,11 @@ class Mission
 		class Item819
 		{
 			dataType="Marker";
-			position[]={1109.1333,10.208982,2544.0996};
+			position[]={1107.0817,7.4057007,2531.7883};
 			name="wp_Monyet_leader";
 			type="n_hq";
 			id=7541;
-			atlOffset=1.4654303;
+			atlOffset=-1.1724539;
 		};
 		class Item820
 		{
@@ -11713,7 +11713,7 @@ class Mission
 			b=75;
 			drawBorder=1;
 			id=7576;
-			atlOffset=22.132744;
+			atlOffset=21.089573;
 		};
 		class Item855
 		{
@@ -11930,7 +11930,7 @@ class Mission
 		class Item871
 		{
 			dataType="Marker";
-			position[]={1502.1165,18.231581,3458.8521};
+			position[]={1491.1077,18.231581,3428.0281};
 			name="wp_Monyet_indep_patrol_25";
 			markerType="ELLIPSE";
 			type="ellipse";
@@ -11939,7 +11939,7 @@ class Mission
 			a=350;
 			b=350;
 			id=7593;
-			atlOffset=1.7574635;
+			atlOffset=7.3744249;
 		};
 		class Item872
 		{
@@ -12345,7 +12345,7 @@ class Mission
 		class Item904
 		{
 			dataType="Marker";
-			position[]={1125.801,13.769508,2908.1309};
+			position[]={1124.4387,11.498688,3004.8604};
 			name="wp_Monyet_indep_patrol_50";
 			markerType="ELLIPSE";
 			type="ellipse";
@@ -12354,7 +12354,7 @@ class Mission
 			a=200;
 			b=200;
 			id=7626;
-			atlOffset=4.8848648;
+			atlOffset=4.8848443;
 		};
 		class Item905
 		{
@@ -13048,7 +13048,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={998.56897,9.7614775,9464.7061};
+				position[]={1003.124,9.7652912,9470.9697};
+				angles[]={0,3.9279027,0};
 			};
 			side="Empty";
 			class Attributes
@@ -13057,7 +13058,7 @@ class Mission
 			};
 			id=7725;
 			type="B_supplyCrate_F";
-			atlOffset=29.72271;
+			atlOffset=29.449535;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -13081,6 +13082,91 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item977
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1001.9635,9.1702251,9471.2822};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=7726;
+			type="Land_Camping_Light_F";
+			atlOffset=0.16421795;
+		};
+		class Item978
+		{
+			dataType="Marker";
+			position[]={939.02966,22.667641,2834.9934};
+			name="wp_Monyet_indep_patrol_52";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorGUER";
+			fillName="DiagGrid";
+			a=100;
+			b=100;
+			id=7728;
+			atlOffset=3.6491013;
+		};
+		class Item979
+		{
+			dataType="Marker";
+			position[]={1210.9087,16.296783,2776.2385};
+			name="wp_Monyet_indep_patrol_53";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorGUER";
+			fillName="DiagGrid";
+			a=100;
+			b=100;
+			id=7729;
+			atlOffset=3.6490831;
+		};
+		class Item980
+		{
+			dataType="Marker";
+			position[]={882.37268,18.930418,2532.9668};
+			name="wp_Monyet_indep_patrol_54";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorGUER";
+			fillName="DiagGrid";
+			a=100;
+			b=100;
+			id=7730;
+			atlOffset=3.6491013;
+		};
+		class Item981
+		{
+			dataType="Marker";
+			position[]={1079.0765,6.681519,3191.3745};
+			name="wp_Monyet_indep_checkpoint_13";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorGUER";
+			fillName="Horizontal";
+			a=100;
+			b=100;
+			id=7731;
+			atlOffset=1.4655995;
+		};
+		class Item982
+		{
+			dataType="Marker";
+			position[]={1545.183,6.6041007,2918.2449};
+			name="wp_Monyet_indep_checkpoint_14";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorGUER";
+			fillName="Horizontal";
+			a=100;
+			b=100;
+			id=7732;
+			atlOffset=0.86896372;
 		};
 	};
 	class Connections

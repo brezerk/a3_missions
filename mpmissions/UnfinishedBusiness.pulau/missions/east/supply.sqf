@@ -69,12 +69,15 @@ if (isServer) then {
 		_obj addMagazineCargoGlobal ["CUP_MineE_M", 4];
 		_obj addMagazineCargoGlobal ["APERSTripMine_Wire_Mag", 4];
 		
-		_obj addItemCargoGlobal ["ACE_MRE_CreamChickenSoup", 25];
-		_obj addItemCargoGlobal ["ACE_MRE_MeatballsPasta", 25];
-		_obj addItemCargoGlobal ["ACE_MRE_ChickenHerbDumplings", 25];
+		if (isClass(configFile >> "CfgPatches" >> "acex_main")) then {
+			_obj addItemCargoGlobal ["ACE_MRE_CreamChickenSoup", 25];
+			_obj addItemCargoGlobal ["ACE_MRE_MeatballsPasta", 25];
+			_obj addItemCargoGlobal ["ACE_MRE_ChickenHerbDumplings", 25];
+			_obj addItemCargoGlobal ["ACE_Canteen", 4];
+			_obj addItemCargoGlobal ["ACE_WaterBottle", 20];
+		};
+		
 		_obj addItemCargoGlobal ["ACE_CableTie", 10];
-		_obj addItemCargoGlobal ["ACE_Canteen", 4];
-		_obj addItemCargoGlobal ["ACE_WaterBottle", 20];
 		_obj addItemCargoGlobal ["ACE_EntrenchingTool", 4];
 		_obj addItemCargoGlobal ["ACE_EarPlugs", 10];
 		_obj addItemCargoGlobal ["ACE_fieldDressing", 20];

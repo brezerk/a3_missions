@@ -56,8 +56,10 @@ if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
 player linkItem "ItemGPS";
 
 comment "Add ACEX";
-player addItemToVest "ACE_Canteen";
-for "_i" from 1 to 5 do {player addItemToBackpack "ACE_MRE_ChickenTikkaMasala";};
+if (isClass(configFile >> "CfgPatches" >> "acex_main")) then {
+	player addItemToVest "ACE_Canteen";
+	for "_i" from 1 to 2 do {player addItemToBackpack "ACE_MRE_ChickenTikkaMasala";};
+};
 
 comment "Set identity";
 player setSpeaker "NoVoice";
