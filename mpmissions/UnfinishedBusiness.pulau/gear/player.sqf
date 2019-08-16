@@ -9,7 +9,7 @@ private _chance_lost_map = 0;
 
 switch(_diffclty) do {
 	case 0: {
-		_chance_lost_primary = 30;
+		_chance_lost_primary = 40;
 		_chance_lost_primary_ammo = 50;
 		_chance_lost_primary_attachments = 40;
 		_chance_lost_radio = 60;

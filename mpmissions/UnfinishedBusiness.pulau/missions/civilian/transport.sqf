@@ -26,11 +26,9 @@ if (hasInterface) then {};
 
 if (isServer) then {
 	Fn_Spawn_Civ_Air_Transport = {
-		private _marker = format ["mrk_cesna", D_LOCATION];
-		private _obj = createVehicle ["C_Plane_Civil_01_F", (getMarkerPos _marker), [], 0, "CAN_COLLIDE"];
-		_obj setDir (markerDir _marker);	
-		_marker = format ["mrk_heli", D_LOCATION];
-		_obj = createVehicle ["C_Heli_Light_01_civil_F", (getMarkerPos (format ["", D_LOCATION])), [], 0, "CAN_COLLIDE"];
-		_obj setDir (markerDir _marker);
+		private _obj = createVehicle ["C_Plane_Civil_01_F", (getMarkerPos "mrk_cesna"), [], 0, "CAN_COLLIDE"];
+		_obj setDir (markerDir "mrk_cesna");	
+		_obj = createVehicle ["C_Heli_Light_01_civil_F", (getMarkerPos "mrk_heli"), [], 0, "CAN_COLLIDE"];
+		_obj setDir (markerDir "mrk_heli");
 	};
 };

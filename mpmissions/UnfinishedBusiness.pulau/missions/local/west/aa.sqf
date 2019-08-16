@@ -47,18 +47,6 @@ if (hasInterface) then {
 				true
 			] call BIS_fnc_taskCreate;
 			['t_west_destroy_aa', "destroy"] call BIS_fnc_taskSetType;
-			[
-				player,
-				"t_west_destroy_comtower",
-				[localize "TASK_07_DESC",
-				localize "TASK_07_TITLE",
-				localize "TASK_ORIG_01"],
-				getMarkerPos "mrk_east_commtower",
-				"CREATED",
-				0,
-				true
-			] call BIS_fnc_taskCreate;
-			['t_west_destroy_comtower', "destroy"] call BIS_fnc_taskSetType;
 		};
 	};
 	
@@ -73,14 +61,4 @@ if (hasInterface) then {
 		};
 	};
 	
-	Fn_Local_Task_Destroy_Commtower_Complete = {
-		switch (playerSide) do {
-			case west: {
-				['t_west_destroy_comtower', 'Succeeded', localize "TASK_07_TITLE"] call Fn_Local_SetPersonalTaskState;
-			};
-			case east: {
-				['t_east_defend_commtower', 'Failed', localize "TASK_07_TITLE"] call Fn_Local_SetPersonalTaskState;
-			};
-		};
-	};
 };

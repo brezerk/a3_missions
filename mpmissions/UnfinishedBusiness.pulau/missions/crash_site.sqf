@@ -166,6 +166,7 @@ if (isServer) then {
 	[] execVM "missions\regroup.sqf";
 	[] execVM "missions\assoult_group_is_dead.sqf";
 	[] execVM "missions\informator.sqf";
+	call Fn_Task_Create_AA;
 	
 	{
 		remoteExecCall ["Fn_Local_Create_RescueMission", _x];

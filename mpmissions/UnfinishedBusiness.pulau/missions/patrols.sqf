@@ -282,13 +282,13 @@ if (isServer) then {
 		
 		switch (D_DIFFICLTY) do {
 			case 0: {
-				_class = "CUP_I_UH1H_TK_GUE";
+				_class = "CUP_I_UH60L_RACS"; //"CUP_I_UH1H_TK_GUE"
 			};
 			case 1: {
-				_class = "CUP_I_UH1H_armed_TK_GUE";
+				_class = "CUP_I_UH60L_RACS"; //CUP_I_UH1H_armed_TK_GUE
 			};
 			case 2: {
-				_class = "CUP_I_UH1H_gunship_TK_GUE";
+				_class = "CUP_I_UH60L_RACS"; //CUP_I_UH1H_gunship_TK_GUE
 			};
 		};
 		
@@ -302,6 +302,9 @@ if (isServer) then {
 		_wp setWaypointLoiterType "Circle_L";
 		_wp setWaypointLoiterRadius 500;
 		_vehicle flyInHeight 130;
+		{
+			_x setSkill 0.7; 
+		} forEach units _crew;
 	};
 	
 	Fn_Patrols_Create_Transport_Sentry = {
@@ -404,6 +407,7 @@ if (isServer) then {
 			};
 		};
 		
+		//FIXME: spawn on nearest POI instead
 		private _center = getMarkerPos "mrk_spawn_point";
 		private _pos = [];
 		private _good = false;
@@ -482,6 +486,7 @@ if (isServer) then {
 		};
 		
 		private _class = selectRandom _vehicles;
+		//FIXME: spawn on nearest POI instead
 		private _center = getMarkerPos "mrk_spawn_point";
 		private _pos = [];
 		private _good = false;

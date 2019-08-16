@@ -189,7 +189,7 @@ if (isServer) then {
 	#include "missions\civilian\cargo.sqf";
 	#include "missions\civilian\transport.sqf";
 	#include "missions\independent\objectives.sqf";
-	#include "missions\east\comtower.sqf";
+	#include "missions\east\commtower.sqf";
 	#include "missions\east\aa.sqf";
 	#include "missions\east\supply.sqf";
 	#include "missions\east\transport.sqf";

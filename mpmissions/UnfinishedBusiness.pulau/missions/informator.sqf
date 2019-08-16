@@ -45,7 +45,7 @@ if (isServer) then {
 	Select random Informator unit. Disable MOVE and place the trigger
 		Arguments: None
 		Usage: call Fn_Task_Create_Informator
-	*/
+	*/		
 	Fn_Task_Create_Informator = {
 		{
 			private _size_x = getNumber (configFile >> "CfgWorlds" >> worldName >> "Names" >> (_x select 0) >> "radiusA");
@@ -114,7 +114,7 @@ if (isServer) then {
 			false
 		] call BrezBlock_fnc_Attach_Hold_Action;
 	};	
-	
+
 	call Fn_Task_Create_Informator;
 	
 	Fn_Informator_Complete = {
@@ -123,7 +123,6 @@ if (isServer) then {
 		} else {
 			remoteExecCall ["Fn_Local_Create_Task_West_WaponStash", -2];
 		};
-		call Fn_Task_Create_AA;
 		call Fn_Task_Create_KillLeader;
 		call Fn_Create_Mission_DestroyAmmo;
 		call Fn_Create_Mission_DestroyFuel;

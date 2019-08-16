@@ -8,7 +8,7 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=7733;
+		nextID=7735;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1488;
+		nextID=1580;
 	};
 	class Camera
 	{
-		pos[]={1077.1897,31.720821,2466.7119};
-		dir[]={0.58501852,-0.37227067,0.72053695};
-		up[]={0.23465136,0.92812169,0.28900754};
-		aside[]={0.77633554,2.6775524e-008,-0.63032228};
+		pos[]={1059.9641,40.716702,2493.2644};
+		dir[]={-0.82037467,-0.18966486,-0.53949457};
+		up[]={-0.15847811,0.9818424,-0.10421814};
+		aside[]={-0.54946727,1.5762635e-007,0.83554137};
 	};
 };
 binarizationWanted=0;
@@ -8133,12 +8133,13 @@ class Mission
 		class Item543
 		{
 			dataType="Marker";
-			position[]={5474.6396,40.023422,8955.4482};
+			position[]={5474.6401,40.022999,8955.4482};
 			name="wp_Gurun_east_armor_02";
 			type="o_motor_inf";
+			colorName="ColorEAST";
 			angle=239.241;
 			id=7265;
-			atlOffset=3.8146973e-006;
+			atlOffset=-0.00043106079;
 		};
 		class Item544
 		{
@@ -8173,12 +8174,13 @@ class Mission
 		class Item546
 		{
 			dataType="Marker";
-			position[]={5401.7588,42.86451,8997.2646};
+			position[]={5401.7588,42.865002,8997.2646};
 			name="wp_Gurun_east_armor_03";
 			type="o_motor_inf";
-			angle=326.30966;
+			colorName="ColorEAST";
+			angle=326.30991;
 			id=7268;
-			atlOffset=3.8146973e-006;
+			atlOffset=0.00049591064;
 		};
 		class Item547
 		{
@@ -9955,7 +9957,7 @@ class Mission
 			name="wp_Monyet_hospital_02";
 			type="loc_Hospital";
 			id=7411;
-			atlOffset=0.32114506;
+			atlOffset=3.8504825;
 		};
 		class Item690
 		{
@@ -12416,11 +12418,13 @@ class Mission
 		class Item909
 		{
 			dataType="Marker";
-			position[]={1750.0825,34.937145,3106.0608};
+			position[]={1750.083,34.937,3106.061};
 			name="wp_Monyet_east_armor_04";
 			type="o_motor_inf";
+			colorName="ColorEAST";
 			angle=316.004;
 			id=7631;
+			atlOffset=-0.0001449585;
 		};
 		class Item910
 		{
@@ -12439,20 +12443,24 @@ class Mission
 		class Item911
 		{
 			dataType="Marker";
-			position[]={1924.8701,54.707905,3067.8916};
+			position[]={1924.87,54.708,3067.8921};
 			name="wp_Monyet_east_armor_05";
 			type="o_motor_inf";
-			angle=64.452568;
+			colorName="ColorEAST";
+			angle=64.453003;
 			id=7633;
+			atlOffset=8.0108643e-005;
 		};
 		class Item912
 		{
 			dataType="Marker";
-			position[]={1848.3408,36.70158,3060.158};
+			position[]={1848.3409,36.702,3060.158};
 			name="wp_Monyet_east_armor_06";
 			type="o_motor_inf";
-			angle=183.43527;
+			colorName="ColorEAST";
+			angle=183.435;
 			id=7634;
+			atlOffset=0.0004196167;
 		};
 		class Item913
 		{
