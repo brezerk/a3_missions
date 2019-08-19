@@ -8,7 +8,7 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=7735;
+		nextID=7736;
 	};
 	class MarkerIDProvider
 	{
@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1580;
+		nextID=1672;
 	};
 	class Camera
 	{
@@ -9957,7 +9957,7 @@ class Mission
 			name="wp_Monyet_hospital_02";
 			type="loc_Hospital";
 			id=7411;
-			atlOffset=3.8504825;
+			atlOffset=0.32114506;
 		};
 		class Item690
 		{

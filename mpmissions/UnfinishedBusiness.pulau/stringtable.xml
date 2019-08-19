@@ -195,14 +195,14 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>AOC координую зв'язок між бандами Solomon Maru. Потрібно вивести &lt;marker name = 'mrk_east_commtower'&gt;комунікаційну вежу&lt;/marker&gt; з ладу.</Russian>
 			</Key>
 			<Key ID="TASK_08_TITLE">
-				<Original>Eliminate the dictator</Original>
-				<English>Eliminate the dictator</English>
-				<Russian>Усуньте диктатора</Russian>
+				<Original>Optional: Search for documents</Original>
+				<English>Optional: Search for documents</English>
+				<Russian>Додатково: Пошук документів</Russian>
 			</Key>
 			<Key ID="TASK_08_DESC">
-				<Original>Solomon Maru is a leader of the "Red Sokol" group. Under the guise of AOC forces, his gangsters killed Rіchardo Gonzales and cut the whole city &lt;marker name = 'wp_kambani'&gt;Kambani&lt;/marker&gt;. In the latter, it was seen on the &lt;marker name='wp_air_field_01'&gt;Gurun airfield&lt;/marker&gt; with a bunch of his bandits.</Original>
-				<English>Solomon Maru is a leader of the "Red Sokol" group. Under the guise of AOC forces, his gangsters killed Rіchardo Gonzales and cut the whole city &lt;marker name = 'wp_kambani'&gt;Kambani&lt;/marker&gt;. In the latter, it was seen on the &lt;marker name='wp_air_field_01'&gt;Gurun airfield&lt;/marker&gt; with a bunch of his bandits.</English>
-				<Russian>Solomon Maru -- лідер угруппованя "Червоні Соколи". Під прикриттям сил AOC його бандити вбили президента Rіchardo Gonzales і вирізали ціле місто &lt;marker name = 'wp_kambani'&gt;Kambani&lt;/marker&gt;. В останне його бачили на &lt;marker name='wp_air_field_01'&gt;аеродромі Gurun&lt;/marker&gt; з купою охорони.</Russian>
+				<Original>Enemy officers may have some documents that can clarify current situation and reveal their plans.</Original>
+				<English>Enemy officers may have some documents that can clarify current situation and reveal their plans.</English>
+				<Russian>Ворожі офіцери можуть мати при собі якісь документи, які дозволять уточнити поточну ситуацію та розкрити ворожі плани.</Russian>
 			</Key>
 			<Key ID="TASK_09_TITLE">
 				<Original>Rescue mission</Original>

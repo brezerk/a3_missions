@@ -198,6 +198,7 @@ if (isServer) then {
 	#include "missions\west\hiddenstash.sqf";
 	#include "missions\west\safehouse.sqf";
 	#include "missions\west\supply.sqf";
+	#include "missions\west\intel.sqf";
 	
 	waitUntil {real_weather_init};
 	

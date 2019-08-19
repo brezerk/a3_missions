@@ -170,6 +170,7 @@ class CfgFunctions {
 		{
 			class Get_RND_Index {file = "addons\brezblock\utils\get_rnd_index.sqf";};
 			class Attach_Hold_Action {file = "addons\brezblock\actions\attach_hold.sqf";};
+			class Attach_SearchIntel_Action {file = "addons\brezblock\actions\attach_intel.sqf";};
 			class CreateCivilianPresence {file = "addons\brezblock\systems\civilian.sqf";};
 			class CreateCivilianSupply {file = "addons\brezblock\systems\supply_civilian.sqf";};
 			class CreateCivilianHospital {file = "addons\brezblock\systems\hospital_civilian.sqf";};

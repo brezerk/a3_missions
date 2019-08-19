@@ -48,20 +48,11 @@ if (isServer) then {
 	};
 
 	Fn_Task_Create_AA = {
-		if (hasInterface) then {
-			remoteExecCall ["Fn_Local_Create_MissionAA"];
-		} else {
-			remoteExecCall ["Fn_Local_Create_MissionAA", -2];
-		};
+		remoteExecCall ["Fn_Local_Create_MissionAA", [0,-2] select isDedicated];
 	};
 	
 	Fn_Task_AA_Complete = {
-		if (hasInterface) then {
-			remoteExecCall ["Fn_Local_Task_AA_Complete"];
-		} else {
-			remoteExecCall ["Fn_Local_Task_AA_Complete", -2];
-		};
-
+		remoteExecCall ["Fn_Local_Task_AA_Complete", [0,-2] select isDedicated];
 		task_complete_antiair = true;
 	};
 

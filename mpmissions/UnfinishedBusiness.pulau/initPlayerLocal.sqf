@@ -47,6 +47,7 @@ player setVariable ["is_civilian", false, true];
 #include "missions\local\informator.sqf";
 #include "missions\local\west\aa.sqf";
 #include "missions\local\west\commtower.sqf";
+#include "missions\local\west\intel.sqf";
 #include "missions\local\leader.sqf";
 #include "missions\local\east.sqf";
 #include "missions\local\west.sqf";
