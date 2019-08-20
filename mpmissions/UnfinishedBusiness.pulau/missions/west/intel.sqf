@@ -27,22 +27,19 @@ if (hasInterface) then {
 };
 
 if (isServer) then {
-
-
 	"PUB_fnc_intelFound" addPublicVariableEventHandler {(_this select 1) call EventHander_IntelFound};
-	
 	/*
 	Event Handler for loaded or unloaded box
 	*/
 	EventHander_IntelFound = {
-		if ((random 100) >= 60) then {
-			switch (random 4) do {
-				1: { call Fn_Create_Mission_DestroyAmmo; };
-				2: { call Fn_Create_Mission_DestroyFuel; };
-				3: { call Fn_Create_Mission_DestroyWindMill; };
-				4: { call Fn_Create_Mission_KillDoctor; };
+		params['_caller', '_target'];
+		if ((random 100) >= 40) then {
+			switch (round(random 3)) do {
+				case 0: { [_caller] call Fn_Create_Mission_DestroyAmmo; };
+				case 1: { [_caller] call Fn_Create_Mission_DestroyFuel; };
+				case 2: { [_caller] call Fn_Create_Mission_DestroyWindMill; };
+				case 3: { [_caller] call Fn_Create_Mission_KillDoctor; };
 			};
 		};
-		//task_complete_intormator = true;
 	};
 };

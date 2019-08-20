@@ -72,15 +72,13 @@ if (isServer) then {
 						];
 					private _group = createGroup [civilian, true];
 					private _unit = _group createUnit [_class, _pos, [], 0, "FORM"];
-					[_unit] call Fn_Task_Create_Informator_Attach_Action;
+					//Keep it in place :)
+					_unit setBehaviour "CARELESS";
+					_unit disableAi "MOVE";
 				};
 			};
 			
-			if (hasInterface) then {
-				[avaliable_locations, avaliable_pois] remoteExecCall ["Fn_Local_Create_MissionInformator"];
-			} else {
-				[avaliable_locations, avaliable_pois] remoteExecCall ["Fn_Local_Create_MissionInformator", -2];
-			};
+			[avaliable_locations, avaliable_pois] remoteExecCall ["Fn_Local_Create_MissionInformator", [0,-2] select isDedicated];
 			
 			trgRegroupIsDone = createTrigger ["EmptyDetector", getMarkerPos (format["wp_%1_airfield_01", D_LOCATION])];
 			trgRegroupIsDone setTriggerArea [0, 0, 0, false];
@@ -92,28 +90,6 @@ if (isServer) then {
 			];
 		} forEach avaliable_pois;
 	};
-	
-	/*
-	Select random Informator unit. Disable MOVE and place the trigger
-		Arguments: None
-		Usage: call Fn_Task_Create_Informator_Attach_Action
-	*/
-	Fn_Task_Create_Informator_Attach_Action = {
-		params['_obj'];
-		private['_action_id'];
-		
-		_obj setBehaviour "CARELESS";
-		_obj disableAi "MOVE";
-		_action_id = [
-			_obj,
-			{ [name _target] call Fn_Local_Informator_Complete; },
-			"simpleTasks\types\talk",
-			"ACTION_02",
-			"&& alive _target",
-			6,
-			false
-		] call BrezBlock_fnc_Attach_Hold_Action;
-	};	
 
 	call Fn_Task_Create_Informator;
 	

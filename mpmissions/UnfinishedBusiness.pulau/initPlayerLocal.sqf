@@ -20,11 +20,13 @@
 Local player script
 */
 
-waitUntil { !isNull player }; // Wait for player to initialize
-
+//variables
+mission_sync = false;
 mission_requested = false;
 mission_plane_send = false;
 informator_told = false;
+
+waitUntil { !isNull player }; // Wait for player to initialize
 
 //tickets
 [player, 3] call BIS_fnc_respawnTickets;
@@ -34,8 +36,6 @@ informator_told = false;
 //FIXME: should we remove all wp_ markers instead deleteMarkerLocal?
 {if (_x find "wp_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
 {if (_x find "respawn_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
-
-//playSound "RadioAmbient2";
 
 player setVariable ["weapon_fiered", false, false];
 player setVariable ["is_civilian", false, true];
@@ -54,13 +54,12 @@ player setVariable ["is_civilian", false, true];
 #include "missions\local\cargo.sqf";
 #include "missions\local\crash_site.sqf";
 #include "missions\local\rescue.sqf";
-//#include "missions\local\police.sqf";
 #include "missions\civilian\liberate.sqf";
 #include "missions\local\regroup.sqf";
 #include "missions\local\recruit.sqf";
 #include "missions\local\independent\objectives.sqf";
+#include "missions\local\civilian\confiscate.sqf";
 
-execVM "missions\local\patrols.sqf";
 execVM "addons\brezblock\utils\marker_manager.sqf";
 
 Fn_Local_SetPersonalTaskState = {
@@ -201,37 +200,43 @@ player addEventHandler
 [
    "Respawn",
    {
-		call Fn_Local_FailTasks;
-		switch (playerSide) do
-		{
-			case east:
+		if (!alive us_airplane_01) then {
+			call Fn_Local_FailTasks;
+			switch (playerSide) do
 			{
-				[] execVM "gear\east.sqf";
-				player setPos getMarkerPos "respawn_east";
-				call Fn_Local_Create_SCAT_MissionIntro;
-			};
-			case civilian:
-			{
-				[] execVM "gear\civilian.sqf";
-				private _civ_spawn_markers = [];
+				case east:
 				{
-					if (_x find "respawn_civilian_" >= 0) then {
-						_civ_spawn_markers pushBack _x;
-					};
-				} forEach allMapMarkers;
-				player setPos getMarkerPos selectRandom _civ_spawn_markers;
-				call Fn_Local_Create_Task_Civilian_FloodedShip;
-				call Fn_Local_Create_Task_Civilian_WaponStash;
-				//call Fn_Local_Create_Task_Civilian_Police;
-				call Fn_Local_Create_Task_Civilian_Liberate_MissionIntro;
+					[] execVM "gear\east.sqf";
+					player setPos getMarkerPos "respawn_east";
+					call Fn_Local_Create_SCAT_MissionIntro;
+				};
+				case civilian:
+				{
+					[] execVM "gear\civilian.sqf";
+					private _civ_spawn_markers = [];
+					{
+						if (_x find "respawn_civilian_" >= 0) then {
+							_civ_spawn_markers pushBack _x;
+						};
+					} forEach allMapMarkers;
+					player setPos getMarkerPos selectRandom _civ_spawn_markers;
+					call Fn_Local_Create_Task_Civilian_FloodedShip;
+					call Fn_Local_Create_Task_Civilian_WaponStash;
+					//call Fn_Local_Create_Task_Civilian_Police;
+					call Fn_Local_Create_Task_Civilian_Liberate_MissionIntro;
+				};
+				case west:
+				{
+					private _pos = getMarkerPos "respawn_west";
+					[] execVM "gear\west.sqf";
+					player setPos [_pos select 0, _pos select 1, 8];
+					call Fn_Local_Create_RescueMission;
+				};
 			};
-			case west:
-			{
-				private _pos = getMarkerPos "respawn_west";
-				[] execVM "gear\west.sqf";
-				player setPos [_pos select 0, _pos select 1, 8];
-				call Fn_Local_Create_EAST_MissionIntro;
-			};
+		} else {
+			private _pos = getMarkerPos "respawn_west";
+			[] execVM "gear\west.sqf";
+			player setPos [_pos select 0, _pos select 1, 8];
 		};
    }
 ];
@@ -300,12 +305,11 @@ player addEventHandler
     }
 ];
 
+execVM "missions\local\sync.sqf";
+
 sleep 5;
 
 [ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_00', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;
 
 [[west], [east,independent,civilian]] call ace_spectator_fnc_updateSides;
-
-
-
 

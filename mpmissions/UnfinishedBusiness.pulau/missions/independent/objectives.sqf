@@ -131,34 +131,54 @@ if (isServer) then {
 	};
 	
 	Fn_Create_Mission_DestroyAmmo = {
+		params['_requestor'];
 		if (!isNull indep_ammo_01) then {
-			{
-				[(getPos indep_ammo_01)] remoteExecCall ["Fn_Local_Create_Mission_DestroyAmmo", _x];
-			} forEach assault_group;
+			if (task_complete_regroup) then {
+				{
+					[(getPos indep_ammo_01)] remoteExecCall ["Fn_Local_Create_Mission_DestroyAmmo", _x];
+				} forEach assault_group;
+			} else {
+				[(getPos indep_ammo_01)] remoteExecCall ["Fn_Local_Create_Mission_DestroyAmmo", _requestor];
+			};
 		};
 	};
 	
 	Fn_Create_Mission_DestroyFuel = {
+		params['_requestor'];
 		if (!isNull indep_fuel_01) then {
-			{
-				[(getPos indep_fuel_01)] remoteExecCall ["Fn_Local_Create_Mission_DestroyFuel", _x];
-			} forEach assault_group;
+			if (task_complete_regroup) then {
+				{
+					[(getPos indep_fuel_01)] remoteExecCall ["Fn_Local_Create_Mission_DestroyFuel", _x];
+				} forEach assault_group;
+			} else {
+				[(getPos indep_fuel_01)] remoteExecCall ["Fn_Local_Create_Mission_DestroyFuel", _requestor];
+			};
 		};
 	};
 	
 	Fn_Create_Mission_DestroyWindMill = {
+		params['_requestor'];
 		if (!isNull indep_wind_01) then {
-			{
-				[(getPos indep_wind_01)] remoteExecCall ["Fn_Local_Create_Mission_DestroyWindMill", _x];
-			} forEach assault_group;
+			if (task_complete_regroup) then {
+				{
+					[(getPos indep_wind_01)] remoteExecCall ["Fn_Local_Create_Mission_DestroyWindMill", _x];
+				} forEach assault_group;
+			} else {
+				[(getPos indep_wind_01)] remoteExecCall ["Fn_Local_Create_Mission_DestroyWindMill", _requestor];
+			};
 		};
 	};
 	
 	Fn_Create_Mission_KillDoctor = {
+		params['_requestor'];
 		if (!isNull indep_lab_01) then {
-			{
-				[(getPos indep_lab_01)] remoteExecCall ["Fn_Local_Create_Mission_KillDoctor", _x];
-			} forEach assault_group;
+			if (task_complete_regroup) then {
+				{
+					[(getPos indep_lab_01)] remoteExecCall ["Fn_Local_Create_Mission_KillDoctor", _x];
+				} forEach assault_group;
+			} else {
+				[(getPos indep_lab_01)] remoteExecCall ["Fn_Local_Create_Mission_KillDoctor", _requestor];
+			};
 		};
 	};
 	

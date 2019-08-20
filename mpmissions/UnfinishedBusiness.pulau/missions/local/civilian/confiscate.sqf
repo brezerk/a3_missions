@@ -17,47 +17,33 @@
  ***************************************************************************/
 
 /*
-Spawn start objectives, triggers for game intro and players allocation
+Add an action to confiscate civilean car
 */
 
 //Player side triggers
 // Client side code
 if (hasInterface) then {
-	
-	Fn_Local_WaitForPlanning = {
-		cutText [localize "INFO_WAIT_01", "PLAIN DOWN", 2];
-	};
-	
-	Fn_Local_Planned = {
-		cutText [localize "INFO_WAIT_02", "PLAIN DOWN", 2];
-	};
-
-	Fn_Local_MakeEnemies = {
-		playSound "radio_chatter_02";
-	};
-
-	Fn_Local_Create_MissionIntro = {
-		us_leader_01 removeAction 0;
-		[
-			player,
-			"t_arrive_to_island",
-			[
-			format [localize "TASK_02_DESC", D_LOCATION],
-			format [localize "TASK_02_TITLE", D_LOCATION],
-			localize "TASK_ORIG_01"],
-			getMarkerPos "mrk_airfield",
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_arrive_to_island', "land"] call BIS_fnc_taskSetType;
-	};
-	
-	Fn_Local_MissionIntro_Fail = {
-		private _task = ['t_arrive_to_island', player] call BIS_fnc_taskReal;
-		if (!isNull _task) then {
-			["TaskFailed",["", (format [localize "TASK_02_TITLE", D_LOCATION])]] call BIS_fnc_showNotification;
-			_task setTaskState "Failed";
+	Fn_Local_Civilian_ConfiscateVehicle = {
+		params ["_target", "_caller", "_actionId", "_arguments"];
+		private["_driver"];
+		if (alive _target) then {
+			_driver = driver _target;
+			if (!isNull _driver) then {
+				if ((!isPlayer _driver) && (alive _driver)) then {
+					doGetOut _driver;
+				};
+			};
 		};
+	};
+
+	Fn_Local_Civilian_AttachConfiscate_Action = {
+		{
+			if ((side _x) == civilian) then {
+				_vehicle = assignedVehicle (leader _x);
+				if (!isNull _vehicle) then {
+					_vehicle addAction [localize 'ACTION_03', "call Fn_Local_Civilian_ConfiscateVehicle;", nil, 1, false, true, "", "alive _this", 10];
+				};
+			};
+		} forEach allGroups;
 	};
 };

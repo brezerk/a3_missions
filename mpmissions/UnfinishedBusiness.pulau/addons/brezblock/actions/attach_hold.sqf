@@ -24,8 +24,6 @@ Attach holdAction to vehicle and execute corresponding callback
 */
 if (isServer) then {
 
-
-
 	params ["_attach_to", "_call_back", ["_icon", "holdactions\holdAction_search"], ["_text", "ACTION_01"], ["_condition", ""], ["_duration", 6], ["_remove", true]];
 	_action_id = [
 		_attach_to,																// Object the action is attached to
@@ -43,6 +41,6 @@ if (isServer) then {
 		100,																	// Priority
 		_remove,																	// Remove on completion
 		false																	// Show in unconscious state 
-	] remoteExec ["BIS_fnc_holdActionAdd", 0, _attach_to];						// MP compatible implementation
+	] call BIS_fnc_holdActionAdd;
 	_action_id;
 };

@@ -209,7 +209,8 @@ if (isServer) then {
 	_wp setWaypointSpeed "NORMAL";
 	_wp setWaypointCompletionRadius 50;
 	
-	remoteExecCall ["Fn_Local_Create_Mission_CollectIntel"];
+	remoteExecCall ["Fn_Local_Civilian_AttachConfiscate_Action"];
+	remoteExecCall ["Fn_Local_West_Create_Mission_CollectIntel"];
 
 	execVM "missions\ping.sqf";
 };

@@ -43,17 +43,12 @@ if (isServer) then {
 	EAST setFriend [WEST, 1];
 	WEST setFriend [EAST, 1];
 	
-	//fixme cleanup
-	s_west_group = createGroup west; publicVariable "s_west_group";
-	s_east_group = createGroup east; publicVariable "s_east_group";
-	s_indep_group = createGroup independent; publicVariable "s_indep_group";
-	s_civ_group = createGroup civilian; publicVariable "s_civ_group";
-	
 	D_DIFFICLTY = nil;
 	D_LOCATION = nil;
 	D_START_TYPE = nil;
+	
 	// Defaines (should be an UI option at mission startup);
-	// Fixme should be diff dependent
+	// FIXME: should be diff dependent
 	D_FRACTION_INDEP = "CUP_I_NAPA"; //posible CUP_I_TK_GUE, IND_F, IND_F, IND_G_F
 	D_FRACTION_EAST = "CUP_O_SLA"; //possible CUP_O_TK, CUP_O_ChDKZ, 
 
@@ -68,12 +63,12 @@ if (isServer) then {
 	//Task states
 	task_complete_commtower = false;
 	task_complete_antiair = false;
+	task_complete_regroup = false;
 
 	//Global arrays
 	pings = [];
 	connected_users = [];
 	assault_group = [];
-	vehicle_confiscate_group = [];
 	vehicle_refuel_group = [];
 	vehicle_patrol_group = [];
 	checkpoint_gate_group = [];
@@ -97,7 +92,8 @@ if (isServer) then {
 			publicVariable "locationFloodedShip";
 			publicVariable "mission_plane_send";
 			publicVariable "mission_requested";
-			publicVariable "vehicle_confiscate_group";
+			remoteExecCall ["Fn_Local_SyncMission", _owner];
+			systemChat "CONNECTED";
 		};
 	}];
 	

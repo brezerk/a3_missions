@@ -21,7 +21,6 @@ Spawn start objectives, triggers for informator contact
 */
 
 if (isServer) then {
-	task_complete_regroup = false;
 	
 	addMissionEventHandler ["HandleDisconnect", {
 		params ["_unit", "_id", "_uid", "_name"];

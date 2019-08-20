@@ -81,7 +81,6 @@ if (isServer) then {
 				_vehicle setDir _dir;
 			};
 		} forEach _poi;
-		publicVariable "vehicle_confiscate_group";
 	};
 
 	Fn_Patrols_CreateCivilean_Traffic = {
@@ -147,7 +146,6 @@ if (isServer) then {
 				private _crew = createVehicleCrew (_vehicle);
 				vehicle_patrol_group append [_vehicle];
 				vehicle_refuel_group append [_vehicle];
-				vehicle_confiscate_group append [_vehicle];
 			};
 		} forEach _poi;
 	};

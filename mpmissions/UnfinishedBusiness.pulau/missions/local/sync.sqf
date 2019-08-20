@@ -17,34 +17,41 @@
  ***************************************************************************/
 
 /*
-Spawn start objectives, triggers for informator contact
+Sync client state
 */
 
-//Player side triggers
-// Client side code
+//Callback to set local variable
+Fn_Local_SyncMission = {
+	mission_sync = true;
+};
 
-if (hasInterface) then {
+// Wait for server to sync client variables
+waitUntil { sleep 1; systemChat "Wait for sync..."; mission_sync }; 
 
-	vehicle_confiscate_group = [];
-
-	Fn_Local_Patrols_ConfiscateVehicle = {
-		params ["_target", "_caller", "_actionId", "_arguments"];
-		private["_driver"];
-		if (alive _target) then {
-			_driver = driver _target;
-			if (!isNull _driver) then {
-				if ((!isPlayer _driver) && (alive _driver)) then {
-					doGetOut _driver;
-				};
-			};
+//Check mainline mission state
+if (!mission_requested) then {
+	//If mission is not requested -- add an action to planning board
+	//FIXME: Apply this only for squad leaders
+	us_leader_01 addAction [localize "ACTION_06", {execVM "ui\settingsDialog.sqf"}, nil, 1, false, false, "", "!mission_requested", 5];
+} else {
+	//Check if airplane was already send
+	if (mission_plane_send) then {
+		//Ok. Airplane was send. 
+		if (alive us_airplane_01) then {
+			//Ok it is still alive -- so You must wait for orders.
+			//FIXME: Add wait for orders
+		} else {
+			//Airplan is down, We need to assign resque mission
+			call Fn_Local_Create_RescueMission;
+			//FIXME: we need some flag set by controller.sqf
+			//to confirm server is done with spawning units :(
+			sleep 60;
+			call Fn_Local_Civilian_AttachConfiscate_Action;
+			call Fn_Local_Civilian_AttachInformator_Action;
+			call Fn_Local_West_Create_Mission_CollectIntel;
 		};
+	} else {
+		//Mission requested, but plane was not send yet. Create regular task;
+		call Fn_Local_Create_MissionIntro;
 	};
-	
-	while {count vehicle_confiscate_group == 0} do {
-		sleep 10;
-	};
-		
-	{
-		_x addAction [localize 'ACTION_03', "call Fn_Local_Patrols_ConfiscateVehicle;", nil, 1, false, true, "", "alive _this", 10];
-	} forEach vehicle_confiscate_group;
 };

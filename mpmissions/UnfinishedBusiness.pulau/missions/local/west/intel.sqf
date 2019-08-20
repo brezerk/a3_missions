@@ -23,7 +23,7 @@ Spawn start objectives, triggers for informator contact
 //Player side triggers
 // Client side code
 if (hasInterface) then {
-	Fn_Local_Create_Mission_CollectIntel = {
+	Fn_Local_West_Create_Mission_CollectIntel = {
 		if (playerSide == west) then {
 			[
 				player,
@@ -43,7 +43,7 @@ if (hasInterface) then {
 					if ((side _x) in [east, independent]) then {
 						private _action_id = [
 							(leader _x),
-							"call Fn_Local_Task_CollectIntel_Complete;",
+							"call Fn_Local_West_Task_CollectIntel_Complete;",
 							"holdactions\holdAction_search",
 							"ACTION_01",
 							"&& ((side _this) in [west, civilian])",
@@ -56,7 +56,7 @@ if (hasInterface) then {
 		};
 	};
 	
-	Fn_Local_Task_CollectIntel_Complete = {
+	Fn_Local_West_Task_CollectIntel_Complete = {
 		switch (playerSide) do {
 			case west: {
 				PUB_fnc_intelFound = [player, _this select 0];
