@@ -26,41 +26,25 @@ if (isServer) then {
 
 	params['_marker'];
 	private['_side'];
-
-	_Fn_BrezBlock_GetRandomVehicle = {
-		params['_side'];
-		private['_units'];
-		switch(_side) do
-		{
-			case west: {
-			
-			};
-			case east: {
-				_units = D_FRACTION_EAST_UNITS_LIGHT;
-			};
-			case resistance: {
-				_units = D_FRACTION_INDEP_UNITS_LIGHT;
-			};
-			case civilian: {
-			
-			};
-		};
-		selectRandom _units;
-	};
 	
 	private _center = getMarkerPos _marker;
-	private _side = objNull;
+	private _class = objNull;
 		
 	//https://community.bistudio.com/wiki/Arma_3_CfgMarkerColors
 	switch (markerType _marker) do
 	{
-		case "o_armor": { _side = east; };
-		case "b_armor": { _side = west; };
-		default { _side = resistance; };
+		case "o_motor_inf": { _class = selectRandom D_FRACTION_EAST_UNITS_CARS; };
+		case "n_motor_inf": { _class = selectRandom D_FRACTION_INDEP_UNITS_CARS; };
+		case "o_mech_inf": { _class = selectRandom D_FRACTION_EAST_UNITS_LIGHT; };
+		case "n_mech_inf": { _class = selectRandom D_FRACTION_INDEP_UNITS_LIGHT; };
+		case "o_armor": { _class = selectRandom D_FRACTION_EAST_UNITS_HEAVY; };
+		case "n_armor": { _class = selectRandom D_FRACTION_INDEP_UNITS_HEAVY; };
 	};
-		
-	private _vehicle = createVehicle [([_side] call _Fn_BrezBlock_GetRandomVehicle), _center];
-	_vehicle setDir (markerDir _marker);
-	private _crew = createVehicleCrew (_vehicle);
+	
+	if (!isNull _class) then {		
+		private _vehicle = createVehicle [_class, _center];
+		_vehicle setDir (markerDir _marker);
+		private _crew = createVehicleCrew (_vehicle);
+	};
 
 };

@@ -8,11 +8,11 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=7736;
+		nextID=7737;
 	};
 	class MarkerIDProvider
 	{
-		nextID=78;
+		nextID=79;
 	};
 	class LayerIndexProvider
 	{
@@ -12140,7 +12140,6 @@ class Mission
 			position[]={1750.083,34.937,3106.061};
 			name="wp_Monyet_east_armor_04";
 			type="o_motor_inf";
-			colorName="ColorEAST";
 			angle=316.004;
 			id=7631;
 			atlOffset=-0.0001449585;
