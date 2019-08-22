@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1018.553,149.80115,2502.9861};
-		dir[]={0.75355935,-0.65730953,0.010496951};
-		up[]={0.65729386,0.75357819,0.0091552585};
-		aside[]={0.013926475,5.2359246e-007,-0.99990892};
+		pos[]={2245.4893,337.05463,6064.9692};
+		dir[]={0.07954222,-0.84343731,-0.53133684};
+		up[]={0.12487556,0.53719866,-0.83415687};
+		aside[]={-0.98899311,1.6276317e-007,-0.14805485};
 	};
 };
 binarizationWanted=0;
@@ -733,11 +733,52 @@ class Mission
 					flags=6;
 					class Attributes
 					{
-						name="us_airplane_01D";
 					};
 					id=2254;
 					type="CUP_B_USMC_Pilot";
 					atlOffset=0.1292038;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male02ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.04;
+								};
+							};
+						};
+						nAttributes=2;
+					};
 				};
 				class Item1
 				{
@@ -11393,7 +11434,7 @@ class Mission
 			b=75;
 			drawBorder=1;
 			id=7576;
-			atlOffset=21.089573;
+			atlOffset=22.132744;
 		};
 		class Item809
 		{

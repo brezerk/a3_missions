@@ -39,9 +39,8 @@ if (isServer) then {
 			private _pos = getPos _target;
 			private _dir = getDir _caller;
 			_pos = [_pos, 0.5, _dir] call BIS_Fnc_relPos;
-			_pos = [_pos, 0.5, (_dir + 90)] call BIS_Fnc_relPos;
+			_pos = [_pos, 0.6, (_dir + 90)] call BIS_Fnc_relPos;
 			if ((_progress % 5) == 0) then {
-				systemChat "search tick!";
 				private _obj = createVehicle [
 					selectRandom ["Land_File1_F",
 						"Land_FilePhotos_F",
@@ -52,7 +51,7 @@ if (isServer) then {
 						"Land_File2_F",
 						"Land_File_research_F"
 					],
-					_pos,
+					[(_pos select 0), (_pos select 1), 0],
 					[],
 					0,
 					"CAN_COLLIDE"
