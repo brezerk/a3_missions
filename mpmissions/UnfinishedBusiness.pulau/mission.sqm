@@ -11434,7 +11434,7 @@ class Mission
 			b=75;
 			drawBorder=1;
 			id=7576;
-			atlOffset=22.132744;
+			atlOffset=21.089573;
 		};
 		class Item809
 		{

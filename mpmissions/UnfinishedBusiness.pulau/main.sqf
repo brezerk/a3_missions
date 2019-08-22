@@ -50,7 +50,28 @@ if (isServer) then {
 	// Defaines (should be an UI option at mission startup);
 	// FIXME: should be diff dependent
 	D_FRACTION_INDEP = "CUP_I_NAPA"; //posible CUP_I_TK_GUE, IND_F, IND_F, IND_G_F
+	
+	D_FRACTION_INDEP_UNITS_PATROL = [];
+	D_FRACTION_INDEP_UNITS_GARRISON = [];
+	D_FRACTION_INDEP_UNITS_CARS = [];
+	D_FRACTION_INDEP_UNITS_LIGHT = [];
+	D_FRACTION_INDEP_UNITS_HEAVY = [];
+	D_FRACTION_INDEP_UNITS_TRANSPORT = [];
+	
 	D_FRACTION_EAST = "CUP_O_SLA"; //possible CUP_O_TK, CUP_O_ChDKZ, 
+	
+	D_FRACTION_EAST_UNITS_PATROL = [];
+	D_FRACTION_EAST_UNITS_GARRISON = [];
+	D_FRACTION_EAST_UNITS_CARS = [];
+	D_FRACTION_EAST_UNITS_LIGHT = [];
+	D_FRACTION_EAST_UNITS_HEAVY = [];
+	D_FRACTION_EAST_UNITS_TRANSPORT = [];
+	
+	D_FRACTION_CIV = "CUP_C"; //possible CUP_O_TK, CUP_O_ChDKZ, 
+	
+	D_FRACTION_CIV_UNITS_MENS = [];
+	D_FRACTION_CIV_UNITS_CARS = [];
+	D_FRACTION_CIV_UNITS_BOATS = [];
 
 	// Global variables	
 	mission_requested = false;
@@ -177,6 +198,7 @@ if (isServer) then {
 	};
 	
 	#include "config\stash.sqf";
+	#include "config\fractions.sqf"; 
 
 	#include "missions\patrols.sqf";
 	#include "missions\intro.sqf";
@@ -205,6 +227,26 @@ if (isServer) then {
 	[getPos us_liberty_01] call Fn_West_MissionPlanning_CreateMarkers_Base;
 	
 	[us_base_suppy_01] call Fn_Task_West_Create_Supply;
+	
+	//Load fraction unit configurations
+	D_FRACTION_INDEP_UNITS_PATROL = ([independent, D_FRACTION_INDEP, 'patrol'] call Fn_Config_GetFraction_Units);
+	D_FRACTION_INDEP_UNITS_GARRISON = ([independent, D_FRACTION_INDEP, 'garrison'] call Fn_Config_GetFraction_Units);
+	D_FRACTION_INDEP_UNITS_CARS = ([independent, D_FRACTION_INDEP, 'cars'] call Fn_Config_GetFraction_Units);
+	D_FRACTION_INDEP_UNITS_LIGHT = ([independent, D_FRACTION_INDEP, 'light'] call Fn_Config_GetFraction_Units);
+	D_FRACTION_INDEP_UNITS_HEAVY = ([independent, D_FRACTION_INDEP, 'heavy'] call Fn_Config_GetFraction_Units);
+	D_FRACTION_INDEP_UNITS_TRANSPORT = ([independent, D_FRACTION_INDEP, 'transport'] call Fn_Config_GetFraction_Units);
+	
+	//Load fraction unit configurations
+	D_FRACTION_EAST_UNITS_PATROL = ([east, D_FRACTION_EAST, 'patrol'] call Fn_Config_GetFraction_Units);
+	D_FRACTION_EAST_UNITS_GARRISON = ([east, D_FRACTION_EAST, 'garrison'] call Fn_Config_GetFraction_Units);
+	D_FRACTION_EAST_UNITS_CARS = ([east, D_FRACTION_EAST, 'cars'] call Fn_Config_GetFraction_Units);
+	D_FRACTION_EAST_UNITS_LIGHT = ([east, D_FRACTION_EAST, 'light'] call Fn_Config_GetFraction_Units);
+	D_FRACTION_EAST_UNITS_HEAVY = ([east, D_FRACTION_EAST, 'heavy'] call Fn_Config_GetFraction_Units);
+	D_FRACTION_EAST_UNITS_TRANSPORT = ([east, D_FRACTION_EAST, 'transport'] call Fn_Config_GetFraction_Units);
+	
+	D_FRACTION_CIV_UNITS_MENS = ([civilian, D_FRACTION_CIV, 'mens'] call Fn_Config_GetFraction_Units);
+	D_FRACTION_CIV_UNITS_CARS = ([civilian, D_FRACTION_CIV, 'cars'] call Fn_Config_GetFraction_Units);
+	D_FRACTION_CIV_UNITS_BOATS = ([civilian, D_FRACTION_CIV, 'boats'] call Fn_Config_GetFraction_Units);
 	
 	waitUntil {
 		sleep 3;

@@ -132,19 +132,13 @@ if (isServer) then {
 	
 	Fn_Task_Spawn_Boats = {
 		params ["_poi"];
-		private _boats = [
-			'C_Boat_Civil_01_F',
-			'C_Rubberboat',
-			'C_Boat_Civil_01_rescue_F',
-			'CUP_C_Fishing_Boat_Chernarus'		
-		];
 
 		{
 			private _center = _x select 1;
 			private _myPlaces = selectBestPlaces [_center, 600, "((waterDepth factor [1,1.4])/(1 + waterDepth))", 15, 4];
 			{
 				private _pos = _x select 0;
-				private _obj = selectRandom _boats createVehicle (_pos);
+				private _obj = ((selectRandom D_FRACTION_CIV_UNITS_BOATS) createVehicle (_pos));
 				_obj addItemCargoGlobal ["V_RebreatherIA", 5];
 				_obj addItemCargoGlobal ["I_Assault_Diver", 5];
 				_obj addItemCargoGlobal ["G_I_Diving", 5];

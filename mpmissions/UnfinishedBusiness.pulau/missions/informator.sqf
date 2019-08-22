@@ -59,19 +59,8 @@ if (isServer) then {
 				private _builing = nearestBuilding (_pos);
 				_pos = selectRandom (_builing buildingPos -1);
 				if (!isNil "_pos") then {
-					private _class = selectRandom [
-							'C_man_polo_1_F',
-							'C_man_polo_2_F',
-							'C_man_polo_3_F',
-							'C_man_polo_4_F',
-							'C_man_polo_5_F',
-							'C_man_polo_6_F',
-							'C_man_1_1_F',
-							'C_man_1_2_F',
-							'C_man_1_3_F'
-						];
 					private _group = createGroup [civilian, true];
-					private _unit = _group createUnit [_class, _pos, [], 0, "FORM"];
+					private _unit = _group createUnit [(selectRandom D_FRACTION_CIV_UNITS_MENS), _pos, [], 0, "FORM"];
 					//Keep it in place :)
 					_unit setBehaviour "CARELESS";
 					_unit disableAi "MOVE";

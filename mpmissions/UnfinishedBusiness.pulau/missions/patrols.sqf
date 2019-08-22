@@ -22,24 +22,6 @@ if (isServer) then {
 	Fn_Task_Spawn_Civilean_Cars = {
 		params['_poi'];
 		//Create civ vehicle patrols
-		private _vehicles = [
-			'C_Van_01_box_F',
-			'C_Van_01_transport_F',
-			'C_SUV_01_F',
-			'C_Offroad_01_F',
-			'C_Truck_02_fuel_F',
-			'C_Truck_02_box_F',
-			'C_Truck_02_transport_F',
-			'C_Truck_02_covered_F',
-			'CUP_C_Skoda_White_CIV',
-			'CUP_C_Skoda_Blue_CIV',
-			'CUP_C_Dutsan_Tubeframe',
-			'CUP_C_Dutsan_Covered',
-			'CUP_C_Tractor_CIV',
-			'CUP_C_Volha_Blue_TKCIV',
-			'CUP_C_V3S_Open_TKC',
-			'CUP_C_V3S_Covered_TKC'
-		];
 		
 		{ 
 			private _center = _x select 1;
@@ -62,7 +44,7 @@ if (isServer) then {
 			} forEach _roads;
 			
 			for "_i" from 0 to ((random 3) + 1) do {
-				private _class = selectRandom _vehicles;
+				private _class = selectRandom D_FRACTION_CIV_UNITS_CARS;
 				private _road = selectRandom _good_roads;
 				if (isNil "_road") exitWith {};
 				_good_roads = _good_roads - [_road];
@@ -85,25 +67,6 @@ if (isServer) then {
 
 	Fn_Patrols_CreateCivilean_Traffic = {
 		params['_poi'];
-		//Create civ vehicle patrols
-		private _vehicles = [
-			'C_Van_01_box_F',
-			'C_Van_01_transport_F',
-			'C_SUV_01_F',
-			'C_Offroad_01_F',
-			'C_Truck_02_fuel_F',
-			'C_Truck_02_box_F',
-			'C_Truck_02_transport_F',
-			'C_Truck_02_covered_F',
-			'CUP_C_Skoda_White_CIV',
-			'CUP_C_Skoda_Blue_CIV',
-			'CUP_C_Dutsan_Tubeframe',
-			'CUP_C_Dutsan_Covered',
-			'CUP_C_Tractor_CIV',
-			'CUP_C_Volha_Blue_TKCIV',
-			'CUP_C_V3S_Open_TKC',
-			'CUP_C_V3S_Covered_TKC'
-		];
 		
 		{ 
 			private _center = _x select 1;
@@ -126,7 +89,7 @@ if (isServer) then {
 			} forEach _roads;
 			
 			for "_i" from 0 to (random 2) do {
-				private _class = selectRandom _vehicles;
+				private _class = selectRandom D_FRACTION_CIV_UNITS_CARS;
 				private _road = selectRandom _good_roads;
 				if (isNil "_road") exitWith {};
 				_good_roads = _good_roads - [_road];
@@ -152,43 +115,6 @@ if (isServer) then {
 	
 	Fn_Patrols_CreateMilitary_Traffic = {
 		params['_poi'];
-		private _vehicles = [];
-		switch (D_FRACTION_INDEP) do
-		{
-			case 'IND_F': {
-				_vehicles = [
-					'CUP_I_LR_MG_AAF',
-					'CUP_I_LR_SF_GMG_AAF',
-					'CUP_I_LR_SF_HMG_AAF'
-				];
-			};
-			case 'IND_G_F': {
-				_vehicles = [
-					'I_G_Offroad_01_AT_F',
-					'I_G_Offroad_01_F',
-					'I_G_Offroad_01_armed_F'
-				];
-			};
-			case 'CUP_I_NAPA': {
-				_vehicles = [
-					'CUP_I_Datsun_PK',
-					'CUP_I_Datsun_PK_Random',
-					'CUP_I_Datsun_PK'
-				];
-			};
-			case 'CUP_I_RACS': {
-				_vehicles = [
-					'CUP_I_LR_MG_RACS'
-				];
-			};
-			case 'CUP_I_TK_GUE': {
-				_vehicles = [
-					'CUP_I_Datsun_PK_TK',
-					'CUP_I_Datsun_PK_TK_Random',
-					'CUP_I_Datsun_PK'
-				];
-			};
-		};
 		{ 
 			private _center = _x select 1;
 			private _roads = _center nearRoads 150;
@@ -210,7 +136,7 @@ if (isServer) then {
 			} forEach _roads;
 			
 			for "_i" from 0 to (random 2) do {
-				private _class = selectRandom _vehicles;
+				private _class = selectRandom D_FRACTION_INDEP_UNITS_CARS;
 				private _road = selectRandom _good_roads;
 				if (isNil "_road") exitWith {};
 				_good_roads = _good_roads - [_road];
@@ -308,108 +234,17 @@ if (isServer) then {
 	Fn_Patrols_Create_Transport_Sentry = {
 		params ['_markerPos'];
 		
-		private _vehicles = [];
 		private _task_force = [];
-		switch (D_FRACTION_INDEP) do
-		{
-			case 'IND_F': {
-				_vehicles = [
-					'I_Truck_02_transport_F'
-				];
-				_task_force = [
-					'I_soldier_F',
-					'I_soldier_F',
-					'I_soldier_F',
-					'I_soldier_F',
-					'I_soldier_F',
-					'I_Soldier_AT_F',
-					'I_Soldier_GL_F',
-					//'I_Soldier_AR_F',
-					//'I_support_MG_F',
-					//'I_Soldier_lite_F',
-					'I_medic_F'
-				];
-			};
-			case 'IND_G_F': {
-				_vehicles = [
-					'I_Truck_02_transport_F'
-				];
-				_task_force = [
-					'I_G_Soldier_F',
-					'I_G_Soldier_F',
-					'I_G_Soldier_F',
-					'I_G_Soldier_F',
-					'I_G_Soldier_F',
-					'I_G_Soldier_lite_F',
-					//'I_G_medic_F',
-					//'I_G_Soldier_SL_F',
-					//'I_G_Soldier_AR_F',
-					'I_G_medic_F',
-					'I_G_Soldier_GL_F'
-				];
-			};
-			case 'CUP_I_NAPA': {
-				_vehicles = [
-					'CUP_V3S_Open_NAPA'
-				];
-				_task_force = [
-					'CUP_I_GUE_Soldier_AKS74',
-					'CUP_I_GUE_Soldier_AKM',
-					'CUP_I_GUE_Soldier_AKS74',
-					'CUP_I_GUE_Soldier_AKM',
-					//'CUP_I_GUE_Soldier_AKSU',
-					//'CUP_I_GUE_Soldier_MG',
-					'CUP_I_GUE_Soldier_AR',
-					//'CUP_I_GUE_Soldier_AT',
-					'CUP_I_GUE_Saboteur',
-					'CUP_I_GUE_Medic',
-					'CUP_I_GUE_Officer'
-				];
-			};
-			case 'CUP_I_RACS': {
-				_vehicles = [
-					'CUP_V3S_Open_NAPA'
-				];
-				
-				_task_force = [
-					'CUP_I_RACS_Soldier_Light_Mech',
-					'CUP_I_RACS_Soldier_AMG_Mech',
-					'CUP_I_RACS_Soldier_Mech',
-					'CUP_I_RACS_Soldier_Light_Mech',
-					'CUP_I_RACS_Soldier_Light_Mech',
-					'CUP_I_RACS_Medic_Mech',
-					//'CUP_I_RACS_AR_Mech',
-					//'CUP_I_RACS_Soldier_Light_Mech',
-					//'CUP_I_RACS_M_Mech',
-					'CUP_I_RACS_Soldier_Light_Mech',
-					'CUP_I_RACS_SL_Mech'
-				];
-			};
-			case 'CUP_I_TK_GUE': {
-				_vehicles = [
-					'CUP_I_V3S_Open_TKG'
-				];
-				_task_force = [
-					'CUP_I_TK_GUE_Soldier',
-					'CUP_I_TK_GUE_Soldier_AK_74S',
-					'CUP_I_TK_GUE_Guerilla_Enfield',
-					'CUP_I_TK_GUE_Guerilla_Enfield',
-					'CUP_I_TK_GUE_Guerilla_Medic',
-					'CUP_I_TK_GUE_Soldier_M16A2',
-					//'CUP_I_TK_GUE_Soldier_AR',
-					//'CUP_I_TK_GUE_Soldier_MG',
-					//'CUP_I_TK_GUE_Sniper',
-					'CUP_I_TK_GUE_Soldier',
-					'CUP_I_TK_GUE_Soldier_AK_74S'
-				];
-			};
+		
+		for "_i" from 1 to 10 do {
+			_task_force pushBack (selectRandom D_FRACTION_INDEP_UNITS_PATROL);
 		};
 		
 		//FIXME: spawn on nearest POI instead
 		private _center = getMarkerPos "mrk_spawn_point";
 		private _pos = [];
 		private _good = false;
-		private _class = selectRandom _vehicles;
+		private _class = selectRandom D_FRACTION_INDEP_UNITS_TRANSPORT;
 		
 		while {!_good} do {
 			_pos = [_center, 5, 50, 5, 0, 0, 0] call BIS_fnc_findSafePos;
@@ -445,45 +280,8 @@ if (isServer) then {
 	
 	Fn_Patrols_Create_Sentry = {
 		params ['_markerPos'];
-		private _vehicles = [];
-		switch (D_FRACTION_INDEP) do
-		{
-			case 'IND_F': {
-				_vehicles = [
-					'CUP_I_LR_MG_AAF',
-					'CUP_I_LR_SF_GMG_AAF',
-					'CUP_I_LR_SF_HMG_AAF'
-				];
-			};
-			case 'IND_G_F': {
-				_vehicles = [
-					'I_G_Offroad_01_AT_F',
-					'I_G_Offroad_01_F',
-					'I_G_Offroad_01_armed_F'
-				];
-			};
-			case 'CUP_I_NAPA': {
-				_vehicles = [
-					'CUP_I_Datsun_PK',
-					'CUP_I_Datsun_PK_Random',
-					'CUP_I_Datsun_PK'
-				];
-			};
-			case 'CUP_I_RACS': {
-				_vehicles = [
-					'CUP_I_LR_MG_RACS'
-				];
-			};
-			case 'CUP_I_TK_GUE': {
-				_vehicles = [
-					'CUP_I_Datsun_PK_TK',
-					'CUP_I_Datsun_PK_TK_Random',
-					'CUP_I_Datsun_PK'
-				];
-			};
-		};
 		
-		private _class = selectRandom _vehicles;
+		private _class = selectRandom D_FRACTION_INDEP_UNITS_CARS;
 		//FIXME: spawn on nearest POI instead
 		private _center = getMarkerPos "mrk_spawn_point";
 		private _pos = [];
