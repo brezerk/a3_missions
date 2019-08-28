@@ -150,10 +150,10 @@ class CfgFunctions {
 		{
 			class Get_RND_Index {file = "addons\brezblock\utils\get_rnd_index.sqf";};
 			class Spawn_Objective {file = "addons\brezblock\utils\spawn_objective.sqf";};
-			//class Spawn_OPFOR_Forces {file = "addons\brezblock\utils\spawn_opfor_forces.sqf"};
-			class Spawn_OPFOR_Forces {file = "addons\brezblock\utils\spawn_opfor_forces_v2.sqf"};
-			class Spawn_OPFOR_Forces_Guard {file = "addons\brezblock\utils\spawn_opfor_forces_guard.sqf"};
-			class Attach_Hold_Action {file = "addons\brezblock\actions\attach_hold.sqf"};
+			//class Spawn_OPFOR_Forces {file = "addons\brezblock\utils\spawn_opfor_forces.sqf";};
+			class Spawn_OPFOR_Forces {file = "addons\brezblock\utils\spawn_opfor_forces_v2.sqf";};
+			class Spawn_OPFOR_Forces_Guard {file = "addons\brezblock\utils\spawn_opfor_forces_guard.sqf";};
+			class Attach_Hold_Action {file = "addons\brezblock\actions\attach_hold.sqf";};
 		};
 	};
 };
