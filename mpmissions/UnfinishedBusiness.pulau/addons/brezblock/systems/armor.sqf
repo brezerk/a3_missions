@@ -41,7 +41,7 @@ if (isServer) then {
 		case "n_armor": { _class = selectRandom D_FRACTION_INDEP_UNITS_HEAVY; };
 	};
 	
-	if (!isNull _class) then {		
+	if (!isNil "_class") then {		
 		private _vehicle = createVehicle [_class, _center];
 		_vehicle setDir (markerDir _marker);
 		private _crew = createVehicleCrew (_vehicle);

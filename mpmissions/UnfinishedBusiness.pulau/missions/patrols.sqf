@@ -307,4 +307,135 @@ if (isServer) then {
 		_vehicle;
 	};
 	
+	/* 
+		Send assoult group
+	
+		params: 
+		_targetPos - target position
+		_force_level - desired force level. valid levels are: 0, 1, 2, 3
+	*/
+	Fn_Patrols_Create_AssaultGroup = {
+		params['_targetPos', '_force_level'];
+		
+		private _force_comp = [];
+		
+		switch (_force_level) do {
+			case 1: { _force_comp = [[D_FRACTION_INDEP_UNITS_CARS, 3], [D_FRACTION_INDEP_UNITS_TRANSPORT, 10]]; };
+			case 2: { _force_comp = [[D_FRACTION_INDEP_UNITS_CARS, 3], [D_FRACTION_INDEP_UNITS_TRANSPORT, 10], [D_FRACTION_INDEP_UNITS_LIGHT, 3]];};
+			case 3: { _force_comp = [[D_FRACTION_INDEP_UNITS_LIGHT, 3], [D_FRACTION_INDEP_UNITS_HEAVY, 7], [D_FRACTION_INDEP_UNITS_TRANSPORT, 10], [D_FRACTION_INDEP_UNITS_CARS, 3]];};
+			default { _force_comp = [[D_FRACTION_INDEP_UNITS_CARS, 3], [D_FRACTION_INDEP_UNITS_CARS, 3]]; };
+		};
+
+		private _roads = [];
+		
+		 scopeName "main";
+		{
+			if (count _roads >= 5) then { breakTo "main"; };
+			if ((_targetPos distance2D (getPos _x)) >= 600) then {
+				
+				private _clear = true;
+				private _pos = getPos _x;
+				{
+					if ((_pos distance2D (getPos _x)) < 500) then {
+						_clear = false;
+					};
+				} forEach (playableUnits + switchableUnits);
+				if (_clear) then {
+					if ((count (nearestObjects [_pos, ["Car", "Truck"], 50]) == 0) and (count (nearestTerrainObjects [_pos, ["TREE", "ROCK", "ROCKS"], 10, false, true]) == 0) and (count (nearestTerrainObjects [_pos, ["BUILDING", "HOUSE", "FENCE", "WALL"], 50, false, true]) == 0)) then {
+						private _bbox = boundingboxReal _x;
+						private _a = _bbox select 0;
+						private _b = _bbox select 1;
+						private _size = _a distance _b;
+						if (_size >= 35) then {
+							systemChat "found!";
+							_roads pushBack _x;
+							breakTo "main";
+						};
+					};
+				};
+			};
+		} forEach (_targetPos nearRoads 1000);
+		
+		if ((count _roads) == 0) exitWith {};
+		
+		private _road = selectRandom _roads;
+		private _lead_group = grpNull;
+		private _last_road = _road;
+		private _uuid = "";
+		
+		{
+			private _vehicle = [_last_road, (selectRandom (_x select 0))] call Fn_Patrols_Create_VehicleOnTheRoad;
+			if (_forEachIndex == 0) then {
+				_lead_group = group (driver _vehicle);
+				_uuid = (_lead_group call BIS_fnc_netId);
+			} else {
+				(crew _vehicle) joinSilent _lead_group;
+			};
+			_vehicle setVariable ['assault_uuid', _uuid, false];
+			private _infantry = [];
+			for "_i" from 1 to (_x select 1) do {
+				_infantry pushBack (selectRandom D_FRACTION_INDEP_UNITS_PATROL);
+			};
+			if ((count _infantry) > 0) then {
+				private _group = [(getPos _last_road), independent, _infantry,[],[],[],[],[],180] call BIS_fnc_spawnGroup;		
+				{
+					_x assignAsCargo _vehicle;
+					_x moveInCargo _vehicle;
+				} forEach units _group;
+				private _wp = _group addWaypoint [_targetPos, 0];
+				_wp setWaypointType "MOVE";
+				_wp setWaypointCombatMode "YELLOW";
+				_wp setWaypointBehaviour "AWARE";
+				_wp setWaypointCompletionRadius 350; 
+				_wp setWaypointSpeed "FULL";
+		
+				_wp = _group addWaypoint [_targetPos, 0];
+				_wp setWaypointType "SAD";
+				_wp setWaypointCombatMode "RED";
+				_wp setWaypointCompletionRadius 100;
+				_wp setWaypointBehaviour "COMBAT";
+				_wp setWaypointSpeed "FULL";
+			};
+			_last_road = ((roadsConnectedto (_last_road)) select 0);
+		} forEach _force_comp;
+		
+		_lead_group setFormation "COLUMN";
+		
+		private _wp = _lead_group addWaypoint [_targetPos, 0];
+		_wp setWaypointType "MOVE";
+		_wp setWaypointCombatMode "WHITE";
+		_wp setWaypointBehaviour "SAFE";
+		_wp setWaypointCompletionRadius 350; 
+		_wp setWaypointSpeed "NORMAL";
+		
+		_lead_group addWaypoint [_targetPos, 0];
+		_wp setWaypointType "SAD";
+		_wp setWaypointCombatMode "RED";
+		_wp setWaypointBehaviour "COMBAT";
+		_wp setWaypointSpeed "NORMAL";
+		
+		[_uuid, _targetPos, 250] execVM "addons\brezblock\utils\vehicleAssault.sqf";
+		
+	};
+	
+	Fn_Patrols_Create_VehicleOnTheRoad = {
+		params['_road', '_class'];
+		if (isNil "_road") exitWith {};
+		private _pos = position _road;
+		private _connected = roadsConnectedto (_road);
+			
+		private _crew = creategroup independent;
+		private _vehicle = ([_pos, 140, _class, _crew] call BIS_fnc_spawnVehicle) select 0;
+		_vehicle limitSpeed 40;
+				
+		if (count _connected > 0) then {
+			private _connected_pos = getPos (_connected select 0);
+			private _dir = [_pos, _connected_pos] call BIS_fnc_DirTo;
+							
+			_vehicle setDir _dir;
+		};
+		
+		_vehicle;
+	};
+	
 };

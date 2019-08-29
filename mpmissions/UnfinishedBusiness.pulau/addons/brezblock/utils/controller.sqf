@@ -50,7 +50,7 @@ if (isServer) then {
 				private _pos = getMarkerPos _marker;
 				_grp = [_marker] call BrezBlock_fnc_MarkerCreateDefend;
 				{
-					if ((markerType _x) in ["b_motor_inf", "o_motor_inf", "n_motor_inf"]) then {
+					if ((markerType _x) in ["o_mech_inf", "n_mech_inf", "o_motor_inf", "n_motor_inf", "o_armor", "n_armor"]) then {
 						private _range = getMarkerSize _marker select 0;
 						if ((_pos distance2D (getMarkerPos _x)) <= _range) then {
 							[_x] call BrezBlock_fnc_CreateArmor;
