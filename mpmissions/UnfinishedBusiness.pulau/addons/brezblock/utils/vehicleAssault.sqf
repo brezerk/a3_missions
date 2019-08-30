@@ -24,7 +24,6 @@ Spawn start objectives, triggers for informator contact
 params['_uuid', '_pos', '_range'];
 
 private _class = "";
-
 private _executed = false;
 
 while { !_executed } do {

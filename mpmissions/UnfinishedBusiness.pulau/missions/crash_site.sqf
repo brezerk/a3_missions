@@ -194,7 +194,7 @@ if (isServer) then {
 	
 	sleep 60;
 	
-	[_crashSitePos] call Fn_Patrols_Create_AssaultGroup;
+	[_crashSitePos, 0] call Fn_Patrols_Create_AssaultGroup;
 	
 	remoteExecCall ["Fn_Local_Civilian_AttachConfiscate_Action"];
 	remoteExecCall ["Fn_Local_West_Create_Mission_CollectIntel"];

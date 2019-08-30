@@ -21,7 +21,6 @@ Server init file
 */
 
 //remove AI-controled unis for playable objects
-
 {
 	_x addMPEventHandler ["MPRespawn", {
 		_unit = _this select 0;
@@ -30,3 +29,11 @@ Server init file
 		}
 	}]
 } forEach playableUnits;
+
+[ 
+	true, 
+	[
+		[ independent , 0.2, 0.2, 0.8, 0.5 ],
+		[ EAST		  , 0.2, 0.2, 0.8, 0.5 ] 
+	]
+] call BIS_fnc_EXP_camp_dynamicAISkill;

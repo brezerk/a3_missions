@@ -20,6 +20,53 @@
 Spawn start objectives, triggers for ammo delivery
 */
 
+if (hasInterface) then {
+	Fn_Local_Create_AmmoDelivery_Load = {
+		[
+			player,
+			"t_ural_load",
+			[localize "TASK_01_DESC",
+			localize "TASK_01_TITLE",
+			localize "TASK_ORIG_01"],
+			getPos ua_ural_ammo_01,
+			"CREATED",
+			0,
+			true
+		] call BIS_fnc_taskCreate;
+		['t_ural_load', "container"] call BIS_fnc_taskSetType;
+	};
+
+	Fn_Local_Task_Create_AmmoDelivery = {
+		[
+			player,
+			"t_ural_delivery",
+			[localize "TASK_02_DESC",
+			localize "TASK_02_TITLE",
+			localize "TASK_ORIG_01"],
+			getMarkerPos "wp_ural_deliver_01",
+			"CREATED",
+			0,
+			true
+		] call BIS_fnc_taskCreate;
+		['t_ural_delivery', "truck"] call BIS_fnc_taskSetType;
+	};
+	
+	Fn_Local_Create_AmmoDelivery_Unload = {
+		[
+			player,
+			"t_ural_unload",
+			[localize "TASK_04_DESC",
+			localize "TASK_04_TITLE",
+			localize "TASK_ORIG_01"],
+			getPos ua_ural_ammo_01,
+			"CREATED",
+			0,
+			true
+		] call BIS_fnc_taskCreate;
+		['t_ural_unload', "container"] call BIS_fnc_taskSetType;
+	};
+};
+
 if (isServer) then {
 
 	task_loaded_ua_supply_box_01 = false;
@@ -56,18 +103,7 @@ if (isServer) then {
 		[1000] call Fn_Modify_Rating;
 		deleteVehicle trgUralDestroyed;
 		deleteVehicle trgUralDeliver;
-		[
-			independent,
-			"t_ural_unload",
-			[localize "TASK_04_DESC",
-			localize "TASK_04_TITLE",
-			localize "TASK_ORIG_01"],
-			getPos ua_ural_ammo_01,
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_ural_unload', "container"] call BIS_fnc_taskSetType;
+		[] remoteExecCall ["Fn_Local_Create_AmmoDelivery_Unload", [0,-2] select isDedicated];
 		trgUralUnload = createTrigger ["EmptyDetector", getPos ua_ural_ammo_01];
 		trgUralUnload setTriggerArea [0, 0, 0, false];
 		trgUralUnload setTriggerActivation ["NONE", "PRESENT", false];
@@ -80,21 +116,10 @@ if (isServer) then {
 
 
 	Fn_Task_Create_AmmoDelivery = {
+		[] remoteExecCall ["Fn_Local_Create_AmmoDelivery", [0,-2] select isDedicated];
 		['t_ural_load', 'SUCCEEDED'] call BIS_fnc_taskSetState;
-		[1000] call Fn_Modify_Rating;
+
 		// Deliver Ural
-		[
-			independent,
-			"t_ural_delivery",
-			[localize "TASK_02_DESC",
-			localize "TASK_02_TITLE",
-			localize "TASK_ORIG_01"],
-			getMarkerPos "wp_ural_deliver_01",
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_ural_delivery', "truck"] call BIS_fnc_taskSetType;
 		trgUralDeliver = createTrigger ["EmptyDetector", getMarkerPos "wp_defend_01"];
 		trgUralDeliver setTriggerArea [50, 50, 0, false];
 		trgUralDeliver setTriggerActivation ["VEHICLE", "PRESENT", false];
@@ -110,18 +135,7 @@ if (isServer) then {
 	};
 
 	Fn_Task_Create_AmmoDelivery_Load = {
-		[
-			independent,
-			"t_ural_load",
-			[localize "TASK_01_DESC",
-			localize "TASK_01_TITLE",
-			localize "TASK_ORIG_01"],
-			getPos ua_ural_ammo_01,
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_ural_load', "container"] call BIS_fnc_taskSetType;
+		[] remoteExecCall ["Fn_Local_Create_AmmoDelivery_Load", [0,-2] select isDedicated];
 		trgUralLoad = createTrigger ["EmptyDetector", getPos ua_ural_ammo_01];
 		trgUralLoad setTriggerArea [0, 0, 0, false];
 		trgUralLoad setTriggerActivation ["NONE", "PRESENT", false];
