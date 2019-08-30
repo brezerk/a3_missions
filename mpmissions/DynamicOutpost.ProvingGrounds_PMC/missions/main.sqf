@@ -20,6 +20,41 @@
 Spawn start objectives, triggers and mainline story
 */
 
+// Client side code
+if (hasInterface) then {
+	Fn_Local_Task_DocSearch = {
+		[
+			player,
+			"t_doc_search",
+			[localize "TASK_09_DESC",
+			localize "TASK_09_TITLE",
+			localize "TASK_ORIG_01"],
+			objNull,
+			"CREATED",
+			0,
+			true
+		] call BIS_fnc_taskCreate;
+		["t_doc_search", "search"] call BIS_fnc_taskSetType;
+	};
+	
+	Fn_Local_Task_DefendBlockpost = {
+		playSound "outpost_wave01";
+		playSound "rhs_usa_land_rc_25";
+	
+		[
+			player,
+			"t_defend_blockpost",
+			[localize "TASK_10_DESC",
+			localize "TASK_10_TITLE",
+			localize "TASK_ORIG_01"],
+			getMarkerPos "wp_defend_01",
+			"CREATED",
+			0,
+			true
+		] call BIS_fnc_taskCreate;
+	};
+};
+
 if (isServer) then {
 	['t_report_officer', 'Succeeded'] call BIS_fnc_taskSetState;
 	"respawn_guerrila" setMarkerPos (getPos field_hospital);
@@ -31,18 +66,7 @@ if (isServer) then {
 	sleep 5;
 	call Fn_Task_Create_Informator;
 	sleep 5;
-	[
-		independent,
-		"t_doc_search",
-		[localize "TASK_09_DESC",
-		localize "TASK_09_TITLE",
-		localize "TASK_ORIG_01"],
-		objNull,
-		"CREATED",
-		0,
-		true
-	] call BIS_fnc_taskCreate;
-	["t_doc_search", "search"] call BIS_fnc_taskSetType;
+	[] remoteExecCall ["Fn_Local_Task_DocSearch", [0,-2] select isDedicated];
 	
 	// +3 mins: spawn 3 spec ops waves
 	_until = diag_tickTime + 6 * 60;
@@ -64,20 +88,7 @@ if (isServer) then {
 	_until = diag_tickTime + 5 * 60;
 	waitUntil {sleep 1; diag_tickTime > _until;};
 	
-	["outpost_wave01"] remoteExec ["playSound"];
-	["rhs_usa_land_rc_25"] remoteExec ["playSound"];
-	
-	[
-		independent,
-		"t_defend_blockpost",
-		[localize "TASK_10_DESC",
-		localize "TASK_10_TITLE",
-		localize "TASK_ORIG_01"],
-		getMarkerPos "wp_defend_01",
-		"CREATED",
-		0,
-		true
-	] call BIS_fnc_taskCreate;
+	[] remoteExecCall ["Fn_Local_Task_DefendBlockpost", [0,-2] select isDedicated];
 	
 	trgLooseGame = createTrigger ["EmptyDetector", getmarkerpos "wp_defend_01"];
 	trgLooseGame setTriggerArea [50, 50, 0, false];

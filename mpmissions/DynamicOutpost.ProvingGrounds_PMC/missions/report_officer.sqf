@@ -20,11 +20,10 @@
 Spawn start objectives, triggers to report officer
 */
 
-if (isServer) then {
-	Fn_Task_Create_ReportOfficer = {
-		// Report to officer
+if (hasInterface) then {
+	Fn_Local_Task_Create_ReportOfficer = {
 		[
-			independent,
+			player,
 			"t_report_officer",
 			[localize "TASK_03_DESC",
 			localize "TASK_03_TITLE",
@@ -35,6 +34,13 @@ if (isServer) then {
 			true
 		] call BIS_fnc_taskCreate;
 		['t_report_officer', "talk"] call BIS_fnc_taskSetType;
+	};
+};
+
+if (isServer) then {
+	Fn_Task_Create_ReportOfficer = {
+		// Report to officer
+		[] remoteExecCall ["Fn_Local_Task_Create_ReportOfficer", [0,-2] select isDedicated];
 		trgOfficerDead = createTrigger ["EmptyDetector", getPos ua_officer_01];
 		trgOfficerDead setTriggerArea [0, 0, 0, false];
 		trgOfficerDead setTriggerActivation ["NONE", "PRESENT", false];

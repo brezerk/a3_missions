@@ -8,7 +8,7 @@ class EditorData
 	toggles=522;
 	class ItemIDProvider
 	{
-		nextID=6647;
+		nextID=6649;
 	};
 	class MarkerIDProvider
 	{
@@ -140,13 +140,15 @@ addons[]=
 	"A3_Structures_F_Mil_Flags",
 	"ace_spectator",
 	"po_factions_me",
-	"A3_Soft_F_Gamma_Van_01"
+	"A3_Soft_F_Gamma_Van_01",
+	"A3_Modules_F_Curator_Curator",
+	"A3_Data_F_Curator_Virtual"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=71;
+		items=73;
 		class Item0
 		{
 			className="CUP_Buildings_Config";
@@ -192,21 +194,21 @@ class AddonsMetaData
 		{
 			className="ace_interaction";
 			name="ACE3 - Interaction";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item8
 		{
 			className="ace_cargo";
 			name="ACE3 - Cargo";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item9
 		{
 			className="ace_dragging";
 			name="ACE3 - Dragging";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item10
@@ -289,7 +291,7 @@ class AddonsMetaData
 		{
 			className="acex_field_rations";
 			name="ACEX - Field Rations";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item23
@@ -438,7 +440,7 @@ class AddonsMetaData
 		{
 			className="ace_logistics_wirecutter";
 			name="ACE3 - Logistics Wire Cutter";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item47
@@ -520,8 +522,8 @@ class AddonsMetaData
 		class Item59
 		{
 			className="cba_modules";
-			name="Community Base Addons - Modules";
-			author="CBA Team";
+			name="Community Base Addons - Компонент Модулей";
+			author="Команда CBA";
 			url="https://www.github.com/CBATeam/CBA_A3";
 		};
 		class Item60
@@ -549,14 +551,14 @@ class AddonsMetaData
 		{
 			className="ace_explosives";
 			name="ACE3 - Explosives";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item64
 		{
 			className="acex_sitting";
 			name="ACEX - Sitting";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item65
@@ -568,7 +570,7 @@ class AddonsMetaData
 		{
 			className="ace_medical";
 			name="ACE3 - Medical";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item67
@@ -580,7 +582,7 @@ class AddonsMetaData
 		{
 			className="ace_spectator";
 			name="ACE3 - Spectator";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item69
@@ -593,6 +595,20 @@ class AddonsMetaData
 		{
 			className="A3_Soft_F_Gamma";
 			name="Arma 3 - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item71
+		{
+			className="A3_Modules_F_Curator";
+			name="Arma 3 Zeus Update - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item72
+		{
+			className="A3_Data_F_Curator";
+			name="Arma 3 Zeus Update - Main Configuration";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -626,24 +642,6 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
-			property="RespawnTemplates";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"ARRAY"
-						};
-					};
-				};
-			};
-		};
-		class Attribute1
-		{
 			property="RespawnButton";
 			expression="true";
 			class Value
@@ -658,6 +656,24 @@ class CustomAttributes
 						};
 					};
 					value=0;
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
 				};
 			};
 		};
@@ -2225,7 +2241,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=1120;
+		items=1122;
 		class Item0
 		{
 			dataType="Object";
@@ -8060,7 +8076,7 @@ class Mission
 			};
 			id=1788;
 			type="CamoNet_INDP_open_F";
-			atlOffset=-0.45800018;
+			atlOffset=-0.50317001;
 		};
 		class Item259
 		{
@@ -38557,16 +38573,117 @@ class Mission
 			id=6645;
 			atlOffset=0.0038452148;
 		};
+		class Item1120
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={1681,61.904762,211.759};
+			};
+			id=6647;
+			type="ModuleCurator_F";
+			atlOffset=7.6293945e-006;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleCurator_F_Owner";
+					expression="_this setVariable ['Owner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="#adminLogged";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleCurator_F_Forced";
+					expression="_this setVariable ['Forced',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleCurator_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleCurator_F_Addons";
+					expression="_this setVariable ['Addons',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=2;
+						};
+					};
+				};
+				nAttributes=4;
+			};
+		};
+		class Item1121
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={1682.5793,61.75489,209.1272};
+			};
+			id=6648;
+			type="VirtualCurator_F";
+		};
 	};
 	class Connections
 	{
 		class LinkIDProvider
 		{
-			nextID=55;
+			nextID=56;
 		};
 		class Links
 		{
-			items=55;
+			items=56;
 			class Item0
 			{
 				linkID=0;
@@ -39112,6 +39229,16 @@ class Mission
 				linkID=54;
 				item0=5184;
 				item1=3044;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item55
+			{
+				linkID=55;
+				item0=6648;
+				item1=6647;
 				class CustomData
 				{
 					type="Sync";

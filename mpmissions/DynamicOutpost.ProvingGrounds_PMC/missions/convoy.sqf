@@ -23,7 +23,7 @@ Spawn start objectives, triggers and mainline story
 // Client side code
 if (hasInterface) then {	
 	// Intended to be executed on player side (but nit dedicated tho);
-	Fn_Task_Convoy_Info = {
+	Fn_Local_Task_Create_Convoy = {
 		params ['_marker'];
 		private ["_trg"];
 		_trg = createTrigger ["EmptyDetector", getMarkerPos _marker];
@@ -34,17 +34,8 @@ if (hasInterface) then {
 			"[ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_08', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;",
 			""
 		];
-	};
-};
-
-if (isServer) then {
-	Fn_Task_Create_Convoy = {
-		//ua_convoy_01
-		private ["_spawnposition"];
-		_spawnposition = ["wp_ua_convoy", 6] call BrezBlock_fnc_Get_RND_Index;
-		[_spawnposition, "ua_convoy_01"] execVM 'addons\brezblock\utils\spawn_opfor_forces_guard.sqf';
 		[
-			independent,
+			player,
 			"t_ua_convoy_found",
 			[localize "TASK_16_DESC",
 			localize "TASK_16_TITLE",
@@ -55,26 +46,13 @@ if (isServer) then {
 			true
 		] call BIS_fnc_taskCreate;
 		['t_ua_convoy_found', "unknown"] call BIS_fnc_taskSetType;
-		trgConvoyFound = createTrigger ["EmptyDetector", getMarkerPos _spawnposition];
-		trgConvoyFound setTriggerArea [125, 125, 0, false];
-		trgConvoyFound setTriggerActivation ["ANYPLAYER", "PRESENT", true];
-		trgConvoyFound setTriggerStatements [
-			"this",
-			"call Fn_Task_Create_Convoy_DestroyHeavy; deleteVehicle trgConvoyFound;",
-			""
-		];
-		["outpost_convoy"] remoteExec ["playSound"];
-		["rhs_usa_land_rc_15"] remoteExec ["playSound"];
-		[_spawnposition] remoteExec ["Fn_Task_Convoy_Info"];
-	}; // Fn_Task_Create_Convoy
-
-	Fn_Task_Create_Convoy_DestroyHeavy = {
-		private ["_affectedUnits"];
-		_affectedUnits = [];
-		['t_ua_convoy_found', 'SUCCEEDED'] call BIS_fnc_taskSetState;
-		[1000] call Fn_Modify_Rating;
+		playSound "outpost_convoy";
+		playSound "rhs_usa_land_rc_15";
+	};
+	
+	Fn_Local_Task_Create_Convoy_DestroyHeavy = {
 		[
-			independent,
+			player,
 			"t_ua_convoy_destroy_heavy",
 			[localize "TASK_17_DESC",
 			localize "TASK_17_TITLE",
@@ -85,12 +63,39 @@ if (isServer) then {
 			true
 		] call BIS_fnc_taskCreate;
 		['t_ua_convoy_destroy_heavy', "destroy"] call BIS_fnc_taskSetType;
+	};
+};
+
+if (isServer) then {
+	Fn_Task_Create_Convoy = {
+		//ua_convoy_01
+		private ["_spawnposition"];
+		_spawnposition = ["wp_ua_convoy", 6] call BrezBlock_fnc_Get_RND_Index;
+		[_spawnposition, "ua_convoy_01"] execVM 'addons\brezblock\utils\spawn_opfor_forces_guard.sqf';
+		[_spawnposition] remoteExecCall ["Fn_Local_Task_Create_Convoy", [0,-2] select isDedicated];
+		
+		trgConvoyFound = createTrigger ["EmptyDetector", getMarkerPos _spawnposition];
+		trgConvoyFound setTriggerArea [125, 125, 0, false];
+		trgConvoyFound setTriggerActivation ["ANYPLAYER", "PRESENT", true];
+		trgConvoyFound setTriggerStatements [
+			"this",
+			"call Fn_Task_Create_Convoy_DestroyHeavy; deleteVehicle trgConvoyFound;",
+			""
+		];
+
+	}; // Fn_Task_Create_Convoy
+
+	Fn_Task_Create_Convoy_DestroyHeavy = {
+		private ["_affectedUnits"];
+		_affectedUnits = [];
+		['t_ua_convoy_found', 'SUCCEEDED'] call BIS_fnc_taskSetState;
+		[] remoteExecCall ["Fn_Local_Task_Create_Convoy_DestroyHeavy", [0,-2] select isDedicated];
 		trgUralDestroyed = createTrigger ["EmptyDetector", getPos ua_heavy_02];
 		trgUralDestroyed setTriggerArea [0, 0, 0, false];
 		trgUralDestroyed setTriggerActivation ["NONE", "PRESENT", false];
 		trgUralDestroyed setTriggerStatements [
 			"!alive ua_heavy_02",
-			"['t_ua_convoy_destroy_heavy', 'SUCCEEDED'] call BIS_fnc_taskSetState; deleteVehicle trgUralDestroyed; [8000] call Fn_Modify_Rating;",
+			"['t_ua_convoy_destroy_heavy', 'SUCCEEDED'] call BIS_fnc_taskSetState; deleteVehicle trgUralDestroyed;",
 			""
 		];
 		// kill alive units if any
@@ -99,7 +104,7 @@ if (isServer) then {
 			//systemChat format ['OKAY! %1', _x distance ua_heavy_02];
 			if (_x isKindOf 'Man') then { 
 				[_x, 1.0, "body", "bullet"] call ace_medical_fnc_addDamageToUnit;
-				[_x, true, true] call ace_medical_fnc_setDead;deleteVehicle _x; 
+				[_x, true, true] call ace_medical_fnc_setDead; //deleteVehicle _x; 
 			} else {
 				{ 
 					[_x, 1.0, "body", "bullet"] call ace_medical_fnc_addDamageToUnit;

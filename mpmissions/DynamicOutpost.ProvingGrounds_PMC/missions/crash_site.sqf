@@ -21,8 +21,9 @@ Crash site side-mission code
 */
 
 // Intended to be executed on player side
-Fn_Task_HelicopterCrashSite_Info = {
-	if (!isDedicated) then {
+// Client side code
+if (hasInterface) then {
+	Fn_Local_Task_Create_HelicopterCrashSite = {
 		params['_marker'];
 		private ["_trg"];
 		_trg = createTrigger ["EmptyDetector", getMarkerPos _marker];
@@ -33,6 +34,35 @@ Fn_Task_HelicopterCrashSite_Info = {
 			"[ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_05', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;",
 			""
 		];
+		[
+			player,
+			"t_heli_scured",
+			[localize "TASK_07_DESC",
+			localize "TASK_07_TITLE",
+			localize "TASK_ORIG_02"],
+			getMarkerPos _marker,
+			"CREATED",
+			0,
+			true
+		] call BIS_fnc_taskCreate;
+		['t_heli_scured', "unknown"] call BIS_fnc_taskSetType;
+	};
+	
+	Fn_Local_Task_HelicopterCrashSite_DocsFound = {
+		[
+			player,
+			["t_doc_02", "t_doc_search"],
+			[localize "TASK_11_DESC",
+			localize "TASK_11_TITLE",
+			localize "TASK_ORIG_01"],
+			objNull,
+			"SUCCEEDED",
+			0,
+			true
+		] call BIS_fnc_taskCreate;
+		['t_doc_02', "documents"] call BIS_fnc_taskSetType;
+		playSound "outpost_docs_found";
+		playSound "rhs_usa_land_rc_28";
 	};
 };
 
@@ -51,18 +81,7 @@ if (isServer) then {
 			p_officer_02,
 			{ _this remoteExec ["Fn_Task_HelicopterCrashSite_DocsFound", 2] }
 		] call BrezBlock_fnc_Attach_Hold_Action;
-		[
-			independent,
-			"t_heli_scured",
-			[localize "TASK_07_DESC",
-			localize "TASK_07_TITLE",
-			localize "TASK_ORIG_02"],
-			getMarkerPos _marker,
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_heli_scured', "unknown"] call BIS_fnc_taskSetType;
+		
 		trgHeliSecured = createTrigger ["EmptyDetector", getMarkerPos _marker];
 		trgHeliSecured setTriggerArea [18, 18, 0, false];
 		trgHeliSecured setTriggerActivation ["ANYPLAYER", "PRESENT", false];
@@ -71,7 +90,7 @@ if (isServer) then {
 			"if (isServer) then { task_completed_02 = true; ['t_heli_scured', 'SUCCEEDED'] call BIS_fnc_taskSetState; deleteVehicle trgHeliSecured; [1000] call Fn_Modify_Rating; };",
 			""
 		];
-		[_marker] remoteExec ["Fn_Task_HelicopterCrashSite_Info"];
+		[_marker] remoteExecCall ["Fn_Local_Task_Create_HelicopterCrashSite", [0,-2] select isDedicated];
 	};
 	
 	/*
@@ -79,20 +98,7 @@ if (isServer) then {
 	*/
 	Fn_Task_HelicopterCrashSite_DocsFound = {
 		task_completed_05 = true;
-		[
-			independent,
-			["t_doc_02", "t_doc_search"],
-			[localize "TASK_11_DESC",
-			localize "TASK_11_TITLE",
-			localize "TASK_ORIG_01"],
-			objNull,
-			"SUCCEEDED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		["outpost_docs_found"] remoteExec ["playSound"];
-		["rhs_usa_land_rc_28"] remoteExec ["playSound"];
-		[2000] call Fn_Modify_Rating;
+		[] remoteExecCall ["Fn_Local_Task_HelicopterCrashSite_DocsFound", [0,-2] select isDedicated];
 		if (task_completed_07 && task_completed_06 && task_completed_05 && task_completed_04) then {
 			["t_doc_search", "SUCCEEDED", true] spawn BIS_fnc_taskSetState;
 		};

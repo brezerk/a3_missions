@@ -116,7 +116,7 @@ if (isServer) then {
 
 
 	Fn_Task_Create_AmmoDelivery = {
-		[] remoteExecCall ["Fn_Local_Create_AmmoDelivery", [0,-2] select isDedicated];
+		[] remoteExecCall ["Fn_Local_Task_Create_AmmoDelivery", [0,-2] select isDedicated];
 		['t_ural_load', 'SUCCEEDED'] call BIS_fnc_taskSetState;
 
 		// Deliver Ural

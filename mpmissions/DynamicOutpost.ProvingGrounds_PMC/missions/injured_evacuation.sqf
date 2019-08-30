@@ -35,14 +35,6 @@ if (hasInterface) then {
 		] call BIS_fnc_taskCreate;
 		['t_outpost_injured', "heal"] call BIS_fnc_taskSetType;
 	};
-	
-	Fn_Local_Task_InjuredEvacuation_Complete = {
-		['t_outpost_injured', 'SUCCEEDED'] call BIS_fnc_taskSetState;
-	};
-	
-	Fn_Local_Task_InjuredEvacuation_Failed = {
-		['t_outpost_injured', 'FAILED'] call BIS_fnc_taskSetState;
-	};
 };
 
 
@@ -104,13 +96,13 @@ if (isServer) then {
 		if (!(isNil "ua_injured_01")) then {
 			trgOutpostInjuredDied setTriggerStatements [
 				"!alive ua_injured_01 && !alive ua_injured_02 && !alive ua_injured_03 && !alive ua_injured_04",
-				"deleteVehicle trgCallMedEvacHeli; deleteVehicle trgOutpostInjuredDied; deleteVehicle trgOutpostInjuredDelivered; deleteVehicle trgCallMedEvacHeliCleanup; deleteVehicle trgInjuredKeepUnconscious_01; deleteVehicle trgInjuredKeepUnconscious_02; deleteVehicle trgInjuredKeepUnconscious_03; deleteVehicle trgInjuredKeepUnconscious_04; [] remoteExecCall ['Fn_Local_Task_InjuredEvacuation_Complete', [0,-2] select isDedicated];",
+				"deleteVehicle trgCallMedEvacHeli; deleteVehicle trgOutpostInjuredDied; deleteVehicle trgOutpostInjuredDelivered; deleteVehicle trgCallMedEvacHeliCleanup; deleteVehicle trgInjuredKeepUnconscious_01; deleteVehicle trgInjuredKeepUnconscious_02; deleteVehicle trgInjuredKeepUnconscious_03; deleteVehicle trgInjuredKeepUnconscious_04; ['t_outpost_injured', 'FAILED'] call BIS_fnc_taskSetState;",
 				""
 			];
 		} else {
 			trgOutpostInjuredDied setTriggerStatements [
 				"!alive ua_injured_02 && !alive ua_injured_03 && !alive ua_injured_04",
-				"deleteVehicle trgCallMedEvacHeli; deleteVehicle trgOutpostInjuredDied; deleteVehicle trgOutpostInjuredDelivered; deleteVehicle trgCallMedEvacHeliCleanup; deleteVehicle trgInjuredKeepUnconscious_01; deleteVehicle trgInjuredKeepUnconscious_02; deleteVehicle trgInjuredKeepUnconscious_03; deleteVehicle trgInjuredKeepUnconscious_04; [] remoteExecCall ['Fn_Local_Task_InjuredEvacuation_Complete', [0,-2] select isDedicated];",
+				"deleteVehicle trgCallMedEvacHeli; deleteVehicle trgOutpostInjuredDied; deleteVehicle trgOutpostInjuredDelivered; deleteVehicle trgCallMedEvacHeliCleanup; deleteVehicle trgInjuredKeepUnconscious_01; deleteVehicle trgInjuredKeepUnconscious_02; deleteVehicle trgInjuredKeepUnconscious_03; deleteVehicle trgInjuredKeepUnconscious_04; ['t_outpost_injured', 'FAILED'] call BIS_fnc_taskSetState;",
 				""
 			];
 		};
@@ -138,7 +130,7 @@ if (isServer) then {
 		trgHeliDead setTriggerActivation ["NONE", "PRESENT", false];
 		trgHeliDead setTriggerStatements [
 			"!canMove evac_heli_01 || !alive evac_heli_01 || !alive evac_heli_01_driver",
-			"deleteVehicle trgCallMedEvacHeli; deleteVehicle trgOutpostInjuredDied; deleteVehicle trgOutpostInjuredDelivered; deleteVehicle trgCallMedEvacHeliCleanup; deleteVehicle trgInjuredKeepUnconscious_01; deleteVehicle trgInjuredKeepUnconscious_02; deleteVehicle trgInjuredKeepUnconscious_03; deleteVehicle trgInjuredKeepUnconscious_04; [] remoteExecCall ['Fn_Local_Task_InjuredEvacuation_Complete', [0,-2] select isDedicated];",
+			"deleteVehicle trgCallMedEvacHeli; deleteVehicle trgOutpostInjuredDied; deleteVehicle trgOutpostInjuredDelivered; deleteVehicle trgCallMedEvacHeliCleanup; deleteVehicle trgInjuredKeepUnconscious_01; deleteVehicle trgInjuredKeepUnconscious_02; deleteVehicle trgInjuredKeepUnconscious_03; deleteVehicle trgInjuredKeepUnconscious_04; ['t_outpost_injured', 'FAILED'] call BIS_fnc_taskSetState;",
 			""
 		];
 		
@@ -190,7 +182,8 @@ if (isServer) then {
 	}; // Fn_Task_InjuredEvacuation_Evaluate
 
 	Fn_Task_InjuredEvacuation_RecallMedEvac = {
-		[] remoteExecCall ["Fn_Local_Task_InjuredEvacuation_Complete", [0,-2] select isDedicated];
+		['t_outpost_injured', 'SUCCEEDED'] call BIS_fnc_taskSetState;
+		[1000] call Fn_Modify_Rating;
 		evac_heli_01_crew addWaypoint [getMarkerPos 'wp_test_04', 0];
 		deleteVehicle trgOutpostInjuredDied;
 		deleteVehicle trgHeliDead;

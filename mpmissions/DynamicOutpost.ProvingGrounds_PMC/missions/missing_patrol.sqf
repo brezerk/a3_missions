@@ -33,7 +33,7 @@ if (hasInterface) then {
 	];
 	
 	// Intended to be executed on player side (but nit dedicated tho);
-	Fn_Task_MissingPatrol_Info = {
+	Fn_Local_Task_Create_MissingPatrol = {
 		params['_marker'];
 		private ["_trg"];
 		_trg = createTrigger ["EmptyDetector", getMarkerPos _marker];
@@ -44,6 +44,50 @@ if (hasInterface) then {
 			"[ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_06', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;",
 			""
 		];
+		[
+			player,
+			"t_patrol_found",
+			[localize "TASK_06_DESC",
+			localize "TASK_06_TITLE",
+			localize "TASK_ORIG_02"],
+			getMarkerPos "wp_patrol_task",
+			"CREATED",
+			0,
+			true
+		] call BIS_fnc_taskCreate;
+		['t_patrol_found', "unknown"] call BIS_fnc_taskSetType;
+	};
+	
+	Fn_Local_Task_Create_MissingPatrol_DeliverInjured = {
+		[
+			player,
+			["t_patrol_injured", "t_patrol_found"],
+			[localize "TASK_14_DESC",
+			localize "TASK_14_TITLE",
+			localize "TASK_ORIG_02"],
+			getMarkerPos "ua_hospital_01",
+			"FAILED",
+			0,
+			true
+		] call BIS_fnc_taskCreate;
+		['t_patrol_injured', "heal"] call BIS_fnc_taskSetType;
+	};
+	
+	Fn_Local_Task_MissingPatrol_DocsFound = {
+		[
+			player,
+			["t_doc_03", "t_doc_search"],
+			[localize "TASK_12_DESC",
+			localize "TASK_12_TITLE",
+			localize "TASK_ORIG_01"],
+			objNull,
+			"SUCCEEDED",
+			0,
+			true
+		] call BIS_fnc_taskCreate;
+		['t_doc_03', "documents"] call BIS_fnc_taskSetType;
+		playSound "outpost_docs_found";
+		playSound "rhs_usa_land_rc_28";
 	};
 };
 
@@ -79,18 +123,7 @@ if (isServer) then {
 			"ua_injured_01 setVariable ['ACE_isUnconscious', true, true];",
 			""
 		];
-		[
-			independent,
-			"t_patrol_found",
-			[localize "TASK_06_DESC",
-			localize "TASK_06_TITLE",
-			localize "TASK_ORIG_02"],
-			getMarkerPos "wp_patrol_task",
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_patrol_found', "unknown"] call BIS_fnc_taskSetType;
+		
 		trgPatrolFound = createTrigger ["EmptyDetector", getMarkerPos _marker];
 		trgPatrolFound setTriggerArea [10, 10, 0, false];
 		trgPatrolFound setTriggerActivation ["ANYPLAYER", "PRESENT", false];
@@ -100,7 +133,7 @@ if (isServer) then {
 			""
 		];
 		[_marker, ["rus_spec", 5] call BrezBlock_fnc_Get_RND_Index] execVM 'addons\brezblock\utils\spawn_opfor_forces_guard.sqf';
-		[_marker] remoteExec ["Fn_Task_MissingPatrol_Info"];
+		[_marker] remoteExecCall ["Fn_Local_Task_Create_MissingPatrol", [0,-2] select isDedicated];
 	}; // Fn_Task_Create_MissingPatrol
 
 
@@ -111,40 +144,17 @@ if (isServer) then {
 	*/
 	Fn_Task_Create_MissingPatrol_DeliverInjured = {
 		['t_patrol_found', 'SUCCEEDED'] call BIS_fnc_taskSetState;
-		[1000] call Fn_Modify_Rating;
+		[] remoteExecCall ["Fn_Local_Task_Create_MissingPatrol_DeliverInjured", [0,-2] select isDedicated];
 		if (!alive ua_injured_01) then {
-			[
-				independent,
-				["t_patrol_injured", "t_patrol_found"],
-				[localize "TASK_14_DESC",
-				localize "TASK_14_TITLE",
-				localize "TASK_ORIG_02"],
-				getMarkerPos "ua_hospital_01",
-				"FAILED",
-				0,
-				true
-			] call BIS_fnc_taskCreate;
-			['t_patrol_injured', "heal"] call BIS_fnc_taskSetType;
+			['t_patrol_injured', 'FAILED'] call BIS_fnc_taskSetState;
 		} else {
-			[
-				independent,
-				["t_patrol_injured", "t_patrol_found"],
-				[localize "TASK_14_DESC",
-				localize "TASK_14_TITLE",
-				localize "TASK_ORIG_02"],
-				getMarkerPos "ua_hospital_01",
-				"CREATED",
-				0,
-				true
-			] call BIS_fnc_taskCreate;
-			['t_patrol_injured', "heal"] call BIS_fnc_taskSetType;
 			trgPatrolInjuredDelivered = createTrigger ["EmptyDetector", getMarkerPos "ua_hospital_01" ];
 			trgPatrolInjuredDelivered setTriggerArea [5, 5, 0, false];
 			trgPatrolInjuredDelivered setTriggerActivation ["VEHICLE", "PRESENT", false];
 			trgPatrolInjuredDelivered triggerAttachVehicle [ua_injured_01];
 			trgPatrolInjuredDelivered setTriggerStatements [
 				"this",
-				"['t_patrol_injured', 'SUCCEEDED'] call BIS_fnc_taskSetState; task_completed_01 = true; deleteVehicle trgPatrolInjuredDied; [1000] call Fn_Modify_Rating;",
+				"['t_patrol_injured', 'SUCCEEDED'] call BIS_fnc_taskSetState; task_completed_01 = true; deleteVehicle trgPatrolInjuredDied;",
 				""
 			];
 			trgPatrolInjuredDied = createTrigger ["EmptyDetector", getMarkerPos "ua_hospital_01" ];
@@ -163,20 +173,7 @@ if (isServer) then {
 	*/
 	Fn_Task_MissingPatrol_DocsFound = {
 		task_completed_06 = true;
-		[
-			independent,
-			["t_doc_03", "t_doc_search"],
-			[localize "TASK_12_DESC",
-			localize "TASK_12_TITLE",
-			localize "TASK_ORIG_01"],
-			objNull,
-			"SUCCEEDED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		["outpost_docs_found"] remoteExec ["playSound"];
-		["rhs_usa_land_rc_28"] remoteExec ["playSound"];
-		[2000] call Fn_Modify_Rating;
+		[] remoteExecCall ["Fn_Local_Task_MissingPatrol_DocsFound", [0,-2] select isDedicated];
 		if (task_completed_07 && task_completed_06 && task_completed_05 && task_completed_04) then {
 			["t_doc_search", "SUCCEEDED", true] spawn BIS_fnc_taskSetState;
 		};

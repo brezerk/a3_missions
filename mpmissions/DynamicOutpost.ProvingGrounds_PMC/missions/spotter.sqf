@@ -20,6 +20,41 @@
 Spawn start objectives, triggers and mainline story
 */
 
+// Client side code
+if (hasInterface) then {
+	Fn_Local_Task_Create_Spotter = {
+		[
+			player,
+			"t_recon_kill",
+			[localize "TASK_21_DESC",
+			localize "TASK_21_TITLE",
+			localize "TASK_ORIG_02"],
+			objNull,
+			"CREATED",
+			0,
+			true
+		] call BIS_fnc_taskCreate;
+		["t_recon_kill", "attack"] call BIS_fnc_taskSetType;
+	};
+	
+	Fn_Local_Task_Spotter_DocsFound = {
+		[
+			player,
+			["t_doc_04", "t_doc_search"],
+			[localize "TASK_13_DESC",
+			localize "TASK_13_TITLE",
+			localize "TASK_ORIG_01"],
+			objNull,
+			"SUCCEEDED",
+			0,
+			true
+		] call BIS_fnc_taskCreate;
+		['t_doc_04', "documents"] call BIS_fnc_taskSetType;
+		playSound "outpost_docs_found";
+		playSound "rhs_usa_land_rc_28";
+	};
+};
+
 if (isServer) then {
 	Fn_Task_Create_Spotter = {
 		private ["_type"];
@@ -37,18 +72,7 @@ if (isServer) then {
 				} forEach _units;
 			};
 		} forEach ([marker, "rus_p_spotter_01"] call BrezBlock_fnc_Spawn_Objective);
-		[
-			independent,
-			"t_recon_kill",
-			[localize "TASK_21_DESC",
-			localize "TASK_21_TITLE",
-			localize "TASK_ORIG_02"],
-			objNull,
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		["t_recon_kill", "attack"] call BIS_fnc_taskSetType;
+		[] remoteExecCall ["Fn_Local_Task_Create_Spotter", [0,-2] select isDedicated];
 		trgSpotterKilled = createTrigger ["EmptyDetector", getPos player];
 		trgSpotterKilled setTriggerArea[0,0,0,false];
 		trgSpotterKilled setTriggerActivation ["NONE", "PRESENT", false];
@@ -64,20 +88,7 @@ if (isServer) then {
 	*/
 	Fn_Task_Spotter_DocsFound = {
 		task_completed_07 = true;
-		[
-			independent,
-			["t_doc_04", "t_doc_search"],
-			[localize "TASK_13_DESC",
-			localize "TASK_13_TITLE",
-			localize "TASK_ORIG_01"],
-			objNull,
-			"SUCCEEDED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		["outpost_docs_found"] remoteExec ["playSound"];
-		["rhs_usa_land_rc_28"] remoteExec ["playSound"];
-		[2000] call Fn_Modify_Rating;
+		[] remoteExecCall ["Fn_Local_Task_Spotter_DocsFound", [0,-2] select isDedicated];
 		if (task_completed_07 && task_completed_06 && task_completed_05 && task_completed_04) then {
 			["t_doc_search", "SUCCEEDED", true] spawn BIS_fnc_taskSetState;
 		};

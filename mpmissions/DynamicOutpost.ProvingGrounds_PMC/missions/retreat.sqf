@@ -20,15 +20,14 @@
 Spawn start objectives, triggers for retreat
 */
 
-if (isServer) then {
-	Fn_Task_Create_Retreat = {
-		deleteVehicle trgLooseGame;
-		["outpost_wave03"] remoteExec ["playSound"];
-		["rhs_usa_land_rc_21"] remoteExec ["playSound"];
+// Client side code
+if (hasInterface) then {	
+	Fn_Local_Task_Create_Retreat = {
+		playSound "outpost_wave03";
+		playSound "rhs_usa_land_rc_21";
 		['t_defend_blockpost', 'SUCCEEDED'] call BIS_fnc_taskSetState;
-		[1000] call Fn_Modify_Rating;
 		[
-			independent,
+			player,
 			"t_evacuation_point",
 			[localize "TASK_18_DESC",
 			localize "TASK_18_TITLE",
@@ -40,7 +39,7 @@ if (isServer) then {
 		] call BIS_fnc_taskCreate;
 		['t_evacuation_point', "run"] call BIS_fnc_taskSetType;
 		[
-			independent,
+			player,
 			"t_defend_blockpost_steel_will",
 			[localize "TASK_19_DESC",
 			localize "TASK_19_TITLE",
@@ -51,6 +50,13 @@ if (isServer) then {
 			true
 		] call BIS_fnc_taskCreate;
 		['t_defend_blockpost_steel_will', "defend"] call BIS_fnc_taskSetType;
+	};
+};
+
+if (isServer) then {
+	Fn_Task_Create_Retreat = {
+		deleteVehicle trgLooseGame;
+		[] remoteExecCall ["Fn_Local_Task_Create_Retreat", [0,-2] select isDedicated];
 		trgEvacPoint = createTrigger ["EmptyDetector", getMarkerPos 'ua_secret_01'];
 		trgEvacPoint setTriggerArea [30, 30, 0, false];
 		trgEvacPoint setTriggerActivation ["NONE", "PRESENT", false];

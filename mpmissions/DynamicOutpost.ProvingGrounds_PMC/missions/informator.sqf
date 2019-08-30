@@ -31,6 +31,38 @@ if (hasInterface) then {
 		"[ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_07', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;",
 		""
 	];
+	
+	Fn_Local_Task_Create_Informator = {
+		[
+			player,
+			"t_info_meetup",
+			[format [localize "TASK_08_DESC", name _obj],
+			localize "TASK_08_TITLE",
+			localize "TASK_ORIG_02"],
+			getMarkerPos "wp_info_meetup_01",
+			"CREATED",
+			0,
+			true
+		] call BIS_fnc_taskCreate;
+		['t_info_meetup', "talk"] call BIS_fnc_taskSetType;
+	};
+	
+	Fn_Local_Task_Create_Informator_BlockpostAttack = {
+		[
+			player,
+			["t_doc_01", "t_doc_search"],
+			[
+				localize "TASK_20_DESC",
+				localize "TASK_20_TITLE",
+				localize "TASK_ORIG_02"
+			],
+			getPos p_officer_01,
+			"CREATED",
+			0,
+			true
+		] call BIS_fnc_taskCreate;
+		["t_doc_01", "attack"] call BIS_fnc_taskSetType;
+	};
 };
 
 // Server only code
@@ -75,18 +107,7 @@ if (isServer) then {
 		_obj = missionNamespace getVariable [["p_rus_infromator", 9] call BrezBlock_fnc_Get_RND_Index, objNull];
 		_obj disableAi "MOVE";
 		for "_i" from 1 to 4 do { [_obj] call Fn_Task_Informator_AddTraitor; };
-		[
-			independent,
-			"t_info_meetup",
-			[format [localize "TASK_08_DESC", name _obj],
-			localize "TASK_08_TITLE",
-			localize "TASK_ORIG_02"],
-			getMarkerPos "wp_info_meetup_01",
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_info_meetup', "talk"] call BIS_fnc_taskSetType;
+		[] remoteExecCall ["Fn_Local_Task_Create_Informator", [0,-2] select isDedicated];
 		inform_action_id = [
 			_obj,
 			{ _this remoteExec ["Fn_Task_Create_Informator_BlockpostAttack", 2] },
@@ -152,21 +173,7 @@ if (isServer) then {
 			p_officer_01,
 			{ _this remoteExec ["Fn_Task_Informator_DocsFound", 2] }
 		] call BrezBlock_fnc_Attach_Hold_Action;
-		[
-			independent,
-			["t_doc_01", "t_doc_search"],
-			[
-				localize "TASK_20_DESC",
-				localize "TASK_20_TITLE",
-				localize "TASK_ORIG_02"
-			],
-			getPos p_officer_01,
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		["t_doc_01", "attack"] call BIS_fnc_taskSetType;
-		[1000] call Fn_Modify_Rating;
+		[] remoteExecCall ["Fn_Local_Task_Create_Informator_BlockpostAttack", [0,-2] select isDedicated];
 	}; // Fn_Task_Create_Informator_BlockpostAttack
 	
 	/*
@@ -177,7 +184,6 @@ if (isServer) then {
 		["t_doc_01", "SUCCEEDED", true] spawn BIS_fnc_taskSetState;
 		["outpost_docs_found"] remoteExec ["playSound"];
 		["rhs_usa_land_rc_28"] remoteExec ["playSound"];
-		[2000] call Fn_Modify_Rating;
 		if (task_completed_07 && task_completed_06 && task_completed_05 && task_completed_04) then {
 			["t_doc_search", "SUCCEEDED", true] spawn BIS_fnc_taskSetState;
 		};

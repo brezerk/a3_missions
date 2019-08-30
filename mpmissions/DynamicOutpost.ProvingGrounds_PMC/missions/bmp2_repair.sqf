@@ -19,10 +19,26 @@
 /*
 Spawn start objectives, triggers for bmp2 repair
 */
+if (hasInterface) then {
+	Fn_Local_Task_Create_RepairHeavy_DoDamage = {
+		[
+			player,
+			"t_repair_heavy",
+			[localize "TASK_05_DESC",
+			localize "TASK_05_TITLE",
+			localize "TASK_ORIG_01"],
+			getPos ua_heavy_01,
+			"CREATED",
+			0,
+			true
+		] call BIS_fnc_taskCreate;
+		['t_repair_heavy', "repair"] call BIS_fnc_taskSetType;
+	};
+};
 
 if (isServer) then {
 	Fn_Task_Create_RepairHeavy = {
-			// Damage HEAVY
+		// Damage HEAVY
 		trgHeavyDoDamage = createTrigger ["EmptyDetector", getMarkerPos "wp_defend_01"];
 		trgHeavyDoDamage setTriggerArea [(650 + (random 650)), (650 + (random 650)), 0, false];
 		trgHeavyDoDamage setTriggerActivation ["VEHICLE", "PRESENT", false];
@@ -48,25 +64,15 @@ if (isServer) then {
 		//spawn smoke
 		//_smoke = ["SmokeShell", position ua_heavy_01] remoteExec ["createVehicle"];
 		//[_smoker, [ua_heavy_01,[0,0,0]]]  remoteExec ["attachto"];
-		[
-			independent,
-			"t_repair_heavy",
-			[localize "TASK_05_DESC",
-			localize "TASK_05_TITLE",
-			localize "TASK_ORIG_01"],
-			getPos ua_heavy_01,
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_repair_heavy', "repair"] call BIS_fnc_taskSetType;
+		[] remoteExecCall ["Fn_Local_Task_Create_RepairHeavy_DoDamage", [0,-2] select isDedicated];
+		
 		trgHeavyRepaired = createTrigger ["EmptyDetector", getPos ua_heavy_01];
 		trgHeavyRepaired setTriggerArea [0, 0, 0, false];
 		trgHeavyRepaired setTriggerActivation ["NONE", "PRESENT", false];
 		trgHeavyRepaired triggerAttachVehicle [ua_heavy_01];
 		trgHeavyRepaired setTriggerStatements [
 			"triggerActivated trgHeavyDoDamage && canMove ua_heavy_01;",
-			"['t_repair_heavy', 'SUCCEEDED'] call BIS_fnc_taskSetState; deleteVehicle trgHeavyDestroyed; deleteVehicle trgHeavyDoDamage; [1000] call Fn_Modify_Rating;",
+			"['t_repair_heavy', 'SUCCEEDED'] call BIS_fnc_taskSetState; deleteVehicle trgHeavyDestroyed; deleteVehicle trgHeavyDoDamage;",
 			""
 		];
 		trgHeavyDestroyed = createTrigger ["EmptyDetector", getPos ua_heavy_01];
