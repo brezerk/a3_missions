@@ -60,7 +60,7 @@ if (isServer) then {
 	};
 	
 	{
-		remoteExecCall ["Fn_Local_RegroupMission_Complete", _x];
+		[shared_missions] remoteExecCall ["Fn_Local_RegroupMission_Complete", _x];
 	} forEach assault_group;
 
 };

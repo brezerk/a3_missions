@@ -116,7 +116,7 @@
 			<Key ID="TASK_02_TITLE">
 				<Original>Deliver supplies</Original>
 				<English>Deliver supplies</English>
-				<Russian>Завантижити припаси</Russian>
+				<Russian>Доставити припаси</Russian>
 			</Key>
 			<Key ID="TASK_02_DESC">
 				<Original>Deliver supplies and personnel to &lt;marker name='wp_defend_01'&gt;37th checkpoint&lt;/marker&gt;, reinforce the military presence in the region.</Original>

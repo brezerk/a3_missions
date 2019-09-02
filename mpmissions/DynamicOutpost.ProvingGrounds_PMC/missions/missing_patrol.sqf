@@ -66,7 +66,7 @@ if (hasInterface) then {
 			localize "TASK_14_TITLE",
 			localize "TASK_ORIG_02"],
 			getMarkerPos "ua_hospital_01",
-			"FAILED",
+			"CREATED",
 			0,
 			true
 		] call BIS_fnc_taskCreate;

@@ -2209,7 +2209,7 @@ class Mission
 	assetType="Free";
 	class Intel
 	{
-		briefingName="Dynamic Outpost v1.3.7";
+		briefingName="Dynamic Outpost";
 		overviewText="Dynamic  and semi-random mission to defend Ukrainian territory from Russian invasion.";
 		timeOfChanges=2700;
 		startWeather=0.15000001;

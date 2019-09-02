@@ -40,7 +40,7 @@ if (hasInterface) then {
 			[localize "TASK_16_DESC",
 			localize "TASK_16_TITLE",
 			localize "TASK_ORIG_01"],
-			getMarkerPos _spawnposition,
+			getMarkerPos _marker,
 			"CREATED",
 			0,
 			true

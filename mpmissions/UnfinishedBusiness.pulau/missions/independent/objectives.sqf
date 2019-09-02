@@ -184,6 +184,7 @@ if (isServer) then {
 	
 	Fn_Task_DestroyAmmo_Complete = {
 		if (!isNull indep_ammo_01) then {
+			shared_missions pushBack "t_west_destroy_ammo";
 			{
 				[(getPos indep_ammo_01)] remoteExecCall ["Fn_Local_Task_DestroyAmmo_Complete", _x];
 			} forEach assault_group;
@@ -192,6 +193,7 @@ if (isServer) then {
 	
 	Fn_Task_DestroyFuel_Complete = {
 		if (!isNull indep_fuel_01) then {
+			shared_missions pushBack "t_west_destroy_fuel";
 			{
 				[(getPos indep_fuel_01)] remoteExecCall ["Fn_Local_Task_DestroyFuel_Complete", _x];
 			} forEach assault_group;
@@ -200,6 +202,7 @@ if (isServer) then {
 	
 	Fn_Task_DestroyWindMill_Complete = {
 		if (!isNull indep_wind_01) then {
+			shared_missions pushBack "t_west_destroy_windmill";
 			{
 				[(getPos indep_wind_01)] remoteExecCall ["Fn_Local_Task_DestroyWindMill_Complete", _x];
 			} forEach assault_group;
@@ -208,9 +211,14 @@ if (isServer) then {
 	
 	Fn_Task_KillDoctor_Complete = {
 		if (!isNull indep_lab_01) then {
-			{
+			if (task_complete_regroup) then {
+				{
+					[(getPos indep_lab_01)] remoteExecCall ["Fn_Local_Task_KillDoctor_Complete", _x];
+				} forEach assault_group;
+			} else {
+				shared_missions pushBack "t_west_kill_doctor";
 				[(getPos indep_lab_01)] remoteExecCall ["Fn_Local_Task_KillDoctor_Complete", _x];
-			} forEach assault_group;
+			};
 		};
 	};
 	

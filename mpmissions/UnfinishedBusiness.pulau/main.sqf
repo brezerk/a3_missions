@@ -93,6 +93,7 @@ if (isServer) then {
 	vehicle_refuel_group = [];
 	vehicle_patrol_group = [];
 	checkpoint_gate_group = [];
+	shared_missions = [];
 	
 	//POIs
 	avaliable_locations = [];

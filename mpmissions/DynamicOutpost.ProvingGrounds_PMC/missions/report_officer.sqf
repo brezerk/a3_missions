@@ -62,4 +62,37 @@ if (isServer) then {
 		deleteVehicle trgOfficerDead;
 		execVM 'missions\main.sqf';
 	};
+	
+	Fn_Local_Task_DocSearch = {
+		[
+			player,
+			"t_doc_search",
+			[localize "TASK_09_DESC",
+			localize "TASK_09_TITLE",
+			localize "TASK_ORIG_01"],
+			objNull,
+			"CREATED",
+			0,
+			true
+		] call BIS_fnc_taskCreate;
+		["t_doc_search", "search"] call BIS_fnc_taskSetType;
+	};
+	
+	Fn_Local_Task_DefendBlockpost = {
+		playSound "outpost_wave01";
+		playSound "rhs_usa_land_rc_25";
+	
+		[
+			player,
+			"t_defend_blockpost",
+			[localize "TASK_10_DESC",
+			localize "TASK_10_TITLE",
+			localize "TASK_ORIG_01"],
+			getMarkerPos "wp_defend_01",
+			"CREATED",
+			0,
+			true
+		] call BIS_fnc_taskCreate;
+	};
+	
 };
