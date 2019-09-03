@@ -44,33 +44,6 @@ if (hasInterface) then {
 			""
 		];
 	};
-};
-
-if (isServer) then {
-	Fn_Task_Create_ReportOfficer = {
-		// Report to officer
-		[] remoteExecCall ["Fn_Local_Task_Create_ReportOfficer", [0,-2] select isDedicated];
-		trgOfficerDead = createTrigger ["EmptyDetector", getPos ua_officer_01];
-		trgOfficerDead setTriggerArea [0, 0, 0, false];
-		trgOfficerDead setTriggerActivation ["NONE", "PRESENT", false];
-		trgOfficerDead setTriggerStatements [
-			"!alive ua_officer_01",
-			"if (isServer) then { call Fn_Endgame_Loss; };",
-			""
-		];
-		[
-			ua_officer_01,
-			{ _this remoteExec ["Fn_Task_ReportOfficer_Done", 2] },
-			"simpleTasks\types\talk",
-			"ACTION_02",
-			"&& alive _target"
-		] call BrezBlock_fnc_Attach_Hold_Action;
-	};
-	
-	Fn_Task_ReportOfficer_Done = {
-		deleteVehicle trgOfficerDead;
-		execVM 'missions\main.sqf';
-	};
 	
 	Fn_Local_Task_DocSearch = {
 		[
@@ -103,5 +76,34 @@ if (isServer) then {
 			true
 		] call BIS_fnc_taskCreate;
 	};
+};
+
+if (isServer) then {
+	Fn_Task_Create_ReportOfficer = {
+		// Report to officer
+		[] remoteExecCall ["Fn_Local_Task_Create_ReportOfficer", [0,-2] select isDedicated];
+		trgOfficerDead = createTrigger ["EmptyDetector", getPos ua_officer_01];
+		trgOfficerDead setTriggerArea [0, 0, 0, false];
+		trgOfficerDead setTriggerActivation ["NONE", "PRESENT", false];
+		trgOfficerDead setTriggerStatements [
+			"!alive ua_officer_01",
+			"if (isServer) then { call Fn_Endgame_Loss; };",
+			""
+		];
+		[
+			ua_officer_01,
+			{ _this remoteExec ["Fn_Task_ReportOfficer_Done", 2] },
+			"simpleTasks\types\talk",
+			"ACTION_02",
+			"&& alive _target"
+		] call BrezBlock_fnc_Attach_Hold_Action;
+	};
+	
+	Fn_Task_ReportOfficer_Done = {
+		deleteVehicle trgOfficerDead;
+		execVM 'missions\main.sqf';
+	};
+	
+
 	
 };

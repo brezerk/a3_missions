@@ -38690,6 +38690,7 @@ class Mission
 			};
 			id=6650;
 			type="Box_NATO_WpsLaunch_F";
+			atlOffset=-0.00037765503;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -38730,6 +38731,7 @@ class Mission
 			};
 			id=6651;
 			type="Box_NATO_AmmoOrd_F";
+			atlOffset=-0.00071334839;
 			class CustomAttributes
 			{
 				class Attribute0
