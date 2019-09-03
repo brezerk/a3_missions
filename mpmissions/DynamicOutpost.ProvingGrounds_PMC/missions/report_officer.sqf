@@ -34,6 +34,15 @@ if (hasInterface) then {
 			true
 		] call BIS_fnc_taskCreate;
 		['t_report_officer', "talk"] call BIS_fnc_taskSetType;
+		
+		_trg = createTrigger ["EmptyDetector", getMarkerPos "wp_defend_01"];
+		_trg setTriggerArea [100, 100, 0, false];
+		_trg setTriggerActivation ["ANYPLAYER", "PRESENT", true];
+		_trg setTriggerStatements [
+			"(vehicle player) in thisList",
+			"[ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_02', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;",
+			""
+		];
 	};
 };
 

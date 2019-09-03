@@ -16,73 +16,71 @@
  *                                                                         *
  ***************************************************************************/
  
- if !(_this getVariable ['Init_Gear_Applied', false]) then {
-	comment "Exported from Arsenal by brezerk";
+comment "[!] UNIT MUST BE LOCAL [!]";
+if (!local _this) exitWith {};
 
-	comment "Remove existing items";
-	removeAllWeapons _this;
-	removeAllItems _this;
-	removeAllAssignedItems _this;
-	removeUniform _this;
-	removeVest _this;
-	removeBackpack _this;
-	removeHeadgear _this;
-	removeGoggles _this;
+comment "Exported from Arsenal by brezerk";
 
-	comment "Add containers";
-	_this forceAddUniform "LOP_U_UKR_Fatigue_Digit";
-	for "_i" from 1 to 10 do {_this addItemToUniform "ACE_fieldDressing";};
-	_this addItemToUniform "ACE_EarPlugs";
-	for "_i" from 1 to 10 do {_this addItemToUniform "ACE_morphine";};
-	for "_i" from 1 to 2 do {_this addItemToUniform "ACE_CableTie";};
-	_this addItemToUniform "ACE_personalAidKit";
-	_this addVest "LOP_V_6B23_Rifleman_TAN";
+comment "Remove existing items";
+removeAllWeapons _this;
+removeAllItems _this;
+removeAllAssignedItems _this;
+removeUniform _this;
+removeVest _this;
+removeBackpack _this;
+removeHeadgear _this;
+removeGoggles _this;
+
+comment "Add containers";
+_this forceAddUniform "LOP_U_UKR_Fatigue_Digit";
+for "_i" from 1 to 10 do {_this addItemToUniform "ACE_fieldDressing";};
+_this addItemToUniform "ACE_EarPlugs";
+for "_i" from 1 to 10 do {_this addItemToUniform "ACE_morphine";};
+for "_i" from 1 to 2 do {_this addItemToUniform "ACE_CableTie";};
+_this addItemToUniform "ACE_personalAidKit";
+_this addVest "LOP_V_6B23_Rifleman_TAN";
 	
-	comment "Give player a radio depending on radio mod loaded";
-	if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
-		_this addItemToVest "ACRE_SEM52SL";
+comment "Give player a radio depending on radio mod loaded";
+if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
+	_this addItemToVest "ACRE_SEM52SL";
+} else {
+	if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
+		_this linkItem "tf_anprc152";
 	} else {
-		if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
-			_this linkItem "tf_anprc152";
-		} else {
-			comment "Fallback to native arma3 radio";
-			_this linkItem "ItemRadio";
-		};
+		comment "Fallback to native arma3 radio";
+		_this linkItem "ItemRadio";
 	};
-	
-	for "_i" from 1 to 2 do {_this addItemToVest "rhs_mag_rdg2_white";};
-	_this addItemToVest "rhs_mag_rgd5";
-	for "_i" from 1 to 2 do {_this addItemToVest "rhs_30Rnd_545x39_7N6_AK";};
-	for "_i" from 1 to 2 do {_this addItemToVest "rhs_30Rnd_545x39_7N6M_AK";};
-	_this addBackpack "rhs_rpg";
-	for "_i" from 1 to 20 do {_this addItemToBackpack "ACE_fieldDressing";};
-	for "_i" from 1 to 2 do {_this addItemToBackpack "ACE_epinephrine";};
-	for "_i" from 1 to 10 do {_this addItemToBackpack "ACE_morphine";};
-	for "_i" from 1 to 2 do {_this addItemToBackpack "rhs_rpg7_OG7V_mag";};
-	_this addItemToBackpack "rhs_rpg7_PG7VL_mag";
-	_this addHeadgear "LOP_H_6B27M_ess_Digit";
-	_this addGoggles "rhs_googles_clear";
-
-	comment "Add weapons";
-	_this addWeapon "rhs_weap_aks74u";
-	_this addPrimaryWeaponItem "rhs_acc_pgs64_74u";
-	_this addWeapon "rhs_weap_rpg7";
-	_this addSecondaryWeaponItem "rhs_acc_pgo7v";
-
-	comment "Add items";
-	_this linkItem "ItemMap";
-	_this linkItem "ItemCompass";
-	_this linkItem "ItemWatch";
-
-	comment "Set identity";
-	_this setFace "WhiteHead_10";
-	_this setSpeaker "NoVoice";
-
-	//ACEX
-	_this addItemToVest "ACE_Canteen";
-	_this addItemToBackpack "ACE_MRE_MeatballsPasta";
-	for "_i" from 1 to 2 do {_this addItemToBackpack "ACE_MRE_CreamChickenSoup";};
-
-	//prevent from duble loading
-	_this setVariable ['Init_Gear_Applied', true];
 };
+	
+for "_i" from 1 to 2 do {_this addItemToVest "rhs_mag_rdg2_white";};
+_this addItemToVest "rhs_mag_rgd5";
+for "_i" from 1 to 2 do {_this addItemToVest "rhs_30Rnd_545x39_7N6_AK";};
+for "_i" from 1 to 2 do {_this addItemToVest "rhs_30Rnd_545x39_7N6M_AK";};
+_this addBackpack "rhs_rpg";
+for "_i" from 1 to 20 do {_this addItemToBackpack "ACE_fieldDressing";};
+for "_i" from 1 to 2 do {_this addItemToBackpack "ACE_epinephrine";};
+for "_i" from 1 to 10 do {_this addItemToBackpack "ACE_morphine";};
+for "_i" from 1 to 2 do {_this addItemToBackpack "rhs_rpg7_OG7V_mag";};
+_this addItemToBackpack "rhs_rpg7_PG7VL_mag";
+_this addHeadgear "LOP_H_6B27M_ess_Digit";
+_this addGoggles "rhs_googles_clear";
+
+comment "Add weapons";
+_this addWeapon "rhs_weap_aks74u";
+_this addPrimaryWeaponItem "rhs_acc_pgs64_74u";
+_this addWeapon "rhs_weap_rpg7";
+_this addSecondaryWeaponItem "rhs_acc_pgo7v";
+
+comment "Add items";
+_this linkItem "ItemMap";
+_this linkItem "ItemCompass";
+_this linkItem "ItemWatch";
+
+comment "Set identity";
+_this setFace "WhiteHead_10";
+_this setSpeaker "NoVoice";
+
+//ACEX
+_this addItemToVest "ACE_Canteen";
+_this addItemToBackpack "ACE_MRE_MeatballsPasta";
+for "_i" from 1 to 2 do {_this addItemToBackpack "ACE_MRE_CreamChickenSoup";};

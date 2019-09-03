@@ -24,8 +24,6 @@ if (isServer) then {
 	['t_report_officer', 'Succeeded'] call BIS_fnc_taskSetState;
 	"respawn_guerrila" setMarkerPos (getPos field_hospital);
 	
-	//FIXME
-	[[ localize "INFO_LOC_01", localize "INFO_SUBLOC_02", format [localize "INFO_DATE_01", daytime call BIS_fnc_timeToString], mapGridPosition player ], BIS_fnc_infoText] remoteExec ["spawn", -2];
 	sleep 5;
 	call Fn_Task_Create_MissingPatrol;
 	sleep 5;

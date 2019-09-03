@@ -16,44 +16,42 @@
  *                                                                         *
  ***************************************************************************/
  
-if !(_this getVariable ['Init_Gear_Applied', false]) then {
-	comment "Exported from Arsenal by brezerk";
+comment "[!] UNIT MUST BE LOCAL [!]";
+if (!local _this) exitWith {};
 
-	comment "Remove existing items";
-	removeAllWeapons _this;
-	removeAllItems _this;
-	removeAllAssignedItems _this;
-	removeUniform _this;
-	removeVest _this;
-	removeBackpack _this;
-	removeHeadgear _this;
-	removeGoggles _this;
+comment "Exported from Arsenal by brezerk";
 
-	comment "Add containers";
-	_this forceAddUniform "LOP_U_UKR_Fatigue_Digit";
-	for "_i" from 1 to 10 do {_this addItemToUniform "ACE_fieldDressing";};
-	_this addItemToUniform "ACE_EarPlugs";
-	for "_i" from 1 to 10 do {_this addItemToUniform "ACE_morphine";};
-	for "_i" from 1 to 2 do {_this addItemToUniform "ACE_CableTie";};
-	_this addItemToUniform "ACE_personalAidKit";
-	_this addVest "LOP_V_6B23_Rifleman_TAN";
-	for "_i" from 1 to 2 do {_this addItemToVest "rhs_mag_rdg2_white";};
-	_this addItemToVest "rhs_mag_rgd5";
-	_this addBackpack "B_Kitbag_tan";
-	for "_i" from 1 to 4 do {_this addItemToBackpack "rhs_100Rnd_762x54mmR_7N13";};
-	_this addHeadgear "LOP_H_6B27M_ess_Digit";
+comment "Remove existing items";
+removeAllWeapons _this;
+removeAllItems _this;
+removeAllAssignedItems _this;
+removeUniform _this;
+removeVest _this;
+removeBackpack _this;
+removeHeadgear _this;
+removeGoggles _this;
 
-	comment "Add weapons";
-	_this addWeapon "rhs_weap_pkm";
+comment "Add containers";
+_this forceAddUniform "LOP_U_UKR_Fatigue_Digit";
+for "_i" from 1 to 10 do {_this addItemToUniform "ACE_fieldDressing";};
+_this addItemToUniform "ACE_EarPlugs";
+for "_i" from 1 to 10 do {_this addItemToUniform "ACE_morphine";};
+for "_i" from 1 to 2 do {_this addItemToUniform "ACE_CableTie";};
+_this addItemToUniform "ACE_personalAidKit";
+_this addVest "LOP_V_6B23_Rifleman_TAN";
+for "_i" from 1 to 2 do {_this addItemToVest "rhs_mag_rdg2_white";};
+_this addItemToVest "rhs_mag_rgd5";
+_this addBackpack "B_Kitbag_tan";
+for "_i" from 1 to 4 do {_this addItemToBackpack "rhs_100Rnd_762x54mmR_7N13";};
+_this addHeadgear "LOP_H_6B27M_ess_Digit";
 
-	comment "Add items";
-	_this linkItem "ItemMap";
-	_this linkItem "ItemCompass";
-	_this linkItem "ItemWatch";
+comment "Add weapons";
+_this addWeapon "rhs_weap_pkm";
 
-	comment "Set identity";
-	_this setFace "Default";
-	_this setSpeaker "NoVoice";
-	//prevent from duble loading
-	_this setVariable ['Init_Gear_Applied', true];
-};
+comment "Add items";
+_this linkItem "ItemMap";
+_this linkItem "ItemCompass";
+_this linkItem "ItemWatch";
+	
+comment "Set identity";
+_this setSpeaker "NoVoice";
