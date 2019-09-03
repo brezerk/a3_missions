@@ -8,7 +8,7 @@ class EditorData
 	toggles=522;
 	class ItemIDProvider
 	{
-		nextID=6649;
+		nextID=6652;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1617.7347,106.02541,244.90555};
-		dir[]={0.74407333,-0.58857608,-0.31651768};
-		up[]={0.54181361,0.80823004,-0.23048095};
-		aside[]={-0.39148611,-4.8530637e-009,-0.92030382};
+		pos[]={674.41455,70.632454,1258.2386};
+		dir[]={-0.69778877,-0.57579631,-0.42637721};
+		up[]={-0.49153012,0.81738174,-0.30034387};
+		aside[]={-0.52146107,5.0390372e-007,0.85340232};
 	};
 };
 binarizationWanted=0;
@@ -2241,7 +2241,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=1122;
+		items=1124;
 		class Item0
 		{
 			dataType="Object";
@@ -28064,7 +28064,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[""rhs_weap_igla"",""rhs_weap_rpg26"",""rhs_weap_rpg7""],[4,22,2]],[[],[]],[[],[]],[[],[]]],false]";
+							value="[[[[""rhs_weap_igla"",""rhs_weap_rpg26"",""rhs_weap_rpg7""],[6,15,2]],[[],[]],[[],[]],[[],[]]],false]";
 						};
 					};
 				};
@@ -38673,6 +38673,86 @@ class Mission
 			};
 			id=6648;
 			type="VirtualCurator_F";
+		};
+		class Item1122
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={656.62341,52.198151,1241.3971};
+				angles[]={0.077345982,1.6490617,6.2132983};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="ua_supply_box_06";
+			};
+			id=6650;
+			type="Box_NATO_WpsLaunch_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""rhs_weap_igla"",""rhs_weap_rpg26"",""rhs_weap_rpg7""],[6,15,2]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item1123
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={656.05438,52.277607,1242.6254};
+				angles[]={0.077352993,3.2032204,6.2133021};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="ua_supply_box_07";
+			};
+			id=6651;
+			type="Box_NATO_AmmoOrd_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[""ATMine_Range_Mag"",""APERSMine_Range_Mag"",""rhs_mag_rdg2_white"",""rhs_mag_rgd5"",""rhs_rpg7_OG7V_mag"",""rhs_rpg7_PG7VL_mag"",""rhs_VOG25"",""rhs_mag_9k38_rocket""],[4,11,7,11,6,8,7,9]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 	class Connections
