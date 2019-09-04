@@ -56,8 +56,8 @@ if (isServer) then {
 		//    
 		private ["_randomElement"];
 		_randomElement = selectRandom [
-			"HitLTrack",
-			"HitRTrack",
+			//"HitLTrack",
+			//"HitRTrack",
 			"hitEngine"
 			];
 		[ua_heavy_01, [_randomElement, 0.95, true]] remoteExec ["setHitPointDamage"];
