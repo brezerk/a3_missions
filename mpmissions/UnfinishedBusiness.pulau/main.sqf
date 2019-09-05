@@ -112,18 +112,18 @@ if (isServer) then {
 		if (_name != "__SERVER__") then {
 			connected_users pushBackUnique [_name, (_id call CBA_fnc_formatNumber), format ["_USER_DEFINED #%1/", (_id call CBA_fnc_formatNumber)]];
 			publicVariable "connected_users";
-			publicVariable "D_LOCATION";
-			publicVariable "D_FRACTION_WEST";
-			publicVariable "D_FRACTION_EAST";
-			publicVariable "D_FRACTION_INDEP";
-			publicVariable "D_FRACTION_CIV";
-			publicVariable "locationFloodedShip";
-			publicVariable "mission_plane_send";
-			publicVariable "mission_requested";
-			remoteExecCall ["Fn_Local_SyncMission", _owner];
 			systemChat "CONNECTED";
 		};
 	}];
+	
+	//public basic variables
+	publicVariable "D_LOCATION";
+	publicVariable "D_FRACTION_WEST";
+	publicVariable "D_FRACTION_EAST";
+	publicVariable "D_FRACTION_INDEP";
+	publicVariable "D_FRACTION_CIV";
+	publicVariable "mission_plane_send";
+	publicVariable "mission_requested";
 	
 	addMissionEventHandler ["PlayerDisconnected",
 	{

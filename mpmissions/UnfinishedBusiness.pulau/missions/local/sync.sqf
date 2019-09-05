@@ -19,15 +19,7 @@
 /*
 Sync client state
 */
-
-//Callback to set local variable
-Fn_Local_SyncMission = {
-	mission_sync = true;
-};
-
-// Wait for server to sync client variables
-waitUntil { sleep 1; systemChat "Wait for sync..."; mission_sync }; 
-
+ 
 //Check mainline mission state
 if (!mission_requested) then {
 	//If mission is not requested -- add an action to planning board
@@ -39,7 +31,7 @@ if (!mission_requested) then {
 		//Ok. Airplane was send. 
 		if (alive us_airplane_01) then {
 			//Ok it is still alive -- so You must wait for orders.
-			//FIXME: Add wait for orders
+			//FIXME: Add wait for orders maybe?
 		} else {
 			//Airplan is down, We need to assign resque mission
 			call Fn_Local_Create_RescueMission;

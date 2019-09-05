@@ -21,19 +21,27 @@ Local player script
 */
 
 //variables
+/*
 mission_sync = false;
 mission_requested = false;
 mission_plane_send = false;
 informator_told = false;
+*/
 
 waitUntil { !isNull player }; // Wait for player to initialize
 
-//tickets
-[player, 3] call BIS_fnc_respawnTickets;
+Fn_Local_WaitPublicVariables = {
+	private _done = true;
+	{
+		if ( isNil _x) then { _done = false; };
+	} forEach ["mission_requested", "mission_plane_send"];
+	_done;
+};
+
+waitUntil { sleep 1; systemChat "Wait for sync..."; call Fn_Local_WaitPublicVariables; }; 
 
 // hide markers
 
-//FIXME: should we remove all wp_ markers instead deleteMarkerLocal?
 {if (_x find "wp_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
 {if (_x find "respawn_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
 

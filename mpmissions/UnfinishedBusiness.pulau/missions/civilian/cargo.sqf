@@ -103,10 +103,8 @@ if (isServer) then {
 	};
 
 	Fn_Task_Create_Civilian_FloodedShip = {
-		//params ["_markerPos"];
-		
 		private _center = selectRandom avaliable_pois select 1;
-		private _myPlaces = selectBestPlaces [_center, 2000, "((waterDepth factor [10,30])/(1 + waterDepth))", 15, 1];
+		private _myPlaces = selectBestPlaces [_center, 1000, "((waterDepth factor [10,30])/(1 + waterDepth))", 15, 1];
 
 		private _markerPos = selectRandom _myPlaces select 0;
 
@@ -120,14 +118,6 @@ if (isServer) then {
 		_obj = "Land_Wreck_Traw2_F" createVehicle ([((_markerPos select 0) - 5), ((_markerPos select 1) - 10), 0]); 
 		
 		[_markerPos] call Fn_Task_Civilian_FloodedShip_SpawnRandomCargo;
-		/*
-		[[
-			synd_boat_01,
-			synd_boat_02
-		]] call Fn_Patrols_Create_Random_SeaWaypoints;*/
-		
-		locationFloodedShip = _markerPos;
-		publicVariable "locationFloodedShip";
 	};
 	
 	Fn_Task_Spawn_Boats = {
