@@ -21,6 +21,7 @@ if (hasInterface) then {
 		{
 			if ((side _x) == civilian) then {
 				{
+					systemChat "Add intel action...";
 					_action_id = [
 						_x,
 						{ [name _target] call Fn_Local_Informator_Complete; },
