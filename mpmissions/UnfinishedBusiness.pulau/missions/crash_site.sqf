@@ -121,9 +121,6 @@ if (isServer) then {
 		_obj;
 	};
 	
-
-	
-	
 	private _crashSitePos = getMarkerPos "mrk_west_crashsite";
 	
 	[_crashSitePos] call Fn_Task_Create_C130J_CrashSite;

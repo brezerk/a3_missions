@@ -40,7 +40,7 @@ waitUntil { !isNull player }; // Wait for player to initialize
 player setVariable ["weapon_fiered", false, false];
 player setVariable ["is_civilian", false, true];
 
-#include "briefing.sqf";
+[] execVM "briefing.sqf";
 #include "missions\local\intro.sqf";
 #include "missions\local\fast_travel.sqf";
 #include "missions\local\jet_is_down.sqf";

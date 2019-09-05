@@ -89,9 +89,5 @@ if (isServer) then {
 			remoteExecCall ["Fn_Local_Create_Task_West_WaponStash", -2];
 		};
 		call Fn_Task_Create_KillLeader;
-		call Fn_Create_Mission_DestroyAmmo;
-		call Fn_Create_Mission_DestroyFuel;
-		call Fn_Create_Mission_DestroyWindMill;
-		call Fn_Create_Mission_KillDoctor;
 	};
 };

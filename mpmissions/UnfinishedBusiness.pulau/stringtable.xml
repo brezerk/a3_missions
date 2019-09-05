@@ -12,6 +12,97 @@
 				<English>Following the death of the former dictator, the Pulau National Guard (PNG) has broken up into several gangs, which are conducting situational battles over the cities and villages. Under the guise of a "peacekeeping operation", the Army of Sahri (AOC), led by General Puhlo Pu, started an military invasion. A ceasefire decision is currently in effect. US Special Task Force sould ensure the security of civilians and to facilitate a peaceful resolution of the conflict.</English>
 				<Russian>Після смерті колишнього диктатору Національна Гвардія Пулау (НГП) розвалилась на декілька бандитських угруповань які ведуть ситуативні бої за міста та села. Під прикриттям "миротворчої операції" Армія Островів Сахрі (AOC) на чолі з генералом Пухло Пу розпочала військове вторгнення. На цей час діє рішення про припинення вогню. Задача групи спеціального призначення США забезпечити безпеку мирного населення та сприяти мирному врегулюванню конфлікту.</Russian>
 			</Key>
+			<Key ID="BRIEFING_00_TITLE">
+				<Original>Difficulty levels</Original>
+				<English>Difficulty levels</English>
+				<Russian>Рівні складності</Russian>
+			</Key>
+			<Key ID="BRIEFING_00_DESC">
+				<Original>Additional levels of difficulty will allow you to encounter even more challenges during the mission. Use the &lt;font color='#FFD700'&gt;Easy&lt;/font&gt; level to get familiar with the mission.
+				&lt;br /&gt;
+				Existing levels of complexity and their description:
+				&lt;br /&gt;&lt;br /&gt;
+				&lt;h2&gt;Easy&lt;/h2&gt;&lt;br /&gt;
+				* Chance of weapon loss during landing - 40%&lt;br /&gt;
+				* Chance of weapon's ammo loss during landing - 50%&lt;br /&gt;
+				* Chance of weapon's attachments loss during landing - 40%&lt;br /&gt;
+				* Chance of radio transmitter loss during landing - 60%&lt;br /&gt;
+				* Chance of losing map during landing - 0%&lt;br /&gt;
+				&lt;br /&gt;
+				&lt;h2&gt;Hardcore&lt;/h2&gt;&lt;br /&gt;
+				* Chance of weapon loss during landing - 60%&lt;br /&gt;
+				* Chance of weapon's ammo loss during landing - 80%&lt;br /&gt;
+				* Chance of weapon's attachments loss during landing - 40%&lt;br /&gt;
+				* Chance of radio transmitter loss during landing - 80%&lt;br /&gt;
+				* Chance of losing map during landing - 50%&lt;br /&gt;
+				&lt;br /&gt;
+				&lt;h2&gt;Nightmare&lt;/h2&gt;&lt;br /&gt;
+				* Chance of weapon loss during landing - 100%&lt;br /&gt;
+				* Chance of weapon's ammo loss during landing - 100%&lt;br /&gt;
+				* Chance of weapon's attachments loss during landing - 100%&lt;br /&gt;
+				* Chance of radio transmitter loss during landin - 100%&lt;br /&gt;
+				* Chance of losing map during landing - 100%&lt;br /&gt;
+				&lt;br /&gt;
+				</Original>Additional levels of difficulty will allow you to encounter even more challenges during the mission. Use the &lt;font color='#FFD700'&gt;Easy&lt;/font&gt; level to get familiar with the mission.
+				&lt;br /&gt;
+				Existing levels of complexity and their description:
+				&lt;br /&gt;&lt;br /&gt;
+				&lt;h2&gt;Easy&lt;/h2&gt;&lt;br /&gt;
+				* Chance of weapon loss during landing - 40%&lt;br /&gt;
+				* Chance of weapon's ammo loss during landing - 50%&lt;br /&gt;
+				* Chance of weapon's attachments loss during landing - 40%&lt;br /&gt;
+				* Chance of radio transmitter loss during landing - 60%&lt;br /&gt;
+				* Chance of losing map during landing - 0%&lt;br /&gt;
+				* Chance of losing compass during landing - 100%&lt;br /&gt;
+				&lt;br /&gt;
+				&lt;h2&gt;Hardcore&lt;/h2&gt;&lt;br /&gt;
+				* Chance of weapon loss during landing - 60%&lt;br /&gt;
+				* Chance of weapon's ammo loss during landing - 80%&lt;br /&gt;
+				* Chance of weapon's attachments loss during landing - 40%&lt;br /&gt;
+				* Chance of radio transmitter loss during landing - 80%&lt;br /&gt;
+				* Chance of losing map during landing - 50%&lt;br /&gt;
+				* Chance of losing compass during landing - 50%&lt;br /&gt;
+				&lt;br /&gt;
+				&lt;h2&gt;Nightmare&lt;/h2&gt;&lt;br /&gt;
+				* Chance of weapon loss during landing - 100%&lt;br /&gt;
+				* Chance of weapon's ammo loss during landing - 100%&lt;br /&gt;
+				* Chance of weapon's attachments loss during landing - 100%&lt;br /&gt;
+				* Chance of radio transmitter loss during landin - 100%&lt;br /&gt;
+				* Chance of losing map during landing - 100%&lt;br /&gt;
+				* Chance of losing compass during landing - 0%&lt;br /&gt;
+				&lt;br /&gt;
+				<English>
+				</English>
+				<Russian>Додаткові рівні складності дозволять Вам зіткнутися з ще більшими челенджами при проходженні місії. Використовуйте &lt;font color='#FFD700'&gt;Легкий&lt;/font&gt; рівень для ознайомлення.
+				&lt;br /&gt;
+				Існуючі рівні скадності та їх опис:
+				&lt;br /&gt;&lt;br /&gt;
+				&lt;h2&gt;Легкий&lt;/h2&gt;&lt;br /&gt;
+				* Шанс втрати зброї при десантуванні - 40%&lt;br /&gt;
+				* Шанс втрати патронів до зброї при дестантуванні - 50%&lt;br /&gt;
+				* Шанс втрати додаткового обладнаяння до зброї при дестантуванні - 40%&lt;br /&gt;
+				* Шанс втрати радіопередавача при дестантуванні - 60%&lt;br /&gt;
+				* Шанс втрати мапи при дестантуванні - 0%&lt;br /&gt;
+				* Шанс втрати компаса при дестантуванні - 100%&lt;br /&gt;
+				&lt;br /&gt;
+				&lt;h2&gt;Хардкор&lt;/h2&gt;&lt;br /&gt;
+				* Шанс втрати зброї при дестантуванні - 60%&lt;br /&gt;
+				* Шанс втрати патронів до зброї при дестантуванні - 80%&lt;br /&gt;
+				* Шанс втрати додаткового обладнаяння до зброї при дестантуванні - 40%&lt;br /&gt;
+				* Шанс втрати радіопередавача при дестантуванні - 80%&lt;br /&gt;
+				* Шанс втрати мапи при дестантуванні - 50%&lt;br /&gt;
+				* Шанс втрати компаса при дестантуванні - 50%&lt;br /&gt;
+				&lt;br /&gt;
+				&lt;h2&gt;Кошмар&lt;/h2&gt;&lt;br /&gt;
+				* Шанс втрати зброї при дестантуванні - 100%&lt;br /&gt;
+				* Шанс втрати патронів до зброї при дестантуванні - 100%&lt;br /&gt;
+				* Шанс втрати додаткового обладнаяння до зброї при дестантуванні - 100%&lt;br /&gt;
+				* Шанс втрати радіопередавача при дестантуванні - 100%&lt;br /&gt;
+				* Шанс втрати мапи при дестантуванні - 100%&lt;br /&gt;
+				* Шанс втрати компаса при дестантуванні - 0%&lt;br /&gt;
+				&lt;br /&gt;
+				</Russian>
+			</Key>
 			<Key ID="BRIEFING_01_TITLE">
 				<Original>Gaming conventions</Original>
 				<English>Gaming conventions</English>
@@ -63,66 +154,112 @@
 				<Russian>Ваш наказ: Прибути до аеродрому та доповісти команидру. Забезпечити безпеку мирного населення та сприяти мирному врегулюванню конфлікта.&lt;br /&gt;&lt;br /&gt;Другорядна ціль: розвідати позиції АОС та слідкувати за її військовими силами.</Russian>
 			</Key>
 			<Key ID="BRIEFING_06_TITLE">
-				<Original>Fractions</Original>
-				<English>Fractions</English>
-				<Russian>Фракції</Russian>
+				<Original>Fraction: USA 160th SOAR (A)</Original>
+				<English>Fraction: USA 160th SOAR (A)</English>
+				<Russian>Фракціїя: США 160 ОАП</Russian>
 			</Key>
 			<Key ID="BRIEFING_06_DESC">
 				<Original>&lt;h2&gt;United States Army 160th Special Operations Aviation Regiment (Airborne) (160th SOAR (A))&lt;/h2&gt;&lt;br /&gt;
 US Special Forces Group is conducting peacekeeping operations. It is also has to scout AOC positions and keep eye on its military forces. 
 &lt;font color='#FFD700'&gt;This group is the main story line for this mission.&lt;/font&gt; The mission will ends as soon as the last member of this group will be killed.
-&lt;br /&gt;&lt;br /&gt;
-&lt;h2&gt;US Rescue Squad (US RQ)&lt;/h2&gt;&lt;br /&gt;
-US Rescue Squad will try to help US Special Forces group if it will be forced to leave the island. &lt;font color='#FFD700'&gt;It's primary mission to find and rescue any US military survivours&lt;/font&gt;.
-&lt;br /&gt;&lt;br /&gt;
-&lt;h2&gt;Army Corps of Cahri (AOC)&lt;/h2&gt;&lt;br /&gt;
-Pro Russian military group from the Cahri islands. Is lead by odious leader named Puhlo Pu. They are trying to expand their military presence over the region. Despite to "peacefull measures" they are extreamly invading the island with military force. To save it's influence US needs to stop or restrict AOC operations over the region. &lt;font color='#FFD700'&gt;More likely AOC will try to provoke US for a conflict&lt;/font&gt;.
-&lt;br /&gt;&lt;br /&gt;
-&lt;h2&gt;Pulau National Guard (PNG)&lt;/h2&gt;&lt;br /&gt;
-The former leader of the Pulau islands had formed Pulau National Guard to defend and control the territory. After his death different military officers prononced themself as the leaders on Pulau Nation. Unfortunately this turns out into civil war. According to the latest repots NPG has been disbanded and tunrned into several bandit groups. Most noticed are lead by Marcio Moraz, Gonsales Capito and Solomon Maru. &lt;font color='#FFD700'&gt;We do have information that some of this leaders are supported by AOC&lt;/font&gt;. Currently they are figting over the island for the dominance.
-&lt;br /&gt;&lt;br /&gt;
-&lt;h2&gt;Civilean Rebels (CR)&lt;/h2&gt;&lt;br /&gt;
-The most of civilians are sitting at homes or safehouses wating situation to resolve. However there are some groups for the people who dislike both former NPG leaders and AOC forces. &lt;font color='#FFD700'&gt;They might wish to establish connection to US to liberate the island&lt;/font&gt;.</Original>
+&lt;img image='data\images\fractions\%1\group_main.paa' width='256' height='256'/&gt;
+				</Original>
 				<English>&lt;h2&gt;United States Army 160th Special Operations Aviation Regiment (Airborne) (160th SOAR (A))&lt;/h2&gt;&lt;br /&gt;
 US Special Forces Group is conducting peacekeeping operations. It is also has to scout AOC positions and keep eye on its military forces. 
 &lt;font color='#FFD700'&gt;This group is the main story line for this mission.&lt;/font&gt; The mission will ends as soon as the last member of this group will be killed.
-&lt;br /&gt;&lt;br /&gt;
-&lt;h2&gt;US Rescue Squad (US RQ)&lt;/h2&gt;&lt;br /&gt;
-US Rescue Squad will try to help US Special Forces group if it will be forced to leave the island. &lt;font color='#FFD700'&gt;It's primary mission to find and rescue any US military survivours&lt;/font&gt;.
-&lt;br /&gt;&lt;br /&gt;
-&lt;h2&gt;Army Corps of Cahri (AOC)&lt;/h2&gt;&lt;br /&gt;
-Pro Russian military group from the Cahri islands. Is lead by odious leader named Puhlo Pu. They are trying to expand their military presence over the region. Despite to "peacefull measures" they are extreamly invading the island with military force. To save it's influence US needs to stop or restrict AOC operations over the region. &lt;font color='#FFD700'&gt;More likely AOC will try to provoke US for a conflict&lt;/font&gt;.
-&lt;br /&gt;&lt;br /&gt;
-&lt;h2&gt;Pulau National Guard (PNG)&lt;/h2&gt;&lt;br /&gt;
-The former leader of the Pulau islands had formed Pulau National Guard to defend and control the territory. After his death different military officers prononced themself as the leaders on Pulau Nation. Unfortunately this turns out into civil war. According to the latest repots NPG has been disbanded and tunrned into several bandit groups. Most noticed are lead by Marcio Moraz, Gonsales Capito and Solomon Maru. &lt;font color='#FFD700'&gt;We do have information that some of this leaders are supported by AOC&lt;/font&gt;. Currently they are figting over the island for the dominance.
-&lt;br /&gt;&lt;br /&gt;
-&lt;h2&gt;Civilean Rebels (CR)&lt;/h2&gt;&lt;br /&gt;
-The most of civilians are sitting at homes or safehouses wating situation to resolve. However there are some groups for the people who dislike both former NPG leaders and AOC forces. &lt;font color='#FFD700'&gt;They might wish to establish connection to US to liberate the island&lt;/font&gt;.</English>
+&lt;img image='data\images\fractions\%1\group_main.paa' width='256' height='256'/&gt;
+				</English>
 				<Russian>&lt;h2&gt;160-й окремий авіаційний (десантний) повний спеціальний назначення (160 ОАП) США&lt;/h2&gt;&lt;br /&gt;
 Група спеціальних сил США проводить миротворчу операцію. Вона також має завдання розвідати позиції АОС та слідкувати за її військовими силами.
 &lt;font color='#FFD700'&gt;Ця група є головною сюжетною лінією цієї місії.&lt;/font&gt; Місія закінчується, як тільки буде вбитий останній член цієї групи.
-&lt;br /&gt;&lt;br /&gt;
-&lt;h2&gt;Рятувальний загін США(US RQ)&lt;/h2&gt;&lt;br /&gt;
-Рятувальний загін США намагатиметься допомогти групі спецназу США, якщо його змусять покинути острів. &lt;font color='#FFD700'&gt;Основна місія - знайти та врятувати виживших американських військових&lt;/font&gt;.
-&lt;br /&gt;&lt;br /&gt;
-&lt;h2&gt;Армія Островів Сахрі (AOC) (AOC)&lt;/h2&gt;&lt;br /&gt;
-Проросійська військова група з островів Сахрі. Очолює одіозний лідер на ім’я Пухло Пу. Вони намагаються розширити свою військову присутність у регіоні. Незважаючи на "миролюбні заходи", вони швидко накоплюють на острові величезні військові сили. Щоб зберегти свій вплив, США потребують припинення або обмеження операцій AOC над регіоном. &lt;font color='#FFD700'&gt;Скоріш за все, АОС спробує спровокувати бійців США на конфлікт&lt;/font&gt;. 
-&lt;br /&gt;&lt;br /&gt;
-&lt;h2&gt;Національна гвардія Пулау (НГП)&lt;/h2&gt;&lt;br /&gt;
-Колишній ватажок островів Пулау сформував Національну гвардію Пулау для захисту та контролю території. Після його смерті різні військові офіцери виголошували себе лідерами нації Пулау. На жаль, це перетворилось на громадянську війну. За останніми данними, НГП було розформовано та перетворено на кілька бандитських груп. Найбільш помітні очолюються Марсіо Мороз, Гонсалес Капіто та Соломон Мару. &lt;font color='#FFD700'&gt;У нас є інформація, що деякі з цих лідерів підтримуються AOC&lt;/font&gt;. В даний час вони розбираються поміж собою.
-&lt;br /&gt;&lt;br /&gt;
-&lt;h2&gt;Цивільні повстанці (CR)&lt;/h2&gt;&lt;br /&gt;
-Більшість місцевих жителів сидять у будинках чи сховищах і очікують на вирішення ситуації. Однак є деякі групи людей, які не люблять колишніх лідерів НГП та сили AOC. &lt;font color='#FFD700'&gt;Вони, можливо, хотіли б встановити зв’язок із силами США що б визволити острів&lt;/font&gt;.</Russian>
+&lt;img image='data\images\fractions\%1\group_main.paa' width='256' height='256'/&gt;
+				</Russian>
 			</Key>
 			<Key ID="BRIEFING_07_TITLE">
 				<Original>Situation</Original>
 				<English>Situation</English>
-				<Russian>Обстановка</Russian>
+				<Russian>Cитуація</Russian>
 			</Key>
 			<Key ID="BRIEFING_07_DESC">
 				<Original>Situation: Following the death of the former dictator, the Pulau National Guard (PNG) has broken up into several gangs, which are conducting situational battles over the cities and villages. Under the guise of a "peacekeeping operation", the Army of Sahri (AOC), led by General Puhlo Pu, started an military invasion. A ceasefire decision is currently in effect. US Special Task Force sould ensure the security of civilians and to facilitate a peaceful resolution of the conflict. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</Original>
 				<English>Situation: Following the death of the former dictator, the Pulau National Guard (PNG) has broken up into several gangs, which are conducting situational battles over the cities and villages. Under the guise of a "peacekeeping operation", the Army of Sahri (AOC), led by General Puhlo Pu, started an military invasion. A ceasefire decision is currently in effect. US Special Task Force sould ensure the security of civilians and to facilitate a peaceful resolution of the conflict. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</English>
 				<Russian>Обстановка: Після смерті колишнього диктатору Національна Гвардія Пулау (НГП) розвалилась на декілька бандитських угруповань які ведуть ситуативні бої за міста та села. Під прикриттям "миротворчої операції" Армія Островів Сахрі (AOC) на чолі з генералом Пухло Пу розпочала військове вторгнення. На цей час діє рішення про припинення вогню. Задача групи спеціального призначення США забезпечити безпеку мирного населення та сприяти мирному врегулюванню конфлікту. Активних дій за останні 24 години не зареєстровано. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</Russian>
+			</Key>
+			<Key ID="BRIEFING_08_TITLE">
+				<Original>Fraction: USA Rescue Squad</Original>
+				<English>Fraction: USA Rescue Squad</English>
+				<Russian>Фракціїя: Рятувальний загін США</Russian>
+			</Key>
+			<Key ID="BRIEFING_08_DESC">
+				<Original>&lt;h2&gt;US Rescue Squad (US RQ)&lt;/h2&gt;&lt;br /&gt;
+US Rescue Squad will try to help US Special Forces group if it will be forced to leave the island. &lt;font color='#FFD700'&gt;It's primary mission to find and rescue any US military survivours&lt;/font&gt;.
+&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
+				</Original>
+				<English>&lt;h2&gt;US Rescue Squad (US RQ)&lt;/h2&gt;&lt;br /&gt;
+US Rescue Squad will try to help US Special Forces group if it will be forced to leave the island. &lt;font color='#FFD700'&gt;It's primary mission to find and rescue any US military survivours&lt;/font&gt;.
+&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
+				</English>
+				<Russian>&lt;h2&gt;Рятувальний загін США(US RQ)&lt;/h2&gt;&lt;br /&gt;
+Рятувальний загін США намагатиметься допомогти групі спецназу США, якщо його змусять покинути острів. &lt;font color='#FFD700'&gt;Основна місія - знайти та врятувати виживших американських військових&lt;/font&gt;.
+&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
+				</Russian>
+			</Key>
+			<Key ID="BRIEFING_09_TITLE">
+				<Original>Fraction: AOC</Original>
+				<English>Fraction: AOC</English>
+				<Russian>Фракціїя: АОС</Russian>
+			</Key>
+			<Key ID="BRIEFING_09_DESC">
+				<Original>&lt;h2&gt;Army Corps of Cahri (AOC)&lt;/h2&gt;&lt;br /&gt;
+Pro Russian military group from the Cahri islands. Is lead by odious leader named &lt;font color='#FFD700'&gt;Puhlo Pu&lt;/font&gt;. They are trying to expand their military presence over the region. Despite to "peacefull measures" they are extreamly invading the island with military force. To save it's influence US needs to stop or restrict AOC operations over the region. &lt;font color='#FFD700'&gt;More likely AOC will try to provoke US for a conflict&lt;/font&gt;.
+&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
+				</Original>
+				<English>&lt;h2&gt;Army Corps of Cahri (AOC)&lt;/h2&gt;&lt;br /&gt;
+Pro Russian military group from the Cahri islands. Is lead by odious leader named &lt;font color='#FFD700'&gt;Puhlo Pu&lt;/font&gt;. They are trying to expand their military presence over the region. Despite to "peacefull measures" they are extreamly invading the island with military force. To save it's influence US needs to stop or restrict AOC operations over the region. &lt;font color='#FFD700'&gt;More likely AOC will try to provoke US for a conflict&lt;/font&gt;.
+&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
+				</English>
+				<Russian>&lt;h2&gt;Армія Островів Сахрі (AOC) (AOC)&lt;/h2&gt;&lt;br /&gt;
+Проросійська військова група з островів Сахрі. Очолює одіозний лідер на ім’я &lt;font color='#FFD700'&gt;Пухло Пу&lt;/font&gt;. Вони намагаються розширити свою військову присутність у регіоні. Незважаючи на "миролюбні заходи", вони швидко накоплюють на острові величезні військові сили. Щоб зберегти свій вплив, США потребують припинення або обмеження операцій AOC над регіоном. &lt;font color='#FFD700'&gt;Скоріш за все, АОС спробує спровокувати бійців США на конфлікт&lt;/font&gt;. 
+&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
+				</Russian>
+			</Key>
+			<Key ID="BRIEFING_10_TITLE">
+				<Original>Fraction: PNG</Original>
+				<English>Fraction: PNG</English>
+				<Russian>Фракціїя: НГП</Russian>
+			</Key>
+			<Key ID="BRIEFING_10_DESC">
+				<Original>&lt;h2&gt;Pulau National Guard (PNG)&lt;/h2&gt;&lt;br /&gt;
+The former leader of the Pulau islands had formed Pulau National Guard to defend and control the territory. After his death different military officers prononced themself as the leaders on Pulau Nation. Unfortunately this turns out into civil war. According to the latest repots NPG has been disbanded and tunrned into several bandit groups. Most noticed are lead by Marcio Moraz, Gonsales Capito and Solomon Maru. &lt;font color='#FFD700'&gt;We do have information that some of this leaders are supported by AOC&lt;/font&gt;. Currently they are figting over the island for the dominance.
+&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
+				</Original>
+				<English>&lt;h2&gt;Pulau National Guard (PNG)&lt;/h2&gt;&lt;br /&gt;
+The former leader of the Pulau islands had formed Pulau National Guard to defend and control the territory. After his death different military officers prononced themself as the leaders on Pulau Nation. Unfortunately this turns out into civil war. According to the latest repots NPG has been disbanded and tunrned into several bandit groups. Most noticed are lead by Marcio Moraz, Gonsales Capito and Solomon Maru. &lt;font color='#FFD700'&gt;We do have information that some of this leaders are supported by AOC&lt;/font&gt;. Currently they are figting over the island for the dominance.
+&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
+				</English>
+				<Russian>&lt;h2&gt;Національна гвардія Пулау (НГП)&lt;/h2&gt;&lt;br /&gt;
+Колишній ватажок островів Пулау сформував Національну гвардію Пулау для захисту та контролю території. Після його смерті різні військові офіцери виголошували себе лідерами нації Пулау. На жаль, це перетворилось на громадянську війну. За останніми данними, НГП було розформовано та перетворено на кілька бандитських груп. Найбільш помітні очолюються Марсіо Мороз, Гонсалес Капіто та Соломон Мару. &lt;font color='#FFD700'&gt;У нас є інформація, що деякі з цих лідерів підтримуються AOC&lt;/font&gt;. В даний час вони розбираються поміж собою.
+&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
+				</Russian>
+			</Key>
+			<Key ID="BRIEFING_11_TITLE">
+				<Original>Fraction: Civilean Rebels</Original>
+				<English>Fraction: Civilean Rebels</English>
+				<Russian>Фракціїя: Цивільні повстанці</Russian>
+			</Key>
+			<Key ID="BRIEFING_11_DESC">
+				<Original>&lt;h2&gt;Civilean Rebels (CR)&lt;/h2&gt;&lt;br /&gt;
+The most of civilians are sitting at homes or safehouses wating situation to resolve. However there are some groups for the people who dislike both former NPG leaders and AOC forces. &lt;font color='#FFD700'&gt;They might wish to establish connection to US to liberate the island&lt;/font&gt;.
+&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
+				</Original>
+				<English>&lt;h2&gt;Civilean Rebels (CR)&lt;/h2&gt;&lt;br /&gt;
+The most of civilians are sitting at homes or safehouses wating situation to resolve. However there are some groups for the people who dislike both former NPG leaders and AOC forces. &lt;font color='#FFD700'&gt;They might wish to establish connection to US to liberate the island&lt;/font&gt;.
+&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
+				</English>
+				<Russian>&lt;h2&gt;Цивільні повстанці (CR)&lt;/h2&gt;&lt;br /&gt;
+Більшість місцевих жителів сидять у будинках чи сховищах і очікують на вирішення ситуації. Однак є деякі групи людей, які не люблять колишніх лідерів НГП та сили AOC. &lt;font color='#FFD700'&gt;Вони, можливо, хотіли б встановити зв’язок із силами США що б визволити острів&lt;/font&gt;.
+&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
+			</Russian>
 			</Key>
 			<Key ID="TASK_01_TITLE">
 				<Original>Eliminate rebel leader</Original>
@@ -130,9 +267,9 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>Ліквідувати ватажка бунтівників</Russian>
 			</Key>
 			<Key ID="TASK_01_DESC">
-				<Original>Eliminate the rebel leader Solomon Maru on the base near the &lt;marker name = 'mrk_airfield'&gt;%1 airfield&lt;/marker&gt;.</Original>
-				<English>Eliminate the rebel leader Solomon Maru on the base near the &lt;marker name = 'mrk_airfield'&gt;%1 airfield&lt;/marker&gt;.</English>
-				<Russian>Ліквідувати ватажка бунтівників Solomon Maru на базі біля &lt;marker name='mrk_airfield'&gt;аеродрому %1&lt;/marker&gt;.</Russian>
+				<Original>Eliminate the rebel leader Solomon Maru on the base near the &lt;marker name = 'mrk_airfield'&gt;%1 airfield&lt;/marker&gt;.&lt;img image='data\images\fractions\CUP_I_NAPA\leader.paa' width='256' height='256'/&gt;</Original>
+				<English>Eliminate the rebel leader Solomon Maru on the base near the &lt;marker name = 'mrk_airfield'&gt;%1 airfield&lt;/marker&gt;.&lt;img image='data\images\fractions\CUP_I_NAPA\leader.paa' width='256' height='256'/&gt;</English>
+				<Russian>Ліквідувати ватажка бунтівників Solomon Maru на базі біля &lt;marker name='mrk_airfield'&gt;аеродрому %1&lt;/marker&gt;.&lt;img image='data\images\fractions\CUP_I_NAPA\leader.paa' width='256' height='256'/&gt;</Russian>
 			</Key>
 			<Key ID="TASK_02_TITLE">
 				<Original>Get to the %1 airfield</Original>
@@ -445,9 +582,9 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>Зачекайте, поки лідер гриппи запланує місію</Russian>
 			</Key>
 			<Key ID="INFO_WAIT_02">
-				<Original>Mission has been requested</Original>
-				<English>Mission has been requested</English>
-				<Russian>Місію було заплановано</Russian>
+				<Original>Mission has been requested. Briefing updated!</Original>
+				<English>Mission has been requested. Briefing updated!</English>
+				<Russian>Місію було заплановано. Брифінг оновлено!</Russian>
 			</Key>
 			<Key ID="INFO_DATE_01">
 				<Original>July 16, 2019 %1</Original>

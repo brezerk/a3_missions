@@ -6,6 +6,7 @@ private _chance_lost_primary_attachments = 0;
 private _chance_lost_primary_ammo = 0;
 private _chance_lost_radio = 0;
 private _chance_lost_map = 0;
+private _chance_lost_compass = 0;
 
 switch(_diffclty) do {
 	case 0: {
@@ -14,13 +15,15 @@ switch(_diffclty) do {
 		_chance_lost_primary_attachments = 40;
 		_chance_lost_radio = 60;
 		_chance_lost_map = 0;
+		_chance_lost_compass = 100;
 	};
 	case 1: {
 		_chance_lost_primary = 60;
 		_chance_lost_primary_ammo = 80;
 		_chance_lost_primary_attachments = 40;
 		_chance_lost_radio = 80;
-		_chance_lost_map = 0;
+		_chance_lost_map = 50;
+		_chance_lost_compass = 50;
 	};
 	case 2: {
 		_chance_lost_primary = 100;
@@ -28,13 +31,11 @@ switch(_diffclty) do {
 		_chance_lost_primary_attachments = 100;
 		_chance_lost_radio = 100;
 		_chance_lost_map = 100;
+		_chance_lost_compass = 0;
 	};
 };
 
 comment "Exported from Arsenal by brezerk";
-
-//comment "[!] UNIT MUST BE LOCAL [!]";
-//if (!local player) exitWith {};
 
 private _pWeap = primaryWeapon player;
 private _pWeapMagazine = primaryWeaponMagazine player;
@@ -69,10 +70,13 @@ if ((random 100) <= _chance_lost_map) then {
 	player removeItem "ItemMap";
 };
 
-player unassignItem "ItemCompass";
-player removeItem "ItemCompass";
+if ((random 100) <= _chance_lost_compass) then {
+	player unassignItem "ItemCompass";
+	player removeItem "ItemCompass";
+};
 
 if ((random 100) <= _chance_lost_radio) then {
+	//FIXME: does not seems to be working for ACRE 
 	if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
 		player unassignItem "ItemRadio";
 		player removeItem "ItemRadio";
@@ -94,7 +98,6 @@ if ((random 100) <= _chance_lost_radio) then {
 	};
 };
 
-//lifeState player != "INCAPACITATED"
 waitUntil {sleep 1; getPosATL player select 2 <= 300};
 
 player action ["openParachute", player];

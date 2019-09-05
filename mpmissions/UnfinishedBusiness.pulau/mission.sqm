@@ -8,7 +8,7 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=7747;
+		nextID=7753;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1448.4185,790.05914,4344.8979};
-		dir[]={0.11338346,-0.98551565,0.12646975};
-		up[]={0.65784395,0.16974227,0.73377103};
-		aside[]={0.74461305,2.3853499e-007,-0.66756308};
+		pos[]={1031.7024,9.5359011,9430.5732};
+		dir[]={-0.82788807,0.028615514,0.56031364};
+		up[]={0.023599107,0.99959171,-0.015973024};
+		aside[]={0.5605526,1.1041993e-007,0.82822973};
 	};
 };
 binarizationWanted=0;
@@ -81,7 +81,7 @@ class AddonsMetaData
 		{
 			className="ace_spectator";
 			name="ACE3 - Spectator";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item1
@@ -178,7 +178,7 @@ class AddonsMetaData
 		{
 			className="ace_cargo";
 			name="ACE3 - Cargo";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item16
@@ -242,14 +242,14 @@ class AddonsMetaData
 		{
 			className="ace_logistics_wirecutter";
 			name="ACE3 - Logistics Wire Cutter";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item26
 		{
 			className="ace_concertina_wire";
 			name="ACE3 - Concertina Wire";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item27
@@ -263,14 +263,14 @@ class AddonsMetaData
 		{
 			className="ace_interaction";
 			name="ACE3 - Interaction";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item29
 		{
 			className="ace_dragging";
 			name="ACE3 - Dragging";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item30
@@ -9665,7 +9665,7 @@ class Mission
 			name="wp_Monyet_hospital_02";
 			type="loc_Hospital";
 			id=7411;
-			atlOffset=0.32114506;
+			atlOffset=3.8504825;
 		};
 		class Item643
 		{
@@ -10775,7 +10775,7 @@ class Mission
 			name="wp_Monyet_paradrop_66";
 			type="b_recon";
 			id=7517;
-			atlOffset=0.15392697;
+			atlOffset=1.4655185;
 		};
 		class Item749
 		{
@@ -11423,7 +11423,7 @@ class Mission
 			b=75;
 			drawBorder=1;
 			id=7576;
-			atlOffset=21.089573;
+			atlOffset=22.132744;
 		};
 		class Item808
 		{

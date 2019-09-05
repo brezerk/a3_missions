@@ -47,6 +47,8 @@ if (isServer) then {
 	D_LOCATION = nil;
 	D_START_TYPE = nil;
 	
+	D_FRACTION_WEST = "CUP_B_USMC";
+	
 	// Defaines (should be an UI option at mission startup);
 	// FIXME: should be diff dependent
 	D_FRACTION_INDEP = "CUP_I_NAPA"; //posible CUP_I_TK_GUE, IND_F, IND_F, IND_G_F
@@ -111,6 +113,10 @@ if (isServer) then {
 			connected_users pushBackUnique [_name, (_id call CBA_fnc_formatNumber), format ["_USER_DEFINED #%1/", (_id call CBA_fnc_formatNumber)]];
 			publicVariable "connected_users";
 			publicVariable "D_LOCATION";
+			publicVariable "D_FRACTION_WEST";
+			publicVariable "D_FRACTION_EAST";
+			publicVariable "D_FRACTION_INDEP";
+			publicVariable "D_FRACTION_CIV";
 			publicVariable "locationFloodedShip";
 			publicVariable "mission_plane_send";
 			publicVariable "mission_requested";
@@ -185,6 +191,10 @@ if (isServer) then {
 			D_START_TYPE = _start_type;
 			mission_requested = true;
 			publicVariable "D_LOCATION";
+			publicVariable "D_FRACTION_WEST";
+			publicVariable "D_FRACTION_EAST";
+			publicVariable "D_FRACTION_INDEP";
+			publicVariable "D_FRACTION_CIV";
 			publicVariable "mission_requested";
 			//Remove unneeded markers
 			{
