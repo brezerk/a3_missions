@@ -21,12 +21,7 @@ Local player script
 */
 
 //variables
-/*
-mission_sync = false;
-mission_requested = false;
-mission_plane_send = false;
 informator_told = false;
-*/
 
 waitUntil { !isNull player }; // Wait for player to initialize
 

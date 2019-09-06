@@ -199,10 +199,10 @@ if (isServer) then {
 	remoteExecCall ["Fn_Local_West_Create_Mission_CollectIntel"];
 	
 	{
-		if ((count units _x) >= 2) then {
-			if ((side _x) in [east, independent]) then {
-				systemChat "Add intel action...";
-				private _action_id = [
+		private _side = side _x;
+		if (_side in [east, independent]) then {
+			if ((count units _x) >= 2) then {
+				[
 					(leader _x),
 					"call Fn_Local_West_Task_CollectIntel_Complete;",
 					"holdactions\holdAction_search",
@@ -211,21 +211,20 @@ if (isServer) then {
 					6,
 					true
 				] call BrezBlock_fnc_Attach_SearchIntel_Action;
-			} else {
-				if ((side _x) == civilian) then {
-					{
-						systemChat "Add intel action...";
-						_action_id = [
-							_x,
-							{ [name _target] call Fn_Local_Informator_Complete; },
-							"simpleTasks\types\talk",
-							"ACTION_02",
-							"&& alive _target",
-							6,
-							false
-						] call BrezBlock_fnc_Attach_Hold_Action;
-					} forEach (units _x);
-				};
+			};
+		} else {
+			if (_side == civilian) then {
+				{
+					[
+						_x,
+						{ [name _target] call Fn_Local_Informator_Complete; },
+						"simpleTasks\types\talk",
+						"ACTION_02",
+						"&& alive _target",
+						6,
+						false
+					] call BrezBlock_fnc_Attach_Hold_Action;
+				} forEach (units _x);
 			};
 		};
 	} forEach allGroups;

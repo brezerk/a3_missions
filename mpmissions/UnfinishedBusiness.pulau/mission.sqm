@@ -9665,7 +9665,7 @@ class Mission
 			name="wp_Monyet_hospital_02";
 			type="loc_Hospital";
 			id=7411;
-			atlOffset=0.32114506;
+			atlOffset=3.8504825;
 		};
 		class Item643
 		{
@@ -10775,7 +10775,7 @@ class Mission
 			name="wp_Monyet_paradrop_66";
 			type="b_recon";
 			id=7517;
-			atlOffset=0.15392697;
+			atlOffset=1.4655185;
 		};
 		class Item749
 		{
@@ -11423,7 +11423,7 @@ class Mission
 			b=75;
 			drawBorder=1;
 			id=7576;
-			atlOffset=21.089573;
+			atlOffset=22.132744;
 		};
 		class Item808
 		{

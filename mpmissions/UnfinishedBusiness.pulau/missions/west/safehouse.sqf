@@ -47,7 +47,7 @@ if (isServer) then {
 			if (!isNil "_pos") then {
 				private _mark = createMarker [format ["east_stash_0%1", _x], _pos];
 				_mark setMarkerType "hd_objective";
-				_mark setMarkerText [format 'Emergency spot %1', _x];
+				_mark setMarkerText format ['Emergency spot %1', _x];
 				_mark setMarkerColor "ColorWEST";
 			
 				[_pos] call Fn_Task_West_Safe_SpawnRandomCargo;
