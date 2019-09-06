@@ -38,12 +38,11 @@ Fn_Local_WaitPublicVariables = {
 	_done;
 };
 
-waitUntil { sleep 1; systemChat "Wait for sync..."; call Fn_Local_WaitPublicVariables; }; 
-
 // hide markers
-
 {if (_x find "wp_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
 {if (_x find "respawn_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
+
+waitUntil { sleep 1; systemChat "Wait for sync..."; call Fn_Local_WaitPublicVariables; }; 
 
 player setVariable ["weapon_fiered", false, false];
 player setVariable ["is_civilian", false, true];

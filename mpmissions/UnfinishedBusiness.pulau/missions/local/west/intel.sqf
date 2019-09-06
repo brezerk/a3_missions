@@ -37,23 +37,6 @@ if (hasInterface) then {
 				true
 			] call BIS_fnc_taskCreate;
 			['t_west_collect_intel', "documents"] call BIS_fnc_taskSetType;
-				
-			{
-				if ((count units _x) >= 2) then {
-					if ((side _x) in [east, independent]) then {
-						systemChat "Add intel action...";
-						private _action_id = [
-							(leader _x),
-							"call Fn_Local_West_Task_CollectIntel_Complete;",
-							"holdactions\holdAction_search",
-							"ACTION_01",
-							"&& ((side _this) in [west, civilian])",
-							6,
-							true
-						] call BrezBlock_fnc_Attach_SearchIntel_Action;
-					};
-				};
-			} forEach allGroups;
 		};
 	};
 	

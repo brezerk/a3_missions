@@ -17,24 +17,6 @@
  ***************************************************************************/
 
 if (hasInterface) then {
-	Fn_Local_Civilian_AttachInformator_Action = {
-		{
-			if ((side _x) == civilian) then {
-				{
-					systemChat "Add intel action...";
-					_action_id = [
-						_x,
-						{ [name _target] call Fn_Local_Informator_Complete; },
-						"simpleTasks\types\talk",
-						"ACTION_02",
-						"&& alive _target",
-						6,
-						false
-					] call BrezBlock_fnc_Attach_Hold_Action;
-				} forEach (units _x);
-			};
-		} forEach allGroups;
-	};
 
 	Fn_Local_Create_MissionInformator = {
 		params['_lcs', '_pois'];
@@ -67,7 +49,6 @@ if (hasInterface) then {
 				""
 			];
 		} forEach _lcs;
-		call Fn_Local_Civilian_AttachInformator_Action;
 	};
 	
 	Fn_Local_Find_Assault_Group = {

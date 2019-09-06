@@ -39,8 +39,8 @@ if (isServer) then {
 		[],																		// Arguments passed to the scripts as _this select 3
 		_duration,																// Action duration [s]
 		100,																	// Priority
-		_remove,																	// Remove on completion
+		_remove,															    // Remove on completion
 		false																	// Show in unconscious state 
-	] call BIS_fnc_holdActionAdd;
+	] remoteExec ["BIS_fnc_holdActionAdd", 0, _attach_to];						// MP compatible implementation
 	_action_id;
 };

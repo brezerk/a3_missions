@@ -72,6 +72,6 @@ if (isServer) then {
 		100,																	// Priority
 		_remove,																// Remove on completion
 		false																	// Show in unconscious state 
-	] call BIS_fnc_holdActionAdd;												// Function call
+	] remoteExec ["BIS_fnc_holdActionAdd", 0, _attach_to];						// MP compatible implementation
 	_action_id;
 };
