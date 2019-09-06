@@ -28,8 +28,12 @@ if (!mission_requested) then {
 } else {
 	//Check if airplane was already send
 	if (mission_plane_send) then {
+		private _us_airplane_01_alive = false;
+		if (!isNil "us_airplane_01") then {
+			_us_airplane_01_alive = alive us_airplane_01;
+		};
 		//Ok. Airplane was send. 
-		if (alive us_airplane_01) then {
+		if (_us_airplane_01_alive) then {
 			//Ok it is still alive -- so You must wait for orders.
 			//FIXME: Add wait for orders maybe?
 		} else {

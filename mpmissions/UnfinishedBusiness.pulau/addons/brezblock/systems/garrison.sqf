@@ -85,6 +85,16 @@ if (isServer) then {
 	};
 	
 	[_grp, _center, _radius, 3, false, 0] call CBA_fnc_taskDefend;
-	
+	if (_side in D_ADD_INTEL_ACTION) then {
+		[
+			(leader _grp),
+			format [" ['%1'] call Fn_Local_West_Task_CollectIntel_Complete;", _side],
+			"holdactions\holdAction_search",
+			"ACTION_01",
+			"&& ((side _this) in [west, civilian])",
+			6,
+			true
+		] call BrezBlock_fnc_Attach_SearchIntel_Action;
+	};
 	_grp;
 };

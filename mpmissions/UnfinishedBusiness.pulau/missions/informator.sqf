@@ -76,7 +76,9 @@ if (isServer) then {
 				};
 			};
 			
-			[avaliable_locations, avaliable_pois] remoteExecCall ["Fn_Local_Create_MissionInformator", [0,-2] select isDedicated];
+			{
+				[avaliable_locations, avaliable_pois] remoteExecCall ["Fn_Local_Create_MissionInformator", _x];
+			} forEach assault_group;
 			
 			trgRegroupIsDone = createTrigger ["EmptyDetector", getMarkerPos (format["wp_%1_airfield_01", D_LOCATION])];
 			trgRegroupIsDone setTriggerArea [0, 0, 0, false];

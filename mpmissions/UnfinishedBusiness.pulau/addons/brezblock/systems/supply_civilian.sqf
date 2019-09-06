@@ -84,5 +84,7 @@ if (isServer) then {
 		if (isClass(configFile >> "CfgPatches" >> "acex_field_rations")) then {
 			_obj setVariable ["acex_field_rations_currentWaterSupply", 300, true];
 		};
+	} else {
+		//FIXME: Find safe pos?
 	};
 };
