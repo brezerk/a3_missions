@@ -60,22 +60,22 @@ if (isServer) then {
 		clearBackpackCargoGlobal _obj;
 		
 		if (isClass(configFile >> "CfgPatches" >> "acex_main")) then {
-			_obj addWeaponCargoGlobal ["ACE_Banana", (random 5)];
-			_obj addWeaponCargoGlobal ["ACE_SpraypaintBlue", 2];
-			_obj addWeaponCargoGlobal ["ACE_Can_Franta", 2];
-			_obj addWeaponCargoGlobal ["ACE_Can_RedGull", 4];
-			_obj addWeaponCargoGlobal ["ACE_Can_Spirit", 2];
-			_obj addWeaponCargoGlobal ["ACE_Humanitarian_Ration", 10];
-			_obj addWeaponCargoGlobal ["ACE_MRE_MeatballsPasta", 2];
-			_obj addWeaponCargoGlobal ["ACE_MRE_LambCurry", 6];
-			_obj addWeaponCargoGlobal ["ACE_MRE_SteakVegetables", 1];
-			_obj addWeaponCargoGlobal ["ACE_MRE_CreamTomatoSoup", 2];
-			_obj addWeaponCargoGlobal ["ACE_MRE_CreamChickenSoup", 6];
-			_obj addWeaponCargoGlobal ["ACE_MRE_ChickenHerbDumplings", 3];
-			_obj addWeaponCargoGlobal ["ACE_MRE_ChickenTikkaMasala", 5];
-			_obj addWeaponCargoGlobal ["ACE_MRE_BeefStew", 5];
-			_obj addWeaponCargoGlobal ["ACE_rope15", 2];
-			_obj addWeaponCargoGlobal ["ACE_WaterBottle", 15];
+			_obj addItemCargoGlobal ["ACE_Banana", (random 5)];
+			_obj addItemCargoGlobal ["ACE_SpraypaintBlue", 2];
+			_obj addItemCargoGlobal ["ACE_Can_Franta", 2];
+			_obj addItemCargoGlobal ["ACE_Can_RedGull", 4];
+			_obj addItemCargoGlobal ["ACE_Can_Spirit", 2];
+			_obj addItemCargoGlobal ["ACE_Humanitarian_Ration", 10];
+			_obj addItemCargoGlobal ["ACE_MRE_MeatballsPasta", 2];
+			_obj addItemCargoGlobal ["ACE_MRE_LambCurry", 6];
+			_obj addItemCargoGlobal ["ACE_MRE_SteakVegetables", 1];
+			_obj addItemCargoGlobal ["ACE_MRE_CreamTomatoSoup", 2];
+			_obj addItemCargoGlobal ["ACE_MRE_CreamChickenSoup", 6];
+			_obj addItemCargoGlobal ["ACE_MRE_ChickenHerbDumplings", 3];
+			_obj addItemCargoGlobal ["ACE_MRE_ChickenTikkaMasala", 5];
+			_obj addItemCargoGlobal ["ACE_MRE_BeefStew", 5];
+			_obj addItemCargoGlobal ["ACE_rope15", 2];
+			_obj addItemCargoGlobal ["ACE_WaterBottle", 15];
 		};
 		
 		private _rel_pos = [_pos, 3, _dir - 90] call BIS_Fnc_relPos;

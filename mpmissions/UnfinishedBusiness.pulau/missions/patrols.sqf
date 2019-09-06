@@ -107,6 +107,15 @@ if (isServer) then {
 				};
 				 
 				private _crew = createVehicleCrew (_vehicle);
+				[
+					(driver _vehicle),
+					{ [_target] call Fn_Local_Informator_Complete; },
+					"simpleTasks\types\talk",
+					"ACTION_02",
+					"&& alive _target",
+					6,
+					false
+				] call BrezBlock_fnc_Attach_Hold_Action;
 				vehicle_patrol_group append [_vehicle];
 				vehicle_refuel_group append [_vehicle];
 			};
@@ -288,39 +297,41 @@ if (isServer) then {
 		private _uuid = "";
 		
 		{
-			private _vehicle = [_last_road, (selectRandom (_x select 0))] call Fn_Patrols_Create_VehicleOnTheRoad;
-			if (_forEachIndex == 0) then {
-				_lead_group = group (driver _vehicle);
-				_uuid = (_lead_group call BIS_fnc_netId);
-			} else {
-				(crew _vehicle) joinSilent _lead_group;
+			if (!isNil "_last_road") then {
+				private _vehicle = [_last_road, (selectRandom (_x select 0))] call Fn_Patrols_Create_VehicleOnTheRoad;
+				if (_forEachIndex == 0) then {
+					_lead_group = group (driver _vehicle);
+					_uuid = (_lead_group call BIS_fnc_netId);
+				} else {
+					(crew _vehicle) joinSilent _lead_group;
+				};
+				_vehicle setVariable ['assault_uuid', _uuid, false];
+				private _infantry = [];
+				for "_i" from 1 to (_x select 1) do {
+					_infantry pushBack (selectRandom D_FRACTION_INDEP_UNITS_PATROL);
+				};
+				if ((count _infantry) > 0) then {
+					private _group = [(getPos _last_road), independent, _infantry,[],[],[],[],[],180] call BIS_fnc_spawnGroup;		
+					{
+						_x assignAsCargo _vehicle;
+						_x moveInCargo _vehicle;
+					} forEach units _group;
+					private _wp = _group addWaypoint [_targetPos, 0];
+					_wp setWaypointType "MOVE";
+					_wp setWaypointCombatMode "YELLOW";
+					_wp setWaypointBehaviour "AWARE";
+					_wp setWaypointCompletionRadius 350; 
+					_wp setWaypointSpeed "FULL";
+			
+					_wp = _group addWaypoint [_targetPos, 0];
+					_wp setWaypointType "SAD";
+					_wp setWaypointCombatMode "RED";
+					_wp setWaypointCompletionRadius 100;
+					_wp setWaypointBehaviour "COMBAT";
+					_wp setWaypointSpeed "FULL";
+				};
+				_last_road = ((roadsConnectedto (_last_road)) select 0);
 			};
-			_vehicle setVariable ['assault_uuid', _uuid, false];
-			private _infantry = [];
-			for "_i" from 1 to (_x select 1) do {
-				_infantry pushBack (selectRandom D_FRACTION_INDEP_UNITS_PATROL);
-			};
-			if ((count _infantry) > 0) then {
-				private _group = [(getPos _last_road), independent, _infantry,[],[],[],[],[],180] call BIS_fnc_spawnGroup;		
-				{
-					_x assignAsCargo _vehicle;
-					_x moveInCargo _vehicle;
-				} forEach units _group;
-				private _wp = _group addWaypoint [_targetPos, 0];
-				_wp setWaypointType "MOVE";
-				_wp setWaypointCombatMode "YELLOW";
-				_wp setWaypointBehaviour "AWARE";
-				_wp setWaypointCompletionRadius 350; 
-				_wp setWaypointSpeed "FULL";
-		
-				_wp = _group addWaypoint [_targetPos, 0];
-				_wp setWaypointType "SAD";
-				_wp setWaypointCombatMode "RED";
-				_wp setWaypointCompletionRadius 100;
-				_wp setWaypointBehaviour "COMBAT";
-				_wp setWaypointSpeed "FULL";
-			};
-			_last_road = ((roadsConnectedto (_last_road)) select 0);
 		} forEach _force_comp;
 		
 		_lead_group setFormation "COLUMN";

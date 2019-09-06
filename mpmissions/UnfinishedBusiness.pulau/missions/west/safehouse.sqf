@@ -97,6 +97,8 @@ if (isServer) then {
 		_obj addItemCargoGlobal ["ACE_DefusalKit", 4];
 		_obj addItemCargoGlobal ["ClaymoreDirectionalMine_Remote_Mag", 6];
 		_obj addItemCargoGlobal ["DemoCharge_Remote_Mag", 4];
+		_obj addItemCargoGlobal ["ACE_Humanitarian_Ration", 10];
+		_obj addItemCargoGlobal ["ACE_WaterBottle", 15];
 			
 		_obj addBackpackCargoGlobal ["B_Kitbag_tan", 5];
 			

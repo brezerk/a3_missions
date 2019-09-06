@@ -80,13 +80,25 @@ if (hasInterface) then {
 	};
 	
 	Fn_Local_Informator_Complete = {
-		params['_name'];
-		if ((playerSide == west) and (player getVariable ["is_assault_group", false])) then {
-			PUB_fnc_informatorFound = [player, _this select 0];
-			publicVariableServer "PUB_fnc_informatorFound";
-			['t_find_informator', 'SUCCEEDED'] call BIS_fnc_taskSetState;
-			call Fn_Local_Create_Task_West_WaponStash;
+		params['_target'];
+		if (playerSide == west) then {
+			if (((_target distance2D (getMarkerPos "mrk_city_0")) <= 200) || ((_target distance2D (getMarkerPos "mrk_city_1")) <= 200)) then {
+				private _task = ["t_find_informator", player] call BIS_fnc_taskReal;
+				if (!isNull _task) then {
+					if ((taskState _task) in ["Created", "Assigned"]) then { 
+						if (player getVariable ["is_assault_group", false]) then {
+							PUB_fnc_informatorFound = [player, _this select 0];
+							publicVariableServer "PUB_fnc_informatorFound";
+							['t_find_informator', 'SUCCEEDED'] call BIS_fnc_taskSetState;
+						};
+					};
+				};
+				
+			} else {
+				call Fn_Local_Create_Task_West_WaponStash;
+				//Give some other missions
+			};
 		};
-		[_name] call Fn_Local_Find_Assault_Group;
+		[(name _target)] call Fn_Local_Find_Assault_Group;
 	};
 };

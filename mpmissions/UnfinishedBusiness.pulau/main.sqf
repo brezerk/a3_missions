@@ -47,6 +47,8 @@ if (isServer) then {
 	D_LOCATION = nil;
 	D_START_TYPE = nil;
 	
+	D_ADD_INTEL_ACTION = [east, independent];
+	
 	D_FRACTION_WEST = "CUP_B_USMC";
 	
 	// Defaines (should be an UI option at mission startup);

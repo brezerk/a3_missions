@@ -282,7 +282,9 @@ if (isServer) then {
 		clearItemCargoGlobal _obj;
 		clearBackpackCargoGlobal _obj;
 		
-		_obj addWeaponCargoGlobal ["ACE_Banana", ((random 15) + 10)];
+		_obj addItemCargoGlobal ["ACE_Banana", ((random 15) + 10)];
+		_obj addItemCargoGlobal ["ACE_Humanitarian_Ration", 10];
+		_obj addItemCargoGlobal ["ACE_WaterBottle", 15];
 		
 		/*
 		_o_pos = [_pos, 1, _dir + 90] call BIS_Fnc_relPos;

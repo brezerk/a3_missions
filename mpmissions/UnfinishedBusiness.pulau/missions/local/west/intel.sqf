@@ -41,9 +41,10 @@ if (hasInterface) then {
 	};
 	
 	Fn_Local_West_Task_CollectIntel_Complete = {
+		params ['_side'];
 		switch (playerSide) do {
 			case west: {
-				PUB_fnc_intelFound = [player, _this select 0];
+				PUB_fnc_intelFound = [player, _this select 0, _side];
 				publicVariableServer "PUB_fnc_intelFound";
 			};
 		};

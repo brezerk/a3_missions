@@ -64,6 +64,15 @@ if (isServer) then {
 					//Keep it in place :)
 					_unit setBehaviour "CARELESS";
 					_unit disableAi "MOVE";
+					[
+						_unit,
+						{ [_target] call Fn_Local_Informator_Complete; },
+						"simpleTasks\types\talk",
+						"ACTION_02",
+						"&& alive _target",
+						6,
+						false
+					] call BrezBlock_fnc_Attach_Hold_Action;
 				};
 			};
 			

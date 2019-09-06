@@ -32,28 +32,33 @@ if (isServer) then {
 	Event Handler for loaded or unloaded box
 	*/
 	EventHander_IntelFound = {
-		params['_caller', '_target'];
+		params['_caller', '_target', '_side'];
+		if (D_DEBUG) then {
+			systemChat format ["W: %1", _side];
+		};
 		if ((random 100) >= 60) then {
 			private _type = 0; //round(random 1);
-			switch (_type) do {
-				case 0: {
-					private _missions = [];
-					if ((!task_complete_ammo) && (!isNull indep_ammo_01)) then {
-						_missions pushBack Fn_Create_Mission_DestroyAmmo;
+			if (_side == "GUER") then {
+				switch (_type) do {
+					case 0: {
+						private _missions = [];
+						if ((!task_complete_ammo) && (!isNull indep_ammo_01)) then {
+							_missions pushBack Fn_Create_Mission_DestroyAmmo;
+						};
+						if ((!task_complete_fuel) && (!isNull indep_fuel_01)) then {
+							_missions pushBack Fn_Create_Mission_DestroyFuel;
+						};
+						if ((!task_complete_wind) && (!isNull indep_wind_01)) then {
+							_missions pushBack Fn_Create_Mission_DestroyWindMill;
+						};
+						if ((!task_complete_lab) && (!isNull indep_lab_01)) then {
+							_missions pushBack Fn_Create_Mission_KillDoctor;
+						};
+						[_caller] call (selectRandom _missions); 
 					};
-					if ((!task_complete_fuel) && (!isNull indep_fuel_01)) then {
-						_missions pushBack Fn_Create_Mission_DestroyFuel;
-					};
-					if ((!task_complete_wind) && (!isNull indep_wind_01)) then {
-						_missions pushBack Fn_Create_Mission_DestroyWindMill;
-					};
-					if ((!task_complete_lab) && (!isNull indep_lab_01)) then {
-						_missions pushBack Fn_Create_Mission_KillDoctor;
-					};
-					[_caller] call (selectRandom _missions); 
+					case 1: { systemChat "miss!"; };
+					default { systemChat "woot?"; };
 				};
-				case 1: { systemChat "miss!"; };
-				default { systemChat "woot?"; };
 			};
 		};
 	};
