@@ -193,11 +193,11 @@ if (isServer) then {
 	sleep 60;
 	
 	[_crashSitePos, 0] call Fn_Patrols_Create_AssaultGroup;
+	remoteExecCall ["Fn_Local_West_Create_Mission_CollectIntel"];
 	
 	sleep 60;
 	
 	remoteExecCall ["Fn_Local_Civilian_AttachConfiscate_Action"];
-	remoteExecCall ["Fn_Local_West_Create_Mission_CollectIntel"];
-
+	
 	execVM "missions\ping.sqf";
 };

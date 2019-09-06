@@ -41,6 +41,7 @@ if (isServer) then {
 						if (side _x in [independent, east]) then {
 							if ((_x knowsAbout _player) >= 1.5) exitWith {
 								pings pushBackUnique (mapGridPosition _player);
+								pings_heli pushBackUnique (getPos _player);
 							};
 						};
 					};

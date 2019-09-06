@@ -44,6 +44,7 @@ if (!mission_requested) then {
 			sleep 60;
 			call Fn_Local_Civilian_AttachConfiscate_Action;
 			call Fn_Local_Civilian_AttachInformator_Action;
+			call Fn_Local_Create_MissionAA;
 			call Fn_Local_West_Create_Mission_CollectIntel;
 		};
 	} else {

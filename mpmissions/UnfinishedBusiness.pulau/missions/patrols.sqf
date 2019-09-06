@@ -238,6 +238,7 @@ if (isServer) then {
 		{
 			_x setSkill 0.7; 
 		} forEach units _crew;
+		[_vehicle] execVM "missions\heli_loiter.sqf";
 	};
 	
 	/* 

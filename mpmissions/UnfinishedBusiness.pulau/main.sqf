@@ -92,6 +92,7 @@ if (isServer) then {
 
 	//Global arrays
 	pings = [];
+	pings_heli = [];
 	connected_users = [];
 	assault_group = [];
 	vehicle_refuel_group = [];
