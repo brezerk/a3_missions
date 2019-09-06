@@ -29,7 +29,7 @@ if (isServer) then {
 		
 		private _markers = [_center, ["o_mortar", "n_mortar", "b_mortar"], 3000] call BrezBlock_fnc_GetAllMarkerTypesInRange;
 		
-		for "_i" from 1 to 2 do {
+		{
 			private _marker = selectRandom _markers;
 			_center = getMarkerPos _marker;
 			
@@ -45,9 +45,9 @@ if (isServer) then {
 			};
 
 			if (!isNil "_pos") then {
-				private _mark = createMarker [format ["east_stash_0%1", _i], _pos];
+				private _mark = createMarker [format ["east_stash_0%1", _x], _pos];
 				_mark setMarkerType "hd_objective";
-				_mark setMarkerText 'Emergency spot';
+				_mark setMarkerText [format 'Emergency spot %1', _x];
 				_mark setMarkerColor "ColorWEST";
 			
 				[_pos] call Fn_Task_West_Safe_SpawnRandomCargo;
@@ -55,7 +55,7 @@ if (isServer) then {
 				_markers = _markers - [_marker];
 				deleteMarker _marker;
 			};
-		};
+		} forEach ['A', 'B'];
 	};
 	
 	Fn_Task_West_Safe_SpawnRandomCargo = {
