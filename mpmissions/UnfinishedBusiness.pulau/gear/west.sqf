@@ -1,4 +1,6 @@
 
+waitUntil { sleep 1; systemChat "Wait for sync..."; call Fn_Local_WaitPublicVariables; }; 
+
 comment "Exported from Arsenal by brezerk";
 
 comment "[!] UNIT MUST BE LOCAL [!]";
@@ -15,7 +17,18 @@ removeHeadgear player;
 removeGoggles player;
 
 comment "Add containers";
-player forceAddUniform "CUP_U_B_FR_DirAction";
+if (mission_plane_send) then {
+	player forceAddUniform "CUP_U_B_USArmy_Base";
+	player addHeadgear "CUP_H_USArmy_HelmetMICH";
+	player addVest "CUP_V_B_IOTV_Rifleman";
+	player addBackpack "CUP_B_AssaultPack_ACU";
+} else {
+	player forceAddUniform "CUP_U_B_FR_DirAction";
+	player addHeadgear "CUP_H_FR_ECH";
+	player addVest "CUP_V_B_RRV_DA1";
+	player addBackpack "B_Parachute";
+};
+
 for "_i" from 1 to 2 do {player addItemToVest "ACE_epinephrine";};
 for "_i" from 1 to 15 do {player addItemToVest "ACE_fieldDressing";};
 for "_i" from 1 to 5 do {player addItemToVest "ACE_morphine";};
@@ -23,11 +36,11 @@ for "_i" from 1 to 5 do {player addItemToVest "CUP_30Rnd_556x45_Stanag";};
 player addItemToUniform "CUP_NVG_PVS7";
 for "_i" from 1 to 5 do {player addItemToUniform "CUP_30Rnd_556x45_Stanag";};
 player addItemToUniform "SmokeShell";
-player addVest "CUP_V_B_RRV_DA1";
+
 for "_i" from 1 to 2 do {player addItemToVest "CUP_HandGrenade_M67";};
 player addItemToVest "SmokeShellPurple";
 for "_i" from 1 to 2 do {player addItemToVest "CUP_7Rnd_45ACP_1911";};
-player addHeadgear "CUP_H_FR_ECH";
+
 
 comment "Add weapons";
 player addWeapon "CUP_arifle_M4A1_camo";

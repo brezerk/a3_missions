@@ -8,11 +8,11 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=7753;
+		nextID=7756;
 	};
 	class MarkerIDProvider
 	{
-		nextID=84;
+		nextID=85;
 	};
 	class LayerIndexProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1011.165,41.205437,9411.0879};
-		dir[]={-0.4172706,-0.55619341,0.71882182};
-		up[]={-0.2792556,0.83101761,0.48106399};
-		aside[]={0.8649298,3.7127174e-006,0.50207925};
+		pos[]={1123.4913,135.3822,9408.1016};
+		dir[]={-0.84271145,-0.3938272,0.36732414};
+		up[]={-0.36109331,0.91915017,0.15739444};
+		aside[]={0.39962244,2.2040622e-006,0.91679054};
 	};
 };
 binarizationWanted=0;
@@ -8117,18 +8117,20 @@ class Mission
 		class Item524
 		{
 			dataType="Marker";
-			position[]={2101.6494,6.1509547,6464};
+			position[]={2076.2747,5.7067947,6473.6665};
 			name="wp_Monyet_crashsite_22";
 			type="b_plane";
 			id=7293;
+			atlOffset=2.8610229e-006;
 		};
 		class Item525
 		{
 			dataType="Marker";
-			position[]={1802.2153,4.006959,6783.25};
+			position[]={1773.5303,5.2994537,6695.8066};
 			name="wp_Monyet_crashsite_23";
 			type="b_plane";
 			id=7294;
+			atlOffset=9.5367432e-007;
 		};
 		class Item526
 		{
@@ -9665,7 +9667,7 @@ class Mission
 			name="wp_Monyet_hospital_02";
 			type="loc_Hospital";
 			id=7411;
-			atlOffset=3.8504825;
+			atlOffset=0.32114506;
 		};
 		class Item643
 		{
@@ -10775,7 +10777,7 @@ class Mission
 			name="wp_Monyet_paradrop_66";
 			type="b_recon";
 			id=7517;
-			atlOffset=1.4655185;
+			atlOffset=0.15392697;
 		};
 		class Item749
 		{
@@ -11423,7 +11425,7 @@ class Mission
 			b=75;
 			drawBorder=1;
 			id=7576;
-			atlOffset=22.132744;
+			atlOffset=21.089573;
 		};
 		class Item808
 		{

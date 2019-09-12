@@ -4,6 +4,8 @@ waitUntil { alive player };
 
 sleep 1;
 
+waitUntil { sleep 1; systemChat "Wait for sync..."; call Fn_Local_WaitPublicVariables; }; 
+
 comment "Exported from Arsenal by brezerk";
 
 comment "[!] UNIT MUST BE LOCAL [!]";
@@ -26,9 +28,17 @@ _this addWeapon "CUP_hgun_Colt1911";
 _this addHandgunItem "CUP_7Rnd_45ACP_1911";
 
 comment "Add containers";
-_this forceAddUniform "CUP_U_B_USMC_MARPAT_WDL_Sleeves";
-_this addVest "CUP_V_B_MTV_Mine";
-_this addBackpack "B_Parachute";
+if (mission_plane_send) then {
+	_this forceAddUniform "CUP_U_B_USArmy_Base";
+	_this addHeadgear "CUP_H_USArmy_HelmetMICH";
+	_this addVest "CUP_V_B_IOTV_Rifleman";
+	_this addBackpack "CUP_B_AssaultPack_ACU";
+} else {
+	_this forceAddUniform "CUP_U_B_USMC_MARPAT_WDL_Sleeves";
+	_this addHeadgear "CUP_H_USMC_HelmetWDL";
+	_this addVest "CUP_V_B_MTV_Mine";
+	_this addBackpack "B_Parachute";
+};
 
 comment "Add items to containers";
 _this addItemToUniform "FirstAidKit";
@@ -41,7 +51,6 @@ _this addItemToVest "CUP_HandGrenade_M67";
 _this addItemToVest "SmokeShellRed";
 for "_i" from 1 to 3 do {_this addItemToVest "CUP_6Rnd_HE_M203";};
 for "_i" from 1 to 2 do {_this addItemToVest "CUP_7Rnd_45ACP_1911";};
-_this addHeadgear "CUP_H_USMC_HelmetWDL";
 for "_i" from 1 to 2 do {_this addItemToUniform "ACE_Chemlight_UltraHiOrange";};
 _this addItemToUniform "ACE_DefusalKit";
 for "_i" from 1 to (random 15) do {_this addItemToUniform "ACE_Banana";};

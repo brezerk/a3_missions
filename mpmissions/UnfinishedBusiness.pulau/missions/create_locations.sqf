@@ -37,14 +37,15 @@ if (isServer) then {
 	call Fn_Spawn_East_Helicopter;
 	[_crashSitePos] call Fn_Task_Spawn_Indep_Objectives;
 	
-	private _ret = [_crashSitePos, 3000, 2] call BrezBlock_fnc_GetAllCitiesInRange;
+	private _ret = [_crashSitePos, 2000, 2] call BrezBlock_fnc_GetAllCitiesInRange;
 	//Get all POI in the range of 3000m
 	avaliable_locations = _ret select 0;
 	avaliable_pois = _ret select 1;
 	
 	publicVariable "avaliable_pois";
 
-	[_crashSitePos, 900] execVM "addons\brezblock\utils\controller.sqf";
+	[_crashSitePos, 1500] execVM "addons\brezblock\utils\controller.sqf";
+	[_crashSitePos, 1500, 80] execVM "addons\brezblock\utils\spawn_objects.sqf";
 
 	//Create markers
 	{ 
@@ -52,7 +53,8 @@ if (isServer) then {
 		_mark setMarkerType "hd_destroy";
 		_mark setMarkerAlpha 0;
 		
-		[_x select 1, 900] execVM "addons\brezblock\utils\controller.sqf";
+		[_x select 1, 1000] execVM "addons\brezblock\utils\controller.sqf";
+		[_x select 1, 1000, 60] execVM "addons\brezblock\utils\spawn_objects.sqf";
 		
 		private _pos = [_x select 1, 5, 150, 3, 0, 0, 0] call BIS_fnc_findSafePos;
 		_mark = createMarker [format ["respawn_civilian_%1", _forEachIndex], _pos];
@@ -67,7 +69,7 @@ if (isServer) then {
 	} forEach avaliable_pois;
 
 	[getMarkerPos "mrk_east_base_02", 600] execVM "addons\brezblock\utils\controller.sqf";
-	[getMarkerPos "mrk_airfield", 600] execVM "addons\brezblock\utils\controller.sqf";
+	[getMarkerPos "mrk_airfield", 1000] execVM "addons\brezblock\utils\controller.sqf";
 	[getMarkerPos "mrk_east_base_01", 150] execVM "addons\brezblock\utils\controller.sqf";
 	
 	call Fn_Spawn_Civ_Air_Transport;

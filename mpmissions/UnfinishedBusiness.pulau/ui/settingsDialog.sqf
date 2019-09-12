@@ -16,8 +16,9 @@
  *                                                                         *
  ***************************************************************************/
  
+#include "..\config\fractions.sqf"; 
  
-private _settingsDialog = createDialog "SettingsDialogControl";
+private _settingsDialog = createDialog "SettingsDialog";
  
 if (!isNil "_settingsDialog") then {
 	private _dialog = findDisplay 3773;
@@ -44,5 +45,57 @@ if (!isNil "_settingsDialog") then {
 		_cbStart lbAdd (localize "FROM_01_START_SELECT_01");
 		_cbStart lbAdd (localize "FROM_01_START_SELECT_02");
 		_cbStart lbSetCurSel 0;
+	};
+	
+	private _cbNavToolsMap = _dialog displayCtrl 2103;
+	if (!isNil "_cbNavToolsMap") then {
+		_cbNavToolsMap lbAdd (localize "FROM_01_NAVTOOS_SELECT_01");
+		_cbNavToolsMap lbAdd (localize "FROM_01_NAVTOOS_SELECT_02");
+		_cbNavToolsMap lbAdd (localize "FROM_01_NAVTOOS_SELECT_03");
+		_cbNavToolsMap lbSetCurSel 0;
+	};
+	
+	private _cbNavToolsCompass = _dialog displayCtrl 2104;
+	if (!isNil "_cbNavToolsCompass") then {
+		_cbNavToolsCompass lbAdd (localize "FROM_01_NAVTOOS_SELECT_01");
+		_cbNavToolsCompass lbAdd (localize "FROM_01_NAVTOOS_SELECT_02");
+		_cbNavToolsCompass lbAdd (localize "FROM_01_NAVTOOS_SELECT_03");
+		_cbNavToolsCompass lbSetCurSel 0;
+	};
+	
+	private _cbFractionWest = _dialog displayCtrl 2105;
+	if (!isNil "_cbFractionWest") then {
+		{
+			private _name = getText (configFile >> "CfgFactionClasses" >> _x >> "displayName");
+			_cbFractionWest lbAdd (_name);
+		} forEach ([west] call Fn_Config_GetFractions);
+		_cbFractionWest lbSetCurSel 0;
+	};
+	
+	private _cbFractionEast = _dialog displayCtrl 2106;
+	if (!isNil "_cbFractionEast") then {
+		{
+			private _name = getText (configFile >> "CfgFactionClasses" >> _x >> "displayName");
+			_cbFractionEast lbAdd (_name);
+		} forEach ([east] call Fn_Config_GetFractions);
+		_cbFractionEast lbSetCurSel 0;
+	};
+	
+	private _cbFractionIndep = _dialog displayCtrl 2107;
+	if (!isNil "_cbFractionIndep") then {
+		{
+			private _name = getText (configFile >> "CfgFactionClasses" >> _x >> "displayName");
+			_cbFractionIndep lbAdd (_name);
+		} forEach ([independent] call Fn_Config_GetFractions);
+		_cbFractionIndep lbSetCurSel 0;
+	};
+	
+	private _cbFractionCiv = _dialog displayCtrl 2108;
+	if (!isNil "_cbFractionCiv") then {
+		{
+			private _name = getText (configFile >> "CfgFactionClasses" >> _x >> "displayName");
+			_cbFractionCiv lbAdd (_name);
+		} forEach ([civilian] call Fn_Config_GetFractions);
+		_cbFractionCiv lbSetCurSel 0;
 	};
 };

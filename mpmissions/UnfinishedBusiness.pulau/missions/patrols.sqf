@@ -281,7 +281,6 @@ if (isServer) then {
 						private _b = _bbox select 1;
 						private _size = _a distance _b;
 						if (_size >= 35) then {
-							systemChat "found!";
 							_roads pushBack _x;
 							breakTo "main";
 						};

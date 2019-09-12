@@ -2,6 +2,9 @@
 <Project name="BrezBlock.org.ua">
 	<Package name="UnfinishedBusiness">
 		<Container name="l18n">
+			<Key ID="STR_ONLOAD_NAME">
+				<Original>Unfinished Business v0.9.281</Original>
+			</Key>		
 			<Key ID="STR_ONLOAD_INFO_01">
 				<Original>US Special Forces squad goes to perform a peacekeeping mission</Original>
 				<English>US Special Forces squad goes to perform a peacekeeping mission.</English>
@@ -741,6 +744,36 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<English>Select mission start type:</English>
 				<Russian>Оберіть тип початку місії:</Russian>
 			</Key>
+			<Key ID="STR_FROM_01_INFO_04">
+				<Original>Navigation Tools: Map</Original>
+				<English>Navigation Tools: Map</English>
+				<Russian>Засоби навігації: Мапа</Russian>
+			</Key>
+			<Key ID="STR_FROM_01_INFO_09">
+				<Original>Navigation Tools: Compass</Original>
+				<English>Navigation Tools: Compass</English>
+				<Russian>Засоби навігації: Компас</Russian>
+			</Key>
+			<Key ID="STR_FROM_01_INFO_05">
+				<Original>Fraction: West</Original>
+				<English>Fraction: West</English>
+				<Russian>Фракція: Захід</Russian>
+			</Key>
+			<Key ID="STR_FROM_01_INFO_06">
+				<Original>Fraction: AOC (East)</Original>
+				<English>Fraction: AOC (East)</English>
+				<Russian>Фракція: АОС (East)</Russian>
+			</Key>
+			<Key ID="STR_FROM_01_INFO_07">
+				<Original>Fraction: PNG (Independent)</Original>
+				<English>Fraction: PNG (Independent)</English>
+				<Russian>Фракція: НГП (Незалежні)</Russian>
+			</Key>
+			<Key ID="STR_FROM_01_INFO_08">
+				<Original>Fraction: Сivilian</Original>
+				<English>Fraction: Сivilian</English>
+				<Russian>Фракція: Цивільні</Russian>
+			</Key>
 			<Key ID="STR_FROM_01_CMD_01">
 				<Original>Start mission</Original>
 				<English>Start mission</English>
@@ -775,6 +808,21 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Original>Express</Original>
 				<English>Express</English>
 				<Russian>Експресс</Russian>
+			</Key>
+			<Key ID="FROM_01_NAVTOOS_SELECT_01">
+				<Original>Everyone have</Original>
+				<English>Everyone have</English>
+				<Russian>Є у кожного</Russian>
+			</Key>
+			<Key ID="FROM_01_NAVTOOS_SELECT_02">
+				<Original>Only the commanders have</Original>
+				<English>Only the commanders have</English>
+				<Russian>Тільки у командирів</Russian>
+			</Key>
+			<Key ID="FROM_01_NAVTOOS_SELECT_03">
+				<Original>No one have</Original>
+				<English>No one have</English>
+				<Russian>Ніхто не має</Russian>
 			</Key>
 			<Key ID="INFO_PING_01">
 				<Original>%1: I've told you everything I know, come later!</Original>

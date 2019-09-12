@@ -25,14 +25,39 @@
 if (isServer) then {
 	while {count assault_group != 0} do {
 		sleep 30;
-		//[[independent, "HQ"], "ping..."] remoteExec ["sideChat"];
-		//[[east, "HQ"], "ping..."] remoteExec ["sideChat"];
-		//[[west, "HQ"], "WEST ping..."] remoteExec ["sideChat"];
 		if (count pings > 0) then {
 			{
-				[[independent, "HQ"], format ["Enemy %1 spotted. Grid: %2", _forEachIndex, _x]] remoteExec ["sideChat"];
-				[[east, "HQ"], format ["Enemy %1 spotted. Grid: %2", _forEachIndex, _x]] remoteExec ["sideChat"];
-				//[[west, "HQ"], format ["WEST Enemy spotted. Grid: %1", _x]] remoteExec ["sideChat"];
+				private _pos = _x;
+				private _grid_pos = mapGridPosition _pos;
+				[[independent, "HQ"], format ["Enemy %1 spotted. Grid: %2", _forEachIndex, _grid_pos]] remoteExec ["sideChat"];
+				[[east, "HQ"], format ["Enemy %1 spotted. Grid: %2", _forEachIndex, _grid_pos]] remoteExec ["sideChat"];
+				{
+					if (side _x in [independent, east]) then {
+						private _g_pos = getPos (leader _x);
+						if (_x getVariable ["is_patrol_group", false]) then {
+							if ((_g_pos distance2D _pos) <= 500) then {
+								//inject SAD
+								switch (waypointType [_x, 0]) do {
+									case 'SAD': {
+										deleteWaypoint [_x, 0];
+										private _wp = _x addWaypoint [_pos, 0, 0];
+										_wp setWaypointType "SAD";
+										_wp setWaypointCombatMode "RED";
+										_wp setWaypointBehaviour "AWARE";
+										_wp setWaypointSpeed "NORMAL";
+									};
+									default {
+										private _wp = _x addWaypoint [_pos, 0, 0];
+										_wp setWaypointType "SAD";
+										_wp setWaypointCombatMode "RED";
+										_wp setWaypointBehaviour "AWARE";
+										_wp setWaypointSpeed "NORMAL";
+									};
+								};
+							};
+						};
+					};
+				} forEach allGroups;
 			} forEach pings;
 			pings = [];
 		};

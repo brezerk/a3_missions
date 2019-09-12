@@ -1,121 +1,342 @@
-/***************************************************************************
- *   Copyright (C) 2008-2019 by Oleksii S. Malakhov <brezerk@gmail.com>    *
- *                                                                         *
- *   This program is free software: you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation, either version 3 of the License, or     *
- *   (at your option) any later version.                                   *
- *                                                                         *
- *   This program is distributed in the hope that it will be useful,       *
- *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
- *   GNU General Public License for more details.                          *
- *                                                                         *
- *   You should have received a copy of the GNU General Public License     *
- *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
- *                                                                         *
- ***************************************************************************/
+//Exported via Arma Dialog Creator (https://github.com/kayler-renslow/arma-dialog-creator)
 
-/*
-Settings dialog control
-// GUI EDITOR OUTPUT (by brezerk, v1.063, #Banake)
-*/
-
-//FIXME: remove RscText;
-
-class SettingsDialogControl {
+#include "CustomControlClasses.hpp"
+class SettingsDialog
+{
 	idd = 3773;
-	class controls {
-		class bkrDialog: IGUIBack
+	
+	class ControlsBackground
+	{
+		
+	};
+	class Controls
+	{
+		class bkrDialog : IGUIBack 
 		{
 			idc = 1801;
-			x = 0.417501 * safezoneW + safezoneX;
-			y = 0.368 * safezoneH + safezoneY;
-			w = 0.211406 * safezoneW;
-			h = 0.275 * safezoneH;
-			colorBackground[] = 
-			{
-				0, 0, 0, 0.7
-			};
+			x = safeZoneX + safeZoneW * 0.323125;
+			y = safeZoneY + safeZoneH * 0.25333334;
+			w = safeZoneW * 0.36125;
+			h = safeZoneH * 0.52;
+			colorBackground[] = {0,0,0,0.7};
+			
 		};
-		class frmDialog: RscFrame
+		class frmGeneral : RscFrame 
 		{
 			idc = 1800;
-			x = 0.417501 * safezoneW + safezoneX;
-			y = 0.368 * safezoneH + safezoneY;
-			w = 0.211406 * safezoneW;
-			h = 0.275 * safezoneH;
+			x = safeZoneX + safeZoneW * 0.329375;
+			y = safeZoneY + safeZoneH * 0.26333334;
+			w = safeZoneW * 0.3475;
+			h = safeZoneH * 0.13444445;
 			text = "";
+			
 		};
-		class lblDifficlty: RscText
+		class frmFractions : RscFrame 
+		{
+			idc = 1800;
+			x = safeZoneX + safeZoneW * 0.504375;
+			y = safeZoneY + safeZoneH * 0.41;
+			w = safeZoneW * 0.1725;
+			h = safeZoneH * 0.3;
+			text = "";
+			
+		};
+		class frmAdvanced : RscFrame 
+		{
+			idc = 1800;
+			x = safeZoneX + safeZoneW * 0.329375;
+			y = safeZoneY + safeZoneH * 0.41;
+			w = safeZoneW * 0.1725;
+			h = safeZoneH * 0.22666667;
+			text = "";
+			
+		};
+		class lblDifficlty : RscText 
 		{
 			idc = 1000;
-			text = $STR_FROM_01_INFO_01;
-			x = 0.422656 * safezoneW + safezoneX;
-			y = 0.379 * safezoneH + safezoneY;
-			w = 0.195937 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = safeZoneX + safeZoneW * 0.328125;
+			y = safeZoneY + safeZoneH * 0.26444445;
+			w = safeZoneW * 0.345625;
+			h = safeZoneH * 0.02222223;
+			text = "$STR_FROM_01_INFO_01";
+			
 		};
-		class lblLocation: RscText
+		class lblLocation : RscText 
 		{
 			idc = 1001;
-			text = $STR_FROM_01_INFO_02;
-			x = 0.422656 * safezoneW + safezoneX;
-			y = 0.445 * safezoneH + safezoneY;
-			w = 0.201094 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = safeZoneX + safeZoneW * 0.328125;
+			y = safeZoneY + safeZoneH * 0.33111112;
+			w = safeZoneW * 0.35125;
+			h = safeZoneH * 0.02222223;
+			text = "$STR_FROM_01_INFO_02";
+			
 		};
-		class lblStart: RscText
+		class lblNavToolsMap : RscText 
 		{
 			idc = 1002;
-			text = $STR_FROM_01_INFO_03;
-			x = 0.422656 * safezoneW + safezoneX;
-			y = 0.512 * safezoneH + safezoneY;
-			w = 0.195937 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = safeZoneX + safeZoneW * 0.328125;
+			y = safeZoneY + safeZoneH * 0.49555556;
+			w = safeZoneW * 0.170625;
+			h = safeZoneH * 0.02222223;
+			text = "$STR_FROM_01_INFO_04";
+			
 		};
-		class cbLocation: RscCombo
+		class cbLocation : RscCombo 
 		{
 			idc = 2100;
-			text = "Random"; //--- ToDo: Localize;
-			x = 0.427812 * safezoneW + safezoneX;
-			y = 0.478 * safezoneH + safezoneY;
-			w = 0.190781 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = safeZoneX + safeZoneW * 0.333125;
+			y = safeZoneY + safeZoneH * 0.36333334;
+			w = safeZoneW * 0.33875;
+			h = safeZoneH * 0.02222223;
+			class ComboScrollBar
+			{
+				color[] = {1,1,1,1};
+				thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+				arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+				arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+				border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+				
+			};
+			
 		};
-		class cbDifficlty: RscCombo
+		class cbDifficlty : RscCombo 
 		{
 			idc = 2101;
-			text = "Easy"; //--- ToDo: Localize;
-			x = 0.427812 * safezoneW + safezoneX;
-			y = 0.412 * safezoneH + safezoneY;
-			w = 0.190781 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = safeZoneX + safeZoneW * 0.333125;
+			y = safeZoneY + safeZoneH * 0.29777778;
+			w = safeZoneW * 0.339375;
+			h = safeZoneH * 0.02222223;
+			class ComboScrollBar
+			{
+				color[] = {1,1,1,1};
+				thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+				arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+				arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+				border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+				
+			};
+			
 		};
-		class cbStart: RscCombo
+		class cbStart : RscCombo 
 		{
 			idc = 2102;
-			text = "Default"; //--- ToDo: Localize;
-			x = 0.427812 * safezoneW + safezoneX;
-			y = 0.545 * safezoneH + safezoneY;
-			w = 0.190781 * safezoneW;
-			h = 0.022 * safezoneH;
+			x = safeZoneX + safeZoneW * 0.333125;
+			y = safeZoneY + safeZoneH * 0.45555556;
+			w = safeZoneW * 0.164375;
+			h = safeZoneH * 0.02222223;
+			class ComboScrollBar
+			{
+				color[] = {1,1,1,1};
+				thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+				arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+				arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+				border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+				
+			};
+			
 		};
-		class bntStart: RscButton
+		class bntStart : RscButton 
 		{
 			idc = 1600;
-			text = $STR_FROM_01_CMD_01;
-			x = 0.427812 * safezoneW + safezoneX;
-			y = 0.592 * safezoneH + safezoneY;
-			w = 0.190781 * safezoneW;
-			h = 0.033 * safezoneH;
+			x = safeZoneX + safeZoneW * 0.333125;
+			y = safeZoneY + safeZoneH * 0.72222223;
+			w = safeZoneW * 0.340625;
+			h = safeZoneH * 0.03333334;
+			text = "$STR_FROM_01_CMD_01";
+			colorBackground[] = {0,0,0,0.9};
+			colorBackgroundActive[] = {0.1569,0.5882,0.1569,1};
 			action = "execVM 'ui\applySettings.sqf';";
-			colorBackground[] = 
-			{
-				0, 0, 0, 0.9
-			};
+			
 		};
+		class lblStart : RscText 
+		{
+			idc = 1002;
+			x = safeZoneX + safeZoneW * 0.328125;
+			y = safeZoneY + safeZoneH * 0.42222223;
+			w = safeZoneW * 0.170625;
+			h = safeZoneH * 0.02222223;
+			text = "$STR_FROM_01_INFO_03";
+			
+		};
+		class cbNavToolsMap : RscCombo 
+		{
+			idc = 2103;
+			x = safeZoneX + safeZoneW * 0.333125;
+			y = safeZoneY + safeZoneH * 0.52888889;
+			w = safeZoneW * 0.164375;
+			h = safeZoneH * 0.02222223;
+			class ComboScrollBar
+			{
+				color[] = {1,1,1,1};
+				thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+				arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+				arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+				border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+				
+			};
+			
+		};
+		class lblFractionWest : RscText 
+		{
+			idc = 1002;
+			x = safeZoneX + safeZoneW * 0.503125;
+			y = safeZoneY + safeZoneH * 0.42222223;
+			w = safeZoneW * 0.170625;
+			h = safeZoneH * 0.02222223;
+			text = "$STR_FROM_01_INFO_05";
+			
+		};
+		class cbFractionWest : RscCombo 
+		{
+			idc = 2105;
+			x = safeZoneX + safeZoneW * 0.508125;
+			y = safeZoneY + safeZoneH * 0.45555556;
+			w = safeZoneW * 0.164375;
+			h = safeZoneH * 0.02222223;
+			class ComboScrollBar
+			{
+				color[] = {1,1,1,1};
+				thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+				arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+				arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+				border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+				
+			};
+			
+		};
+		class lblFractionEast : RscText 
+		{
+			idc = 1002;
+			x = safeZoneX + safeZoneW * 0.503125;
+			y = safeZoneY + safeZoneH * 0.49555556;
+			w = safeZoneW * 0.170625;
+			h = safeZoneH * 0.02222223;
+			text = "$STR_FROM_01_INFO_06";
+			
+		};
+		class cbFractionEast : RscCombo 
+		{
+			idc = 2106;
+			x = safeZoneX + safeZoneW * 0.508125;
+			y = safeZoneY + safeZoneH * 0.52888889;
+			w = safeZoneW * 0.165;
+			h = safeZoneH * 0.02222223;
+			class ComboScrollBar
+			{
+				color[] = {1,1,1,1};
+				thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+				arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+				arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+				border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+				
+			};
+			
+		};
+		class lblFractionIndep : RscText 
+		{
+			idc = 1002;
+			x = safeZoneX + safeZoneW * 0.503125;
+			y = safeZoneY + safeZoneH * 0.56888889;
+			w = safeZoneW * 0.170625;
+			h = safeZoneH * 0.02222223;
+			text = "$STR_FROM_01_INFO_07";
+			
+		};
+		class cbFractionIndep : RscCombo 
+		{
+			idc = 2107;
+			x = safeZoneX + safeZoneW * 0.508125;
+			y = safeZoneY + safeZoneH * 0.60222223;
+			w = safeZoneW * 0.164375;
+			h = safeZoneH * 0.02222223;
+			class ComboScrollBar
+			{
+				color[] = {1,1,1,1};
+				thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+				arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+				arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+				border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+				
+			};
+			
+		};
+		class lblFractionCiv : RscText 
+		{
+			idc = 1002;
+			x = safeZoneX + safeZoneW * 0.503125;
+			y = safeZoneY + safeZoneH * 0.64222223;
+			w = safeZoneW * 0.170625;
+			h = safeZoneH * 0.02222223;
+			text = "$STR_FROM_01_INFO_08";
+			
+		};
+		class cbFractionCiv : RscCombo 
+		{
+			idc = 2108;
+			x = safeZoneX + safeZoneW * 0.508125;
+			y = safeZoneY + safeZoneH * 0.67555556;
+			w = safeZoneW * 0.164375;
+			h = safeZoneH * 0.02222223;
+			class ComboScrollBar
+			{
+				color[] = {1,1,1,1};
+				thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+				arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+				arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+				border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+				
+			};
+			
+		};
+		class lblNavToolsCompass : RscText 
+		{
+			idc = 1002;
+			x = safeZoneX + safeZoneW * 0.328125;
+			y = safeZoneY + safeZoneH * 0.56888889;
+			w = safeZoneW * 0.170625;
+			h = safeZoneH * 0.02222223;
+			text = "$STR_FROM_01_INFO_09";
+			
+		};
+		class cbNavToolsCompass : RscCombo 
+		{
+			idc = 2104;
+			x = safeZoneX + safeZoneW * 0.333125;
+			y = safeZoneY + safeZoneH * 0.60222223;
+			w = safeZoneW * 0.164375;
+			h = safeZoneH * 0.02222223;
+			class ComboScrollBar
+			{
+				color[] = {1,1,1,1};
+				thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+				arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+				arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+				border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+				
+			};
+			
+		};
+		class bkrCaption : IGUIBack 
+		{
+			idc = 1801;
+			x = safeZoneX + safeZoneW * 0.323125;
+			y = safeZoneY + safeZoneH * 0.22777778;
+			w = safeZoneW * 0.36125;
+			h = safeZoneH * 0.02444445;
+			colorBackground[] = {0.1569,0.5882,0.1569,1};
+			
+		};
+		class lblCaption : RscText 
+		{
+			idc = 1000;
+			x = safeZoneX + safeZoneW * 0.3275;
+			y = safeZoneY + safeZoneH * 0.22777778;
+			w = safeZoneW * 0.345625;
+			h = safeZoneH * 0.02222223;
+			text = "$STR_ONLOAD_NAME";
+			
+		};
+		
 	};
-
+	
 };
-

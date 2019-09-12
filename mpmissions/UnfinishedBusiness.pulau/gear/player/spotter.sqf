@@ -4,6 +4,8 @@ waitUntil { alive player };
 
 sleep 1;
 
+waitUntil { sleep 1; systemChat "Wait for sync..."; call Fn_Local_WaitPublicVariables; }; 
+
 comment "Exported from Arsenal by brezerk";
 
 comment "[!] UNIT MUST BE LOCAL [!]";
@@ -32,7 +34,10 @@ _this addHandgunItem "CUP_15Rnd_9x19_M9";
 comment "Add containers";
 _this forceAddUniform "CUP_U_B_USMC_Ghillie_WDL";
 _this addVest "V_BandollierB_oli";
-_this addBackpack "B_Parachute";
+
+if (!mission_plane_send) then {
+	_this addBackpack "B_Parachute";
+};
 
 comment "Add binoculars";
 _this addWeapon "Rangefinder";

@@ -16,13 +16,31 @@
  *                                                                         *
  ***************************************************************************/
  
+  Fn_Config_GetFractions = {
+	params ['_side'];
+	private _fractions = [];
+	private _cfg = [];
+	switch (_side) do {
+		case independent: { _cfg = D_FRACTION_INDEP_CFG };
+		case west: { _cfg = D_FRACTION_WEST_CFG };
+		case east: { _cfg = D_FRACTION_EAST_CFG };
+		case civilian: { _cfg = D_FRACTION_CIV_CFG };
+	};
+	{
+		private _fraction = _x select 0;
+		if (isClass(configFile >> "CfgFactionClasses" >> _fraction)) then {
+			_fractions pushBackUnique _fraction;
+		};
+	} forEach _cfg;
+	_fractions;
+ };
  
  Fn_Config_GetFraction_Units = {
 	params ['_side', '_fraction', '_type'];
 	private _cfg = [];
 	switch (_side) do {
 		case independent: { _cfg = D_FRACTION_INDEP_CFG };
-		case west: { };
+		case west: { _cfg = D_FRACTION_WEST_CFG };
 		case east: { _cfg = D_FRACTION_EAST_CFG };
 		case civilian: { _cfg = D_FRACTION_CIV_CFG };
 	};
@@ -40,9 +58,15 @@
 	} forEach _cfg;
  };
  
+ D_FRACTION_WEST_CFG = [
+	[
+		'CUP_B_USMC', 'CUP Civilian', []
+	]
+ ];
+ 
  D_FRACTION_CIV_CFG = [
 	[
-		'CUP_C', 'CUP Civilian', [
+		'CUP_C_SAHRANI', 'CUP Civilian', [
 			[
 			'mens', [
 					'C_man_polo_1_F',
@@ -80,6 +104,39 @@
 					'C_Rubberboat',
 					'C_Boat_Civil_01_rescue_F',
 					'CUP_C_Fishing_Boat_Chernarus']
+			]
+		]
+	],
+	[
+		'CIV_F', 'CUP Civilian', [
+				[
+				'mens', [
+						'C_man_polo_1_F',
+						'C_man_polo_2_F',
+						'C_man_polo_3_F',
+						'C_man_polo_4_F',
+						'C_man_polo_5_F',
+						'C_man_polo_6_F',
+						'C_man_1_1_F',
+						'C_man_1_2_F',
+						'C_man_1_3_F']
+				],
+				[
+				'cars', [
+						'C_Van_01_box_F',
+						'C_Van_01_transport_F',
+						'C_SUV_01_F',
+						'C_Offroad_01_F',
+						'C_Truck_02_fuel_F',
+						'C_Truck_02_box_F',
+						'C_Truck_02_transport_F',
+						'C_Truck_02_covered_F']
+				],
+				[
+				'boats', [
+						'C_Boat_Civil_01_F',
+						'C_Rubberboat',
+						'C_Boat_Civil_01_rescue_F']
 			]
 		]
 	]
@@ -185,8 +242,10 @@
 			'transport', [
 					'CUP_V3S_Open_NAPA']
 			]
-		],
-		'CUP_I_TK', 'Takistani Locals', [
+		]
+	],
+	[
+		'CUP_I_TK_GUE', 'Takistani Locals', [
 			[
 			'patrol', [
 					'CUP_I_TK_GUE_Soldier',
@@ -233,7 +292,9 @@
 					'CUP_V3S_Open_TKG',
 					'CUP_V3S_Covered_TKG']
 			]
-		],
+		]
+	],
+	[
 		'CUP_I_RACS', 'Royal Army Corps of Sahrani', [
 			[
 			'patrol', [
@@ -281,7 +342,9 @@
 					'CUP_I_M113_RACS',
 					'CUP_I_M113_RACS_URB']
 			]
-		],
+		]
+	],
+	[
 		'IND_F', 'AAF', [
 			[
 			'patrol', [
@@ -333,4 +396,4 @@
 			]
 		]
 	]
- ];
+]

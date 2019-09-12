@@ -46,14 +46,16 @@ if (isServer) then {
 	D_DIFFICLTY = nil;
 	D_LOCATION = nil;
 	D_START_TYPE = nil;
+	D_NAVTOOL_MAP = nil;
+	D_NAVTOOL_COMPASS = nil;
 	
 	D_ADD_INTEL_ACTION = [east, independent];
 	
-	D_FRACTION_WEST = "CUP_B_USMC";
+	D_FRACTION_WEST = nil;
 	
 	// Defaines (should be an UI option at mission startup);
 	// FIXME: should be diff dependent
-	D_FRACTION_INDEP = "CUP_I_NAPA"; //posible CUP_I_TK_GUE, IND_F, IND_F, IND_G_F
+	D_FRACTION_INDEP = nil;
 	
 	D_FRACTION_INDEP_UNITS_PATROL = [];
 	D_FRACTION_INDEP_UNITS_GARRISON = [];
@@ -62,7 +64,7 @@ if (isServer) then {
 	D_FRACTION_INDEP_UNITS_HEAVY = [];
 	D_FRACTION_INDEP_UNITS_TRANSPORT = [];
 	
-	D_FRACTION_EAST = "CUP_O_SLA"; //possible CUP_O_TK, CUP_O_ChDKZ, 
+	D_FRACTION_EAST = nil;
 	
 	D_FRACTION_EAST_UNITS_PATROL = [];
 	D_FRACTION_EAST_UNITS_GARRISON = [];
@@ -71,7 +73,7 @@ if (isServer) then {
 	D_FRACTION_EAST_UNITS_HEAVY = [];
 	D_FRACTION_EAST_UNITS_TRANSPORT = [];
 	
-	D_FRACTION_CIV = "CUP_C"; //possible CUP_O_TK, CUP_O_ChDKZ, 
+	D_FRACTION_CIV = nil;
 	
 	D_FRACTION_CIV_UNITS_MENS = [];
 	D_FRACTION_CIV_UNITS_CARS = [];
@@ -187,11 +189,17 @@ if (isServer) then {
 	Event Handler for loaded or unloaded box
 	*/
 	EventHander_MissionPlanned = {
-		params ["_difficlty", "_location", "_start_type"];
+		params ["_difficlty", "_location", "_start_type", "_navtool_map", "_navtool_compass", "_fraction_west", "_fraction_east", "_fraction_indep", "_fraction_civ"];
 		if (!mission_requested) then {
 			D_DIFFICLTY = _difficlty;
 			D_LOCATION = _location;
 			D_START_TYPE = _start_type;
+			D_NAVTOOL_MAP = _navtool_map;
+			D_NAVTOOL_COMPASS = _navtool_compass;
+			D_FRACTION_WEST = (([west] call Fn_Config_GetFractions) select _fraction_west);
+			D_FRACTION_EAST = (([east] call Fn_Config_GetFractions) select _fraction_east);
+			D_FRACTION_INDEP = (([independent] call Fn_Config_GetFractions) select _fraction_indep);
+			D_FRACTION_CIV = (([civilian] call Fn_Config_GetFractions) select _fraction_civ);
 			mission_requested = true;
 			publicVariable "D_LOCATION";
 			publicVariable "D_FRACTION_WEST";
@@ -211,6 +219,7 @@ if (isServer) then {
 		};
 	};
 	
+	#include "config\items.sqf";
 	#include "config\stash.sqf";
 	#include "config\fractions.sqf"; 
 
@@ -241,6 +250,14 @@ if (isServer) then {
 	[getPos us_liberty_01] call Fn_West_MissionPlanning_CreateMarkers_Base;
 	
 	[us_base_suppy_01] call Fn_Task_West_Create_Supply;
+
+	waitUntil {
+		sleep 3;
+		{
+			remoteExecCall["Fn_Local_WaitForPlanning", _x];
+		} forEach (playableUnits + switchableUnits);
+		mission_requested;
+	};
 	
 	//Load fraction unit configurations
 	D_FRACTION_INDEP_UNITS_PATROL = ([independent, D_FRACTION_INDEP, 'patrol'] call Fn_Config_GetFraction_Units);
@@ -262,13 +279,6 @@ if (isServer) then {
 	D_FRACTION_CIV_UNITS_CARS = ([civilian, D_FRACTION_CIV, 'cars'] call Fn_Config_GetFraction_Units);
 	D_FRACTION_CIV_UNITS_BOATS = ([civilian, D_FRACTION_CIV, 'boats'] call Fn_Config_GetFraction_Units);
 	
-	waitUntil {
-		sleep 3;
-		{
-			remoteExecCall["Fn_Local_WaitForPlanning", _x];
-		} forEach (playableUnits + switchableUnits);
-		mission_requested;
-	};
 	
 	{
 		remoteExecCall["Fn_Local_Planned", _x];
@@ -290,7 +300,6 @@ if (isServer) then {
 		
 		if (_group != grpNull) then {	
 			private _killed_side = side _group;
-			systemChat format ["%1", _killed_side];
 			
 			if ((_killed_side == east) || (_killed_side == independent)) then {
 				private _ace_kill = _killed getVariable "ace_medical_lastDamageSource";

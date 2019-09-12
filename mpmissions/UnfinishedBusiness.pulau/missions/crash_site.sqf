@@ -129,7 +129,7 @@ if (isServer) then {
 	private _free_landing_markers = [];
 	{
 		if (_x find format["wp_%1_paradrop", D_LOCATION] >= 0) then {
-			if (_crashSitePos distance2D getMarkerPos _x <= 1800) then {
+			if (_crashSitePos distance2D getMarkerPos _x <= 1300) then {
 				_free_landing_markers pushBack _x;
 			};
 		};
@@ -143,7 +143,6 @@ if (isServer) then {
 		_x setPos [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 400 + random 100)];
 		_x setVariable ["ACE_isUnconscious", true, true];
 		[D_DIFFICLTY] remoteExecCall ["Fn_Local_Jet_Player_DoParadrop", _x];
-		[getPos _x, 300] execVM "addons\brezblock\utils\controller.sqf";
 	} forEach assault_group;
 		
 	{deleteVehicle _x} foreach crew us_airplane_01; deleteVehicle us_airplane_01;

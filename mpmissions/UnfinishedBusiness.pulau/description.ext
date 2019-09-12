@@ -29,7 +29,7 @@ class Header
 disabledAI = 1;
 
 author			= "brezerk@brezblock.org.ua";
-OnLoadName		= "Unfinished Business v0.9.259";
+OnLoadName		= $STR_ONLOAD_NAME; //"Unfinished Business v0.9.259";
 OnLoadMission	= $STR_ONLOAD_INFO_02;
 briefingName    = $STR_ONLOAD_INFO_01;
 // FIXME: https://feedback.bistudio.com/T67181
@@ -40,7 +40,6 @@ briefingName    = $STR_ONLOAD_INFO_01;
 // Respawn type
 respawn = "BASE";
 // Delay in seconds before playable unit respawns.
-//respawnDelay = "10"; // 900
 respawnDelay = "30";
 // Respawn templates from CfgRespawnTemplates. You can combine any number of them together.
 respawnTemplates[] = {"Counter", "Base"};
@@ -48,17 +47,6 @@ respawnTemplates[] = {"Counter", "Base"};
 respawnDialog = 0;
 // When 1, the score table contains score of all playable units as opposed to players only.
 aikills = 0;
-
-//{ 1, true, false },
-// Disable Global, Command, Group, Vehicle and System channels
-//disableChannels[] = {
-//	{ 0, false, true },
-//	{ 1, false, true },
-//	{ 2, false, true },
-//	{ 3, false, true },
-//	{ 4, false, true },
-//	{ 6, false, true }
-//};
 
 respawnOnStart = -1;
 
@@ -187,6 +175,5 @@ class CfgFunctions {
 	};
 };
 
-#include "ui\settingsDialogControls.hpp"
-#include "ui\settingsDialog.hpp"
+#include "ui\SettingsDialog.hpp"
 #include "compositions\compositions.cfg"

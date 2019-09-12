@@ -17,13 +17,18 @@
  ***************************************************************************/
  
 if (!mission_requested) then { 
+
+	private _cbFractionCiv = lbCurSel 2108;
+	private _cbFractionIndep = lbCurSel 2107;
+	private _cbFractionEast = lbCurSel 2106;
+	private _cbFractionWest = lbCurSel 2105;
+	private _cbNavToolsCompass = lbCurSel 2104;
+	private _cbNavToolsMap = lbCurSel 2103;
 	private _cbStart = lbCurSel 2102;
 	private _cbDiff = lbCurSel 2101;
 	private _cbLocation = lbCurSel 2100;
 
-	_D_DIFFICLTY = _cbDiff;
-	_D_LOCATION = nil;
-	_D_START_TYPE = _cbStart;
+	private _D_LOCATION = nil;
 
 	switch (_cbLocation) do {
 		case 0: {
@@ -39,6 +44,6 @@ if (!mission_requested) then {
 
 	closeDialog 1;
 
-	PUB_fnc_missionPlanned = [_D_DIFFICLTY, _D_LOCATION, _D_START_TYPE];
+	PUB_fnc_missionPlanned = [_cbDiff, _D_LOCATION, _cbStart, _cbNavToolsMap, _cbNavToolsCompass, _cbFractionWest, _cbFractionEast, _cbFractionIndep, _cbFractionCiv];
 	publicVariableServer "PUB_fnc_missionPlanned";
 };

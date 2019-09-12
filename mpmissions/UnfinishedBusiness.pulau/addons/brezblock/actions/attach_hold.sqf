@@ -25,13 +25,14 @@ Attach holdAction to vehicle and execute corresponding callback
 if (isServer) then {
 
 	params ["_attach_to", "_call_back", ["_icon", "holdactions\holdAction_search"], ["_text", "ACTION_01"], ["_condition", ""], ["_duration", 6], ["_remove", true]];
-	_action_id = [
+	if (isNil "_attach_to") exitWith {};
+	[
 		_attach_to,																// Object the action is attached to
 		localize _text,					        								// Title of the action
 		format ["\a3\ui_f\data\IGUI\Cfg\%1_ca.paa", _icon],						// Idle icon shown on screen
 		format ["\a3\ui_f\data\IGUI\Cfg\%1_ca.paa", _icon],						// Progress icon shown on screen
-		format ["((_this distance _target) < 4) %1", _condition],		// Condition for the action to be shown
-		format ["((_caller distance _target) < 4) %1", _condition],	// Condition for the action to progress
+		format ["((_this distance _target) < 4) %1", _condition],				// Condition for the action to be shown
+		format ["((_caller distance _target) < 4) %1", _condition],				// Condition for the action to progress
 		{},																		// Code executed when action starts
 		{},																		// Code executed on every progress tick
 		_call_back,	        													// Code executed on completion	
@@ -42,5 +43,4 @@ if (isServer) then {
 		_remove,															    // Remove on completion
 		false																	// Show in unconscious state 
 	] remoteExec ["BIS_fnc_holdActionAdd", 0, _attach_to];						// MP compatible implementation
-	_action_id;
 };

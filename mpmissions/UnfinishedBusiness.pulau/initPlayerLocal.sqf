@@ -43,6 +43,7 @@ player setVariable ["weapon_fiered", false, false];
 player setVariable ["is_civilian", false, true];
 
 [] execVM "briefing.sqf";
+
 #include "missions\local\intro.sqf";
 #include "missions\local\fast_travel.sqf";
 #include "missions\local\jet_is_down.sqf";

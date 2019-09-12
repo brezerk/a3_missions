@@ -24,6 +24,7 @@
 
 if (isServer) then {
 	while {count assault_group != 0} do {
+		systemChat "tick...";
 		sleep 10;
 		{
 			//cleanup disconnected? members
@@ -40,12 +41,12 @@ if (isServer) then {
 					if (not isPlayer _x) then {
 						if (side _x in [independent, east]) then {
 							if ((_x knowsAbout _player) >= 1.5) exitWith {
-								pings pushBackUnique (mapGridPosition _player);
+								pings pushBackUnique (getPos _player);
 								pings_heli pushBackUnique (getPos _player);
 							};
 						};
 					};
-				} forEach nearestObjects [_player, ["SoldierEB", "SoldierGB", "SoldierWB"], 800];
+				} forEach nearestObjects [_player, ["SoldierEB", "SoldierGB", "SoldierWB"], 800, true];
 			};
 		} forEach (playableUnits + switchableUnits);
 	};

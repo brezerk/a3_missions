@@ -82,6 +82,7 @@ if (isServer) then {
 		} forEach units _grp;
 	};
 	[_grp, _center, _radius, (round (_radius / 15)), "MOVE", "SAFE", "YELLOW", "LIMITED", "STAG COLUMN", "", [5,15,30]] call CBA_fnc_taskPatrol;
+	_grp setVariable ["is_patrol_group", true, false];
 	if (_side in D_ADD_INTEL_ACTION) then {
 		[
 			(leader _grp),
