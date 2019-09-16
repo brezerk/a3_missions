@@ -27,10 +27,30 @@
 				if (count _positions > 0) then {
 					private _pos = selectRandom (_positions);
 					if (!isNil "_pos") then {
-						(selectRandom D_HOUSE_ITEMS) createVehicle _pos; //[(_pos select 0), (_pos select 1), ((_pos select 2) + 1)];
+						private _class = selectRandom D_HOUSE_ITEMS;
+						private _itemBox = "GroundWeaponHolder" createVehicle [0,0,0];
+						_itemBox setPos _pos;
+						
+						private _type = _class call BIS_fnc_itemType;
+						switch (_type select 0) do {
+							case 'Weapon': { 
+								_itemBox addWeaponCargoGlobal [_class, 1];
+								private _magazines = getArray (configFile >> "CfgWeapons" >> _class >> "magazines");
+								_itemBox addMagazineCargoGlobal [(selectRandom _magazines), (random 5)];
+							};
+							case 'Item': { _itemBox addItemCargoGlobal [_class, 1]; };
+							case 'Equipment': { 
+								if ((_type select 1) == "Backpack") then {
+									_itemBox addBackpackCargoGlobal [_class, 1];	
+								} else {
+									_itemBox addItemCargoGlobal [_class, 1];									
+								};
+							};
+							default { systemChat format ["Error: can't get item type: %1", _class]; };
+						};						
 					};
 				};
 			};
 		};
-	} forEach (_center nearObjects ["House" , _distance]);
+	} forEach ((_center nearObjects ["House" , _distance]) + (_center nearObjects ["Building" , _distance]));
 };
