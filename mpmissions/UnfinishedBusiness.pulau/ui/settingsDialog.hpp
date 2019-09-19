@@ -4,6 +4,7 @@
 class SettingsDialog
 {
 	idd = 3773;
+	onUnload = "params ['_display', '_exitCode']; [_exitCode] execVM 'ui\SettingsDialog.sqf';";
 	
 	class ControlsBackground
 	{

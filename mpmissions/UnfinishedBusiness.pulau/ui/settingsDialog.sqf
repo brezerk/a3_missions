@@ -15,14 +15,20 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
  ***************************************************************************/
- 
+
+params ["_exitCode"];
+
+if (_exitCode in [0, 2]) then {
+
 #include "..\config\fractions.sqf"; 
- 
+
+sleep 5;
+
 private _settingsDialog = createDialog "SettingsDialog";
  
 if (!isNil "_settingsDialog") then {
 	private _dialog = findDisplay 3773;
- 
+	 
 	private _cbDiff = _dialog displayCtrl 2101;
 	if (!isNil "_cbDiff") then {
 		_cbDiff lbAdd (localize "FROM_01_DIF_SELECT_01");
@@ -98,4 +104,6 @@ if (!isNil "_settingsDialog") then {
 		} forEach ([civilian] call Fn_Config_GetFractions);
 		_cbFractionCiv lbSetCurSel 0;
 	};
+};
+
 };

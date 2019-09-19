@@ -61,6 +61,27 @@
  D_FRACTION_WEST_CFG = [
 	[
 		'CUP_B_USMC', 'CUP Civilian', []
+	],
+	[
+		'BLU_F', 'NATO', [
+			[
+			'transport', ['B_Heli_Transport_01_F']
+			],
+			[
+			'heli', ['B_Heli_Light_01_F']
+			],
+			[
+			'boats', ['B_Boat_Armed_01_minigun_F']
+			],
+			['Team Leader', 'B_Soldier_TL_F'],
+			['Corpsman', 	'B_medic_F'],
+			['Grenadier', 	'B_Soldier_GL_F'],
+			['Rifleman', 	'B_Soldier_F'],
+			['Squad Leader','B_Soldier_SL_F'],
+			['Autorifleman','B_Soldier_AR_F'],
+			['Sniper', 		'B_sniper_F'],
+			['Spotter', 	'B_spotter_F']
+		]
 	]
  ];
  
@@ -145,6 +166,54 @@
  D_FRACTION_EAST_CFG = [
 	[
 		'CUP_O_SLA', 'Sahrani Liberation Army', [
+			[
+			'patrol', [
+					'CUP_O_sla_Soldier',
+					'CUP_O_SLA_Soldier_Backpack',
+					'CUP_O_sla_Soldier_GL',
+					'CUP_O_sla_Soldier_AR',
+					'CUP_O_sla_Medic',
+					'CUP_O_sla_Soldier_LAT']
+			],
+			[
+			'garrison', [
+					'CUP_O_sla_Soldier',
+					'CUP_O_SLA_Soldier_Backpack',
+					'CUP_O_sla_Soldier_GL',
+					'CUP_O_sla_Soldier_AR',
+					'CUP_O_sla_Medic',
+					'CUP_O_sla_Soldier_AT',
+					'CUP_O_sla_Sniper',
+					'CUP_O_sla_Soldier_MG',
+					'CUP_O_sla_Engineer',
+					'CUP_O_sla_Soldier_AMG',
+					'CUP_O_sla_Soldier_LAT']
+			],
+			[
+			'cars', [
+					'CUP_O_UAZ_AGS30_SLA',
+					'CUP_O_UAZ_MG_SLA']
+			],
+			[
+			'light', [
+					'CUP_O_BMP2_SLA',
+					'CUP_O_BRDM2_SLA',
+					'CUP_O_BTR60_SLA']
+			],
+			[
+			'heavy', [
+					'CUP_O_T55_SLA',
+					'CUP_O_T72_SLA']
+			],
+			[
+			'transport', [
+					'CUP_O_Ural_SLA',
+					'CUP_O_Ural_Open_SLA']
+			]
+		]
+	],
+	[
+		'OPF_F', 'CSAT', [
 			[
 			'patrol', [
 					'CUP_O_sla_Soldier',

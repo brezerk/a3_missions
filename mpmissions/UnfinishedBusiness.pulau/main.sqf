@@ -53,6 +53,11 @@ if (isServer) then {
 	
 	D_FRACTION_WEST = nil;
 	
+	D_FRACTION_WEST_UNITS_TRANSPORT = [];
+	D_FRACTION_WEST_UNITS_HELI = [];
+	D_FRACTION_WEST_UNITS_BOATS = [];
+
+	
 	// Defaines (should be an UI option at mission startup);
 	// FIXME: should be diff dependent
 	D_FRACTION_INDEP = nil;
@@ -86,6 +91,10 @@ if (isServer) then {
 	//Objects
 	obj_east_comtower = objNull;
 	obj_east_antiair = objNull;
+	us_heli01 = objNull;
+	us_airplane_01 = objNull;
+	us_boat01 = objNull;
+	us_boat02 = objNull;
 	
 	//Task states
 	task_complete_commtower = false;
@@ -246,18 +255,15 @@ if (isServer) then {
 	// skip random time
 	skipTime ((random 5) + 6);
 	
-	// Create base marker
-	[getPos us_liberty_01] call Fn_West_MissionPlanning_CreateMarkers_Base;
-	
-	[us_base_suppy_01] call Fn_Task_West_Create_Supply;
-
 	waitUntil {
 		sleep 3;
-		{
-			remoteExecCall["Fn_Local_WaitForPlanning", _x];
-		} forEach (playableUnits + switchableUnits);
 		mission_requested;
 	};
+	
+	//Load fraction unit configurations
+	D_FRACTION_WEST_UNITS_TRANSPORT = ([west, D_FRACTION_WEST, 'transport'] call Fn_Config_GetFraction_Units);
+	D_FRACTION_WEST_UNITS_HELI = ([west, D_FRACTION_WEST, 'heli'] call Fn_Config_GetFraction_Units);
+	D_FRACTION_WEST_UNITS_BOATS = ([west, D_FRACTION_WEST, 'boats'] call Fn_Config_GetFraction_Units);
 	
 	//Load fraction unit configurations
 	D_FRACTION_INDEP_UNITS_PATROL = ([independent, D_FRACTION_INDEP, 'patrol'] call Fn_Config_GetFraction_Units);
@@ -280,9 +286,10 @@ if (isServer) then {
 	D_FRACTION_CIV_UNITS_BOATS = ([civilian, D_FRACTION_CIV, 'boats'] call Fn_Config_GetFraction_Units);
 	
 	
-	{
-		remoteExecCall["Fn_Local_Planned", _x];
-	} forEach (playableUnits + switchableUnits);
+	// Create base marker
+	[getPos us_liberty_01] call Fn_West_MissionPlanning_CreateMarkers_Base;
+	
+	//[us_base_suppy_01] call Fn_Task_West_Create_Supply;
 	
 	[[us_liberty_01, "Land_Destroyer_01_hull_04_F"] call BIS_fnc_Destroyer01GetShipPart, 1, false] call BIS_fnc_Destroyer01AnimateHangarDoors;
 	
@@ -290,7 +297,7 @@ if (isServer) then {
 	
 	call Fn_Create_MissionIntro;
 	
-	execVM "missions\create_locations.sqf";
+	//execVM "missions\create_locations.sqf";
 		
 	addMissionEventHandler ["EntityKilled",
 	{

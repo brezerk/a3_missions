@@ -42,8 +42,8 @@ if (!mission_requested) then {
 		};
 	};
 
-	closeDialog 1;
-
 	PUB_fnc_missionPlanned = [_cbDiff, _D_LOCATION, _cbStart, _cbNavToolsMap, _cbNavToolsCompass, _cbFractionWest, _cbFractionEast, _cbFractionIndep, _cbFractionCiv];
 	publicVariableServer "PUB_fnc_missionPlanned";
+	
+	closeDialog 1;
 };

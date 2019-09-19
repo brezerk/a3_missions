@@ -39,6 +39,14 @@ Fn_Local_WaitPublicVariables = {
 
 waitUntil { sleep 1; systemChat "Wait for sync..."; call Fn_Local_WaitPublicVariables; }; 
 
+if (!mission_requested) then {
+	if ((roleDescription player) == "Team Leader") then {
+		[0] execVM "ui\SettingsDialog.sqf";
+	};
+	[] call BrezBlock_fnc_WaitForStart;
+};
+
+
 player setVariable ["weapon_fiered", false, false];
 player setVariable ["is_civilian", false, true];
 
@@ -64,7 +72,7 @@ player setVariable ["is_civilian", false, true];
 #include "missions\local\civilian\confiscate.sqf";
 
 execVM "addons\brezblock\utils\marker_manager.sqf";
-
+ 
 Fn_Local_SetPersonalTaskState = {
 	params['_name', '_state', '_title'];
 	private _task = [_name, player] call BIS_fnc_taskReal;

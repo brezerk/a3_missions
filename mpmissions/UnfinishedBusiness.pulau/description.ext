@@ -48,7 +48,11 @@ respawnDialog = 0;
 // When 1, the score table contains score of all playable units as opposed to players only.
 aikills = 0;
 
+// No respawn
 respawnOnStart = -1;
+
+// Skip briefingName
+briefing = 0;
 
 // Force cba_settings.sqf loading
 cba_settings_hasSettingsFile = 1;
@@ -156,6 +160,7 @@ class CfgFunctions {
 	{
 		class common
 		{
+			class WaitForStart {file = "addons\brezblock\utils\wait_for_start.sqf";};
 			class Get_RND_Index {file = "addons\brezblock\utils\get_rnd_index.sqf";};
 			class Attach_Hold_Action {file = "addons\brezblock\actions\attach_hold.sqf";};
 			class Attach_SearchIntel_Action {file = "addons\brezblock\actions\attach_intel.sqf";};

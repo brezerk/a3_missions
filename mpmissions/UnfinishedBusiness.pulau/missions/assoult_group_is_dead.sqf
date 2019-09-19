@@ -24,7 +24,6 @@
 
 if (isServer) then {
 	while {count assault_group != 0} do {
-		systemChat "tick...";
 		sleep 10;
 		{
 			//cleanup disconnected? members

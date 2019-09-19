@@ -28,10 +28,37 @@ if (hasInterface) then {
 
 if (isServer) then {
 
-	(driver us_airplane_01) setBehaviour "Careless";
-	us_airplane_01 attachTo [land_00, [0, 0, 0] ];
-
 	Fn_Create_MissionIntro = {
+	
+		private _class = selectRandom D_FRACTION_WEST_UNITS_TRANSPORT;
+		private _crew_class = getText(configFile >> "CfgVehicles" >> _class >> "crew");
+		
+		us_airplane_01 = createVehicle [_class, (getPos land_00), [], 0, "CAN_COLLIDE"];
+		us_airplane_01 attachTo [land_00, [0, 0, 0]];
+		us_airplane_01 setDir (getDir land_00);
+		
+		private _grp = createGroup [west, true];
+		
+		private _unit = _grp createUnit [_crew_class, us_airplane_01, [], 0, "CARGO"];
+		_unit moveInDriver us_airplane_01;
+		_unit assignAsDriver us_airplane_01;
+		_unit setBehaviour "Careless";
+
+		//FIXME: Add init cargo: ammo, acex, base rifles
+		
+		us_heli_01 = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_HELI), (getPos land_01), [], 0, "CAN_COLLIDE"];
+		us_heli_01 attachTo [land_01, [0, 0, 0]];
+		us_heli_01 setDir ([getPos (us_airplane_01), getPos(us_heli_01)] call BIS_fnc_dirTo);
+		us_heli_01 setVehicleLock "LOCKED";
+		
+		us_boat_01 = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_BOATS), [0, 0, 0], [], 0, "CAN_COLLIDE"];
+		west_rack_01 setVehicleCargo us_boat_01;
+		us_boat_01 setVehicleLock "LOCKED";
+		
+		us_boat_02 = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_BOATS), [0, 0, 0], [], 0, "CAN_COLLIDE"];
+		west_rack_02 setVehicleCargo us_boat_02;
+		us_boat_02 setVehicleLock "LOCKED";
+		
 		private _trg = createTrigger ["EmptyDetector", getMarkerPos "respawn_west" ];
 		_trg setTriggerArea [0, 0, 0, false];
 		_trg setTriggerActivation ["NONE", "PRESENT", false];
