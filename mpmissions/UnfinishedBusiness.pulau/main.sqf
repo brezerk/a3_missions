@@ -298,7 +298,7 @@ if (isServer) then {
 	
 	call Fn_Create_MissionIntro;
 	
-	//execVM "missions\create_locations.sqf";
+	execVM "missions\create_locations.sqf";
 		
 	addMissionEventHandler ["EntityKilled",
 	{

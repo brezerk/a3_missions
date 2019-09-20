@@ -58,7 +58,11 @@ if (isServer) then {
 		_group setBehaviour "SAFE";
 		_group setCombatMode "YELLOW";
 		
-		[_group, _center, 150] call CBA_fnc_taskDefend;
+		if (isClass(configFile >> "CfgPatches" >> "cba_main")) then {
+			[_group, _center, 150] call CBA_fnc_taskDefend;
+		} else {
+			[_group, _center] call bis_fnc_taskDefend;
+		};
 		
 		for "_i" from 0 to 2 do {
 			_pos = [_center, 5, 100, 3, 0, 0, 0] call BIS_fnc_findSafePos;
@@ -73,7 +77,12 @@ if (isServer) then {
 			_group setBehaviour "SAFE";
 			_group setCombatMode "YELLOW";
 			
-			[_group, _center, 150, (round (150 / 15)), "MOVE", "SAFE", "YELLOW", "LIMITED", "STAG COLUMN", "", [5,15,30]] call CBA_fnc_taskPatrol;
+			if (isClass(configFile >> "CfgPatches" >> "cba_main")) then {
+				[_group, _center, 150, (round (150 / 15)), "MOVE", "SAFE", "YELLOW", "LIMITED", "STAG COLUMN", "", [5,15,30]] call CBA_fnc_taskPatrol;
+			} else {
+				_null = [_group, _center, 150] call BIS_fnc_taskPatrol;
+			};
+			
 		};
 
 	};

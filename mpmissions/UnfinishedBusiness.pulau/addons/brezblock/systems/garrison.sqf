@@ -84,7 +84,12 @@ if (isServer) then {
 		} forEach units _grp;
 	};
 	
-	[_grp, _center, _radius, 3, false, 0] call CBA_fnc_taskDefend;
+	if (isClass(configFile >> "CfgPatches" >> "cba_main")) then {
+		[_grp, _center, _radius, 3, false, 0] call CBA_fnc_taskDefend;
+	} else {
+		[_grp, _center] call bis_fnc_taskDefend;
+	};
+	
 	if (_side in D_ADD_INTEL_ACTION) then {
 		[
 			(leader _grp),

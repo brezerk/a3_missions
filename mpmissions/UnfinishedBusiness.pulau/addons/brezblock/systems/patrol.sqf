@@ -81,7 +81,11 @@ if (isServer) then {
 			};
 		} forEach units _grp;
 	};
-	[_grp, _center, _radius, (round (_radius / 15)), "MOVE", "SAFE", "YELLOW", "LIMITED", "STAG COLUMN", "", [5,15,30]] call CBA_fnc_taskPatrol;
+	if (isClass(configFile >> "CfgPatches" >> "cba_main")) then {
+		[_grp, _center, _radius, (round (_radius / 15)), "MOVE", "SAFE", "YELLOW", "LIMITED", "STAG COLUMN", "", [5,15,30]] call CBA_fnc_taskPatrol;
+	} else {
+		_null = [_grp, _center, _radius] call BIS_fnc_taskPatrol;
+	};
 	_grp setVariable ["is_patrol_group", true, false];
 	if (_side in D_ADD_INTEL_ACTION) then {
 		[

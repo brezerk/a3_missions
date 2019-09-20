@@ -209,7 +209,11 @@ if (isServer) then {
 		} forEach units _grp;
 	};
 	
-	[_grp, _center, _radius] call CBA_fnc_taskDefend;
+	if (isClass(configFile >> "CfgPatches" >> "cba_main")) then {
+		[_grp, _center, _radius] call CBA_fnc_taskDefend;
+	} else {
+		[_grp, _center] call bis_fnc_taskDefend;
+	};
 	
 	_grp;
 };
