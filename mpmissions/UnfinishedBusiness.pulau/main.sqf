@@ -20,7 +20,7 @@ real_weather_init = false;
 
 D_LOCATIONS = ['Gurun', 'Monyet']; //, 'Monyet'];
 
-D_DEBUG = false;
+D_DEBUG = true;
 
 [] execVM "addons\code43\real_weather.sqf";
 
@@ -289,9 +289,10 @@ if (isServer) then {
 	// Create base marker
 	[getPos us_liberty_01] call Fn_West_MissionPlanning_CreateMarkers_Base;
 	
-	//[us_base_suppy_01] call Fn_Task_West_Create_Supply;
+	[west_base_suppy_01, "base"] call Fn_West_Populate_Supply;
 	
 	[[us_liberty_01, "Land_Destroyer_01_hull_04_F"] call BIS_fnc_Destroyer01GetShipPart, 1, false] call BIS_fnc_Destroyer01AnimateHangarDoors;
+	([us_liberty_01, "ShipFlag_US_F"] call bis_fnc_destroyer01GetShipPart) setFlagTexture (getText (configFile >> "CfgFactionClasses" >> D_FRACTION_WEST >> "flag"));
 	
 	call Fn_West_MissionPlanning_CreateMarkers_EastBase;
 	

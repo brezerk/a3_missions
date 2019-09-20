@@ -181,4 +181,5 @@ class CfgFunctions {
 };
 
 #include "ui\SettingsDialog.hpp"
+#include "ui\MissionLogo.hpp"
 #include "compositions\compositions.cfg"

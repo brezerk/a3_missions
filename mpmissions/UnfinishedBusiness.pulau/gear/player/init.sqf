@@ -13,6 +13,7 @@ removeHeadgear player;
 removeGoggles player;
 
 //FIXME: Possible use another uniform for rescue squad if plane was sent already
+//FIXME: Possible check player side
 player setUnitLoadout (configFile >> "CfgVehicles" >> ([west, D_FRACTION_WEST, (roleDescription player)] call Fn_Config_GetFraction_Units));
 
 comment "Give player a radio depending on radio mod loaded";

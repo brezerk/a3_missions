@@ -27,37 +27,46 @@ showCinemaBorder false;
 //enable NVG if needed
 if (sunOrMoon < 1) then {camUseNVG true} else {camUseNVG false};
 
-scopeName "main";
-while {true} do {
-	private _pos = [] call BIS_fnc_randomPos;
-	_pos set [2, (random [2, 5, 20])];
-	private _dir = [_pos, _center] call BIS_fnc_dirTo;
-	private _target = [_pos, 600, _dir] call BIS_fnc_relPos;
+private _missionLogo = createDialog "MissionLogo";
+ 
+if (!isNil "_missionLogo") then {
 
-	_cam cameraEffect ["internal", "BACK"];
-	_cam camSetPos _pos;
-	_cam camSetTarget _target;
-	_cam camCommit 0;
+	scopeName "main";
+	while {true} do {
+		private _pos = [] call BIS_fnc_randomPos;
+		_pos set [2, (random [2, 5, 20])];
+		private _dir = [_pos, _center] call BIS_fnc_dirTo;
+		private _target = [_pos, 600, _dir] call BIS_fnc_relPos;
 
-	_preparePos = _pos getPos [15, 90];
-	_preparePos set [2, (_pos select 2)];
+		_cam cameraEffect ["internal", "BACK"];
+		_cam camSetPos _pos;
+		_cam camSetTarget _target;
+		_cam camCommit 0;
 
-	_cam camPreparePos _preparePos;
-	_cam camCommitPrepared 20;
-	[1, "BLACK", 2, 1] call BIS_fnc_fadeEffect;
-	{
-		sleep 1;
-		if (_forEachIndex in [0, 4, 8]) then {
-			cutText [localize "INFO_WAIT_01", "PLAIN DOWN", 2];
-		};
-		if (mission_requested) then { breakTo "main"; };
-	} forEach [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-	[0, "BLACK", 2, 1] call BIS_fnc_fadeEffect;
+		_preparePos = _pos getPos [15, 90];
+		_preparePos set [2, (_pos select 2)];
+
+		_cam camPreparePos _preparePos;
+		_cam camCommitPrepared 20;
+		[1, "BLACK", 2, 1] call BIS_fnc_fadeEffect;
+		{
+			sleep 1;
+			if (_forEachIndex in [0, 4, 8]) then {
+				cutText [localize "INFO_WAIT_01", "PLAIN DOWN", 2];
+			};
+			if (mission_requested) then { breakTo "main"; };
+		} forEach [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+		[0, "BLACK", 2, 1] call BIS_fnc_fadeEffect;
+	};
+
+	closeDialog 1;
+
+	_cam cameraEffect ["terminate","back"];
+	camUseNVG false;
+	camDestroy _cam;
+	["Default"] call BIS_fnc_setPPeffectTemplate;
+	[1, "BLACK", 5, 1] call BIS_fnc_fadeEffect;
+	cutText [localize "INFO_WAIT_02", "PLAIN DOWN", 2];
+
 };
 
-_cam cameraEffect ["terminate","back"];
-camUseNVG false;
-camDestroy _cam;
-["Default"] call BIS_fnc_setPPeffectTemplate;
-[1, "BLACK", 5, 1] call BIS_fnc_fadeEffect;
-cutText [localize "INFO_WAIT_02", "PLAIN DOWN", 2];

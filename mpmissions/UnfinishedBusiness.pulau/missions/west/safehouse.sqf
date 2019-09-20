@@ -63,12 +63,20 @@ if (isServer) then {
 			
 		private _pos = [_markerPos, 0, 35, 4, 0, 0, 0] call BIS_fnc_findSafePos;
 		private _obj = "B_supplyCrate_F" createVehicle (_pos);
+		
+		[_obj, "safe"] call Fn_West_Populate_Supply;
+		
+		_obj addItemCargoGlobal ["ItemCompass", 3];
+		_obj addItemCargoGlobal ["ItemMap", 3];
+		
+		_obj addBackpackCargoGlobal ["B_Kitbag_tan", 5];
+		
+		if (isClass(configFile >> "CfgPatches" >> "acex_main")) then {
+			_obj addItemCargoGlobal ["ACE_Humanitarian_Ration", 10];
+			_obj addItemCargoGlobal ["ACE_WaterBottle", 15];
+		};
 			
-		clearWeaponCargoGlobal _obj;
-		clearMagazineCargoGlobal _obj;
-		clearItemCargoGlobal _obj;
-		clearBackpackCargoGlobal _obj;
-				
+		/*
 		_obj addWeaponCargoGlobal ["CUP_hgun_M9", 2];
 		_obj addWeaponCargoGlobal ["Binocular", 3];
 		_obj addWeaponCargoGlobal ["CUP_arifle_M4A1", 2];
@@ -84,44 +92,7 @@ if (isServer) then {
 		_obj addMagazineCargoGlobal ["CUP_1Rnd_HE_M203", 10];
 		_obj addMagazineCargoGlobal ["CUP_M72A6_M", 4];
 		_obj addMagazineCargoGlobal ["CUP_100Rnd_TE4_Green_Tracer_556x45_M249", 4];
-
-		_obj addItemCargoGlobal ["ACE_EntrenchingTool", 4];
-		_obj addItemCargoGlobal ["ACE_EarPlugs", 10];
-		_obj addItemCargoGlobal ["ItemCompass", 4];
-		_obj addItemCargoGlobal ["ACE_fieldDressing", 20];
-		_obj addItemCargoGlobal ["ACE_morphine", 10];
-		_obj addItemCargoGlobal ["ACE_epinephrine", 6];
-		_obj addItemCargoGlobal ["ACE_bloodIV", 3];
-		_obj addItemCargoGlobal ["CUP_HandGrenade_M67", 10];
-		_obj addItemCargoGlobal ["CUP_H_USMC_LWH_WDL", 10];
-		_obj addItemCargoGlobal ["ACE_DefusalKit", 4];
-		_obj addItemCargoGlobal ["ClaymoreDirectionalMine_Remote_Mag", 6];
-		_obj addItemCargoGlobal ["DemoCharge_Remote_Mag", 4];
-		_obj addItemCargoGlobal ["ACE_Humanitarian_Ration", 10];
-		_obj addItemCargoGlobal ["ACE_WaterBottle", 15];
-			
-		_obj addBackpackCargoGlobal ["B_Kitbag_tan", 5];
-			
-		if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
-				_obj addItemCargoGlobal ["ACRE_PRC148", 2];
-				_obj addItemCargoGlobal ["ACRE_PRC343", 6];
-			} else {
-				if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
-					_obj addItemCargoGlobal ["tf_anprc148jem", 2];
-					_obj addItemCargoGlobal ["tf_anprc152", 6];
-				} else {
-					comment "Fallback to native arma3 radio";
-					_obj addItemCargoGlobal ["ItemRadio", 10];
-				};
-		};
-		
-		private _group = [_pos, WEST, 3] call BIS_fnc_spawnGroup;
-		_group deleteGroupWhenEmpty true;
-		
-		{
-			[_x] execVM "gear\west_dead.sqf";
-			_x setDamage 1;
-		} forEach units _group;
+		*/
 		
 		_obj;
 	};

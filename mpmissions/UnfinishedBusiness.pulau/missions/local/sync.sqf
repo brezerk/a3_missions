@@ -21,11 +21,7 @@ Sync client state
 */
  
 //Check mainline mission state
-if (!mission_requested) then {
-	//If mission is not requested -- add an action to planning board
-	//FIXME: Apply this only for squad leaders
-	us_leader_01 addAction [localize "ACTION_06", {execVM "ui\SettingsDialog.sqf"}, nil, 1, false, false, "", "!mission_requested", 5];
-} else {
+if (mission_requested) then {
 	//Check if airplane was already send
 	if (mission_plane_send) then {
 		private _us_airplane_01_alive = false;

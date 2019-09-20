@@ -80,7 +80,61 @@
 			['Squad Leader','B_Soldier_SL_F'],
 			['Autorifleman','B_Soldier_AR_F'],
 			['Sniper', 		'B_sniper_F'],
-			['Spotter', 	'B_spotter_F']
+			['Spotter', 	'B_spotter_F'],
+			['stash_base_weapon', 	[
+					["arifle_MX_F",				  2],
+					["arifle_MX_SW_F",			  2],
+					["Laserdesignator",			  1]
+				]
+			],
+			['stash_base_mags', 	[
+					["30Rnd_65x39_caseless_mag",  24],
+					["16Rnd_9x21_Mag",			  16],
+					["30Rnd_45ACP_Mag_SMG_01",	  16],
+					["20Rnd_762x51_Mag",		  16],
+					["7Rnd_408_Mag",			  10],
+					["100Rnd_65x39_caseless_mag", 16],
+					["1Rnd_HE_Grenade_shell",	  20],
+					["3Rnd_HE_Grenade_shell",	  10]
+				]
+			],
+			['stash_base_items', 	[
+					["Chemlight_green",			  20],
+					["Laserbatteries",			  3 ],
+					["HandGrenade",				  20],
+					["SmokeShell",				  10],
+					["SmokeShellGreen",			  10],
+					["acc_flashlight",			  2 ],
+					["bipod_01_F_blk",			  1 ]
+				]
+			],
+			['stash_safe_weapon', 	[
+					["launch_NLAW_F",			  2],
+					["arifle_MX_F",				  3],
+					["arifle_MX_SW_F",			  3]
+				]
+			],
+			['stash_safe_mags', 	[
+					["30Rnd_65x39_caseless_mag",  12],
+					["16Rnd_9x21_Mag",			  4 ],
+					["30Rnd_45ACP_Mag_SMG_01",	  8 ],
+					["20Rnd_762x51_Mag",		  6 ],
+					["100Rnd_65x39_caseless_mag", 4 ],
+					["NLAW_F",					  4 ],
+					["1Rnd_HE_Grenade_shell",	  8 ]
+				]
+			],
+			['stash_safe_items', 	[
+					["Chemlight_green",			  8 ],
+					["HandGrenade",				  10],
+					["SmokeShell",				  4 ],
+					["SmokeShellGreen",			  6 ],
+					["acc_flashlight",			  2 ],
+					["H_HelmetB_sand",			  3 ],
+					["G_Tactical_Clear",          4 ],
+					["bipod_01_F_blk",			  1 ]
+				]
+			]
 		]
 	]
  ];

@@ -122,4 +122,22 @@ class RscButton
 	borderSize = 0;
 	
 };
+class RscPicture
+{
+	access = 0;
+    idc = -1;
+    type = 0;
+    style = 0x30 + 0x800;
+	size = 1;
+    colorBackground[] = {0,0,0,0};
+    colorText[] = {1,1,1,1};
+    font = "RobotoCondensedLight";
+    sizeEx = 0;
+    text = "";
+    x = 0;
+    y = 0;
+    w = 0.2;
+    h = 0.15;
+	
+};
 #endif

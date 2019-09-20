@@ -41,13 +41,13 @@ Fn_Local_WaitPublicVariables = {
 waitUntil { sleep 1; systemChat "Wait for sync..."; [["mission_requested", "mission_plane_send"]] call Fn_Local_WaitPublicVariables; }; 
 
 if (!mission_requested) then {
-	if ((roleDescription player) == "Team Leader") then {
+	if (((roleDescription player) == "Team Leader") || (D_DEBUG)) then {
 		[0] execVM "ui\SettingsDialog.sqf";
 	};
 	[] call BrezBlock_fnc_WaitForStart;
 };
 
-waitUntil { sleep 1; systemChat "Wait for sync..."; [["D_FRACTION_WEST", "D_FRACTION_EAST", "D_FRACTION_CIV", "D_FRACTION_INDEP"]] call Fn_Local_WaitPublicVariables; }; 
+waitUntil { sleep 1; systemChat "Wait for sync..."; [["D_FRACTION_WEST", "D_FRACTION_EAST", "D_FRACTION_CIV", "D_FRACTION_INDEP", "D_NAVTOOL_MAP", "D_NAVTOOL_COMPASS"]] call Fn_Local_WaitPublicVariables; }; 
 
 execVM "gear\player\init.sqf";
 
@@ -182,9 +182,6 @@ player addEventHandler
 			_sides = _sides - [playerSide];
 		};
 		
-		//if (D_DEBUG) then {
-		//	_sides = [civilian];
-		//};
 		private _side = selectRandom _sides;
 
 		switch (_side) do
@@ -326,5 +323,6 @@ sleep 5;
 
 [ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_00', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;
 
-[[west], [east,independent,civilian]] call ace_spectator_fnc_updateSides;
+//fixme
+//[[west], [east,independent,civilian]] call ace_spectator_fnc_updateSides;
 

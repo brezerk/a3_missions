@@ -84,8 +84,9 @@ if (isServer) then {
 			""
 		];
 		
+		//FIXME
 		_trg = createTrigger ["EmptyDetector", getMarkerPos "mrk_east_base_02"];
-		_trg setTriggerArea [1000, 1000, 0, false];
+		_trg setTriggerArea [1500, 1500, 0, false];
 		_trg setTriggerActivation ["WEST", "PRESENT", false];
 		_trg setTriggerStatements [
 			"this",
@@ -93,20 +94,13 @@ if (isServer) then {
 			""
 		];
 			
-		if (hasInterface) then {
-			remoteExecCall ["Fn_Local_Create_MissionIntro"];
-		} else {
-			remoteExecCall ["Fn_Local_Create_MissionIntro", -2];
-		}
+		remoteExecCall ["Fn_Local_Create_MissionIntro", [0,-2] select isDedicated];
+
 	}; // Fn_Create_MissionIntro
 	
 	
 	Fn_MissionIntro_MakeEnemies = {
-		if (hasInterface) then {
-			remoteExecCall ["Fn_Local_MakeEnemies"];
-		} else {
-			remoteExecCall ["Fn_Local_MakeEnemies", -2];
-		};
+		remoteExecCall ["Fn_Local_MakeEnemies", [0,-2] select isDedicated];
 		EAST setFriend [WEST, 0];
 		WEST setFriend [EAST, 0];
 	};
