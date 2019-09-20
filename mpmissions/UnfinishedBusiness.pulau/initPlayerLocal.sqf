@@ -26,10 +26,11 @@ informator_told = false;
 waitUntil { !isNull player }; // Wait for player to initialize
 
 Fn_Local_WaitPublicVariables = {
+	params ['_vars'];
 	private _done = true;
 	{
 		if ( isNil _x) then { _done = false; };
-	} forEach ["mission_requested", "mission_plane_send"];
+	} forEach _vars;
 	_done;
 };
 
@@ -37,7 +38,7 @@ Fn_Local_WaitPublicVariables = {
 {if (_x find "wp_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
 {if (_x find "respawn_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
 
-waitUntil { sleep 1; systemChat "Wait for sync..."; call Fn_Local_WaitPublicVariables; }; 
+waitUntil { sleep 1; systemChat "Wait for sync..."; [["mission_requested", "mission_plane_send"]] call Fn_Local_WaitPublicVariables; }; 
 
 if (!mission_requested) then {
 	if ((roleDescription player) == "Team Leader") then {
@@ -46,6 +47,9 @@ if (!mission_requested) then {
 	[] call BrezBlock_fnc_WaitForStart;
 };
 
+waitUntil { sleep 1; systemChat "Wait for sync..."; [["D_FRACTION_WEST", "D_FRACTION_EAST", "D_FRACTION_CIV", "D_FRACTION_INDEP"]] call Fn_Local_WaitPublicVariables; }; 
+
+execVM "gear\player\init.sqf";
 
 player setVariable ["weapon_fiered", false, false];
 player setVariable ["is_civilian", false, true];
