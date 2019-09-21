@@ -18,7 +18,7 @@
 
 real_weather_init = false;
 
-D_LOCATIONS = ['Gurun', 'Monyet']; //, 'Monyet'];
+D_LOCATIONS = ['Gurun', 'Monyet'];
 
 D_DEBUG = true;
 
@@ -247,7 +247,6 @@ if (isServer) then {
 	#include "missions\west\planning.sqf";
 	#include "missions\west\hiddenstash.sqf";
 	#include "missions\west\safehouse.sqf";
-	#include "missions\west\supply.sqf";
 	#include "missions\west\intel.sqf";
 	
 	waitUntil {real_weather_init};
@@ -289,7 +288,7 @@ if (isServer) then {
 	// Create base marker
 	[getPos us_liberty_01] call Fn_West_MissionPlanning_CreateMarkers_Base;
 	
-	[west_base_suppy_01, "base"] call Fn_West_Populate_Supply;
+	[west_base_suppy_01, "base", west, D_FRACTION_WEST] call BrezBlock_fnc_PopulateBaseSupply;
 	
 	[[us_liberty_01, "Land_Destroyer_01_hull_04_F"] call BIS_fnc_Destroyer01GetShipPart, 1, false] call BIS_fnc_Destroyer01AnimateHangarDoors;
 	([us_liberty_01, "ShipFlag_US_F"] call bis_fnc_destroyer01GetShipPart) setFlagTexture (getText (configFile >> "CfgFactionClasses" >> D_FRACTION_WEST >> "flag"));

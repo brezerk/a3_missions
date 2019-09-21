@@ -160,6 +160,7 @@ class CfgFunctions {
 	{
 		class common
 		{
+			class PopulateBaseSupply {file = "addons\brezblock\utils\populate_base_supply.sqf";};
 			class WaitForStart {file = "addons\brezblock\utils\wait_for_start.sqf";};
 			class Get_RND_Index {file = "addons\brezblock\utils\get_rnd_index.sqf";};
 			class Attach_Hold_Action {file = "addons\brezblock\actions\attach_hold.sqf";};

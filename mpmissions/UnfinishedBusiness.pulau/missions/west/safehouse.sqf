@@ -64,7 +64,7 @@ if (isServer) then {
 		private _pos = [_markerPos, 0, 35, 4, 0, 0, 0] call BIS_fnc_findSafePos;
 		private _obj = "B_supplyCrate_F" createVehicle (_pos);
 		
-		[_obj, "safe"] call Fn_West_Populate_Supply;
+		[west_base_suppy_01, "safe", west, D_FRACTION_WEST] call BrezBlock_fnc_PopulateBaseSupply;
 		
 		_obj addItemCargoGlobal ["ItemCompass", 3];
 		_obj addItemCargoGlobal ["ItemMap", 3];

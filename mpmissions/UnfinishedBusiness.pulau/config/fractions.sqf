@@ -81,13 +81,10 @@
 			['Autorifleman','B_Soldier_AR_F'],
 			['Sniper', 		'B_sniper_F'],
 			['Spotter', 	'B_spotter_F'],
-			['stash_base_weapon', 	[
-					["arifle_MX_F",				  2],
-					["arifle_MX_SW_F",			  2],
-					["Laserdesignator",			  1]
-				]
-			],
-			['stash_base_mags', 	[
+			['stash_base_items', 	[
+					["arifle_MX_F",				  2 ],
+					["arifle_MX_SW_F",			  2 ],
+					["Laserdesignator",			  1 ],
 					["30Rnd_65x39_caseless_mag",  24],
 					["16Rnd_9x21_Mag",			  16],
 					["30Rnd_45ACP_Mag_SMG_01",	  16],
@@ -95,10 +92,7 @@
 					["7Rnd_408_Mag",			  10],
 					["100Rnd_65x39_caseless_mag", 16],
 					["1Rnd_HE_Grenade_shell",	  20],
-					["3Rnd_HE_Grenade_shell",	  10]
-				]
-			],
-			['stash_base_items', 	[
+					["3Rnd_HE_Grenade_shell",	  10],
 					["Chemlight_green",			  20],
 					["Laserbatteries",			  3 ],
 					["HandGrenade",				  20],
@@ -108,23 +102,17 @@
 					["bipod_01_F_blk",			  1 ]
 				]
 			],
-			['stash_safe_weapon', 	[
-					["launch_NLAW_F",			  2],
-					["arifle_MX_F",				  3],
-					["arifle_MX_SW_F",			  3]
-				]
-			],
-			['stash_safe_mags', 	[
+			['stash_safe_items', 	[
+					["launch_NLAW_F",			  2 ],
+					["arifle_MX_F",				  3 ],
+					["arifle_MX_SW_F",			  3 ],
 					["30Rnd_65x39_caseless_mag",  12],
 					["16Rnd_9x21_Mag",			  4 ],
 					["30Rnd_45ACP_Mag_SMG_01",	  8 ],
 					["20Rnd_762x51_Mag",		  6 ],
 					["100Rnd_65x39_caseless_mag", 4 ],
 					["NLAW_F",					  4 ],
-					["1Rnd_HE_Grenade_shell",	  8 ]
-				]
-			],
-			['stash_safe_items', 	[
+					["1Rnd_HE_Grenade_shell",	  8 ],
 					["Chemlight_green",			  8 ],
 					["HandGrenade",				  10],
 					["SmokeShell",				  4 ],
@@ -263,6 +251,33 @@
 			'transport', [
 					'CUP_O_Ural_SLA',
 					'CUP_O_Ural_Open_SLA']
+			],
+			[
+			'heli', [
+					'O_Heli_Light_02_unarmed_F']
+			],
+			[
+			'stash_base_items', [
+				["launch_RPG32_F",				 4 ],
+				["arifle_Katiba_F",				 6 ],
+				["LMG_Zafir_F",					 5 ],
+				["16Rnd_9x21_Mag",				 25],
+				["30Rnd_65x39_caseless_green",	 15],
+				["10Rnd_762x54_Mag",			 15],
+				["150Rnd_762x54_Box",			 8 ],
+				["1Rnd_HE_Grenade_shell",		 10],
+				["Chemlight_red",				 10],
+				["RPG32_F",						 5 ],
+				["RPG32_HE_F",					 5 ],
+				["Laserbatteries",				 4 ],
+				["HandGrenade",					 10],
+				["SmokeShell",					 10],
+				["SmokeShellRed",				 10],
+				["30Rnd_9x21_Mag_SMG_02",		 16],
+				["Laserdesignator_02",			 2 ],
+				["acc_flashlight",				 4 ],
+				["bipod_02_F_blk",				 4 ],
+				["B_FieldPack_ocamo",			 10]]
 			]
 		]
 	],
@@ -270,47 +285,95 @@
 		'OPF_F', 'CSAT', [
 			[
 			'patrol', [
-					'CUP_O_sla_Soldier',
-					'CUP_O_SLA_Soldier_Backpack',
-					'CUP_O_sla_Soldier_GL',
-					'CUP_O_sla_Soldier_AR',
-					'CUP_O_sla_Medic',
-					'CUP_O_sla_Soldier_LAT']
+					'O_Soldier_F',
+					'O_Soldier_lite_F',
+					'O_Soldier_SL_F',
+					'O_Soldier_TL_F',
+					'O_Soldier_GMG_F',
+					'O_Soldier_HMG_F',
+					'O_Soldier_AMG_F',
+					'O_Soldier_GL_F',
+					'O_Soldier_AR_F',
+					'O_Soldier_A_F',
+					'O_Soldier_AAR_F',
+					'O_medic_F']
 			],
 			[
 			'garrison', [
-					'CUP_O_sla_Soldier',
-					'CUP_O_SLA_Soldier_Backpack',
-					'CUP_O_sla_Soldier_GL',
-					'CUP_O_sla_Soldier_AR',
-					'CUP_O_sla_Medic',
-					'CUP_O_sla_Soldier_AT',
-					'CUP_O_sla_Sniper',
-					'CUP_O_sla_Soldier_MG',
-					'CUP_O_sla_Engineer',
-					'CUP_O_sla_Soldier_AMG',
-					'CUP_O_sla_Soldier_LAT']
+					'O_Soldier_F',
+					'O_Soldier_lite_F',
+					'O_Soldier_SL_F',
+					'O_Soldier_TL_F',
+					'O_Soldier_GMG_F',
+					'O_Soldier_HMG_F',
+					'O_Soldier_AMG_F',
+					'O_Soldier_GL_F',
+					'O_Soldier_AR_F',
+					'O_Soldier_A_F',
+					'O_Soldier_AAR_F',
+					'O_Soldier_AAA_F',
+					'O_Soldier_AAT_F',
+					'O_emgineer_F',
+					'O_soldier_exp_F',
+					'O_soldier_M_F',
+					'O_Soldier_AA_F',
+					'O_Soldier_AT_F',
+					'O_soldier_UAV_F',
+					'O_Soldier_LAT_F',
+					'O_officer_F',
+					'O_medic_F']
 			],
 			[
 			'cars', [
-					'CUP_O_UAZ_AGS30_SLA',
-					'CUP_O_UAZ_MG_SLA']
+					'O_MRAP_02_gmg_F',
+					'O_MRAP_02_hmg_F']
 			],
 			[
 			'light', [
-					'CUP_O_BMP2_SLA',
-					'CUP_O_BRDM2_SLA',
-					'CUP_O_BTR60_SLA']
+					'O_APC_Wheeled_02_rcws_v2_F',
+					'O_APC_Tracked_02_cannon_F']
 			],
 			[
 			'heavy', [
-					'CUP_O_T55_SLA',
-					'CUP_O_T72_SLA']
+					'O_MBT_02_cannon_F']
+			],
+			[
+			'antiair', [
+					'O_APC_Tracked_02_AA_F']
 			],
 			[
 			'transport', [
-					'CUP_O_Ural_SLA',
-					'CUP_O_Ural_Open_SLA']
+					'O_Truck_03_transport_F',
+					'O_Truck_03_covered_F',
+					'O_Truck_02_transport_F',
+					'O_Truck_02_covered_F']
+			],
+			[
+			'heli', [
+					'O_Heli_Light_02_unarmed_F']
+			],
+			[
+			'stash_base_items', [
+				["launch_RPG32_F",				 4 ],
+				["arifle_Katiba_F",				 6 ],
+				["LMG_Zafir_F",					 5 ],
+				["16Rnd_9x21_Mag",				 25],
+				["30Rnd_65x39_caseless_green",	 15],
+				["10Rnd_762x54_Mag",			 15],
+				["150Rnd_762x54_Box",			 8 ],
+				["1Rnd_HE_Grenade_shell",		 10],
+				["Chemlight_red",				 10],
+				["RPG32_F",						 5 ],
+				["RPG32_HE_F",					 5 ],
+				["Laserbatteries",				 4 ],
+				["HandGrenade",					 10],
+				["SmokeShell",					 10],
+				["SmokeShellRed",				 10],
+				["30Rnd_9x21_Mag_SMG_02",		 16],
+				["Laserdesignator_02",			 2 ],
+				["acc_flashlight",				 4 ],
+				["bipod_02_F_blk",				 4 ],
+				["B_FieldPack_ocamo",			 10]]
 			]
 		]
 	]
@@ -516,6 +579,10 @@
 			'transport', [
 					'I_Truck_02_transport_F',
 					'I_Truck_02_covered_F']
+			],
+			[
+			'heli', [
+					'I_Heli_light_03_dynamicLoadout_F']
 			]
 		]
 	]
