@@ -204,35 +204,135 @@
 		]
 	],
 	[
-		'CIV_F', 'CUP Civilian', [
-				[
-				'mens', [
-						'C_man_polo_1_F',
-						'C_man_polo_2_F',
-						'C_man_polo_3_F',
-						'C_man_polo_4_F',
-						'C_man_polo_5_F',
-						'C_man_polo_6_F',
-						'C_man_1_1_F',
-						'C_man_1_2_F',
-						'C_man_1_3_F']
-				],
-				[
-				'cars', [
-						'C_Van_01_box_F',
-						'C_Van_01_transport_F',
-						'C_SUV_01_F',
-						'C_Offroad_01_F',
-						'C_Truck_02_fuel_F',
-						'C_Truck_02_box_F',
-						'C_Truck_02_transport_F',
-						'C_Truck_02_covered_F']
-				],
-				[
-				'boats', [
-						'C_Boat_Civil_01_F',
-						'C_Rubberboat',
-						'C_Boat_Civil_01_rescue_F']
+		'CIV_F', '', [
+			[
+			'mens', [
+					'C_man_p_beggar_F',
+					'C_man_p_beggar_F_afro',
+					'C_man_polo_1_F',
+					'C_man_polo_2_F',
+					'C_man_polo_3_F',
+					'C_man_polo_4_F',
+					'C_man_polo_5_F',
+					'C_man_polo_6_F',
+					'C_man_polo_1_F_afro',
+					'C_man_polo_2_F_afro',
+					'C_man_polo_3_F_afro',
+					'C_man_polo_4_F_afro',
+					'C_man_polo_5_F_afro',
+					'C_man_polo_6_F_afro',
+					'C_man_shorts_1_F',
+					'C_man_p_fugitive_F',
+					'C_man_p_fugitive_F_afro',
+					'C_man_p_shorts_1_F',
+					'C_man_p_shorts_1_F_afro',
+					'C_man_funter_1_F',
+					'C_man_shorts_2_F',
+					'C_man_shorts_1_F_afro',
+					'C_man_shorts_2_F_afro',
+					'C_man_shorts_3_F_afro',
+					'C_man_shorts_4_F_afro',
+					'C_man_shorts_3_F',
+					'C_man_shorts_4_F',
+					'C_man_w_worker_F',
+					'C_man_1_1_F',
+					'C_man_1_2_F',
+					'C_man_1_3_F']
+			],
+			[
+			'cars', [
+					'C_Van_01_box_F',
+					'C_Van_01_fuel_F',
+					'C_Van_01_transport_F',
+					'C_SUV_01_F',
+					'C_Offroad_01_F',
+					'C_Hatchback_01_F',
+					'C_Hatchback_01_sport_F',
+					'C_Offroad_01_F',
+					'C_Offroad_01_repair_F',
+					'C_Truck_02_fuel_F',
+					'C_Truck_02_box_F',
+					'C_Truck_02_transport_F',
+					'C_Truck_02_covered_F']
+			],
+			[
+			'boats', [
+					'C_Boat_Civil_01_F',
+					'C_Boat_Civil_01_police_F',
+					'C_Rubberboat',
+					'C_Boat_Civil_01_rescue_F']
+			],
+			['stash_base_items', 	[
+					["arifle_TRG20_F",			  5 ],
+					["arifle_TRG21_F",            2 ],
+					["arifle_Mk20_F",             2 ],
+					["hgun_ACPC2_F",              4 ],
+					["9Rnd_45ACP_Mag",            9 ],
+					["G_Carryall_Ammo",			  5 ],
+					["H_Booniehat_khk",			  1 ],
+					["30Rnd_556x45_Stanag",       24],
+					["V_Chestrig_oli",			  5 ],
+					["LMG_Mk200_F",         	  1 ],
+					["200Rnd_65x39_cased_Box",	  10],
+					["launch_MRAWS_olive_rail_F", 2 ],
+					["MRAWS_HEAT_F",			  6 ],
+					["H_Bandanna_khk",            2 ],
+					["1Rnd_HE_Grenade_shell",	  3 ],
+					["V_TacVest_blk",	          3 ],
+					["Chemlight_green",			  10],
+					["bipod_03_F_blk",			  3 ],
+					["HandGrenade",				  6 ],
+					["MiniGrenade",               4 ],
+					["SmokeShell",				  10],
+					["SmokeShellGreen",			  10],
+					["acc_flashlight",			  2 ],
+					["I_HMG_01_support_F",        5 ],
+					["Medikit",                   2 ],
+					["H_Cap_oli",                 3 ],
+					["optic_ACO_grn",             1 ],
+					["MineDetector",              2 ],
+					["ToolKit",                   1 ],
+					["bipod_01_F_blk",			  1 ]
+				]
+			],
+			['stash_ship_items', 	[
+					["arifle_Mk20C_F",			  5 ],
+					["hgun_PDW2000_F",            2 ],
+					["arifle_Mk20_GL_F",          2 ],
+					["hgun_ACPC2_F",              4 ],
+					["9Rnd_45ACP_Mag",            9 ],
+					["30Rnd_9x21_Yellow_Mag",     10],
+					["G_Carryall_Ammo",			  5 ],
+					["Titan_AA",                  4 ],
+					["V_Chestrig_oli",			  1 ],
+					["30Rnd_556x45_Stanag",       18],
+					["V_PlateCarrierIA2_dgtl",	  5 ],
+					["LMG_Mk200_F",         	  1 ],
+					["200Rnd_65x39_cased_Box",	  10],
+					["launch_MRAWS_olive_rail_F", 2 ],
+					["MRAWS_HEAT_F",			  6 ],
+					["V_PlateCarrierIAGL_dgtl",   2 ],
+					["1Rnd_HE_Grenade_shell",	  20],
+					["H_HelmetIA_net",	          3 ],
+					["Chemlight_green",			  20],
+					["bipod_03_F_blk",			  3 ],
+					["HandGrenade",				  6 ],
+					["MiniGrenade",               4 ],
+					["SmokeShell",				  10],
+					["SmokeShellGreen",			  10],
+					["acc_flashlight",			  2 ],
+					["Medikit",                   2 ],
+					["H_HelmetIA",                3 ],
+					["optic_ACO_grn",             5 ],
+					["I_Fieldpack_oli_AA",        5 ],
+					["MineDetector",              2 ],
+					["ToolKit",                   1 ],
+					["NVGoggles_INDEP",           7 ],
+					["bipod_01_F_blk",			  1 ],
+					["V_RebreatherIA",			  4 ],
+					["I_Assault_Diver",			  4 ],
+					["G_I_Diving",				  4 ]
+				]
 			]
 		]
 	]
@@ -356,6 +456,14 @@
 					'O_officer_F',
 					'O_medic_F']
 			],
+			['Team Leader', 'O_Soldier_TL_F'],
+			['Corpsman', 	'O_medic_F'],
+			['Grenadier', 	'O_Soldier_GL_F'],
+			['Rifleman', 	'O_Soldier_F'],
+			['Squad Leader','O_Soldier_SL_F'],
+			['Autorifleman','O_Soldier_AR_F'],
+			['Sniper', 		'O_sniper_F'],
+			['Spotter', 	'O_spotter_F'],
 			[
 			'cars', [
 					'O_MRAP_02_F',

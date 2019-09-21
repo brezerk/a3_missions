@@ -63,7 +63,7 @@ if (isServer) then {
 		private _pos = [_markerPos, 0, 35, 4, 0, 0, 0] call BIS_fnc_findSafePos;
 		private _obj = "B_supplyCrate_F" createVehicle (_pos);
 		
-		[_obj, "base", west, D_FRACTION_WEST] call BrezBlock_fnc_PopulateBaseSupply;		
+		[_obj, "crash", west, D_FRACTION_WEST] call BrezBlock_fnc_PopulateBaseSupply;		
 		_obj;
 	};
 	

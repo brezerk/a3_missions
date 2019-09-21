@@ -216,17 +216,19 @@ player addEventHandler
    {
 		if (!alive us_airplane_01) then {
 			call Fn_Local_FailTasks;
+
+
 			switch (playerSide) do
 			{
 				case east:
 				{
-					[] execVM "gear\east.sqf";
+					[] execVM "gear\player\east.sqf";
 					player setPos getMarkerPos "respawn_east";
 					call Fn_Local_Create_SCAT_MissionIntro;
 				};
 				case civilian:
 				{
-					[] execVM "gear\civilian.sqf";
+					[] execVM "gear\player\civ.sqf";
 					private _civ_spawn_markers = [];
 					{
 						if (_x find "respawn_civilian_" >= 0) then {
@@ -242,14 +244,14 @@ player addEventHandler
 				case west:
 				{
 					private _pos = getMarkerPos "respawn_west";
-					[] execVM "gear\west.sqf";
+					[] execVM "gear\player\init.sqf";
 					player setPos [_pos select 0, _pos select 1, 8];
 					call Fn_Local_Create_RescueMission;
 				};
 			};
 		} else {
 			private _pos = getMarkerPos "respawn_west";
-			[] execVM "gear\west.sqf";
+			[] execVM "gear\player\init.sqf";
 			player setPos [_pos select 0, _pos select 1, 8];
 		};
    }

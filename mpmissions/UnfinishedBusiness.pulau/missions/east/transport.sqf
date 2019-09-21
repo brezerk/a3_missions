@@ -30,7 +30,7 @@ if (isServer) then {
         private ["_pos", "_vec"];
         _vec = objNull;
         private _class = (selectRandom ([east, D_FRACTION_EAST, "cars"] call Fn_Config_GetFraction_Units));
-        pos = getMarkerPos _spawnposition findEmptyPosition [0, 15, _vec];
+        _pos = getMarkerPos _spawnposition findEmptyPosition [0, 15, _class];
         _vec = createVehicle [_class, _pos, [], 0];
         _vec setDir (markerDir _spawnposition);
         _vec;

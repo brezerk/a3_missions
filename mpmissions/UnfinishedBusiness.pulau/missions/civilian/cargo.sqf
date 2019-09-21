@@ -1,4 +1,4 @@
-/***************************************************************************
+ /***************************************************************************
  *   Copyright (C) 2008-2019 by Oleksii S. Malakhov <brezerk@gmail.com>    *
  *                                                                         *
  *   This program is free software: you can redistribute it and/or modify  *
@@ -43,18 +43,6 @@ if (isServer) then {
 
 			[_markerPos] call Fn_Task_Civilian_WaponStash_SpawnRandomCargo;
 		} forEach avaliable_pois;
-		
-		
-		/*
-		[[
-			synd_boat_01,
-			synd_boat_02
-		]] call Fn_Patrols_Create_Random_SeaWaypoints;*/
-		
-		//locationFloodedShip = _markerPos;
-		//publicVariable "locationFloodedShip";
-		
-		//call Fn_Task_Spawn_Boats;
 	};
 	
 	Fn_Task_Civilian_WaponStash_SpawnRandomCargo = {
@@ -62,44 +50,7 @@ if (isServer) then {
 		private ["_obj"];
 		
 		_obj = "Box_FIA_Wps_F" createVehicle (_markerPos);
-		
-		clearWeaponCargoGlobal _obj;
-		clearMagazineCargoGlobal _obj;
-		clearItemCargoGlobal _obj;
-		clearBackpackCargoGlobal _obj;
-			
-		_obj addWeaponCargoGlobal ["CUP_hgun_M9", 7];
-		_obj addWeaponCargoGlobal ["Binocular", 3];
-		_obj addWeaponCargoGlobal ["CUP_arifle_AK74", 5];
-		_obj addWeaponCargoGlobal ["CUP_arifle_AKS74U", 7];
-		_obj addWeaponCargoGlobal ["CUP_sgun_M1014", 25];
-		_obj addMagazineCargoGlobal ["CUP_15Rnd_9x19_M9", 25];
-		_obj addMagazineCargoGlobal ["CUP_30Rnd_545x39_AK_M", 11];
-		_obj addMagazineCargoGlobal ["CUP_30Rnd_545x39_AK74_plum_M", 15];
-		_obj addMagazineCargoGlobal ["CUP_8Rnd_B_Beneli_74Slug", 25];
-		_obj addMagazineCargoGlobal ["CUP_8Rnd_B_Beneli_74Pellets", 25];
-		_obj addItemCargoGlobal ["ACE_EarPlugs", 10];
-		_obj addItemCargoGlobal ["ItemCompass", 4];
-		_obj addItemCargoGlobal ["ACE_EntrenchingTool", 4];
-		_obj addItemCargoGlobal ["ACE_fieldDressing", 20];
-		_obj addItemCargoGlobal ["ACE_morphine", 10];
-		_obj addItemCargoGlobal ["ACE_epinephrine", 6];
-		_obj addItemCargoGlobal ["ACE_bloodIV", 20];
-		_obj addBackpackCargoGlobal ["B_Kitbag_tan", 5];
-			
-		if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
-				_obj addItemCargoGlobal ["ACRE_PRC148", 2];
-				_obj addItemCargoGlobal ["ACRE_PRC343", 6];
-			} else {
-				if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
-					_obj addItemCargoGlobal ["tf_anprc148jem", 2];
-					_obj addItemCargoGlobal ["tf_anprc152", 6];
-				} else {
-					comment "Fallback to native arma3 radio";
-					_obj addItemCargoGlobal ["ItemRadio", 6];
-				};
-		};
-
+		[_obj, "base", civilian, D_FRACTION_CIV] call BrezBlock_fnc_PopulateBaseSupply;
 	};
 
 	Fn_Task_Create_Civilian_FloodedShip = {
@@ -132,7 +83,9 @@ if (isServer) then {
 				_obj addItemCargoGlobal ["V_RebreatherIA", 5];
 				_obj addItemCargoGlobal ["I_Assault_Diver", 5];
 				_obj addItemCargoGlobal ["G_I_Diving", 5];
-				_obj addItemCargoGlobal ["ACE_EarPlugs", 5];
+				if (isClass(configFile >> "CfgPatches" >> "ace_main")) then {
+					_obj addItemCargoGlobal ["ACE_EarPlugs", 5];
+				};
 			} forEach _myPlaces;
 		} forEach _poi;
 	};
@@ -184,42 +137,7 @@ if (isServer) then {
 				};
 			};
 			_obj = _obj select 0;
-			_obj addWeaponCargoGlobal ["CUP_hgun_M9", 2];
-			_obj addWeaponCargoGlobal ["Binocular", 3];
-			_obj addWeaponCargoGlobal ["CUP_arifle_AK74", 5];
-			_obj addWeaponCargoGlobal ["CUP_arifle_AKS74U", 7];
-			_obj addWeaponCargoGlobal ["CUP_launch_Igla", 2];
-			_obj addWeaponCargoGlobal ["CUP_launch_RPG7V", 2];
-			_obj addMagazineCargoGlobal ["CUP_15Rnd_9x19_M9", 10];
-			_obj addMagazineCargoGlobal ["CUP_30Rnd_545x39_AK_M", 11];
-			_obj addMagazineCargoGlobal ["CUP_30Rnd_545x39_AK74_plum_M", 15];
-			_obj addMagazineCargoGlobal ["CUP_20Rnd_762x51_DMR", 5];
-			_obj addMagazineCargoGlobal ["CUP_OG7_M", 5];
-			_obj addMagazineCargoGlobal ["CUP_PG7V_M", 5];
-			_obj addItemCargoGlobal ["ACE_EarPlugs", 10];
-			_obj addItemCargoGlobal ["ItemCompass", 4];
-			_obj addItemCargoGlobal ["ACE_EntrenchingTool", 4];
-			_obj addItemCargoGlobal ["ACE_fieldDressing", 20];
-			_obj addItemCargoGlobal ["ACE_morphine", 10];
-			_obj addItemCargoGlobal ["ACE_epinephrine", 6];
-			_obj addItemCargoGlobal ["ACE_bloodIV", 20];
-			_obj addItemCargoGlobal ["ClaymoreDirectionalMine_Remote_Mag", 6];
-			_obj addItemCargoGlobal ["DemoCharge_Remote_Mag", 4];
-			_obj addBackpackCargoGlobal ["B_Kitbag_tan", 5];
-			
-				
-			if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
-					_obj addItemCargoGlobal ["ACRE_PRC148", 2];
-					_obj addItemCargoGlobal ["ACRE_PRC343", 6];
-				} else {
-					if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
-						_obj addItemCargoGlobal ["tf_anprc148jem", 2];
-						_obj addItemCargoGlobal ["tf_anprc152", 6];
-					} else {
-						comment "Fallback to native arma3 radio";
-						_obj addItemCargoGlobal ["ItemRadio", 6];
-					};
-			};
+			[_obj, "ship", civilian, D_FRACTION_CIV] call BrezBlock_fnc_PopulateBaseSupply;
 			[["Done", "PLAIN"]] remoteExec ["cutText", _caller];
 		};
 	};

@@ -35,11 +35,10 @@ if (isServer) then {
 		
 		us_airplane_01 = createVehicle [_class, (getPos land_00), [], 0, "CAN_COLLIDE"];
 		us_airplane_01 attachTo [land_00, [0, 0, 0]];
-		us_airplane_01 setDir (getDir land_00);
 		detach us_airplane_01;
+		us_airplane_01 setDir (getDir land_00);
 		
 		private _grp = createGroup [west, true];
-		
 		private _unit = _grp createUnit [_crew_class, us_airplane_01, [], 0, "CARGO"];
 		_unit moveInDriver us_airplane_01;
 		_unit assignAsDriver us_airplane_01;
@@ -49,9 +48,10 @@ if (isServer) then {
 		
 		us_heli_01 = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_HELI), (getPos land_01), [], 0, "CAN_COLLIDE"];
 		us_heli_01 attachTo [land_01, [0, 0, 0]];
+		detach us_heli_01;
 		us_heli_01 setDir ([getPos (us_airplane_01), getPos(us_heli_01)] call BIS_fnc_dirTo);
 		us_heli_01 setVehicleLock "LOCKED";
-		detach us_heli_01;
+		
 		
 		us_boat_01 = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_BOATS), [0, 0, 0], [], 0, "CAN_COLLIDE"];
 		west_rack_01 setVehicleCargo us_boat_01;
@@ -86,15 +86,16 @@ if (isServer) then {
 			""
 		];
 		
-		//FIXME
-		_trg = createTrigger ["EmptyDetector", getMarkerPos "mrk_east_base_02"];
-		_trg setTriggerArea [1500, 1500, 0, false];
-		_trg setTriggerActivation ["WEST", "PRESENT", false];
-		_trg setTriggerStatements [
-			"this",
-			"call Fn_MissionIntro_Blowup; deleteVehicle thisTrigger;",
-			""
-		];
+		if (D_START_TYPE == 0) then {
+			_trg = createTrigger ["EmptyDetector", getMarkerPos "mrk_east_base_02"];
+			_trg setTriggerArea [1100, 1100, 0, false];
+			_trg setTriggerActivation ["WEST", "PRESENT", false];
+			_trg setTriggerStatements [
+				"this",
+				"execVM 'missions\intro_blowup.sqf'; deleteVehicle thisTrigger;",
+				""
+			];
+		};
 			
 		remoteExecCall ["Fn_Local_Create_MissionIntro", [0,-2] select isDedicated];
 
@@ -105,12 +106,9 @@ if (isServer) then {
 		remoteExecCall ["Fn_Local_MakeEnemies", [0,-2] select isDedicated];
 		EAST setFriend [WEST, 0];
 		WEST setFriend [EAST, 0];
-	};
-	
-	Fn_MissionIntro_Blowup = {
-		private _expl1 = "DemoCharge_Remote_Ammo_Scripted" createVehicle (position us_airplane_01);
-		_expl1 attachTo [us_airplane_01, [0.0,0.0,-2.0]];
-		_expl1 setDamage 1;
+		if (D_START_TYPE == 1) then {
+			execVM 'missions\intro_blowup.sqf';
+		};
 	};
 
 	Fn_MissionIntro_Evaluate = {
@@ -138,7 +136,7 @@ if (isServer) then {
 			};
 		} forEach crew us_airplane_01;
 		private _group = group driver us_airplane_01;
-		private _wp = _group addWaypoint [getMarkerPos "mrk_flight_waypoint", 0];
+		private _wp = _group addWaypoint [getMarkerPos "mrk_airfield", 0];
 		_wp setWaypointCombatMode "YELLOW";
 		_wp setWaypointBehaviour "SAFE";
 		_wp setWaypointSpeed "LIMITED";

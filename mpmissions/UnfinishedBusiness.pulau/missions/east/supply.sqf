@@ -44,7 +44,7 @@ if (isServer) then {
 	*/
 	Fn_Spawn_East_SupplyBox = {
 		params ['_pos'];
-		private _obj = "B_supplyCrate_F" createVehicle _pos;
+		private _obj = "B_supplyCrate_F" createVehicle (_pos);
 		
 		[_obj, "base", east, D_FRACTION_EAST] call BrezBlock_fnc_PopulateBaseSupply;
 		_obj;

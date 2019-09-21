@@ -3,7 +3,7 @@
 	<Package name="UnfinishedBusiness">
 		<Container name="l18n">
 			<Key ID="STR_ONLOAD_NAME">
-				<Original>Unfinished Business v0.9.417</Original>
+				<Original>Unfinished Business v0.9.514</Original>
 			</Key>		
 			<Key ID="STR_ONLOAD_INFO_01">
 				<Original>US Special Forces squad goes to perform a peacekeeping mission</Original>
@@ -815,8 +815,8 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>Є у кожного</Russian>
 			</Key>
 			<Key ID="FROM_01_NAVTOOS_SELECT_02">
-				<Original>Only the commanders have</Original>
-				<English>Only the commanders have</English>
+				<Original>Only the leaders have</Original>
+				<English>Only the leaders have</English>
 				<Russian>Тільки у командирів</Russian>
 			</Key>
 			<Key ID="FROM_01_NAVTOOS_SELECT_03">

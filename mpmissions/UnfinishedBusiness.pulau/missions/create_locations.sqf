@@ -87,6 +87,7 @@ if (isServer) then {
 	//Spawn stashes
 	//FIXME: CUP and ACE deps
 	//[_crashSitePos] call Fn_Task_West_Hidden_WaponStash;
+	
 	call Fn_Task_Create_Civilian_WaponStash;
 	call Fn_Task_Create_Civilian_FloodedShip;
 	

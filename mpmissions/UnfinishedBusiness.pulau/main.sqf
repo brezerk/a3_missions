@@ -293,6 +293,7 @@ if (isServer) then {
 	[getPos us_liberty_01] call Fn_West_MissionPlanning_CreateMarkers_Base;
 	
 	[west_base_suppy_01, "base", west, D_FRACTION_WEST] call BrezBlock_fnc_PopulateBaseSupply;
+	call Fn_Spawn_East_SupplyBoxes;
 	
 	[[us_liberty_01, "Land_Destroyer_01_hull_04_F"] call BIS_fnc_Destroyer01GetShipPart, 1, false] call BIS_fnc_Destroyer01AnimateHangarDoors;
 	([us_liberty_01, "ShipFlag_US_F"] call bis_fnc_destroyer01GetShipPart) setFlagTexture (getText (configFile >> "CfgFactionClasses" >> D_FRACTION_WEST >> "flag"));
