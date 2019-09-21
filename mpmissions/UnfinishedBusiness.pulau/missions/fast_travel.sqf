@@ -31,7 +31,7 @@ if (isServer) then {
 	us_airplane_01 setPosASL [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 1500)];
 	us_airplane_01 setDir (markerDir "mrk_flight_waypoint");
 	us_airplane_01 setVelocity _vel;
-	_group = group us_airplane_01;
+	_group = group driver us_airplane_01;
 	deleteWaypoint [_group, 0]; 
 	_wp = _group addWaypoint [getMarkerPos "mrk_airfield", 0, 0];
 	_wp setWaypointCombatMode "YELLOW";
