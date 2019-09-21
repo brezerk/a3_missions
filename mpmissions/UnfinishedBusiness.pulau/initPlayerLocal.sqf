@@ -38,7 +38,7 @@ Fn_Local_WaitPublicVariables = {
 {if (_x find "wp_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
 {if (_x find "respawn_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
 
-waitUntil { sleep 1; systemChat "Wait for sync..."; [["mission_requested", "mission_plane_send"]] call Fn_Local_WaitPublicVariables; }; 
+waitUntil { sleep 1; systemChat "Wait for init sync..."; [["mission_requested", "mission_plane_send"]] call Fn_Local_WaitPublicVariables; }; 
 
 if (!mission_requested) then {
 	if (((roleDescription player) == "Team Leader") || (D_DEBUG)) then {
@@ -47,7 +47,7 @@ if (!mission_requested) then {
 	[] call BrezBlock_fnc_WaitForStart;
 };
 
-waitUntil { sleep 1; systemChat "Wait for sync..."; [["D_FRACTION_WEST", "D_FRACTION_EAST", "D_FRACTION_CIV", "D_FRACTION_INDEP", "D_NAVTOOL_MAP", "D_NAVTOOL_COMPASS"]] call Fn_Local_WaitPublicVariables; }; 
+waitUntil { sleep 1; systemChat "Wait for sync..."; [["D_LOCATION", "D_FRACTION_WEST", "D_FRACTION_EAST", "D_FRACTION_CIV", "D_FRACTION_INDEP", "D_NAVTOOL_MAP", "D_NAVTOOL_COMPASS"]] call Fn_Local_WaitPublicVariables; }; 
 
 execVM "gear\player\init.sqf";
 
@@ -75,7 +75,9 @@ player setVariable ["is_civilian", false, true];
 #include "missions\local\independent\objectives.sqf";
 #include "missions\local\civilian\confiscate.sqf";
 
+/* FIXME: CBA-only
 execVM "addons\brezblock\utils\marker_manager.sqf";
+ */
  
 Fn_Local_SetPersonalTaskState = {
 	params['_name', '_state', '_title'];

@@ -115,6 +115,7 @@ if (isServer) then {
 	avaliable_locations = [];
 	avaliable_pois = [];
 	
+	/* FIXME: CBA-only
 	addMissionEventHandler ["PlayerConnected",
 	{
 		// 1.58 bug, idstr is empty on linux host
@@ -129,6 +130,7 @@ if (isServer) then {
 			systemChat "CONNECTED";
 		};
 	}];
+	*/
 	
 	//public basic variables
 	publicVariable "D_LOCATION";
@@ -215,6 +217,8 @@ if (isServer) then {
 			publicVariable "D_FRACTION_EAST";
 			publicVariable "D_FRACTION_INDEP";
 			publicVariable "D_FRACTION_CIV";
+			publicVariable "D_NAVTOOL_MAP";
+			publicVariable "D_NAVTOOL_COMPASS";
 			publicVariable "mission_requested";
 			//Remove unneeded markers
 			{
