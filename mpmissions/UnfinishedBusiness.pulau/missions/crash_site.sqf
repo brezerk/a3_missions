@@ -39,7 +39,7 @@ if (isServer) then {
 		
 		//spawn creater and wreck
 		private _crater = "CraterLong" createVehicle (_markerPos); 
-		private _obj = "Land_UWreck_MV22_F" createVehicle (_markerPos); 
+		private _obj = ([west, D_FRACTION_WEST, "transport_wreck"] call Fn_Config_GetFraction_Units) createVehicle (_markerPos); 
 		_obj attachTo [_crater, [-1.5, -4, 3.5]];
 		//put fire and smoke
 		private _fire = "test_EmptyObjectForFireBig" createVehicle (_markerPos); 

@@ -30,202 +30,17 @@ if (isServer) then {
 	_Fn_BrezBlock_GetRandomVehicle = {
 		params['_side'];
 		private['_units'];
+		private _grp = [];
 		switch(_side) do
 		{
 			case west: {
 			
 			};
 			case east: {
-				switch (D_FRACTION_EAST) do {
-					case "CUP_O_SLA": {
-						switch (D_DIFFICLTY) do {
-							case 0: {
-								_units = [
-									'CUP_O_UAZ_AGS30_SLA',
-									'CUP_O_UAZ_AGS30_SLA'
-								];
-							};
-							case 1: {
-								_units = [
-									'CUP_O_BMP2_SLA',
-									'CUP_O_BRDM2_SLA',
-									'CUP_O_BTR60_SLA'
-								];
-							};
-							case 2: {
-								_units = [
-									'CUP_O_T55_SLA',
-									'CUP_O_T72_SLA'
-								];
-							};
-						};
-					};
-					case "CUP_O_TK": {
-						switch (D_DIFFICLTY) do {
-							case 0: {
-								_units = [
-									'CUP_O_UAZ_AGS30_TKA',
-									'CUP_O_UAZ_AGS30_TKA'
-								];
-							};
-							case 1: {
-								_units = [
-									'CUP_O_BMP2_TKA',
-									'CUP_O_BRDM2_TKA',
-									'CUP_O_BTR60_TKA'
-								];
-							};
-							case 2: {
-								_units = [
-									'CUP_O_T55_TK',
-									'CUP_O_T34_TKA'
-								];
-							};
-						};
-					};
-					case "CUP_O_ChDKZ": {
-						switch (D_DIFFICLTY) do {
-							case 0: {
-								_units = [
-									'CUP_O_UAZ_AGS30_TKA',
-									'CUP_O_UAZ_AGS30_TKA'
-								];
-							};
-							case 1: {
-								_units = [
-									'CUP_O_BMP2_TKA',
-									'CUP_O_BRDM2_TKA',
-									'CUP_O_BTR60_TKA'
-								];
-							};
-							case 2: {
-								_units = [
-									'CUP_O_T55_TK',
-									'CUP_O_T34_TKA'
-								];
-							};
-						};
-					};
-				};
+				_units = D_FRACTION_EAST_UNITS_CARS;
 			};
 			case resistance: {
-				switch (D_FRACTION_INDEP) do
-				{
-					case "CUP_I_RACS": { 
-						switch (D_DIFFICLTY) do {
-							case 0: {
-								_units = [
-									'CUP_I_LR_MG_RACS'
-								];
-							};
-							case 1: {
-								_units = [
-									'CUP_I_LAV25_RACS',
-									'CUP_I_LAV25M240_RACS',
-									'CUP_I_M113_RACS'
-								];
-							};
-							case 2: {
-								_units = [
-									'CUP_I_M60A3_RACS',
-									'CUP_I_T72_RACS'
-								];
-							};
-						};
-					};
-					case "CUP_I_NAPA": { 
-						switch (D_DIFFICLTY) do {
-							case 0: {
-								_units = [
-									'CUP_I_Datsun_PK',
-									'CUP_I_Datsun_PK_Random'
-								];
-							};
-							case 1: {
-								_units = [
-									'CUP_I_BMP2_NAPA',
-									'CUP_I_BRDM2_NAPA'
-								];
-							};
-							case 2: {
-								_units = [
-									'CUP_I_T34_NAPA',
-									'CUP_I_T55_NAPA'
-								];
-							};
-						};
-					};
-					case "CUP_I_TK_GUE": { 
-						switch (D_DIFFICLTY) do {
-							case 0: {
-								_units = [
-									'CUP_I_Datsun_PK',
-									'CUP_I_Datsun_PK_Random'
-								];
-							};
-							case 1: {
-								_units = [
-									'CUP_I_BMP2_NAPA',
-									'CUP_I_BRDM2_NAPA'
-								];
-							};
-							case 2: {
-								_units = [
-									'CUP_I_T34_NAPA',
-									'CUP_I_T55_NAPA'
-								];
-							};
-						};
-					};
-					case "IND_F": {
-						switch (D_DIFFICLTY) do {
-							case 0: {
-								_units = [
-									'CUP_I_LR_MG_AAF',
-									'CUP_I_LR_SF_GMG_AAF',
-									'CUP_I_LR_SF_HMG_AAF'
-								];
-							};
-							case 1: {
-								_units = [
-									'CUP_I_M113_AAF',
-									'CUP_I_APC_tracked_30_cannon_F'
-								];
-							};
-							case 2: {
-								_units = [
-									'CUP_LT_01_AT_F',
-									'CUP_LT_01_cannon_F'
-								];
-							};
-						};
-					};
-					case "IND_G_F": {
-						switch (D_DIFFICLTY) do {
-							case 0: {
-								_units = [
-									'I_G_Offroad_01_AT_F',
-									'I_G_Offroad_01_F',
-									'I_G_Offroad_01_armed_F'
-								];
-							};
-							case 1: {
-								_units = [
-									'I_G_Offroad_01_AT_F',
-									'I_G_Offroad_01_F',
-									'I_G_Offroad_01_armed_F'
-								];
-							};
-							case 2: {
-								_units = [
-									'I_G_Offroad_01_AT_F',
-									'I_G_Offroad_01_F',
-									'I_G_Offroad_01_armed_F'
-								];
-							};
-						};
-					};
-				};
+				_units = D_FRACTION_INDEP_UNITS_CARS;
 			};
 			case civilian: {
 			
@@ -275,16 +90,18 @@ if (isServer) then {
 		_o_pos = [_pos, 5, _dir + 90] call BIS_Fnc_relPos;
 		_o_pos = [_o_pos, 7, _dir] call BIS_Fnc_relPos;
 		
-		private _obj = "Land_WoodenCrate_01_F" createVehicle (_o_pos);
-			
-		clearWeaponCargoGlobal _obj;
-		clearMagazineCargoGlobal _obj;
-		clearItemCargoGlobal _obj;
-		clearBackpackCargoGlobal _obj;
+		if (isClass(configFile >> "CfgPatches" >> "acex_main")) then {
+			private _obj = "Land_WoodenCrate_01_F" createVehicle (_o_pos);
+				
+			clearWeaponCargoGlobal _obj;
+			clearMagazineCargoGlobal _obj;
+			clearItemCargoGlobal _obj;
+			clearBackpackCargoGlobal _obj;
 		
-		_obj addItemCargoGlobal ["ACE_Banana", ((random 15) + 10)];
-		_obj addItemCargoGlobal ["ACE_Humanitarian_Ration", 10];
-		_obj addItemCargoGlobal ["ACE_WaterBottle", 15];
+			_obj addItemCargoGlobal ["ACE_Banana", ((random 15) + 10)];
+			_obj addItemCargoGlobal ["ACE_Humanitarian_Ration", 10];
+			_obj addItemCargoGlobal ["ACE_WaterBottle", 15];
+		};
 		
 		/*
 		_o_pos = [_pos, 1, _dir + 90] call BIS_Fnc_relPos;
@@ -303,13 +120,14 @@ if (isServer) then {
 			case "ColorWEST": { _side = civilian; };
 		};
 		
-		_o_pos = [_pos, -6, _dir + 90] call BIS_Fnc_relPos;
-		_o_pos = [_o_pos, 7, _dir] call BIS_Fnc_relPos;
-		_vehicle = createVehicle [([_side] call _Fn_BrezBlock_GetRandomVehicle), _o_pos];
-		_vehicle setDir (_dir + 180);
-		private _crew = createVehicleCrew (_vehicle);
-		
-		[_pos, _side, 3, 50] call BrezBlock_fnc_CreateDefend;
-
+		if (!isNil "_side") then {
+			_o_pos = [_pos, -6, _dir + 90] call BIS_Fnc_relPos;
+			_o_pos = [_o_pos, 7, _dir] call BIS_Fnc_relPos;
+			_vehicle = createVehicle [([_side] call _Fn_BrezBlock_GetRandomVehicle), _o_pos];
+			_vehicle setDir (_dir + 180);
+			private _crew = createVehicleCrew (_vehicle);
+			
+			[_pos, _side, 3, 50] call BrezBlock_fnc_CreateDefend;
+		};
 	};
 };

@@ -28,8 +28,10 @@ showCinemaBorder false;
 if (sunOrMoon < 1) then {camUseNVG true} else {camUseNVG false};
 
 private _missionLogo = createDialog "MissionLogo";
- 
+
 if (!isNil "_missionLogo") then {
+
+	playMusic (selectRandom ["AmbientTrack01b_F_EXP", "AmbientTrack02b_F_EXP", "AmbientTrack02c_F_EXP", "AmbientTrack02d_F_EXP"]);
 
 	scopeName "main";
 	while {true} do {
@@ -48,7 +50,9 @@ if (!isNil "_missionLogo") then {
 
 		_cam camPreparePos _preparePos;
 		_cam camCommitPrepared 20;
-		[1, "BLACK", 2, 1] call BIS_fnc_fadeEffect;
+		
+		cutText ["S", "BLACK IN"];
+		//
 		{
 			sleep 1;
 			if (_forEachIndex in [0, 4, 8]) then {
@@ -56,17 +60,21 @@ if (!isNil "_missionLogo") then {
 			};
 			if (mission_requested) then { breakTo "main"; };
 		} forEach [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-		[0, "BLACK", 2, 1] call BIS_fnc_fadeEffect;
+		cutText ["S", "BLACK OUT"];
+		//
 	};
 
-	closeDialog 1;
+	[0, "BLACK", 2] call BIS_fnc_fadeEffect;
 
+	closeDialog 1;
+	
 	_cam cameraEffect ["terminate","back"];
 	camUseNVG false;
 	camDestroy _cam;
 	["Default"] call BIS_fnc_setPPeffectTemplate;
 	[1, "BLACK", 5, 1] call BIS_fnc_fadeEffect;
 	cutText [localize "INFO_WAIT_02", "PLAIN DOWN", 2];
-
+	
+	playMusic "";
 };
 

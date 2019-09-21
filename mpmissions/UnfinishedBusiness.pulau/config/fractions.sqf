@@ -60,7 +60,7 @@
  
  D_FRACTION_WEST_CFG = [
 	[
-		'CUP_B_USMC', 'CUP Civilian', []
+		'CUP_B_USMC', 'CUP Civilian', []   //Wreck Land_UWreck_MV22_F
 	],
 	[
 		'BLU_F', 'NATO', [
@@ -73,6 +73,7 @@
 			[
 			'boats', ['B_Boat_Armed_01_minigun_F']
 			],
+			['transport_wreck', 'Land_Wreck_Heli_02_Wreck_01_F'],
 			['Team Leader', 'B_Soldier_TL_F'],
 			['Corpsman', 	'B_medic_F'],
 			['Grenadier', 	'B_Soldier_GL_F'],
@@ -325,6 +326,7 @@
 			],
 			[
 			'cars', [
+					'O_MRAP_02_F',
 					'O_MRAP_02_gmg_F',
 					'O_MRAP_02_hmg_F']
 			],
@@ -347,6 +349,26 @@
 					'O_Truck_03_covered_F',
 					'O_Truck_02_transport_F',
 					'O_Truck_02_covered_F']
+			],
+			[
+			'transport_ammo', [
+					'O_Truck_02_ammo_F',
+					'O_Truck_03_ammo_F']
+			],
+			[
+			'transport_repair', [
+					'O_Truck_02_box_F',
+					'O_Truck_03_repair_F']
+			],
+			[
+			'transport_fuel', [
+					'O_Truck_02_fuel_F',
+					'O_Truck_03_fuel_F']
+			],
+			[
+			'transport_medic', [
+					'O_Truck_02_medical_F',
+					'O_Truck_03_medical_F']
 			],
 			[
 			'heli', [
@@ -579,6 +601,22 @@
 			'transport', [
 					'I_Truck_02_transport_F',
 					'I_Truck_02_covered_F']
+			],
+			[
+			'transport_ammo', [
+					'I_Truck_02_ammo_F']
+			],
+			[
+			'transport_repair', [
+					'I_Truck_02_box_F']
+			],
+			[
+			'transport_fuel', [
+					'I_Truck_02_fuel_F']
+			],
+			[
+			'transport_medic', [
+					'I_Truck_02_medical_F']
 			],
 			[
 			'heli', [

@@ -29,20 +29,10 @@ if (isServer) then {
         params ["_spawnposition"];
         private ["_pos", "_vec"];
         _vec = objNull;
-        if (isServer) then {
-                _vec = selectRandom [
-                        "CUP_O_UAZ_Unarmed_SLA",
-                        "CUP_O_UAZ_Militia_SLA",
-                        "CUP_O_UAZ_Open_SLA",
-                        "CUP_O_UAZ_MG_SLA",
-                        "CUP_O_UAZ_AGS30_SLA",
-						"CUP_O_UAZ_SPG9_SLA",
-						"CUP_O_UAZ_METIS_SLA"
-                ];
-                _pos = getMarkerPos _spawnposition findEmptyPosition [0, 15, _vec];
-                _vec = createVehicle [_vec, _pos, [], 0];
-                _vec setDir (markerDir _spawnposition);
-        };
+        private _class = (selectRandom ([east, D_FRACTION_EAST, "cars"] call Fn_Config_GetFraction_Units));
+        pos = getMarkerPos _spawnposition findEmptyPosition [0, 15, _vec];
+        _vec = createVehicle [_class, _pos, [], 0];
+        _vec setDir (markerDir _spawnposition);
         _vec;
 	};
 	

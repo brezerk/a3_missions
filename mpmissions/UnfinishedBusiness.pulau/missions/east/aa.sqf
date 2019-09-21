@@ -29,7 +29,7 @@ if (isServer) then {
 	Fn_Spawn_East_AntiAir = {
 		private _marker = "mrk_aa";
 		private _pos = getMarkerPos _marker;
-		private _class = "CUP_O_2S6_RU";
+		private _class = (selectRandom ([east, D_FRACTION_EAST, "antiair"] call Fn_Config_GetFraction_Units));
 		obj_east_antiair = createVehicle [_class, _pos];
 		obj_east_antiair setDir (markerDir _marker);
 		private _crew = createVehicleCrew (obj_east_antiair);

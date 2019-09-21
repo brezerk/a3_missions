@@ -27,18 +27,7 @@ if (hasInterface) then {};
 if (isServer) then {
 	
 	Fn_Spawn_East_Helicopter = {
-		private _class = "";
-		switch (D_DIFFICLTY) do {
-			case 0: {
-				_class = "CUP_O_UH1H_slick_SLA";
-			};
-			case 1: {
-				_class = "CUP_O_UH1H_armed_SLA";
-			};
-			case 2: {
-				_class = "CUP_O_UH1H_gunship_SLA";
-			};
-		};
+		private _class = (selectRandom ([east, D_FRACTION_EAST, "heli"] call Fn_Config_GetFraction_Units));
 		private _vehicle = createVehicle [_class, (getMarkerPos format["wp_%1_east_helicopter", D_LOCATION])];
 	};
 };

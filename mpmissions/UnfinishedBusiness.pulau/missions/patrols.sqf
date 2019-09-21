@@ -212,19 +212,7 @@ if (isServer) then {
 		params ['_markerPos'];
 		
 		private _class = objNull;
-		
-		switch (D_DIFFICLTY) do {
-			case 0: {
-				_class = "CUP_I_UH60L_RACS"; //"CUP_I_UH1H_TK_GUE"
-			};
-			case 1: {
-				_class = "CUP_I_UH60L_RACS"; //CUP_I_UH1H_armed_TK_GUE
-			};
-			case 2: {
-				_class = "CUP_I_UH60L_RACS"; //CUP_I_UH1H_gunship_TK_GUE
-			};
-		};
-		
+		private _class = (selectRandom ([independent, D_FRACTION_INDEP, "heli"] call Fn_Config_GetFraction_Units));
 		private _vehicle = createVehicle [_class, getMarkerPos "mrk_patrol_heli"];
 		private _crew = createVehicleCrew (_vehicle);
 		vehicle_refuel_group append [_vehicle];
