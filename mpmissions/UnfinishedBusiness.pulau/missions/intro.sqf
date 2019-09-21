@@ -36,6 +36,7 @@ if (isServer) then {
 		us_airplane_01 = createVehicle [_class, (getPos land_00), [], 0, "CAN_COLLIDE"];
 		us_airplane_01 attachTo [land_00, [0, 0, 0]];
 		us_airplane_01 setDir (getDir land_00);
+		detach us_airplane_01;
 		
 		private _grp = createGroup [west, true];
 		
@@ -50,6 +51,7 @@ if (isServer) then {
 		us_heli_01 attachTo [land_01, [0, 0, 0]];
 		us_heli_01 setDir ([getPos (us_airplane_01), getPos(us_heli_01)] call BIS_fnc_dirTo);
 		us_heli_01 setVehicleLock "LOCKED";
+		detach us_heli_01;
 		
 		us_boat_01 = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_BOATS), [0, 0, 0], [], 0, "CAN_COLLIDE"];
 		west_rack_01 setVehicleCargo us_boat_01;

@@ -123,6 +123,38 @@
 					["G_Tactical_Clear",          4 ],
 					["bipod_01_F_blk",			  1 ]
 				]
+			],
+			['stash_crash_items', 	[
+					["launch_NLAW_F",			  2 ],
+					["launch_B_Titan_F",          2 ],
+					["arifle_MX_F",				  2 ],
+					["arifle_MX_SW_F",			  1 ],
+					["arifle_MXC_F",              3 ],
+					["30Rnd_65x39_caseless_mag",  12],
+					["16Rnd_9x21_Mag",			  4 ],
+					["30Rnd_45ACP_Mag_SMG_01",	  8 ],
+					["20Rnd_762x51_Mag",		  6 ],
+					["100Rnd_65x39_caseless_mag", 4 ],
+					["NLAW_F",					  4 ],
+					["Titan_AA",				  2 ],
+					["1Rnd_HE_Grenade_shell",	  8 ],
+					["Chemlight_green",			  8 ],
+					["HandGrenade",				  10],
+					["SmokeShell",				  4 ],
+					["SmokeShellGreen",			  6 ],
+					["acc_flashlight",			  2 ],
+					["H_HelmetB_sand",			  3 ],
+					["G_Tactical_Clear",          4 ],
+					["optic_Aco",				  2 ],
+					["hgun_P07_F",				  3 ],
+					["H_HelmetB_grass",           2 ],
+					["B_HMG_01_weapon_F",         5 ],
+					["B_AssaultPack_mcamo_AA",    5 ],
+					["Medikit",					  2 ],
+					["ToolKit",                   1 ],
+					["MineDetector",              2 ],
+					["bipod_01_F_blk",			  1 ]
+				]
 			]
 		]
 	]
