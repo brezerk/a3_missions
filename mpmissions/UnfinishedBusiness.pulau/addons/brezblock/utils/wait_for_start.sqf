@@ -82,7 +82,7 @@ if (!isNil "_missionLogo") then {
 	camUseNVG false;
 	camDestroy _cam;
 	["Default"] call BIS_fnc_setPPeffectTemplate;
-	[1, "BLACK", 5, 1] call BIS_fnc_fadeEffect;
+	[1, "BLACK", 3, 1] call BIS_fnc_fadeEffect;
 	cutText [localize "INFO_WAIT_02", "PLAIN DOWN", 2];
 	
 	playMusic "";
