@@ -262,6 +262,33 @@
 					'C_Rubberboat',
 					'C_Boat_Civil_01_rescue_F']
 			],
+			['rebel_weapons',       [
+						"arifle_TRG20_F",
+						"arifle_TRG21_F",
+						"arifle_Mk20_F",
+						"arifle_Mk20C_F",
+						"arifle_Mk20_GL_F",
+						"hgun_PDW2000_F"
+					]
+			],
+			['rebel_armor',       [
+						"G_Carryall_Ammo",
+						"V_TacVest_blk",
+						"V_BandollierB_blk",
+						"V_Press_F",
+						"V_Chestrig_oli",
+						"V_TacVest_brn"
+					]
+			],
+			['rebel_backpack',       [
+						"B_FieldPack_oucamo",
+						"B_FieldPack_oli",
+						"B_Carryall_khk",
+						"B_FieldPack_cbr",
+						"B_Kitbag_tan",
+						"B_Kitbag_cbr"
+					]
+			],
 			['stash_base_items', 	[
 					["arifle_TRG20_F",			  5 ],
 					["arifle_TRG21_F",            2 ],

@@ -16,22 +16,29 @@ removeBackpack _this;
 removeHeadgear _this;
 removeGoggles _this;
 
-comment "Add containers";
-_this forceAddUniform "U_C_Man_casual_1_F";
-_this addVest "V_BandollierB_cbr";
+_this setUnitLoadout (configFile >> "CfgVehicles" >> (selectRandom([civilian, D_FRACTION_CIV, "mens"] call Fn_Config_GetFraction_Units)));
+
+
+private _class = selectRandom([civilian, D_FRACTION_CIV, "rebel_weapons"] call Fn_Config_GetFraction_Units));
+
+comment "Add weapons";
+_this addWeapon _class;
+
+private _pWeapMagazines = primaryWeaponMagazine _this;
+
+_this addVest (selectRandom([civilian, D_FRACTION_CIV, "rebel_armor"] call Fn_Config_GetFraction_Units)));
+
+{
+	for "_i" from 1 to 5 do {_this addItemToVest "CUP_30Rnd_545x39_AK_M";};
+} forEach _pWeapMagazines;
 for "_i" from 1 to 10 do {_this addItemToVest "ACE_fieldDressing";};
 for "_i" from 1 to 2 do {_this addItemToVest "ACE_morphine";};
 for "_i" from 1 to 5 do {_this addItemToVest "CUP_30Rnd_545x39_AK_M";};
-_this addBackpack "B_FieldPack_oucamo";
-_this addHeadgear "H_Bandanna_surfer_blk";
-_this addGoggles "G_Bandanna_khk";
 
-comment "Add weapons";
-_this addWeapon "CUP_arifle_AK74_Early";
+_this addBackpack (selectRandom([civilian, D_FRACTION_CIV, "rebel_backpack"] call Fn_Config_GetFraction_Units)));
 
 comment "Add items";
 _this linkItem "ItemRadio";
-_this linkItem "ItemMap";
 _this linkItem "ItemCompass";
-_this linkItem "ItemWatch";
+
 

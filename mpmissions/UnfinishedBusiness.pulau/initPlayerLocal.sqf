@@ -216,9 +216,8 @@ player addEventHandler
 [
    "Respawn",
    {
-		if (!alive us_airplane_01) then {
+		if (mission_plane_send) then {
 			call Fn_Local_FailTasks;
-
 
 			switch (playerSide) do
 			{
