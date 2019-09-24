@@ -758,6 +758,7 @@
 			'transport_medic', [
 					'I_Truck_02_medical_F']
 			],
+			['leader', 'I_Story_Colonel_F'],
 			[
 			'heli', [
 					'I_Heli_light_03_dynamicLoadout_F']
