@@ -31,7 +31,17 @@ private _missionLogo = createDialog "MissionLogo";
 
 if (!isNil "_missionLogo") then {
 
-	playMusic (selectRandom ["AmbientTrack01b_F_EXP", "AmbientTrack02b_F_EXP", "AmbientTrack02c_F_EXP", "AmbientTrack02d_F_EXP"]);
+	[
+		["AmbientTrack01b_F_EXP",
+		 "AmbientTrack02b_F_EXP",
+		 "AmbientTrack02c_F_EXP",
+		 "AmbientTrack02d_F_EXP",
+		 "LeadTrack01_F_Tacops",
+		 "LeadTrack02_F_Tacops",
+		 "LeadTrack03_F_Tacops"],
+	0] call BIS_fnc_music;
+
+	//playMusic (selectRandom []);
 
 	scopeName "main";
 	while {true} do {
@@ -51,7 +61,7 @@ if (!isNil "_missionLogo") then {
 		_cam camPreparePos _preparePos;
 		_cam camCommitPrepared 20;
 		
-		cutText ["S", "BLACK IN"];
+		cutText ["", "BLACK IN"];
 		//
 		{
 			sleep 1;
@@ -60,7 +70,7 @@ if (!isNil "_missionLogo") then {
 			};
 			if (mission_requested) then { breakTo "main"; };
 		} forEach [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-		cutText ["S", "BLACK OUT"];
+		cutText ["", "BLACK OUT"];
 		//
 	};
 
