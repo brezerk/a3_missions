@@ -5,7 +5,7 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=649;
+	toggles=521;
 	class ItemIDProvider
 	{
 		nextID=7839;
@@ -20,7 +20,7 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2668.2446,664.96893,5201.2769};
+		pos[]={2598.5593,230.06566,5745.4385};
 		dir[]={-0.50956094,-0.44033012,0.7392298};
 		up[]={-0.24990667,0.89783514,0.36254483};
 		aside[]={0.82334644,-1.15906e-008,0.56754243};
@@ -6177,12 +6177,12 @@ class Mission
 		class Item460
 		{
 			dataType="Marker";
-			position[]={2380.5684,21.718252,5289.8291};
+			position[]={2375.0168,21.688812,5299.2241};
 			name="wp_Monyet_east_transport_spawn_01";
 			type="o_unknown";
 			angle=47.948982;
 			id=7272;
-			atlOffset=16.674543;
+			atlOffset=16.674541;
 		};
 		class Item461
 		{
@@ -6798,12 +6798,12 @@ class Mission
 		class Item529
 		{
 			dataType="Marker";
-			position[]={2406.6382,52.60891,5298.6445};
+			position[]={2405.8899,52.60891,5299.8862};
 			name="wp_Monyet_east_supply_01";
 			type="o_service";
 			angle=252.205;
 			id=7341;
-			atlOffset=42.663994;
+			atlOffset=42.61993;
 		};
 		class Item530
 		{
@@ -8892,7 +8892,7 @@ class Mission
 			name="wp_Monyet_paradrop_66";
 			type="b_recon";
 			id=7517;
-			atlOffset=1.4655185;
+			atlOffset=0.15392697;
 		};
 		class Item701
 		{
@@ -9116,11 +9116,11 @@ class Mission
 		class Item725
 		{
 			dataType="Marker";
-			position[]={1762.2813,36.383801,3098.0828};
+			position[]={1763.5038,36.383801,3097.1709};
 			name="wp_Monyet_east_supply_02";
 			type="o_hq";
 			id=7542;
-			atlOffset=1.4599152;
+			atlOffset=1.465992;
 		};
 		class Item726
 		{
@@ -9540,7 +9540,7 @@ class Mission
 			b=75;
 			drawBorder=1;
 			id=7576;
-			atlOffset=22.132744;
+			atlOffset=21.089573;
 		};
 		class Item760
 		{

@@ -493,12 +493,13 @@
 			['Spotter', 	'O_spotter_F'],
 			[
 			'cars', [
-					'O_MRAP_02_F',
-					'O_MRAP_02_gmg_F',
-					'O_MRAP_02_hmg_F']
+					'O_MRAP_02_F'
+					]
 			],
 			[
 			'light', [
+			        'O_MRAP_02_gmg_F',
+					'O_MRAP_02_hmg_F',
 					'O_APC_Wheeled_02_rcws_v2_F',
 					'O_APC_Tracked_02_cannon_F']
 			],

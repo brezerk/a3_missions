@@ -18,9 +18,7 @@
 
 params ["_exitCode"];
 
-if (_exitCode in [0, 2]) then {
-
-#include "..\config\fractions.sqf"; 
+if (_exitCode in [0, 2]) then { 
 
 sleep 5;
 

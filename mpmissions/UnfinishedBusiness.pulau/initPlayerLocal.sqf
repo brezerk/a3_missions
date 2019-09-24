@@ -25,6 +25,8 @@ informator_told = false;
 
 waitUntil { !isNull player }; // Wait for player to initialize
 
+#include "config\fractions.sqf";
+
 Fn_Local_WaitPublicVariables = {
 	params ['_vars'];
 	private _done = true;
@@ -37,8 +39,6 @@ Fn_Local_WaitPublicVariables = {
 // hide markers
 {if (_x find "wp_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
 {if (_x find "respawn_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
-
-#include "config\fractions.sqf"; 
 
 waitUntil { sleep 1; systemChat "Wait for init sync..."; [["mission_requested", "mission_plane_send"]] call Fn_Local_WaitPublicVariables; }; 
 
@@ -327,7 +327,3 @@ execVM "missions\local\sync.sqf";
 sleep 5;
 
 [ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_00', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;
-
-//fixme
-//[[west], [east,independent,civilian]] call ace_spectator_fnc_updateSides;
-
