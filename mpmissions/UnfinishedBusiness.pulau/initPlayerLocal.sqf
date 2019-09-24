@@ -38,6 +38,8 @@ Fn_Local_WaitPublicVariables = {
 {if (_x find "wp_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
 {if (_x find "respawn_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
 
+#include "config\fractions.sqf"; 
+
 waitUntil { sleep 1; systemChat "Wait for init sync..."; [["mission_requested", "mission_plane_send"]] call Fn_Local_WaitPublicVariables; }; 
 
 if (!mission_requested) then {
