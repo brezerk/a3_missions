@@ -8,11 +8,11 @@ class EditorData
 	toggles=522;
 	class ItemIDProvider
 	{
-		nextID=6748;
+		nextID=6753;
 	};
 	class MarkerIDProvider
 	{
-		nextID=72;
+		nextID=75;
 	};
 	class Camera
 	{
@@ -643,24 +643,6 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
-			property="RespawnTemplates";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"ARRAY"
-						};
-					};
-				};
-			};
-		};
-		class Attribute1
-		{
 			property="RespawnButton";
 			expression="true";
 			class Value
@@ -675,6 +657,24 @@ class CustomAttributes
 						};
 					};
 					value=0;
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
 				};
 			};
 		};
@@ -2242,7 +2242,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=1174;
+		items=1179;
 		class Item0
 		{
 			dataType="Object";
@@ -39955,6 +39955,59 @@ class Mission
 			id=6747;
 			type="Crater";
 			atlOffset=-0.12071609;
+		};
+		class Item1174
+		{
+			dataType="Marker";
+			position[]={108.249,77.653,646.047};
+			name="marker_72";
+			type="mil_warning";
+			colorName="ColorEAST";
+			id=6748;
+			atlOffset=0.00045013428;
+		};
+		class Item1175
+		{
+			dataType="Marker";
+			position[]={75.807999,81.660004,596.94501};
+			name="marker_73";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorEAST";
+			fillName="FDiagonal";
+			a=80;
+			b=80;
+			id=6749;
+			atlOffset=-7.6293945e-005;
+		};
+		class Item1176
+		{
+			dataType="Marker";
+			position[]={64.565689,83.893875,647.55035};
+			name="marker_74";
+			type="mil_unknown";
+			colorName="ColorEAST";
+			id=6750;
+			atlOffset=0.26155853;
+		};
+		class Item1177
+		{
+			dataType="Marker";
+			position[]={117.65592,85.718628,562.67419};
+			name="marker_75";
+			type="mil_unknown";
+			colorName="ColorEAST";
+			id=6751;
+			atlOffset=-0.58015442;
+		};
+		class Item1178
+		{
+			dataType="Marker";
+			position[]={40.854874,83.467209,591.19531};
+			name="marker_76";
+			type="mil_unknown";
+			colorName="ColorEAST";
+			id=6752;
 		};
 	};
 	class Connections
