@@ -88,14 +88,14 @@ if (isServer) then {
 	Fn_Task_Create_Convoy_DestroyHeavy = {
 		private ["_affectedUnits"];
 		_affectedUnits = [];
-		['t_ua_convoy_found', 'SUCCEEDED'] call BIS_fnc_taskSetState;
+		['t_ua_convoy_found', 'Succeeded', localize 'TASK_16_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
 		[] remoteExecCall ["Fn_Local_Task_Create_Convoy_DestroyHeavy", [0,-2] select isDedicated];
 		trgUralDestroyed = createTrigger ["EmptyDetector", getPos ua_heavy_02];
 		trgUralDestroyed setTriggerArea [0, 0, 0, false];
 		trgUralDestroyed setTriggerActivation ["NONE", "PRESENT", false];
 		trgUralDestroyed setTriggerStatements [
 			"!alive ua_heavy_02",
-			"['t_ua_convoy_destroy_heavy', 'SUCCEEDED'] call BIS_fnc_taskSetState; deleteVehicle trgUralDestroyed;",
+			"['t_ua_convoy_destroy_heavy', 'Succeeded', localize 'TASK_17_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated]; deleteVehicle trgUralDestroyed;",
 			""
 		];
 		// kill alive units if any

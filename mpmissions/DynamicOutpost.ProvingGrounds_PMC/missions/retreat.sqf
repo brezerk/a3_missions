@@ -25,7 +25,7 @@ if (hasInterface) then {
 	Fn_Local_Task_Create_Retreat = {
 		playSound "outpost_wave03";
 		playSound "rhs_usa_land_rc_21";
-		['t_defend_blockpost', 'SUCCEEDED'] call BIS_fnc_taskSetState;
+		['t_defend_blockpost', 'Succeeded', localize 'TASK_10_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
 		[
 			player,
 			"t_evacuation_point",
@@ -62,7 +62,7 @@ if (isServer) then {
 		trgEvacPoint setTriggerActivation ["NONE", "PRESENT", false];
 		trgEvacPoint setTriggerStatements [
 			"({alive _x} count (allPlayers -  entities 'HeadlessClient_F' ) == {alive _x && _x inArea thisTrigger} count (allPlayers - entities 'HeadlessClient_F' ))  && ({alive _x} count allPlayers) > 0",
-			"['t_evacuation_point', 'SUCCEEDED'] call BIS_fnc_taskSetState; ['t_defend_blockpost_steel_will', 'FAILED'] call BIS_fnc_taskSetState; call Fn_Endgame_Win;",
+			"['t_evacuation_point', 'Succeeded', localize 'TASK_18_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated]; ['t_defend_blockpost_steel_will', 'Failed', localize 'TASK_19_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated]; call Fn_Endgame_Win;",
 			""
 		];
 		trgEvacPoint = createTrigger ["EmptyDetector", getMarkerPos 'ua_secret_01'];

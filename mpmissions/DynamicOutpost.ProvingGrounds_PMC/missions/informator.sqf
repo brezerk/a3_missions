@@ -157,7 +157,7 @@ if (isServer) then {
 	*/
 	Fn_Task_Informator_Failed = {
 		task_completed_03 = false;
-		['t_info_meetup', 'FAILED'] call BIS_fnc_taskSetState;
+		['t_info_meetup', 'Failed', localize 'TASK_08_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
 		deleteVehicle trgInformDead;
 	}; // Fn_Task_Informator_Failed
 
@@ -168,7 +168,7 @@ if (isServer) then {
 	*/
 	Fn_Task_Create_Informator_BlockpostAttack = {
 		task_completed_03 = true;
-		['t_info_meetup', 'SUCCEEDED'] call BIS_fnc_taskSetState;
+		['t_info_meetup', 'Succeeded', localize 'TASK_08_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
 		[
 			p_officer_01,
 			{ _this remoteExec ["Fn_Task_Informator_DocsFound", 2] }
@@ -181,11 +181,11 @@ if (isServer) then {
 	*/
 	Fn_Task_Informator_DocsFound = {
 		task_completed_04 = true;
-		["t_doc_01", "SUCCEEDED", true] spawn BIS_fnc_taskSetState;
+		['t_doc_01', 'Succeeded', localize 'TASK_20_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
 		["outpost_docs_found"] remoteExec ["playSound"];
 		["rhs_usa_land_rc_28"] remoteExec ["playSound"];
 		if (task_completed_07 && task_completed_06 && task_completed_05 && task_completed_04) then {
-			["t_doc_search", "SUCCEEDED", true] spawn BIS_fnc_taskSetState;
+			['t_doc_search', 'Succeeded', localize 'TASK_09_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
 		};
 	};
 

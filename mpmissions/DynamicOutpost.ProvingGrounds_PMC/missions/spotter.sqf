@@ -76,7 +76,7 @@ if (isServer) then {
 		trgSpotterKilled = createTrigger ["EmptyDetector", getPos player];
 		trgSpotterKilled setTriggerArea[0,0,0,false];
 		trgSpotterKilled setTriggerActivation ["NONE", "PRESENT", false];
-		trgSpotterKilled setTriggerStatements ["!alive p_rus_spotter_01", "['t_recon_kill', 'Succeeded'] call BIS_fnc_taskSetState; deleteVehicle trgSpotterKilled;", ""];
+		trgSpotterKilled setTriggerStatements ["!alive p_rus_spotter_01", "['t_recon_kill', 'Succeeded', localize 'TASK_21_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated]; deleteVehicle trgSpotterKilled;", ""];
 		[
 			p_rus_spotter_01,
 			{ _this remoteExec ["Fn_Task_Spotter_DocsFound", 2] }
@@ -90,7 +90,7 @@ if (isServer) then {
 		task_completed_07 = true;
 		[] remoteExecCall ["Fn_Local_Task_Spotter_DocsFound", [0,-2] select isDedicated];
 		if (task_completed_07 && task_completed_06 && task_completed_05 && task_completed_04) then {
-			["t_doc_search", "SUCCEEDED", true] spawn BIS_fnc_taskSetState;
+			['t_doc_search', 'Succeeded', localize 'TASK_09_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
 		};
 	};
 };

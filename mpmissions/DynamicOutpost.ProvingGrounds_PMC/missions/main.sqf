@@ -21,7 +21,7 @@ Spawn start objectives, triggers and mainline story
 */
 
 if (isServer) then {
-	['t_report_officer', 'Succeeded'] call BIS_fnc_taskSetState;
+	['t_report_officer', 'Succeeded', localize 'TASK_03_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
 	"respawn_guerrila" setMarkerPos (getPos field_hospital);
 	
 	sleep 5;
@@ -228,7 +228,7 @@ if (isServer) then {
 	trgWinGame setTriggerArea [300, 300, 0, false];
 	trgWinGame setTriggerActivation ["GUER SEIZED", "PRESENT", false];
 	trgWinGame setTriggerTimeout [60, 65, 70, true];
-	trgWinGame setTriggerStatements ["this", "['t_defend_blockpost_steel_will', 'SUCCEEDED'] call BIS_fnc_taskSetState; call Fn_Endgame_Win;", ""];
+	trgWinGame setTriggerStatements ["this", "['t_defend_blockpost_steel_will', 'Succeeded', localize 'TASK_19_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated]; call Fn_Endgame_Win;", ""];
 	
 };
 

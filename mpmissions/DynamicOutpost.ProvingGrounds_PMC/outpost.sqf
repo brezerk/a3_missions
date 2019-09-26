@@ -124,7 +124,7 @@ Fn_Get_Task_State = {
 
 Fn_Endgame_Loss = {
 	if (isServer) then {
-		['t_defend_blockpost', 'FAILED'] call BIS_fnc_taskSetState;
+		['t_defend_blockpost', 'Failed', localize 'TASK_10_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
 		"EveryoneLost" call BIS_fnc_endMissionServer;
 	};
 };

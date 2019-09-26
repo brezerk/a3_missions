@@ -87,7 +87,7 @@ if (isServer) then {
 		trgHeliSecured setTriggerActivation ["ANYPLAYER", "PRESENT", false];
 		trgHeliSecured setTriggerStatements [
 			"this",
-			"if (isServer) then { task_completed_02 = true; ['t_heli_scured', 'SUCCEEDED'] call BIS_fnc_taskSetState; deleteVehicle trgHeliSecured; [1000] call Fn_Modify_Rating; };",
+			"if (isServer) then { task_completed_02 = true; ['t_heli_scured', 'Succeeded', localize 'TASK_07_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated]; deleteVehicle trgHeliSecured; };",
 			""
 		];
 		[_marker] remoteExecCall ["Fn_Local_Task_Create_HelicopterCrashSite", [0,-2] select isDedicated];
@@ -100,7 +100,7 @@ if (isServer) then {
 		task_completed_05 = true;
 		[] remoteExecCall ["Fn_Local_Task_HelicopterCrashSite_DocsFound", [0,-2] select isDedicated];
 		if (task_completed_07 && task_completed_06 && task_completed_05 && task_completed_04) then {
-			["t_doc_search", "SUCCEEDED", true] spawn BIS_fnc_taskSetState;
+			['t_doc_search', 'Succeeded', localize 'TASK_09_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
 		};
 	};
 };

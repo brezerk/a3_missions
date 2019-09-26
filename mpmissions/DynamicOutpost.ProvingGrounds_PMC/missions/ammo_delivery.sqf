@@ -99,7 +99,7 @@ if (isServer) then {
 
 	Fn_Task_Create_AmmoDelivery_Unload = {
 		// Unload Ural
-		['t_ural_delivery', 'SUCCEEDED'] call BIS_fnc_taskSetState;
+		['t_ural_delivery', 'Succeeded', localize "TASK_02_TITLE"] remoteExecCall ["Fn_Local_SetPersonalTaskState", [0,-2] select isDedicated];
 		[1000] call Fn_Modify_Rating;
 		deleteVehicle trgUralDestroyed;
 		deleteVehicle trgUralDeliver;
@@ -109,7 +109,7 @@ if (isServer) then {
 		trgUralUnload setTriggerActivation ["NONE", "PRESENT", false];
 		trgUralUnload setTriggerStatements [
 			"!task_loaded_ua_supply_box_01 && !task_loaded_ua_supply_box_02 && !task_loaded_ua_supply_box_03 && !task_loaded_ua_supply_box_04 && !task_loaded_ua_supply_box_05",
-			"['t_ural_unload', 'SUCCEEDED'] call BIS_fnc_taskSetState; deleteVehicle trgUralUnload; [1000] call Fn_Modify_Rating;",
+			"['t_ural_unload', 'Succeeded', localize 'TASK_04_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated]; deleteVehicle trgUralUnload;",
 			""
 		];
 	};
@@ -117,7 +117,7 @@ if (isServer) then {
 
 	Fn_Task_Create_AmmoDelivery = {
 		[] remoteExecCall ["Fn_Local_Task_Create_AmmoDelivery", [0,-2] select isDedicated];
-		['t_ural_load', 'SUCCEEDED'] call BIS_fnc_taskSetState;
+		['t_ural_load', 'Succeeded', localize 'TASK_01_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
 
 		// Deliver Ural
 		trgUralDeliver = createTrigger ["EmptyDetector", getMarkerPos "wp_defend_01"];
@@ -150,7 +150,7 @@ if (isServer) then {
 		trgUralDestroyed setTriggerActivation ["NONE", "PRESENT", false];
 		trgUralDestroyed setTriggerStatements [
 			"!alive ua_ural_ammo_01",
-			"if (!triggerActivated trgUralLoad) then { ['t_ural_load', 'FAILED'] call BIS_fnc_taskSetState; call Fn_Endgame_Loss; } else { ['t_ural_delivery', 'FAILED'] call BIS_fnc_taskSetState; call Fn_Endgame_Loss; };",
+			"if (!triggerActivated trgUralLoad) then { ['t_ural_load', 'Failed', localize 'TASK_01_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated]; call Fn_Endgame_Loss; } else { ['t_ural_delivery', 'Failed', localize 'TASK_02_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated]; call Fn_Endgame_Loss; };",
 			""
 		];
 		// Damage URAL

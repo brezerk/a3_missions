@@ -58,6 +58,15 @@ _trgKickToSpecator setTriggerStatements [
 	}; 	
 }] call CBA_fnc_addEventHandler;
 
+Fn_Local_SetPersonalTaskState = {
+	params['_name', '_state', '_title'];
+	private _task = [_name, player] call BIS_fnc_taskReal;
+	if (!isNull _task) then {
+		[format["Task%1", _state],["", _title]] call BIS_fnc_showNotification;
+		_task setTaskState _state;
+	};
+};
+
 sleep 3;
 
 // display intro

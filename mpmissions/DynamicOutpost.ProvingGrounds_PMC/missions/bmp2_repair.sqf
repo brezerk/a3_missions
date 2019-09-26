@@ -72,7 +72,7 @@ if (isServer) then {
 		trgHeavyRepaired triggerAttachVehicle [ua_heavy_01];
 		trgHeavyRepaired setTriggerStatements [
 			"triggerActivated trgHeavyDoDamage && canMove ua_heavy_01;",
-			"['t_repair_heavy', 'SUCCEEDED'] call BIS_fnc_taskSetState; deleteVehicle trgHeavyDestroyed; deleteVehicle trgHeavyDoDamage;",
+			"['t_repair_heavy', 'Succeeded', localize 'TASK_05_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated]; deleteVehicle trgHeavyDestroyed; deleteVehicle trgHeavyDoDamage;",
 			""
 		];
 		trgHeavyDestroyed = createTrigger ["EmptyDetector", getPos ua_heavy_01];
@@ -81,7 +81,7 @@ if (isServer) then {
 		trgHeavyDestroyed triggerAttachVehicle [ua_heavy_01];
 		trgHeavyDestroyed setTriggerStatements [
 			"triggerActivated trgHeavyDoDamage && !alive ua_heavy_01;",
-			"['t_repair_heavy', 'FAILED'] call BIS_fnc_taskSetState; deleteVehicle trgHeavyRepaired; deleteVehicle trgHeavyDoDamage;",
+			"['t_repair_heavy', 'Failed', localize 'TASK_05_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated]; deleteVehicle trgHeavyRepaired; deleteVehicle trgHeavyDoDamage;",
 			""
 		];
 	};

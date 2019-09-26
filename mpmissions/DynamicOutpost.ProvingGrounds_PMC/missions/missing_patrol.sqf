@@ -143,10 +143,10 @@ if (isServer) then {
 		Usage: call Fn_Task_Create_MissingPatrol_DeliverInjured
 	*/
 	Fn_Task_Create_MissingPatrol_DeliverInjured = {
-		['t_patrol_found', 'SUCCEEDED'] call BIS_fnc_taskSetState;
+		['t_patrol_found', 'Succeeded', localize 'TASK_06_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
 		[] remoteExecCall ["Fn_Local_Task_Create_MissingPatrol_DeliverInjured", [0,-2] select isDedicated];
 		if (!alive ua_injured_01) then {
-			['t_patrol_injured', 'FAILED'] call BIS_fnc_taskSetState;
+			['t_patrol_injured', 'Failed', localize 'TASK_14_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
 		} else {
 			trgPatrolInjuredDelivered = createTrigger ["EmptyDetector", getMarkerPos "ua_hospital_01" ];
 			trgPatrolInjuredDelivered setTriggerArea [5, 5, 0, false];
@@ -154,7 +154,7 @@ if (isServer) then {
 			trgPatrolInjuredDelivered triggerAttachVehicle [ua_injured_01];
 			trgPatrolInjuredDelivered setTriggerStatements [
 				"this",
-				"['t_patrol_injured', 'SUCCEEDED'] call BIS_fnc_taskSetState; task_completed_01 = true; deleteVehicle trgPatrolInjuredDied;",
+				"['t_patrol_injured', 'Succeeded', localize 'TASK_14_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated]; task_completed_01 = true; deleteVehicle trgPatrolInjuredDied;",
 				""
 			];
 			trgPatrolInjuredDied = createTrigger ["EmptyDetector", getMarkerPos "ua_hospital_01" ];
@@ -162,7 +162,7 @@ if (isServer) then {
 			trgPatrolInjuredDied setTriggerActivation ["NONE", "PRESENT", false];
 			trgPatrolInjuredDied setTriggerStatements [
 				"!alive ua_injured_01",
-				"['t_patrol_injured', 'FAILED'] call BIS_fnc_taskSetState; deleteVehicle trgPatrolInjuredDied;",
+				"['t_patrol_injured', 'Failed', localize 'TASK_14_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated]; deleteVehicle trgPatrolInjuredDied;",
 				""
 			];
 		};
@@ -175,7 +175,7 @@ if (isServer) then {
 		task_completed_06 = true;
 		[] remoteExecCall ["Fn_Local_Task_MissingPatrol_DocsFound", [0,-2] select isDedicated];
 		if (task_completed_07 && task_completed_06 && task_completed_05 && task_completed_04) then {
-			["t_doc_search", "SUCCEEDED", true] spawn BIS_fnc_taskSetState;
+			['t_doc_search', 'Succeeded', localize 'TASK_09_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
 		};
 	}; // Fn_Task_MissingPatrol_DocsFound
 	
