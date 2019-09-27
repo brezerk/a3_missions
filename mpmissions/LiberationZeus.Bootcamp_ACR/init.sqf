@@ -29,6 +29,9 @@ D_DEBUG = false;
 if (isServer) then {
 	waitUntil {real_weather_init};
 	
+	board_01 setObjectTexture [0, "data\ace_bramaley.paa"];
+	board_02 setObjectTexture [0, "data\ace_bramaley.paa"];
+	
 	if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
 		radio_box_01 addItemCargoGlobal ["ACRE_PRC148", 30];
 		radio_box_01 addItemCargoGlobal ["ACRE_SEM52SL", 30];
