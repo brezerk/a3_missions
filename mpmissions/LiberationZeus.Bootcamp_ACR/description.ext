@@ -47,5 +47,17 @@ aikills = 0;
 
 respawnOnStart = -1;
 
+corpseManagerMode = 1;
+corpseLimit = 20;
+corpseRemovalMinTime = 120;
+corpseRemovalMaxTime = 1200;
+
+wreckManagerMode = 2;
+wreckLimit = 15; 
+wreckRemovalMinTime = 60;
+wreckRemovalMaxTime = 1200;
+
+minPlayerDistance = 100;
+
 // Force cba_settings.sqf loading
 cba_settings_hasSettingsFile = 1;
