@@ -35,7 +35,7 @@ if (isServer) then {
 		private _builing = nearestBuilding (_center);
 		_pos = selectRandom (_builing buildingPos -1);
 		if (!isNil "_pos") then {
-			private _class = (selectRandom ([independent, D_FRACTION_INDEP, "leader"] call Fn_Config_GetFraction_Units));
+			private _class = ([independent, D_FRACTION_INDEP, "leader"] call Fn_Config_GetFraction_Units);
 			private _group = createGroup [independent, true];
 			target_leader_01 = _group createUnit [_class, _pos, [], 0, "FORM"];
 		};
