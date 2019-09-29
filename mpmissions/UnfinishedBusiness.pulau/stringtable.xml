@@ -4,6 +4,21 @@
 		<Container name="l18n">
 			<Key ID="STR_ONLOAD_NAME">
 				<Original>Unfinished Business v0.9.538</Original>
+			</Key>
+			<Key ID="INFO_DEV_01">
+				<Original>Development studio</Original>
+				<English>Development studio</English>
+				<Russian>Студія розробки</Russian>
+			</Key>
+			<Key ID="INFO_DEV_02">
+				<Original>In cooperation with</Original>
+				<English>In cooperation with</English>
+				<Russian>У співпраці з</Russian>
+			</Key>
+			<Key ID="INFO_DEV_03">
+				<Original>Presents</Original>
+				<English>Presents</English>
+				<Russian>Представляє</Russian>
 			</Key>		
 			<Key ID="STR_ONLOAD_INFO_01">
 				<Original>US Special Forces squad goes to perform a peacekeeping mission</Original>

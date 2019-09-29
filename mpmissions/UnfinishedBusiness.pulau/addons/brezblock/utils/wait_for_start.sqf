@@ -28,13 +28,23 @@ showCinemaBorder false;
 if (sunOrMoon < 1) then {camUseNVG true} else {camUseNVG false};
 
 private _missionLogo = createDialog "MissionLogo";
+private _intoFrame = 0;
+
+//text = "data\images\logo.paa";
 
 if (!isNil "_missionLogo") then {
+
+	private _dialog = findDisplay 2772;
+	
+	private _lblText = _dialog displayCtrl 2700;
+	private _imgLogo = _dialog displayCtrl 2710;
+	
+
 
 	[
 		["AmbientTrack01b_F_EXP",
 		 "AmbientTrack02b_F_EXP",
-		 "AmbientTrack02c_F_EXP",
+		 //"AmbientTrack02c_F_EXP",
 		 "AmbientTrack02d_F_EXP",
 		 "LeadTrack01_F_Tacops",
 		 "LeadTrack02_F_Tacops",
@@ -59,14 +69,92 @@ if (!isNil "_missionLogo") then {
 		_preparePos set [2, (_pos select 2)];
 
 		_cam camPreparePos _preparePos;
-		_cam camCommitPrepared 20;
+		_cam camCommitPrepared 25;
 		
 		cutText ["", "BLACK IN"];
+
 		//
 		{
 			sleep 1;
 			if (_forEachIndex in [0, 4, 8]) then {
-				cutText [localize "INFO_WAIT_01", "PLAIN DOWN", 2];
+				if (_intoFrame > 2) then {
+					cutText [localize "INFO_WAIT_01", "PLAIN DOWN", 2];
+				};
+				switch (_intoFrame) do {
+					case 0: {
+						_lblText ctrlSetFade 1;
+						_lblText ctrlCommit 0;
+						_imgLogo ctrlSetFade 1;
+						_imgLogo ctrlCommit 0;
+						
+						ctrlSetText [2700, localize "INFO_DEV_01"];
+						ctrlSetText [2710, "data\images\logo_bb.paa"];
+						
+						_lblText ctrlSetFade 0;
+						_lblText ctrlCommit 3;
+						_imgLogo ctrlSetFade 0;
+						_imgLogo ctrlCommit 3;
+
+						sleep 5;
+						
+						_lblText ctrlSetFade 1;
+						_lblText ctrlCommit 3;
+						_imgLogo ctrlSetFade 1;
+						_imgLogo ctrlCommit 3;
+						
+						_intoFrame = _intoFrame + 1;
+					};
+					case 1: {
+						_lblText ctrlSetFade 1;
+						_lblText ctrlCommit 0;
+						_imgLogo ctrlSetFade 1;
+						_imgLogo ctrlCommit 0;
+						
+						ctrlSetText [2700, localize "INFO_DEV_02"];
+						ctrlSetText [2710, "data\images\logo_a3_ua.paa"];
+						
+						_lblText ctrlSetFade 0;
+						_lblText ctrlCommit 3;
+						_imgLogo ctrlSetFade 0;
+						_imgLogo ctrlCommit 3;
+
+						sleep 5;
+						
+						_lblText ctrlSetFade 1;
+						_lblText ctrlCommit 3;
+						_imgLogo ctrlSetFade 1;
+						_imgLogo ctrlCommit 3;
+						
+						_intoFrame = _intoFrame + 1;
+					};
+					case 2: {
+						_lblText ctrlSetFade 1;
+						_lblText ctrlCommit 0;
+						_imgLogo ctrlSetFade 1;
+						_imgLogo ctrlCommit 0;
+						
+						ctrlSetText [2700, localize "INFO_DEV_03"];
+						ctrlSetText [2710, "data\images\logo.paa"];
+						
+						_lblText ctrlSetFade 0;
+						_lblText ctrlCommit 3;
+						_imgLogo ctrlSetFade 0;
+						_imgLogo ctrlCommit 3;
+
+						sleep 3;
+						
+						_lblText ctrlSetFade 1;
+						_lblText ctrlCommit 3;
+						
+						_intoFrame = _intoFrame + 1;
+					};
+					case 3: {
+						if (((roleDescription player) == "Team Leader") || (D_DEBUG)) then {
+							[0] execVM "ui\SettingsDialog.sqf";
+						};
+						_intoFrame = _intoFrame + 1;
+					};
+				};
 			};
 			if (mission_requested) then { breakTo "main"; };
 		} forEach [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
