@@ -726,6 +726,9 @@
 			'patrol', [
 					'I_soldier_F',
 					'I_support_MG_F',
+					'I_Soldier_LAT_F',
+					'I_Soldier_AT_F',
+					'I_Soldier_GL_F',
 					'I_Soldier_lite_F',
 					'I_medic_F']
 			],
@@ -746,23 +749,15 @@
 			[
 			'cars', [
 					'I_MRAP_03_gmg_F',
-					'I_MRAP_03_hmg_F',
-					'CUP_I_LR_MG_AAF',
-					'CUP_I_LR_SF_GMG_AAF',
-					'CUP_I_LR_SF_HMG_AAF']
+					'I_MRAP_03_hmg_F']
 			],
 			[
 			'light', [
-					'CUP_I_M163_AAF',
-					'CUP_I_M113_AAF',
-					'CUP_I_APC_tracked_30_cannon_F',
+					'I_APC_tracked_03_cannon_F',
 					'I_APC_Wheeled_03_cannon_F']
 			],
 			[
 			'heavy', [
-					'CUP_I_ZSU23_AAF',
-					'CUP_LT_01_AT_F',
-					'CUP_LT_01_cannon_F',
 					'I_MBT_03_cannon_F']
 			],
 			[

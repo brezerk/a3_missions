@@ -32,7 +32,7 @@ if (isServer) then {
 	private _wp = _group addWaypoint [getMarkerPos "mrk_airfield", 0, 0];
 	_wp setWaypointCombatMode "YELLOW";
 	_wp setWaypointBehaviour "SAFE";
-	_wp setWaypointSpeed "LIMITED";
+	_wp setWaypointSpeed "FULL";
 	_wp setWaypointFormation "NO CHANGE";
 	_wp setWaypointType "MOVE";
 	us_airplane_01 flyInHeight 1500;

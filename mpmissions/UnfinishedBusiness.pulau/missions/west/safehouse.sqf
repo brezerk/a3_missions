@@ -27,7 +27,7 @@ if (isServer) then {
 	Fn_Task_West_SafeHouse_WaponStash = {
 		params['_center'];
 		
-		private _markers = [_center, ["o_mortar", "n_mortar", "b_mortar"], 3000] call BrezBlock_fnc_GetAllMarkerTypesInRange;
+		private _markers = [_center, ["o_mortar", "n_mortar", "b_mortar"], 2000] call BrezBlock_fnc_GetAllMarkerTypesInRange;
 		
 		{
 			private _marker = selectRandom _markers;

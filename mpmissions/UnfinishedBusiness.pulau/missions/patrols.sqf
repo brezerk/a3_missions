@@ -247,11 +247,14 @@ if (isServer) then {
 			case 3: { _force_comp = [[D_FRACTION_INDEP_UNITS_LIGHT, 3], [D_FRACTION_INDEP_UNITS_HEAVY, 7], [D_FRACTION_INDEP_UNITS_TRANSPORT, 10], [D_FRACTION_INDEP_UNITS_CARS, 3]];};
 			default { _force_comp = [[D_FRACTION_INDEP_UNITS_CARS, 3], [D_FRACTION_INDEP_UNITS_CARS, 3]]; };
 		};
+		
+		systemChat format ["Create: %1", _force_comp];
 
 		private _roads = [];
 		
-		 scopeName "main";
+		scopeName "main";
 		{
+			scopeName "next_road";
 			if (count _roads >= 5) then { breakTo "main"; };
 			if ((_targetPos distance2D (getPos _x)) >= 600) then {
 				
@@ -268,25 +271,41 @@ if (isServer) then {
 						private _a = _bbox select 0;
 						private _b = _bbox select 1;
 						private _size = _a distance _b;
+						private _next_road = _x;
+						
 						if (_size >= 35) then {
-							_roads pushBack _x;
-							breakTo "main";
+							{
+								_next_road = ((roadsConnectedto (_next_road)) select 0);
+								if (!isNil "_next_road") then {
+									private _next_road_pos = getPos _next_road;
+									if ((count (nearestObjects [_next_road_pos, ["Car", "Truck"], 50]) == 0) and (count (nearestTerrainObjects [_next_road_pos, ["TREE", "ROCK", "ROCKS"], 10, false, true]) == 0) and (count (nearestTerrainObjects [_next_road_pos, ["BUILDING", "HOUSE", "FENCE", "WALL"], 50, false, true]) == 0)) then {
+										_roads pushBack _next_road;
+									};
+									if ((count _roards) >= (count _force_comp)) then {
+										breakTo "main";
+									};
+								} else {
+									_roads = [];
+									breakTo "next_road";
+								};
+							} forEach _force_comp;
 						};
 					};
 				};
 			};
 		} forEach (_targetPos nearRoads 1000);
 		
-		if ((count _roads) == 0) exitWith {};
+		if ((count _roads) < (count _force_comp)) exitWith {systemChat "No roads, bail!";};
 		
-		private _road = selectRandom _roads;
+		//private _road = selectRandom _roads;
 		private _lead_group = grpNull;
-		private _last_road = _road;
+		//private _last_road = _road;
 		private _uuid = "";
 		
 		{
-			if (!isNil "_last_road") then {
-				private _vehicle = [_last_road, (selectRandom (_x select 0))] call Fn_Patrols_Create_VehicleOnTheRoad;
+			//if (!isNil "_last_road") then {
+				private _road = (_roads select _forEachIndex);
+				private _vehicle = [_road, (selectRandom (_x select 0))] call Fn_Patrols_Create_VehicleOnTheRoad;
 				if (_forEachIndex == 0) then {
 					_lead_group = group (driver _vehicle);
 					_uuid = (_lead_group call BIS_fnc_netId);
@@ -295,11 +314,12 @@ if (isServer) then {
 				};
 				_vehicle setVariable ['assault_uuid', _uuid, false];
 				private _infantry = [];
+				//FIXME: configfile >> "CfgVehicles" >> _class >> "transportSoldier"
 				for "_i" from 1 to (_x select 1) do {
 					_infantry pushBack (selectRandom D_FRACTION_INDEP_UNITS_PATROL);
 				};
 				if ((count _infantry) > 0) then {
-					private _group = [(getPos _last_road), independent, _infantry,[],[],[],[],[],180] call BIS_fnc_spawnGroup;		
+					private _group = [(getPos _road), independent, _infantry,[],[],[],[],[],180] call BIS_fnc_spawnGroup;		
 					{
 						_x assignAsCargo _vehicle;
 						_x moveInCargo _vehicle;
@@ -318,8 +338,10 @@ if (isServer) then {
 					_wp setWaypointBehaviour "COMBAT";
 					_wp setWaypointSpeed "FULL";
 				};
-				_last_road = ((roadsConnectedto (_last_road)) select 0);
-			};
+			//	_last_road = ((roadsConnectedto (_last_road)) select 0);
+			//} else {
+			//	systemChat "No last road, bail!";
+			//};
 		} forEach _force_comp;
 		
 		_lead_group setFormation "COLUMN";
@@ -349,6 +371,9 @@ if (isServer) then {
 			
 		private _crew = creategroup independent;
 		private _vehicle = ([_pos, 140, _class, _crew] call BIS_fnc_spawnVehicle) select 0;
+
+		if (isNull _vehicle) exitWith {systemChat format ["Spawining %1... GOt class back: %2", _class, _vehicle]; _vehicle};
+		
 		_vehicle limitSpeed 40;
 				
 		if (count _connected > 0) then {

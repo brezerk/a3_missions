@@ -26,6 +26,7 @@ class MissionLogo
 			font = "PuristaMedium";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 			shadow = 1;
+			
 		};
 		
 		class imgLogo : RscPicture 

@@ -123,7 +123,8 @@ Fn_Local_FailTasks = {
 		't_west_destroy_windmill',
 		't_west_destroy_fuel',
 		't_west_kill_doctor',
-		't_west_destroy_ammo'
+		't_west_destroy_ammo',
+		't_west_collect_intel'
 	];
 };
 

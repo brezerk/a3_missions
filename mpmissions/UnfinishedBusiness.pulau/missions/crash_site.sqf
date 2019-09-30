@@ -119,8 +119,9 @@ if (isServer) then {
 	//Send vehicles on patrol
 	call Fn_Patrols_Create_Random_Waypoints;
 	
+	//FIXME: should count only assault_group units!
 	trgEvacPoint = createTrigger ["EmptyDetector", getPos us_liberty_01];
-	trgEvacPoint setTriggerArea [1600, 1600, 0, false];
+	trgEvacPoint setTriggerArea [2000, 2000, 0, false];
 	trgEvacPoint setTriggerActivation ["WEST", "PRESENT", false];
 	trgEvacPoint setTriggerStatements [
 			"({alive _x && side _x == west} count (allPlayers -  entities 'HeadlessClient_F' ) == {alive _x && _x inArea thisTrigger && side _x == west} count (allPlayers - entities 'HeadlessClient_F' )) && (({alive _x && side _x == west} count allPlayers) > 0) && (count assault_group > 0)",
