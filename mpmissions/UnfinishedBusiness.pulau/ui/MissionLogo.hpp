@@ -23,7 +23,7 @@ class MissionLogo
 			text = "";
 			colorBackground[] = {0,0,0,0};
 			colorText[] = {1,1,1,1};
-			font = "PuristaMedium";
+			font = "RobotoCondensed";
 			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
 			shadow = 1;
 			

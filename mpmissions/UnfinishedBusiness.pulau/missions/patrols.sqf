@@ -242,10 +242,10 @@ if (isServer) then {
 		private _force_comp = [];
 		
 		switch (_force_level) do {
-			case 1: { _force_comp = [[D_FRACTION_INDEP_UNITS_CARS, 3], [D_FRACTION_INDEP_UNITS_TRANSPORT, 10]]; };
-			case 2: { _force_comp = [[D_FRACTION_INDEP_UNITS_CARS, 3], [D_FRACTION_INDEP_UNITS_TRANSPORT, 10], [D_FRACTION_INDEP_UNITS_LIGHT, 3]];};
-			case 3: { _force_comp = [[D_FRACTION_INDEP_UNITS_LIGHT, 3], [D_FRACTION_INDEP_UNITS_HEAVY, 7], [D_FRACTION_INDEP_UNITS_TRANSPORT, 10], [D_FRACTION_INDEP_UNITS_CARS, 3]];};
-			default { _force_comp = [[D_FRACTION_INDEP_UNITS_CARS, 3], [D_FRACTION_INDEP_UNITS_CARS, 3]]; };
+			case 1: { _force_comp = [D_FRACTION_INDEP_UNITS_CARS, D_FRACTION_INDEP_UNITS_TRANSPORT]; };
+			case 2: { _force_comp = [D_FRACTION_INDEP_UNITS_CARS, D_FRACTION_INDEP_UNITS_TRANSPORT, D_FRACTION_INDEP_UNITS_LIGHT]; };
+			case 3: { _force_comp = [D_FRACTION_INDEP_UNITS_LIGHT, D_FRACTION_INDEP_UNITS_HEAVY, D_FRACTION_INDEP_UNITS_TRANSPORT, D_FRACTION_INDEP_UNITS_CARS]; };
+			default { _force_comp = [D_FRACTION_INDEP_UNITS_CARS, D_FRACTION_INDEP_UNITS_CARS]; };
 		};
 		
 		systemChat format ["Create: %1", _force_comp];
@@ -281,7 +281,7 @@ if (isServer) then {
 									if ((count (nearestObjects [_next_road_pos, ["Car", "Truck"], 50]) == 0) and (count (nearestTerrainObjects [_next_road_pos, ["TREE", "ROCK", "ROCKS"], 10, false, true]) == 0) and (count (nearestTerrainObjects [_next_road_pos, ["BUILDING", "HOUSE", "FENCE", "WALL"], 50, false, true]) == 0)) then {
 										_roads pushBack _next_road;
 									};
-									if ((count _roards) >= (count _force_comp)) then {
+									if ((count _roads) >= (count _force_comp)) then {
 										breakTo "main";
 									};
 								} else {
@@ -297,51 +297,46 @@ if (isServer) then {
 		
 		if ((count _roads) < (count _force_comp)) exitWith {systemChat "No roads, bail!";};
 		
-		//private _road = selectRandom _roads;
 		private _lead_group = grpNull;
-		//private _last_road = _road;
 		private _uuid = "";
 		
 		{
-			//if (!isNil "_last_road") then {
-				private _road = (_roads select _forEachIndex);
-				private _vehicle = [_road, (selectRandom (_x select 0))] call Fn_Patrols_Create_VehicleOnTheRoad;
-				if (_forEachIndex == 0) then {
-					_lead_group = group (driver _vehicle);
-					_uuid = (_lead_group call BIS_fnc_netId);
-				} else {
-					(crew _vehicle) joinSilent _lead_group;
-				};
-				_vehicle setVariable ['assault_uuid', _uuid, false];
-				private _infantry = [];
-				//FIXME: configfile >> "CfgVehicles" >> _class >> "transportSoldier"
-				for "_i" from 1 to (_x select 1) do {
-					_infantry pushBack (selectRandom D_FRACTION_INDEP_UNITS_PATROL);
-				};
-				if ((count _infantry) > 0) then {
-					private _group = [(getPos _road), independent, _infantry,[],[],[],[],[],180] call BIS_fnc_spawnGroup;		
-					{
-						_x assignAsCargo _vehicle;
-						_x moveInCargo _vehicle;
-					} forEach units _group;
-					private _wp = _group addWaypoint [_targetPos, 0];
-					_wp setWaypointType "MOVE";
-					_wp setWaypointCombatMode "YELLOW";
-					_wp setWaypointBehaviour "AWARE";
-					_wp setWaypointCompletionRadius 350; 
-					_wp setWaypointSpeed "FULL";
+			private _road = (_roads select _forEachIndex);
+			private _class = selectRandom _x;
+			private _vehicle = [_road, _class] call Fn_Patrols_Create_VehicleOnTheRoad;
+			if (isNull _vehicle) exitWith {systemChat "Spawn error, bil";};
+			if (_forEachIndex == 0) then {
+				_lead_group = group (driver _vehicle);
+				_uuid = (_lead_group call BIS_fnc_netId);
+			} else {
+				(crew _vehicle) joinSilent _lead_group;
+			};
+			_vehicle setVariable ['assault_uuid', _uuid, false];
+			private _infantry = [];
+			for "_i" from 1 to (getNumber (configfile >> "CfgVehicles" >> _class >> "transportSoldier")) do {
+				_infantry pushBack (selectRandom D_FRACTION_INDEP_UNITS_PATROL);
+			};
+				
+			if ((count _infantry) > 0) then {
+				private _group = [(getPos _road), independent, _infantry,[],[],[],[],[],180] call BIS_fnc_spawnGroup;		
+				{
+					_x assignAsCargo _vehicle;
+					_x moveInCargo _vehicle;
+				} forEach units _group;
+				private _wp = _group addWaypoint [_targetPos, 0];
+				_wp setWaypointType "MOVE";
+				_wp setWaypointCombatMode "YELLOW";
+				_wp setWaypointBehaviour "AWARE";
+				_wp setWaypointCompletionRadius 350; 
+				_wp setWaypointSpeed "FULL";
 			
-					_wp = _group addWaypoint [_targetPos, 0];
-					_wp setWaypointType "SAD";
-					_wp setWaypointCombatMode "RED";
-					_wp setWaypointCompletionRadius 100;
-					_wp setWaypointBehaviour "COMBAT";
-					_wp setWaypointSpeed "FULL";
-				};
-			//	_last_road = ((roadsConnectedto (_last_road)) select 0);
-			//} else {
-			//	systemChat "No last road, bail!";
-			//};
+				_wp = _group addWaypoint [_targetPos, 0];
+				_wp setWaypointType "SAD";
+				_wp setWaypointCombatMode "RED";
+				_wp setWaypointCompletionRadius 100;
+				_wp setWaypointBehaviour "COMBAT";
+				_wp setWaypointSpeed "FULL";
+			};
 		} forEach _force_comp;
 		
 		_lead_group setFormation "COLUMN";

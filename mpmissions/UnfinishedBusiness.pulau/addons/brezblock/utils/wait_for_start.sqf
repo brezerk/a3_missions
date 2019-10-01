@@ -82,25 +82,28 @@ if (!isNil "_missionLogo") then {
 				};
 				switch (_intoFrame) do {
 					case 0: {
+					
 						_lblText ctrlSetFade 1;
 						_lblText ctrlCommit 0;
 						_imgLogo ctrlSetFade 1;
 						_imgLogo ctrlCommit 0;
 						
+						sleep 2;
+						
 						ctrlSetText [2700, localize "INFO_DEV_01"];
 						ctrlSetText [2710, "data\images\logo_bb.paa"];
 						
 						_lblText ctrlSetFade 0;
-						_lblText ctrlCommit 3;
+						_lblText ctrlCommit 2;
 						_imgLogo ctrlSetFade 0;
-						_imgLogo ctrlCommit 3;
+						_imgLogo ctrlCommit 2;
 
-						sleep 5;
+						sleep 3;
 						
 						_lblText ctrlSetFade 1;
-						_lblText ctrlCommit 3;
+						_lblText ctrlCommit 2;
 						_imgLogo ctrlSetFade 1;
-						_imgLogo ctrlCommit 3;
+						_imgLogo ctrlCommit 2;
 						
 						_intoFrame = _intoFrame + 1;
 					};
@@ -114,16 +117,16 @@ if (!isNil "_missionLogo") then {
 						ctrlSetText [2710, "data\images\logo_a3_ua.paa"];
 						
 						_lblText ctrlSetFade 0;
-						_lblText ctrlCommit 3;
+						_lblText ctrlCommit 2;
 						_imgLogo ctrlSetFade 0;
-						_imgLogo ctrlCommit 3;
+						_imgLogo ctrlCommit 2;
 
-						sleep 5;
+						sleep 3;
 						
 						_lblText ctrlSetFade 1;
-						_lblText ctrlCommit 3;
+						_lblText ctrlCommit 2;
 						_imgLogo ctrlSetFade 1;
-						_imgLogo ctrlCommit 3;
+						_imgLogo ctrlCommit 2;
 						
 						_intoFrame = _intoFrame + 1;
 					};
@@ -137,14 +140,14 @@ if (!isNil "_missionLogo") then {
 						ctrlSetText [2710, "data\images\logo.paa"];
 						
 						_lblText ctrlSetFade 0;
-						_lblText ctrlCommit 3;
+						_lblText ctrlCommit 2;
 						_imgLogo ctrlSetFade 0;
-						_imgLogo ctrlCommit 3;
+						_imgLogo ctrlCommit 2;
 
 						sleep 3;
 						
 						_lblText ctrlSetFade 1;
-						_lblText ctrlCommit 3;
+						_lblText ctrlCommit 2;
 						
 						_intoFrame = _intoFrame + 1;
 					};
@@ -170,7 +173,7 @@ if (!isNil "_missionLogo") then {
 	camUseNVG false;
 	camDestroy _cam;
 	["Default"] call BIS_fnc_setPPeffectTemplate;
-	[1, "BLACK", 3, 1] call BIS_fnc_fadeEffect;
+	[1, "BLACK", 1, 1] call BIS_fnc_fadeEffect;
 	cutText [localize "INFO_WAIT_02", "PLAIN DOWN", 2];
 	
 	playMusic "";

@@ -36,7 +36,7 @@ if (hasInterface) then {
 			[
 				player,
 				"t_west_kill_leader",
-				[format [localize "TASK_01_DESC", D_LOCATION],
+				[format [localize "TASK_01_DESC", (name target_leader_01), D_LOCATION, D_FRACTION_INDEP],
 				localize "TASK_01_TITLE",
 				localize "TASK_ORIG_01"],
 				getMarkerPos "mrk_airfield",

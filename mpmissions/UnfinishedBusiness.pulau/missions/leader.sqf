@@ -34,10 +34,25 @@ if (isServer) then {
 		private _pos = [_center, 0, 50, 1, 0, 0, 0] call BIS_fnc_findSafePos;
 		private _builing = nearestBuilding (_center);
 		_pos = selectRandom (_builing buildingPos -1);
-		if (!isNil "_pos") then {
-			private _class = ([independent, D_FRACTION_INDEP, "leader"] call Fn_Config_GetFraction_Units);
-			private _group = createGroup [independent, true];
-			target_leader_01 = _group createUnit [_class, _pos, [], 0, "FORM"];
+		if (isNil "_pos") exitWith { systemChat "Error: can't spawn leader"; };
+		private _cfg = ([independent, D_FRACTION_INDEP, "leader"] call Fn_Config_GetFraction_Units);
+		private _class = _cfg select 0;
+		private _group = createGroup [independent, true];
+		target_leader_01 = _group createUnit [_class, _pos, [], 0, "FORM"];
+		
+		private _wep = (_cfg select 1);
+		if (count _wep > 0) then {
+			{
+				target_leader_01 addWeapon _x;
+			} forEach (_wep);
+				
+			{
+				for "_i" from 1 to 2 do {target_leader_01 addItemToUniform _x;};
+			} forEach primaryWeaponMagazine target_leader_01;
+				
+			{
+				for "_i" from 1 to 2 do {target_leader_01 addItemToUniform _x;};
+			} forEach handgunMagazine target_leader_01;
 		};
 	
 		private _trg = createTrigger ["EmptyDetector", getPos target_leader_01];

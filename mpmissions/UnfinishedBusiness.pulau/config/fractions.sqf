@@ -781,7 +781,7 @@
 			'transport_medic', [
 					'I_Truck_02_medical_F']
 			],
-			['leader', 'I_Story_Colonel_F'],
+			['leader', ['I_Story_Colonel_F', ['arifle_Mk20_F', 'hgun_ACPC2_F']]],
 			[
 			'heli', [
 					'I_Heli_light_03_dynamicLoadout_F']

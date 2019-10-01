@@ -285,9 +285,9 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>Ліквідувати ватажка бунтівників</Russian>
 			</Key>
 			<Key ID="TASK_01_DESC">
-				<Original>Eliminate the rebel leader Solomon Maru on the base near the &lt;marker name = 'mrk_airfield'&gt;%1 airfield&lt;/marker&gt;.&lt;img image='data\images\fractions\CUP_I_NAPA\leader.paa' width='256' height='256'/&gt;</Original>
-				<English>Eliminate the rebel leader Solomon Maru on the base near the &lt;marker name = 'mrk_airfield'&gt;%1 airfield&lt;/marker&gt;.&lt;img image='data\images\fractions\CUP_I_NAPA\leader.paa' width='256' height='256'/&gt;</English>
-				<Russian>Ліквідувати ватажка бунтівників Solomon Maru на базі біля &lt;marker name='mrk_airfield'&gt;аеродрому %1&lt;/marker&gt;.&lt;img image='data\images\fractions\CUP_I_NAPA\leader.paa' width='256' height='256'/&gt;</Russian>
+				<Original>Eliminate the rebel leader %1 on the base near the &lt;marker name = 'mrk_airfield'&gt;%2 airfield&lt;/marker&gt;.&lt;img image='data\images\fractions\%3\leader.paa' width='256' height='256'/&gt;</Original>
+				<English>Eliminate the rebel leader %1 on the base near the &lt;marker name = 'mrk_airfield'&gt;%2 airfield&lt;/marker&gt;.&lt;img image='data\images\fractions\%3\leader.paa' width='256' height='256'/&gt;</English>
+				<Russian>Ліквідувати ватажка бунтівників %1 на базі біля &lt;marker name='mrk_airfield'&gt;аеродрому %2&lt;/marker&gt;.&lt;img image='data\images\fractions\%3\leader.paa' width='256' height='256'/&gt;</Russian>
 			</Key>
 			<Key ID="TASK_02_TITLE">
 				<Original>Get to the %1 airfield</Original>
