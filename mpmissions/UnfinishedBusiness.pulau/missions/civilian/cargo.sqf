@@ -73,20 +73,40 @@ if (isServer) then {
 	
 	Fn_Task_Spawn_Boats = {
 		params ["_poi"];
+		private _blacklist = [];
+		
+		//Avoid spawning boats for certain locations (to far from sea, bad location, e.t.c.)
+		switch(D_LOCATION) do
+		{
+			case "Gurun": {
+				_blacklist = [
+					'Kambani',
+					'Bibung',
+					'Loholoho'
+				];
+			};
+			case "Monyet": {
+				_blacklist = [
+					'Tinobu'
+				];
+			};
+		};
 
 		{
-			private _center = _x select 1;
-			private _myPlaces = selectBestPlaces [_center, 600, "((waterDepth factor [1,1.4])/(1 + waterDepth))", 15, 4];
-			{
-				private _pos = _x select 0;
-				private _obj = ((selectRandom D_FRACTION_CIV_UNITS_BOATS) createVehicle (_pos));
-				_obj addItemCargoGlobal ["V_RebreatherIA", 5];
-				_obj addItemCargoGlobal ["I_Assault_Diver", 5];
-				_obj addItemCargoGlobal ["G_I_Diving", 5];
-				if (isClass(configFile >> "CfgPatches" >> "ace_main")) then {
-					_obj addItemCargoGlobal ["ACE_EarPlugs", 5];
-				};
-			} forEach _myPlaces;
+			if (!((_x select 0) in _blacklist)) then {
+				private _center = _x select 1;
+				private _myPlaces = selectBestPlaces [_center, 600, "((waterDepth factor [1,1.4])/(1 + waterDepth))", 15, 4];
+				{
+					private _pos = _x select 0;
+					private _obj = ((selectRandom D_FRACTION_CIV_UNITS_BOATS) createVehicle (_pos));
+					_obj addItemCargoGlobal ["V_RebreatherIA", 5];
+					_obj addItemCargoGlobal ["I_Assault_Diver", 5];
+					_obj addItemCargoGlobal ["G_I_Diving", 5];
+					if (isClass(configFile >> "CfgPatches" >> "ace_main")) then {
+						_obj addItemCargoGlobal ["ACE_EarPlugs", 5];
+					};
+				} forEach _myPlaces;
+			};
 		} forEach _poi;
 	};
 	
@@ -117,10 +137,6 @@ if (isServer) then {
 			30,
 			false
 		] call BrezBlock_fnc_Attach_Hold_Action;	
-			
-		//_target setPosASL [getPos _target select 0, getPos _target select 1, 0];
-		//_obj addAction [localize 'ACTION_04', { private['_target']; _target = _this select 0; _target tachTo [invisble_01, [0,0,0]]; }, nil, 1, false, true, "", "alive _this", 5];
-		//_obj addAction [localize 'ACTION_05', { [_this select 1] call Fn_Task_Civilian_AddCargoToBoat; }, nil, 1, false, true, "", "alive _this", 5];
 		_obj;
 	};
 	

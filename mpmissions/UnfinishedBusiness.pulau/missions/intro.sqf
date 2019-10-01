@@ -49,7 +49,7 @@ if (isServer) then {
 		us_heli_01 = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_HELI), (getPos land_01), [], 0, "CAN_COLLIDE"];
 		us_heli_01 attachTo [land_01, [0, 0, 0]];
 		detach us_heli_01;
-		us_heli_01 setDir ([getPos (us_airplane_01), getPos(us_heli_01)] call BIS_fnc_dirTo);
+		us_heli_01 setDir ([getPos (us_heli_01), getPos(us_airplane_01)] call BIS_fnc_dirTo);
 		us_heli_01 setVehicleLock "LOCKED";
 		
 		

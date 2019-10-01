@@ -3,7 +3,12 @@
 	<Package name="UnfinishedBusiness">
 		<Container name="l18n">
 			<Key ID="STR_ONLOAD_NAME">
-				<Original>Unfinished Business v0.9.538</Original>
+				<Original>Unfinished Business v0.9.717</Original>
+			</Key>
+			<Key ID="INFO_SAFEZONE">
+				<Original>Stop shooting or throwing grenades! You are in a safe zone!</Original>
+				<English>Stop shooting or throwing grenades! You are in a safe zone!</English>
+				<Russian>Перестаньте стріляти чи кидати гранати! Ви в безпечній зоні!</Russian>
 			</Key>
 			<Key ID="INFO_DEV_01">
 				<Original>Development studio</Original>
@@ -11,9 +16,9 @@
 				<Russian>Студія розробки</Russian>
 			</Key>
 			<Key ID="INFO_DEV_02">
-				<Original>In cooperation with</Original>
-				<English>In cooperation with</English>
-				<Russian>У співпраці з</Russian>
+				<Original>In cooperation with community</Original>
+				<English>In cooperation with community</English>
+				<Russian>У співпраці зі спільнотою</Russian>
 			</Key>
 			<Key ID="INFO_DEV_03">
 				<Original>Presents</Original>

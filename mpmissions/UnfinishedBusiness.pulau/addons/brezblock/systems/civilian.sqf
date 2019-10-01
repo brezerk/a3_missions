@@ -36,16 +36,15 @@ if (isServer) then {
 		private _pos = [_center, 5, _radius, 3, 0, 0, 0] call BIS_fnc_findSafePos;
 
 		private _obj = _grp createUnit ["ModuleCivilianPresenceSafeSpot_F", _pos, [], 0, "NONE"];
-		_obj setVariable ["#capacity",1];
-		_obj setVariable ["#usebuilding",false];
-		_obj setVariable ["#terminal",false];
+		_obj setVariable ["#capacity",    1];
+		_obj setVariable ["#usebuilding", false];
+		_obj setVariable ["#terminal",    false];
 
 		_obj = _grp createUnit ["ModuleCivilianPresenceUnit_F", _pos, [], 0, "NONE"];
 	};
 	
 	for "_i" from 0 to (round (_radius / 25) + 2) do
 	{
-		
 		[_grp, _center, _radius] call _placeCivSpot;
 	};
 	
@@ -55,7 +54,7 @@ if (isServer) then {
 	_obj setVariable ["#debug",        D_DEBUG ]; // Debug mode on
 	_obj setVariable ["#useagents",    true ];
 	_obj setVariable ["#usepanicmode", false];
-	_obj setVariable ["#unitcount",    (round (_radius / 25))];
+	_obj setVariable ["#unitcount",    (round (_radius / 50) + 3)];
 	
 	_grp;
 };

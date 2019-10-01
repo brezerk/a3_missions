@@ -53,6 +53,12 @@ execVM "gear\player\init.sqf";
 player setVariable ["weapon_fiered", false, false];
 player setVariable ["is_civilian", false, true];
 
+if(!isClass(configFile >> "cfgPatches" >> "ace_medical")) then {
+	player setVariable ['#rev_enabled', true, true];
+};
+
+safezone_pos = getMarkerPos "respawn_west";
+
 [] execVM "briefing.sqf";
 
 #include "missions\local\intro.sqf";
@@ -319,6 +325,23 @@ player addEventHandler
 		};
     }
 ];
+
+/*
+player addEventHandler
+[
+    "Fired",
+    {
+		//params ["_shooter","_weapon","_muzzle","_mode","_ammo","_magazine","_projectile","_gunner"]; 
+		if (playerSide == west) then {
+			if (((_this select 0) distance2D safezone_pos) <= 200) then {
+				deletevehicle (_this select 6); 
+				player action ["WeaponOnBack", player];
+				cutText [localize "INFO_SAFEZONE", "PLAIN DOWN", 2];
+			};
+		};
+    }
+];
+*/
 
 execVM "missions\local\sync.sqf";
 

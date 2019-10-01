@@ -8,7 +8,7 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=7844;
+		nextID=7848;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={911.44012,321.28494,5752.7764};
-		dir[]={0.75320268,-0.62390697,0.20854053};
-		up[]={0.60130572,0.78147721,0.16648401};
-		aside[]={0.26684025,-3.7717837e-007,-0.96376979};
+		pos[]={1340.1174,4.7670665,6001.8423};
+		dir[]={0.69643986,-0.61706394,0.36642998};
+		up[]={0.54610842,0.78689182,0.28733313};
+		aside[]={0.46564409,-5.0172093e-007,-0.88500804};
 	};
 };
 binarizationWanted=0;
@@ -204,6 +204,25 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
+			property="ReviveMode";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=2;
+				};
+			};
+		};
+		class Attribute1
+		{
 			property="RespawnTemplates";
 			expression="true";
 			class Value
@@ -217,42 +236,10 @@ class CustomAttributes
 							"ARRAY"
 						};
 					};
-					class value
-					{
-						items=2;
-						class Item0
-						{
-							class data
-							{
-								class type
-								{
-									type[]=
-									{
-										"STRING"
-									};
-								};
-								value="EndMission";
-							};
-						};
-						class Item1
-						{
-							class data
-							{
-								class type
-								{
-									type[]=
-									{
-										"STRING"
-									};
-								};
-								value="None";
-							};
-						};
-					};
 				};
 			};
 		};
-		nAttributes=1;
+		nAttributes=2;
 	};
 	class Category1
 	{
@@ -11050,7 +11037,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={988.57599,8.8885603,9467.3076};
-						angles[]={0,1.8362343,0};
+						angles[]={0,1.836226,0};
 					};
 					side="West";
 					flags=3;
@@ -11102,7 +11089,26 @@ class Mission
 								};
 							};
 						};
-						nAttributes=2;
+						class Attribute2
+						{
+							property="EnableRevive";
+							expression="if (getMissionConfigValue ['ReviveMode',0] == 2) then {_this setVariable ['#rev_enabled', _value, true]};";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=3;
 					};
 				};
 				class Item1

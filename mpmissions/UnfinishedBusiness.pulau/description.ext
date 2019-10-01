@@ -54,6 +54,12 @@ respawnOnStart = -1;
 // Skip briefingName
 briefing = 0;
 
+// Revive
+reviveMode = 2;
+//reviveUnconsciousStateMode = 1;
+reviveRequiredTrait = 0; // all can revive
+reviveRequiredItems = 2; 
+
 // Force cba_settings.sqf loading
 cba_settings_hasSettingsFile = 1;
 
@@ -114,7 +120,7 @@ class CfgDebriefing
 		description = $STR_END_01_DESC;
 		pictureBackground = "";
 		picture = "flag_CSAT";
-		pictureColor[] = {0.0,0.0,0.6,1};
+		pictureColor[] = {0.0,0.0,0.0,1};
 	};
 	class EndAssaultGroupResqued_EASTWon_GUERWon
 	{
@@ -179,6 +185,26 @@ class CfgFunctions {
 			class GetAllMarkerTypesInRange {file = "addons\brezblock\utils\get_all_marker_types_in_range.sqf";};
 		};
 	};
+};
+
+class CfgVehicles {
+    class ItemCore
+    class InventoryItem_Base_F
+    class BB_Item_Money_F: ItemCore
+    {
+        author = "Oleksii Malakhov";
+        displayName = "Dollars";
+        model = "\A3\Structures_F\Items\Valuables\Money_F.p3d";
+        scope = 2;      
+        scopeArsenal = 2;
+        scopeCurator = 2;
+        picture = "\data\images\items\money.paa";
+        descriptionShort = "Babanas";
+        class ItemInfo: InventoryItem_Base_F
+        {
+            mass = 0;
+        };
+    };
 };
 
 #include "ui\SettingsDialog.hpp"

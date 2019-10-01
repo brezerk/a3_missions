@@ -195,6 +195,10 @@
 					'CUP_C_V3S_Covered_TKC']
 			],
 			[
+			'transport_medic', [
+					'CUP_O_LR_Ambulance_TKA']
+			],
+			[
 			'boats', [
 					'C_Boat_Civil_01_F',
 					'C_Rubberboat',
@@ -254,6 +258,11 @@
 					'C_Truck_02_box_F',
 					'C_Truck_02_transport_F',
 					'C_Truck_02_covered_F']
+			],
+			[
+			'transport_medic', [
+					'C_Van_02_medevac_F',
+					'C_IDAP_Van_02_fuel_F']
 			],
 			[
 			'boats', [
@@ -717,6 +726,76 @@
 					'CUP_I_AAV_RACS',
 					'CUP_I_M113_RACS',
 					'CUP_I_M113_RACS_URB']
+			]
+		]
+	],
+	[
+		'IND_G_F', 'FIA', [
+			[
+			'patrol', [
+					'I_G_Soldier_F',
+					'I_G_Soldier_A_F',
+					'I_G_Soldier_AR_F',
+					'I_G_Soldier_LAT_F',
+					'I_G_Soldier_lite_F',
+					'I_G_Soldier_GL_F',
+					'I_G_Soldier_SL_F',
+					'I_G_Soldier_exp_F',
+					'I_G_engineer_F',
+					'I_G_medic_F']
+			],
+			[
+			'garrison', [
+					'I_G_Soldier_F',
+					'I_G_Soldier_A_F',
+					'I_G_Soldier_AR_F',
+					'I_G_Soldier_LAT_F',
+					'I_G_Soldier_lite_F',
+					'I_G_Soldier_GL_F',
+					'I_G_Soldier_SL_F',
+					'I_G_Soldier_TL_F',
+					'I_G_Soldier_exp_F',
+					'I_G_engineer_F',
+					'I_G_medic_F']
+			],
+			[
+			'cars', [
+					'I_G_Offroad_01_AT_F',
+					'I_G_Offroad_01_armed_F']
+			],
+			[
+			'light', ['I_MRAP_03_gmg_F',
+					'I_MRAP_03_hmg_F']
+			],
+			[
+			'heavy', [
+					'I_APC_tracked_03_cannon_F',
+					'I_APC_Wheeled_03_cannon_F']
+			],
+			[
+			'transport', [
+					'I_G_Van_01_transport_F']
+			],
+			[
+			'transport_ammo', [
+					'I_Truck_02_ammo_F']
+			],
+			[
+			'transport_repair', [
+					'I_G_Offroad_01_repair_F']
+			],
+			[
+			'transport_fuel', [
+					'I_G_Van_01_fuel_F']
+			],
+			[
+			'transport_medic', [
+					'I_Truck_02_medical_F']
+			],
+			['leader', ['I_C_Soldier_Camo_F', ['arifle_Mk20_F', 'hgun_ACPC2_F']]],
+			[
+			'heli', [
+					'I_Heli_light_03_unarmed_F']
 			]
 		]
 	],

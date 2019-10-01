@@ -58,9 +58,11 @@ if (isServer) then {
 		};
 					
 		_pos = [_pos, 3, _dir + 90] call BIS_Fnc_relPos;
-					
-		private _vehicle = createVehicle ["CUP_O_LR_Ambulance_TKA", _pos];
-		_vehicle setObjectTextureGlobal [0, "cup\wheeledvehicles\cup_wheeledvehicles_lr\data\textures\civ_r_lr_base_co.paa"];
+		private _class = selectRandom ([civilian, D_FRACTION_CIV, "transport_medic"] call Fn_Config_GetFraction_Units);
+		private _vehicle = createVehicle [_class, _pos];
+		if(isClass(configFile>>"cfgPatches">>"cup_vehicles")) then {
+			_vehicle setObjectTextureGlobal [0, "cup\wheeledvehicles\cup_wheeledvehicles_lr\data\textures\civ_r_lr_base_co.paa"];
+		};
 		_vehicle setVariable ["ace_medical_medicClass", 1, true];
 		_vehicle setDir _dir;
 			
@@ -69,26 +71,42 @@ if (isServer) then {
 		clearItemCargoGlobal _vehicle;
 		clearBackpackCargoGlobal _vehicle;
 		
-		_vehicle addItemCargoGlobal ["ACE_fieldDressing", 10];
-		_vehicle addItemCargoGlobal ["ACE_bloodIV", 4];
-		_vehicle addItemCargoGlobal ["ACE_morphine", 2];
-		_vehicle addItemCargoGlobal ["ACE_bodyBag", 10];
-		_vehicle addItemCargoGlobal ["ACE_epinephrine", 2];
+		if (isClass(configFile >> "CfgPatches" >> "ace_medical")) then {
+			_vehicle addItemCargoGlobal ["ACE_fieldDressing", 10];
+			_vehicle addItemCargoGlobal ["ACE_bloodIV", 4];
+			_vehicle addItemCargoGlobal ["ACE_morphine", 2];
+			_vehicle addItemCargoGlobal ["ACE_bodyBag", 10];
+			_vehicle addItemCargoGlobal ["ACE_epinephrine", 2];
+		} else {
+			_vehicle addItemCargoGlobal ["Medikit", 1];
+			_vehicle addItemCargoGlobal ["FirstAidKit", 10];
+		};
 	};
 	
 	private _builing = nearestBuilding (_center);
 	private _pos = selectRandom (_builing buildingPos -1);
 	if (!isNil "_pos") then {
-		private _obj = "ACE_medicalSupplyCrate" createVehicle (_pos);
+		private _class = "";
+		if (isClass(configFile >> "CfgPatches" >> "ace_medical")) then {
+			_class = "ACE_medicalSupplyCrate"
+		} else {
+			_class = selectRandom ['Land_PlasticCase_01_small_idap_F', 'Land_PlasticCase_01_large_idap_F', 'Land_PlasticCase_01_medium_idap_F'];
+		};
+		private _obj = _class createVehicle (_pos);
 		clearWeaponCargoGlobal _obj;
 		clearMagazineCargoGlobal _obj;
 		clearItemCargoGlobal _obj;
 		clearBackpackCargoGlobal _obj;
 
-		_obj addItemCargoGlobal ["ACE_fieldDressing", 20];
-		_obj addItemCargoGlobal ["ACE_bloodIV", 8];
-		_obj addItemCargoGlobal ["ACE_morphine", 6];
-		_obj addItemCargoGlobal ["ACE_bodyBag", 10];
-		_obj addItemCargoGlobal ["ACE_epinephrine", 2];
+		if (isClass(configFile >> "CfgPatches" >> "ace_medical")) then {
+			_obj addItemCargoGlobal ["ACE_fieldDressing", 20];
+			_obj addItemCargoGlobal ["ACE_bloodIV", 8];
+			_obj addItemCargoGlobal ["ACE_morphine", 8];
+			_obj addItemCargoGlobal ["ACE_bodyBag", 10];
+			_obj addItemCargoGlobal ["ACE_epinephrine", 2];
+		} else {
+			_obj addItemCargoGlobal ["Medikit", 2];
+			_obj addItemCargoGlobal ["FirstAidKit", 20];
+		};
 	};	
 };

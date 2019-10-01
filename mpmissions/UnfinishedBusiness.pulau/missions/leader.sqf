@@ -64,11 +64,7 @@ if (isServer) then {
 			""
 		];
 		
-		if (hasInterface) then {
-			remoteExecCall ["Fn_Local_Create_KillLeader"];
-		} else {
-			remoteExecCall ["Fn_Local_Create_KillLeader", -2];
-		};
+		remoteExecCall ["Fn_Local_Create_KillLeader", [0,-2] select isDedicated];
 		
 		private _marker = createMarker ["mrk_base_indep_01", _center];
 		_marker setMarkerType "hd_flag";
