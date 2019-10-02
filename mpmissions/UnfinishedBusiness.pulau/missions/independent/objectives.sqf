@@ -83,6 +83,15 @@ if (isServer) then {
 					indep_ammo_01 = createVehicle ["B_Slingload_01_Ammo_F", _pos, [], 0, "CAN_COLLIDE"]; // Land_Pallet_MilBoxes_F
 					indep_ammo_01 setDir (_dir + 90);
 					indep_ammo_01 allowDamage true;
+					indep_ammo_01 addEventHandler [
+						"HandleDamage", {
+							private _object = _this select 0;
+							private _projectile = _this select 4;
+							if ( _projectile isKindOf "PipeBombBase" ) then {
+								_object setDammage 1;
+							};
+						}
+					];
 					private _trg = createTrigger ["EmptyDetector", getPos indep_ammo_01];
 					_trg setTriggerArea [0, 0, 0, false];
 					_trg setTriggerActivation ["NONE", "PRESENT", false];
@@ -96,6 +105,15 @@ if (isServer) then {
 					indep_wind_01 = createVehicle [_class, _center];
 					indep_wind_01 setVectorUp [0,0,1];
 					indep_wind_01 allowDamage true;
+					indep_wind_01 addEventHandler [
+						"HandleDamage", {
+							private _object = _this select 0;
+							private _projectile = _this select 4;
+							if ( _projectile isKindOf "PipeBombBase" ) then {
+								_object setDammage 1;
+							};
+						}
+					];
 					private _trg = createTrigger ["EmptyDetector", getPos indep_wind_01];
 					_trg setTriggerArea [0, 0, 0, false];
 					_trg setTriggerActivation ["NONE", "PRESENT", false];
@@ -109,6 +127,15 @@ if (isServer) then {
 					indep_fuel_01 = createVehicle [_class, _center];
 					indep_fuel_01 setVectorUp [0,0,1];
 					indep_fuel_01 allowDamage true;
+					indep_fuel_01 addEventHandler [
+						"HandleDamage", {
+							private _object = _this select 0;
+							private _projectile = _this select 4;
+							if ( _projectile isKindOf "PipeBombBase" ) then {
+								_object setDammage 1;
+							};
+						}
+					];
 					private _trg = createTrigger ["EmptyDetector", getPos indep_fuel_01];
 					_trg setTriggerArea [0, 0, 0, false];
 					_trg setTriggerActivation ["NONE", "PRESENT", false];

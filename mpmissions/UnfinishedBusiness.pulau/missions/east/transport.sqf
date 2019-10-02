@@ -25,11 +25,22 @@ Spawn start objectives, triggers for informator contact
 if (hasInterface) then {};
 
 if (isServer) then {
-	Fn_Spawn_East_Light_Transport = {
+	Fn_Spawn_East_Cars_Transport = {
         params ["_spawnposition"];
         private ["_pos", "_vec"];
         _vec = objNull;
         private _class = (selectRandom ([east, D_FRACTION_EAST, "cars"] call Fn_Config_GetFraction_Units));
+        _pos = getMarkerPos _spawnposition findEmptyPosition [0, 15, _class];
+        _vec = createVehicle [_class, _pos, [], 0];
+        _vec setDir (markerDir _spawnposition);
+        _vec;
+	};
+	
+	Fn_Spawn_East_Light_Transport = {
+        params ["_spawnposition"];
+        private ["_pos", "_vec"];
+        _vec = objNull;
+        private _class = (selectRandom ([east, D_FRACTION_EAST, "light"] call Fn_Config_GetFraction_Units));
         _pos = getMarkerPos _spawnposition findEmptyPosition [0, 15, _class];
         _vec = createVehicle [_class, _pos, [], 0];
         _vec setDir (markerDir _spawnposition);
@@ -43,7 +54,13 @@ if (isServer) then {
 				private _marker = createMarker [format ["mrk_east_transport_%1", _forEachIndex], getMarkerPos _x];
 				_marker setMarkerType "hd_destroy";
 				_marker setMarkerAlpha 0;
-				[Fn_Spawn_East_Light_Transport, _marker, 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
+				[Fn_Spawn_East_Cars_Transport, _marker, 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
+			};
+		} forEach allMapMarkers;
+		private _filter = format ["wp_%1_east_apc_spawn", D_LOCATION];
+		{
+			if (_x find _filter >= 0) then {
+				[_x] call Fn_Spawn_East_Light_Transport;
 			};
 		} forEach allMapMarkers;
 	};

@@ -8,7 +8,7 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=7850;
+		nextID=7853;
 	};
 	class MarkerIDProvider
 	{
@@ -296,7 +296,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=898;
+		items=901;
 		class Item0
 		{
 			dataType="Marker";
@@ -2927,12 +2927,12 @@ class Mission
 		class Item211
 		{
 			dataType="Marker";
-			position[]={6511.0273,27.556595,6900.9155};
+			position[]={6514.9277,27.499989,6899.9971};
 			name="wp_Gurun_east_transport_spawn_01";
 			type="o_unknown";
-			angle=104.99991;
+			angle=111.08774;
 			id=6996;
-			atlOffset=1.9073486e-006;
+			atlOffset=-1.9073486e-006;
 		};
 		class Item212
 		{
@@ -3190,12 +3190,12 @@ class Mission
 		class Item227
 		{
 			dataType="Marker";
-			position[]={6506.5273,29.695782,6922.2065};
+			position[]={6509.9692,28.413,6920.6768};
 			name="wp_Gurun_east_transport_spawn_02";
 			type="o_unknown";
-			angle=60;
+			angle=247.9325;
 			id=7014;
-			atlOffset=3.8146973e-006;
+			atlOffset=-0.078084946;
 		};
 		class Item228
 		{
@@ -6192,19 +6192,19 @@ class Mission
 			position[]={2375.0168,21.688812,5299.2241};
 			name="wp_Monyet_east_transport_spawn_01";
 			type="o_unknown";
-			angle=47.948982;
+			angle=254.9516;
 			id=7272;
 			atlOffset=16.674541;
 		};
 		class Item461
 		{
 			dataType="Marker";
-			position[]={2374.6724,22.134523,5323.4961};
+			position[]={2374.6724,22.134525,5323.4961};
 			name="wp_Monyet_east_transport_spawn_02";
 			type="o_unknown";
-			angle=154.80995;
+			angle=308.56696;
 			id=7273;
-			atlOffset=17.518972;
+			atlOffset=17.518974;
 		};
 		class Item462
 		{
@@ -8904,7 +8904,7 @@ class Mission
 			name="wp_Monyet_paradrop_66";
 			type="b_recon";
 			id=7517;
-			atlOffset=1.4655185;
+			atlOffset=0.15392697;
 		};
 		class Item701
 		{
@@ -9552,7 +9552,7 @@ class Mission
 			b=75;
 			drawBorder=1;
 			id=7576;
-			atlOffset=22.132744;
+			atlOffset=21.089573;
 		};
 		class Item760
 		{
@@ -11750,6 +11750,36 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item898
+		{
+			dataType="Marker";
+			position[]={2391.104,21.597,5322.0762};
+			name="wp_Monyet_east_apc_spawn_01";
+			type="o_unknown";
+			angle=114.24799;
+			id=7850;
+			atlOffset=16.675013;
+		};
+		class Item899
+		{
+			dataType="Marker";
+			position[]={712.36603,-10.038,11126.313};
+			name="wp_XXX_east_apc_spawn_01";
+			type="o_motor_inf";
+			angle=175.85197;
+			id=7851;
+			atlOffset=8.8589325;
+		};
+		class Item900
+		{
+			dataType="Marker";
+			position[]={6512.3408,44.248001,6910.7222};
+			name="wp_Gurun_east_apc_spawn_01";
+			type="o_unknown";
+			angle=180.5081;
+			id=7852;
+			atlOffset=16.69845;
 		};
 	};
 	class Connections

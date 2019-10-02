@@ -31,6 +31,9 @@ if (isServer) then {
 	private _good_roads = [];
 	
 	_marker setMarkerAlpha 1;
+	
+	_marker = createMarker [format ["mrk_%1", ([_marker, 3] call BIS_fnc_trimString)], _center];
+	_marker setMarkerType "loc_Hospital";
 			
 	{
 		private _pos = position _x;
@@ -81,6 +84,8 @@ if (isServer) then {
 			_vehicle addItemCargoGlobal ["Medikit", 1];
 			_vehicle addItemCargoGlobal ["FirstAidKit", 10];
 		};
+	} else {
+		systemChat "No good round found. Skip medevac spawn";
 	};
 	
 	private _builing = nearestBuilding (_center);
@@ -92,7 +97,8 @@ if (isServer) then {
 		} else {
 			_class = selectRandom ['Land_PlasticCase_01_small_idap_F', 'Land_PlasticCase_01_large_idap_F', 'Land_PlasticCase_01_medium_idap_F'];
 		};
-		private _obj = _class createVehicle (_pos);
+		private _obj = _class createVehicle [0,0,0];
+		_obj setPos _pos;
 		clearWeaponCargoGlobal _obj;
 		clearMagazineCargoGlobal _obj;
 		clearItemCargoGlobal _obj;

@@ -23,13 +23,6 @@ Spawn start objectives, triggers for informator contact
 
 if (isServer) then {
 
-	Fn_Task_Attack_City = {
-		params['_marker'];
-		private _pos = (getMarkerPos _marker);
-
-		[_pos, 1] call Fn_Patrols_Create_AssaultGroup;
-	};
-
 	private _crashSitePos = getMarkerPos "mrk_west_crashsite";
 
 	call Fn_Spawn_East_AntiAir;
@@ -60,12 +53,6 @@ if (isServer) then {
 		_mark = createMarker [format ["respawn_civilian_%1", _forEachIndex], _pos];
 		_mark setMarkerType "hd_destroy";
 		_mark setMarkerAlpha 0;
-		
-		private _trg = createTrigger ["EmptyDetector", getMarkerPos (format ["mrk_city_%1", _forEachIndex])];
-		_trg setTriggerArea [250, 250, 0, false];
-		_trg setTriggerActivation ["WEST SEIZED", "PRESENT", false];
-		_trg setTriggerTimeout [0, 5, 10, true];
-		_trg setTriggerStatements ["this", format ["['mrk_city_%1'] call Fn_Task_Attack_City;", _forEachIndex], ""];
 	} forEach avaliable_pois;
 
 	[getMarkerPos "mrk_east_base_02", 600] execVM "addons\brezblock\utils\controller.sqf";

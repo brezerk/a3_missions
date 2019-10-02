@@ -110,24 +110,12 @@ if (isServer) then {
 	[] execVM "missions\informator.sqf";
 	call Fn_Task_Create_AA;
 	
-	{
-		remoteExecCall ["Fn_Local_Create_RescueMission", _x];
-		
-		[_x, true] remoteExecCall ["allowDamage"];
-	} forEach  (playableUnits + switchableUnits);
+
 		
 	//Send vehicles on patrol
 	call Fn_Patrols_Create_Random_Waypoints;
 	
-	//FIXME: should count only assault_group units!
-	trgEvacPoint = createTrigger ["EmptyDetector", getPos us_liberty_01];
-	trgEvacPoint setTriggerArea [2000, 2000, 0, false];
-	trgEvacPoint setTriggerActivation ["WEST", "PRESENT", false];
-	trgEvacPoint setTriggerStatements [
-			"({alive _x && side _x == west} count (allPlayers -  entities 'HeadlessClient_F' ) == {alive _x && _x inArea thisTrigger && side _x == west} count (allPlayers - entities 'HeadlessClient_F' )) && (({alive _x && side _x == west} count allPlayers) > 0) && (count assault_group > 0)",
-			"['t_west_rescue', 'SUCCEEDED'] call BIS_fnc_taskSetState; call Fn_Endgame_EvacPoint;",
-			""
-	];
+	call Fn_Task_Create_RescueMission;
 	
 	//Cleanup unneded markers
 	{

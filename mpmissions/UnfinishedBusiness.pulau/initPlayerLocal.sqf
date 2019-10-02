@@ -52,6 +52,7 @@ execVM "gear\player\init.sqf";
 
 player setVariable ["weapon_fiered", false, false];
 player setVariable ["is_civilian", false, true];
+player setVariable ["BB_CorpseTTL", -1, true];
 
 if(!isClass(configFile >> "cfgPatches" >> "ace_medical")) then {
 	player setVariable ['#rev_enabled', true, true];
@@ -161,56 +162,53 @@ player addEventHandler
 [
 	"Killed",
 	{
-		player setVariable ["is_assault_group", false, true];
-		player setVariable ["is_civilian", false, true];
-		player setVariable ["weapon_fiered", false, false];
-		deleteVehicle trgCivPlayerDetected;
-		deleteVehicle trgCivFloodedShip;
-		//deleteVehicle trgCivPoliceStation;
-		deleteVehicle trgCivStash01;
-		deleteVehicle trgCivStash02;
-		deleteVehicle trgCivPlayerDetected;
-		deleteVehicle trgCivLiberate00;
-		deleteVehicle trgCivLiberate01;
-		deleteVehicle trgWestCrashSite;
-		
-		[player] call Fn_Local_Dismiss_Group;
-		
-		private _sides = [civilian, east, west];
-		
-		if (!(alive obj_east_comtower)) then {
-			_sides = _sides - [east];
-		};
-		
-		if (count (nearestObjects [us_liberty_01, ["Ship", "Helicopter"], 100]) <= 0) then {
-			_sides = _sides - [west];
-		};
-
-		if (count _sides > 2) then {
-			_sides = _sides - [playerSide];
-		};
-		
-		private _side = selectRandom _sides;
-
-		switch (_side) do
-		{
-			case east:
-			{
-				//systemChat "switched";
-				[east] call Fn_Local_Switch_Side;
-				player setVariable ["is_civilian", false, true];
+		if (mission_plane_send) then {
+			deleteVehicle trgCivPlayerDetected;
+			deleteVehicle trgCivFloodedShip;
+			deleteVehicle trgCivStash01;
+			deleteVehicle trgCivStash02;
+			deleteVehicle trgCivPlayerDetected;
+			deleteVehicle trgCivLiberate00;
+			deleteVehicle trgCivLiberate01;
+			deleteVehicle trgWestCrashSite;
+			
+			[player] call Fn_Local_Dismiss_Group;
+			
+			private _sides = [civilian, east, west];
+			
+			if (!(alive obj_east_comtower)) then {
+				_sides = _sides - [east];
 			};
-			case civilian:
-			{
-				//systemChat "switched";
-				[civilian] call Fn_Local_Switch_Side;
-				player setVariable ["is_civilian", true, true];
+			
+			if (count (nearestObjects [us_liberty_01, ["Ship", "Helicopter"], 100]) <= 0) then {
+				_sides = _sides - [west];
 			};
-			case west:
+
+			if (count _sides > 2) then {
+				_sides = _sides - [playerSide];
+			};
+			
+			private _side = selectRandom _sides;
+
+			switch (_side) do
 			{
-				//systemChat "switched";
-				[west] call Fn_Local_Switch_Side;
-				player setVariable ["is_civilian", false, true];
+				case east:
+				{
+					//systemChat "switched";
+					[east] call Fn_Local_Switch_Side;
+					
+				};
+				case civilian:
+				{
+					//systemChat "switched";
+					[civilian] call Fn_Local_Switch_Side;
+					
+				};
+				case west:
+				{
+					//systemChat "switched";
+					[west] call Fn_Local_Switch_Side;
+				};
 			};
 		};
 	}
@@ -220,19 +218,23 @@ player addEventHandler
 [
    "Respawn",
    {
+
 		if (mission_plane_send) then {
 			call Fn_Local_FailTasks;
-
+			player setVariable ["is_assault_group", false, true];
 			switch (playerSide) do
 			{
 				case east:
 				{
+					player setVariable ["is_civilian", false, true];
 					[] execVM "gear\player\east.sqf";
 					player setPos getMarkerPos "respawn_east";
 					call Fn_Local_Create_SCAT_MissionIntro;
 				};
 				case civilian:
 				{
+					player setVariable ["is_civilian", true, true];
+					player setVariable ["weapon_fiered", false, false];
 					[] execVM "gear\player\civ.sqf";
 					private _civ_spawn_markers = [];
 					{
@@ -248,6 +250,7 @@ player addEventHandler
 				};
 				case west:
 				{
+					player setVariable ["is_civilian", false, true];
 					private _pos = getMarkerPos "respawn_west";
 					[] execVM "gear\player\init.sqf";
 					player setPos [_pos select 0, _pos select 1, 8];
@@ -259,6 +262,7 @@ player addEventHandler
 			[] execVM "gear\player\init.sqf";
 			player setPos [_pos select 0, _pos select 1, 8];
 		};
+		player setVariable ["BB_CorpseTTL", -1, true];
    }
 ];
 
@@ -270,6 +274,7 @@ player addEventHandler [
 			private _v_side = side _vehicle;
 			if ((_v_side == east) or (_v_side == independent)) then {
 				player setVariable ["is_civilian", false, true];
+				hint (parseText (format ["<t size='2.0'>%1</t>", localize "INFO_CIV_WARNING_03"]));
 				[west] call Fn_Local_Switch_Side;
 				doGetOut player;
 			};
@@ -285,6 +290,7 @@ player addEventHandler [
 			private _v_side = side _container;
 			if ((_v_side == east) or (_v_side == independent)) then {
 				player setVariable ["is_civilian", false, true];
+				hint (parseText (format ["<t size='2.0'>%1</t>", localize "INFO_CIV_WARNING_03"]));
 				[west] call Fn_Local_Switch_Side;
 			};
 		};
@@ -298,12 +304,13 @@ player addEventHandler
 		if (playerSide == civilian) then {
 			if (primaryWeapon player != "" || secondaryWeapon player != "" || handgunWeapon player != "") then {
 				[west] call Fn_Local_Switch_Side;
+				hint (parseText (format ["<t size='2.0'>%1</t>", localize "INFO_CIV_WARNING_01"]));
 				trgCivPlayerDetected = createTrigger ["EmptyDetector", getPos player];
 				trgCivPlayerDetected setTriggerArea [0, 0, 0, false];
 				trgCivPlayerDetected setTriggerActivation ["NONE", "PRESENT", false];
 				trgCivPlayerDetected setTriggerStatements [
 					"call Fn_Local_CheckIfCivPlayerDetected;",
-					"player setVariable ['weapon_fiered', true, false]; deleteVehicle trgCivPlayerDetected;",
+					"player setVariable ['weapon_fiered', true, false]; deleteVehicle trgCivPlayerDetected; hint (parseText (format [""<t size='2.0'>%1</t>"", localize 'INFO_CIV_WARNING_03']));",
 					""
 				];
 			};
@@ -319,6 +326,7 @@ player addEventHandler
 			if (!(player getVariable ["weapon_fiered", false])) then {
 				if (primaryWeapon player == "" && secondaryWeapon player == "" && handgunWeapon player == "") then {
 					[civilian] call Fn_Local_Switch_Side;
+					hint (parseText (format ["<t size='2.0'>%1</t>", localize "INFO_CIV_WARNING_04"]));
 					deleteVehicle trgCivPlayerDetected;
 				};
 			};

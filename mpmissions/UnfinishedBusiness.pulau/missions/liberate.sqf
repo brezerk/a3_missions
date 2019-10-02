@@ -23,23 +23,18 @@ Spawn start objectives, triggers for game intro and players allocation
 // Server side code
 if (isServer) then {
 
-	trgCivLiberate00 = objNull;
-	trgCivLiberate01 = objNull;
-
 	Fn_Create_Logic_CivilianLiberateCity = {
-		
-		trgCivLiberate00 = createTrigger ["EmptyDetector", getMarkerPos "mrk_city_0"];
-		trgCivLiberate00 setTriggerArea [100, 100, 0, false];
-		trgCivLiberate00 setTriggerActivation ["WEST SEIZED", "PRESENT", false];
-		trgCivLiberate00 setTriggerTimeout [5, 10, 20, true];
-		trgCivLiberate00 setTriggerStatements ["this", "['mrk_city_0'] call Fn_Create_CivilianRebelGroups;", ""];
+		private _trg = createTrigger ["EmptyDetector", getMarkerPos "mrk_city_0"];
+		_trg setTriggerArea [100, 100, 0, false];
+		_trg setTriggerActivation ["WEST SEIZED", "PRESENT", false];
+		_trg setTriggerTimeout [5, 10, 20, true];
+		_trg setTriggerStatements ["this", "['mrk_city_0'] call Fn_Create_CivilianRebelGroups; deleteVehicle thisTrigger;", ""];
 
-		trgCivLiberate01 = createTrigger ["EmptyDetector", getMarkerPos "mrk_city_1"];
-		trgCivLiberate01 setTriggerArea [100, 100, 0, false];
-		trgCivLiberate01 setTriggerActivation ["WEST SEIZED", "PRESENT", false];
-		trgCivLiberate01 setTriggerTimeout [5, 10, 20, true];
-		trgCivLiberate01 setTriggerStatements ["this", "['mrk_city_1'] call Fn_Create_CivilianRebelGroups;", ""];
-
+		_trg = createTrigger ["EmptyDetector", getMarkerPos "mrk_city_1"];
+		_trg setTriggerArea [100, 100, 0, false];
+		_trg setTriggerActivation ["WEST SEIZED", "PRESENT", false];
+		_trg setTriggerTimeout [5, 10, 20, true];
+		_trg setTriggerStatements ["this", "['mrk_city_1'] call Fn_Create_CivilianRebelGroups; deleteVehicle thisTrigger;", ""];
 	};
 	
 	Fn_Create_CivilianRebelGroups = {
@@ -85,6 +80,9 @@ if (isServer) then {
 			
 		};
 
+		//call enemy to clear the city group
+		//fixme: potentially we would like to continue assoult if it was not successful :)
+		[_center, (random 2)] call Fn_Patrols_Create_AssaultGroup;
 	};
 	
 };

@@ -252,6 +252,7 @@ if (isServer) then {
 	#include "missions\west\hiddenstash.sqf";
 	#include "missions\west\safehouse.sqf";
 	#include "missions\west\intel.sqf";
+	#include "missions\west\rescue.sqf";
 	
 	waitUntil {real_weather_init};
 	
@@ -302,7 +303,8 @@ if (isServer) then {
 	
 	call Fn_Create_MissionIntro;
 	
-	execVM "missions\create_locations.sqf";
+	[] execVM "missions\create_locations.sqf";
+	[] execVM "addons\brezblock\utils\garbage_collector.sqf";
 		
 	addMissionEventHandler ["EntityKilled",
 	{

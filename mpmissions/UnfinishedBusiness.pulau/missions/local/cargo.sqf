@@ -146,6 +146,7 @@ if (hasInterface) then {
 	Fn_Task_Civilian_Danger_Enter_Area = {
 		if (player getVariable ["is_civilian", false]) then {
 			//systemChat "You are on danger waters";
+			hint (parseText (format ["<t size='2.0'>%1</t>", localize "INFO_CIV_WARNING_02"]));
 			[west] call Fn_Local_Switch_Side;
 		};
 	};
@@ -154,6 +155,7 @@ if (hasInterface) then {
 		if (player getVariable ["is_civilian", false]) then {
 			if (primaryWeapon player == "" && secondaryWeapon player == "" && handgunWeapon player == "") then {
 				//systemChat "Ok. Claim down.";
+				hint (parseText (format ["<t size='2.0'>%1</t>", localize "INFO_CIV_WARNING_04"]));
 				[civilian] call Fn_Local_Switch_Side;
 			};
 		};

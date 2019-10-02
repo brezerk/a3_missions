@@ -3,7 +3,7 @@
 	<Package name="UnfinishedBusiness">
 		<Container name="l18n">
 			<Key ID="STR_ONLOAD_NAME">
-				<Original>Unfinished Business v0.9.717</Original>
+				<Original>Unfinished Business v0.9.831</Original>
 			</Key>
 			<Key ID="INFO_SAFEZONE">
 				<Original>Stop shooting or throwing grenades! You are in a safe zone!</Original>
@@ -24,7 +24,27 @@
 				<Original>Presents</Original>
 				<English>Presents</English>
 				<Russian>Представляє</Russian>
-			</Key>		
+			</Key>
+			<Key ID="INFO_CIV_WARNING_01">
+				<Original>You took the weapon. Avoid patrols!</Original>
+				<English>You took the weapon. Avoid patrols!</English>
+				<Russian>Ви взяли зброю. Уникайте патрулів!</Russian>
+			</Key>
+			<Key ID="INFO_CIV_WARNING_02">
+				<Original>If you get noticed here, they will kill you!</Original>
+				<English>If you get noticed here, they will kill you!</English>
+				<Russian>Якщо вас тут помітять, то вб'ють!</Russian>
+			</Key>
+			<Key ID="INFO_CIV_WARNING_03">
+				<Original>You was declared wanted!</Original>
+				<English>You was declared wanted!</English>
+				<Russian>Вас оголосили у розшук!</Russian>
+			</Key>
+			<Key ID="INFO_CIV_WARNING_04">
+				<Original>You don't seem to be noticed by anyone...</Original>
+				<English>You don't seem to be noticed by anyone...</English>
+				<Russian>Здається вас ніхто не помітив...</Russian>
+			</Key>
 			<Key ID="STR_ONLOAD_INFO_01">
 				<Original>US Special Forces squad goes to perform a peacekeeping mission</Original>
 				<English>US Special Forces squad goes to perform a peacekeeping mission.</English>

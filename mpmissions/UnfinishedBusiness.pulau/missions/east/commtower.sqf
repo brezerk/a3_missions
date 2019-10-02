@@ -54,6 +54,17 @@ if (isServer) then {
 		//Spawn named object
 		obj_east_comtower = createVehicle ["Land_Communication_F", _center];
 		obj_east_comtower setVectorUp [0,0,1];
+		
+		obj_east_comtower addEventHandler [
+			"HandleDamage", {
+				private _object = _this select 0;
+				private _projectile = _this select 4;
+				if ( _projectile isKindOf "PipeBombBase" ) then {
+					_object setDammage 1;
+				};
+			}
+		];
+		
 		//Publist to every client
 		publicVariable "obj_east_comtower";
 		

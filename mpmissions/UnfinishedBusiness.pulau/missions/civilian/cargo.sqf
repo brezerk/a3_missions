@@ -54,21 +54,47 @@ if (isServer) then {
 	};
 
 	Fn_Task_Create_Civilian_FloodedShip = {
-		private _center = selectRandom avaliable_pois select 1;
-		private _myPlaces = selectBestPlaces [_center, 1000, "((waterDepth factor [10,30])/(1 + waterDepth))", 15, 1];
+		private _blacklist = [];
+		private _myPlaces = [];
+		switch(D_LOCATION) do
+		{
+			case "Gurun": {
+				_blacklist = [
+					'Kambani',
+					'Bibung',
+					'Loholoho'
+				];
+			};
+			case "Monyet": {
+				_blacklist = [
+					'Tinobu'
+				];
+			};
+		};
+		{
+			if (!((_x select 0) in _blacklist)) then {
+				_myPlaces pushBackUnique (_x select 1);
+			};
+		} forEach avaliable_pois;
+		if (count _myPlaces > 0) then {
+			private _center =  selectRandom _myPlaces;
+			_myPlaces = [];
+			_myPlaces = selectBestPlaces [_center, 1000, "((waterDepth factor [10,30])/(1 + waterDepth))", 15, 1];
+			if (count _myPlaces > 0) then {
+				private _markerPos = selectRandom _myPlaces select 0;
 
-		private _markerPos = selectRandom _myPlaces select 0;
+				private _mark = createMarker ["civ_ship_01", _markerPos];
+				_mark setMarkerType "hd_destroy";
+				_mark setMarkerAlpha 0;
 
-		private _mark = createMarker ["civ_ship_01", _markerPos];
-		_mark setMarkerType "hd_destroy";
-		_mark setMarkerAlpha 0;
-
-		//spawn creater and wreck
-		"Crater" createVehicle (_markerPos); 
-		private _obj = "Land_Wreck_Traw_F" createVehicle ([((_markerPos select 0) - 5), ((_markerPos select 1) + 20), 0]); 
-		_obj = "Land_Wreck_Traw2_F" createVehicle ([((_markerPos select 0) - 5), ((_markerPos select 1) - 10), 0]); 
-		
-		[_markerPos] call Fn_Task_Civilian_FloodedShip_SpawnRandomCargo;
+				//spawn creater and wreck
+				"Crater" createVehicle (_markerPos); 
+				private _obj = "Land_Wreck_Traw_F" createVehicle ([((_markerPos select 0) - 5), ((_markerPos select 1) + 20), 0]); 
+				_obj = "Land_Wreck_Traw2_F" createVehicle ([((_markerPos select 0) - 5), ((_markerPos select 1) - 10), 0]); 
+				
+				[_markerPos] call Fn_Task_Civilian_FloodedShip_SpawnRandomCargo;
+			};
+		};
 	};
 	
 	Fn_Task_Spawn_Boats = {

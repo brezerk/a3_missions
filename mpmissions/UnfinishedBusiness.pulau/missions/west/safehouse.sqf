@@ -37,7 +37,6 @@ if (isServer) then {
 			
 			private _builing = nearestBuilding (_center);
 			
-			
 			if ((_center distance2D (getPos _builing)) >= 100) then {
 				_pos = [_center, 0, 60, 4, 0, 0, 0] call BIS_fnc_findSafePos;
 			} else {

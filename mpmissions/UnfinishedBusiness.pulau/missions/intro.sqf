@@ -37,6 +37,7 @@ if (isServer) then {
 		us_airplane_01 attachTo [land_00, [0, 0, 0]];
 		detach us_airplane_01;
 		us_airplane_01 setDir (getDir land_00);
+		us_airplane_01 setVehicleAmmo 0;
 		
 		private _grp = createGroup [west, true];
 		private _unit = _grp createUnit [_crew_class, us_airplane_01, [], 0, "CARGO"];

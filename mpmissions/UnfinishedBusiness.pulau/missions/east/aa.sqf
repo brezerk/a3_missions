@@ -33,6 +33,15 @@ if (isServer) then {
 		obj_east_antiair = createVehicle [_class, _pos];
 		obj_east_antiair setDir (markerDir _marker);
 		private _crew = createVehicleCrew (obj_east_antiair);
+		obj_east_antiair addEventHandler [
+			"HandleDamage", {
+				private _object = _this select 0;
+				private _projectile = _this select 4;
+				if ( _projectile isKindOf "PipeBombBase" ) then {
+					_object setDammage 1;
+				};
+			}
+		];
 		
 		publicVariable "obj_east_antiair";
 		

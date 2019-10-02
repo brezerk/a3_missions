@@ -262,7 +262,7 @@
 			[
 			'transport_medic', [
 					'C_Van_02_medevac_F',
-					'C_IDAP_Van_02_fuel_F']
+					'C_IDAP_Van_02_medevac_F']
 			],
 			[
 			'boats', [
