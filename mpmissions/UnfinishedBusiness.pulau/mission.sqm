@@ -8,7 +8,7 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=7848;
+		nextID=7850;
 	};
 	class MarkerIDProvider
 	{
@@ -20,7 +20,7 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1340.1174,4.7670665,6001.8423};
+		pos[]={1339.6927,5.3504038,6001.8438};
 		dir[]={0.69643986,-0.61706394,0.36642998};
 		up[]={0.54610842,0.78689182,0.28733313};
 		aside[]={0.46564409,-5.0172093e-007,-0.88500804};
@@ -8904,7 +8904,7 @@ class Mission
 			name="wp_Monyet_paradrop_66";
 			type="b_recon";
 			id=7517;
-			atlOffset=0.15392697;
+			atlOffset=1.4655185;
 		};
 		class Item701
 		{
@@ -9552,7 +9552,7 @@ class Mission
 			b=75;
 			drawBorder=1;
 			id=7576;
-			atlOffset=21.089573;
+			atlOffset=22.132744;
 		};
 		class Item760
 		{

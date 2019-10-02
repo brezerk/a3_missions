@@ -30,10 +30,6 @@ if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
 	};
 };
 
-player addItemToVest "BB_Item_Money_F";
-player addItemToVest "BB_Item_Money_F";
-player addItemToVest "BB_Item_Money_F";
-
 // If plane was not sent yet -- give player a parashute
 if (!mission_plane_send) then {
 	removeBackpack player;

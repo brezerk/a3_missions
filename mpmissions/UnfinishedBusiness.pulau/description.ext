@@ -187,26 +187,6 @@ class CfgFunctions {
 	};
 };
 
-class CfgVehicles {
-    class ItemCore
-    class InventoryItem_Base_F
-    class BB_Item_Money_F: ItemCore
-    {
-        author = "Oleksii Malakhov";
-        displayName = "Dollars";
-        model = "\A3\Structures_F\Items\Valuables\Money_F.p3d";
-        scope = 2;      
-        scopeArsenal = 2;
-        scopeCurator = 2;
-        picture = "\data\images\items\money.paa";
-        descriptionShort = "Babanas";
-        class ItemInfo: InventoryItem_Base_F
-        {
-            mass = 0;
-        };
-    };
-};
-
 #include "ui\SettingsDialog.hpp"
 #include "ui\MissionLogo.hpp"
 #include "compositions\compositions.cfg"
