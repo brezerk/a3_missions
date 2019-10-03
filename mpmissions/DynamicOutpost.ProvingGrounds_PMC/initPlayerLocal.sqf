@@ -44,6 +44,8 @@ _trgKickToSpecator setTriggerStatements [
 			""
 ];
 
+player setVariable ["BB_CorpseTTL", -1, true];
+
 // cargo load hooks
 ["ace_cargoLoaded", { 
 	if (_vehicle == ua_ural_ammo_01) then { 
@@ -79,13 +81,3 @@ _trgLocationInfo01 setTriggerStatements [
 	"[ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_03', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;",
 	""
 ];
-
-
-
-
-
-
-
-
-
-

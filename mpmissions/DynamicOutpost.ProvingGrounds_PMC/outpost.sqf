@@ -90,13 +90,37 @@ Fn_Create_Objectives_Start = {
 		];
 		["wp_defend_01", trgWarzoneEnter] execVM "addons\brezblock\triggers\warzone_close.sqf";
 		// Gate trigger (only if keeper is alive)
-		trgOpenGate = createTrigger ["EmptyDetector", getPos ua_gate01];
-		trgOpenGate setTriggerArea [15, 15, 0, false];
-		trgOpenGate setTriggerActivation ["ANYPLAYER", "PRESENT", true];
-		trgOpenGate setTriggerStatements [
+		trgOpenGate01 = createTrigger ["EmptyDetector", getPos ua_gate01];
+		trgOpenGate01 setTriggerArea [15, 15, 0, false];
+		trgOpenGate01 setTriggerActivation ["ANYPLAYER", "PRESENT", true];
+		trgOpenGate01 setTriggerStatements [
 			"this && alive ua_gate_keeper_01 && ua_gate_keeper_01 distance ua_gate01 < 10",
 			"ua_gate01 animate ['Door_1_rot', 1];",
 			"ua_gate01 animate ['Door_1_rot', 0];"
+		];
+		trgOpenGate02 = createTrigger ["EmptyDetector", getPos ua_gate02];
+		trgOpenGate02 setTriggerArea [15, 15, 0, false];
+		trgOpenGate02 setTriggerActivation ["ANYPLAYER", "PRESENT", true];
+		trgOpenGate02 setTriggerStatements [
+			"this && alive ua_gate_keeper_02 && ua_gate_keeper_02 distance ua_gate02 < 10",
+			"ua_gate02 animate ['Door_1_rot', 1];",
+			"ua_gate02 animate ['Door_1_rot', 0];"
+		];
+		trgOpenGate03 = createTrigger ["EmptyDetector", getPos ua_gate03];
+		trgOpenGate03 setTriggerArea [15, 15, 0, false];
+		trgOpenGate03 setTriggerActivation ["ANYPLAYER", "PRESENT", true];
+		trgOpenGate03 setTriggerStatements [
+			"this && alive ua_gate_keeper_03 && ua_gate_keeper_03 distance ua_gate03 < 10",
+			"ua_gate03 animate ['Door_1_rot', 1];",
+			"ua_gate03 animate ['Door_1_rot', 0];"
+		];
+		trgOpenGate04 = createTrigger ["EmptyDetector", getPos ua_gate04];
+		trgOpenGate04 setTriggerArea [15, 15, 0, false];
+		trgOpenGate04 setTriggerActivation ["ANYPLAYER", "PRESENT", true];
+		trgOpenGate04 setTriggerStatements [
+			"this && alive ua_gate_keeper_04 && ua_gate_keeper_04 distance ua_gate04 < 10",
+			"ua_gate04 animate ['Door_1_rot', 1];",
+			"ua_gate04 animate ['Door_1_rot', 0];"
 		];
 		// Spawn transport
 		[Fn_Spawn_UAZ, 'wp_spawn_uaz_01', 20, 360] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
@@ -169,7 +193,7 @@ if (isServer) then {
 	*/
 	
 	//set flag textures
-	{ _x  setFlagTexture "addons\apl\data\flag_ukraine.paa"; } forEach [ua_flag_01, ua_flag_02, ua_flag_03, ua_flag_04];
+	{ _x  setFlagTexture "addons\apl\data\flag_ukraine.paa"; } forEach [ua_flag_01, ua_flag_02, ua_flag_03, ua_flag_04, ua_flag_05];
 	
 	//reveal mines to the UA forces
 	(allMines select 0) mineDetectedBy independent;
@@ -191,5 +215,6 @@ if (isServer) then {
 	
 	// We need to end game if all players are no longer alive
 	[] execVM "addons\brezblock\triggers\end_game.sqf";
+	[] execVM "addons\brezblock\utils\garbage_collector.sqf";
 };
 

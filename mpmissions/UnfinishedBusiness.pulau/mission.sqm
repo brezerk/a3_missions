@@ -2930,7 +2930,7 @@ class Mission
 			position[]={6514.9277,27.499989,6899.9971};
 			name="wp_Gurun_east_transport_spawn_01";
 			type="o_unknown";
-			angle=111.08774;
+			angle=111.08771;
 			id=6996;
 			atlOffset=-1.9073486e-006;
 		};
@@ -6192,7 +6192,7 @@ class Mission
 			position[]={2375.0168,21.688812,5299.2241};
 			name="wp_Monyet_east_transport_spawn_01";
 			type="o_unknown";
-			angle=254.9516;
+			angle=254.95158;
 			id=7272;
 			atlOffset=16.674541;
 		};
@@ -11757,7 +11757,7 @@ class Mission
 			position[]={2391.104,21.597,5322.0762};
 			name="wp_Monyet_east_apc_spawn_01";
 			type="o_unknown";
-			angle=114.24799;
+			angle=114.24795;
 			id=7850;
 			atlOffset=16.675013;
 		};
@@ -11767,7 +11767,7 @@ class Mission
 			position[]={712.36603,-10.038,11126.313};
 			name="wp_XXX_east_apc_spawn_01";
 			type="o_motor_inf";
-			angle=175.85197;
+			angle=175.85196;
 			id=7851;
 			atlOffset=8.8589325;
 		};
@@ -11777,7 +11777,7 @@ class Mission
 			position[]={6512.3408,44.248001,6910.7222};
 			name="wp_Gurun_east_apc_spawn_01";
 			type="o_unknown";
-			angle=180.5081;
+			angle=180.50807;
 			id=7852;
 			atlOffset=16.69845;
 		};
