@@ -47,6 +47,13 @@ aikills = 0;
 
 respawnOnStart = -1;
 
+// Manage player corpses
+corpseManagerMode = 1;
+corpseLimit = 10;
+corpseRemovalMinTime = 60;
+corpseRemovalMaxTime = 1200;
+minPlayerDistance = 25;
+
 // Force cba_settings.sqf loading
 cba_settings_hasSettingsFile = 1;
 

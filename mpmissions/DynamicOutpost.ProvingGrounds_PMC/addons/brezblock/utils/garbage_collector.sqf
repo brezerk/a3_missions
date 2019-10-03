@@ -37,7 +37,7 @@ while {true} do {
 							_playerNearby = true;
 							breakOut "units_loop";
 						};
-					} forEach nearestObjects [_x, ["SoldierEB", "SoldierGB", "SoldierWB"], 250];
+					} forEach nearestObjects [_x, ["SoldierEB", "SoldierGB", "SoldierWB"], 100];
 					if (!_playerNearby) then {
 						deleteVehicle _x;
 					} else {
