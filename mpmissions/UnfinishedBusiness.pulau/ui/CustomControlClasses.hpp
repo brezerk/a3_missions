@@ -124,7 +124,6 @@ class RscButton
 };
 class RscPicture
 {
-	access = 0;
     idc = -1;
     type = 0;
     style = 0x30 + 0x800;
