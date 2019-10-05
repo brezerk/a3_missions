@@ -87,6 +87,8 @@ if (isServer) then {
 				_mark setMarkerType "hd_destroy";
 				if (!D_DEBUG) then { 
 					_mark setMarkerAlpha 0;
+				} else {
+					_mark setMarkerAlpha 1;
 				};
 
 				//spawn creater and wreck

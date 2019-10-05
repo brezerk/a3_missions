@@ -20,7 +20,7 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1339.6927,5.3504038,6001.8438};
+		pos[]={1337.0188,7.891161,5998.0508};
 		dir[]={0.69643986,-0.61706394,0.36642998};
 		up[]={0.54610842,0.78689182,0.28733313};
 		aside[]={0.46564409,-5.0172093e-007,-0.88500804};
@@ -2930,7 +2930,7 @@ class Mission
 			position[]={6514.9277,27.499989,6899.9971};
 			name="wp_Gurun_east_transport_spawn_01";
 			type="o_unknown";
-			angle=111.08771;
+			angle=111.0877;
 			id=6996;
 			atlOffset=-1.9073486e-006;
 		};
@@ -11757,7 +11757,7 @@ class Mission
 			position[]={2391.104,21.597,5322.0762};
 			name="wp_Monyet_east_apc_spawn_01";
 			type="o_unknown";
-			angle=114.24795;
+			angle=114.24794;
 			id=7850;
 			atlOffset=16.675013;
 		};
