@@ -28,7 +28,9 @@ if (isServer) then {
 			[_x, true] remoteExecCall ["allowDamage"];
 		} forEach  (playableUnits + switchableUnits);
 		
-		//FIXME: should count only assault_group units!
+		//FIXME: _trigger = [objnull, "myMarkerName"] call BIS_fnc_triggerToMarker;
+		//This will make a new trigger that is the same size and position of the 
+		//passed in marker name (marker has to be of type "RECTANGLE" or "ELLIPSE").
 		trgRescueMission = createTrigger ["EmptyDetector", getPos us_liberty_01];
 		trgRescueMission setTriggerArea [2000, 2000, 0, false];
 		trgRescueMission setTriggerActivation ["WEST", "PRESENT", false];
@@ -50,7 +52,6 @@ if (isServer) then {
 				};
 			} forEach assault_group;
 		};
-		
 		_all;
 	};
 

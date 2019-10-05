@@ -85,7 +85,7 @@ if (isServer) then {
 
 				private _mark = createMarker ["civ_ship_01", _markerPos];
 				_mark setMarkerType "hd_destroy";
-				_mark setMarkerAlpha 0;
+				_mark setMarkerAlpha D_DEBUG;
 
 				//spawn creater and wreck
 				"Crater" createVehicle (_markerPos); 

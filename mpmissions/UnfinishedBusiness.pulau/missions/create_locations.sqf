@@ -38,7 +38,7 @@ if (isServer) then {
 	publicVariable "avaliable_pois";
 
 	[_crashSitePos, 1500] execVM "addons\brezblock\utils\controller.sqf";
-	[_crashSitePos, 1500, 80] execVM "addons\brezblock\utils\spawn_objects.sqf";
+	[_crashSitePos, 1500, 50] execVM "addons\brezblock\utils\spawn_objects.sqf";
 
 	//Create markers
 	{ 
@@ -47,7 +47,7 @@ if (isServer) then {
 		_mark setMarkerAlpha 0;
 		
 		[_x select 1, 1000] execVM "addons\brezblock\utils\controller.sqf";
-		[_x select 1, 1000, 60] execVM "addons\brezblock\utils\spawn_objects.sqf";
+		[_x select 1, 1000, 40] execVM "addons\brezblock\utils\spawn_objects.sqf";
 		
 		private _pos = [_x select 1, 5, 150, 3, 0, 0, 0] call BIS_fnc_findSafePos;
 		_mark = createMarker [format ["respawn_civilian_%1", _forEachIndex], _pos];

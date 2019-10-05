@@ -20,7 +20,7 @@ real_weather_init = false;
 
 D_LOCATIONS = ['Gurun', 'Monyet'];
 
-D_DEBUG = true;
+D_DEBUG = false;
 
 [] execVM "addons\code43\real_weather.sqf";
 
@@ -309,30 +309,28 @@ if (isServer) then {
 	addMissionEventHandler ["EntityKilled",
 	{
 		params ["_killed", "_killer", "_instigator"];
-		
 		private _group = group _killed;
-		
 		if (_group != grpNull) then {	
 			private _killed_side = side _group;
-			
-			if ((_killed_side == east) || (_killed_side == independent)) then {
-				private _ace_kill = _killed getVariable "ace_medical_lastDamageSource";
-				if (!isNil "_ace_kill") then {
-					if (isPlayer _ace_kill) then {
-						if ((side _ace_kill) == civilian) then {
-							_ace_kill setVariable ["is_civilian", false, true];
-							[west] remoteExec ["Fn_Local_Switch_Side", _ace_kill];
+			private _ace_kill = objNull;
+			if (isClass(configFile >> "CfgPatches" >> "ace_medical")) then {
+				_instigator = _killed getVariable "ace_medical_lastDamageSource";
+			} else {
+				if (isNull _instigator) then {_instigator = UAVControl vehicle _killer select 0};
+				if (isNull _instigator) then {_instigator = _killer};
+			};
+			if (!isNil "_instigator") then {
+				if (isPlayer _instigator) then {
+					if ((_killed_side == east) || (_killed_side == independent)) then {
+						if ((side _instigator) == civilian) then {
+							_instigator setVariable ["is_civilian", false, true];
+							[west] remoteExec ["Fn_Local_Switch_Side", _instigator];
 						};
 					};
-				};
-			};
-			if (_killed_side == civilian) then {
-				private _ace_kill = _killed getVariable "ace_medical_lastDamageSource";
-				if (!isNil "_ace_kill") then {
-					if (isPlayer _ace_kill) then {
-						if ((side _ace_kill) == west) then {
+					if (_killed_side == civilian) then {
+						if ((side _instigator) == west) then {
 							pings pushBackUnique (mapGridPosition _player);
-							remoteExec ["Fn_Local_CarmaKillCiv", _ace_kill];
+							remoteExec ["Fn_Local_CarmaKillCiv", _instigator];
 						};
 					};
 				};
