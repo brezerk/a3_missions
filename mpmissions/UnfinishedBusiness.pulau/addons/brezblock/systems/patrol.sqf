@@ -25,52 +25,38 @@ Create CBA patrol
 if (isServer) then {
 	params['_center', '_side', '_count', '_radius'];
 
-	_Fn_BrezBlock_CreateRandomPatrolSquad = {
-		params['_side', '_count'];
-		private['_units'];
-		private _grp = [];
-		switch(_side) do
-		{
-			case west: {
+	private _cfg = [];
+	private _units = [];
+	
+	switch(_side) do
+	{
+		case west: {
 			
-			};
-			case east: {
-				_units = D_FRACTION_EAST_UNITS_PATROL;
-			};
-			case resistance: {
-				_units = D_FRACTION_INDEP_UNITS_PATROL;
-			};
-			case civilian: {
+		};
+		case east: {
+			_units = D_FRACTION_EAST_UNITS_PATROL;
+		};
+		case resistance: {
+			_units = D_FRACTION_INDEP_UNITS_PATROL;
+		};
+		case civilian: {
 			
-			};
 		};
-		for "_i" from 1 to _count do
-		{
-			_grp pushBack (selectRandom _units);
-		};
-		_grp;
 	};
-
-	private _cfg = [_side, _count] call _Fn_BrezBlock_CreateRandomPatrolSquad;
+	for "_i" from 1 to _count do {
+		_cfg pushBack (selectRandom _units);
+	};
+	
 	private _pos = [_center, 5, _radius, 3, 0, 0, 0] call BIS_fnc_findSafePos;
-	//http://arma3scriptingtutorials.blogspot.com/2014/02/config-viewer-what-is-it-and-how-to-use.html
-	//_grp = [_pos, _side, configfile >> "CfgGroups" >> "Indep" >> D_FRACTION_INDEP >> "Infantry" >> _cfg] call BIS_fnc_spawnGroup;
 	private _grp = [_pos, _side, _cfg] call BIS_fnc_spawnGroup;
 	_grp deleteGroupWhenEmpty true;
-	if (isClass(configFile >> "CfgPatches" >> "acex_main")) then {
+	if (D_MOD_ACEX) then {
 		{
-			private _chance = random 100;
-			if (_chance > 80) then {
-				_x addItemToUniform "ACE_Canteen";
-            } else {
-				if (_chance > 35) then {
-					_x addItemToUniform "ACE_Canteen_Half";
-				} else {
-					_x addItemToUniform "ACE_Canteen_Empty";
-				};
-			};
-			if (_chance > 60) then {
-				_x addItemToUniform (selectRandom ["ACE_MRE_BeefStew",
+			private _chance = (random 100);
+			switch (true) do {
+				case (_chance >= 80): {
+					_x addItemToUniform "ACE_Canteen";
+					_x addItemToUniform (selectRandom ["ACE_MRE_BeefStew",
 										  "ACE_MRE_ChickenTikkaMasala",
 										  "ACE_MRE_ChickenHerbDumplings",
 										  "ACE_MRE_CreamChickenSoup",
@@ -78,13 +64,31 @@ if (isServer) then {
 										  "ACE_MRE_LambCurry",
 										  "ACE_MRE_MeatballsPasta",
 										  "ACE_MRE_SteakVegetables"]);
+				};
+				case (_chance > 60): {
+					_x addItemToUniform "ACE_Canteen_Half";
+					_x addItemToUniform (selectRandom ["ACE_MRE_BeefStew",
+										  "ACE_MRE_ChickenTikkaMasala",
+										  "ACE_MRE_ChickenHerbDumplings",
+										  "ACE_MRE_CreamChickenSoup",
+										  "ACE_MRE_CreamTomatoSoup",
+										  "ACE_MRE_LambCurry",
+										  "ACE_MRE_MeatballsPasta",
+										  "ACE_MRE_SteakVegetables"]);
+				};
+				case (_chance > 35): {
+					_x addItemToUniform "ACE_Canteen_Half";
+				};
+				default {
+					_x addItemToUniform "ACE_Canteen_Empty";
+				};
 			};
-		} forEach units _grp;
+		} count units _grp;
 	};
-	if (isClass(configFile >> "CfgPatches" >> "cba_main")) then {
+	if (D_MOD_CBA) then {
 		[_grp, _center, _radius, (round (_radius / 15)), "MOVE", "SAFE", "YELLOW", "LIMITED", "STAG COLUMN", "", [5,15,30]] call CBA_fnc_taskPatrol;
 	} else {
-		_null = [_grp, _center, _radius] call BIS_fnc_taskPatrol;
+		[_grp, _center, _radius] call BIS_fnc_taskPatrol;
 	};
 	_grp setVariable ["is_patrol_group", true, false];
 	if (_side in D_ADD_INTEL_ACTION) then {

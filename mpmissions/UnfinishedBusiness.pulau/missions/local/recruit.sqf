@@ -36,7 +36,7 @@ if (hasInterface) then {
 			true, 
 			true, 
 			"",
-			"alive _target && (side _this == side _target)", // _target, _this, _originalTarget
+			"(alive _target) && ((side _this) == (side _target))", // _target, _this, _originalTarget
 			3
 		];
 	};
@@ -109,9 +109,9 @@ if (hasInterface) then {
 				case east: {
 					if (count (units (group _caller)) <= 2) then {
 						//will join for free
-						//FIXME: not more than 3
 						[_target, _caller] call Fn_Local_Join;
 						removeAllActions _target;
+						[_target] call Fn_Local_Attach_Dismiss_Action;
 					} else {
 						systemChat format[localize "INFO_NOT_JOINED_03", name _target];
 					};

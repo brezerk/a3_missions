@@ -120,5 +120,4 @@ if (isServer) then {
 	};
 		
 	[_lcs, _poi];
-
 };

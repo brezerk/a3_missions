@@ -52,5 +52,5 @@
 				};
 			};
 		};
-	} forEach ((_center nearObjects ["House" , _distance]) + (_center nearObjects ["Building" , _distance]));
+	} count ((_center nearObjects ["House" , _distance]) + (_center nearObjects ["Building" , _distance]));
 };

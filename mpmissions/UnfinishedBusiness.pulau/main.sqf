@@ -22,6 +22,12 @@ D_LOCATIONS = ['Gurun', 'Monyet'];
 
 D_DEBUG = true;
 
+D_MOD_ACE_MEDICAL = isClass(configFile >> "CfgPatches" >> "ace_medical");
+D_MOD_ACEX = isClass(configFile >> "CfgPatches" >> "acex_field_rations");
+D_MOD_CBA = isClass(configFile >> "CfgPatches" >> "cba_main");
+
+D_MOD_CUP_VEHICLES = isClass(configFile>>"cfgPatches">>"cup_vehicles");
+
 [] execVM "addons\code43\real_weather.sqf";
 
 if (isServer) then {
@@ -114,6 +120,7 @@ if (isServer) then {
 	//POIs
 	avaliable_locations = [];
 	avaliable_pois = [];
+	avaliable_markers = [];
 	
 	/* FIXME: CBA-only
 	addMissionEventHandler ["PlayerConnected",
@@ -203,7 +210,8 @@ if (isServer) then {
 		params ["_difficlty", "_location", "_start_type", "_navtool_map", "_navtool_compass", "_fraction_west", "_fraction_east", "_fraction_indep", "_fraction_civ"];
 		if (!mission_requested) then {
 			D_DIFFICLTY = _difficlty;
-			D_LOCATION = _location;
+			//D_LOCATION = _location;
+			D_LOCATION = "Gurun";
 			D_START_TYPE = _start_type;
 			D_NAVTOOL_MAP = _navtool_map;
 			D_NAVTOOL_COMPASS = _navtool_compass;

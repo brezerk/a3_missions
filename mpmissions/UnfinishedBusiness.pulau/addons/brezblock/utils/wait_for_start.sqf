@@ -30,6 +30,11 @@ if (sunOrMoon < 1) then {camUseNVG true} else {camUseNVG false};
 private _missionLogo = createDialog "MissionLogo";
 private _intoFrame = 0;
 
+if (D_DEBUG) then {
+	_intoFrame = 4;
+	[0] execVM "ui\SettingsDialog.sqf";
+};
+
 //text = "data\images\logo.paa";
 
 if (!isNil "_missionLogo") then {

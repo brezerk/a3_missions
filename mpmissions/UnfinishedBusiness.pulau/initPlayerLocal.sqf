@@ -37,8 +37,13 @@ Fn_Local_WaitPublicVariables = {
 };
 
 // hide markers
-{if (_x find "wp_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
-{if (_x find "respawn_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
+if (isServer) then {
+	{if (_x find "wp_" >= 0) then {_x setMarkerAlphaLocal 0;}} forEach allMapMarkers;
+	{if (_x find "respawn_" >= 0) then {_x setMarkerAlphaLocal 0;}} forEach allMapMarkers;
+} else {
+	{if (_x find "wp_" >= 0) then {deleteMarkerLocal _x;}} forEach allMapMarkers;
+	{if (_x find "respawn_" >= 0) then {deleteMarkerLocal _x;}} forEach allMapMarkers;
+};
 
 waitUntil { sleep 1; [["mission_requested", "mission_plane_send"]] call Fn_Local_WaitPublicVariables; }; 
 

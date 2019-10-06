@@ -16,7 +16,7 @@
  *                                                                         *
  ***************************************************************************/
  
-  Fn_Config_GetFractions = {
+ Fn_Config_GetFractions = {
 	params ['_side'];
 	private _fractions = [];
 	private _cfg = [];
@@ -46,7 +46,6 @@
 	};
 	{
 		private _cfg_fraction = _x select 0;
-
 		if (_cfg_fraction == _fraction) exitWith {
 			{	
 				private _cfg_type = _x select 0;
@@ -82,6 +81,14 @@
 			['Autorifleman','B_Soldier_AR_F'],
 			['Sniper', 		'B_sniper_F'],
 			['Spotter', 	'B_spotter_F'],
+			['rescue_Team Leader',  'B_recon_TL_F'],
+			['rescue_Corpsman', 	'B_recon_medic_F'],
+			['rescue_Grenadier', 	'B_recon_JTAC_F'],
+			['rescue_Rifleman', 	'B_recon_F'],
+			['rescue_Squad Leader', 'B_recon_TL_F'],
+			['rescue_Autorifleman', 'B_recon_LAT_F'],
+			['rescue_Sniper', 		'B_sniper_F'],
+			['rescue_Spotter', 		'B_spotter_F'],
 			['stash_base_items', 	[
 					["arifle_MX_F",				  2 ],
 					["arifle_MX_SW_F",			  2 ],

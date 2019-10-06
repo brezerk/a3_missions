@@ -25,12 +25,11 @@ Create CBA defend
 if (isServer) then {
 
 	params['_marker'];
-	private['_side'];
 	
 	private _center = getMarkerPos _marker;
 	private _class = objNull;
-		
-	//https://community.bistudio.com/wiki/Arma_3_CfgMarkerColors
+	private _grp = grpNull;
+
 	switch (markerType _marker) do
 	{
 		case "o_motor_inf": { _class = selectRandom D_FRACTION_EAST_UNITS_CARS; };
@@ -44,7 +43,8 @@ if (isServer) then {
 	if (!isNil "_class") then {		
 		private _vehicle = createVehicle [_class, _center];
 		_vehicle setDir (markerDir _marker);
-		private _crew = createVehicleCrew (_vehicle);
+		_grp = createVehicleCrew (_vehicle);
 	};
 
+	_grp;
 };

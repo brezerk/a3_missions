@@ -18,64 +18,61 @@
 
 /*
 Create Spawn\Despawn controller
-	Arguments: None
-	Usage: call BrezBlock_fnc_CotrollerCreate;
-	Return: Group
+	Arguments:
+		position: Object, PositionAGL or Position2D - where to find markers, center position 
+		range: Effective ranage
+	Usage: [_center, _range] call BrezBlock_fnc_CotrollerCreate;
+	Return: array of found and unprocessed markers
 */
 if (isServer) then {
 	params['_pos', '_range'];
-
-	BrezBlock_fnc_Cotroller_Process_Marker = {
-		params['_marker'];
-		private _grp = objNull;
-		switch(markerBrush _marker) do
-		{
-			case "Solid": {
-				private _pos = getMarkerPos _marker;
-				_grp = [_x] call BrezBlock_fnc_CreateCivilianPresence;
-				if (isClass(configFile >> "CfgPatches" >> "acex_field_rations")) then {
-					[_x] call BrezBlock_fnc_CreateCivilianSupply;
-				};
-				{
-					if ((markerType _x) == "loc_Hospital") then {
-						
-						private _range = getMarkerSize _marker select 0;
-						if ((_pos distance2D (getMarkerPos _x)) <= _range) then {
-							[_x] call BrezBlock_fnc_CreateCivilianHospital;
-						};
-					};
-				} forEach allMapMarkers;
-			};
-			case "SolidBorder": {
-				private _pos = getMarkerPos _marker;
-				_grp = [_marker] call BrezBlock_fnc_MarkerCreateDefend;
-				{
-					if ((markerType _x) in ["o_mech_inf", "n_mech_inf", "o_motor_inf", "n_motor_inf", "o_armor", "n_armor"]) then {
-						private _range = getMarkerSize _marker select 0;
-						if ((_pos distance2D (getMarkerPos _x)) <= _range) then {
-							[_x] call BrezBlock_fnc_CreateArmor;
-							deleteMarker _x;
-						};
-					};
-				} forEach allMapMarkers;
-			};
-			case "DiagGrid": {_grp = [_marker] call BrezBlock_fnc_MarkerCreatePatrol;};
-			case "Horizontal": {
-				//_marker setMarkerAlpha 1;
-				[_marker] call BrezBlock_fnc_CreateCheckPoint;
-			};
-		};
-		_grp;
-	};
-
+	private _markers = [];
 	//Process markers in area and spawn units
 	{
-		if (markerType _x in ["ellipse", "square"]) then {
-			if ((_pos distance2D (getMarkerPos _x)) <= _range) then {
-				private _grp = [_x] call BrezBlock_fnc_Cotroller_Process_Marker;
-				deleteMarker _x;
-//				_x setMarkerAlpha 1;
+		private _marker_pos = getMarkerPos _x;
+		if ((_pos distance2D (_marker_pos)) <= _range) then {
+			switch (markerBrush _x) do
+			{
+				case "Solid": {
+					private _marker_type = markerType _x;
+					switch (true) do {
+						case (_marker_type in ["ellipse", "square"]): {
+							[_x] call BrezBlock_fnc_CreateCivilianPresence;
+							if (D_MOD_ACEX) then {
+								[_x] call BrezBlock_fnc_CreateCivilianSupply;
+							};
+							deleteMarkerLocal _x;
+						};
+						case (_marker_type == "loc_Hospital"): {
+							if (markerAlpha _x == 0) then {
+								[_x] call BrezBlock_fnc_CreateCivilianHospital;
+								_x setMarkerAlpha 1;
+							};
+						};
+						case (_marker_type in ["o_mech_inf", "n_mech_inf", "o_motor_inf", "n_motor_inf", "o_armor", "n_armor"]): {
+							[_x] call BrezBlock_fnc_CreateArmor;
+							deleteMarkerLocal _x;
+						};
+						default {
+							_markers pushBackUnique _x;
+						};
+					};
+				};
+				case "SolidBorder": {
+					[_x] call BrezBlock_fnc_MarkerCreateDefend;
+					deleteMarkerLocal _x;
+				};
+				case "DiagGrid": {
+					[_x] call BrezBlock_fnc_MarkerCreatePatrol;
+					deleteMarkerLocal _x;
+				};
+				case "Horizontal": {
+					[_x] call BrezBlock_fnc_CreateCheckPoint;
+					deleteMarkerLocal _x;
+				};
 			};
+			if (D_DEBUG) then { _x setMarkerAlpha 1; };			
 		};
-	} forEach allMapMarkers;
+	} count allMapMarkers;
+	_markers;
 };

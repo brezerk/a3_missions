@@ -3,7 +3,7 @@
 	<Package name="UnfinishedBusiness">
 		<Container name="l18n">
 			<Key ID="STR_ONLOAD_NAME">
-				<Original>Unfinished Business v0.9.831</Original>
+				<Original>Unfinished Business v0.9.913</Original>
 			</Key>
 			<Key ID="INFO_SAFEZONE">
 				<Original>Stop shooting or throwing grenades! You are in a safe zone!</Original>
@@ -618,6 +618,11 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Original>Dismiss group</Original>
 				<English>Dismiss group</English>
 				<Russian>Звільнити групу</Russian>
+			</Key>
+			<Key ID="ACTION_11">
+				<Original>Get away!</Original>
+				<English>Get away!</English>
+				<Russian>Відійди!</Russian>
 			</Key>
 			<Key ID="INFO_WAIT_01">
 				<Original>Wait for mission to be planned by the team leader</Original>

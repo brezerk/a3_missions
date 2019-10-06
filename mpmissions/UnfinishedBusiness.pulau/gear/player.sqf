@@ -76,20 +76,19 @@ if ((random 100) <= _chance_lost_compass) then {
 };
 
 if ((random 100) <= _chance_lost_radio) then {
-	//FIXME: does not seems to be working for ACRE 
 	if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
-		player unassignItem "ItemRadio";
-		player removeItem "ItemRadio";
-		player unassignItem "ACRE_PRC152";
-		player removeItem "ACRE_PRC152";
-		player removeWeapon "ACRE_PRC152";
+		{
+			if (_x find "ACRE_" >= 0 ) then {
+				player unassignItem _x;
+				player removeItem _x;
+			};
+		} forEach (items player);
 	} else {
 		if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
-			player unassignItem "ItemRadio";
-			player removeItem "ItemRadio";
-			player unassignItem "tf_anprc152";
-			player removeItem "tf_anprc152";
-			player removeWeapon "tf_anprc152";
+			if (_x find "tf_" >= 0 ) then {
+				player unassignItem _x;
+				player removeItem _x;
+			};
 		} else {
 			comment "Fallback to native arma3 radio";
 			player unassignItem "ItemRadio";

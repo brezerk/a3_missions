@@ -105,9 +105,11 @@ if (hasInterface) then {
 		
 		{
 			if (!(_x in playableunits) && !(_x in switchableunits)) then {
-				removeAllActions _x;
-				[_x] call Fn_Local_Attach_Recruit_Action;
+				if ((side _x) == east) then {
+					removeAllActions _x;
+					[_x] call Fn_Local_Attach_Recruit_Action;
+				};
 			};
-		} forEach (nearestObjects [getMarkerPos (format ["respawn_east_%1", D_LOCATION]), ["SoldierWB"], 150]);
+		} forEach (nearestObjects [getMarkerPos "respawn_east", ["Man"], 150]); //Note CUP does not really follow SoldierEB classification :)
 	};
 };

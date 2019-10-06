@@ -2,7 +2,7 @@
 // UNIT MUST BE LOCAL
 if (!local player) exitWith {};
 
-//Remove existing items (if any)
+// Remove existing items (if any)
 removeAllWeapons player;
 removeAllItems player;
 removeAllAssignedItems player;
@@ -12,20 +12,31 @@ removeBackpack player;
 removeHeadgear player;
 removeGoggles player;
 
-//FIXME: Possible use another uniform for rescue squad if plane was sent already
-//FIXME: Possible check player side
-player setUnitLoadout (configFile >> "CfgVehicles" >> ([west, D_FRACTION_WEST, (roleDescription player)] call Fn_Config_GetFraction_Units));
+private _class = "";
 
-comment "Give player a radio depending on radio mod loaded";
+if (mission_plane_send) then {
+	_class = format ["rescue_%1", (roleDescription player)];
+} else {
+	_class = (roleDescription player);
+};
+
+player setUnitLoadout (configFile >> "CfgVehicles" >> ([west, D_FRACTION_WEST, _class] call Fn_Config_GetFraction_Units));
+
+// Give player a radio depending on radio mod loaded
 if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
+	// remove default radio
 	player unassignItem "ItemRadio";
 	player removeItem "ItemRadio";
+	// add specific one
 	player addItemToVest "ACRE_PRC152";
 } else {
 	if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
+		// remove default radio
+		player unassignItem "ItemRadio";
+		player removeItem "ItemRadio";
+		// add specific one
 		player linkItem "tf_anprc152";
 	} else {
-		comment "Fallback to native arma3 radio";
 		player linkItem "ItemRadio";
 	};
 };

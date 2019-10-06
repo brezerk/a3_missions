@@ -39,10 +39,19 @@ if (isServer) then {
 		params['_center'];
 		//Land_Research_HQ_F, Land_Cargo_HQ_V4_F
 		private _classes = ["Land_Medevac_house_V1_F", "Land_Cargo_Patrol_V1_F", "Land_wpp_Turbine_V1_off_F", "Land_dp_smallTank_F"];
-		private _markers = [_center, ["n_mortar"], 3000] call BrezBlock_fnc_GetAllMarkerTypesInRange;
+		private _markers = [];
+		{
+			if ((markerType _x) == "n_mortar") then {
+				_markers append [_x];
+			};
+		} forEach avaliable_markers;
+		
+
 		
 		for "_i" from 1 to 2 do {
-			private _marker = selectRandom (_markers);
+			private _index = (random ((count _markers) - 1));
+			private _marker = (_markers select _index);
+			_markers deleteAt _index;
 			private _center = getMarkerPos (_marker);
 			private _dir = markerDir _marker;
 			private _pos = [_center, 9, _dir + 90] call BIS_Fnc_relPos;
@@ -152,9 +161,7 @@ if (isServer) then {
 			[_center, resistance, 5, 20] call BrezBlock_fnc_CreateDefend;
 			[_center, resistance, 5, 20] call BrezBlock_fnc_CreateGarrison;
 			
-			//Remove marker
-			_markers = _markers - [_marker];
-			deleteMarker _marker;
+			deleteMarkerLocal _marker;
 		};
 	};
 	

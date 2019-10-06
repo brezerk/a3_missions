@@ -24,9 +24,8 @@ Create civilian presence module
 */
 if (isServer) then {
 	params['_marker'];
-	private['_i'];
 	
-	private _radius = getMarkerSize _marker select 0;
+	private _radius = ((getMarkerSize _marker) select 0);
 	private _center = getMarkerPos _marker;
 	
 	private _grp = createGroup [civilian, true];
@@ -51,7 +50,7 @@ if (isServer) then {
 	private _pos = [_center, 5, _radius, 3, 0, 0, 0] call BIS_fnc_findSafePos;
 	private _obj = _grp createUnit ["ModuleCivilianPresence_F", _pos, [], 0, "NONE"];
 	_obj setVariable ["#area", [_center, _radius, _radius, 0, true, -1]];  // https://community.bistudio.com/wiki/inAreaArray 
-	_obj setVariable ["#debug",        D_DEBUG ]; // Debug mode on
+	_obj setVariable ["#debug",        D_DEBUG]; // Debug mode on
 	_obj setVariable ["#useagents",    true ];
 	_obj setVariable ["#usepanicmode", false];
 	_obj setVariable ["#unitcount",    (round (_radius / 50) + 3)];

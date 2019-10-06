@@ -34,10 +34,20 @@ if (isServer) then {
 	Fn_Spawn_East_Comtower = {
 		params['_center'];
 		
-		private _markers = [_center, ["o_mortar"], 3000] call BrezBlock_fnc_GetAllMarkerTypesInRange;
-		private _marker = selectRandom _markers;
+		private _markers = [];
+		{
+			if ((markerType _x) == "o_mortar") then {
+				_markers append [_x];
+			};
+		} forEach avaliable_markers;
+		
+		private _index = (random ((count _markers) - 1));
+		private _marker = (_markers select _index);
+		_markers deleteAt _index;
+		
 		private _center = getMarkerPos (_marker);
-		deleteMarker _marker;
+		deleteMarkerLocal _marker;
+		
 		_marker = createMarker ["mrk_east_commtower", _center];
 		_marker setMarkerType "hd_warning";
 		_marker setMarkerText 'AOC Commtower';

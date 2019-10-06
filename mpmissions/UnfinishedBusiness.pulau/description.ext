@@ -40,7 +40,9 @@ briefingName    = $STR_ONLOAD_INFO_01;
 // Respawn type
 respawn = "BASE";
 // Delay in seconds before playable unit respawns.
-respawnDelay = "30";
+respawnDelay = "3";
+// DO NOT SET THIS FOR PROD
+enableDebugConsole = 2;
 // Respawn templates from CfgRespawnTemplates. You can combine any number of them together.
 respawnTemplates[] = {"Counter", "Base"};
 // 0 to disable the score table (it can still be opened manually by pressing 'P' key).
@@ -190,6 +192,8 @@ class CfgFunctions {
 			class CreateArmor {file = "addons\brezblock\systems\armor.sqf";};
 			class GetAllCitiesInRange {file = "addons\brezblock\utils\get_cities.sqf";};
 			class GetAllMarkerTypesInRange {file = "addons\brezblock\utils\get_all_marker_types_in_range.sqf";};
+			class CotrollerCreate {file = "addons\brezblock\utils\controller.sqf";};
+			class SpawnObjects {file = "addons\brezblock\utils\spawn_objects.sqf";};
 		};
 	};
 };

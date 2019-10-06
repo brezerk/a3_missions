@@ -23,45 +23,58 @@ Spawn start objectives, triggers for informator contact
 
 if (isServer) then {
 
-	private _crashSitePos = getMarkerPos "mrk_west_crashsite";
+	//private _crashSitePos = getMarkerPos "mrk_west_crashsite";
+	private _crashSitePos = getMarkerPos "wp_Gurun_crashsite_28";
 
 	call Fn_Spawn_East_AntiAir;
-	[_crashSitePos] call Fn_Spawn_East_Comtower;
 	call Fn_Spawn_East_Helicopter;
-	[_crashSitePos] call Fn_Task_Spawn_Indep_Objectives;
+	call Fn_Spawn_East_Transport;
 	
+	call Fn_Spawn_Civ_Air_Transport;
+	
+	//Get all POI in the range
 	private _ret = [_crashSitePos, 2000, 2] call BrezBlock_fnc_GetAllCitiesInRange;
-	//Get all POI in the range of 3000m
 	avaliable_locations = _ret select 0;
 	avaliable_pois = _ret select 1;
 	
+	//FIXME: do we really need this?
 	publicVariable "avaliable_pois";
+	
+	{ avaliable_markers pushBackUnique _x; } forEach ([_crashSitePos, 1500] call BrezBlock_fnc_CotrollerCreate);
+	{ if (!(markerType _x in ["b_recon", "b_plane"])) then { avaliable_markers pushBackUnique _x; }; } forEach ([getMarkerPos "mrk_east_base_02", 600] call BrezBlock_fnc_CotrollerCreate);
+	{ if (!(markerType _x in ["b_recon", "b_plane"])) then { avaliable_markers pushBackUnique _x; }; } forEach ([getMarkerPos "mrk_airfield", 1000] call BrezBlock_fnc_CotrollerCreate);
+	[getMarkerPos "mrk_east_base_01", 150] call BrezBlock_fnc_CotrollerCreate;
 
-	[_crashSitePos, 1500] execVM "addons\brezblock\utils\controller.sqf";
-	[_crashSitePos, 1500, 50] execVM "addons\brezblock\utils\spawn_objects.sqf";
-
-	//Create markers
+	//Create city markers
 	{ 
-		private _mark = createMarker [format ["mrk_city_%1", _forEachIndex], _x select 1];
+		private _pos = _x select 1;
+		private _mark = createMarker [format ["mrk_city_%1", _forEachIndex], _pos];
 		_mark setMarkerType "hd_destroy";
 		_mark setMarkerAlpha 0;
 		
-		[_x select 1, 1000] execVM "addons\brezblock\utils\controller.sqf";
-		[_x select 1, 1000, 40] execVM "addons\brezblock\utils\spawn_objects.sqf";
+		{ if (!(markerType _x in ["b_recon", "b_plane"])) then { avaliable_markers pushBackUnique _x; }; } forEach [_pos, 600] call BrezBlock_fnc_CotrollerCreate;
+		[_pos, 500, 40] call BrezBlock_fnc_SpawnObjects;
 		
-		private _pos = [_x select 1, 5, 150, 3, 0, 0, 0] call BIS_fnc_findSafePos;
+		_pos = [_x select 1, 5, 150, 3, 0, 0, 0] call BIS_fnc_findSafePos;
 		_mark = createMarker [format ["respawn_civilian_%1", _forEachIndex], _pos];
 		_mark setMarkerType "hd_destroy";
 		_mark setMarkerAlpha 0;
 	} forEach avaliable_pois;
-
-	[getMarkerPos "mrk_east_base_02", 600] execVM "addons\brezblock\utils\controller.sqf";
-	[getMarkerPos "mrk_airfield", 1000] execVM "addons\brezblock\utils\controller.sqf";
-	[getMarkerPos "mrk_east_base_01", 150] execVM "addons\brezblock\utils\controller.sqf";
 	
-	call Fn_Spawn_Civ_Air_Transport;
-	call Fn_Spawn_East_Transport;
-
+	[_crashSitePos] call Fn_Spawn_East_Comtower;
+	[_crashSitePos] call Fn_Task_Spawn_Indep_Objectives;
+	
+	[_crashSitePos, 1500, 50] call BrezBlock_fnc_SpawnObjects;
+	
+	call Fn_Task_Create_Civilian_WaponStash;
+	call Fn_Task_Create_Civilian_FloodedShip;
+	
+	//private _result = diag_codePerformance [_code, []];
+	//systemChat format ["diag_codePerformance: controller.sqf exec time: %1ms %2cycles", _result select 0, _result select 1];
+	
+	//FIXME: Search for roads, create cache use it for patrols and civil spawn
+	
+	/*
 	//Select cities for spawn
 	private _ret = [_crashSitePos, 4000, 6] call BrezBlock_fnc_GetAllCitiesInRange;
 	private _pois = _ret select 1;
@@ -74,10 +87,7 @@ if (isServer) then {
 	//Spawn stashes
 	//FIXME: CUP and ACE deps
 	//[_crashSitePos] call Fn_Task_West_Hidden_WaponStash;
-	
-	call Fn_Task_Create_Civilian_WaponStash;
-	call Fn_Task_Create_Civilian_FloodedShip;
-	
+		
 	call Fn_Create_Logic_CivilianLiberateCity;
-
+	*/
 };

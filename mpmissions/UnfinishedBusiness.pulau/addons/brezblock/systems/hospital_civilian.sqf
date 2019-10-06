@@ -24,20 +24,13 @@ Create civilian presence module
 */
 if (isServer) then {
 	params['_marker'];
-	private['_i'];
 	
 	private _center = getMarkerPos _marker;
-	private _roads = _center nearRoads 50;
 	private _good_roads = [];
-	
-	_marker setMarkerAlpha 1;
-	
-	_marker = createMarker [format ["mrk_%1", ([_marker, 3] call BIS_fnc_trimString)], _center];
-	_marker setMarkerType "loc_Hospital";
 			
 	{
-		private _pos = position _x;
-		if ((count (nearestObjects [_pos, ["Car", "Truck"], 5]) == 0) and (count (nearestTerrainObjects [_pos, ["TREE", "BUILDING", "HOUSE", "FENCE", "WALL", "ROCK", "ROCKS"], 5, false, true]) == 0)) then {
+		private _pos = getPosASL _x;
+		if ((count (_pos nearEntities[["Car", "Truck"], 8]) == 0) and (count (nearestTerrainObjects [_pos, ["TREE", "BUILDING", "HOUSE", "FENCE", "WALL", "ROCK", "ROCKS"], 8, false, true]) == 0)) then {
 			private _bbox = boundingboxReal _x;
 			private _a = _bbox select 0;
 			private _b = _bbox select 1;
@@ -47,11 +40,11 @@ if (isServer) then {
 			};
 		};
 		if (count _good_roads >= 4) exitWith {};
-	} forEach _roads;
+	} count (_center nearRoads 50);
 	
 	private _road = selectRandom _good_roads;
 	if (!isNil "_road") then {
-		private _pos = position _road;
+		private _pos = getPosASL _road;
 		private _dir = getDir _road;
 		private _connected = roadsConnectedto (_road);
 					
@@ -63,8 +56,10 @@ if (isServer) then {
 		_pos = [_pos, 3, _dir + 90] call BIS_Fnc_relPos;
 		private _class = selectRandom ([civilian, D_FRACTION_CIV, "transport_medic"] call Fn_Config_GetFraction_Units);
 		private _vehicle = createVehicle [_class, _pos];
-		if(isClass(configFile>>"cfgPatches">>"cup_vehicles")) then {
-			_vehicle setObjectTextureGlobal [0, "cup\wheeledvehicles\cup_wheeledvehicles_lr\data\textures\civ_r_lr_base_co.paa"];
+		if(D_MOD_CUP_VEHICLES) then {
+			if (_class == 'CUP_O_LR_Ambulance_TKA') then {
+				_vehicle setObjectTextureGlobal [0, "cup\wheeledvehicles\cup_wheeledvehicles_lr\data\textures\civ_r_lr_base_co.paa"];
+			};
 		};
 		_vehicle setVariable ["ace_medical_medicClass", 1, true];
 		_vehicle setDir _dir;
@@ -74,7 +69,7 @@ if (isServer) then {
 		clearItemCargoGlobal _vehicle;
 		clearBackpackCargoGlobal _vehicle;
 		
-		if (isClass(configFile >> "CfgPatches" >> "ace_medical")) then {
+		if (D_MOD_ACE_MEDICAL) then {
 			_vehicle addItemCargoGlobal ["ACE_fieldDressing", 10];
 			_vehicle addItemCargoGlobal ["ACE_bloodIV", 4];
 			_vehicle addItemCargoGlobal ["ACE_morphine", 2];
@@ -92,7 +87,7 @@ if (isServer) then {
 	private _pos = selectRandom (_builing buildingPos -1);
 	if (!isNil "_pos") then {
 		private _class = "";
-		if (isClass(configFile >> "CfgPatches" >> "ace_medical")) then {
+		if (D_MOD_ACE_MEDICAL) then {
 			_class = "ACE_medicalSupplyCrate"
 		} else {
 			_class = selectRandom ['Land_PlasticCase_01_small_idap_F', 'Land_PlasticCase_01_large_idap_F', 'Land_PlasticCase_01_medium_idap_F'];
@@ -104,7 +99,7 @@ if (isServer) then {
 		clearItemCargoGlobal _obj;
 		clearBackpackCargoGlobal _obj;
 
-		if (isClass(configFile >> "CfgPatches" >> "ace_medical")) then {
+		if (D_MOD_ACE_MEDICAL) then {
 			_obj addItemCargoGlobal ["ACE_fieldDressing", 20];
 			_obj addItemCargoGlobal ["ACE_bloodIV", 8];
 			_obj addItemCargoGlobal ["ACE_morphine", 8];
