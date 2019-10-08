@@ -266,7 +266,7 @@ if (isServer) then {
 	waitUntil {real_weather_init};
 	
 	// skip random time
-	skipTime ((random 5) + 6);
+	//skipTime ((random 5) + 6);
 	
 	waitUntil {
 		sleep 3;
