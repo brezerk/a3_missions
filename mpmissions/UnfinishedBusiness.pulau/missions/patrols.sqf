@@ -66,60 +66,40 @@ if (isServer) then {
 	};
 
 	Fn_Patrols_CreateCivilean_Traffic = {
-		params['_poi'];
+		params['_center'];
 		
-		{ 
-			private _center = _x select 1;
-			private _roads = _center nearRoads 100;
+		private _roads = [_center, 250, 10] call BrezBlock_fnc_GetEmptyRoads;
 			
-			private _good_roads = [];
-			
-			{
-				private _pos = position _x;
-				if ((count (nearestObjects [_pos, ["Car", "Truck"], 5]) == 0) and (count (nearestTerrainObjects [_pos, ["TREE", "BUILDING", "HOUSE", "FENCE", "WALL", "ROCK", "ROCKS"], 5, false, true]) == 0)) then {
-					private _bbox = boundingboxReal _x;
-					private _a = _bbox select 0;
-					private _b = _bbox select 1;
-					private _size = _a distance _b;
-					if (_size >= 25) then {
-						_good_roads append [_x];
-					};
-				};
-				if (count _good_roads >= 10) exitWith {};
-			} forEach _roads;
-			
-			for "_i" from 0 to (random 2) do {
-				private _class = selectRandom D_FRACTION_CIV_UNITS_CARS;
-				private _road = selectRandom _good_roads;
-				if (isNil "_road") exitWith {};
-				_good_roads = _good_roads - [_road];
-				private _pos = position _road;
-				private _connected = roadsConnectedto (_road);
+		for "_i" from 0 to (random 2) do {
+			private _class = selectRandom D_FRACTION_CIV_UNITS_CARS;
+			private _road = selectRandom _roads;
+			if (isNil "_road") exitWith {};
+			_roads = _roads - [_road];
+			private _pos = position _road;
+			private _connected = roadsConnectedto (_road);
 				
-				private _vehicle = createVehicle [_class, _pos];
-				_vehicle limitSpeed 30; 
+			private _vehicle = createVehicle [_class, _pos];
+			_vehicle limitSpeed 30; 
 				
-				if (count _connected > 0) then {
-					private _connected_pos = getPos (_connected select 0);
-					private _dir = [_pos, _connected_pos] call BIS_fnc_DirTo;
-							
-					_vehicle setDir _dir;
-				};
-				 
-				private _crew = createVehicleCrew (_vehicle);
-				[
-					(driver _vehicle),
-					{ [_target] call Fn_Local_Informator_Complete; },
-					"simpleTasks\types\talk",
-					"ACTION_02",
-					"&& alive _target",
-					6,
-					false
-				] call BrezBlock_fnc_Attach_Hold_Action;
-				vehicle_patrol_group append [_vehicle];
-				vehicle_refuel_group append [_vehicle];
+			if (count _connected > 0) then {
+				private _connected_pos = getPos (_connected select 0);
+				private _dir = [_pos, _connected_pos] call BIS_fnc_DirTo;	
+				_vehicle setDir _dir;
 			};
-		} forEach _poi;
+				 
+			private _crew = createVehicleCrew (_vehicle);
+			[
+				(driver _vehicle),
+				{ [_target] call Fn_Local_Informator_Complete; },
+				"simpleTasks\types\talk",
+				"ACTION_02",
+				"&& alive _target",
+				6,
+				false
+			] call BrezBlock_fnc_Attach_Hold_Action;
+			vehicle_patrol_group append [_vehicle];
+			vehicle_refuel_group append [_vehicle];
+		};
 	};
 	
 	Fn_Patrols_CreateMilitary_Traffic = {

@@ -41,8 +41,8 @@ if (isServer) then {
 	publicVariable "avaliable_pois";
 	
 	{ avaliable_markers pushBackUnique _x; } forEach ([_crashSitePos, 1500] call BrezBlock_fnc_CotrollerCreate);
-	{ if (!(markerType _x in ["b_recon", "b_plane"])) then { avaliable_markers pushBackUnique _x; }; } forEach ([getMarkerPos "mrk_east_base_02", 600] call BrezBlock_fnc_CotrollerCreate);
-	{ if (!(markerType _x in ["b_recon", "b_plane"])) then { avaliable_markers pushBackUnique _x; }; } forEach ([getMarkerPos "mrk_airfield", 1000] call BrezBlock_fnc_CotrollerCreate);
+	{ if (!((markerType _x) in ["b_recon", "b_plane"])) then { avaliable_markers pushBackUnique _x; }; } forEach ([getMarkerPos "mrk_east_base_02", 600] call BrezBlock_fnc_CotrollerCreate);
+	{ if (!((markerType _x) in ["b_recon", "b_plane"])) then { avaliable_markers pushBackUnique _x; }; } forEach ([getMarkerPos "mrk_airfield", 1000] call BrezBlock_fnc_CotrollerCreate);
 	[getMarkerPos "mrk_east_base_01", 150] call BrezBlock_fnc_CotrollerCreate;
 
 	//Create city markers
@@ -52,7 +52,7 @@ if (isServer) then {
 		_mark setMarkerType "hd_destroy";
 		_mark setMarkerAlpha 0;
 		
-		{ if (!(markerType _x in ["b_recon", "b_plane"])) then { avaliable_markers pushBackUnique _x; }; } forEach [_pos, 600] call BrezBlock_fnc_CotrollerCreate;
+		{ if (!((markerType _x) in ["b_recon", "b_plane"])) then { avaliable_markers pushBackUnique _x; }; } forEach ([_pos, 600] call BrezBlock_fnc_CotrollerCreate);
 		[_pos, 500, 40] call BrezBlock_fnc_SpawnObjects;
 		
 		_pos = [_x select 1, 5, 150, 3, 0, 0, 0] call BIS_fnc_findSafePos;
@@ -74,11 +74,25 @@ if (isServer) then {
 	
 	//FIXME: Search for roads, create cache use it for patrols and civil spawn
 	
-	/*
-	//Select cities for spawn
-	private _ret = [_crashSitePos, 4000, 6] call BrezBlock_fnc_GetAllCitiesInRange;
-	private _pois = _ret select 1;
+	private _pios = avaliable_pois;
+	{
+		_pios pushBackUnique _x;
+	} forEach (([_crashSitePos, 4000, 6] call BrezBlock_fnc_GetAllCitiesInRange) select 1);
 	
+	//Select cities for spawn
+	{
+		
+		systemChat format ["Spawn %1: %2", _x, (_x select 0)];
+		private _pos = _x select 1;
+		if (!((_x select 0) in ['Kambani','Bibung','Loholoho','Tinobu'])) then {
+			[_pos] call Fn_Task_Spawn_Boats;
+		};
+		[_pos] call Fn_Patrols_CreateCivilean_Traffic;
+		//[_x] call Fn_Patrols_CreateMilitary_Traffic;
+		//[_x] call Fn_Task_Spawn_Civilean_Cars;
+	} forEach (_pios);
+	
+	/*
 	[_pois] call Fn_Patrols_CreateCivilean_Traffic;
 	[_pois] call Fn_Patrols_CreateMilitary_Traffic;
 	[_pois] call Fn_Task_Spawn_Boats;

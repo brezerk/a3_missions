@@ -102,44 +102,18 @@ if (isServer) then {
 	};
 	
 	Fn_Task_Spawn_Boats = {
-		params ["_poi"];
-		private _blacklist = [];
-		
-		//Avoid spawning boats for certain locations (to far from sea, bad location, e.t.c.)
-		switch(D_LOCATION) do
+		params ["_center"];
 		{
-			case "Gurun": {
-				_blacklist = [
-					'Kambani',
-					'Bibung',
-					'Loholoho'
-				];
+			private _pos = _x select 0;
+			private _obj = ((selectRandom D_FRACTION_CIV_UNITS_BOATS) createVehicle (_pos));
+			_obj addItemCargoGlobal ["V_RebreatherIA", 5];
+			_obj addItemCargoGlobal ["I_Assault_Diver", 5];
+			_obj addItemCargoGlobal ["G_I_Diving", 5];
+			if (D_MOD_ACE) then {
+				_obj addItemCargoGlobal ["ACE_EarPlugs", 5];
 			};
-			case "Monyet": {
-				_blacklist = [
-					'Tinobu'
-				];
-			};
-		};
-
-		{
-			if (!((_x select 0) in _blacklist)) then {
-				private _center = _x select 1;
-				private _myPlaces = selectBestPlaces [_center, 600, "((waterDepth factor [1,1.4])/(1 + waterDepth))", 15, 4];
-				{
-					private _pos = _x select 0;
-					private _obj = ((selectRandom D_FRACTION_CIV_UNITS_BOATS) createVehicle (_pos));
-					_obj addItemCargoGlobal ["V_RebreatherIA", 5];
-					_obj addItemCargoGlobal ["I_Assault_Diver", 5];
-					_obj addItemCargoGlobal ["G_I_Diving", 5];
-					if (isClass(configFile >> "CfgPatches" >> "ace_main")) then {
-						_obj addItemCargoGlobal ["ACE_EarPlugs", 5];
-					};
-				} forEach _myPlaces;
-			};
-		} forEach _poi;
+		} forEach (selectBestPlaces [_center, 400, "((waterDepth factor [1,1.4])/(1 + waterDepth))", 15, 4]);
 	};
-	
 	
 	/*
 	Spawn cargo crate randomly. Remove all predefined items and populate with a desired ones;

@@ -16,19 +16,20 @@
  *                                                                         *
  ***************************************************************************/
 
-real_weather_init = false;
+real_weather_init = true;
 
 D_LOCATIONS = ['Gurun', 'Monyet'];
 
 D_DEBUG = true;
 
+D_MOD_ACE = isClass(configFile >> "CfgPatches" >> "ace_main");
 D_MOD_ACE_MEDICAL = isClass(configFile >> "CfgPatches" >> "ace_medical");
 D_MOD_ACEX = isClass(configFile >> "CfgPatches" >> "acex_field_rations");
 D_MOD_CBA = isClass(configFile >> "CfgPatches" >> "cba_main");
 
 D_MOD_CUP_VEHICLES = isClass(configFile>>"cfgPatches">>"cup_vehicles");
 
-[] execVM "addons\code43\real_weather.sqf";
+//[] execVM "addons\code43\real_weather.sqf";
 
 if (isServer) then {
 	_westHQ = createCenter west;

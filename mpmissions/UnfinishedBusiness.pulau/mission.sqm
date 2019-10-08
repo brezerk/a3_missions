@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={-2034.2832,58.152225,10735.635};
-		dir[]={0.86810094,-0.072005555,-0.49136764};
-		up[]={0.062603734,0.99740106,-0.03543425};
-		aside[]={-0.49266243,1.6852282e-006,-0.8703782};
+		pos[]={997.29633,10.394728,9472.5908};
+		dir[]={0.71188593,-0.067809522,-0.69920295};
+		up[]={0.048336051,0.99770403,-0.047474384};
+		aside[]={-0.70084912,1.9677973e-006,-0.71355391};
 	};
 };
 binarizationWanted=0;
@@ -58,14 +58,13 @@ addons[]=
 	"A3_Structures_F_EPB_Civ_Camping",
 	"A3_Weapons_F_Ammoboxes",
 	"A3_Air_F_Heli_Light_01",
-	"acre_sys_intercom",
 	"A3_Data_F_Exp_A_Virtual"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=20;
+		items=19;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -193,13 +192,6 @@ class AddonsMetaData
 			url="https://www.arma3.com";
 		};
 		class Item18
-		{
-			className="acre_sys_intercom";
-			name="ACRE2 - Vehicle Intercom";
-			author="ACRE2Team";
-			url="https://github.com/IDI-Systems/acre2";
-		};
-		class Item19
 		{
 			className="A3_Data_F_Exp_A";
 			name="Arma 3 Nexus Update - Main Configuration";
