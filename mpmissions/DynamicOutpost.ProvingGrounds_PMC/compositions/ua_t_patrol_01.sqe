@@ -1,5 +1,5 @@
 version=53;
-center[]={266.05328,51.176033,1432.1276};
+center[]={1103.3522,5,6201.3926};
 class items
 {
 	items=6;
@@ -15,17 +15,18 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-3.7321167,0.0014381409,1.7478027};
+					position[]={-3.7335205,0.0014390945,1.7387695};
 					angles[]={0,5.2951021,0};
 				};
 				side="Independent";
 				flags=7;
 				class Attributes
 				{
+					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 					name="ua_injured_01";
 					stance="Down";
 				};
-				id=6495;
+				id=25;
 				type="LOP_UKR_Infantry_officer";
 				class CustomAttributes
 				{
@@ -94,20 +95,19 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={0.7427063,0.056453705,-0.17346191};
-					angles[]={0.062412973,0.40278706,6.2706885};
+					position[]={0.75671387,0.0014390945,-0.10449219};
+					angles[]={-0,0.40278706,0};
 				};
 				side="Independent";
 				flags=5;
 				class Attributes
 				{
 					health=0;
-					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 					name="ua_uaz_02D";
 				};
-				id=6496;
+				id=26;
 				type="LOP_UKR_Infantry_Grenadier";
-				atlOffset=3.8146973e-006;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -175,7 +175,7 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-0.6651001,0.1942749,-2.1832275};
+					position[]={-0.66662598,0.0014390945,-2.1923828};
 					angles[]={0,0.97858864,0};
 				};
 				side="Independent";
@@ -183,10 +183,10 @@ class items
 				class Attributes
 				{
 					health=0;
-					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
+					init="call{this setVariable [""BB_CorpseTTL"", -1];" \n "this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
 					stance="Down";
 				};
-				id=6497;
+				id=27;
 				type="LOP_UKR_Infantry_Light";
 				class CustomAttributes
 				{
@@ -255,7 +255,7 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={2.5088501,0.10475922,-1.2321777};
+					position[]={2.5072021,0.0014390945,-1.2412109};
 					angles[]={0,0.97857124,0};
 				};
 				side="Independent";
@@ -263,10 +263,10 @@ class items
 				class Attributes
 				{
 					health=0;
-					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
+					init="call{this setVariable [""BB_CorpseTTL"", -1];" \n "this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
 					stance="Middle";
 				};
-				id=6498;
+				id=28;
 				type="LOP_UKR_Infantry_Light";
 				class CustomAttributes
 				{
@@ -346,8 +346,8 @@ class items
 				class Item0
 				{
 					linkID=0;
-					item0=6496;
-					item1=6499;
+					item0=26;
+					item1=29;
 					class CustomData
 					{
 						role=1;
@@ -355,15 +355,15 @@ class items
 				};
 			};
 		};
-		id=6494;
+		id=24;
 	};
 	class Item1
 	{
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={0.75823975,1.2980728,-0.14587402};
-			angles[]={0.062412973,0.40278706,6.2706885};
+			position[]={0.75671387,1.2455792,-0.15429688};
+			angles[]={-0,0.40278706,0};
 		};
 		side="Independent";
 		flags=4;
@@ -373,9 +373,8 @@ class items
 			fuel=0.49576423;
 			name="ua_uaz_02";
 		};
-		id=6499;
+		id=29;
 		type="LOP_UKR_UAZ_Open";
-		atlOffset=3.8146973e-006;
 		class CustomAttributes
 		{
 			class Attribute0
@@ -507,17 +506,18 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={9.2745972,0.22645569,1.5037842};
-					angles[]={0,4.6560612,0};
+					position[]={9.2723389,0.0014390945,1.4951172};
+					angles[]={0,4.6560674,0};
 				};
 				side="East";
 				flags=7;
 				class Attributes
 				{
 					health=0;
+					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 					name="p_officer_03";
 				};
-				id=6501;
+				id=31;
 				type="rhs_vdv_rifleman_asval";
 				class CustomAttributes
 				{
@@ -585,22 +585,22 @@ class items
 		class Attributes
 		{
 		};
-		id=6500;
+		id=30;
 	};
 	class Item3
 	{
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={-0.89984131,0.19392395,-2.1407471};
-			angles[]={0.054944519,0.9785828,6.278194};
+			position[]={-0.90148926,0.0050001144,-2.1489258};
+			angles[]={-0,0.97858864,0};
 		};
 		side="Empty";
 		flags=4;
 		class Attributes
 		{
 		};
-		id=6502;
+		id=32;
 		type="BloodSpray_01_New_F";
 	};
 	class Item4
@@ -608,15 +608,15 @@ class items
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={-2.059021,0.037181854,0.77429199};
-			angles[]={0.057436496,2.0665679,6.2706842};
+			position[]={-2.0606689,0.0050001144,0.76611328};
+			angles[]={-0,2.0665746,0};
 		};
 		side="Empty";
 		flags=4;
 		class Attributes
 		{
 		};
-		id=6506;
+		id=33;
 		type="BloodTrail_01_New_F";
 	};
 	class Item5
@@ -624,15 +624,15 @@ class items
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={-1.4379272,0.087150574,0.25488281};
-			angles[]={0,0.9785828,0};
+			position[]={-1.4395752,0.032866478,0.24609375};
+			angles[]={0,0.97858864,0};
 		};
 		side="Empty";
 		flags=5;
 		class Attributes
 		{
 		};
-		id=6510;
+		id=34;
 		type="MedicalGarbage_01_3x3_v2_F";
 	};
 };

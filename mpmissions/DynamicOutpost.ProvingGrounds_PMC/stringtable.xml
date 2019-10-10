@@ -438,6 +438,11 @@
 				<English>Information received, verifying.</English>
 				<Russian>Тримайтесь!</Russian>
 			</Key>
+			<Key ID="STR_RADIO_CALL_12">
+				<Original>Reinforcements are on the way, hold on!</Original>
+				<English>Reinforcements are on the way, hold on!</English>
+				<Russian>Підкриплення на підході, тримайтесь!</Russian>
+			</Key>
 			<Key ID="STR_LOCKED_INFO_01">
 				<Original>The game is locked. Try again later.</Original>
 				<English>The game is locked. Try again later.</English>

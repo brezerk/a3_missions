@@ -20,56 +20,35 @@
 if (isServer) then { 
 
 	Fn_Task_Spawn_Civilean_Cars = {
-		params['_poi'];
+		params['_roads'];
 		//Create civ vehicle patrols
 		
-		{ 
-			private _center = _x select 1;
-			private _roads = _center nearRoads 100;
-			
-			private _good_roads = [];
-			
-			{
-				private _pos = position _x;
-				if ((count (nearestObjects [_pos, ["Car", "Truck"], 10]) == 0) and (count (nearestTerrainObjects [_pos, ["TREE", "BUILDING", "HOUSE", "FENCE", "WALL", "ROCK", "ROCKS"], 5, false, true]) == 0)) then {
-					private _bbox = boundingboxReal _x;
-					private _a = _bbox select 0;
-					private _b = _bbox select 1;
-					private _size = _a distance _b;
-					if (_size >= 25) then {
-						_good_roads append [_x];
-					};
-				};
-				if (count _good_roads >= 10) exitWith {};
-			} forEach _roads;
-			
-			for "_i" from 0 to ((random 3) + 1) do {
-				private _class = selectRandom D_FRACTION_CIV_UNITS_CARS;
-				private _road = selectRandom _good_roads;
-				if (isNil "_road") exitWith {};
-				_good_roads = _good_roads - [_road];
-				private _pos = position _road;
-				private _dir = getDir _road;
-				private _connected = roadsConnectedto (_road);
+		for "_i" from 0 to ((random 3) + 1) do {
+			private _class = selectRandom D_FRACTION_CIV_UNITS_CARS;
+			private _road = selectRandom _roads;
+			if (isNil "_road") exitWith {};
+			_roads = _roads - [_road];
+			private _pos = position _road;
+			private _dir = getDir _road;
+			private _connected = roadsConnectedto (_road);
 				
-				if (count _connected > 0) then {
-					private _connected_pos = getPos (_connected select 0);
-					_dir = [_pos, _connected_pos] call BIS_fnc_DirTo;	
-				};
-				
-				_pos = [_pos, 3, _dir + 90] call BIS_Fnc_relPos;
-				
-				private _vehicle = createVehicle [_class, _pos];
-				_vehicle setDir _dir;
+			if (count _connected > 0) then {
+				private _connected_pos = getPos (_connected select 0);
+				_dir = [_pos, _connected_pos] call BIS_fnc_DirTo;	
 			};
-		} forEach _poi;
+				
+			_pos = [_pos, 3, _dir + 90] call BIS_Fnc_relPos;
+				
+			private _vehicle = createVehicle [_class, _pos];
+			_vehicle setDir _dir;
+		};
+		
+		_roads;
 	};
 
 	Fn_Patrols_CreateCivilean_Traffic = {
-		params['_center'];
+		params['_roads'];
 		
-		private _roads = [_center, 250, 10] call BrezBlock_fnc_GetEmptyRoads;
-			
 		for "_i" from 0 to (random 2) do {
 			private _class = selectRandom D_FRACTION_CIV_UNITS_CARS;
 			private _road = selectRandom _roads;
@@ -100,53 +79,37 @@ if (isServer) then {
 			vehicle_patrol_group append [_vehicle];
 			vehicle_refuel_group append [_vehicle];
 		};
+		
+		_roads;
 	};
 	
 	Fn_Patrols_CreateMilitary_Traffic = {
-		params['_poi'];
-		{ 
-			private _center = _x select 1;
-			private _roads = _center nearRoads 150;
-			
-			private _good_roads = [];
-			
-			{
-				private _pos = position _x;
-				if ((count (nearestObjects [_pos, ["Car", "Truck"], 5]) == 0) and (count (nearestTerrainObjects [_pos, ["TREE", "BUILDING", "HOUSE", "FENCE", "WALL", "ROCK", "ROCKS"], 5, false, true]) == 0)) then {
-					private _bbox = boundingboxReal _x;
-					private _a = _bbox select 0;
-					private _b = _bbox select 1;
-					private _size = _a distance _b;
-					if (_size >= 25) then {
-						_good_roads append [_x];
-					};
-				};
-				if (count _good_roads >= 10) exitWith {};
-			} forEach _roads;
-			
-			for "_i" from 0 to (random 2) do {
-				private _class = selectRandom D_FRACTION_INDEP_UNITS_CARS;
-				private _road = selectRandom _good_roads;
-				if (isNil "_road") exitWith {};
-				_good_roads = _good_roads - [_road];
-				private _pos = position _road;
-				private _connected = roadsConnectedto (_road);
+		params['_roads'];
+	
+		for "_i" from 0 to (random 2) do {
+			private _class = selectRandom D_FRACTION_INDEP_UNITS_CARS;
+			private _road = selectRandom _roads;
+			if (isNil "_road") exitWith {};
+			_roads = _roads - [_road];
+			private _pos = position _road;
+			private _connected = roadsConnectedto (_road);
 				
-				private _vehicle = createVehicle [_class, _pos];
-				_vehicle limitSpeed 40;
+			private _vehicle = createVehicle [_class, _pos];
+			_vehicle limitSpeed 40;
 				
-				if (count _connected > 0) then {
-					private _connected_pos = getPos (_connected select 0);
-					private _dir = [_pos, _connected_pos] call BIS_fnc_DirTo;
+			if (count _connected > 0) then {
+				private _connected_pos = getPos (_connected select 0);
+				private _dir = [_pos, _connected_pos] call BIS_fnc_DirTo;
 							
-					_vehicle setDir _dir;
-				};
-				 
-				private _crew = createVehicleCrew (_vehicle);
-				vehicle_patrol_group append [_vehicle];
-				vehicle_refuel_group append [_vehicle];
+				_vehicle setDir _dir;
 			};
-		} forEach _poi;
+				 
+			private _crew = createVehicleCrew (_vehicle);
+			vehicle_patrol_group append [_vehicle];
+			vehicle_refuel_group append [_vehicle];
+		};
+		
+		_roads;
 	};
 		
 	// Create random waypoints for enemy and civilian vehicles
@@ -234,46 +197,39 @@ if (isServer) then {
 		
 		scopeName "main";
 		{
-			scopeName "next_road";
-			if (count _roads >= 5) then { breakTo "main"; };
 			if ((_targetPos distance2D (getPos _x)) >= 600) then {
 				
 				private _clear = true;
-				private _pos = getPos _x;
+				private _pos = getPosASL _x;
+				//check if road far away from all players
 				{
-					if ((_pos distance2D (getPos _x)) < 500) then {
+					if ((_pos distance2D (getPosASL _x)) < 500) then {
 						_clear = false;
 					};
 				} forEach (playableUnits + switchableUnits);
 				if (_clear) then {
-					if ((count (nearestObjects [_pos, ["Car", "Truck"], 50]) == 0) and (count (nearestTerrainObjects [_pos, ["TREE", "ROCK", "ROCKS"], 10, false, true]) == 0) and (count (nearestTerrainObjects [_pos, ["BUILDING", "HOUSE", "FENCE", "WALL"], 50, false, true]) == 0)) then {
-						private _bbox = boundingboxReal _x;
-						private _a = _bbox select 0;
-						private _b = _bbox select 1;
-						private _size = _a distance _b;
-						private _next_road = _x;
-						
-						if (_size >= 35) then {
-							{
-								_next_road = ((roadsConnectedto (_next_road)) select 0);
-								if (!isNil "_next_road") then {
-									private _next_road_pos = getPos _next_road;
-									if ((count (nearestObjects [_next_road_pos, ["Car", "Truck"], 50]) == 0) and (count (nearestTerrainObjects [_next_road_pos, ["TREE", "ROCK", "ROCKS"], 10, false, true]) == 0) and (count (nearestTerrainObjects [_next_road_pos, ["BUILDING", "HOUSE", "FENCE", "WALL"], 50, false, true]) == 0)) then {
-										_roads pushBack _next_road;
-									};
-									if ((count _roads) >= (count _force_comp)) then {
-										breakTo "main";
-									};
-								} else {
-									_roads = [];
-									breakTo "next_road";
+					// Check if there is any vehicle nearby
+					if (count (nearestObjects [_pos, ["Car", "Truck", "Tank"], 50]) == 0) then {
+						// Try to find next road to spawn all comp vehicles
+						{
+							_next_road = ((roadsConnectedto (_next_road)) select 0);
+							if (!isNil "_next_road") then {
+								private _next_road_pos = getPosASL _next_road;
+								if (count (nearestObjects [_next_road_pos, ["Car", "Truck"], 50]) == 0) then {
+									_roads pushBack _next_road;
 								};
-							} forEach _force_comp;
-						};
+								if ((count _roads) >= (count _force_comp)) then {
+									breakTo "main";
+								};
+							} else {
+								_roads = [];
+								breakTo "next_road";
+							};
+						} forEach _force_comp;
 					};
 				};
 			};
-		} forEach (_targetPos nearRoads 1000);
+		} forEach reinforcement_roads;
 		
 		if ((count _roads) < (count _force_comp)) exitWith {systemChat "No roads, bail!";};
 		

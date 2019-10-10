@@ -42,8 +42,8 @@ if (isServer) then {
 	
 	{ avaliable_markers pushBackUnique _x; } forEach ([_crashSitePos, 1500] call BrezBlock_fnc_CotrollerCreate);
 	{ if (!((markerType _x) in ["b_recon", "b_plane"])) then { avaliable_markers pushBackUnique _x; }; } forEach ([getMarkerPos "mrk_east_base_02", 600] call BrezBlock_fnc_CotrollerCreate);
-	{ if (!((markerType _x) in ["b_recon", "b_plane"])) then { avaliable_markers pushBackUnique _x; }; } forEach ([getMarkerPos "mrk_airfield", 1000] call BrezBlock_fnc_CotrollerCreate);
-	[getMarkerPos "mrk_east_base_01", 150] call BrezBlock_fnc_CotrollerCreate;
+	//{ if (!((markerType _x) in ["b_recon", "b_plane"])) then { avaliable_markers pushBackUnique _x; }; } forEach ([getMarkerPos "mrk_airfield", 1000] call BrezBlock_fnc_CotrollerCreate);
+	//[getMarkerPos "mrk_east_base_01", 150] call BrezBlock_fnc_CotrollerCreate;
 
 	//Create city markers
 	{ 
@@ -52,14 +52,27 @@ if (isServer) then {
 		_mark setMarkerType "hd_destroy";
 		_mark setMarkerAlpha 0;
 		
-		{ if (!((markerType _x) in ["b_recon", "b_plane"])) then { avaliable_markers pushBackUnique _x; }; } forEach ([_pos, 600] call BrezBlock_fnc_CotrollerCreate);
-		[_pos, 500, 40] call BrezBlock_fnc_SpawnObjects;
+		//{ if (!((markerType _x) in ["b_recon", "b_plane"])) then { avaliable_markers pushBackUnique _x; }; } forEach ([_pos, 600] call BrezBlock_fnc_CotrollerCreate);
+		
+		private _size = 100;
+		private _loc_size_x = ((_x select 2) select 0);
+		private _loc_size_y = ((_x select 2) select 1);
+		if ((_loc_size_x > 100) && (_loc_size_x >= _loc_size_y)) then {
+			_size = _loc_size_x;
+		} else {
+			if (_loc_size_y > 100) then {
+				_size = _loc_size_y;
+			};
+		};
+		[_pos, (_size + 100), 40] call BrezBlock_fnc_SpawnObjects;
 		
 		_pos = [_x select 1, 5, 150, 3, 0, 0, 0] call BIS_fnc_findSafePos;
 		_mark = createMarker [format ["respawn_civilian_%1", _forEachIndex], _pos];
 		_mark setMarkerType "hd_destroy";
 		_mark setMarkerAlpha 0;
 	} forEach avaliable_pois;
+	//Create city triggers
+	call Fn_Create_Logic_CivilianLiberateCity;
 	
 	[_crashSitePos] call Fn_Spawn_East_Comtower;
 	[_crashSitePos] call Fn_Task_Spawn_Indep_Objectives;
@@ -82,26 +95,76 @@ if (isServer) then {
 	//Select cities for spawn
 	{
 		
-		systemChat format ["Spawn %1: %2", _x, (_x select 0)];
+		
 		private _pos = _x select 1;
 		if (!((_x select 0) in ['Kambani','Bibung','Loholoho','Tinobu'])) then {
 			[_pos] call Fn_Task_Spawn_Boats;
 		};
-		[_pos] call Fn_Patrols_CreateCivilean_Traffic;
-		//[_x] call Fn_Patrols_CreateMilitary_Traffic;
-		//[_x] call Fn_Task_Spawn_Civilean_Cars;
+		
+		private _size = 100;
+		private _loc_size_x = ((_x select 2) select 0);
+		private _loc_size_y = ((_x select 2) select 1);
+		if ((_loc_size_x > 100) && (_loc_size_x >= _loc_size_y)) then {
+			_size = _loc_size_x;
+		} else {
+			if (_loc_size_y > 100) then {
+				_size = _loc_size_y;
+			};
+		};
+		
+		systemChat format ["Spawn %1: %2 size: %3", _x, (_x select 0), _size];
+		
+		private _roads = [_pos, _size, 16] call BrezBlock_fnc_GetEmptyRoads;
+		_roads = [_roads] call Fn_Patrols_CreateMilitary_Traffic;
+		_roads = [_roads] call Fn_Patrols_CreateCivilean_Traffic;
+		[_roads] call Fn_Task_Spawn_Civilean_Cars;
+		
+		//create reinfrsement roads pool
+		_roads = [];
+		
+		systemChat format ["Pos %1", _pos];
+		
+		scopeName "main";
+		{
+			scopeName "next_road";
+			if (count _roads >= 5) then { breakTo "main"; };
+			if ((_pos distance2D (getPosASL _x)) >= 600) then {
+				
+				private _clear = true;
+				private _pos_x = getPosASL _x;
+				if (_clear) then {
+					if ((count (nearestObjects [_pos_x, ["Car", "Truck"], 50]) == 0) and (count (nearestTerrainObjects [_pos_x, ["TREE", "ROCK", "ROCKS"], 10, false, true]) == 0) and (count (nearestTerrainObjects [_pos_x, ["BUILDING", "HOUSE", "FENCE", "WALL"], 50, false, true]) == 0)) then {
+						private _bbox = boundingboxReal _x;
+						private _a = _bbox select 0;
+						private _b = _bbox select 1;
+						private _size = _a distance _b;
+						
+						if (_size >= 45) then {
+							_roads pushBack _x;
+						};
+					};
+				};
+			};
+		} forEach (_pos nearRoads 1000);
+		{
+			reinforcement_roads pushBackUnique _x;
+		} forEach _roads;
 	} forEach (_pios);
 	
+	systemChat format ["Count: %1", count reinforcement_roads];
+	
+	{
+		private _mark = createMarker [format ["mrk_road_%1", _forEachIndex], (getPosASL _x)];
+		_mark setMarkerType "hd_objective";
+		_mark setMarkerAlpha 1;
+	} forEach reinforcement_roads;
+	
 	/*
-	[_pois] call Fn_Patrols_CreateCivilean_Traffic;
-	[_pois] call Fn_Patrols_CreateMilitary_Traffic;
-	[_pois] call Fn_Task_Spawn_Boats;
-	[_pois] call Fn_Task_Spawn_Civilean_Cars;
 
 	//Spawn stashes
 	//FIXME: CUP and ACE deps
 	//[_crashSitePos] call Fn_Task_West_Hidden_WaponStash;
 		
-	call Fn_Create_Logic_CivilianLiberateCity;
 	*/
+	
 };

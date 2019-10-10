@@ -106,7 +106,7 @@ if (isServer) then {
 
 	{	
 		if (!(text _x in _blacklist)) then {
-			_lcs pushBack [text _x, locationPosition _x];
+			_lcs pushBack [text _x, locationPosition _x, size _x];
 		};
 	} forEach nearestLocations [_pos, ["NameVillage", "NameCity", "NameCityCapital"], _range];
 		

@@ -1,5 +1,5 @@
 version=53;
-center[]={265.77783,51.249744,1431.1959};
+center[]={1102.0706,5,6199.3242};
 class items
 {
 	items=7;
@@ -15,17 +15,18 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-2.7764282,0.26928329,-3.147583};
-					angles[]={0,4.1869154,0};
+					position[]={-2.1271973,0.0014390945,-3.387207};
+					angles[]={0,4.1869226,0};
 				};
 				side="Independent";
 				flags=7;
 				class Attributes
 				{
+					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 					name="ua_injured_01";
 					stance="Down";
 				};
-				id=6531;
+				id=49;
 				type="LOP_UKR_Infantry_officer";
 				class CustomAttributes
 				{
@@ -75,7 +76,7 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-0.81549072,0.068798065,-0.27160645};
+					position[]={-0.16625977,0.0014390945,-0.51123047};
 					angles[]={6.2731848,5.5777931,6.2581921};
 				};
 				side="Independent";
@@ -83,9 +84,9 @@ class items
 				class Attributes
 				{
 					health=0;
-					init="call{this call compile preprocessFileLineNumbers ""gear\commander.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\commander.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6532;
+				id=50;
 				type="LOP_UKR_Infantry_Grenadier";
 				class CustomAttributes
 				{
@@ -154,7 +155,7 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={5.6594849,0.15826416,-2.5545654};
+					position[]={6.3098145,0.0014390945,-2.7939453};
 					angles[]={0,6.153595,0};
 				};
 				side="Independent";
@@ -162,10 +163,10 @@ class items
 				class Attributes
 				{
 					health=0;
-					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 					stance="Down";
 				};
-				id=6533;
+				id=51;
 				type="LOP_UKR_Infantry_Light";
 				class CustomAttributes
 				{
@@ -207,7 +208,26 @@ class items
 							};
 						};
 					};
-					nAttributes=2;
+					class Attribute2
+					{
+						property="face";
+						expression="_this setface _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="";
+							};
+						};
+					};
+					nAttributes=3;
 				};
 			};
 			class Item3
@@ -215,7 +235,7 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={1.871521,0.49060059,-6.9476318};
+					position[]={2.520752,0.0014390945,-7.1870117};
 					angles[]={0,4.0704918,0};
 				};
 				side="Independent";
@@ -223,10 +243,10 @@ class items
 				class Attributes
 				{
 					health=0;
-					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 					stance="Middle";
 				};
-				id=6534;
+				id=52;
 				type="LOP_UKR_Infantry_Light";
 				class CustomAttributes
 				{
@@ -294,7 +314,7 @@ class items
 		class Attributes
 		{
 		};
-		id=6530;
+		id=48;
 	};
 	class Item1
 	{
@@ -308,7 +328,7 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={3.2473755,0.15771103,8.3830566};
+					position[]={3.8967285,0.0014390945,8.1435547};
 					angles[]={0,3.547888,0};
 				};
 				side="East";
@@ -316,9 +336,10 @@ class items
 				class Attributes
 				{
 					health=0;
+					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 					name="p_officer_03";
 				};
-				id=6536;
+				id=54;
 				type="rhs_vdv_rifleman_asval";
 				class CustomAttributes
 				{
@@ -386,22 +407,22 @@ class items
 		class Attributes
 		{
 		};
-		id=6535;
+		id=53;
 	};
 	class Item2
 	{
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={-1.2029419,0.17280579,-2.112793};
-			angles[]={0.054944519,0.95838755,6.278194};
+			position[]={-0.55297852,0.0050001144,-2.3525391};
+			angles[]={-0,0.95838755,0};
 		};
 		side="Empty";
 		flags=4;
 		class Attributes
 		{
 		};
-		id=6541;
+		id=55;
 		type="BloodTrail_01_New_F";
 	};
 	class Item3
@@ -409,15 +430,15 @@ class items
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={4.194397,0.28172302,9.2229004};
-			angles[]={6.2157874,6.1535878,0.064909652};
+			position[]={4.8444824,0.0050001144,8.9833984};
+			angles[]={-0,6.1535878,0};
 		};
 		side="Empty";
 		flags=4;
 		class Attributes
 		{
 		};
-		id=6544;
+		id=56;
 		type="BloodSpray_01_New_F";
 	};
 	class Item4
@@ -425,7 +446,7 @@ class items
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={-0.46099854,0.179142,-1.7886963};
+			position[]={0.18920898,0.032866478,-2.0283203};
 			angles[]={0,6.1535878,0};
 		};
 		side="Empty";
@@ -433,7 +454,7 @@ class items
 		class Attributes
 		{
 		};
-		id=6545;
+		id=57;
 		type="MedicalGarbage_01_3x3_v2_F";
 	};
 	class Item5
@@ -448,7 +469,7 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-7.8126831,0.0014381409,2.8450928};
+					position[]={-7.1625977,0.0014390945,2.6054688};
 					angles[]={0,2.048301,0};
 				};
 				side="East";
@@ -456,8 +477,9 @@ class items
 				class Attributes
 				{
 					health=0;
+					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6547;
+				id=59;
 				type="rhs_msv_emr_engineer";
 				class CustomAttributes
 				{
@@ -525,15 +547,15 @@ class items
 		class Attributes
 		{
 		};
-		id=6546;
+		id=58;
 	};
 	class Item6
 	{
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={0.88769531,1.2786942,-0.054321289};
-			angles[]={0.062412973,5.5777931,6.2706885};
+			position[]={1.5378418,1.2455792,-0.29394531};
+			angles[]={-0,5.5777931,0};
 		};
 		side="Empty";
 		flags=4;
@@ -542,9 +564,8 @@ class items
 			health=0.22890538;
 			name="ua_uaz_02";
 		};
-		id=6548;
+		id=60;
 		type="LOP_UKR_UAZ";
-		atlOffset=3.8146973e-006;
 		class CustomAttributes
 		{
 			class Attribute0

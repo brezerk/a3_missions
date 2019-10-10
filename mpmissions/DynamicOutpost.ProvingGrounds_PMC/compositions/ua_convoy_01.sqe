@@ -1,5 +1,5 @@
 version=53;
-center[]={1824.743,51.337284,1726.647};
+center[]={4754.0142,5,2030.3533};
 class items
 {
 	items=22;
@@ -15,18 +15,18 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={6.1086426,0.92506027,6.9881592};
-					angles[]={0,3.5240116,6.2532005};
+					position[]={7.0878906,0.0014390945,9.1297607};
+					angles[]={-0,3.5240116,0};
 				};
 				side="Independent";
+				flags=4;
 				class Attributes
 				{
 					health=0;
-					init="call{this call compile preprocessFileLineNumbers ""gear\crew.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\crew.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6275;
+				id=188;
 				type="LOP_UKR_Infantry_crew";
-				atlOffset=0.92565536;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -94,18 +94,18 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={10.438843,0.94087982,13.137451};
-					angles[]={6.2531958,4.9582882,6.2656889};
+					position[]={11.417969,0.0014390945,15.278809};
+					angles[]={-0,4.9582882,0};
 				};
 				side="Independent";
+				flags=4;
 				class Attributes
 				{
 					health=0;
-					init="call{this call compile preprocessFileLineNumbers ""gear\crew.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\crew.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6276;
+				id=189;
 				type="LOP_UKR_Infantry_crew";
-				atlOffset=0.96541977;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -173,19 +173,18 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={22.735718,0.49666595,13.769165};
-					angles[]={6.2631841,2.0137434,0.017505653};
+					position[]={23.714844,0.0014390945,15.910767};
+					angles[]={-0,2.0137434,0};
 				};
 				side="Independent";
-				flags=2;
+				flags=6;
 				class Attributes
 				{
 					health=0;
-					init="call{this call compile preprocessFileLineNumbers ""gear\crew.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\crew.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6277;
+				id=190;
 				type="LOP_UKR_Infantry_crew";
-				atlOffset=0.60074615;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -252,8 +251,7 @@ class items
 		class Attributes
 		{
 		};
-		id=6274;
-		atlOffset=0.60074615;
+		id=187;
 	};
 	class Item1
 	{
@@ -267,17 +265,17 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-18.596069,0.28690338,-31.899902};
-					angles[]={6.2781935,3.5531063,6.2781935};
+					position[]={-17.609863,0.0014390945,-29.736328};
+					angles[]={-0,3.5531063,0};
 				};
 				side="Independent";
 				flags=4;
 				class Attributes
 				{
 					health=0;
-					init="call{this call compile preprocessFileLineNumbers ""gear\crew.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\crew.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6279;
+				id=192;
 				type="LOP_UKR_Infantry_crew";
 				class CustomAttributes
 				{
@@ -319,7 +317,26 @@ class items
 							};
 						};
 					};
-					nAttributes=2;
+					class Attribute2
+					{
+						property="face";
+						expression="_this setface _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="";
+							};
+						};
+					};
+					nAttributes=3;
 				};
 			};
 			class Item1
@@ -327,16 +344,16 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-18.596069,0.28690338,-31.899902};
-					angles[]={6.2781935,3.5531063,6.2781935};
+					position[]={-17.609863,0.0014390945,-29.736328};
+					angles[]={-0,3.5531063,0};
 				};
 				side="Independent";
 				flags=6;
 				class Attributes
 				{
-					init="call{this call compile preprocessFileLineNumbers ""gear\crew.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\crew.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6280;
+				id=193;
 				type="LOP_UKR_Infantry_crew";
 				class CustomAttributes
 				{
@@ -416,8 +433,8 @@ class items
 				class Item0
 				{
 					linkID=0;
-					item0=6279;
-					item1=6292;
+					item0=192;
+					item1=205;
 					class CustomData
 					{
 						role=1;
@@ -426,8 +443,8 @@ class items
 				class Item1
 				{
 					linkID=1;
-					item0=6280;
-					item1=6292;
+					item0=193;
+					item1=205;
 					class CustomData
 					{
 						role=2;
@@ -436,8 +453,7 @@ class items
 				};
 			};
 		};
-		id=6278;
-		atlOffset=-0.00029373169;
+		id=191;
 	};
 	class Item2
 	{
@@ -451,8 +467,8 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-18.596069,0.28690338,-31.899902};
-					angles[]={6.2781935,3.5531063,6.2781935};
+					position[]={-17.609863,0.0014390945,-29.736328};
+					angles[]={-0,3.5531063,0};
 				};
 				side="Independent";
 				flags=7;
@@ -460,9 +476,9 @@ class items
 				{
 					health=0;
 					rank="SERGEANT";
-					init="call{this call compile preprocessFileLineNumbers ""gear\commander.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\commander.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6282;
+				id=195;
 				type="LOP_UKR_Infantry_sergeant";
 				class CustomAttributes
 				{
@@ -512,8 +528,8 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-18.596069,0.28690338,-31.899902};
-					angles[]={6.2781935,3.5531063,6.2781935};
+					position[]={-17.609863,0.0014390945,-29.736328};
+					angles[]={-0,3.5531063,0};
 				};
 				side="Independent";
 				flags=5;
@@ -521,9 +537,9 @@ class items
 				{
 					skill=0.44999999;
 					rank="CORPORAL";
-					init="call{this call compile preprocessFileLineNumbers ""gear\mg.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\mg.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6283;
+				id=196;
 				type="LOP_UKR_Infantry_AR";
 				class CustomAttributes
 				{
@@ -573,8 +589,8 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-18.596069,0.28690338,-31.899902};
-					angles[]={6.2781935,3.5531063,6.2781935};
+					position[]={-17.609863,0.0014390945,-29.736328};
+					angles[]={-0,3.5531063,0};
 				};
 				side="Independent";
 				flags=5;
@@ -582,9 +598,9 @@ class items
 				{
 					health=0;
 					skill=0.40000001;
-					init="call{this call compile preprocessFileLineNumbers ""gear\pt.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\pt.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6284;
+				id=197;
 				type="LOP_UKR_Infantry_RPG";
 				class CustomAttributes
 				{
@@ -634,8 +650,8 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-18.596069,0.28690338,-31.899902};
-					angles[]={6.2781935,3.5531063,6.2781935};
+					position[]={-17.609863,0.0014390945,-29.736328};
+					angles[]={-0,3.5531063,0};
 				};
 				side="Independent";
 				flags=5;
@@ -644,9 +660,9 @@ class items
 					health=0;
 					skill=0.44999999;
 					rank="CORPORAL";
-					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6285;
+				id=198;
 				type="LOP_UKR_Infantry_Grenadier";
 				class CustomAttributes
 				{
@@ -715,8 +731,8 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-18.596069,0.28690338,-31.899902};
-					angles[]={6.2781935,3.5531063,6.2781935};
+					position[]={-17.609863,0.0014390945,-29.736328};
+					angles[]={-0,3.5531063,0};
 				};
 				side="Independent";
 				flags=5;
@@ -724,9 +740,9 @@ class items
 				{
 					health=0;
 					skill=0.40000001;
-					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6286;
+				id=199;
 				type="LOP_UKR_Infantry_Rifleman";
 				class CustomAttributes
 				{
@@ -768,7 +784,26 @@ class items
 							};
 						};
 					};
-					nAttributes=2;
+					class Attribute2
+					{
+						property="face";
+						expression="_this setface _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="";
+							};
+						};
+					};
+					nAttributes=3;
 				};
 			};
 			class Item5
@@ -776,8 +811,8 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-18.596069,0.28690338,-31.899902};
-					angles[]={6.2781935,3.5531063,6.2781935};
+					position[]={-17.609863,0.0014390945,-29.736328};
+					angles[]={-0,3.5531063,0};
 				};
 				side="Independent";
 				flags=5;
@@ -786,9 +821,9 @@ class items
 					health=0;
 					skill=0.44999999;
 					rank="CORPORAL";
-					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6287;
+				id=200;
 				type="LOP_UKR_Infantry_AR";
 				class CustomAttributes
 				{
@@ -857,8 +892,8 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-18.596069,0.28690338,-31.899902};
-					angles[]={6.2781935,3.5531063,6.2781935};
+					position[]={-17.609863,0.0014390945,-29.736328};
+					angles[]={-0,3.5531063,0};
 				};
 				side="Independent";
 				flags=5;
@@ -866,9 +901,9 @@ class items
 				{
 					health=0;
 					skill=0.40000001;
-					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6288;
+				id=201;
 				type="LOP_UKR_Infantry_RPG";
 				class CustomAttributes
 				{
@@ -937,17 +972,17 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-18.596069,0.28690338,-31.899902};
-					angles[]={6.2781935,3.5531063,6.2781935};
+					position[]={-17.609863,0.0014390945,-29.736328};
+					angles[]={-0,3.5531063,0};
 				};
 				side="Independent";
 				flags=5;
 				class Attributes
 				{
 					skill=0.40000001;
-					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6289;
+				id=202;
 				type="LOP_UKR_Infantry_Grenadier";
 				class CustomAttributes
 				{
@@ -997,17 +1032,17 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-18.596069,0.28690338,-31.899902};
-					angles[]={6.2781935,3.5531063,6.2781935};
+					position[]={-17.609863,0.0014390945,-29.736328};
+					angles[]={-0,3.5531063,0};
 				};
 				side="Independent";
 				flags=5;
 				class Attributes
 				{
 					skill=0.40000001;
-					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6290;
+				id=203;
 				type="LOP_UKR_Infantry_Rifleman";
 				class CustomAttributes
 				{
@@ -1057,8 +1092,8 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-18.596069,0.28690338,-31.899902};
-					angles[]={6.2781935,3.5531063,6.2781935};
+					position[]={-17.609863,0.0014390945,-29.736328};
+					angles[]={-0,3.5531063,0};
 				};
 				side="Independent";
 				flags=5;
@@ -1066,9 +1101,9 @@ class items
 				{
 					health=0;
 					skill=0.40000001;
-					init="call{this call compile preprocessFileLineNumbers ""gear\medic.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\medic.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6291;
+				id=204;
 				type="LOP_UKR_Infantry_medic";
 				class CustomAttributes
 				{
@@ -1148,8 +1183,8 @@ class items
 				class Item0
 				{
 					linkID=0;
-					item0=6282;
-					item1=6292;
+					item0=195;
+					item1=205;
 					class CustomData
 					{
 						role=2;
@@ -1159,8 +1194,8 @@ class items
 				class Item1
 				{
 					linkID=1;
-					item0=6283;
-					item1=6292;
+					item0=196;
+					item1=205;
 					class CustomData
 					{
 						role=2;
@@ -1170,8 +1205,8 @@ class items
 				class Item2
 				{
 					linkID=2;
-					item0=6284;
-					item1=6292;
+					item0=197;
+					item1=205;
 					class CustomData
 					{
 						role=2;
@@ -1181,8 +1216,8 @@ class items
 				class Item3
 				{
 					linkID=3;
-					item0=6285;
-					item1=6292;
+					item0=198;
+					item1=205;
 					class CustomData
 					{
 						role=2;
@@ -1192,8 +1227,8 @@ class items
 				class Item4
 				{
 					linkID=4;
-					item0=6286;
-					item1=6292;
+					item0=199;
+					item1=205;
 					class CustomData
 					{
 						role=2;
@@ -1203,8 +1238,8 @@ class items
 				class Item5
 				{
 					linkID=5;
-					item0=6287;
-					item1=6292;
+					item0=200;
+					item1=205;
 					class CustomData
 					{
 						role=2;
@@ -1214,8 +1249,8 @@ class items
 				class Item6
 				{
 					linkID=6;
-					item0=6288;
-					item1=6292;
+					item0=201;
+					item1=205;
 					class CustomData
 					{
 						role=2;
@@ -1225,8 +1260,8 @@ class items
 				class Item7
 				{
 					linkID=7;
-					item0=6289;
-					item1=6292;
+					item0=202;
+					item1=205;
 					class CustomData
 					{
 						role=2;
@@ -1236,8 +1271,8 @@ class items
 				class Item8
 				{
 					linkID=8;
-					item0=6290;
-					item1=6292;
+					item0=203;
+					item1=205;
 					class CustomData
 					{
 						role=2;
@@ -1247,8 +1282,8 @@ class items
 				class Item9
 				{
 					linkID=9;
-					item0=6291;
-					item1=6292;
+					item0=204;
+					item1=205;
 					class CustomData
 					{
 						role=2;
@@ -1257,16 +1292,15 @@ class items
 				};
 			};
 		};
-		id=6281;
-		atlOffset=-0.00029373169;
+		id=194;
 	};
 	class Item3
 	{
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={-18.588623,1.7647514,-31.927734};
-			angles[]={6.2781935,3.5531063,6.2781935};
+			position[]={-17.609863,1.4794693,-29.786377};
+			angles[]={-0,3.5531063,0};
 		};
 		side="Independent";
 		flags=6;
@@ -1274,9 +1308,8 @@ class items
 		{
 			init="call{this setObjectTexture [0, ""rhsafrf\addons\rhs_btr80_camo\data\rhs_btr80_01_des_co.paa""];}";
 		};
-		id=6292;
+		id=205;
 		type="LOP_UKR_BTR80";
-		atlOffset=-0.00029373169;
 		class CustomAttributes
 		{
 			class Attribute0
@@ -1684,19 +1717,18 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={25.875732,0.94603729,32.437134};
+					position[]={26.854004,0.0014390945,34.578857};
 					angles[]={0,3.563334,0};
 				};
 				side="Independent";
-				flags=3;
+				flags=7;
 				class Attributes
 				{
 					rank="SERGEANT";
-					init="call{this call compile preprocessFileLineNumbers ""gear\commander.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\commander.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6294;
+				id=207;
 				type="LOP_UKR_Infantry_sergeant";
-				atlOffset=1.0307426;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -1764,21 +1796,20 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={21.525757,0.98075485,33.283203};
+					position[]={22.504883,0.0014390945,35.424805};
 					angles[]={0,3.3250268,0};
 				};
 				side="Independent";
-				flags=1;
+				flags=5;
 				class Attributes
 				{
 					health=0;
 					skill=0.44999999;
 					rank="CORPORAL";
-					init="call{this call compile preprocessFileLineNumbers ""gear\mg.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\mg.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6295;
+				id=208;
 				type="LOP_UKR_Infantry_AR";
-				atlOffset=0.81469345;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -1846,19 +1877,18 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={23.947998,0.95458603,29.510132};
-					angles[]={0.014992379,3.0051603,6.2656798};
+					position[]={24.940918,0.0014390945,31.55127};
+					angles[]={-0,3.0051603,0};
 				};
 				side="Independent";
-				flags=1;
+				flags=5;
 				class Attributes
 				{
 					skill=0.40000001;
-					init="call{this call compile preprocessFileLineNumbers ""gear\pt.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\pt.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6296;
+				id=209;
 				type="LOP_UKR_Infantry_RPG";
-				atlOffset=1.0999985;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -1899,7 +1929,26 @@ class items
 							};
 						};
 					};
-					nAttributes=2;
+					class Attribute2
+					{
+						property="face";
+						expression="_this setface _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="";
+							};
+						};
+					};
+					nAttributes=3;
 				};
 			};
 			class Item3
@@ -1907,20 +1956,19 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={23.947998,0.95458603,29.510132};
-					angles[]={0.014992379,3.0051603,6.2656798};
+					position[]={24.940918,0.0014390945,31.55127};
+					angles[]={-0,3.0051603,0};
 				};
 				side="Independent";
-				flags=1;
+				flags=5;
 				class Attributes
 				{
 					skill=0.44999999;
 					rank="CORPORAL";
-					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6297;
+				id=210;
 				type="LOP_UKR_Infantry_Grenadier";
-				atlOffset=1.0999985;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -1988,20 +2036,19 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={23.947998,0.95458603,29.510132};
-					angles[]={0.014992379,3.0051603,6.2656798};
+					position[]={24.940918,0.0014390945,31.55127};
+					angles[]={-0,3.0051603,0};
 				};
 				side="Independent";
-				flags=1;
+				flags=5;
 				class Attributes
 				{
 					health=0;
 					skill=0.40000001;
-					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6298;
+				id=211;
 				type="LOP_UKR_Infantry_Rifleman";
-				atlOffset=1.0999985;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -2050,21 +2097,20 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={23.947998,0.95458603,29.510132};
-					angles[]={0.014992379,3.0051603,6.2656798};
+					position[]={24.940918,0.0014390945,31.55127};
+					angles[]={-0,3.0051603,0};
 				};
 				side="Independent";
-				flags=1;
+				flags=5;
 				class Attributes
 				{
 					health=0;
 					skill=0.44999999;
 					rank="CORPORAL";
-					init="call{this call compile preprocessFileLineNumbers ""gear\mg.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\mg.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6299;
+				id=212;
 				type="LOP_UKR_Infantry_AR";
-				atlOffset=1.0999985;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -2132,20 +2178,19 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={23.947998,0.95458603,29.510132};
-					angles[]={0.014992379,3.0051603,6.2656798};
+					position[]={24.940918,0.0014390945,31.55127};
+					angles[]={-0,3.0051603,0};
 				};
 				side="Independent";
-				flags=1;
+				flags=5;
 				class Attributes
 				{
 					health=0;
 					skill=0.40000001;
-					init="call{this call compile preprocessFileLineNumbers ""gear\pt.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\pt.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6300;
+				id=213;
 				type="LOP_UKR_Infantry_RPG";
-				atlOffset=1.0999985;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -2213,20 +2258,19 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={24.067749,1.0351219,33.170166};
+					position[]={25.046875,0.0014390945,35.311768};
 					angles[]={0,0.19615756,0};
 				};
 				side="Independent";
-				flags=1;
+				flags=5;
 				class Attributes
 				{
 					health=0;
 					skill=0.40000001;
-					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6301;
+				id=214;
 				type="LOP_UKR_Infantry_Grenadier";
-				atlOffset=1.0167236;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -2294,19 +2338,18 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={22.681641,1.0055885,33.236206};
+					position[]={23.659668,0.0014390945,35.377686};
 					angles[]={0,3.3250268,0};
 				};
 				side="Independent";
-				flags=1;
+				flags=5;
 				class Attributes
 				{
 					skill=0.40000001;
-					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6302;
+				id=215;
 				type="LOP_UKR_Infantry_Rifleman";
-				atlOffset=0.91423798;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -2374,20 +2417,19 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={26.174683,0.84260559,29.897217};
+					position[]={27.152832,0.0014390945,32.038818};
 					angles[]={0,5.8707814,0};
 				};
 				side="Independent";
-				flags=1;
+				flags=5;
 				class Attributes
 				{
 					health=0;
 					skill=0.40000001;
-					init="call{this call compile preprocessFileLineNumbers ""gear\medic.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\medic.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6303;
+				id=216;
 				type="LOP_UKR_Infantry_medic";
-				atlOffset=0.98439026;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -2447,8 +2489,8 @@ class items
 				class Item0
 				{
 					linkID=0;
-					item0=6296;
-					item1=6306;
+					item0=209;
+					item1=219;
 					class CustomData
 					{
 						role=3;
@@ -2458,8 +2500,8 @@ class items
 				class Item1
 				{
 					linkID=1;
-					item0=6297;
-					item1=6306;
+					item0=210;
+					item1=219;
 					class CustomData
 					{
 						role=3;
@@ -2469,8 +2511,8 @@ class items
 				class Item2
 				{
 					linkID=2;
-					item0=6298;
-					item1=6306;
+					item0=211;
+					item1=219;
 					class CustomData
 					{
 						role=2;
@@ -2480,8 +2522,8 @@ class items
 				class Item3
 				{
 					linkID=3;
-					item0=6299;
-					item1=6306;
+					item0=212;
+					item1=219;
 					class CustomData
 					{
 						role=3;
@@ -2491,8 +2533,8 @@ class items
 				class Item4
 				{
 					linkID=4;
-					item0=6300;
-					item1=6306;
+					item0=213;
+					item1=219;
 					class CustomData
 					{
 						role=2;
@@ -2501,8 +2543,7 @@ class items
 				};
 			};
 		};
-		id=6293;
-		atlOffset=1.0307426;
+		id=206;
 	};
 	class Item5
 	{
@@ -2516,19 +2557,18 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={23.947998,0.95458603,29.510132};
-					angles[]={0.014992379,3.0051603,6.2656798};
+					position[]={24.940918,0.0014390945,31.55127};
+					angles[]={-0,3.0051603,0};
 				};
 				side="Independent";
-				flags=2;
+				flags=6;
 				class Attributes
 				{
 					health=0;
-					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6305;
+				id=218;
 				type="LOP_UKR_Infantry_Rifleman";
-				atlOffset=1.0999985;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -2607,8 +2647,8 @@ class items
 				class Item0
 				{
 					linkID=0;
-					item0=6305;
-					item1=6306;
+					item0=218;
+					item1=219;
 					class CustomData
 					{
 						role=1;
@@ -2616,26 +2656,24 @@ class items
 				};
 			};
 		};
-		id=6304;
-		atlOffset=1.0999985;
+		id=217;
 	};
 	class Item6
 	{
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={23.96228,2.8605423,29.359985};
-			angles[]={0.014992379,3.0051603,6.2656798};
+			position[]={24.940918,1.9100766,31.501221};
+			angles[]={-0,3.0051603,0};
 		};
 		side="Independent";
-		flags=2;
+		flags=6;
 		class Attributes
 		{
 			init="call{this setObjectTexture [0, ""rhsafrf\addons\rhs_a2port_car_camo\data\ural_kabina_sand_co.paa""];}";
 		};
-		id=6306;
+		id=219;
 		type="LOP_UKR_Ural_open";
-		atlOffset=1.0999985;
 		class CustomAttributes
 		{
 			class Attribute0
@@ -2796,19 +2834,18 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-4.1660156,0.95912552,-1.8409424};
-					angles[]={0.017505653,4.0166311,0.08230973};
+					position[]={-3.0024414,0.0014390945,0.26721191};
+					angles[]={-0,4.0166311,0};
 				};
 				side="Independent";
-				flags=3;
+				flags=7;
 				class Attributes
 				{
 					rank="SERGEANT";
-					init="call{this call compile preprocessFileLineNumbers ""gear\commander.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\commander.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6308;
+				id=221;
 				type="LOP_UKR_Infantry_sergeant";
-				atlOffset=0.76800156;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -2876,21 +2913,20 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-2.4012451,0.91501236,1.637207};
+					position[]={-1.4233398,0.0014390945,3.7788086};
 					angles[]={0,0.54447287,0};
 				};
 				side="Independent";
-				flags=1;
+				flags=5;
 				class Attributes
 				{
 					health=0;
 					skill=0.44999999;
 					rank="CORPORAL";
-					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6309;
+				id=222;
 				type="LOP_UKR_Infantry_AR";
-				atlOffset=0.69165039;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -2958,19 +2994,18 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-4.1660156,0.95912552,-1.8409424};
-					angles[]={0.017505653,4.0166311,0.08230973};
+					position[]={-3.0024414,0.0014390945,0.26721191};
+					angles[]={-0,4.0166311,0};
 				};
 				side="Independent";
-				flags=1;
+				flags=5;
 				class Attributes
 				{
 					skill=0.40000001;
-					init="call{this call compile preprocessFileLineNumbers ""gear\pt.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\pt.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6310;
+				id=223;
 				type="LOP_UKR_Infantry_RPG";
-				atlOffset=0.76800156;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -3011,7 +3046,26 @@ class items
 							};
 						};
 					};
-					nAttributes=2;
+					class Attribute2
+					{
+						property="face";
+						expression="_this setface _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="";
+							};
+						};
+					};
+					nAttributes=3;
 				};
 			};
 			class Item3
@@ -3019,20 +3073,19 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-4.1660156,0.95912552,-1.8409424};
-					angles[]={0.017505653,4.0166311,0.08230973};
+					position[]={-3.0024414,0.0014390945,0.26721191};
+					angles[]={-0,4.0166311,0};
 				};
 				side="Independent";
-				flags=1;
+				flags=5;
 				class Attributes
 				{
 					skill=0.44999999;
 					rank="CORPORAL";
-					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6311;
+				id=224;
 				type="LOP_UKR_Infantry_Grenadier";
-				atlOffset=0.76800156;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -3100,20 +3153,19 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-0.74731445,0.94532394,0.0012207031};
+					position[]={0.23095703,0.0014390945,2.1428223};
 					angles[]={0,0.54447287,0};
 				};
 				side="Independent";
-				flags=1;
+				flags=5;
 				class Attributes
 				{
 					health=0;
 					skill=0.40000001;
-					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6312;
+				id=225;
 				type="LOP_UKR_Infantry_Rifleman";
-				atlOffset=0.8931694;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -3181,21 +3233,20 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={1.0646973,0.92203903,0.31420898};
+					position[]={2.0439453,0.0014390945,2.4558105};
 					angles[]={0,0.54447287,0};
 				};
 				side="Independent";
-				flags=1;
+				flags=5;
 				class Attributes
 				{
 					health=0;
 					skill=0.44999999;
 					rank="CORPORAL";
-					init="call{this call compile preprocessFileLineNumbers ""gear\mg.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\mg.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6313;
+				id=226;
 				type="LOP_UKR_Infantry_AR";
-				atlOffset=0.94235992;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -3263,19 +3314,18 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-4.1660156,0.95912552,-1.8409424};
-					angles[]={0.017505653,4.0166311,0.08230973};
+					position[]={-3.0024414,0.0014390945,0.26721191};
+					angles[]={-0,4.0166311,0};
 				};
 				side="Independent";
-				flags=1;
+				flags=5;
 				class Attributes
 				{
 					skill=0.40000001;
-					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6314;
+				id=227;
 				type="LOP_UKR_Infantry_RPG";
-				atlOffset=0.76800156;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -3343,19 +3393,18 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-4.1660156,0.95912552,-1.8409424};
-					angles[]={0.017505653,4.0166311,0.08230973};
+					position[]={-3.0024414,0.0014390945,0.26721191};
+					angles[]={-0,4.0166311,0};
 				};
 				side="Independent";
-				flags=1;
+				flags=5;
 				class Attributes
 				{
 					skill=0.40000001;
-					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6315;
+				id=228;
 				type="LOP_UKR_Infantry_Grenadier";
-				atlOffset=0.76800156;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -3404,19 +3453,18 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-3.1433105,0.91845703,0.64111328};
+					position[]={-2.1640625,0.0014390945,2.7828369};
 					angles[]={0,0.54447287,0};
 				};
 				side="Independent";
-				flags=1;
+				flags=5;
 				class Attributes
 				{
 					skill=0.40000001;
-					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6316;
+				id=229;
 				type="LOP_UKR_Infantry_Rifleman";
-				atlOffset=0.73125458;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -3457,7 +3505,26 @@ class items
 							};
 						};
 					};
-					nAttributes=2;
+					class Attribute2
+					{
+						property="face";
+						expression="_this setface _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="";
+							};
+						};
+					};
+					nAttributes=3;
 				};
 			};
 			class Item9
@@ -3465,19 +3532,18 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={0.79370117,0.92612839,-0.90283203};
+					position[]={1.7719727,0.0014390945,1.2387695};
 					angles[]={0,0.54447287,0};
 				};
 				side="Independent";
-				flags=1;
+				flags=5;
 				class Attributes
 				{
 					skill=0.40000001;
-					init="call{this call compile preprocessFileLineNumbers ""gear\medic.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\medic.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6317;
+				id=230;
 				type="LOP_UKR_Infantry_medic";
-				atlOffset=0.99254608;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -3537,8 +3603,8 @@ class items
 				class Item0
 				{
 					linkID=0;
-					item0=6308;
-					item1=6320;
+					item0=221;
+					item1=233;
 					class CustomData
 					{
 						role=2;
@@ -3548,8 +3614,8 @@ class items
 				class Item1
 				{
 					linkID=1;
-					item0=6310;
-					item1=6320;
+					item0=223;
+					item1=233;
 					class CustomData
 					{
 						role=3;
@@ -3559,8 +3625,8 @@ class items
 				class Item2
 				{
 					linkID=2;
-					item0=6311;
-					item1=6320;
+					item0=224;
+					item1=233;
 					class CustomData
 					{
 						role=3;
@@ -3570,8 +3636,8 @@ class items
 				class Item3
 				{
 					linkID=3;
-					item0=6314;
-					item1=6320;
+					item0=227;
+					item1=233;
 					class CustomData
 					{
 						role=3;
@@ -3581,8 +3647,8 @@ class items
 				class Item4
 				{
 					linkID=4;
-					item0=6315;
-					item1=6320;
+					item0=228;
+					item1=233;
 					class CustomData
 					{
 						role=3;
@@ -3591,8 +3657,7 @@ class items
 				};
 			};
 		};
-		id=6307;
-		atlOffset=0.76800156;
+		id=220;
 	};
 	class Item8
 	{
@@ -3606,19 +3671,18 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-4.1660156,0.95912552,-1.8409424};
-					angles[]={0.017505653,4.0166311,0.08230973};
+					position[]={-3.0024414,0.0014390945,0.26721191};
+					angles[]={-0,4.0166311,0};
 				};
 				side="Independent";
-				flags=2;
+				flags=6;
 				class Attributes
 				{
 					health=0;
-					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6319;
+				id=232;
 				type="LOP_UKR_Infantry_Rifleman";
-				atlOffset=0.76800156;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -3697,8 +3761,8 @@ class items
 				class Item0
 				{
 					linkID=0;
-					item0=6319;
-					item1=6320;
+					item0=232;
+					item1=233;
 					class CustomData
 					{
 						role=1;
@@ -3706,26 +3770,24 @@ class items
 				};
 			};
 		};
-		id=6318;
-		atlOffset=0.76800156;
+		id=231;
 	};
 	class Item9
 	{
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={-3.9807129,2.8584404,-1.9241943};
-			angles[]={0.017505653,4.0166311,0.08230973};
+			position[]={-3.0024414,1.9100571,0.21716309};
+			angles[]={-0,4.0166311,0};
 		};
 		side="Independent";
-		flags=2;
+		flags=6;
 		class Attributes
 		{
 			init="call{this setObjectTexture [0, ""rhsafrf\addons\rhs_a2port_car_camo\data\ural_kabina_sand_co.paa""];}";
 		};
-		id=6320;
+		id=233;
 		type="LOP_UKR_Ural";
-		atlOffset=0.76800156;
 		class CustomAttributes
 		{
 			class Attribute0
@@ -3886,18 +3948,18 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-25.486206,0.92927933,-55.49939};
-					angles[]={6.2756844,3.7603788,0.029989703};
+					position[]={-24.708008,0.0014390945,-53.343506};
+					angles[]={-0,3.7603788,0};
 				};
 				side="Independent";
+				flags=4;
 				class Attributes
 				{
 					health=0;
-					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6322;
+				id=235;
 				type="LOP_UKR_Infantry_Rifleman";
-				atlOffset=0.65711594;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -3938,7 +4000,26 @@ class items
 							};
 						};
 					};
-					nAttributes=2;
+					class Attribute2
+					{
+						property="face";
+						expression="_this setface _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="";
+							};
+						};
+					};
+					nAttributes=3;
 				};
 			};
 			class Item1
@@ -3946,18 +4027,17 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-25.486206,0.92927933,-55.49939};
-					angles[]={6.2756844,3.7603788,0.029989703};
+					position[]={-24.708008,0.0014390945,-53.343506};
+					angles[]={-0,3.7603788,0};
 				};
 				side="Independent";
-				flags=2;
+				flags=6;
 				class Attributes
 				{
-					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6323;
+				id=236;
 				type="LOP_UKR_Infantry_Rifleman";
-				atlOffset=0.65711594;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -4036,8 +4116,8 @@ class items
 				class Item0
 				{
 					linkID=0;
-					item0=6322;
-					item1=6324;
+					item0=235;
+					item1=237;
 					class CustomData
 					{
 						role=1;
@@ -4046,8 +4126,8 @@ class items
 				class Item1
 				{
 					linkID=1;
-					item0=6323;
-					item1=6324;
+					item0=236;
+					item1=237;
 					class CustomData
 					{
 						role=2;
@@ -4056,25 +4136,23 @@ class items
 				};
 			};
 		};
-		id=6321;
-		atlOffset=0.63699341;
+		id=234;
 	};
 	class Item11
 	{
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={-25.686646,2.0897675,-55.534912};
-			angles[]={6.2756844,3.7603788,0.029989703};
+			position[]={-24.708008,1.1791759,-53.393555};
+			angles[]={-0,3.7603788,0};
 		};
 		side="Independent";
-		flags=2;
+		flags=6;
 		class Attributes
 		{
 		};
-		id=6324;
+		id=237;
 		type="LOP_UKR_UAZ_DshKM";
-		atlOffset=0.63699341;
 	};
 	class Item12
 	{
@@ -4088,80 +4166,304 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={18.256226,0.4337616,-39.981689};
-					angles[]={0,5.1959076,0};
+					position[]={19.234863,0.0014390945,-37.84021};
+					angles[]={0,5.1959152,0};
 				};
 				side="East";
-				flags=3;
+				flags=7;
 				class Attributes
 				{
 					skill=0.55000001;
 					rank="LIEUTENANT";
+					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6326;
+				id=239;
 				type="rhs_vdv_junior_sergeant";
-				atlOffset=0.73690414;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Male02RUS";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=1.04;
+							};
+						};
+					};
+					class Attribute2
+					{
+						property="face";
+						expression="_this setface _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="";
+							};
+						};
+					};
+					nAttributes=3;
+				};
 			};
 			class Item1
 			{
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={20.358521,0.34554672,-46.733032};
-					angles[]={0,5.1959076,0};
+					position[]={21.336914,0.0014390945,-44.591187};
+					angles[]={0,5.1959152,0};
 				};
 				side="East";
-				flags=1;
+				flags=5;
 				class Attributes
 				{
 					skill=0.40000001;
+					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6327;
+				id=240;
 				type="rhs_vdv_at";
-				atlOffset=0.65897751;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Male01RUS";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=1.02;
+							};
+						};
+					};
+					class Attribute2
+					{
+						property="face";
+						expression="_this setface _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="";
+							};
+						};
+					};
+					nAttributes=3;
+				};
 			};
 			class Item2
 			{
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={24.077759,0.2440033,-39.650024};
-					angles[]={0,5.1959076,0};
+					position[]={25.055664,0.0014390945,-37.508179};
+					angles[]={0,5.1959152,0};
 				};
 				side="East";
-				flags=1;
+				flags=5;
 				class Attributes
 				{
 					skill=0.40000001;
+					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6328;
+				id=241;
 				type="rhs_vdv_strelok_rpg_assist";
-				atlOffset=0.61364365;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Male03RUS";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0.99000001;
+							};
+						};
+					};
+					class Attribute2
+					{
+						property="face";
+						expression="_this setface _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="";
+							};
+						};
+					};
+					nAttributes=3;
+				};
 			};
 			class Item3
 			{
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={25.007568,0.24012375,-37.879395};
-					angles[]={0,5.1959076,0};
+					position[]={25.98584,0.0014390945,-35.738281};
+					angles[]={0,5.1959152,0};
 				};
 				side="East";
-				flags=1;
+				flags=5;
 				class Attributes
 				{
 					skill=0.40000001;
+					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6329;
+				id=242;
 				type="rhs_vdv_LAT";
-				atlOffset=0.61135101;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Male01RUS";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0.99000001;
+							};
+						};
+					};
+					nAttributes=2;
+				};
 			};
 		};
 		class Attributes
 		{
 		};
-		id=6325;
-		atlOffset=0.73690414;
+		id=238;
 	};
 	class Item13
 	{
@@ -4175,26 +4477,87 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={26.008179,0.35553741,47.327026};
-					angles[]={0,3.2958105,0};
+					position[]={26.98584,0.0014390945,49.467773};
+					angles[]={0,3.29581,0};
 				};
 				side="East";
 				flags=7;
 				class Attributes
 				{
 					rank="SERGEANT";
+					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6331;
+				id=244;
 				type="rhs_vdv_sergeant";
-				atlOffset=0.050270081;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Male02RUS";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0.98000002;
+							};
+						};
+					};
+					class Attribute2
+					{
+						property="face";
+						expression="_this setface _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="";
+							};
+						};
+					};
+					nAttributes=3;
+				};
 			};
 			class Item1
 			{
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={31.716797,0.45875931,51.499634};
-					angles[]={0,3.2958105,0};
+					position[]={32.694824,0.0014390945,53.640869};
+					angles[]={0,3.29581,0};
 				};
 				side="East";
 				flags=5;
@@ -4202,85 +4565,209 @@ class items
 				{
 					skill=0.44999999;
 					rank="CORPORAL";
+					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6332;
+				id=245;
 				type="rhs_vdv_efreitor";
-				atlOffset=0.014259338;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Male02RUS";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=1.04;
+							};
+						};
+					};
+					nAttributes=2;
+				};
 			};
 			class Item2
 			{
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={23.81189,0.3179512,52.728516};
-					angles[]={0,3.2958105,0};
+					position[]={24.791016,0.0014390945,54.869873};
+					angles[]={0,3.29581,0};
 				};
 				side="East";
-				flags=1;
+				flags=5;
 				class Attributes
 				{
 					skill=0.40000001;
+					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6333;
+				id=246;
 				type="rhs_vdv_arifleman";
-				atlOffset=0.63092041;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Male02RUS";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=1.01;
+							};
+						};
+					};
+					nAttributes=2;
+				};
 			};
 			class Item3
 			{
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={21.835571,0.3927002,53.035645};
-					angles[]={0,3.2958105,0};
+					position[]={22.813965,0.0014390945,55.176758};
+					angles[]={0,3.29581,0};
 				};
 				side="East";
-				flags=1;
+				flags=5;
 				class Attributes
 				{
 					skill=0.40000001;
+					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6334;
+				id=247;
 				type="rhs_vdv_machinegunner_assistant";
-				atlOffset=0.87789917;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Male01RUS";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0.94999999;
+							};
+						};
+					};
+					nAttributes=2;
+				};
 			};
 		};
 		class Attributes
 		{
 		};
-		id=6330;
-		atlOffset=0.050270081;
+		id=243;
 	};
 	class Item14
 	{
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={-1.2553711,0.93531418,1.6153564};
-			angles[]={0.11696389,0.54446459,0.017500184};
+			position[]={-0.27685547,0.0050001144,3.7567139};
+			angles[]={-0,0.54446459,0};
 		};
 		side="Empty";
+		flags=4;
 		class Attributes
 		{
 		};
-		id=6335;
+		id=248;
 		type="BloodSplatter_01_Medium_New_F";
-		atlOffset=0.74835205;
 	};
 	class Item15
 	{
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={-6.3953857,0.79472733,-21.456299};
-			angles[]={6.278182,0,6.2033553};
+			position[]={-5.4169922,0.0050001144,-19.314941};
 		};
 		side="Empty";
+		flags=4;
 		class Attributes
 		{
 		};
-		id=6336;
+		id=249;
 		type="BloodSplatter_01_Large_New_F";
-		atlOffset=0.82718658;
 	};
 	class Item16
 	{
@@ -4294,147 +4781,409 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-16.796143,1.1022911,19.796631};
-					angles[]={0,2.535265,0};
+					position[]={-15.818359,0.0014390945,21.937744};
+					angles[]={0,2.5352652,0};
 				};
 				side="East";
-				flags=3;
+				flags=7;
 				class Attributes
 				{
 					rank="SERGEANT";
+					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6338;
+				id=251;
 				type="rhs_vdv_sergeant";
-				atlOffset=1.6283073;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Male03RUS";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0.97000003;
+							};
+						};
+					};
+					class Attribute2
+					{
+						property="face";
+						expression="_this setface _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="";
+							};
+						};
+					};
+					nAttributes=3;
+				};
 			};
 			class Item1
 			{
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-15.536743,0.96927261,26.754639};
-					angles[]={0,2.535265,0};
+					position[]={-14.558105,0.0014390945,28.895752};
+					angles[]={0,2.5352652,0};
 				};
 				side="East";
-				flags=1;
+				flags=5;
 				class Attributes
 				{
 					skill=0.44999999;
 					rank="CORPORAL";
+					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6339;
+				id=252;
 				type="rhs_vdv_efreitor";
-				atlOffset=0.80841446;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Male01RUS";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=1.03;
+							};
+						};
+					};
+					nAttributes=2;
+				};
 			};
 			class Item2
 			{
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-23.75415,1.022522,21.05603};
-					angles[]={0,2.535265,0};
+					position[]={-22.776367,0.0014390945,23.196777};
+					angles[]={0,2.5352652,0};
 				};
 				side="East";
-				flags=1;
+				flags=5;
 				class Attributes
 				{
 					skill=0.40000001;
+					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6340;
+				id=253;
 				type="rhs_vdv_arifleman";
-				atlOffset=1.1451912;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Male01RUS";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=1.03;
+							};
+						};
+					};
+					nAttributes=2;
+				};
 			};
 			class Item3
 			{
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-25.397583,0.83718109,19.916382};
-					angles[]={0,2.535265,0};
+					position[]={-24.418945,0.0014390945,22.057861};
+					angles[]={0,2.5352652,0};
 				};
 				side="East";
-				flags=1;
+				flags=5;
 				class Attributes
 				{
 					skill=0.40000001;
+					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6341;
+				id=254;
 				type="rhs_vdv_machinegunner_assistant";
-				atlOffset=1.0002441;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Male01RUS";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=1;
+							};
+						};
+					};
+					class Attribute2
+					{
+						property="face";
+						expression="_this setface _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="";
+							};
+						};
+					};
+					nAttributes=3;
+				};
 			};
 			class Item4
 			{
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-27.041138,0.77127838,18.776733};
-					angles[]={0,2.535265,0};
+					position[]={-26.062012,0.0014390945,20.917725};
+					angles[]={0,2.5352652,0};
 				};
 				side="East";
-				flags=1;
+				flags=5;
 				class Attributes
 				{
 					skill=0.40000001;
+					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6342;
+				id=255;
 				type="rhs_vdv_LAT";
-				atlOffset=0.96360016;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Male02RUS";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=1;
+							};
+						};
+					};
+					class Attribute2
+					{
+						property="face";
+						expression="_this setface _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="";
+							};
+						};
+					};
+					nAttributes=3;
+				};
 			};
 		};
 		class Attributes
 		{
 		};
-		id=6337;
-		atlOffset=1.6283073;
+		id=250;
 	};
 	class Item17
 	{
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={9.2833252,0.51860809,20.769043};
-			angles[]={0.047463283,0,0.18776266};
+			position[]={10.261719,0,22.9104};
 		};
 		side="Empty";
 		flags=4;
 		class Attributes
 		{
 		};
-		id=6343;
+		id=256;
 		type="Crater";
-		atlOffset=0.23887634;
 	};
 	class Item18
 	{
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={-5.5661621,0.91610718,-10.370483};
-			angles[]={6.2806959,0,6.268187};
+			position[]={-4.5874023,0,-8.229126};
 		};
 		side="Empty";
+		flags=4;
 		class Attributes
 		{
 		};
-		id=6344;
+		id=257;
 		type="Crater";
-		atlOffset=0.93860245;
 	};
 	class Item19
 	{
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={-20.36084,0.89053345,-55.610107};
-			angles[]={6.2482009,0,6.268187};
+			position[]={-19.382324,0,-53.46875};
 		};
 		side="Empty";
+		flags=4;
 		class Attributes
 		{
 		};
-		id=6345;
+		id=258;
 		type="Crater";
-		atlOffset=0.95227814;
 	};
 	class Item20
 	{
@@ -4448,73 +5197,218 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-44.925171,0.33708954,-33.325073};
-					angles[]={0,1.2761832,0};
+					position[]={-43.947266,0.0014390945,-31.183228};
+					angles[]={0,1.2761848,0};
 				};
 				side="East";
 				flags=5;
 				class Attributes
 				{
 					skill=0.40000001;
+					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6347;
+				id=260;
 				type="rhs_msv_at";
-				atlOffset=-0.36475372;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Male01RUS";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=0.97000003;
+							};
+						};
+					};
+					nAttributes=2;
+				};
 			};
 			class Item1
 			{
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-42.602173,0.038799286,-40.980469};
-					angles[]={0,1.2761832,0};
+					position[]={-41.623047,0.0014390945,-38.839233};
+					angles[]={0,1.2761848,0};
 				};
 				side="East";
 				flags=5;
 				class Attributes
 				{
 					skill=0.40000001;
+					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6348;
+				id=261;
 				type="rhs_msv_strelok_rpg_assist";
-				atlOffset=-0.21055222;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Male01RUS";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=1.04;
+							};
+						};
+					};
+					nAttributes=2;
+				};
 			};
 			class Item2
 			{
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-42.021484,0.0014381409,-42.894287};
-					angles[]={0,1.2761832,0};
+					position[]={-41.042969,0.0014390945,-40.753174};
+					angles[]={0,1.2761848,0};
 				};
 				side="East";
 				flags=5;
 				class Attributes
 				{
 					skill=0.40000001;
+					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6349;
+				id=262;
 				type="rhs_msv_LAT";
-				atlOffset=-0.12154388;
+				class CustomAttributes
+				{
+					class Attribute0
+					{
+						property="speaker";
+						expression="_this setspeaker _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Male03RUS";
+							};
+						};
+					};
+					class Attribute1
+					{
+						property="pitch";
+						expression="_this setpitch _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"SCALAR"
+									};
+								};
+								value=1.04;
+							};
+						};
+					};
+					class Attribute2
+					{
+						property="face";
+						expression="_this setface _value;";
+						class Value
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="";
+							};
+						};
+					};
+					nAttributes=3;
+				};
 			};
 			class Item3
 			{
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-38.688232,0.53551865,-36.657593};
-					angles[]={0,1.2761848,0};
+					position[]={-37.708984,0.0014390945,-34.516235};
+					angles[]={-0,1.2761848,0};
 				};
 				side="East";
-				flags=2;
+				flags=6;
 				class Attributes
 				{
 					skill=0.55000001;
 					rank="LIEUTENANT";
+					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=6350;
+				id=263;
 				type="rhs_msv_LAT";
-				atlOffset=0.65710449;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -4581,16 +5475,15 @@ class items
 		class Attributes
 		{
 		};
-		id=6346;
-		atlOffset=0.65710449;
+		id=259;
 	};
 	class Item21
 	{
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={9.0351563,2.3574219,20.824951};
-			angles[]={0,4.0413971,0};
+			position[]={10.013672,2.0704179,22.966309};
+			angles[]={-0,4.0413971,0};
 		};
 		side="Empty";
 		flags=4;
@@ -4602,9 +5495,8 @@ class items
 			init="call{this setObjectTexture [0, ""rhsafrf\addons\rhs_t72_camo\data\rhs_t72b_01_sand_co.paa""];}";
 			name="ua_heavy_02";
 		};
-		id=6354;
+		id=264;
 		type="rhs_t72ba_tv";
-		atlOffset=-3.8146973e-006;
 		class CustomAttributes
 		{
 			class Attribute0

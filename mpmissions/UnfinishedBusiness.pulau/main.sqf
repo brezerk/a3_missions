@@ -16,12 +16,13 @@
  *                                                                         *
  ***************************************************************************/
 
-real_weather_init = true;
+real_weather_init = false;
 
 D_LOCATIONS = ['Gurun', 'Monyet'];
 
 D_DEBUG = true;
 
+// Check mods if loaded
 D_MOD_ACE = isClass(configFile >> "CfgPatches" >> "ace_main");
 D_MOD_ACE_MEDICAL = isClass(configFile >> "CfgPatches" >> "ace_medical");
 D_MOD_ACEX = isClass(configFile >> "CfgPatches" >> "acex_field_rations");
@@ -29,7 +30,7 @@ D_MOD_CBA = isClass(configFile >> "CfgPatches" >> "cba_main");
 
 D_MOD_CUP_VEHICLES = isClass(configFile>>"cfgPatches">>"cup_vehicles");
 
-//[] execVM "addons\code43\real_weather.sqf";
+[] execVM "addons\code43\real_weather.sqf";
 
 if (isServer) then {
 	_westHQ = createCenter west;
@@ -64,9 +65,6 @@ if (isServer) then {
 	D_FRACTION_WEST_UNITS_HELI = [];
 	D_FRACTION_WEST_UNITS_BOATS = [];
 
-	
-	// Defaines (should be an UI option at mission startup);
-	// FIXME: should be diff dependent
 	D_FRACTION_INDEP = nil;
 	
 	D_FRACTION_INDEP_UNITS_PATROL = [];
@@ -117,6 +115,7 @@ if (isServer) then {
 	vehicle_patrol_group = [];
 	checkpoint_gate_group = [];
 	shared_missions = [];
+	reinforcement_roads = [];
 	
 	//POIs
 	avaliable_locations = [];
@@ -266,7 +265,7 @@ if (isServer) then {
 	waitUntil {real_weather_init};
 	
 	// skip random time
-	//skipTime ((random 5) + 6);
+	skipTime ((random 5) + 6);
 	
 	waitUntil {
 		sleep 3;

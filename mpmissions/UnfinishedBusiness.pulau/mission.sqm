@@ -8,7 +8,7 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=7869;
+		nextID=7871;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={997.29633,10.394728,9472.5908};
-		dir[]={0.71188593,-0.067809522,-0.69920295};
-		up[]={0.048336051,0.99770403,-0.047474384};
-		aside[]={-0.70084912,1.9677973e-006,-0.71355391};
+		pos[]={1000.2629,12.772095,9462.9121};
+		dir[]={0.46519518,-0.45942429,0.75681549};
+		up[]={0.24052991,0.88826507,0.39131522};
+		aside[]={0.85206646,5.7833386e-006,-0.5237509};
 	};
 };
 binarizationWanted=0;
@@ -58,13 +58,14 @@ addons[]=
 	"A3_Structures_F_EPB_Civ_Camping",
 	"A3_Weapons_F_Ammoboxes",
 	"A3_Air_F_Heli_Light_01",
-	"A3_Data_F_Exp_A_Virtual"
+	"A3_Data_F_Exp_A_Virtual",
+	"A3_Props_F_Argo_Civilian_InfoBoards"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=19;
+		items=20;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -198,6 +199,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item19
+		{
+			className="A3_Props_F_Argo";
+			name="Arma 3 Malden - Decorative and Mission Objects";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 randomSeed=6619403;
@@ -313,7 +321,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=905;
+		items=906;
 		class Item0
 		{
 			dataType="Marker";
@@ -626,13 +634,14 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={1005.742,17.841976,9460.1973};
-				angles[]={0,2.3539517,0};
+				position[]={1005.7418,17.842216,9460.1973};
+				angles[]={0,2.3539431,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				createAsSimpleObject=1;
 				reportRemoteTargets=1;
 				receiveRemoteTargets=1;
 				reportOwnPosition=1;
@@ -640,15 +649,15 @@ class Mission
 			};
 			id=3840;
 			type="B_SAM_System_02_F";
-			atlOffset=0.0010356903;
+			atlOffset=0.0012760162;
 		};
 		class Item11
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={914.08905,14.886107,9551.9873};
-				angles[]={6.2647433,5.5154834,6.2647433};
+				position[]={914.08899,14.88586,9551.9873};
+				angles[]={6.2647371,5.5154848,6.2647371};
 			};
 			side="Empty";
 			class Attributes
@@ -657,7 +666,7 @@ class Mission
 			};
 			id=3841;
 			type="B_Ship_Gun_01_F";
-			atlOffset=33.219246;
+			atlOffset=33.219002;
 		};
 		class Item12
 		{
@@ -7811,7 +7820,7 @@ class Mission
 			name="wp_Monyet_hospital_02";
 			type="loc_Hospital";
 			id=7411;
-			atlOffset=0.32114506;
+			atlOffset=3.8504825;
 		};
 		class Item595
 		{
@@ -8921,7 +8930,7 @@ class Mission
 			name="wp_Monyet_paradrop_66";
 			type="b_recon";
 			id=7517;
-			atlOffset=0.15392697;
+			atlOffset=1.4655185;
 		};
 		class Item701
 		{
@@ -9569,7 +9578,7 @@ class Mission
 			b=75;
 			drawBorder=1;
 			id=7576;
-			atlOffset=21.089573;
+			atlOffset=22.132744;
 		};
 		class Item760
 		{
@@ -12065,6 +12074,22 @@ class Mission
 				};
 				nAttributes=5;
 			};
+		};
+		class Item905
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1005.8412,9.8321381,9472.0254};
+				angles[]={0,0.79725718,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=7869;
+			type="MapBoard_Tanoa_F";
+			atlOffset=29.325174;
 		};
 	};
 	class Connections

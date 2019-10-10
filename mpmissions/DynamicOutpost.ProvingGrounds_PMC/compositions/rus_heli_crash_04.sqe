@@ -1,5 +1,5 @@
 version=53;
-center[]={695.81372,50.669922,1431.8827};
+center[]={1115.9099,5,6209.0757};
 class items
 {
 	items=5;
@@ -8,8 +8,8 @@ class items
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={-0.83990479,0.20546722,-1.7813721};
-			angles[]={0.014998405,1.4124296,0.0099949092};
+			position[]={2.8432617,0,-3.2998047};
+			angles[]={-0,1.4124296,0};
 		};
 		side="Empty";
 		flags=4;
@@ -17,43 +17,40 @@ class items
 		{
 			init="call{_fire = ""test_EmptyObjectForFireBig"" createVehicle (position this); " \n "_fire attachTo [this, [0, 0, 0]];}";
 		};
-		id=32;
+		id=112;
 		type="Crater";
-		atlOffset=-0.032829285;
 	};
 	class Item1
 	{
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={2.855835,0.20957565,-5.5389404};
-			angles[]={0,1.4362352,0};
+			position[]={6.5390625,0.08568573,-7.0576172};
+			angles[]={-0,1.4362352,0};
 		};
 		side="Empty";
 		flags=4;
 		class Attributes
 		{
 		};
-		id=33;
+		id=113;
 		type="FireLit";
-		atlOffset=-0.13709259;
 	};
 	class Item2
 	{
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={0.16796875,2.9967575,-2.2303467};
-			angles[]={0.014998405,3.0359671,0.0099949092};
+			position[]={3.8511963,2.7917137,-3.7490234};
+			angles[]={-0,3.0359671,0};
 		};
 		side="Empty";
 		flags=4;
 		class Attributes
 		{
 		};
-		id=34;
+		id=114;
 		type="Land_Wreck_Heli_Attack_02_F";
-		atlOffset=-0.050067902;
 	};
 	class Item3
 	{
@@ -67,17 +64,18 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-22.099976,0.0014381409,9.1604004};
-					angles[]={0,3.0359671,0};
+					position[]={-18.41687,0.0014390945,7.6420898};
+					angles[]={0,3.0359652,0};
 				};
 				side="East";
 				flags=7;
 				class Attributes
 				{
-					name="p_officer_02";
+					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
+					name="p_rus_officer_02";
 					isPlayer=1;
 				};
-				id=36;
+				id=116;
 				type="rhs_pilot_combat_heli";
 				class CustomAttributes
 				{
@@ -126,7 +124,7 @@ class items
 		class Attributes
 		{
 		};
-		id=35;
+		id=115;
 	};
 	class Item4
 	{
@@ -140,16 +138,17 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={19.916016,0.23247528,0.48950195};
-					angles[]={0,0.55119395,0};
+					position[]={23.599121,0.0014390945,-1.0288086};
+					angles[]={0,0.5511924,0};
 				};
 				side="East";
 				flags=7;
 				class Attributes
 				{
 					health=0;
+					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=38;
+				id=118;
 				type="rhs_pilot_combat_heli";
 				class CustomAttributes
 				{
@@ -198,6 +197,6 @@ class items
 		class Attributes
 		{
 		};
-		id=37;
+		id=117;
 	};
 };

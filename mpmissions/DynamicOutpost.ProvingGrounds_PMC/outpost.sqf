@@ -122,6 +122,18 @@ Fn_Create_Objectives_Start = {
 			"ua_gate04 animate ['Door_1_rot', 1];",
 			"ua_gate04 animate ['Door_1_rot', 0];"
 		];
+		// populate radio
+		if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
+			ua_supply_box_04 addItemCargoGlobal ["ACRE_SEM52SL", 20];
+			ua_supply_box_04 addItemCargoGlobal ["ACRE_PRC148", 4];
+		} else {
+			if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
+				ua_supply_box_04 addItemCargoGlobal ["tf_anprc152", 20];
+				ua_supply_box_04 addItemCargoGlobal ["tf_anprc148jem", 4];
+			} else {
+				ua_supply_box_04 addItemCargoGlobal ["ItemRadio", 20];
+			};
+		};
 		// Spawn transport
 		[Fn_Spawn_UAZ, 'wp_spawn_uaz_01', 20, 360] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
 	};

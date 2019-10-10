@@ -1,8 +1,8 @@
 version=53;
-center[]={1652.5795,113.48448,905.69275};
+center[]={269.28281,138.81589,1877.9828};
 class items
 {
-	items=6;
+	items=4;
 	class Item0
 	{
 		dataType="Group";
@@ -15,7 +15,7 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={162.92834,2.5202942,-95.08429};
+					position[]={30.283508,0.87449646,-77.654175};
 					angles[]={0,4.2333679,0};
 				};
 				side="East";
@@ -23,25 +23,25 @@ class items
 				class Attributes
 				{
 				};
-				id=1;
+				id=7093;
 				type="rhs_pilot_combat_heli";
-				atlOffset=64.256477;
+				atlOffset=87.235977;
 			};
 			class Item1
 			{
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={162.92834,2.5202942,-95.08429};
+					position[]={30.283508,0.87449646,-77.654175};
 					angles[]={0,4.2333679,0};
 				};
 				side="East";
 				class Attributes
 				{
 				};
-				id=2;
+				id=7094;
 				type="rhs_pilot_combat_heli";
-				atlOffset=64.256477;
+				atlOffset=87.235977;
 			};
 		};
 		class Attributes
@@ -59,8 +59,8 @@ class items
 				class Item0
 				{
 					linkID=0;
-					item0=1;
-					item1=3;
+					item0=7093;
+					item1=7095;
 					class CustomData
 					{
 						role=1;
@@ -69,8 +69,8 @@ class items
 				class Item1
 				{
 					linkID=1;
-					item0=2;
-					item1=3;
+					item0=7094;
+					item1=7095;
 					class CustomData
 					{
 						role=2;
@@ -79,15 +79,15 @@ class items
 				};
 			};
 		};
-		id=0;
-		atlOffset=64.256477;
+		id=7092;
+		atlOffset=87.235977;
 	};
 	class Item1
 	{
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={162.91797,4.5997849,-95.082397};
+			position[]={30.241882,2.9540863,-77.678345};
 			angles[]={0,4.2333679,0};
 		};
 		side="East";
@@ -95,9 +95,9 @@ class items
 		class Attributes
 		{
 		};
-		id=3;
+		id=7095;
 		type="RHS_Ka52_vvsc";
-		atlOffset=64.256477;
+		atlOffset=87.235977;
 	};
 	class Item2
 	{
@@ -111,7 +111,7 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-51.276733,0.87226868,-30.110657};
+					position[]={-30.283508,0.0014343262,77.754395};
 					angles[]={0,4.2333679,0};
 				};
 				side="East";
@@ -119,25 +119,25 @@ class items
 				class Attributes
 				{
 				};
-				id=5;
+				id=7097;
 				type="rhs_pilot_combat_heli";
-				atlOffset=63.863228;
+				atlOffset=78.077103;
 			};
 			class Item1
 			{
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-51.276733,0.87226868,-30.110657};
+					position[]={-30.283508,0.0014343262,77.754395};
 					angles[]={0,4.2333679,0};
 				};
 				side="East";
 				class Attributes
 				{
 				};
-				id=6;
+				id=7098;
 				type="rhs_pilot_combat_heli";
-				atlOffset=63.863228;
+				atlOffset=78.077103;
 			};
 		};
 		class Attributes
@@ -155,8 +155,8 @@ class items
 				class Item0
 				{
 					linkID=0;
-					item0=5;
-					item1=7;
+					item0=7097;
+					item1=7099;
 					class CustomData
 					{
 						role=1;
@@ -165,8 +165,8 @@ class items
 				class Item1
 				{
 					linkID=1;
-					item0=6;
-					item1=7;
+					item0=7098;
+					item1=7099;
 					class CustomData
 					{
 						role=2;
@@ -175,15 +175,15 @@ class items
 				};
 			};
 		};
-		id=4;
-		atlOffset=63.863228;
+		id=7096;
+		atlOffset=78.077103;
 	};
 	class Item3
 	{
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={-51.281982,2.9520111,-30.202332};
+			position[]={-30.195114,2.0797119,77.709473};
 			angles[]={0,4.2333679,0};
 		};
 		side="East";
@@ -191,104 +191,8 @@ class items
 		class Attributes
 		{
 		};
-		id=7;
+		id=7099;
 		type="RHS_Ka52_vvsc";
-		atlOffset=63.863228;
-	};
-	class Item4
-	{
-		dataType="Group";
-		side="East";
-		class Entities
-		{
-			items=2;
-			class Item0
-			{
-				dataType="Object";
-				class PositionInfo
-				{
-					position[]={-111.65149,0.0014343262,125.34485};
-					angles[]={0,4.2333679,0};
-				};
-				side="East";
-				flags=2;
-				class Attributes
-				{
-				};
-				id=9;
-				type="rhs_pilot_combat_heli";
-				atlOffset=64.572975;
-			};
-			class Item1
-			{
-				dataType="Object";
-				class PositionInfo
-				{
-					position[]={-111.65149,0.0014343262,125.34485};
-					angles[]={0,4.2333679,0};
-				};
-				side="East";
-				class Attributes
-				{
-				};
-				id=10;
-				type="rhs_pilot_combat_heli";
-				atlOffset=64.572975;
-			};
-		};
-		class Attributes
-		{
-		};
-		class CrewLinks
-		{
-			class LinkIDProvider
-			{
-				nextID=2;
-			};
-			class Links
-			{
-				items=2;
-				class Item0
-				{
-					linkID=0;
-					item0=9;
-					item1=11;
-					class CustomData
-					{
-						role=1;
-					};
-				};
-				class Item1
-				{
-					linkID=1;
-					item0=10;
-					item1=11;
-					class CustomData
-					{
-						role=2;
-						turretPath[]={0};
-					};
-				};
-			};
-		};
-		id=8;
-		atlOffset=64.572975;
-	};
-	class Item5
-	{
-		dataType="Object";
-		class PositionInfo
-		{
-			position[]={-111.71899,2.0776367,125.18555};
-			angles[]={0,4.2333679,0};
-		};
-		side="East";
-		flags=2;
-		class Attributes
-		{
-		};
-		id=11;
-		type="RHS_Ka52_vvsc";
-		atlOffset=64.572975;
+		atlOffset=78.077103;
 	};
 };

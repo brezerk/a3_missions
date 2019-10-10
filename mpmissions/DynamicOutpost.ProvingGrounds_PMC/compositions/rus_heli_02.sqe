@@ -1,8 +1,8 @@
 version=53;
-center[]={1718.9912,106.28275,845.61707};
+center[]={4874.7007,114.65168,1566.1365};
 class items
 {
-	items=6;
+	items=4;
 	class Item0
 	{
 		dataType="Group";
@@ -15,7 +15,7 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-163.4552,0.04826355,200.17322};
+					position[]={-152.25439,0.0014419556,96.762695};
 					angles[]={0,4.4254475,0};
 				};
 				side="East";
@@ -25,14 +25,14 @@ class items
 				};
 				id=13;
 				type="rhs_pilot_combat_heli";
-				atlOffset=55.670162;
+				atlOffset=109.65168;
 			};
 			class Item1
 			{
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-163.4552,0.04826355,200.17322};
+					position[]={-152.25439,0.0014419556,96.762695};
 					angles[]={0,4.4254475,0};
 				};
 				side="East";
@@ -41,7 +41,7 @@ class items
 				};
 				id=14;
 				type="rhs_pilot_combat_heli";
-				atlOffset=55.670162;
+				atlOffset=109.65168;
 			};
 		};
 		class Attributes
@@ -80,14 +80,14 @@ class items
 			};
 		};
 		id=12;
-		atlOffset=55.670162;
+		atlOffset=109.65168;
 	};
 	class Item1
 	{
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={-163.48694,2.1657333,200.00842};
+			position[]={-152.25439,2.1160278,96.550293};
 			angles[]={0,4.4254475,0};
 		};
 		side="East";
@@ -97,7 +97,7 @@ class items
 		};
 		id=15;
 		type="rhs_mi28n_vvsc";
-		atlOffset=55.670162;
+		atlOffset=109.65168;
 	};
 	class Item2
 	{
@@ -111,7 +111,7 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-70.449097,0.0014343262,-3.5620728};
+					position[]={152.25439,0.028457642,-96.662598};
 					angles[]={0,4.4254475,0};
 				};
 				side="East";
@@ -121,14 +121,14 @@ class items
 				};
 				id=17;
 				type="rhs_pilot_combat_heli";
-				atlOffset=55.629112;
+				atlOffset=109.6787;
 			};
 			class Item1
 			{
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-70.449097,0.0014343262,-3.5620728};
+					position[]={152.25439,0.028457642,-96.662598};
 					angles[]={0,4.4254475,0};
 				};
 				side="East";
@@ -137,7 +137,7 @@ class items
 				};
 				id=18;
 				type="rhs_pilot_combat_heli";
-				atlOffset=55.629112;
+				atlOffset=109.6787;
 			};
 		};
 		class Attributes
@@ -176,14 +176,14 @@ class items
 			};
 		};
 		id=16;
-		atlOffset=55.629112;
+		atlOffset=109.6787;
 	};
 	class Item3
 	{
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={-70.443848,2.1164246,-3.769104};
+			position[]={152.25439,2.1430435,-96.875};
 			angles[]={0,4.4254475,0};
 		};
 		side="East";
@@ -193,102 +193,6 @@ class items
 		};
 		id=19;
 		type="rhs_mi28n_vvsc";
-		atlOffset=55.629112;
-	};
-	class Item4
-	{
-		dataType="Group";
-		side="East";
-		class Entities
-		{
-			items=2;
-			class Item0
-			{
-				dataType="Object";
-				class PositionInfo
-				{
-					position[]={233.90466,0.070358276,-196.46112};
-					angles[]={0,4.4254475,0};
-				};
-				side="East";
-				flags=2;
-				class Attributes
-				{
-				};
-				id=21;
-				type="rhs_pilot_combat_heli";
-				atlOffset=55.656132;
-			};
-			class Item1
-			{
-				dataType="Object";
-				class PositionInfo
-				{
-					position[]={233.90466,0.070358276,-196.46112};
-					angles[]={0,4.4254475,0};
-				};
-				side="East";
-				class Attributes
-				{
-				};
-				id=22;
-				type="rhs_pilot_combat_heli";
-				atlOffset=55.656132;
-			};
-		};
-		class Attributes
-		{
-		};
-		class CrewLinks
-		{
-			class LinkIDProvider
-			{
-				nextID=2;
-			};
-			class Links
-			{
-				items=2;
-				class Item0
-				{
-					linkID=0;
-					item0=21;
-					item1=23;
-					class CustomData
-					{
-						role=1;
-					};
-				};
-				class Item1
-				{
-					linkID=1;
-					item0=22;
-					item1=23;
-					class CustomData
-					{
-						role=2;
-						turretPath[]={0};
-					};
-				};
-			};
-		};
-		id=20;
-		atlOffset=55.656132;
-	};
-	class Item5
-	{
-		dataType="Object";
-		class PositionInfo
-		{
-			position[]={234.06494,2.0717468,-197.19446};
-			angles[]={0,4.4254475,0};
-		};
-		side="East";
-		flags=2;
-		class Attributes
-		{
-		};
-		id=23;
-		type="rhs_mi28n_vvsc";
-		atlOffset=55.656132;
+		atlOffset=109.6787;
 	};
 };

@@ -63,7 +63,7 @@ _this addItemToBackpack "ACE_personalAidKit";
 for "_i" from 1 to 2 do {_this addItemToBackpack "rhs_mag_rdg2_white";};
 for "_i" from 1 to 3 do {_this addItemToBackpack "rhs_mag_rgd5";};
 for "_i" from 1 to 12 do {_this addItemToBackpack "rhs_10Rnd_762x54mmR_7N14";};
-_this addHeadgear "LOP_H_Beanie_tan";
+_this addHeadgear "LOP_H_6B27M_Digit";
 _this addGoggles "rhs_googles_clear";
 
 comment "Add weapons";
