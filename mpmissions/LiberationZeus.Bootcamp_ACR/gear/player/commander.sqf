@@ -54,7 +54,7 @@ for "_i" from 1 to 8 do {_this addItemToBackpack "rhs_VOG25";};
 for "_i" from 1 to 5 do {_this addItemToBackpack "rhs_mag_rdg2_white";};
 for "_i" from 1 to 3 do {_this addItemToBackpack "rhs_30Rnd_545x39_7N6_AK";};
 for "_i" from 1 to 4 do {_this addItemToBackpack "rhs_30Rnd_545x39_7N6M_AK";};
-_this addHeadgear "LOP_H_Beanie_tan";
+_this addHeadgear "LOP_H_6B27M_Digit";
 _this addGoggles "rhs_googles_clear";
 
 comment "Add weapons";

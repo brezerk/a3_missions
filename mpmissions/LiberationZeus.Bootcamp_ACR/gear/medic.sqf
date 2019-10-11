@@ -43,11 +43,11 @@ for "_i" from 1 to 5 do {_this addItemToVest "rhs_mag_rdg2_white";};
 for "_i" from 1 to 2 do {_this addItemToVest "rhs_30Rnd_545x39_7N6_AK";};
 for "_i" from 1 to 2 do {_this addItemToVest "rhs_mag_rgd5";};
 for "_i" from 1 to 3 do {_this addItemToVest "rhs_30Rnd_545x39_7N6M_AK";};
-_this addHeadgear "LOP_H_Beanie_tan";
+_this addHeadgear "LOP_H_6B27M_Digit";
 _this addGoggles "rhs_googles_clear";
 
 comment "Add weapons";
-_this addWeapon "rhs_weap_aks74u";
+_this addWeapon "rhs_weap_ak74";
 _this addPrimaryWeaponItem "rhs_acc_pgs64_74u";
 
 comment "Add items";

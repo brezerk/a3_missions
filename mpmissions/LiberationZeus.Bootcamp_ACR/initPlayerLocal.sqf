@@ -21,6 +21,9 @@ waitUntil { !isNull player }; // Wait for player to initialize
 // hide markers
 {if (_x find "wp_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
 
+board_01 setObjectTexture [0, "data\ace_bramaley.paa"];
+board_02 setObjectTexture [0, "data\ace_bramaley.paa"];
+
 sleep 1;
 
 // save current load out
