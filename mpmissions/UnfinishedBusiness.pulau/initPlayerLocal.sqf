@@ -39,11 +39,13 @@ Fn_Local_WaitPublicVariables = {
 // hide markers
 if (isServer) then {
 	{if (_x find "wp_" >= 0) then {_x setMarkerAlphaLocal 0;}} forEach allMapMarkers;
-	{if (_x find "respawn_" >= 0) then {_x setMarkerAlphaLocal 0;}} forEach allMapMarkers;
 } else {
-	{if (_x find "wp_" >= 0) then {deleteMarkerLocal _x;}} forEach allMapMarkers;
-	{if (_x find "respawn_" >= 0) then {deleteMarkerLocal _x;}} forEach allMapMarkers;
+	//FIXME:
+	//{if (_x find "wp_" >= 0) then {deleteMarkerLocal _x;}} forEach allMapMarkers;
+	{if (_x find "wp_" >= 0) then {_x setMarkerAlphaLocal 0;}} forEach allMapMarkers;
 };
+
+{if (_x find "respawn_" >= 0) then {_x setMarkerAlphaLocal 0;}} forEach allMapMarkers;
 
 waitUntil { sleep 1; [["mission_requested", "mission_plane_send"]] call Fn_Local_WaitPublicVariables; }; 
 
@@ -60,6 +62,8 @@ player setVariable ["is_civilian", false, true];
 player setVariable ["BB_CorpseTTL", -1, true];
 
 safezone_pos = getMarkerPos "respawn_west";
+
+
 
 [] execVM "briefing.sqf";
 
@@ -267,10 +271,8 @@ player addEventHandler
 				};
 			};
 		} else {
-			systemChat "Not send...";
 			[] execVM "gear\player\init.sqf";
 			private _pos = getMarkerPos "respawn_west";
-			systemChat format ["pos %1", _pos];
 			player setPos [(_pos select 0), (_pos select 1), 8];
 		};
 		player setVariable ["BB_CorpseTTL", -1, true];
