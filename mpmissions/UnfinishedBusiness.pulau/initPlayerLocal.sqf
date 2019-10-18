@@ -226,8 +226,9 @@ player addEventHandler
 [
    "Respawn",
    {
-
+		systemChat "Respawn...";
 		if (mission_plane_send) then {
+			systemChat "send...";
 			call Fn_Local_FailTasks;
 			player setVariable ["is_assault_group", false, true];
 			switch (playerSide) do
@@ -266,6 +267,7 @@ player addEventHandler
 				};
 			};
 		} else {
+			systemChat "Not send...";
 			private _pos = getMarkerPos "respawn_west";
 			[] execVM "gear\player\init.sqf";
 			player setPos [_pos select 0, _pos select 1, 8];

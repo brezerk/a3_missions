@@ -40,9 +40,9 @@ briefingName    = $STR_ONLOAD_INFO_01;
 // Respawn type
 respawn = "BASE";
 // Delay in seconds before playable unit respawns.
-respawnDelay = "3";
+respawnDelay = "15";
 // DO NOT SET THIS FOR PROD
-enableDebugConsole = 2;
+// enableDebugConsole = 2;
 // Respawn templates from CfgRespawnTemplates. You can combine any number of them together.
 respawnTemplates[] = {"Counter", "Base"};
 // 0 to disable the score table (it can still be opened manually by pressing 'P' key).
