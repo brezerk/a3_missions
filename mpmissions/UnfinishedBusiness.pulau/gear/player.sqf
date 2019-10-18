@@ -13,9 +13,9 @@ switch(_diffclty) do {
 		_chance_lost_primary = 40;
 		_chance_lost_primary_ammo = 50;
 		_chance_lost_primary_attachments = 40;
-		_chance_lost_radio = 60;
+		_chance_lost_radio = 0;
 		_chance_lost_map = 0;
-		_chance_lost_compass = 100;
+		_chance_lost_compass = 0;
 	};
 	case 1: {
 		_chance_lost_primary = 60;
