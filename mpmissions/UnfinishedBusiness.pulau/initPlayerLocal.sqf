@@ -268,9 +268,10 @@ player addEventHandler
 			};
 		} else {
 			systemChat "Not send...";
-			private _pos = getMarkerPos "respawn_west";
 			[] execVM "gear\player\init.sqf";
-			player setPos [_pos select 0, _pos select 1, 8];
+			private _pos = getMarkerPos "respawn_west";
+			systemChat format ["pos %1", _pos];
+			player setPos [(_pos select 0), (_pos select 1), 8];
 		};
 		player setVariable ["BB_CorpseTTL", -1, true];
    }
