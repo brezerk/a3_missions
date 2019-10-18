@@ -23,8 +23,7 @@ Spawn start objectives, triggers for informator contact
 
 if (isServer) then {
 
-	//private _crashSitePos = getMarkerPos "mrk_west_crashsite";
-	private _crashSitePos = getMarkerPos "wp_Gurun_crashsite_28";
+	private _crashSitePos = getMarkerPos "mrk_west_crashsite";
 
 	call Fn_Spawn_East_AntiAir;
 	call Fn_Spawn_East_Helicopter;
@@ -42,8 +41,8 @@ if (isServer) then {
 	
 	{ avaliable_markers pushBackUnique _x; } forEach ([_crashSitePos, 1500] call BrezBlock_fnc_CotrollerCreate);
 	{ if (!((markerType _x) in ["b_recon", "b_plane"])) then { avaliable_markers pushBackUnique _x; }; } forEach ([getMarkerPos "mrk_east_base_02", 600] call BrezBlock_fnc_CotrollerCreate);
-	//{ if (!((markerType _x) in ["b_recon", "b_plane"])) then { avaliable_markers pushBackUnique _x; }; } forEach ([getMarkerPos "mrk_airfield", 1000] call BrezBlock_fnc_CotrollerCreate);
-	//[getMarkerPos "mrk_east_base_01", 150] call BrezBlock_fnc_CotrollerCreate;
+	{ if (!((markerType _x) in ["b_recon", "b_plane"])) then { avaliable_markers pushBackUnique _x; }; } forEach ([getMarkerPos "mrk_airfield", 1000] call BrezBlock_fnc_CotrollerCreate);
+	[getMarkerPos "mrk_east_base_01", 150] call BrezBlock_fnc_CotrollerCreate;
 
 	//Create city markers
 	{ 
@@ -76,6 +75,7 @@ if (isServer) then {
 	
 	[_crashSitePos] call Fn_Spawn_East_Comtower;
 	[_crashSitePos] call Fn_Task_Spawn_Indep_Objectives;
+	call Fn_Task_West_Hidden_WaponStash;
 	
 	[_crashSitePos, 1500, 50] call BrezBlock_fnc_SpawnObjects;
 	
@@ -94,8 +94,6 @@ if (isServer) then {
 	
 	//Select cities for spawn
 	{
-		
-		
 		private _pos = _x select 1;
 		if (!((_x select 0) in ['Kambani','Bibung','Loholoho','Tinobu'])) then {
 			[_pos] call Fn_Task_Spawn_Boats;
@@ -112,7 +110,7 @@ if (isServer) then {
 			};
 		};
 		
-		systemChat format ["Spawn %1: %2 size: %3", _x, (_x select 0), _size];
+		diag_log format ["Spawn %1: %2 size: %3", _x, (_x select 0), _size];
 		
 		private _roads = [_pos, _size, 16] call BrezBlock_fnc_GetEmptyRoads;
 		_roads = [_roads] call Fn_Patrols_CreateMilitary_Traffic;
@@ -122,7 +120,7 @@ if (isServer) then {
 		//create reinfrsement roads pool
 		_roads = [];
 		
-		systemChat format ["Pos %1", _pos];
+		diag_log format ["Pos %1", _pos];
 		
 		scopeName "main";
 		{
@@ -151,20 +149,6 @@ if (isServer) then {
 		} forEach _roads;
 	} forEach (_pios);
 	
-	systemChat format ["Count: %1", count reinforcement_roads];
-	
-	{
-		private _mark = createMarker [format ["mrk_road_%1", _forEachIndex], (getPosASL _x)];
-		_mark setMarkerType "hd_objective";
-		_mark setMarkerAlpha 1;
-	} forEach reinforcement_roads;
-	
-	/*
-
-	//Spawn stashes
-	//FIXME: CUP and ACE deps
-	//[_crashSitePos] call Fn_Task_West_Hidden_WaponStash;
-		
-	*/
+	diag_log format ["Count: %1", count reinforcement_roads];
 	
 };

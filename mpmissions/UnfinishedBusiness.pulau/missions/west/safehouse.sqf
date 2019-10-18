@@ -32,6 +32,7 @@ if (isServer) then {
 		{
 			private _marker = selectRandom _markers;
 			_center = getMarkerPos _marker;
+			avaliable_markers deleteAt (avaliable_markers find _marker);
 			
 			private _pos = objNull;
 			
@@ -44,17 +45,16 @@ if (isServer) then {
 			};
 
 			if (!isNil "_pos") then {
-				private _mark = createMarker [format ["east_stash_0%1", _x], _pos];
+				private _mark = createMarker [format ["mrk_east_stash_0%1", _x], _pos];
 				_mark setMarkerType "hd_objective";
-				_mark setMarkerText format ['Emergency spot %1', _x];
-				_mark setMarkerColor "ColorWEST";
+				_mark setMarkerAlpha 0;
 			
 				[_pos] call Fn_Task_West_Safe_SpawnRandomCargo;
 
 				_markers = _markers - [_marker];
 				deleteMarker _marker;
 			};
-		} forEach ['A', 'B'];
+		} forEach ['1', '2'];
 	};
 	
 	Fn_Task_West_Safe_SpawnRandomCargo = {

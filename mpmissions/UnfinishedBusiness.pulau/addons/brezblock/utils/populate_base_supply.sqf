@@ -72,7 +72,7 @@ _obj addItemCargoGlobal ["ClaymoreDirectionalMine_Remote_Mag", 6];
 _obj addItemCargoGlobal ["DemoCharge_Remote_Mag", 4];
 			
 if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
-		_obj addItemCargoGlobal ["ACRE_PRC148", 4];
+		_obj addItemCargoGlobal ["ACRE_PRC152", 4];
 		_obj addItemCargoGlobal ["ACRE_PRC343", 10];
 } else {
 	if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {

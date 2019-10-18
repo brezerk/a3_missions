@@ -46,12 +46,11 @@ if (isServer) then {
 			};
 		} forEach avaliable_markers;
 		
-
-		
 		for "_i" from 1 to 2 do {
 			private _index = (random ((count _markers) - 1));
 			private _marker = (_markers select _index);
 			_markers deleteAt _index;
+			avaliable_markers deleteAt (avaliable_markers find _marker);
 			private _center = getMarkerPos (_marker);
 			private _dir = markerDir _marker;
 			private _pos = [_center, 9, _dir + 90] call BIS_Fnc_relPos;

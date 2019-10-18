@@ -59,10 +59,6 @@ player setVariable ["weapon_fiered", false, false];
 player setVariable ["is_civilian", false, true];
 player setVariable ["BB_CorpseTTL", -1, true];
 
-if(!isClass(configFile >> "cfgPatches" >> "ace_medical")) then {
-	player setVariable ['#rev_enabled', true, true];
-};
-
 safezone_pos = getMarkerPos "respawn_west";
 
 [] execVM "briefing.sqf";
@@ -85,6 +81,13 @@ safezone_pos = getMarkerPos "respawn_west";
 #include "missions\local\recruit.sqf";
 #include "missions\local\independent\objectives.sqf";
 #include "missions\local\civilian\confiscate.sqf";
+
+{
+	private _mark = createMarkerLocal [(format ['mrk_em_%1', _forEachIndex]), (getMarkerPos _x)];
+	_mark setMarkerType "hd_objective";
+	_mark setMarkerText format [localize "INFO_WEST_SAFESPOT_01", (['A', 'B'] select _forEachIndex)];
+	_mark setMarkerColor "ColorWEST";
+} forEach ['mrk_east_stash_01', 'mrk_east_stash_02'];
 
 /* FIXME: CBA-only
 execVM "addons\brezblock\utils\marker_manager.sqf";

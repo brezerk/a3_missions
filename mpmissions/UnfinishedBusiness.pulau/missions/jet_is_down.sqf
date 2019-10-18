@@ -20,16 +20,25 @@ if (hasInterface) then {
 	
 };
 
-if (isServer) then {	
-	{
-		remoteExecCall ["Fn_Local_Jet_GetOut", _x];
-	} forEach assault_group;
+if (isServer) then {
+
+	if (!mission_plane_send) then {
+		// Well. Some one destroyed the transport before every one got in 
+		// Happy end (not)
+		"EveryoneLost" call BIS_fnc_endMissionServer;
+	} else {
+		sleep 1;
 		
-	sleep 2;
-	
-	us_heli_01 setVehicleLock "UNLOCKED";
-	us_boat_01 setVehicleLock "UNLOCKED";
-	us_boat_02 setVehicleLock "UNLOCKED";
-	
-	[] execVM "missions\crash_site.sqf";
+		{
+			remoteExecCall ["Fn_Local_Jet_GetOut", _x];
+		} forEach assault_group;
+			
+		sleep 2;
+		
+		us_heli_01 setVehicleLock "UNLOCKED";
+		us_boat_01 setVehicleLock "UNLOCKED";
+		us_boat_02 setVehicleLock "UNLOCKED";
+		
+		[] execVM "missions\crash_site.sqf";
+	};
 };

@@ -197,6 +197,7 @@ if (isServer) then {
 		
 		scopeName "main";
 		{
+			scopeName "next_road";
 			if ((_targetPos distance2D (getPos _x)) >= 600) then {
 				
 				private _clear = true;
@@ -211,11 +212,12 @@ if (isServer) then {
 					// Check if there is any vehicle nearby
 					if (count (nearestObjects [_pos, ["Car", "Truck", "Tank"], 50]) == 0) then {
 						// Try to find next road to spawn all comp vehicles
+						private _next_road = _x;
 						{
 							_next_road = ((roadsConnectedto (_next_road)) select 0);
 							if (!isNil "_next_road") then {
 								private _next_road_pos = getPosASL _next_road;
-								if (count (nearestObjects [_next_road_pos, ["Car", "Truck"], 50]) == 0) then {
+								if (count (nearestObjects [_next_road_pos, ["Car", "Truck", "Tank"], 50]) == 0) then {
 									_roads pushBack _next_road;
 								};
 								if ((count _roads) >= (count _force_comp)) then {

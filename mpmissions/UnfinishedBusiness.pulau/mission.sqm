@@ -8,7 +8,7 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=7871;
+		nextID=7881;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1000.2629,12.772095,9462.9121};
-		dir[]={0.46519518,-0.45942429,0.75681549};
-		up[]={0.24052991,0.88826507,0.39131522};
-		aside[]={0.85206646,5.7833386e-006,-0.5237509};
+		pos[]={3333.5671,196.70206,8987.1094};
+		dir[]={0.48316354,-0.66482252,-0.56991655};
+		up[]={0.42984405,0.74709976,-0.50702196};
+		aside[]={-0.76290339,6.4885244e-006,-0.64676738};
 	};
 };
 binarizationWanted=0;
@@ -312,8 +312,8 @@ class Mission
 		year=2018;
 		month=7;
 		day=1;
-		hour=18;
-		minute=-9;
+		hour=24;
+		minute=0;
 		startFogBase=-1000;
 		forecastFogBase=-1000;
 		startFogDecay=0;
@@ -1654,11 +1654,10 @@ class Mission
 		class Item112
 		{
 			dataType="Marker";
-			position[]={7258.6045,2.0383828,5222.0474};
+			position[]={7264.0313,1.9498841,5223.8784};
 			name="wp_Gurun_east_comtower_23";
 			type="o_mortar";
 			id=6894;
-			atlOffset=2.6226044e-006;
 		};
 		class Item113
 		{
@@ -7820,7 +7819,7 @@ class Mission
 			name="wp_Monyet_hospital_02";
 			type="loc_Hospital";
 			id=7411;
-			atlOffset=3.8504825;
+			atlOffset=0.32114506;
 		};
 		class Item595
 		{
@@ -8930,7 +8929,7 @@ class Mission
 			name="wp_Monyet_paradrop_66";
 			type="b_recon";
 			id=7517;
-			atlOffset=1.4655185;
+			atlOffset=0.15392697;
 		};
 		class Item701
 		{
@@ -9578,7 +9577,7 @@ class Mission
 			b=75;
 			drawBorder=1;
 			id=7576;
-			atlOffset=22.132744;
+			atlOffset=21.089573;
 		};
 		class Item760
 		{

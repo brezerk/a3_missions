@@ -57,7 +57,7 @@ respawnOnStart = -1;
 briefing = 0;
 
 // Revive
-reviveMode = 2;
+reviveMode = 0;
 //reviveUnconsciousStateMode = 1;
 reviveRequiredTrait = 0; // all can revive
 reviveRequiredItems = 2; 
@@ -197,6 +197,11 @@ class CfgFunctions {
 			class SpawnObjects {file = "addons\brezblock\utils\spawn_objects.sqf";};
 		};
 	};
+};
+
+class Params
+{
+    #include "\a3\Functions_F\Params\paramRevive.hpp"
 };
 
 #include "ui\SettingsDialog.hpp"

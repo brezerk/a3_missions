@@ -44,7 +44,7 @@ if (isServer) then {
 		private _index = (random ((count _markers) - 1));
 		private _marker = (_markers select _index);
 		_markers deleteAt _index;
-		
+		avaliable_markers deleteAt (avaliable_markers find _marker);
 		private _center = getMarkerPos (_marker);
 		deleteMarkerLocal _marker;
 		

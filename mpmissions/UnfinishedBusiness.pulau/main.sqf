@@ -20,7 +20,7 @@ real_weather_init = false;
 
 D_LOCATIONS = ['Gurun', 'Monyet'];
 
-D_DEBUG = true;
+D_DEBUG = false;
 
 // Check mods if loaded
 D_MOD_ACE = isClass(configFile >> "CfgPatches" >> "ace_main");
@@ -172,7 +172,6 @@ if (isServer) then {
 
 	Fn_Endgame_Loss = {
 		if (isServer) then {
-			//['t_defend_blockpost', 'FAILED'] call BIS_fnc_taskSetState;
 			"EveryoneLost" call BIS_fnc_endMissionServer;
 		};
 	};
@@ -210,8 +209,7 @@ if (isServer) then {
 		params ["_difficlty", "_location", "_start_type", "_navtool_map", "_navtool_compass", "_fraction_west", "_fraction_east", "_fraction_indep", "_fraction_civ"];
 		if (!mission_requested) then {
 			D_DIFFICLTY = _difficlty;
-			//D_LOCATION = _location;
-			D_LOCATION = "Gurun";
+			D_LOCATION = _location;
 			D_START_TYPE = _start_type;
 			D_NAVTOOL_MAP = _navtool_map;
 			D_NAVTOOL_COMPASS = _navtool_compass;
@@ -297,7 +295,6 @@ if (isServer) then {
 	D_FRACTION_CIV_UNITS_CARS = ([civilian, D_FRACTION_CIV, 'cars'] call Fn_Config_GetFraction_Units);
 	D_FRACTION_CIV_UNITS_BOATS = ([civilian, D_FRACTION_CIV, 'boats'] call Fn_Config_GetFraction_Units);
 	
-	
 	// Create base marker
 	[getPos us_liberty_01] call Fn_West_MissionPlanning_CreateMarkers_Base;
 	
@@ -305,7 +302,7 @@ if (isServer) then {
 	call Fn_Spawn_East_SupplyBoxes;
 	
 	[[us_liberty_01, "Land_Destroyer_01_hull_04_F"] call BIS_fnc_Destroyer01GetShipPart, 1, false] call BIS_fnc_Destroyer01AnimateHangarDoors;
-	//([us_liberty_01, "ShipFlag_US_F"] call bis_fnc_destroyer01GetShipPart) setFlagTexture (getText (configFile >> "CfgFactionClasses" >> D_FRACTION_WEST >> "flag"));
+	([us_liberty_01, "ShipFlag_US_F"] call bis_fnc_destroyer01GetShipPart) setFlagTexture (getText (configFile >> "CfgFactionClasses" >> D_FRACTION_WEST >> "flag"));
 	
 	call Fn_West_MissionPlanning_CreateMarkers_EastBase;
 	
