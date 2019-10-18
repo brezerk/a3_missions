@@ -58,7 +58,7 @@ briefing = 0;
 
 // Revive
 reviveMode = 1;  //0 - disabled; 1 - enabled
-reviveUnconsciousStateMode = 1;
+reviveUnconsciousStateMode = 0;
 ReviveRequiredItemsFakConsumed = 1;
 reviveRequiredTrait = 0; // all can revive
 reviveRequiredItems = 2; 
