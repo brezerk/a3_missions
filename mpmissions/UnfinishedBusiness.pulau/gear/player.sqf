@@ -21,7 +21,7 @@ switch(_diffclty) do {
 		_chance_lost_primary = 60;
 		_chance_lost_primary_ammo = 80;
 		_chance_lost_primary_attachments = 40;
-		_chance_lost_radio = 80;
+		_chance_lost_radio = 50;
 		_chance_lost_map = 50;
 		_chance_lost_compass = 50;
 	};

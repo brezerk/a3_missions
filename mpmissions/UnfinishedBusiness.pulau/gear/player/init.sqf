@@ -22,30 +22,14 @@ if (mission_plane_send) then {
 
 player setUnitLoadout (configFile >> "CfgVehicles" >> ([west, D_FRACTION_WEST, _class] call Fn_Config_GetFraction_Units));
 
-// Give player a radio depending on radio mod loaded
-if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
-	// remove default radio
-	player unassignItem "ItemRadio";
-	player removeItem "ItemRadio";
-	// add specific one
-	player addItemToVest "ACRE_PRC152";
-} else {
-	if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
-		// remove default radio
-		player unassignItem "ItemRadio";
-		player removeItem "ItemRadio";
-		// add specific one
-		player linkItem "tf_anprc152";
-	} else {
-		player linkItem "ItemRadio";
-	};
-};
-
 // If plane was not sent yet -- give player a parashute
 if (!mission_plane_send) then {
 	removeBackpack player;
 	player addBackpack "B_Parachute";
 };
+
+//Set identity
+player setSpeaker "NoVoice";
 
 // Kick GPS if any
 player unassignItem "ItemGPS";
@@ -77,5 +61,30 @@ switch (D_NAVTOOL_COMPASS) do {
 	};
 };
 
-//Set identity
-player setSpeaker "NoVoice";
+sleep 1;
+
+// Give player a radio depending on radio mod loaded
+if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
+	// remove default radio
+	player unassignItem "ItemRadio";
+	player removeItem "ItemRadio";
+	// remove default radio
+	{
+		if (_x find "ACRE" >= 0) then {
+			player unassignItem _x;
+			player removeItem _x;
+		};
+	} forEach items player;
+	// add specific one
+	player addItemToVest "ACRE_PRC152";
+} else {
+	if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
+		// add specific one
+		player linkItem "tf_anprc152";
+		// remove default radio
+		player unassignItem "ItemRadio";
+		player removeItem "ItemRadio";
+	} else {
+		player linkItem "ItemRadio";
+	};
+};

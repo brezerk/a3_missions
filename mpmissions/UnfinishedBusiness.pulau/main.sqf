@@ -56,6 +56,7 @@ if (isServer) then {
 	D_START_TYPE = nil;
 	D_NAVTOOL_MAP = nil;
 	D_NAVTOOL_COMPASS = nil;
+	D_PING_TIMEOUT = 30;
 	
 	D_ADD_INTEL_ACTION = [east, independent];
 	
@@ -235,6 +236,19 @@ if (isServer) then {
 					} forEach allMapMarkers;
 				};
 			} forEach D_LOCATIONS;
+			//
+			switch(D_DIFFICLTY) do {
+				case 0: {
+					D_PING_TIMEOUT = 60;
+				};
+				case 1: {
+					D_PING_TIMEOUT = 45;
+				};
+				case 2: {
+					D_PING_TIMEOUT = 30;
+				};
+			};
+			
 		};
 	};
 	

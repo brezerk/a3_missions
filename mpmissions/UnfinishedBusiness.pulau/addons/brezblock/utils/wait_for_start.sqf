@@ -181,6 +181,6 @@ if (!isNil "_missionLogo") then {
 	[1, "BLACK", 1, 1] call BIS_fnc_fadeEffect;
 	cutText [localize "INFO_WAIT_02", "PLAIN DOWN", 2];
 	
-	playMusic "";
+	[[""]] call BIS_fnc_music;
 };
 

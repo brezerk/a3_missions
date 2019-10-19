@@ -24,7 +24,7 @@
 
 if (isServer) then {
 	while {count assault_group != 0} do {
-		sleep 30;
+		sleep D_PING_TIMEOUT;
 		if (count pings > 0) then {
 			{
 				private _pos = _x;

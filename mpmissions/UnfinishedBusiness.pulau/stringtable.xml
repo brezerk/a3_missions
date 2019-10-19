@@ -74,15 +74,17 @@
 				* Chance of weapon loss during landing - 40%&lt;br /&gt;
 				* Chance of weapon's ammo loss during landing - 50%&lt;br /&gt;
 				* Chance of weapon's attachments loss during landing - 40%&lt;br /&gt;
-				* Chance of radio transmitter loss during landing - 60%&lt;br /&gt;
+				* Chance of radio transmitter loss during landing - 0%&lt;br /&gt;
 				* Chance of losing map during landing - 0%&lt;br /&gt;
+				* Chance of losing compass during landing - 0%&lt;br /&gt;
 				&lt;br /&gt;
 				&lt;h2&gt;Hardcore&lt;/h2&gt;&lt;br /&gt;
 				* Chance of weapon loss during landing - 60%&lt;br /&gt;
 				* Chance of weapon's ammo loss during landing - 80%&lt;br /&gt;
 				* Chance of weapon's attachments loss during landing - 40%&lt;br /&gt;
-				* Chance of radio transmitter loss during landing - 80%&lt;br /&gt;
+				* Chance of radio transmitter loss during landing - 50%&lt;br /&gt;
 				* Chance of losing map during landing - 50%&lt;br /&gt;
+				* Chance of losing compass during landing - 0%&lt;br /&gt;
 				&lt;br /&gt;
 				&lt;h2&gt;Nightmare&lt;/h2&gt;&lt;br /&gt;
 				* Chance of weapon loss during landing - 100%&lt;br /&gt;
@@ -90,6 +92,7 @@
 				* Chance of weapon's attachments loss during landing - 100%&lt;br /&gt;
 				* Chance of radio transmitter loss during landin - 100%&lt;br /&gt;
 				* Chance of losing map during landing - 100%&lt;br /&gt;
+				* Chance of losing compass during landing - 100%&lt;br /&gt;
 				&lt;br /&gt;
 				</Original>Additional levels of difficulty will allow you to encounter even more challenges during the mission. Use the &lt;font color='#FFD700'&gt;Easy&lt;/font&gt; level to get familiar with the mission.
 				&lt;br /&gt;
@@ -101,7 +104,7 @@
 				* Chance of weapon's attachments loss during landing - 40%&lt;br /&gt;
 				* Chance of radio transmitter loss during landing - 60%&lt;br /&gt;
 				* Chance of losing map during landing - 0%&lt;br /&gt;
-				* Chance of losing compass during landing - 100%&lt;br /&gt;
+				* Chance of losing compass during landing - 0%&lt;br /&gt;
 				&lt;br /&gt;
 				&lt;h2&gt;Hardcore&lt;/h2&gt;&lt;br /&gt;
 				* Chance of weapon loss during landing - 60%&lt;br /&gt;
@@ -117,7 +120,7 @@
 				* Chance of weapon's attachments loss during landing - 100%&lt;br /&gt;
 				* Chance of radio transmitter loss during landin - 100%&lt;br /&gt;
 				* Chance of losing map during landing - 100%&lt;br /&gt;
-				* Chance of losing compass during landing - 0%&lt;br /&gt;
+				* Chance of losing compass during landing - 100%&lt;br /&gt;
 				&lt;br /&gt;
 				<English>
 				</English>
@@ -131,7 +134,7 @@
 				* Шанс втрати додаткового обладнаяння до зброї при дестантуванні - 40%&lt;br /&gt;
 				* Шанс втрати радіопередавача при дестантуванні - 60%&lt;br /&gt;
 				* Шанс втрати мапи при дестантуванні - 0%&lt;br /&gt;
-				* Шанс втрати компаса при дестантуванні - 100%&lt;br /&gt;
+				* Шанс втрати компаса при дестантуванні - 0%&lt;br /&gt;
 				&lt;br /&gt;
 				&lt;h2&gt;Хардкор&lt;/h2&gt;&lt;br /&gt;
 				* Шанс втрати зброї при дестантуванні - 60%&lt;br /&gt;
@@ -147,7 +150,7 @@
 				* Шанс втрати додаткового обладнаяння до зброї при дестантуванні - 100%&lt;br /&gt;
 				* Шанс втрати радіопередавача при дестантуванні - 100%&lt;br /&gt;
 				* Шанс втрати мапи при дестантуванні - 100%&lt;br /&gt;
-				* Шанс втрати компаса при дестантуванні - 0%&lt;br /&gt;
+				* Шанс втрати компаса при дестантуванні - 100%&lt;br /&gt;
 				&lt;br /&gt;
 				</Russian>
 			</Key>
