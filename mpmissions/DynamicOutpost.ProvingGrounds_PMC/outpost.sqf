@@ -205,7 +205,9 @@ if (isServer) then {
 	*/
 	
 	//set flag textures
-	{ _x  setFlagTexture "addons\apl\data\flag_ukraine.paa"; } forEach [ua_flag_01, ua_flag_02, ua_flag_03, ua_flag_04, ua_flag_05, ua_flag_06];
+	{ _x  setFlagTexture "addons\apl\data\uaflag.paa"; } forEach [ua_flag_01, ua_flag_02, ua_flag_03, ua_flag_04, ua_flag_05];
+	
+	upa_flag_01 setFlagTexture "addons\apl\data\upaflag.paa";
 	
 	//reveal mines to the UA forces
 	(allMines select 0) mineDetectedBy independent;

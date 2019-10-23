@@ -165,15 +165,15 @@ class AddonsMetaData
 		};
 		class Item14
 		{
-			className="A3_Characters_F";
-			name="Arma 3 Alpha - Characters and Clothing";
+			className="A3_Structures_F_Exp_Industrial";
+			name="Arma 3 Apex - Industrial Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
 		class Item15
 		{
-			className="A3_Structures_F_Exp_Industrial";
-			name="Arma 3 Apex - Industrial Structures";
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -263,30 +263,6 @@ class CustomAttributes
 			};
 		};
 		nAttributes=2;
-	};
-	class Category1
-	{
-		name="Scenario";
-		class Attribute0
-		{
-			property="cba_settings_hasSettingsFile";
-			expression="false";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"BOOL"
-						};
-					};
-					value=1;
-				};
-			};
-		};
-		nAttributes=1;
 	};
 };
 class Mission
@@ -7818,7 +7794,7 @@ class Mission
 			name="wp_Monyet_hospital_02";
 			type="loc_Hospital";
 			id=7411;
-			atlOffset=0.32114506;
+			atlOffset=3.8504825;
 		};
 		class Item595
 		{
@@ -8928,7 +8904,7 @@ class Mission
 			name="wp_Monyet_paradrop_66";
 			type="b_recon";
 			id=7517;
-			atlOffset=0.15392697;
+			atlOffset=1.4655185;
 		};
 		class Item701
 		{
@@ -9576,7 +9552,7 @@ class Mission
 			b=75;
 			drawBorder=1;
 			id=7576;
-			atlOffset=21.089573;
+			atlOffset=22.132744;
 		};
 		class Item760
 		{

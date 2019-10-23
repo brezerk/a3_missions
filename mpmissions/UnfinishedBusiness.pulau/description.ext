@@ -59,7 +59,7 @@ briefing = 0;
 // Revive
 reviveMode = 1;  //0 - disabled; 1 - enabled
 reviveUnconsciousStateMode = 0;
-ReviveRequiredItemsFakConsumed = 1;
+reviveRequiredItemsFakConsumed = 1;
 reviveRequiredTrait = 0; // all can revive
 reviveRequiredItems = 2; 
 
@@ -172,32 +172,7 @@ class CfgDebriefing
 
 class CfgFunctions {
 	#include "addons\LARs\spawnComp\functions\functions.cpp"
-	class BrezBlock
-	{
-		class common
-		{
-			class PopulateBaseSupply {file = "addons\brezblock\utils\populate_base_supply.sqf";};
-			class WaitForStart {file = "addons\brezblock\utils\wait_for_start.sqf";};
-			class Get_RND_Index {file = "addons\brezblock\utils\get_rnd_index.sqf";};
-			class Attach_Hold_Action {file = "addons\brezblock\actions\attach_hold.sqf";};
-			class Attach_SearchIntel_Action {file = "addons\brezblock\actions\attach_intel.sqf";};
-			class CreateCivilianPresence {file = "addons\brezblock\systems\civilian.sqf";};
-			class CreateCivilianSupply {file = "addons\brezblock\systems\supply_civilian.sqf";};
-			class CreateCivilianHospital {file = "addons\brezblock\systems\hospital_civilian.sqf";};
-			class CreatePatrol {file = "addons\brezblock\systems\patrol.sqf";};
-			class MarkerCreatePatrol {file = "addons\brezblock\systems\marker_patrol.sqf";};
-			class CreateDefend {file = "addons\brezblock\systems\defend.sqf";};
-			class CreateGarrison {file = "addons\brezblock\systems\garrison.sqf";};
-			class MarkerCreateDefend {file = "addons\brezblock\systems\marker_defend.sqf";};
-			class CreateCheckPoint {file = "addons\brezblock\systems\checkpoint.sqf";};
-			class CreateArmor {file = "addons\brezblock\systems\armor.sqf";};
-			class GetAllCitiesInRange {file = "addons\brezblock\utils\get_cities.sqf";};
-			class GetAllMarkerTypesInRange {file = "addons\brezblock\utils\get_all_marker_types_in_range.sqf";};
-			class GetEmptyRoads {file = "addons\brezblock\utils\get_empty_roads.sqf";};
-			class CotrollerCreate {file = "addons\brezblock\utils\controller.sqf";};
-			class SpawnObjects {file = "addons\brezblock\utils\spawn_objects.sqf";};
-		};
-	};
+	#include "addons\brezblock\functions.cpp"
 };
 
 //FIXME: Does not work for dedicated server

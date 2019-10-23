@@ -24,6 +24,12 @@ if (isServer) then {
 	['t_report_officer', 'Succeeded', localize 'TASK_03_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
 	"respawn_guerrila" setMarkerPos (getPos field_hospital);
 	
+	{
+		private _marker = createMarker [format ["respawn_guerrila_0%1", _forEachIndex], getPos _x];
+		_marker setMarkerType "hd_destroy";
+		_marker setMarkerAlpha 0;
+	} forEach [ua_barracK_01, ua_barracK_02, ua_barracK_03, ua_barracK_04, ua_barracK_05];
+	
 	sleep 5;
 	call Fn_Task_Create_MissingPatrol;
 	sleep 5;
@@ -143,7 +149,7 @@ if (isServer) then {
 	call Fn_Task_Create_Convoy;
 	
 	//Wave 4 (10 Minutes) heavy invasion final
-	_until = diag_tickTime + 10 * 60;
+	_until = diag_tickTime + 15 * 60;
 	waitUntil {sleep 1; diag_tickTime > _until;};
 	
 	//Artilery HEAVY
