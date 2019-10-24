@@ -90,7 +90,7 @@ if (isServer) then {
 		] call BrezBlock_fnc_Attach_Hold_Action;
 		
 		trgHeliSecured = createTrigger ["EmptyDetector", getMarkerPos _marker];
-		trgHeliSecured setTriggerArea [18, 18, 0, false];
+		trgHeliSecured setTriggerArea [25, 25, 0, false];
 		trgHeliSecured setTriggerActivation ["ANYPLAYER", "PRESENT", false];
 		trgHeliSecured setTriggerStatements [
 			"this",

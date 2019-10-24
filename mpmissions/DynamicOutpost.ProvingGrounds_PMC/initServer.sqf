@@ -34,6 +34,6 @@ Server init file
 	true, 
 	[
 		[ independent , 0.2, 0.2, 0.8, 0.5 ],
-		[ EAST		  , 0.2, 0.2, 0.8, 0.5 ] 
+		[ EAST		  , 0.2, 0.2, 0.3, 0.3 ] 
 	]
 ] call BIS_fnc_EXP_camp_dynamicAISkill;
