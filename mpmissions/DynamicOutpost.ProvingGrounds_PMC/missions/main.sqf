@@ -40,7 +40,7 @@ if (isServer) then {
 	[] remoteExecCall ["Fn_Local_Task_DocSearch", [0,-2] select isDedicated];
 	
 	// +3 mins: spawn 3 spec ops waves
-	_until = diag_tickTime + 6 * 60;
+	_until = diag_tickTime + 10 * 60;
 	waitUntil {sleep 1; diag_tickTime > _until;};
 	
 	// spawn spec ops
@@ -136,14 +136,14 @@ if (isServer) then {
 	["wp_nov_main", ["nov_mech_heavy", 2] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
 	
 	//Wait some time and create evac task
-	_until = diag_tickTime + 10 * 60;
+	_until = diag_tickTime + 15 * 60;
 	waitUntil {sleep 1; diag_tickTime > _until;};
 	
 	
 	call Fn_Task_Create_InjuredEvacuation;
 	
 	//Wait some time and create convoy task
-	_until = diag_tickTime + 2 * 60;
+	_until = diag_tickTime + 5 * 60;
 	waitUntil {sleep 1; diag_tickTime > _until;};
 	
 	call Fn_Task_Create_Convoy;

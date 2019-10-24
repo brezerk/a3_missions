@@ -22,7 +22,6 @@ class items
 				flags=7;
 				class Attributes
 				{
-					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 					name="ua_injured_01";
 					stance="Down";
 				};
@@ -84,7 +83,7 @@ class items
 				class Attributes
 				{
 					health=0;
-					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
 					name="ua_uaz_02D";
 				};
 				id=63;
@@ -164,7 +163,7 @@ class items
 				class Attributes
 				{
 					health=0;
-					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";" \n "this setVariable [""BB_CorpseTTL"", -1];}";
+					init="call{this call compile preprocessFileLineNumbers ""gear\rifelman_light.sqf"";}";
 					name="ua_uaz_02G";
 					stance="Down";
 				};
@@ -426,7 +425,6 @@ class items
 				class Attributes
 				{
 					health=0;
-					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 					name="p_officer_03";
 				};
 				id=67;
@@ -551,7 +549,6 @@ class items
 				class Attributes
 				{
 					health=0;
-					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 				};
 				id=71;
 				type="rhs_msv_emr_engineer";

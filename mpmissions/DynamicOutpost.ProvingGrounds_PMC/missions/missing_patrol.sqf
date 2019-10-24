@@ -105,7 +105,14 @@ if (isServer) then {
 	Fn_Task_Create_MissingPatrol = {
 		private ["_marker"];
 		_marker = ["wp_patrol", 8] call BrezBlock_fnc_Get_RND_Index;
-		[_marker, ["ua_t_patrol", 5] call BrezBlock_fnc_Get_RND_Index] call BrezBlock_fnc_Spawn_Objective;
+		{
+			private _type = typeName _x;
+			if (_type == "GROUP") then {
+				{
+					_x setVariable ["BB_CorpseTTL", -1];
+				} count units _x;
+			};
+		} forEach ([_marker, ["ua_t_patrol", 5] call BrezBlock_fnc_Get_RND_Index] call BrezBlock_fnc_Spawn_Objective);
 		[
 			p_officer_03,
 			{ _this remoteExec ["Fn_Task_MissingPatrol_DocsFound", 2] }
@@ -132,6 +139,11 @@ if (isServer) then {
 			"if (isServer) then { call Fn_Task_Create_MissingPatrol_DeliverInjured; deleteVehicle trgPatrolFound; };",
 			""
 		];
+		{
+			if (_x inArea trgPatrolFound) then {
+				_x setVariable ["BB_CorpseTTL", -1];
+			};
+		} count allDeadMen;
 		[_marker, ["rus_spec", 5] call BrezBlock_fnc_Get_RND_Index] execVM 'addons\brezblock\utils\spawn_opfor_forces_guard.sqf';
 		[_marker] remoteExecCall ["Fn_Local_Task_Create_MissingPatrol", [0,-2] select isDedicated];
 	}; // Fn_Task_Create_MissingPatrol

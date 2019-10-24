@@ -76,7 +76,14 @@ if (isServer) then {
 	Fn_Task_Create_HelicopterCrashSite = {
 		private ["_marker"];
 		_marker = ["wp_t_heli_crash", 8] call BrezBlock_fnc_Get_RND_Index;
-		[_marker, ["rus_heli_crash", 4] call BrezBlock_fnc_Get_RND_Index] call BrezBlock_fnc_Spawn_Objective;
+		{
+			private _type = typeName _x;
+			if (_type == "GROUP") then {
+				{
+					_x setVariable ["BB_CorpseTTL", -1];
+				} count units _x;
+			};
+		} forEach ([_marker, ["rus_heli_crash", 4] call BrezBlock_fnc_Get_RND_Index] call BrezBlock_fnc_Spawn_Objective);
 		[
 			p_officer_02,
 			{ _this remoteExec ["Fn_Task_HelicopterCrashSite_DocsFound", 2] }
@@ -90,6 +97,11 @@ if (isServer) then {
 			"if (isServer) then { task_completed_02 = true; ['t_heli_scured', 'Succeeded', localize 'TASK_07_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated]; deleteVehicle trgHeliSecured; };",
 			""
 		];
+		{
+			if (_x inArea trgHeliSecured) then {
+				_x setVariable ["BB_CorpseTTL", -1];
+			};
+		} count allDeadMen;
 		[_marker] remoteExecCall ["Fn_Local_Task_Create_HelicopterCrashSite", [0,-2] select isDedicated];
 	};
 	

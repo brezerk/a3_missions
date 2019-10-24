@@ -71,7 +71,14 @@ if (isServer) then {
 		//ua_convoy_01
 		private ["_spawnposition"];
 		_spawnposition = ["wp_ua_convoy", 6] call BrezBlock_fnc_Get_RND_Index;
-		[_spawnposition, "ua_convoy_01"] execVM 'addons\brezblock\utils\spawn_opfor_forces_guard.sqf';
+		{
+			private _type = typeName _x;
+			if (_type == "GROUP") then {
+				{
+					_x setVariable ["BB_CorpseTTL", -1];
+				} count units _x;
+			};
+		} forEach ([_spawnposition, "ua_convoy_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces_Guard);
 		[_spawnposition] remoteExecCall ["Fn_Local_Task_Create_Convoy", [0,-2] select isDedicated];
 		
 		trgConvoyFound = createTrigger ["EmptyDetector", getMarkerPos _spawnposition];
@@ -82,6 +89,12 @@ if (isServer) then {
 			"call Fn_Task_Create_Convoy_DestroyHeavy; deleteVehicle trgConvoyFound;",
 			""
 		];
+		
+		{
+			if (_x inArea trgConvoyFound) then {
+				_x setVariable ["BB_CorpseTTL", -1];
+			};
+		} count allDeadMen;
 
 	}; // Fn_Task_Create_Convoy
 

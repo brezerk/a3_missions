@@ -1,5 +1,5 @@
 version=53;
-center[]={1119.8597,5,6204.4619};
+center[]={721.44592,50.710239,1429.2594};
 class items
 {
 	items=4;
@@ -8,24 +8,25 @@ class items
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={-0.86950684,2.0005126,1.2724609};
-			angles[]={-0,5.0265512,0};
+			position[]={-0.86932373,2.001152,1.2728271};
+			angles[]={6.255693,5.0265512,0};
 		};
 		side="Empty";
 		flags=4;
 		class Attributes
 		{
 		};
-		id=85;
+		id=0;
 		type="Mi8Wreck";
+		atlOffset=0.00064086914;
 	};
 	class Item1
 	{
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={3.3956299,0.30257177,-0.57324219};
-			angles[]={0,4.6596479,0};
+			position[]={3.3959351,0.41041565,-0.57263184};
+			angles[]={6.255693,4.6596479,0};
 		};
 		side="Empty";
 		flags=4;
@@ -33,24 +34,25 @@ class items
 		{
 			init="call{_fire = ""test_EmptyObjectForFireBig"" createVehicle (position this); " \n "_fire attachTo [this, [0, 0, 0]];}";
 		};
-		id=86;
+		id=1;
 		type="Crater";
+		atlOffset=0.15859604;
 	};
 	class Item2
 	{
 		dataType="Object";
 		class PositionInfo
 		{
-			position[]={0.11657715,0.08568573,3.5532227};
-			angles[]={-0,4.6834536,0};
+			position[]={0.11688232,0.24171829,3.5535889};
+			angles[]={6.2581916,4.6834536,6.2806721};
 		};
 		side="Empty";
-		flags=4;
 		class Attributes
 		{
 		};
-		id=87;
+		id=2;
 		type="FireLit";
+		atlOffset=0.1680069;
 	};
 	class Item3
 	{
@@ -64,20 +66,20 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-21.727783,0.0014390945,-8.340332};
-					angles[]={0,4.426661,0};
+					position[]={-21.727722,1.2038422,-8.3394775};
+					angles[]={0,4.4266539,0};
 				};
 				side="East";
-				flags=5;
+				flags=1;
 				class Attributes
 				{
 					health=0;
 					skill=0.55000001;
 					rank="LIEUTENANT";
-					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 				};
-				id=89;
+				id=4;
 				type="rhs_vmf_recon_officer_armored";
+				atlOffset=0.97415924;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -145,7 +147,7 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={12.752319,0.0014390945,-11.758301};
+					position[]={12.752258,0.0014381409,-11.757202};
 					angles[]={0,2.298651,0};
 				};
 				side="East";
@@ -155,12 +157,12 @@ class items
 					health=0;
 					skill=0.55000001;
 					rank="LIEUTENANT";
-					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 					name="p_officer_02";
 					stance="Down";
 				};
-				id=90;
+				id=5;
 				type="rhs_vmf_recon_officer_armored";
+				atlOffset=0.18199921;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -228,20 +230,20 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={17.098267,0.0014390945,8.0400391};
-					angles[]={0,1.2353964,0};
+					position[]={17.098572,0.63210678,8.039917};
+					angles[]={0,1.2353992,0};
 				};
 				side="East";
-				flags=5;
+				flags=1;
 				class Attributes
 				{
 					health=0;
 					rank="SERGEANT";
-					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 					stance="Down";
 				};
-				id=91;
+				id=6;
 				type="rhs_vmf_recon_rifleman_akms";
+				atlOffset=0.42176819;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -282,26 +284,7 @@ class items
 							};
 						};
 					};
-					class Attribute2
-					{
-						property="face";
-						expression="_this setface _value;";
-						class Value
-						{
-							class data
-							{
-								class type
-								{
-									type[]=
-									{
-										"STRING"
-									};
-								};
-								value="";
-							};
-						};
-					};
-					nAttributes=3;
+					nAttributes=2;
 				};
 			};
 			class Item3
@@ -309,17 +292,16 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-1.1967773,0.0014390945,18.867676};
+					position[]={-1.1967163,0.20797348,18.868042};
 				};
 				side="East";
 				flags=5;
 				class Attributes
 				{
 					health=0;
-					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 					isPlayer=1;
 				};
-				id=92;
+				id=9;
 				type="rhs_pilot";
 				class CustomAttributes
 				{
@@ -369,17 +351,17 @@ class items
 				dataType="Object";
 				class PositionInfo
 				{
-					position[]={-22.321777,0.0014390945,0.99072266};
+					position[]={-22.321899,0.19706345,0.99169922};
 				};
 				side="East";
 				flags=5;
 				class Attributes
 				{
-					init="call{this setVariable [""BB_CorpseTTL"", -1];}";
 					stance="Down";
 				};
-				id=93;
+				id=10;
 				type="rhs_pilot_combat_heli";
+				atlOffset=3.8146973e-006;
 				class CustomAttributes
 				{
 					class Attribute0
@@ -427,6 +409,7 @@ class items
 		class Attributes
 		{
 		};
-		id=88;
+		id=3;
+		atlOffset=0.18199921;
 	};
 };
