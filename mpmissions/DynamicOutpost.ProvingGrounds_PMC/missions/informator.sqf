@@ -124,6 +124,7 @@ if (isServer) then {
 			"if (isServer) then { call Fn_Task_Informator_Failed };",
 			""
 		];
+		p_officer_01 setVariable ["BB_CorpseTTL", -1];
 	}; // Fn_Task_Create_Informator
 
 	/*
