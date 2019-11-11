@@ -46,5 +46,5 @@ force ace_finger_enabled = true;
 
 // ACEX Field Rations
 force acex_field_rations_enabled = true;
-force acex_field_rations_timeWithoutWater = 2;
-force acex_field_rations_timeWithoutFood = 3;
+force acex_field_rations_timeWithoutWater = 5;
+force acex_field_rations_timeWithoutFood = 8;
