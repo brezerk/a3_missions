@@ -15,45 +15,51 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
  ***************************************************************************/
+ 
+comment "[!] UNIT MUST BE LOCAL [!]";
+if (!local _this) exitWith {};
 
-/*
-Server init file
-*/
+comment "Exported from Arsenal by brezerk";
 
-task_completed_00 = false; // officer
-task_completed_01 = false; // patrol
-task_completed_02 = false; // heli
-task_completed_03 = false; // inform
-task_completed_04 = false; // inform docs
-task_completed_05 = false; // heli docs
-task_completed_06 = false; // patrol docs
-task_completed_07 = false; // spotter
-task_completed_08 = false; // spotter docs
+comment "Remove existing items";
+removeAllWeapons _this;
+removeAllItems _this;
+removeAllAssignedItems _this;
+removeUniform _this;
+removeVest _this;
+removeBackpack _this;
+removeHeadgear _this;
+removeGoggles _this;
 
-publicVariable "task_completed_00";
-publicVariable "task_completed_01";
-publicVariable "task_completed_02";
-publicVariable "task_completed_03";
-publicVariable "task_completed_04";
-publicVariable "task_completed_05";
-publicVariable "task_completed_06";
-publicVariable "task_completed_07";
-publicVariable "task_completed_08";
+comment "Add containers";
+_this forceAddUniform "LOP_U_UKR_Fatigue_Digit";
 
-//remove AI-controled unis for playable objects
-{
-	_x addMPEventHandler ["MPRespawn", {
-		_unit = _this select 0;
-		if (!isPlayer _unit) exitWith {
-			deleteVehicle _unit
-		}
-	}]
-} forEach playableUnits;
+comment "Add items";
+_this linkItem "ItemMap";
+_this linkItem "ItemCompass";
+_this linkItem "ItemWatch";
 
-[ 
-	true, 
-	[
-		[ independent , 0.2, 0.2, 0.8, 0.5 ],
-		[ EAST		  , 0.2, 0.2, 0.3, 0.3 ] 
-	]
-] call BIS_fnc_EXP_camp_dynamicAISkill;
+comment "Set identity";
+_this setFace (selectRandom ['WhiteHead_01',
+'WhiteHead_02',
+'WhiteHead_03',
+'WhiteHead_04',
+'WhiteHead_05',
+'WhiteHead_06',
+'WhiteHead_07',
+'WhiteHead_08',
+'WhiteHead_09',
+'WhiteHead_10',
+'WhiteHead_11',
+'WhiteHead_12',
+'WhiteHead_13',
+'WhiteHead_14',
+'WhiteHead_15',
+'WhiteHead_16',
+'WhiteHead_17',
+'WhiteHead_18',
+'WhiteHead_19',
+'WhiteHead_20',
+'WhiteHead_21',
+'WhiteHead_23']);
+_this setSpeaker "NoVoice";

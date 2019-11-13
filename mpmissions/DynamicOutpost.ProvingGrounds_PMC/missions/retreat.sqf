@@ -25,7 +25,7 @@ if (hasInterface) then {
 	Fn_Local_Task_Create_Retreat = {
 		playSound "outpost_wave03";
 		playSound "rhs_usa_land_rc_21";
-		['t_defend_blockpost', 'Succeeded', localize 'TASK_10_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
+		['t_defend_blockpost', 'Succeeded', localize 'TASK_10_TITLE'] call Fn_Local_SetPersonalTaskState;
 		[
 			player,
 			"t_evacuation_point",

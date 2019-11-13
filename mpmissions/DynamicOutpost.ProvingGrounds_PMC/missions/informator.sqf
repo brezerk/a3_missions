@@ -113,7 +113,7 @@ if (isServer) then {
 			{ _this remoteExec ["Fn_Task_Create_Informator_BlockpostAttack", 2] },
 			"simpleTasks\types\talk",
 			"ACTION_02",
-			"&& alive _target"
+			"&& alive _target && !task_completed_03"
 		] call BrezBlock_fnc_Attach_Hold_Action;
 		inform_unit = _obj;
 		trgInformDead = createTrigger ["EmptyDetector", getPos _obj];
@@ -143,12 +143,6 @@ if (isServer) then {
 		_traitor setBehaviour "SAFE";
 		for "_i" from 1 to 2 do {_traitor addItemToUniform "rhs_mag_9x18_12_57N181S";};
 		_traitor addWeapon "rhs_weap_makarov_pmm";
-		/*
-		{
-			for "_i" from 1 to 2 do {_x addItemToUniform "rhs_mag_9x18_12_57N181S";};
-			_x addWeapon "rhs_weap_makarov_pmm";
-		} forEach _units;
-		*/
 	};
 
 	/*
@@ -158,6 +152,7 @@ if (isServer) then {
 	*/
 	Fn_Task_Informator_Failed = {
 		task_completed_03 = false;
+		publicVariable "task_completed_03";
 		['t_info_meetup', 'Failed', localize 'TASK_08_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
 		deleteVehicle trgInformDead;
 	}; // Fn_Task_Informator_Failed
@@ -168,25 +163,34 @@ if (isServer) then {
 		Usage: call Fn_Task_Create_Informator_BlockpostAttack
 	*/
 	Fn_Task_Create_Informator_BlockpostAttack = {
-		task_completed_03 = true;
-		['t_info_meetup', 'Succeeded', localize 'TASK_08_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
-		[
-			p_officer_01,
-			{ _this remoteExec ["Fn_Task_Informator_DocsFound", 2] }
-		] call BrezBlock_fnc_Attach_Hold_Action;
-		[] remoteExecCall ["Fn_Local_Task_Create_Informator_BlockpostAttack", [0,-2] select isDedicated];
+		if (!task_completed_03) then {
+			task_completed_03 = true;
+			publicVariable "task_completed_03";
+			['t_info_meetup', 'Succeeded', localize 'TASK_08_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
+			[
+				p_officer_01,
+				{ _this remoteExec ["Fn_Task_Informator_DocsFound", 2] },
+				"holdactions\holdAction_search",
+				"ACTION_01",
+				"&& !task_completed_04"
+			] call BrezBlock_fnc_Attach_Hold_Action;
+			[] remoteExecCall ["Fn_Local_Task_Create_Informator_BlockpostAttack", [0,-2] select isDedicated];
+		};
 	}; // Fn_Task_Create_Informator_BlockpostAttack
 	
 	/*
 	If Informator docs were found
 	*/
 	Fn_Task_Informator_DocsFound = {
-		task_completed_04 = true;
-		['t_doc_01', 'Succeeded', localize 'TASK_20_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
-		["outpost_docs_found"] remoteExec ["playSound"];
-		["rhs_usa_land_rc_28"] remoteExec ["playSound"];
-		if (task_completed_07 && task_completed_06 && task_completed_05 && task_completed_04) then {
-			['t_doc_search', 'Succeeded', localize 'TASK_09_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
+		if (!task_completed_04) then {
+			task_completed_04 = true;
+			publicVariable "task_completed_04";
+			['t_doc_01', 'Succeeded', localize 'TASK_20_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
+			["outpost_docs_found"] remoteExec ["playSound"];
+			["rhs_usa_land_rc_28"] remoteExec ["playSound"];
+			if (task_completed_07 && task_completed_06 && task_completed_05 && task_completed_04) then {
+				['t_doc_search', 'Succeeded', localize 'TASK_09_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
+			};
 		};
 	};
 

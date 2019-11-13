@@ -86,7 +86,10 @@ if (isServer) then {
 		} forEach ([_marker, ["rus_heli_crash", 4] call BrezBlock_fnc_Get_RND_Index] call BrezBlock_fnc_Spawn_Objective);
 		[
 			p_officer_02,
-			{ _this remoteExec ["Fn_Task_HelicopterCrashSite_DocsFound", 2] }
+			{ _this remoteExec ["Fn_Task_HelicopterCrashSite_DocsFound", 2] },
+			"holdactions\holdAction_search",
+			"ACTION_01",
+			"&& !task_completed_05"
 		] call BrezBlock_fnc_Attach_Hold_Action;
 		
 		trgHeliSecured = createTrigger ["EmptyDetector", getMarkerPos _marker];
@@ -109,10 +112,13 @@ if (isServer) then {
 	If Heli docs were found;
 	*/
 	Fn_Task_HelicopterCrashSite_DocsFound = {
-		task_completed_05 = true;
-		[] remoteExecCall ["Fn_Local_Task_HelicopterCrashSite_DocsFound", [0,-2] select isDedicated];
-		if (task_completed_07 && task_completed_06 && task_completed_05 && task_completed_04) then {
-			['t_doc_search', 'Succeeded', localize 'TASK_09_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
+		if (!task_completed_05) then {
+			task_completed_05 = true;
+			publicVariable "task_completed_05";
+			[] remoteExecCall ["Fn_Local_Task_HelicopterCrashSite_DocsFound", [0,-2] select isDedicated];
+			if (task_completed_07 && task_completed_06 && task_completed_05 && task_completed_04) then {
+				['t_doc_search', 'Succeeded', localize 'TASK_09_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
+			};
 		};
 	};
 };

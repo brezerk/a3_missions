@@ -16,14 +16,7 @@
  *                                                                         *
  ***************************************************************************/
 
-task_completed_01 = false; // patrol
-task_completed_02 = false; // heli
-task_completed_03 = false; // inform
-task_completed_04 = false; // inform docs
-task_completed_05 = false; // heli docs
-task_completed_06 = false; // patrol docs
-task_completed_07 = false; // spotter
-task_completed_08 = false; // spotter docs
+
 
 _eastHQ = createCenter east;
 _uaHQ = createCenter independent;
@@ -218,6 +211,8 @@ if (isServer) then {
 	//wait a bit
 	sleep 5;
 	call Fn_Create_Objectives_Start;
+	
+	call Fn_Task_Create_ReportOfficer;
 
 	//Move all units into the one Groop (Required for ACE);
 	_grp = createGroup independent;

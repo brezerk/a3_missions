@@ -20,7 +20,7 @@
  Suggested CBA Settings
  */
  
- // ACE Advanced Fatigue
+// ACE Advanced Fatigue
 force ace_advanced_fatigue_enabled = true;
 force ace_advanced_fatigue_enableStaminaBar = true;
 force ace_advanced_fatigue_loadFactor = 0.5;
@@ -35,8 +35,9 @@ force ace_repair_engineerSetting_repair = 0;
 // ACE Medical
 force ace_medical_amountOfReviveLives = -1;
 force ace_medical_increaseTrainingInLocations = true;
+force ace_medical_maxReviveTime = 600;
 ace_medical_menu_useMenu = 1;
-force ace_medical_preventInstaDeath = true;
+force ace_medical_preventInstaDeath = true
 
 // GRAD Trenches
 grad_trenches_functions_stopBuildingAtFatigueMax = true;
@@ -47,4 +48,4 @@ force ace_finger_enabled = true;
 // ACEX Field Rations
 force acex_field_rations_enabled = true;
 force acex_field_rations_timeWithoutWater = 4;
-force acex_field_rations_timeWithoutFood = 6;
+force acex_field_rations_timeWithoutFood = 8;

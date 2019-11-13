@@ -15,45 +15,41 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
  ***************************************************************************/
+ 
+comment "[!] UNIT MUST BE LOCAL [!]";
+if (!local _this) exitWith {};
 
-/*
-Server init file
-*/
+comment "Exported from Arsenal by brezerk";
+ 
+comment "Remove existing items";
+removeAllWeapons _this;
+removeAllItems _this;
+removeAllAssignedItems _this;
+removeUniform _this;
+removeVest _this;
+removeBackpack _this;
+removeHeadgear _this;
+removeGoggles _this;
 
-task_completed_00 = false; // officer
-task_completed_01 = false; // patrol
-task_completed_02 = false; // heli
-task_completed_03 = false; // inform
-task_completed_04 = false; // inform docs
-task_completed_05 = false; // heli docs
-task_completed_06 = false; // patrol docs
-task_completed_07 = false; // spotter
-task_completed_08 = false; // spotter docs
+comment "Add containers";
+_this forceAddUniform "LOP_U_UKR_Fatigue_Digit";
+_this addItemToUniform "FirstAidKit";
+for "_i" from 1 to 5 do {_this addItemToUniform "rhs_30Rnd_545x39_7N10_AK";};
+_this addItemToUniform "rhs_mag_rgd5";
+_this addVest "LOP_V_6B23_6Sh92_TAN_ACU";
+_this addItemToVest "rhs_30Rnd_545x39_7N10_AK";
+_this addItemToVest "rhs_mag_rgd5";
+_this addItemToVest "rhs_mag_nspn_red";
+_this addHeadgear "LOP_H_Beanie_digit";
 
-publicVariable "task_completed_00";
-publicVariable "task_completed_01";
-publicVariable "task_completed_02";
-publicVariable "task_completed_03";
-publicVariable "task_completed_04";
-publicVariable "task_completed_05";
-publicVariable "task_completed_06";
-publicVariable "task_completed_07";
-publicVariable "task_completed_08";
+comment "Add weapons";
+_this addWeapon "rhs_weap_aks74u";
+_this addPrimaryWeaponItem "rhs_acc_pgs64_74u";
 
-//remove AI-controled unis for playable objects
-{
-	_x addMPEventHandler ["MPRespawn", {
-		_unit = _this select 0;
-		if (!isPlayer _unit) exitWith {
-			deleteVehicle _unit
-		}
-	}]
-} forEach playableUnits;
+comment "Add items";
+_this linkItem "ItemMap";
+_this linkItem "ItemCompass";
+_this linkItem "ItemWatch";
 
-[ 
-	true, 
-	[
-		[ independent , 0.2, 0.2, 0.8, 0.5 ],
-		[ EAST		  , 0.2, 0.2, 0.3, 0.3 ] 
-	]
-] call BIS_fnc_EXP_camp_dynamicAISkill;
+comment "Set identity";
+_this setSpeaker "NoVoice";

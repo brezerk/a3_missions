@@ -17,43 +17,31 @@
  ***************************************************************************/
 
 /*
-Server init file
+Init mission file
 */
 
-task_completed_00 = false; // officer
-task_completed_01 = false; // patrol
-task_completed_02 = false; // heli
-task_completed_03 = false; // inform
-task_completed_04 = false; // inform docs
-task_completed_05 = false; // heli docs
-task_completed_06 = false; // patrol docs
-task_completed_07 = false; // spotter
-task_completed_08 = false; // spotter docs
+real_weather_init = false;
 
-publicVariable "task_completed_00";
-publicVariable "task_completed_01";
-publicVariable "task_completed_02";
-publicVariable "task_completed_03";
-publicVariable "task_completed_04";
-publicVariable "task_completed_05";
-publicVariable "task_completed_06";
-publicVariable "task_completed_07";
-publicVariable "task_completed_08";
+D_DEBUG = false;
 
-//remove AI-controled unis for playable objects
-{
-	_x addMPEventHandler ["MPRespawn", {
-		_unit = _this select 0;
-		if (!isPlayer _unit) exitWith {
-			deleteVehicle _unit
-		}
-	}]
-} forEach playableUnits;
+[] execVM "addons\code43\real_weather.sqf";
 
-[ 
-	true, 
-	[
-		[ independent , 0.2, 0.2, 0.8, 0.5 ],
-		[ EAST		  , 0.2, 0.2, 0.3, 0.3 ] 
-	]
-] call BIS_fnc_EXP_camp_dynamicAISkill;
+if (isServer) then {
+	waitUntil {real_weather_init};
+	
+	if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
+		radio_box_01 addItemCargoGlobal ["ACRE_PRC148", 60];
+		radio_box_01 addItemCargoGlobal ["ACRE_SEM52SL", 60];
+		radio_box_01 addItemCargoGlobal ["ACRE_PRC77", 20];
+	} else {
+		if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
+			radio_box_01 addItemCargoGlobal ["tf_anprc148jem", 60];
+			radio_box_01 addItemCargoGlobal ["tf_anprc154", 60];
+			radio_box_01 addItemCargoGlobal ["tf_anprc155", 20];
+			radio_box_01 addItemCargoGlobal ["tf_anprc155_coyote", 20];
+		} else {
+			radio_box_01 addItemCargoGlobal ["ItemRadio", 30];
+		};
+	};
+	[] execVM "addons\brezblock\utils\garbage_collector.sqf";
+};

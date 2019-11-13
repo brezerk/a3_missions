@@ -79,7 +79,10 @@ if (isServer) then {
 		trgSpotterKilled setTriggerStatements ["!alive p_rus_spotter_01", "['t_recon_kill', 'Succeeded', localize 'TASK_21_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated]; deleteVehicle trgSpotterKilled;", ""];
 		[
 			p_rus_spotter_01,
-			{ _this remoteExec ["Fn_Task_Spotter_DocsFound", 2] }
+			{ _this remoteExec ["Fn_Task_Spotter_DocsFound", 2] },
+				"holdactions\holdAction_search",
+				"ACTION_01",
+				"&& !task_completed_07"
 		] call BrezBlock_fnc_Attach_Hold_Action;
 	};
 	
@@ -87,10 +90,13 @@ if (isServer) then {
 	If Spotter docs were found;
 	*/
 	Fn_Task_Spotter_DocsFound = {
-		task_completed_07 = true;
-		[] remoteExecCall ["Fn_Local_Task_Spotter_DocsFound", [0,-2] select isDedicated];
-		if (task_completed_07 && task_completed_06 && task_completed_05 && task_completed_04) then {
-			['t_doc_search', 'Succeeded', localize 'TASK_09_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
+		if (!task_completed_07) then {
+			task_completed_07 = true;
+			publicVariable "task_completed_07";
+			[] remoteExecCall ["Fn_Local_Task_Spotter_DocsFound", [0,-2] select isDedicated];
+			if (task_completed_07 && task_completed_06 && task_completed_05 && task_completed_04) then {
+				['t_doc_search', 'Succeeded', localize 'TASK_09_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
+			};
 		};
 	};
 };

@@ -115,7 +115,10 @@ if (isServer) then {
 		} forEach ([_marker, ["ua_t_patrol", 5] call BrezBlock_fnc_Get_RND_Index] call BrezBlock_fnc_Spawn_Objective);
 		[
 			p_officer_03,
-			{ _this remoteExec ["Fn_Task_MissingPatrol_DocsFound", 2] }
+			{ _this remoteExec ["Fn_Task_MissingPatrol_DocsFound", 2] },
+				"holdactions\holdAction_search",
+				"ACTION_01",
+				"&& !task_completed_06"
 		] call BrezBlock_fnc_Attach_Hold_Action;
 		[ua_injured_01, 0.3, "body", "bullet"] call ace_medical_fnc_addDamageToUnit;
 		[ua_injured_01, 0.8, "head", "stub"] call ace_medical_fnc_addDamageToUnit;
@@ -184,10 +187,13 @@ if (isServer) then {
 	If Patrol docs were found;
 	*/
 	Fn_Task_MissingPatrol_DocsFound = {
-		task_completed_06 = true;
-		[] remoteExecCall ["Fn_Local_Task_MissingPatrol_DocsFound", [0,-2] select isDedicated];
-		if (task_completed_07 && task_completed_06 && task_completed_05 && task_completed_04) then {
-			['t_doc_search', 'Succeeded', localize 'TASK_09_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
+		if (!task_completed_06) then {
+			task_completed_06 = true;
+			publicVariable "task_completed_06";
+			[] remoteExecCall ["Fn_Local_Task_MissingPatrol_DocsFound", [0,-2] select isDedicated];
+			if (task_completed_07 && task_completed_06 && task_completed_05 && task_completed_04) then {
+				['t_doc_search', 'Succeeded', localize 'TASK_09_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
+			};
 		};
 	}; // Fn_Task_MissingPatrol_DocsFound
 	

@@ -17,43 +17,8 @@
  ***************************************************************************/
 
 /*
-Server init file
+On player respawn event handler
 */
 
-task_completed_00 = false; // officer
-task_completed_01 = false; // patrol
-task_completed_02 = false; // heli
-task_completed_03 = false; // inform
-task_completed_04 = false; // inform docs
-task_completed_05 = false; // heli docs
-task_completed_06 = false; // patrol docs
-task_completed_07 = false; // spotter
-task_completed_08 = false; // spotter docs
-
-publicVariable "task_completed_00";
-publicVariable "task_completed_01";
-publicVariable "task_completed_02";
-publicVariable "task_completed_03";
-publicVariable "task_completed_04";
-publicVariable "task_completed_05";
-publicVariable "task_completed_06";
-publicVariable "task_completed_07";
-publicVariable "task_completed_08";
-
-//remove AI-controled unis for playable objects
-{
-	_x addMPEventHandler ["MPRespawn", {
-		_unit = _this select 0;
-		if (!isPlayer _unit) exitWith {
-			deleteVehicle _unit
-		}
-	}]
-} forEach playableUnits;
-
-[ 
-	true, 
-	[
-		[ independent , 0.2, 0.2, 0.8, 0.5 ],
-		[ EAST		  , 0.2, 0.2, 0.3, 0.3 ] 
-	]
-] call BIS_fnc_EXP_camp_dynamicAISkill;
+//resore loadout
+[player, [missionNamespace, "outpost_saved_loadout"]] call BIS_fnc_loadInventory;

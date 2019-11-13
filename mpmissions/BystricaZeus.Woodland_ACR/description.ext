@@ -15,45 +15,49 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
  ***************************************************************************/
-
-/*
-Server init file
-*/
-
-task_completed_00 = false; // officer
-task_completed_01 = false; // patrol
-task_completed_02 = false; // heli
-task_completed_03 = false; // inform
-task_completed_04 = false; // inform docs
-task_completed_05 = false; // heli docs
-task_completed_06 = false; // patrol docs
-task_completed_07 = false; // spotter
-task_completed_08 = false; // spotter docs
-
-publicVariable "task_completed_00";
-publicVariable "task_completed_01";
-publicVariable "task_completed_02";
-publicVariable "task_completed_03";
-publicVariable "task_completed_04";
-publicVariable "task_completed_05";
-publicVariable "task_completed_06";
-publicVariable "task_completed_07";
-publicVariable "task_completed_08";
-
-//remove AI-controled unis for playable objects
+ 
+ // Mission description file
+ 
+class Header
 {
-	_x addMPEventHandler ["MPRespawn", {
-		_unit = _this select 0;
-		if (!isPlayer _unit) exitWith {
-			deleteVehicle _unit
-		}
-	}]
-} forEach playableUnits;
+	gameType   =  Zeus;	// Game type
+	minPlayers =  2;	// minimum number of players the mission supports
+	maxPlayers = 20;	// maximum number of players the mission supports
+};
 
-[ 
-	true, 
-	[
-		[ independent , 0.2, 0.2, 0.8, 0.5 ],
-		[ EAST		  , 0.2, 0.2, 0.3, 0.3 ] 
-	]
-] call BIS_fnc_EXP_camp_dynamicAISkill;
+author			= "brezerk@brezblock.org.ua";
+OnLoadName		= "BystricaZeus v0.0.1";
+OnLoadMission	= "BystricaZeus";
+briefingName    = "BystricaZeus";
+// FIXME: https://feedback.bistudio.com/T67181
+//overviewPicture = "images\outpost_logo.paa";
+//loadScreen      = "images\outpost_logo.paa";
+//overviewTextLocked = $STR_LOCKED_INFO_01;
+
+// Respawn type
+respawn = 3;
+// Delay in seconds before playable unit respawns.
+respawnDelay = 15;
+// Respawn templates from CfgRespawnTemplates. You can combine any number of them together.
+respawnTemplates[] = {"Counter"};
+// 0 to disable the score table (it can still be opened manually by pressing 'P' key).
+respawnDialog = 0;
+// When 1, the score table contains score of all playable units as opposed to players only.
+aikills = 0;
+
+respawnOnStart = -1;
+
+corpseManagerMode = 1;
+corpseLimit = 20;
+corpseRemovalMinTime = 120;
+corpseRemovalMaxTime = 1200;
+
+wreckManagerMode = 2;
+wreckLimit = 15; 
+wreckRemovalMinTime = 60;
+wreckRemovalMaxTime = 1200;
+
+minPlayerDistance = 100;
+
+// Force cba_settings.sqf loading
+cba_settings_hasSettingsFile = 1;

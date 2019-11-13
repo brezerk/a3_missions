@@ -95,13 +95,17 @@ if (isServer) then {
 			{ _this remoteExec ["Fn_Task_ReportOfficer_Done", 2] },
 			"simpleTasks\types\talk",
 			"ACTION_02",
-			"&& alive _target"
+			"&& alive _target && !task_completed_00 && (_this getVariable ['officer', false])"
 		] call BrezBlock_fnc_Attach_Hold_Action;
 	};
 	
 	Fn_Task_ReportOfficer_Done = {
-		deleteVehicle trgOfficerDead;
-		execVM 'missions\main.sqf';
+		if (!task_completed_00) then {
+			task_completed_00 = true;
+			publicVariable "task_completed_00";
+			deleteVehicle trgOfficerDead;
+			execVM 'missions\main.sqf';
+		};
 	};
 	
 

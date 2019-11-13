@@ -15,45 +15,43 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
  ***************************************************************************/
+ 
+comment "[!] UNIT MUST BE LOCAL [!]";
+if (!local _this) exitWith {};
 
-/*
-Server init file
-*/
+comment "Exported from Arsenal by brezerk";
 
-task_completed_00 = false; // officer
-task_completed_01 = false; // patrol
-task_completed_02 = false; // heli
-task_completed_03 = false; // inform
-task_completed_04 = false; // inform docs
-task_completed_05 = false; // heli docs
-task_completed_06 = false; // patrol docs
-task_completed_07 = false; // spotter
-task_completed_08 = false; // spotter docs
+comment "Remove existing items";
+removeAllWeapons _this;
+removeAllItems _this;
+removeAllAssignedItems _this;
+removeUniform _this;
+removeVest _this;
+removeBackpack _this;
+removeHeadgear _this;
+removeGoggles _this;
 
-publicVariable "task_completed_00";
-publicVariable "task_completed_01";
-publicVariable "task_completed_02";
-publicVariable "task_completed_03";
-publicVariable "task_completed_04";
-publicVariable "task_completed_05";
-publicVariable "task_completed_06";
-publicVariable "task_completed_07";
-publicVariable "task_completed_08";
+comment "Add containers";
+_this forceAddUniform "LOP_U_UKR_Fatigue_Digit";
+for "_i" from 1 to 10 do {_this addItemToUniform "ACE_fieldDressing";};
+_this addItemToUniform "ACE_EarPlugs";
+for "_i" from 1 to 10 do {_this addItemToUniform "ACE_morphine";};
+for "_i" from 1 to 2 do {_this addItemToUniform "ACE_CableTie";};
+_this addItemToUniform "ACE_personalAidKit";
+_this addVest "LOP_V_6B23_Rifleman_TAN";
+for "_i" from 1 to 2 do {_this addItemToVest "rhs_mag_rdg2_white";};
+_this addItemToVest "rhs_mag_rgd5";
+_this addBackpack "B_Kitbag_tan";
+for "_i" from 1 to 4 do {_this addItemToBackpack "rhs_100Rnd_762x54mmR_7N13";};
+_this addHeadgear "LOP_H_6B27M_ess_Digit";
 
-//remove AI-controled unis for playable objects
-{
-	_x addMPEventHandler ["MPRespawn", {
-		_unit = _this select 0;
-		if (!isPlayer _unit) exitWith {
-			deleteVehicle _unit
-		}
-	}]
-} forEach playableUnits;
+comment "Add weapons";
+_this addWeapon "rhs_weap_pkm";
 
-[ 
-	true, 
-	[
-		[ independent , 0.2, 0.2, 0.8, 0.5 ],
-		[ EAST		  , 0.2, 0.2, 0.3, 0.3 ] 
-	]
-] call BIS_fnc_EXP_camp_dynamicAISkill;
+comment "Add items";
+_this linkItem "ItemMap";
+_this linkItem "ItemCompass";
+_this linkItem "ItemWatch";
+	
+comment "Set identity";
+_this setSpeaker "NoVoice";

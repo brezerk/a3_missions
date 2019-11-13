@@ -211,16 +211,13 @@ if (isServer) then {
 	(allMines select 0) mineDetectedBy east;
 	
 	[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_tank", 3] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
-	//[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_tank", 3] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
-	//[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_tank", 3] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
-	//;
 	
 	// wait some more
 	_until = diag_tickTime + 5 * 60;
 	waitUntil {sleep 1; diag_tickTime > _until;};
 	
 	//call heli regardless >:E
-	[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_heli", 3] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01", [[0,0,0],[0,30,0],[30,0,0]]] call BrezBlock_fnc_Spawn_OPFOR_Forces;
+	//[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_heli", 3] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01", [[0,0,0],[0,30,0],[30,0,0]]] call BrezBlock_fnc_Spawn_OPFOR_Forces;
 	
 	// wait some more
 	_until = diag_tickTime + 10 * 60;

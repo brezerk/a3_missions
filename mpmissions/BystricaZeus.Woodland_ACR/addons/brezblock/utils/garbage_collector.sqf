@@ -17,34 +17,35 @@
  ***************************************************************************/
  
  /*
- Suggested CBA Settings
- */
- 
- // ACE Advanced Fatigue
-force ace_advanced_fatigue_enabled = true;
-force ace_advanced_fatigue_enableStaminaBar = true;
-force ace_advanced_fatigue_loadFactor = 0.5;
-force ace_advanced_fatigue_performanceFactor = 1;
-force ace_advanced_fatigue_recoveryFactor = 1.5;
-force ace_advanced_fatigue_swayFactor = 1;
-force ace_advanced_fatigue_terrainGradientFactor = 1;
+Spawn start objectives, triggers for informator contact
+*/
 
-// ACE Logistics
-force ace_repair_engineerSetting_repair = 0;
-
-// ACE Medical
-force ace_medical_amountOfReviveLives = -1;
-force ace_medical_increaseTrainingInLocations = true;
-ace_medical_menu_useMenu = 1;
-force ace_medical_preventInstaDeath = true;
-
-// GRAD Trenches
-grad_trenches_functions_stopBuildingAtFatigueMax = true;
-
-// ACE Pointing
-force ace_finger_enabled = true;
-
-// ACEX Field Rations
-force acex_field_rations_enabled = true;
-force acex_field_rations_timeWithoutWater = 4;
-force acex_field_rations_timeWithoutFood = 6;
+while {true} do {
+	{
+		private _timeStamp = _x getVariable "BB_CorpseTTL";
+		if (isNil "_timeStamp") then 
+		{
+			_x setVariable ["BB_CorpseTTL", time];
+		} else {
+			private _playerNearby = false;
+			if (_timeStamp != -1) then {
+				if ((time - _timeStamp) > 300) then {
+					{
+						scopeName "units_loop";
+						//player found withing 150m
+						if (isPlayer _x) then {
+							_playerNearby = true;
+							breakOut "units_loop";
+						};
+					} forEach nearestObjects [_x, ["SoldierEB", "SoldierGB", "SoldierWB"], 250];
+					if (!_playerNearby) then {
+						deleteVehicle _x;
+					} else {
+						_x setVariable ["BB_CorpseTTL", time];
+					};
+				};
+			};
+		};
+	} forEach allDead;
+	sleep 10;
+};
