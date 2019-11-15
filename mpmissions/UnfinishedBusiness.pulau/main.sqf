@@ -20,7 +20,7 @@ real_weather_init = false;
 
 D_LOCATIONS = ['Gurun', 'Monyet'];
 
-D_DEBUG = true;
+D_DEBUG = false;
 
 // Check mods if loaded
 D_MOD_ACE = isClass(configFile >> "CfgPatches" >> "ace_main");

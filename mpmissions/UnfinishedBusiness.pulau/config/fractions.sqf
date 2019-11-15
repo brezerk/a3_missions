@@ -171,7 +171,6 @@
 					["CUP_B_USMC_AssaultPack",    5 ],
 					["Medikit",					  2 ],
 					["ToolKit",                   1 ],
-					["ACE_VMM3",                  2 ],
 					["CUP_bipod_Harris_1A2_L",	  4 ]
 				]
 			]
@@ -408,7 +407,6 @@
 					["Medikit",                   2 ],
 					["H_Cap_oli",                 3 ],
 					["optic_ACO_grn",             1 ],
-					["ACE_VMM3",                  2 ],
 					["ToolKit",                   1 ],
 					["bipod_01_F_blk",			  1 ]
 				]
@@ -447,7 +445,6 @@
 					["H_HelmetIA",                3 ],
 					["optic_ACO_grn",             5 ],
 					["I_Fieldpack_oli_AA",        5 ],
-					["ACE_VMM3",                  2 ],
 					["ToolKit",                   1 ],
 					["CUP_NVG_PVS7",              7 ],
 					["bipod_01_F_blk",			  1 ],

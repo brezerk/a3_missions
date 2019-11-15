@@ -190,8 +190,6 @@ if (isServer) then {
 			case 3: { _force_comp = [D_FRACTION_INDEP_UNITS_LIGHT, D_FRACTION_INDEP_UNITS_HEAVY, D_FRACTION_INDEP_UNITS_TRANSPORT, D_FRACTION_INDEP_UNITS_CARS]; };
 			default { _force_comp = [D_FRACTION_INDEP_UNITS_CARS, D_FRACTION_INDEP_UNITS_CARS]; };
 		};
-		
-		systemChat format ["Create: %1", _force_comp];
 
 		private _roads = [];
 		

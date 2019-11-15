@@ -58,14 +58,20 @@ if (isClass(configFile >> "CfgPatches" >> "ace_main")) then {
 } else {
 	_obj addItemCargoGlobal ["MineDetector", 5];
 };
+
+private _multiplier = 1;
+
+if (_type == "base") then {
+	_multiplier = 5;
+};
 		
 if (isClass(configFile >> "CfgPatches" >> "ace_medical")) then {
-	_obj addItemCargoGlobal ["ACE_fieldDressing", 25];
-	_obj addItemCargoGlobal ["ACE_morphine", 10];
-	_obj addItemCargoGlobal ["ACE_epinephrine", 5];
-	_obj addItemCargoGlobal ["ACE_bloodIV", 6];
+	_obj addItemCargoGlobal ["ACE_fieldDressing", (25 * _multiplier)];
+	_obj addItemCargoGlobal ["ACE_morphine", (10 * _multiplier)];
+	_obj addItemCargoGlobal ["ACE_epinephrine", (5 * _multiplier)];
+	_obj addItemCargoGlobal ["ACE_bloodIV", (5 * _multiplier)];
 } else {
-	_obj addItemCargoGlobal ["FirstAidKit", 25];
+	_obj addItemCargoGlobal ["FirstAidKit", (25 * _multiplier)];
 };
 		
 _obj addItemCargoGlobal ["ClaymoreDirectionalMine_Remote_Mag", 6];

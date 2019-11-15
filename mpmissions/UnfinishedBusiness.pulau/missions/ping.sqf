@@ -23,9 +23,12 @@
 */
 
 if (isServer) then {
+	private _no_ping = 0;
+
 	while {count assault_group != 0} do {
 		sleep D_PING_TIMEOUT;
 		if (count pings > 0) then {
+			_no_ping = 0;
 			{
 				private _pos = _x;
 				private _grid_pos = mapGridPosition _pos;
@@ -60,6 +63,22 @@ if (isServer) then {
 				} forEach allGroups;
 			} forEach pings;
 			pings = [];
+		} else {
+			_no_ping = _no_ping + 1;
+			if (_no_ping >= 5) then {
+				_no_ping = 0;
+				private _west_units = [];
+				{
+					if ((side _x) == west) then {
+						_west_units pushBackUnique _x;
+					};
+				} forEach (playableUnits + switchableUnits);
+				private _unit = selectRandom(_west_units);
+				private _pos = getPos _unit;
+				private _grid_pos = mapGridPosition [((_pos select 0) + (round(random 600) - 300)), ((_pos select 1) + (round(random 600) - 300)), _pos select 2];
+				[[independent, "HQ"], format ["Enemy spotted. Grid: %1", _grid_pos]] remoteExec ["sideChat"];
+				[[east, "HQ"], format ["Enemy spotted. Grid: %1", _grid_pos]] remoteExec ["sideChat"];
+			};
 		};
 	};
 };
