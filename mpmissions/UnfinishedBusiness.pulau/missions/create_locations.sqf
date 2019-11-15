@@ -33,11 +33,11 @@ if (isServer) then {
 	
 	//Get all POI in the range
 	private _ret = [_crashSitePos, 2000, 2] call BrezBlock_fnc_GetAllCitiesInRange;
-	avaliable_locations = _ret select 0;
-	avaliable_pois = _ret select 1;
+	avaliable_locations = (_ret select 0);
+	avaliable_pois = (_ret select 1);
 	
-	//FIXME: do we really need this?
 	publicVariable "avaliable_pois";
+	publicVariable "avaliable_locations";
 	
 	{ avaliable_markers pushBackUnique _x; } forEach ([_crashSitePos, 1500] call BrezBlock_fnc_CotrollerCreate);
 	{ if (!((markerType _x) in ["b_recon", "b_plane"])) then { avaliable_markers pushBackUnique _x; }; } forEach ([getMarkerPos "mrk_east_base_02", 600] call BrezBlock_fnc_CotrollerCreate);
@@ -82,12 +82,7 @@ if (isServer) then {
 	call Fn_Task_Create_Civilian_WaponStash;
 	call Fn_Task_Create_Civilian_FloodedShip;
 	
-	//private _result = diag_codePerformance [_code, []];
-	//systemChat format ["diag_codePerformance: controller.sqf exec time: %1ms %2cycles", _result select 0, _result select 1];
-	
-	//FIXME: Search for roads, create cache use it for patrols and civil spawn
-	
-	private _pios = avaliable_pois;
+	private _pios = +avaliable_pois;
 	{
 		_pios pushBackUnique _x;
 	} forEach (([_crashSitePos, 4000, 6] call BrezBlock_fnc_GetAllCitiesInRange) select 1);

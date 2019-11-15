@@ -33,8 +33,11 @@ if (isServer) then {
 		private _class = selectRandom D_FRACTION_WEST_UNITS_TRANSPORT;
 		private _crew_class = getText(configFile >> "CfgVehicles" >> _class >> "crew");
 		
-		us_airplane_01 = createVehicle [_class, (getPos land_00), [], 0, "CAN_COLLIDE"];
-		us_airplane_01 attachTo [land_00, [0, 0, 0]];
+		us_airplane_01 = createVehicle [_class, [0, 0, 0], [], 0, "CAN_COLLIDE"];
+		us_airplane_01 allowDamage false;
+		private _pos = getPos land_00;
+		land_00 setPosAsl [_pos select 0, _pos select 1, (11 + ([west, D_FRACTION_WEST, "transport_z_offset"] call Fn_Config_GetFraction_Units))];
+	    us_airplane_01 attachTo [land_00, [0, 0, 0]];
 		detach us_airplane_01;
 		us_airplane_01 setDir (getDir land_00);
 		us_airplane_01 setVehicleAmmo 0;
@@ -44,12 +47,11 @@ if (isServer) then {
 		_unit moveInDriver us_airplane_01;
 		_unit assignAsDriver us_airplane_01;
 		_unit setBehaviour "Careless";
-
-		//FIXME: Add init cargo: ammo, acex, base rifles
 		
 		us_heli_01 = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_HELI), (getPos land_01), [], 0, "CAN_COLLIDE"];
-		us_heli_01 attachTo [land_01, [0, 0, 0]];
-		detach us_heli_01;
+		private _pos = getPos land_01;
+		us_heli_01 allowDamage false;
+		us_heli_01 setPosAsl [_pos select 0, _pos select 1, 9];
 		us_heli_01 setDir ([getPos (us_heli_01), getPos(us_airplane_01)] call BIS_fnc_dirTo);
 		us_heli_01 setVehicleLock "LOCKED";
 		
@@ -99,6 +101,9 @@ if (isServer) then {
 		};
 			
 		remoteExecCall ["Fn_Local_Create_MissionIntro", [0,-2] select isDedicated];
+		
+		us_airplane_01 allowDamage true;
+		us_heli_01 allowDamage true;
 
 	}; // Fn_Create_MissionIntro
 	

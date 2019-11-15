@@ -59,7 +59,123 @@
  
  D_FRACTION_WEST_CFG = [
 	[
-		'CUP_B_USMC', 'CUP Civilian', []   //Wreck Land_UWreck_MV22_F
+		'CUP_B_USMC', 'USMC', [
+			[
+			'transport', ['CUP_B_MV22_USMC']
+			],
+			[
+			'heli', ['CUP_B_MH6J_USA']
+			],
+			[
+			'boats', ['CUP_B_RHIB2Turret_USMC', 'CUP_B_RHIB_USMC']
+			],
+			['transport_wreck', 'Land_UWreck_MV22_F'],
+			['transport_z_offset', 1.71],
+			['base_hgun', ["CUP_hgun_Colt1911", "CUP_7Rnd_45ACP_1911"]],
+			['Team Leader', 'CUP_B_USMC_Soldier_TL'],
+			['Corpsman', 	'CUP_B_USMC_Medic'],
+			['Grenadier', 	'CUP_B_USMC_Soldier_GL'],
+			['Rifleman', 	'CUP_B_USMC_Soldier'],
+			['Squad Leader','CUP_B_USMC_Soldier_SL'],
+			['Autorifleman','CUP_B_USMC_Soldier_AR'],
+			['Sniper', 		'CUP_B_USMC_Sniper_M107'],
+			['Spotter', 	'CUP_B_USMC_Spotter'],
+			['rescue_Team Leader',  'CUP_B_FR_Commander'],
+			['rescue_Corpsman', 	'CUP_B_FR_Medic'],
+			['rescue_Grenadier', 	'CUP_B_FR_Soldier_Assault_GL'],
+			['rescue_Rifleman', 	'CUP_B_FR_Soldier_Assault'],
+			['rescue_Squad Leader', 'CUP_B_FR_Soldier_TL'],
+			['rescue_Autorifleman', 'CUP_B_FR_Soldier_AR'],
+			['rescue_Sniper', 		'CUP_B_FR_Soldier_Marksman'],
+			['rescue_Spotter', 		'CUP_B_FR_Saboteur'],
+			['stash_base_items', 	[
+					["CUP_launch_Mk153Mod0",	  2 ],
+					["CUP_arifle_M16A4_Base",	  2 ],
+					["CUP_arifle_M4A1_black",	  2 ],
+					["Laserdesignator",		      1 ],
+					["CUP_30Rnd_556x45_Stanag",   24],
+					["CUP_15Rnd_9x19_M9",		  16],
+					["CUP_7Rnd_45ACP_1911",	      16],
+					["CUP_SMAW_Spotting",		  2 ],
+					["CUP_10Rnd_127x99_M107",	  10],
+					["CUP_200Rnd_TE4_Green_Tracer_556x45_M249", 10],
+					["CUP_1Rnd_HEDP_M203",	      20],
+					["3Rnd_HE_Grenade_shell",	  10],
+					["Chemlight_green",			  20],
+					["Laserbatteries",			  3 ],
+					["CUP_HandGrenade_M67",		  20],
+					["SmokeShell",				  10],
+					["SmokeShellGreen",			  10],
+					["CUP_acc_ANPEQ_2",			  2 ],
+					["CUP_H_USMC_LWH_ESS_LR_WDL", 10 ],
+					["CUP_G_Oakleys_Clr",         10 ],
+					["CUP_bipod_Harris_1A2_L",	  4 ]
+				]
+			],
+			['stash_safe_items', 	[
+					["CUP_launch_Mk153Mod0",	  2 ],
+					["CUP_arifle_M16A4_Base",	  2 ],
+					["CUP_arifle_M4A1_black",     2 ],
+					["CUP_hgun_Colt1911",         4 ],
+					["CUP_30Rnd_556x45_Stanag",   12],
+					["CUP_SMAW_Spotting",	      2 ],
+					["CUP_7Rnd_45ACP_1911",  	  8 ],
+					["CUP_10Rnd_127x99_M107",     6 ],
+					["CUP_200Rnd_TE4_Green_Tracer_556x45_M249", 5],
+					["CUP_SMAW_HEAA_M",			  4 ],
+					["CUP_SMAW_HEDP_M",           4 ],
+					["CUP_1Rnd_HEDP_M203",   	  8 ],
+					["Chemlight_green",			  8 ],
+					["CUP_HandGrenade_M67",		  10],
+					["SmokeShell",				  4 ],
+					["SmokeShellGreen",			  6 ],
+					["CUP_acc_ANPEQ_2",			  2 ],
+					["CUP_B_USMC_AssaultPack",    3 ],
+					["CUP_H_USMC_LWH_ESS_LR_WDL", 10 ],
+					["CUP_G_Oakleys_Clr",         10 ],
+					["CUP_bipod_Harris_1A2_L",	  4 ]
+				]
+			],
+			['stash_crash_items', 	[
+					["CUP_launch_Mk153Mod0",	  2 ],
+					["CUP_launch_Javelin",        2 ],
+					["CUP_arifle_M16A4_Base",	  2 ],
+					["CUP_arifle_M16A4_GL",		  2 ],
+					["CUP_arifle_M4A1_black",     3 ],
+					["CUP_lmg_M249",              1 ],
+					["CUP_hgun_Colt1911",         4 ],
+					["CUP_SMAW_Spotting",         2 ],
+					["CUP_30Rnd_556x45_Stanag",   24],
+					["CUP_15Rnd_9x19_M9",		  16],
+					["CUP_7Rnd_45ACP_1911",	      16],
+					["CUP_SMAW_Spotting",		  2 ],
+					["CUP_10Rnd_127x99_M107",	  10],
+					["CUP_200Rnd_TE4_Green_Tracer_556x45_M249", 4],
+					["CUP_SMAW_HEAA_M",			  4 ],
+					["CUP_SMAW_HEDP_M",           4 ],
+					["CUP_launch_FIM92Stinger",	  2 ],
+					["Laserdesignator",		  1 ],
+					["CUP_optic_LeupoldMk4_25x50_LRT", 1],
+					["CUP_1Rnd_HEDP_M203",	      8 ],
+					["Chemlight_green",			  8 ],
+					["CUP_HandGrenade_M67",  	  10],
+					["SmokeShell",				  4 ],
+					["SmokeShellGreen",			  6 ],
+					["CUP_acc_ANPEQ_2",			  2 ],
+					["CUP_H_USMC_LWH_ESS_LR_WDL", 10 ],
+					["CUP_G_Oakleys_Clr",         10 ],
+					["CUP_optic_ACOG",	          2 ],
+					["CUP_hgun_M9",				  3 ],
+					["CUP_H_USMC_Headset_HelmetWDL", 2 ],
+					["B_HMG_01_weapon_F",         5 ],
+					["CUP_B_USMC_AssaultPack",    5 ],
+					["Medikit",					  2 ],
+					["ToolKit",                   1 ],
+					["ACE_VMM3",                  2 ],
+					["CUP_bipod_Harris_1A2_L",	  4 ]
+				]
+			]
+		]
 	],
 	[
 		'BLU_F', 'NATO', [
@@ -73,6 +189,8 @@
 			'boats', ['B_Boat_Armed_01_minigun_F']
 			],
 			['transport_wreck', 'Land_Wreck_Heli_02_Wreck_01_F'],
+			['transport_z_offset', 0],
+			['base_hgun', ["hgun_P07_F", "16Rnd_9x21_Mag"]],
 			['Team Leader', 'B_Soldier_TL_F'],
 			['Corpsman', 	'B_medic_F'],
 			['Grenadier', 	'B_Soldier_GL_F'],
@@ -172,12 +290,34 @@
 		'CUP_C_SAHRANI', 'CUP Civilian', [
 			[
 			'mens', [
+					'C_man_p_beggar_F',
+					'C_man_p_beggar_F_afro',
 					'C_man_polo_1_F',
 					'C_man_polo_2_F',
 					'C_man_polo_3_F',
 					'C_man_polo_4_F',
 					'C_man_polo_5_F',
 					'C_man_polo_6_F',
+					'C_man_polo_1_F_afro',
+					'C_man_polo_2_F_afro',
+					'C_man_polo_3_F_afro',
+					'C_man_polo_4_F_afro',
+					'C_man_polo_5_F_afro',
+					'C_man_polo_6_F_afro',
+					'C_man_shorts_1_F',
+					'C_man_p_fugitive_F',
+					'C_man_p_fugitive_F_afro',
+					'C_man_p_shorts_1_F',
+					'C_man_p_shorts_1_F_afro',
+					'C_man_funter_1_F',
+					'C_man_shorts_2_F',
+					'C_man_shorts_1_F_afro',
+					'C_man_shorts_2_F_afro',
+					'C_man_shorts_3_F_afro',
+					'C_man_shorts_4_F_afro',
+					'C_man_shorts_3_F',
+					'C_man_shorts_4_F',
+					'C_man_w_worker_F',
 					'C_man_1_1_F',
 					'C_man_1_2_F',
 					'C_man_1_3_F']
@@ -211,6 +351,110 @@
 					'C_Rubberboat',
 					'C_Boat_Civil_01_rescue_F',
 					'CUP_C_Fishing_Boat_Chernarus']
+			],
+			['rebel_weapons',       [
+						"CUP_arifle_AK74_Early",
+						"CUP_arifle_AK74_GL_Early",
+						"CUP_arifle_AK74M",
+						"CUP_arifle_AKS74U",
+						"arifle_Mk20_GL_F",
+						"hgun_PDW2000_F"
+					]
+			],
+			['rebel_armor',       [
+						"CUP_V_B_Armatus_Black",
+						"CUP_V_B_Ciras_Black",
+						"CUP_V_B_Ciras_Olive",
+						"V_Press_F",
+						"CUP_V_I_Guerilla_Jacket",
+						"V_TacVest_brn"
+					]
+			],
+			['rebel_backpack',       [
+						"CUP_B_IDF_Backpack",
+						"CUP_B_RUS_Backpack",
+						"B_Messenger_Black_F",
+						"CUP_B_HikingPack_Civ",
+						"B_Kitbag_tan",
+						"B_Kitbag_cbr"
+					]
+			],
+			['stash_base_items', 	[
+					["CUP_arifle_AK74_Early",     5 ],
+					["CUP_arifle_AK74_GL_Early",  2 ],
+					["CUP_arifle_AK74M",          2 ],
+					["CUP_arifle_AKS74U",         2 ],
+					["CUP_hgun_Makarov",          4 ],
+					["CUP_8Rnd_9x18_Makarov_M",   9 ],
+					["G_Carryall_Ammo",			  5 ],
+					["H_Booniehat_khk",			  1 ],
+					["CUP_30Rnd_545x39_AK74_plum_M",  24],
+					["CUP_30Rnd_545x39_AK74M_M",  10],
+					["CUP_45Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M", 15],
+					["V_Chestrig_oli",			  5 ],
+					["CUP_arifle_RPK74_45",       1 ],
+					["CUP_launch_RPG18",          5 ],
+					["H_Bandanna_khk",            2 ],
+					["CUP_1Rnd_HE_GP25_M",	      7 ],
+					["V_TacVest_blk",	          3 ],
+					["Chemlight_green",			  10],
+					["bipod_03_F_blk",			  3 ],
+					["CUP_HandGrenade_RGD5",	  6 ],
+					["CUP_HandGrenade_RGO",       4 ],
+					["SmokeShell",				  10],
+					["SmokeShellGreen",			  10],
+					["acc_flashlight",			  2 ],
+					["I_HMG_01_support_F",        5 ],
+					["Medikit",                   2 ],
+					["H_Cap_oli",                 3 ],
+					["optic_ACO_grn",             1 ],
+					["ACE_VMM3",                  2 ],
+					["ToolKit",                   1 ],
+					["bipod_01_F_blk",			  1 ]
+				]
+			],
+			['stash_ship_items', 	[
+					["CUP_arifle_AK101_top_rail", 5 ],
+					["CUP_arifle_AK101_GL_top_rail",  2 ],
+					["CUP_arifle_AK74M",          2 ],
+					["CUP_arifle_AKS74U",         2 ],
+					["CUP_hgun_SA61",          4 ],
+					["CUP_10Rnd_B_765x17_Ball_M",   9 ],
+					["G_Carryall_Ammo",			  5 ],
+					["H_Booniehat_khk",			  1 ],
+					["CUP_30Rnd_545x39_AK74_plum_M",  24],
+					["CUP_30Rnd_556x45_AK",  10],
+					["CUP_45Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M", 15],
+					["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M", 6],
+					["V_Chestrig_oli",			  5 ],
+					["CUP_arifle_RPK74M_railed",  1 ],
+					["CUP_lmg_PKM",               1 ],
+					["CUP_launch_RPG18",          5 ],
+					["CUP_PG7V_M",                5 ],
+					["CUP_PG7V_M",                5 ],
+					["CUP_OG7_M",                 5 ],
+					["V_PlateCarrierIAGL_dgtl",   2 ],
+					["CUP_1Rnd_HE_GP25_M",	      20],
+					["H_HelmetIA_net",	          3 ],
+					["Chemlight_green",			  20],
+					["bipod_03_F_blk",			  3 ],
+					["CUP_HandGrenade_RGD5",	  6 ],
+					["CUP_HandGrenade_RGO",       4 ],
+					["SmokeShell",				  10],
+					["SmokeShellGreen",			  10],
+					["acc_flashlight",			  2 ],
+					["Medikit",                   2 ],
+					["H_HelmetIA",                3 ],
+					["optic_ACO_grn",             5 ],
+					["I_Fieldpack_oli_AA",        5 ],
+					["ACE_VMM3",                  2 ],
+					["ToolKit",                   1 ],
+					["CUP_NVG_PVS7",              7 ],
+					["bipod_01_F_blk",			  1 ],
+					["V_RebreatherIA",			  4 ],
+					["I_Assault_Diver",			  4 ],
+					["G_I_Diving",				  4 ]
+				]
 			]
 		]
 	],
@@ -407,6 +651,14 @@
 					'CUP_O_sla_Soldier_AMG',
 					'CUP_O_sla_Soldier_LAT']
 			],
+			['Team Leader', 'CUP_O_sla_SpecOps_TL'],
+			['Corpsman', 	'CUP_O_sla_Medic'],
+			['Grenadier', 	'CUP_O_sla_SpecOps'],
+			['Rifleman', 	'CUP_O_sla_SpecOps'],
+			['Squad Leader','CUP_O_sla_SpecOps_TL'],
+			['Autorifleman','CUP_O_sla_SpecOps_MG'],
+			['Sniper', 		'CUP_O_sla_sniper'],
+			['Spotter', 	'CUP_O_sla_spotter'],
 			[
 			'cars', [
 					'CUP_O_UAZ_AGS30_SLA',
@@ -424,36 +676,57 @@
 					'CUP_O_T72_SLA']
 			],
 			[
+			'antiair', [
+					'CUP_O_ZSU23_SLA']
+			],
+			[
 			'transport', [
 					'CUP_O_Ural_SLA',
 					'CUP_O_Ural_Open_SLA']
 			],
 			[
+			'transport_ammo', [
+					'CUP_O_Ural_Reammo_SLA']
+			],
+			[
+			'transport_repair', [
+					'CUP_O_Ural_Repair_SLA']
+			],
+			[
+			'transport_fuel', [
+					'CUP_O_Ural_Refuel_SLA']
+			],
+			[
+			'transport_medic', [
+					'CUP_O_Ural_Empty_SLA']
+			],
+			[
 			'heli', [
-					'O_Heli_Light_02_unarmed_F']
+					'CUP_O_UH1H_slick_SLA']
 			],
 			[
 			'stash_base_items', [
-				["launch_RPG32_F",				 4 ],
-				["arifle_Katiba_F",				 6 ],
-				["LMG_Zafir_F",					 5 ],
-				["16Rnd_9x21_Mag",				 25],
-				["30Rnd_65x39_caseless_green",	 15],
-				["10Rnd_762x54_Mag",			 15],
-				["150Rnd_762x54_Box",			 8 ],
-				["1Rnd_HE_Grenade_shell",		 10],
+				["CUP_launch_RPG18",			 4 ],
+				["CUP_arifle_AK74",				 6 ],
+				["CUP_launch_RPG7V",		     2 ],
+				["Binocular",					 5 ],
+				["CUP_30Rnd_545x39_AK_M",		 35],
+				["CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M",15],
+				["CUP_8Rnd_9x18_Makarov_M",		 8 ],
+				["CUP_1Rnd_HEDP_M203",		     10],
 				["Chemlight_red",				 10],
-				["RPG32_F",						 5 ],
+				["CUP_PG7V_M",					 5 ],
+				["CUP_OG7_M",					 5 ],
 				["RPG32_HE_F",					 5 ],
 				["Laserbatteries",				 4 ],
-				["HandGrenade",					 10],
+				["CUP_HandGrenade_RGD5",		 10],
 				["SmokeShell",					 10],
 				["SmokeShellRed",				 10],
-				["30Rnd_9x21_Mag_SMG_02",		 16],
+				["CUP_H_SLA_Beret",		         20],
 				["Laserdesignator_02",			 2 ],
 				["acc_flashlight",				 4 ],
 				["bipod_02_F_blk",				 4 ],
-				["B_FieldPack_ocamo",			 10]]
+				["CUP_B_RUS_Backpack",           10]]
 			]
 		]
 	],
@@ -633,6 +906,27 @@
 			[
 			'transport', [
 					'CUP_V3S_Open_NAPA']
+			],
+			[
+			'transport_ammo', [
+					'CUP_I_V3S_Rearm_TKG']
+			],
+			[
+			'transport_repair', [
+					'CUP_I_V3S_Repair_TKG']
+			],
+			[
+			'transport_fuel', [
+					'CUP_I_V3S_Refuel_TKG']
+			],
+			[
+			'transport_medic', [
+					'I_Truck_02_medical_F']
+			],
+			['leader', ['CUP_I_GUE_Commander', ['CUP_arifle_AKS', 'CUP_hgun_Glock17']]],
+			[
+			'heli', [
+					'CUP_I_UH1H_slick_TK_GUE']
 			]
 		]
 	],
@@ -681,8 +975,29 @@
 			],
 			[
 			'transport', [
-					'CUP_V3S_Open_TKG',
-					'CUP_V3S_Covered_TKG']
+					'CUP_I_V3S_Open_TKG',
+					'CUP_I_V3S_Covered_TKG']
+			],
+			[
+			'transport_ammo', [
+					'CUP_I_V3S_Rearm_TKG']
+			],
+			[
+			'transport_repair', [
+					'CUP_I_V3S_Repair_TKG']
+			],
+			[
+			'transport_fuel', [
+					'CUP_I_V3S_Refuel_TKG']
+			],
+			[
+			'transport_medic', [
+					'I_Truck_02_medical_F']
+			],
+			['leader', ['CUP_I_TK_GUE_Commander', ['CUP_arifle_AKS', 'CUP_hgun_Glock17']]],
+			[
+			'heli', [
+					'CUP_I_UH1H_slick_TK_GUE']
 			]
 		]
 	],
@@ -733,6 +1048,27 @@
 					'CUP_I_AAV_RACS',
 					'CUP_I_M113_RACS',
 					'CUP_I_M113_RACS_URB']
+			],
+			[
+			'transport_ammo', [
+					'I_Truck_02_ammo_F']
+			],
+			[
+			'transport_repair', [
+					'I_G_Offroad_01_repair_F']
+			],
+			[
+			'transport_fuel', [
+					'I_G_Van_01_fuel_F']
+			],
+			[
+			'transport_medic', [
+					'I_Truck_02_medical_F']
+			],
+			['leader', ['CUP_I_RACS_Officer', ['CUP_arifle_M16A2', 'CUP_hgun_Glock17']]],
+			[
+			'heli', [
+					'CUP_I_UH_60L_FFV_RACS']
 			]
 		]
 	],

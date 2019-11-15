@@ -75,20 +75,23 @@ if (isServer) then {
 					] call BrezBlock_fnc_Attach_Hold_Action;
 				};
 			};
-			
-			{
-				[avaliable_locations, avaliable_pois] remoteExecCall ["Fn_Local_Create_MissionInformator", _x];
-			} forEach assault_group;
-			
-			trgRegroupIsDone = createTrigger ["EmptyDetector", getMarkerPos (format["wp_%1_airfield_01", D_LOCATION])];
-			trgRegroupIsDone setTriggerArea [0, 0, 0, false];
-			trgRegroupIsDone setTriggerActivation ["NONE", "PRESENT", false];
-			trgRegroupIsDone setTriggerStatements [
-					"task_complete_intormator && task_complete_regroup",
-					"call Fn_Informator_Complete; deleteVehicle trgRegroupIsDone;",
-					""
-			];
 		} forEach avaliable_pois;
+		
+		//systemChat format ["pois: %1", avaliable_pois];
+		//systemChat format ["locs: %1", avaliable_lcs];
+		
+		{
+			remoteExecCall ["Fn_Local_Create_MissionInformator", _x];
+		} forEach assault_group;
+			
+		trgRegroupIsDone = createTrigger ["EmptyDetector", getMarkerPos (format["wp_%1_airfield_01", D_LOCATION])];
+		trgRegroupIsDone setTriggerArea [0, 0, 0, false];
+		trgRegroupIsDone setTriggerActivation ["NONE", "PRESENT", false];
+		trgRegroupIsDone setTriggerStatements [
+				"task_complete_intormator && task_complete_regroup",
+				"call Fn_Informator_Complete; deleteVehicle trgRegroupIsDone;",
+				""
+		];
 	};
 
 	call Fn_Task_Create_Informator;

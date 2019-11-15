@@ -35,6 +35,15 @@ player setSpeaker "NoVoice";
 player unassignItem "ItemGPS";
 player removeItem "ItemGPS";
 
+//If node defaul hgun, give one
+if (handgunWeapon player == "") then {
+	private _base_hgun = ([west, D_FRACTION_WEST, "base_hgun"] call Fn_Config_GetFraction_Units);
+	private _base_hgun_ammo = (_base_hgun select 1);
+	player addWeapon (_base_hgun select 0);
+	player addHandgunItem _base_hgun_ammo;
+	for "_i" from 1 to 2 do {player addItemToVest _base_hgun_ammo;};
+};
+
 switch (D_NAVTOOL_MAP) do {
 	case 1: { 
 		if (!((roleDescription player) in ["Team Leader", "Squad Leader"])) then {
