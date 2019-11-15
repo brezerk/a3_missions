@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={762.33282,111.08045,1162.675};
-		dir[]={0.6886698,-0.6956718,0.20501478};
-		up[]={0.6667009,0.71836799,0.19847693};
-		aside[]={0.28534278,-1.2021046e-006,-0.95849323};
+		pos[]={744.42371,74.37986,1241.967};
+		dir[]={0.39899981,-0.58378315,-0.70728374};
+		up[]={0.28682309,0.81188625,-0.50842839};
+		aside[]={-0.87101668,-2.2175664e-007,-0.49137214};
 	};
 };
 binarizationWanted=0;
@@ -660,7 +660,26 @@ class CustomAttributes
 				};
 			};
 		};
-		nAttributes=2;
+		class Attribute2
+		{
+			property="ReviveMode";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		nAttributes=3;
 	};
 	class Category1
 	{
@@ -16550,7 +16569,7 @@ class Mission
 			};
 			id=4097;
 			type="LOP_UKR_UAZ";
-			atlOffset=0.026630402;
+			atlOffset=0.02639389;
 		};
 		class Item478
 		{
@@ -31001,7 +31020,7 @@ class Mission
 			};
 			id=6835;
 			type="LOP_UKR_UAZ_SPG";
-			atlOffset=0.010189056;
+			atlOffset=0.0041618347;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -31117,7 +31136,7 @@ class Mission
 			};
 			id=6836;
 			type="LOP_UKR_UAZ_Open";
-			atlOffset=-0.0024375916;
+			atlOffset=-0.0031394958;
 		};
 		class Item840
 		{
@@ -35002,7 +35021,7 @@ class Mission
 			};
 			id=7195;
 			type="rhs_gaz66_zu23_msv";
-			atlOffset=0.0022964478;
+			atlOffset=-0.0004119873;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -35908,7 +35927,7 @@ class Mission
 			};
 			id=7226;
 			type="LOP_UKR_BTR80";
-			atlOffset=-0.1426506;
+			atlOffset=-0.15129089;
 			class CustomAttributes
 			{
 				class Attribute0
