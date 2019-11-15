@@ -39,7 +39,6 @@ if (hasInterface) then {
 		] call BIS_fnc_taskCreate;
 		['t_find_informator', "talk"] call BIS_fnc_taskSetType;
 		
-		/*
 		{
 			private ["_trg"];
 			_trg = createTrigger ["EmptyDetector", _x select 1];
@@ -50,7 +49,7 @@ if (hasInterface) then {
 				format ["[ localize 'INFO_LOC_01', format [localize 'INFO_SUBLOC_02', '%1'], format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;", _x select 0],
 				""
 			];
-		} forEach _lcs;*/
+		} forEach avaliable_locations;
 	};
 	
 	Fn_Local_Find_Assault_Group = {

@@ -34,6 +34,7 @@ force ace_repair_engineerSetting_repair = 0;
 
 // ACE Medical
 force ace_medical_amountOfReviveLives = 3;
+force ace_medical_enableRevive = 1;
 force ace_medical_increaseTrainingInLocations = true;
 ace_medical_menu_useMenu = 1;
 force ace_medical_preventInstaDeath = true;

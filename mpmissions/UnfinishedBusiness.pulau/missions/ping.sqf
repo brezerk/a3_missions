@@ -35,7 +35,7 @@ if (isServer) then {
 					if (side _x in [independent, east]) then {
 						private _g_pos = getPos (leader _x);
 						if (_x getVariable ["is_patrol_group", false]) then {
-							if ((_g_pos distance2D _pos) <= 500) then {
+							if ((_g_pos distance2D _pos) <= D_PING_RANGE) then {
 								//inject SAD
 								switch (waypointType [_x, 0]) do {
 									case 'SAD': {

@@ -3,7 +3,7 @@
 	<Package name="UnfinishedBusiness">
 		<Container name="l18n">
 			<Key ID="STR_ONLOAD_NAME">
-				<Original>Unfinished Business v0.9.1012</Original>
+				<Original>Unfinished Business v0.99-BETA</Original>
 			</Key>
 			<Key ID="INFO_SAFEZONE">
 				<Original>Stop shooting or throwing grenades! You are in a safe zone!</Original>

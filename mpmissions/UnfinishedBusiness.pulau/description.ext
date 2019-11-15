@@ -57,7 +57,7 @@ respawnOnStart = -1;
 briefing = 0;
 
 // Revive
-reviveMode = 1;  //0 - disabled; 1 - enabled
+reviveMode = 0;  //0 - disabled; 1 - enabled
 reviveUnconsciousStateMode = 0;
 reviveRequiredItemsFakConsumed = 1;
 reviveRequiredTrait = 0; // all can revive

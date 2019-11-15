@@ -315,17 +315,19 @@ player addEventHandler
     "Take",
     {
 		if (playerSide == civilian) then {
-			if (primaryWeapon player != "" || secondaryWeapon player != "" || handgunWeapon player != "") then {
-				[west] call Fn_Local_Switch_Side;
-				hint (parseText (format ["<t size='2.0'>%1</t>", localize "INFO_CIV_WARNING_01"]));
-				trgCivPlayerDetected = createTrigger ["EmptyDetector", getPos player];
-				trgCivPlayerDetected setTriggerArea [0, 0, 0, false];
-				trgCivPlayerDetected setTriggerActivation ["NONE", "PRESENT", false];
-				trgCivPlayerDetected setTriggerStatements [
-					"call Fn_Local_CheckIfCivPlayerDetected;",
-					"player setVariable ['weapon_fiered', true, false]; deleteVehicle trgCivPlayerDetected; hint (parseText (format [""<t size='2.0'>%1</t>"", localize 'INFO_CIV_WARNING_03']));",
-					""
-				];
+			if (!(player getVariable ["weapon_fiered", false])) then {
+				if (primaryWeapon player != "" || secondaryWeapon player != "" || handgunWeapon player != "") then {
+					[west] call Fn_Local_Switch_Side;
+					hint (parseText (format ["<t size='2.0'>%1</t>", localize "INFO_CIV_WARNING_01"]));
+					trgCivPlayerDetected = createTrigger ["EmptyDetector", getPos player];
+					trgCivPlayerDetected setTriggerArea [0, 0, 0, false];
+					trgCivPlayerDetected setTriggerActivation ["NONE", "PRESENT", false];
+					trgCivPlayerDetected setTriggerStatements [
+						"call Fn_Local_CheckIfCivPlayerDetected;",
+						"player setVariable ['weapon_fiered', true, false]; deleteVehicle trgCivPlayerDetected; hint (parseText (format [""<t size='2.0'>%1</t>"", localize 'INFO_CIV_WARNING_03']));",
+						""
+					];
+				};
 			};
 		};
     }

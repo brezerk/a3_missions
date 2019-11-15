@@ -57,6 +57,7 @@ if (isServer) then {
 	D_NAVTOOL_MAP = nil;
 	D_NAVTOOL_COMPASS = nil;
 	D_PING_TIMEOUT = 30;
+	D_PING_RANGE = 150;
 	
 	D_ADD_INTEL_ACTION = [east, independent];
 	
@@ -240,12 +241,15 @@ if (isServer) then {
 			switch(D_DIFFICLTY) do {
 				case 0: {
 					D_PING_TIMEOUT = 60;
+					D_PING_RANGE = 150;
 				};
 				case 1: {
 					D_PING_TIMEOUT = 45;
+					D_PING_RANGE = 300;
 				};
 				case 2: {
 					D_PING_TIMEOUT = 30;
+					D_PING_RANGE = 500;
 				};
 			};
 			
