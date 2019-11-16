@@ -40,5 +40,17 @@ switch (D_NAVTOOL_COMPASS) do {
 	};
 };
 
+if (D_MOD_ACEX) then {
+	player addItemToUniform selectRandom(["ACE_MRE_BeefStew",
+										"ACE_MRE_ChickenTikkaMasala",
+										"ACE_MRE_ChickenHerbDumplings",
+										"ACE_MRE_CreamChickenSoup",
+										"ACE_MRE_LambCurry",
+										"ACE_MRE_MeatballsPasta",
+										"ACE_MRE_CreamTomatoSoup",
+										"ACE_MRE_SteakVegetables"]);								
+	player addItemToUniform "ACE_WaterBottle";
+};
+
 //Set identity
 player setSpeaker "NoVoice";

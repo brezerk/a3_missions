@@ -13,14 +13,36 @@ removeHeadgear player;
 removeGoggles player;
 
 private _class = "";
+private _role = (roleDescription player);
 
 if (mission_plane_send) then {
-	_class = format ["rescue_%1", (roleDescription player)];
+	_class = format ["rescue_%1", _role];
 } else {
-	_class = (roleDescription player);
+	_class = _role;
 };
 
 player setUnitLoadout (configFile >> "CfgVehicles" >> ([west, D_FRACTION_WEST, _class] call Fn_Config_GetFraction_Units));
+
+//Give medic trait
+if (_role in ["Corpsman", "Recon Paramedic", "SpecOps Paramedic"]) then {
+	if (D_MOD_ACE) then {
+		player setVariable ["ace_medical_medicclass", 1, true];
+	} else {
+		player setUnitTrait ["Medic", true];
+	};
+};
+
+//Make SpecOps harder to detect
+if ((_role find "SpecOps_") >= 0) then {
+	player setUnitTrait ["camouflageCoef ", 0.3];
+	player setUnitTrait ["audibleCoef ", 0.3];
+};
+
+//Make recons harder to detect
+if ((_role find "Recon_") >= 0) then {
+	player setUnitTrait ["camouflageCoef ", 0.7];
+	player setUnitTrait ["audibleCoef ", 0.7];
+};
 
 // If plane was not sent yet -- give player a parashute
 if (!mission_plane_send) then {
@@ -70,10 +92,28 @@ switch (D_NAVTOOL_COMPASS) do {
 	};
 };
 
+if (D_MOD_ACE) then {
+	player addItemToUniform "ACE_EarPlugs";
+};
+
+if (D_MOD_ACEX) then {
+	for "_i" from 1 to 2 do {
+		player addItemToVest selectRandom(["ACE_MRE_BeefStew",
+										"ACE_MRE_ChickenTikkaMasala",
+										"ACE_MRE_ChickenHerbDumplings",
+										"ACE_MRE_CreamChickenSoup",
+										"ACE_MRE_LambCurry",
+										"ACE_MRE_MeatballsPasta",
+										"ACE_MRE_CreamTomatoSoup",
+										"ACE_MRE_SteakVegetables"]);
+	};								
+	player addItemToVest "ACE_Canteen";
+};
+
 sleep 1;
 
 // Give player a radio depending on radio mod loaded
-if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
+if (D_MOD_ACRE) then {
 	// remove default radio
 	player unassignItem "ItemRadio";
 	player removeItem "ItemRadio";
@@ -87,7 +127,7 @@ if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
 	// add specific one
 	player addItemToVest "ACRE_PRC152";
 } else {
-	if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
+	if (D_MOD_TFAR) then {
 		// add specific one
 		player linkItem "tf_anprc152";
 		// remove default radio

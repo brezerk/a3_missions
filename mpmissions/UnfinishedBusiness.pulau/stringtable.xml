@@ -5,6 +5,26 @@
 			<Key ID="STR_ONLOAD_NAME">
 				<Original>Unfinished Business v0.99-BETA</Original>
 			</Key>
+			<Key ID="INFO_MOD_NF_ACE">
+				<Original>WARNING: ACE Mod not found. Advanced Combat Environment features will be disabled.</Original>
+				<English>WARNING: ACE Mod not found. Advanced Combat Environment features will be disabled.</English>
+				<Russian>УВАГА: Мод ACE не знайдено. Розширені функції бойового середовища будуть відключені.</Russian>
+			</Key>
+			<Key ID="INFO_MOD_NF_ACE_MEDICAL">
+				<Original>WARNING: ACE Medical Mod not found. Advanced medical features will be disabled.</Original>
+				<English>WARNING: ACE Medical Mod not found. Advanced medical features will be disabled.</English>
+				<Russian>УВАГА: Мод ACE Medical не знайдено. Розширені функції медицини будуть відключені.</Russian>
+			</Key>
+			<Key ID="INFO_MOD_NF_ACEX">
+				<Original>WARNING: ACEX Mod not found. Survival features will be disabled.</Original>
+				<English>WARNING: ACEX Mod not found. Survival features will be disabled.</English>
+				<Russian>УВАГА: Мод ACEX не знайдено. Функції виживання будуть відключені.</Russian>
+			</Key>
+			<Key ID="INFO_MOD_NF_FACTIONS">
+				<Original>WARNING: CBA Vehicles Mod not found. Advanced fractions will be unavailable.</Original>
+				<English>WARNING: CBA Vehicles Mod not found. Advanced fractions will be unavailable.</English>
+				<Russian>УВАГА: Мод CBA Vehicles не знайдено. Розширені фракції будуть недоступні.</Russian>
+			</Key>
 			<Key ID="INFO_SAFEZONE">
 				<Original>Stop shooting or throwing grenades! You are in a safe zone!</Original>
 				<English>Stop shooting or throwing grenades! You are in a safe zone!</English>

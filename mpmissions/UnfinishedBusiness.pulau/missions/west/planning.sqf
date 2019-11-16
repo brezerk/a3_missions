@@ -110,7 +110,7 @@ if (isServer) then {
 	
 		//Create crash site marker
 		_center = getMarkerPos (selectRandom _markers);
-		_marker = createMarker ["mrk_west_crashsite", _center];
+		_marker = createMarker ["mrk_west_crashsite", [(((_center select 0) + 250) - random(250)), (((_center select 1) + 250) - random(250)), 0]];
 		_marker setMarkerType "hd_destroy";
 		_marker setMarkerAlpha 0;
 		

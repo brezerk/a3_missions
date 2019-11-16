@@ -161,6 +161,10 @@ if (!isNil "_missionLogo") then {
 							[0] execVM "ui\SettingsDialog.sqf";
 						};
 						_intoFrame = _intoFrame + 1;
+						if (!D_MOD_ACE) then { systemChat localize ["INFO_MOD_NF_ACE"]; };
+						if (!D_MOD_ACE_MEDICAL) then { systemChat localize ["INFO_MOD_NF_ACE_MEDICAL"]; };
+						if (!D_MOD_ACEX) then { systemChat localize ["INFO_MOD_NF_ACEX"]; };
+						if (!D_MOD_CUP_VEHICLES) then { systemChat localize ["INFO_MOD_NF_FACTIONS"]; };
 					};
 				};
 			};

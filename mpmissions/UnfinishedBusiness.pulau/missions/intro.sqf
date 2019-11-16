@@ -33,28 +33,26 @@ if (isServer) then {
 		private _class = selectRandom D_FRACTION_WEST_UNITS_TRANSPORT;
 		private _crew_class = getText(configFile >> "CfgVehicles" >> _class >> "crew");
 		
+		
 		us_airplane_01 = createVehicle [_class, [0, 0, 0], [], 0, "CAN_COLLIDE"];
 		us_airplane_01 allowDamage false;
 		private _pos = getPos land_00;
 		land_00 setPosAsl [_pos select 0, _pos select 1, (11 + ([west, D_FRACTION_WEST, "transport_z_offset"] call Fn_Config_GetFraction_Units))];
 	    us_airplane_01 attachTo [land_00, [0, 0, 0]];
 		detach us_airplane_01;
-		us_airplane_01 setDir (getDir land_00);
+		us_airplane_01 setDir (getDir us_liberty_01);
+		us_airplane_01 animateDoor ['Door_1_source', 1];
 		us_airplane_01 setVehicleAmmo 0;
 		
-		private _grp = createGroup [west, true];
-		private _unit = _grp createUnit [_crew_class, us_airplane_01, [], 0, "CARGO"];
-		_unit moveInDriver us_airplane_01;
-		_unit assignAsDriver us_airplane_01;
-		_unit setBehaviour "Careless";
+		private _grp = createVehicleCrew (us_airplane_01);
+		_grp setBehaviour "Careless";
 		
 		us_heli_01 = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_HELI), (getPos land_01), [], 0, "CAN_COLLIDE"];
 		private _pos = getPos land_01;
 		us_heli_01 allowDamage false;
 		us_heli_01 setPosAsl [_pos select 0, _pos select 1, 9];
-		us_heli_01 setDir ([getPos (us_heli_01), getPos(us_airplane_01)] call BIS_fnc_dirTo);
+		us_heli_01 setDir (getDir us_liberty_01);
 		us_heli_01 setVehicleLock "LOCKED";
-		
 		
 		us_boat_01 = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_BOATS), [0, 0, 0], [], 0, "CAN_COLLIDE"];
 		west_rack_01 setVehicleCargo us_boat_01;
@@ -72,6 +70,7 @@ if (isServer) then {
 			"call Fn_MissionIntro_SendAirplane; deleteVehicle thisTrigger;",
 			""
 		];
+		
 		_trg = createTrigger ["EmptyDetector", getMarkerPos "mrk_airfield" ];
 		_trg setTriggerArea [0, 0, 0, false];
 		_trg setTriggerActivation ["NONE", "PRESENT", false];
@@ -101,10 +100,8 @@ if (isServer) then {
 		};
 			
 		remoteExecCall ["Fn_Local_Create_MissionIntro", [0,-2] select isDedicated];
-		
 		us_airplane_01 allowDamage true;
 		us_heli_01 allowDamage true;
-
 	}; // Fn_Create_MissionIntro
 	
 	
@@ -141,6 +138,7 @@ if (isServer) then {
 				_x setVariable ["is_assault_group", true, true];
 			};
 		} forEach crew us_airplane_01;
+		us_airplane_01 animateDoor ['Door_1_source', 0];
 		private _group = group driver us_airplane_01;
 		private _wp = _group addWaypoint [getMarkerPos "mrk_airfield", 0];
 		_wp setWaypointCombatMode "YELLOW";

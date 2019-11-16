@@ -16,20 +16,6 @@ removeGoggles player;
 //FIXME: Possible check player side
 player setUnitLoadout (configFile >> "CfgVehicles" >> ([east, D_FRACTION_EAST, (roleDescription player)] call Fn_Config_GetFraction_Units));
 
-comment "Give player a radio depending on radio mod loaded";
-if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
-	player unassignItem "ItemRadio";
-	player removeItem "ItemRadio";
-	player addItemToVest "ACRE_SEM52SL";
-} else {
-	if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
-		player linkItem "tf_anprc152";
-	} else {
-		comment "Fallback to native arma3 radio";
-		player linkItem "ItemRadio";
-	};
-};
-
 // Kick GPS if any
 player unassignItem "ItemGPS";
 player removeItem "ItemGPS";
@@ -60,5 +46,39 @@ switch (D_NAVTOOL_COMPASS) do {
 	};
 };
 
+if (D_MOD_ACE) then {
+	player addItemToUniform "ACE_EarPlugs";
+};
+
+if (D_MOD_ACEX) then {
+	for "_i" from 1 to 2 do {
+		player addItemToVest selectRandom(["ACE_MRE_BeefStew",
+										"ACE_MRE_ChickenTikkaMasala",
+										"ACE_MRE_ChickenHerbDumplings",
+										"ACE_MRE_CreamChickenSoup",
+										"ACE_MRE_LambCurry",
+										"ACE_MRE_MeatballsPasta",
+										"ACE_MRE_CreamTomatoSoup",
+										"ACE_MRE_SteakVegetables"]);
+	};								
+	player addItemToVest "ACE_Canteen";
+};
+
 //Set identity
 player setSpeaker "NoVoice";
+
+sleep 1;
+
+comment "Give player a radio depending on radio mod loaded";
+if (D_MOD_ACRE) then {
+	player unassignItem "ItemRadio";
+	player removeItem "ItemRadio";
+	player addItemToVest "ACRE_SEM52SL";
+} else {
+	if (D_MOD_TFAR) then {
+		player linkItem "TFAR_fadak";
+	} else {
+		comment "Fallback to native arma3 radio";
+		player linkItem "ItemRadio";
+	};
+};

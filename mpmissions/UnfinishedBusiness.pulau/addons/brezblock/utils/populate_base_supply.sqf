@@ -50,11 +50,12 @@ clearBackpackCargoGlobal _obj;
 		};	
 } forEach ([_side, _faction, (format ["stash_%1_items", _type])] call Fn_Config_GetFraction_Units);
 		
-if (isClass(configFile >> "CfgPatches" >> "ace_main")) then {
+if (D_MOD_ACE) then {
 	_obj addWeaponCargoGlobal ["ACE_VMH3", 2];
 	_obj addItemCargoGlobal ["ACE_EntrenchingTool", 4];
 	_obj addItemCargoGlobal ["ACE_EarPlugs", 10];
 	_obj addItemCargoGlobal ["ACE_DefusalKit", 5];
+	_obj addItemCargoGlobal ["ACE_Clacker", 5];
 } else {
 	_obj addItemCargoGlobal ["MineDetector", 5];
 };
@@ -64,8 +65,13 @@ private _multiplier = 1;
 if (_type == "base") then {
 	_multiplier = 5;
 };
+
+if (D_MOD_ACEX) then {
+	_obj addItemCargoGlobal ["ACE_Humanitarian_Ration", (10 * _multiplier)] ;
+	_obj addItemCargoGlobal ["ACE_WaterBottle", (10 * _multiplier) ];
+};
 		
-if (isClass(configFile >> "CfgPatches" >> "ace_medical")) then {
+if (D_MOD_ACE_MEDICAL) then {
 	_obj addItemCargoGlobal ["ACE_fieldDressing", (25 * _multiplier)];
 	_obj addItemCargoGlobal ["ACE_morphine", (10 * _multiplier)];
 	_obj addItemCargoGlobal ["ACE_epinephrine", (5 * _multiplier)];
@@ -77,11 +83,11 @@ if (isClass(configFile >> "CfgPatches" >> "ace_medical")) then {
 _obj addItemCargoGlobal ["ClaymoreDirectionalMine_Remote_Mag", 6];
 _obj addItemCargoGlobal ["DemoCharge_Remote_Mag", 4];
 			
-if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
+if (D_MOD_ACRE) then {
 		_obj addItemCargoGlobal ["ACRE_PRC152", 4];
 		_obj addItemCargoGlobal ["ACRE_PRC343", 10];
 } else {
-	if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
+	if (D_MOD_TFAR) then {
 		_obj addItemCargoGlobal ["tf_anprc148jem", 4];
 		_obj addItemCargoGlobal ["tf_anprc152", 10];
 	} else {

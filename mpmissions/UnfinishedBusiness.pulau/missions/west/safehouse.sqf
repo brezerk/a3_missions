@@ -63,7 +63,9 @@ if (isServer) then {
 		private _pos = [_markerPos, 0, 35, 4, 0, 0, 0] call BIS_fnc_findSafePos;
 		private _obj = "B_supplyCrate_F" createVehicle (_pos);
 		
-		[west_base_suppy_01, "base", west, D_FRACTION_WEST] call BrezBlock_fnc_PopulateBaseSupply;
+		{
+			[_x, "base", west, D_FRACTION_WEST] call BrezBlock_fnc_PopulateBaseSupply;
+		} forEach [west_base_suppy_01, west_base_suppy_02];
 		
 		_obj addItemCargoGlobal ["ItemCompass", 3];
 		_obj addItemCargoGlobal ["ItemMap", 3];
@@ -75,24 +77,6 @@ if (isServer) then {
 			_obj addItemCargoGlobal ["ACE_WaterBottle", 15];
 		};
 			
-		/*
-		_obj addWeaponCargoGlobal ["CUP_hgun_M9", 2];
-		_obj addWeaponCargoGlobal ["Binocular", 3];
-		_obj addWeaponCargoGlobal ["CUP_arifle_M4A1", 2];
-		_obj addWeaponCargoGlobal ["CUP_arifle_M4A1_GL_carryhandle", 2];
-		_obj addWeaponCargoGlobal ["CUP_arifle_M16A4_Base", 2];
-		_obj addWeaponCargoGlobal ["CUP_launch_M72A6", 2];	
-		_obj addWeaponCargoGlobal ["ACE_VMH3", 2];
-
-		_obj addMagazineCargoGlobal ["CUP_15Rnd_9x19_M9", 10];
-		_obj addMagazineCargoGlobal ["CUP_7Rnd_45ACP_1911", 10];
-		_obj addMagazineCargoGlobal ["CUP_30Rnd_556x45_Stanag", 16];
-		_obj addMagazineCargoGlobal ["CUP_20Rnd_762x51_DMR", 8];
-		_obj addMagazineCargoGlobal ["CUP_1Rnd_HE_M203", 10];
-		_obj addMagazineCargoGlobal ["CUP_M72A6_M", 4];
-		_obj addMagazineCargoGlobal ["CUP_100Rnd_TE4_Green_Tracer_556x45_M249", 4];
-		*/
-		
 		_obj;
 	};
 
