@@ -283,21 +283,21 @@
 			<Key ID="BRIEFING_08_DESC">
 				<Original>&lt;h2&gt;%1 Rescue Squad (RQ)&lt;/h2&gt;&lt;br /&gt;
 %2 Rescue Squad will try to help %3 Special Forces group if it will be forced to leave the island. &lt;font color='#FFD700'&gt;It's primary mission to find and rescue any %4 military survivours&lt;/font&gt;.&lt;br /&gt;&lt;br /&gt;
-USS 'Freedom' destroyer has following equipment meant to be used for Rescue optation:&lt;br /&gt;&lt;br /&gt;
+USS 'Democracy' destroyer has following equipment meant to be used for Rescue optation:&lt;br /&gt;&lt;br /&gt;
 * &lt;font color='#FFD700'&gt;1 light helicopter&lt;/font&gt;&lt;br /&gt;
 * &lt;font color='#FFD700'&gt;2 armed speedboats located on boat racks&lt;/font&gt;&lt;br /&gt;&lt;br /&gt;
 &lt;img image='data\images\fractions\%5\group.paa' width='256' height='256'/&gt;
 				</Original>
 				<English>&lt;h2&gt;%1 Rescue Squad (RQ)&lt;/h2&gt;&lt;br /&gt;
 %2 Rescue Squad will try to help %3 Special Forces group if it will be forced to leave the island. &lt;font color='#FFD700'&gt;It's primary mission to find and rescue any %4 military survivours&lt;/font&gt;.&lt;br /&gt;&lt;br /&gt;
-USS 'Freedom' has following equipment meant to be used for Rescue optation:&lt;br /&gt;&lt;br /&gt;
+USS 'Democracy' has following equipment meant to be used for Rescue optation:&lt;br /&gt;&lt;br /&gt;
 * &lt;font color='#FFD700'&gt;1 light helicopter&lt;/font&gt;&lt;br /&gt;
 * &lt;font color='#FFD700'&gt;2 armed speedboats located on boat racks&lt;/font&gt;&lt;br /&gt;&lt;br /&gt;
 &lt;img image='data\images\fractions\%5\group.paa' width='256' height='256'/&gt;
 				</English>
 				<Russian>&lt;h2&gt;Рятувальний загін %1 (RQ)&lt;/h2&gt;&lt;br /&gt;
 Рятувальний загін %1 намагатиметься допомогти групі спецназу %2, якщо його змусять покинути острів. &lt;font color='#FFD700'&gt;Основна місія - знайти та врятувати виживших військових %4&lt;/font&gt;.&lt;br /&gt;&lt;br /&gt;
-Есмінець USS 'Freedom' має наступне обладнання для рятувальних місій:&lt;br /&gt;&lt;br /&gt;
+Есмінець USS 'Democracy' має наступне обладнання для рятувальних місій:&lt;br /&gt;&lt;br /&gt;
 * &lt;font color='#FFD700'&gt;1 легкий гелікоптер&lt;/font&gt;&lt;br /&gt;
 * &lt;font color='#FFD700'&gt;2 озброєні катери, розташовані на стійках для човнів&lt;/font&gt;&lt;br /&gt;&lt;br /&gt;
 &lt;img image='data\images\fractions\%5\group.paa' width='256' height='256'/&gt;
@@ -683,7 +683,7 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 			<Key ID="INFO_WAIT_01">
 				<Original>Wait for mission to be planned by the &lt;t color='#FFD700'&gt;Squad Leader&lt;/t&gt;</Original>
 				<English>Wait for mission to be planned by the &lt;t color='#FFD700'&gt;Squad Leader&lt;/t&gt;</English>
-				<Russian>Зачекайте, поки &lt;t color='#FFD700'&gt;Squad Leader&lt;/t&gt; запланує місію</Russian>
+				<Russian>Зачекайте, доки &lt;t color='#FFD700'&gt;Squad Leader&lt;/t&gt; запланує місію</Russian>
 			</Key>
 			<Key ID="INFO_WAIT_02">
 				<Original>Mission has been requested. &lt;t color='#FFD700'&gt;Briefing updated&lt;/t&gt;!</Original>
@@ -781,34 +781,34 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>Гру замкнено. Спробуйте пізніше.</Russian>
 			</Key>
 			<Key ID="STR_END_01_TITLE">
-				<Original>US Special Forces were eliminated</Original>
-				<English>US Special Forces were eliminated</English>
-				<Russian>Cпецназ США ліквідовано</Russian>
+				<Original>West Forces were eliminated</Original>
+				<English>West Forces were eliminated</English>
+				<Russian>Сили Заходу ліквідовано</Russian>
 			</Key>
 			<Key ID="STR_END_01_DESC">
-				<Original>US Special Forces Group was eliminated. AOC and Bandit groups are controlling Pulau islands for now.</Original>
-				<English>US Special Forces Group was eliminated. AOC and Bandit groups are controlling Pulau islands for now.</English>
-				<Russian>Групу спеціальних сил США було ліквідовано. Сили AOC разом з группами бандитів контролюють острови Пулау і по цей день.</Russian>
+				<Original>West Special Forces Group was eliminated. AOC and Bandit groups are controlling Pulau islands for now.</Original>
+				<English>West Special Forces Group was eliminated. AOC and Bandit groups are controlling Pulau islands for now.</English>
+				<Russian>Групу спеціальних сил Заходу було ліквідовано. Сили AOC разом з группами бандитів контролюють острови Пулау і по цей день.</Russian>
 			</Key>
 			<Key ID="STR_END_03_TITLE">
-				<Original>US Special Forces were resqued</Original>
-				<English>US Special Forces were resqued</English>
-				<Russian>Cпецназ США було врятовано</Russian>
+				<Original>West Forces were resqued</Original>
+				<English>West Forces were resqued</English>
+				<Russian>Cили Заходу врятовано</Russian>
 			</Key>
 			<Key ID="STR_END_03_DESC">
-				<Original>US Special Forces Group was rescued. AOC forces lost its foothold and began withdrawing of the military forces. Bandit groups are still controlling Pulau islands.</Original>
-				<English>US Special Forces Group was rescued. AOC forces lost its foothold and began withdrawing of the military forces. Bandit groups are still controlling Pulau islands.</English>
-				<Russian>Групу спеціальних сил США було врятовано. Сили АОС втратили свої позиції і почали виводити військову силу. Бандитські групи все ще контролюють острови Пулау.</Russian>
+				<Original>West Special Forces Group was rescued. AOC forces lost its foothold and began withdrawing of the military forces. Bandit groups are still controlling Pulau islands.</Original>
+				<English>West Special Forces Group was rescued. AOC forces lost its foothold and began withdrawing of the military forces. Bandit groups are still controlling Pulau islands.</English>
+				<Russian>Групу спеціальних сил Заходу було врятовано. Сили АОС втратили свої позиції і почали виводити військову силу. Бандитські групи все ще контролюють острови Пулау.</Russian>
 			</Key>
 			<Key ID="STR_END_02_TITLE">
-				<Original>US Special Forces were resqued</Original>
-				<English>US Special Forces were resqued</English>
-				<Russian>Cпецназ США було врятовано</Russian>
+				<Original>West Forces were resqued</Original>
+				<English>West Forces were resqued</English>
+				<Russian>Cили Заходу врятовано</Russian>
 			</Key>
 			<Key ID="STR_END_02_DESC">
-				<Original>US Special Forces Group was rescued. AOC and Bandit groups are controlling Pulau islands for now.</Original>
-				<English>US Special Forces Group was rescued. AOC and Bandit groups are controlling Pulau islands for now.</English>
-				<Russian>Групу спеціальних сил США було врятовано. Сили AOC разом з группами бандитів контролюють острови Пулау і по цей день.</Russian>
+				<Original>West Special Forces Group was rescued. AOC and Bandit groups are controlling Pulau islands for now.</Original>
+				<English>West Special Forces Group was rescued. AOC and Bandit groups are controlling Pulau islands for now.</English>
+				<Russian>Групу спеціальних сил Заходу було врятовано. Сили AOC разом з группами бандитів контролюють острови Пулау і по цей день.</Russian>
 			</Key>
 			<Key ID="STR_END_04_TITLE">
 				<Original>Bandit leader was eliminated</Original>
