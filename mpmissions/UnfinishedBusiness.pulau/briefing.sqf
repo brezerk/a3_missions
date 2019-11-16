@@ -31,15 +31,17 @@ waitUntil {
 		mission_requested;
 };
 
+private _west = getText (configFile >> "CfgFactionClasses" >> D_FRACTION_WEST >> "displayName");
+
 player createDiaryRecord ["Diary", ["-------------", ""]];
 player createDiaryRecord ["Diary", [localize "BRIEFING_02_TITLE", localize "BRIEFING_02_DESC"]];
 player createDiaryRecord ["Diary", [localize "BRIEFING_03_TITLE", localize "BRIEFING_03_DESC"]];
 player createDiaryRecord ["Diary", ["-------------", ""]];
-player createDiaryRecord ["Diary", [localize "BRIEFING_04_TITLE", localize "BRIEFING_04_DESC"]]; 
+player createDiaryRecord ["Diary", [localize "BRIEFING_04_TITLE",  format [localize "BRIEFING_04_DESC", _west]]]; 
 player createDiaryRecord ["Diary", [localize "BRIEFING_05_TITLE", localize "BRIEFING_05_DESC"]];
 player createDiaryRecord ["Diary", ["-------------", ""]];
-player createDiaryRecord ["Diary", [localize "BRIEFING_11_TITLE", format [localize "BRIEFING_11_DESC", D_FRACTION_CIV]]];
+player createDiaryRecord ["Diary", [localize "BRIEFING_11_TITLE", format [localize "BRIEFING_11_DESC", _west, D_FRACTION_CIV]]];
 player createDiaryRecord ["Diary", [localize "BRIEFING_10_TITLE", format [localize "BRIEFING_10_DESC", D_FRACTION_INDEP]]];
-player createDiaryRecord ["Diary", [localize "BRIEFING_09_TITLE", format [localize "BRIEFING_09_DESC", D_FRACTION_EAST]]];
-player createDiaryRecord ["Diary", [localize "BRIEFING_08_TITLE", format [localize "BRIEFING_08_DESC", D_FRACTION_WEST]]];
-player createDiaryRecord ["Diary", [localize "BRIEFING_06_TITLE", format [localize "BRIEFING_06_DESC", D_FRACTION_WEST]]];
+player createDiaryRecord ["Diary", [localize "BRIEFING_09_TITLE", format [localize "BRIEFING_09_DESC", _west, D_FRACTION_EAST]]];
+player createDiaryRecord ["Diary", [format [localize "BRIEFING_08_TITLE", _west], format [localize "BRIEFING_08_DESC", _west, _west, _west, _west, D_FRACTION_WEST]]];
+player createDiaryRecord ["Diary", [format [localize "BRIEFING_06_TITLE", _west], format [localize "BRIEFING_06_DESC", _west, _west, D_FRACTION_WEST]]];

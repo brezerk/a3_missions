@@ -83,7 +83,7 @@ if (!isNil "_missionLogo") then {
 			sleep 1;
 			if (_forEachIndex in [0, 4, 8]) then {
 				if (_intoFrame > 2) then {
-					cutText [localize "INFO_WAIT_01", "PLAIN DOWN", 2];
+					cutText [localize "INFO_WAIT_01", "PLAIN DOWN", 2, true, true];
 				};
 				switch (_intoFrame) do {
 					case 0: {
@@ -157,14 +157,14 @@ if (!isNil "_missionLogo") then {
 						_intoFrame = _intoFrame + 1;
 					};
 					case 3: {
-						if (((roleDescription player) == "Team Leader") || (D_DEBUG)) then {
+						if (((roleDescription player) == "Squad Leader") || (D_DEBUG)) then {
 							[0] execVM "ui\SettingsDialog.sqf";
 						};
 						_intoFrame = _intoFrame + 1;
-						if (!D_MOD_ACE) then { systemChat localize ["INFO_MOD_NF_ACE"]; };
-						if (!D_MOD_ACE_MEDICAL) then { systemChat localize ["INFO_MOD_NF_ACE_MEDICAL"]; };
-						if (!D_MOD_ACEX) then { systemChat localize ["INFO_MOD_NF_ACEX"]; };
-						if (!D_MOD_CUP_VEHICLES) then { systemChat localize ["INFO_MOD_NF_FACTIONS"]; };
+						if (!D_MOD_ACE) then { systemChat localize "INFO_MOD_NF_ACE"; };
+						if (!D_MOD_ACE_MEDICAL) then { systemChat localize "INFO_MOD_NF_ACE_MEDICAL"; };
+						if (!D_MOD_ACEX) then { systemChat localize "INFO_MOD_NF_ACEX"; };
+						if (!D_MOD_CUP_VEHICLES) then { systemChat localize "INFO_MOD_NF_FACTIONS"; };
 					};
 				};
 			};
@@ -183,7 +183,7 @@ if (!isNil "_missionLogo") then {
 	camDestroy _cam;
 	["Default"] call BIS_fnc_setPPeffectTemplate;
 	[1, "BLACK", 1, 1] call BIS_fnc_fadeEffect;
-	cutText [localize "INFO_WAIT_02", "PLAIN DOWN", 2];
+	cutText [localize "INFO_WAIT_02", "PLAIN DOWN", 2, true, true];
 	
 	[[""]] call BIS_fnc_music;
 };

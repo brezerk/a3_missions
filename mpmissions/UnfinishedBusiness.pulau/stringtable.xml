@@ -6,24 +6,24 @@
 				<Original>Unfinished Business v0.99-BETA</Original>
 			</Key>
 			<Key ID="INFO_MOD_NF_ACE">
-				<Original>WARNING: ACE Mod not found. Advanced Combat Environment features will be disabled.</Original>
-				<English>WARNING: ACE Mod not found. Advanced Combat Environment features will be disabled.</English>
-				<Russian>УВАГА: Мод ACE не знайдено. Розширені функції бойового середовища будуть відключені.</Russian>
+				<Original>INFO: ACE Mod not found. Advanced Combat Environment features will be disabled.</Original>
+				<English>INFO: ACE Mod not found. Advanced Combat Environment features will be disabled.</English>
+				<Russian>ІНФО: Мод ACE не знайдено. Розширені функції бойового середовища будуть відключені.</Russian>
 			</Key>
 			<Key ID="INFO_MOD_NF_ACE_MEDICAL">
-				<Original>WARNING: ACE Medical Mod not found. Advanced medical features will be disabled.</Original>
-				<English>WARNING: ACE Medical Mod not found. Advanced medical features will be disabled.</English>
-				<Russian>УВАГА: Мод ACE Medical не знайдено. Розширені функції медицини будуть відключені.</Russian>
+				<Original>INFO: ACE Medical Mod not found. Advanced medical features will be disabled.</Original>
+				<English>INFO: ACE Medical Mod not found. Advanced medical features will be disabled.</English>
+				<Russian>ІНФО: Мод ACE Medical не знайдено. Розширені функції медицини будуть відключені.</Russian>
 			</Key>
 			<Key ID="INFO_MOD_NF_ACEX">
-				<Original>WARNING: ACEX Mod not found. Survival features will be disabled.</Original>
-				<English>WARNING: ACEX Mod not found. Survival features will be disabled.</English>
-				<Russian>УВАГА: Мод ACEX не знайдено. Функції виживання будуть відключені.</Russian>
+				<Original>INFO: ACEX Mod not found. Survival features will be disabled.</Original>
+				<English>INFO: ACEX Mod not found. Survival features will be disabled.</English>
+				<Russian>ІНФО: Мод ACEX не знайдено. Функції виживання будуть відключені.</Russian>
 			</Key>
 			<Key ID="INFO_MOD_NF_FACTIONS">
-				<Original>WARNING: CBA Vehicles Mod not found. Advanced fractions will be unavailable.</Original>
-				<English>WARNING: CBA Vehicles Mod not found. Advanced fractions will be unavailable.</English>
-				<Russian>УВАГА: Мод CBA Vehicles не знайдено. Розширені фракції будуть недоступні.</Russian>
+				<Original>INFO: CBA Vehicles Mod not found. Advanced fractions will be unavailable.</Original>
+				<English>INFO: CBA Vehicles Mod not found. Advanced fractions will be unavailable.</English>
+				<Russian>ІНФО: Мод CBA Vehicles не знайдено. Розширені фракції будуть недоступні.</Russian>
 			</Key>
 			<Key ID="INFO_SAFEZONE">
 				<Original>Stop shooting or throwing grenades! You are in a safe zone!</Original>
@@ -71,14 +71,14 @@
 				<Russian>Здається вас ніхто не помітив...</Russian>
 			</Key>
 			<Key ID="STR_ONLOAD_INFO_01">
-				<Original>US Special Forces squad goes to perform a peacekeeping mission</Original>
-				<English>US Special Forces squad goes to perform a peacekeeping mission.</English>
-				<Russian>Група спецназу США вирушае виконувати миротворчу місію.</Russian>
+				<Original>West forces performing a peacekeeping operation.</Original>
+				<English>West forces performing a peacekeeping operation.</English>
+				<Russian>Західні сили проводять миротворчу операцію.</Russian>
 			</Key>
 			<Key ID="STR_ONLOAD_INFO_02">
-				<Original>Following the death of the former dictator, the Pulau National Guard (PNG) has broken up into several gangs, which are conducting situational battles over the cities and villages. Under the guise of a "peacekeeping operation", the Army of Sahri (AOC), led by General Puhlo Pu, started an military invasion. A ceasefire decision is currently in effect. US Special Task Force sould ensure the security of civilians and to facilitate a peaceful resolution of the conflict.</Original>
-				<English>Following the death of the former dictator, the Pulau National Guard (PNG) has broken up into several gangs, which are conducting situational battles over the cities and villages. Under the guise of a "peacekeeping operation", the Army of Sahri (AOC), led by General Puhlo Pu, started an military invasion. A ceasefire decision is currently in effect. US Special Task Force sould ensure the security of civilians and to facilitate a peaceful resolution of the conflict.</English>
-				<Russian>Після смерті колишнього диктатору Національна Гвардія Пулау (НГП) розвалилась на декілька бандитських угруповань які ведуть ситуативні бої за міста та села. Під прикриттям "миротворчої операції" Армія Островів Сахрі (AOC) на чолі з генералом Пухло Пу розпочала військове вторгнення. На цей час діє рішення про припинення вогню. Задача групи спеціального призначення США забезпечити безпеку мирного населення та сприяти мирному врегулюванню конфлікту.</Russian>
+				<Original>Following the death of the former dictator, the Pulau National Guard (PNG) has broken up into several gangs, which are conducting situational battles over the cities and villages. Under the guise of a "peacekeeping operation", the Army of Sahri (AOC), led by General Puhlo Pu, started an military invasion. A ceasefire decision is currently in effect. West forces sould ensure the security of civilians and to facilitate a peaceful resolution of the conflict.</Original>
+				<English>Following the death of the former dictator, the Pulau National Guard (PNG) has broken up into several gangs, which are conducting situational battles over the cities and villages. Under the guise of a "peacekeeping operation", the Army of Sahri (AOC), led by General Puhlo Pu, started an military invasion. A ceasefire decision is currently in effect. West forces sould ensure the security of civilians and to facilitate a peaceful resolution of the conflict.</English>
+				<Russian>Після смерті колишнього диктатору Національна Гвардія Пулау (НГП) розвалилась на декілька бандитських угруповань які ведуть ситуативні бої за міста та села. Під прикриттям "миротворчої операції" Армія Островів Сахрі (AOC) на чолі з генералом Пухло Пу розпочала військове вторгнення. На цей час діє рішення про припинення вогню. Західні сили повинні забезпечити безпеку мирного населення та сприяти мирному врегулюванню конфлікту.</Russian>
 			</Key>
 			<Key ID="BRIEFING_00_TITLE">
 				<Original>Difficulty levels</Original>
@@ -97,6 +97,8 @@
 				* Chance of radio transmitter loss during landing - 0%&lt;br /&gt;
 				* Chance of losing map during landing - 0%&lt;br /&gt;
 				* Chance of losing compass during landing - 0%&lt;br /&gt;
+				* Ping timeout - 60 seconds&lt;br /&gt;
+				* Ping range - 150 meters&lt;br /&gt;
 				&lt;br /&gt;
 				&lt;h2&gt;Hardcore&lt;/h2&gt;&lt;br /&gt;
 				* Chance of weapon loss during landing - 60%&lt;br /&gt;
@@ -105,6 +107,8 @@
 				* Chance of radio transmitter loss during landing - 50%&lt;br /&gt;
 				* Chance of losing map during landing - 50%&lt;br /&gt;
 				* Chance of losing compass during landing - 0%&lt;br /&gt;
+				* Ping timeout - 45 seconds&lt;br /&gt;
+				* Ping range - 300 meters&lt;br /&gt;
 				&lt;br /&gt;
 				&lt;h2&gt;Nightmare&lt;/h2&gt;&lt;br /&gt;
 				* Chance of weapon loss during landing - 100%&lt;br /&gt;
@@ -113,8 +117,12 @@
 				* Chance of radio transmitter loss during landin - 100%&lt;br /&gt;
 				* Chance of losing map during landing - 100%&lt;br /&gt;
 				* Chance of losing compass during landing - 100%&lt;br /&gt;
+				* Ping timeout - 30 seconds&lt;br /&gt;
+				* Ping range - 500 meters&lt;br /&gt;
 				&lt;br /&gt;
-				</Original>Additional levels of difficulty will allow you to encounter even more challenges during the mission. Use the &lt;font color='#FFD700'&gt;Easy&lt;/font&gt; level to get familiar with the mission.
+				</Original>
+				<English>
+				Additional levels of difficulty will allow you to encounter even more challenges during the mission. Use the &lt;font color='#FFD700'&gt;Easy&lt;/font&gt; level to get familiar with the mission.
 				&lt;br /&gt;
 				Existing levels of complexity and their description:
 				&lt;br /&gt;&lt;br /&gt;
@@ -125,6 +133,8 @@
 				* Chance of radio transmitter loss during landing - 60%&lt;br /&gt;
 				* Chance of losing map during landing - 0%&lt;br /&gt;
 				* Chance of losing compass during landing - 0%&lt;br /&gt;
+				* Ping timeout - 60 seconds&lt;br /&gt;
+				* Ping range - 150 meters&lt;br /&gt;
 				&lt;br /&gt;
 				&lt;h2&gt;Hardcore&lt;/h2&gt;&lt;br /&gt;
 				* Chance of weapon loss during landing - 60%&lt;br /&gt;
@@ -133,6 +143,8 @@
 				* Chance of radio transmitter loss during landing - 80%&lt;br /&gt;
 				* Chance of losing map during landing - 50%&lt;br /&gt;
 				* Chance of losing compass during landing - 50%&lt;br /&gt;
+				* Ping timeout - 45 seconds&lt;br /&gt;
+				* Ping range - 300 meters&lt;br /&gt;
 				&lt;br /&gt;
 				&lt;h2&gt;Nightmare&lt;/h2&gt;&lt;br /&gt;
 				* Chance of weapon loss during landing - 100%&lt;br /&gt;
@@ -141,8 +153,9 @@
 				* Chance of radio transmitter loss during landin - 100%&lt;br /&gt;
 				* Chance of losing map during landing - 100%&lt;br /&gt;
 				* Chance of losing compass during landing - 100%&lt;br /&gt;
+				* Ping timeout - 30 seconds&lt;br /&gt;
+				* Ping range - 500 meters&lt;br /&gt;
 				&lt;br /&gt;
-				<English>
 				</English>
 				<Russian>Додаткові рівні складності дозволять Вам зіткнутися з ще більшими челенджами при проходженні місії. Використовуйте &lt;font color='#FFD700'&gt;Легкий&lt;/font&gt; рівень для ознайомлення.
 				&lt;br /&gt;
@@ -155,6 +168,8 @@
 				* Шанс втрати радіопередавача при дестантуванні - 60%&lt;br /&gt;
 				* Шанс втрати мапи при дестантуванні - 0%&lt;br /&gt;
 				* Шанс втрати компаса при дестантуванні - 0%&lt;br /&gt;
+				* Пінг таймаут - 60 секунд&lt;br /&gt;
+				* Пінг дистанція - 150 метрів&lt;br /&gt;
 				&lt;br /&gt;
 				&lt;h2&gt;Хардкор&lt;/h2&gt;&lt;br /&gt;
 				* Шанс втрати зброї при дестантуванні - 60%&lt;br /&gt;
@@ -163,6 +178,8 @@
 				* Шанс втрати радіопередавача при дестантуванні - 80%&lt;br /&gt;
 				* Шанс втрати мапи при дестантуванні - 50%&lt;br /&gt;
 				* Шанс втрати компаса при дестантуванні - 50%&lt;br /&gt;
+				* Пінг таймаут - 45 секунд&lt;br /&gt;
+				* Пінг дистанція - 300 метрів&lt;br /&gt;
 				&lt;br /&gt;
 				&lt;h2&gt;Кошмар&lt;/h2&gt;&lt;br /&gt;
 				* Шанс втрати зброї при дестантуванні - 100%&lt;br /&gt;
@@ -171,6 +188,8 @@
 				* Шанс втрати радіопередавача при дестантуванні - 100%&lt;br /&gt;
 				* Шанс втрати мапи при дестантуванні - 100%&lt;br /&gt;
 				* Шанс втрати компаса при дестантуванні - 100%&lt;br /&gt;
+				* Пінг таймаут - 30 секунд&lt;br /&gt;
+				* Пінг дистанція - 500 метрів&lt;br /&gt;
 				&lt;br /&gt;
 				</Russian>
 			</Key>
@@ -180,9 +199,9 @@
 				<Russian>Ігрові умовності</Russian>
 			</Key>
 			<Key ID="BRIEFING_01_DESC">
-				<Original>Most of the dynamic objects and their locations are random, player experience may change.&lt;br /&gt;&lt;br /&gt;Rrespawn tickets count per player is limited to - 0.&lt;br /&gt;&lt;br /&gt;Recommenred game diffictlty settings are:&lt;br /&gt;&lt;br /&gt; * Preset: Veteran.&lt;br /&gt; * Detected mines: Hide&lt;br /&gt;&lt;br /&gt;Recommenred Addon setttings are:&lt;br /&gt;&lt;br /&gt; * ACE Logistics -&gt; Allow Repair = Everyone;&lt;br /&gt; * ACE Medical -&gt; Prevent Instant Death = True;&lt;br /&gt; * ACE Medical -&gt; Locations Boost Training = True; This will allow ordinary soldiers to transfuse blood at hospitals.</Original>
-				<English>Most of the dynamic objects and their locations are random, player experience may change.&lt;br /&gt;&lt;br /&gt;Rrespawn tickets count per player is limited to - 0.&lt;br /&gt;&lt;br /&gt;Recommenred game diffictlty settings are:&lt;br /&gt;&lt;br /&gt; * Preset: Veteran.&lt;br /&gt; * Detected mines: Hide&lt;br /&gt;&lt;br /&gt;Recommenred Addon setttings are:&lt;br /&gt;&lt;br /&gt; * ACE Logistics -&gt; Allow Repair = Everyone;&lt;br /&gt; * ACE Medical -&gt; Prevent Instant Death = True;&lt;br /&gt; * ACE Medical -&gt; Locations Boost Training = True; This will allow ordinary soldiers to transfuse blood at hospitals.</English>
-				<Russian>Більшість динамічних об'єктів та їх місцеположення є випадковими, досвід гравця може змінюватися.&lt;br /&gt;&lt;br /&gt;Кількість респаунів на гравця - 0.&lt;br /&gt;&lt;br /&gt;Рекомендовані налаштування для гри:&lt;br / &gt;&lt;br /&gt; * Попередньо встановлені налаштування: Ветеран.&lt;br /&gt; * Виявлені міни: Приховати&lt;br /&gt;&lt;br /&gt;Рекомендовані налаштування Додатків:&lt;br /&gt;&lt;br /&gt; * ACE Logistics -&gt; Allow Repair = Everyone; &lt;br /&gt; * ACE Medical -&gt; Prevent Instant Death = True; &lt;br /&gt; * ACE Medical -&gt; Locations Boost Training = True; Це дозволить звичайним солдатам переливати кров у шпиталях.</Russian>
+				<Original>Most of the dynamic objects and their locations are random, player experience may change.&lt;br /&gt;&lt;br /&gt;Revive tickets count per player are limited to - 3.&lt;br /&gt;&lt;br /&gt;Recommenred game diffictlty settings are:&lt;br /&gt;&lt;br /&gt; * Preset: Veteran.&lt;br /&gt; * Detected mines: Hide&lt;br /&gt;&lt;br /&gt;Recommenred Addon setttings are:&lt;br /&gt;&lt;br /&gt; * ACE Logistics -&gt; Allow Repair = Everyone;&lt;br /&gt; * ACE Medical -&gt; Prevent Instant Death = True;&lt;br /&gt; * ACE Medical -&gt; Locations Boost Training = True; This will allow ordinary soldiers to transfuse blood at hospitals.</Original>
+				<English>Most of the dynamic objects and their locations are random, player experience may change.&lt;br /&gt;&lt;br /&gt;Revive tickets count per player are limited to - 3.&lt;br /&gt;&lt;br /&gt;Recommenred game diffictlty settings are:&lt;br /&gt;&lt;br /&gt; * Preset: Veteran.&lt;br /&gt; * Detected mines: Hide&lt;br /&gt;&lt;br /&gt;Recommenred Addon setttings are:&lt;br /&gt;&lt;br /&gt; * ACE Logistics -&gt; Allow Repair = Everyone;&lt;br /&gt; * ACE Medical -&gt; Prevent Instant Death = True;&lt;br /&gt; * ACE Medical -&gt; Locations Boost Training = True; This will allow ordinary soldiers to transfuse blood at hospitals.</English>
+				<Russian>Більшість динамічних об'єктів та їх місцеположення є випадковими, досвід гравця може змінюватися.&lt;br /&gt;&lt;br /&gt;Кількість відроджень на гравця - 3.&lt;br /&gt;&lt;br /&gt;Рекомендовані налаштування для гри:&lt;br / &gt;&lt;br /&gt; * Попередньо встановлені налаштування: Ветеран.&lt;br /&gt; * Виявлені міни: Приховати&lt;br /&gt;&lt;br /&gt;Рекомендовані налаштування Додатків:&lt;br /&gt;&lt;br /&gt; * ACE Logistics -&gt; Allow Repair = Everyone; &lt;br /&gt; * ACE Medical -&gt; Prevent Instant Death = True; &lt;br /&gt; * ACE Medical -&gt; Locations Boost Training = True; Це дозволить звичайним солдатам переливати кров у шпиталях.</Russian>
 			</Key>
 			<Key ID="BRIEFING_02_TITLE">
 				<Original>Pulau Monuet island</Original>
@@ -210,9 +229,9 @@
 				<Russian>Ресурси</Russian>
 			</Key>
 			<Key ID="BRIEFING_04_DESC">
-				<Original>Your staff is a unit of the United States Army 160th Special Operations Aviation Regiment (Airborne).</Original>
-				<English>Your staff is a unit of the United States Army 160th Special Operations Aviation Regiment (Airborne).</English>
-				<Russian>У Вашому розпорядженні особовий склад з 160-й авіаційний полк спеціального назначення США.</Russian>
+				<Original>Your staff is a unit of the %1 160th Special Operations Aviation Regiment (Airborne).</Original>
+				<English>Your staff is a unit of the %1 160th Special Operations Aviation Regiment (Airborne).</English>
+				<Russian>У Вашому розпорядженні особовий склад з 160-й авіаційний полк спеціального назначення %1.</Russian>
 			</Key>
 			<Key ID="BRIEFING_05_TITLE">
 				<Original>Order</Original>
@@ -225,25 +244,25 @@
 				<Russian>Ваш наказ: Прибути до аеродрому та доповісти команидру. Забезпечити безпеку мирного населення та сприяти мирному врегулюванню конфлікта.&lt;br /&gt;&lt;br /&gt;Другорядна ціль: розвідати позиції АОС та слідкувати за її військовими силами.</Russian>
 			</Key>
 			<Key ID="BRIEFING_06_TITLE">
-				<Original>Fraction: USA 160th SOAR (A)</Original>
-				<English>Fraction: USA 160th SOAR (A)</English>
-				<Russian>Фракціїя: США 160 ОАП</Russian>
+				<Original>Fraction: %1</Original>
+				<English>Fraction: %1</English>
+				<Russian>Фракціїя: %1</Russian>
 			</Key>
 			<Key ID="BRIEFING_06_DESC">
-				<Original>&lt;h2&gt;United States Army 160th Special Operations Aviation Regiment (Airborne) (160th SOAR (A))&lt;/h2&gt;&lt;br /&gt;
-US Special Forces Group is conducting peacekeeping operations. It is also has to scout AOC positions and keep eye on its military forces. 
-&lt;font color='#FFD700'&gt;This group is the main story line for this mission.&lt;/font&gt; The mission will ends as soon as the last member of this group will be killed.
-&lt;img image='data\images\fractions\%1\group_main.paa' width='256' height='256'/&gt;
+				<Original>&lt;h2&gt;%1 160th Special Operations Aviation Regiment (Airborne) (160th SOAR (A))&lt;/h2&gt;&lt;br /&gt;
+%2 Special Forces Group is conducting peacekeeping operations. It is also has to scout AOC positions and keep eye on its military forces. 
+&lt;font color='#FFD700'&gt;This group is the main story line for this mission.&lt;/font&gt; The mission will ends as soon as the last member of this group will be killed.&lt;br /&gt;&lt;br /&gt;
+&lt;img image='data\images\fractions\%3\group_main.paa' width='256' height='256'/&gt;
 				</Original>
-				<English>&lt;h2&gt;United States Army 160th Special Operations Aviation Regiment (Airborne) (160th SOAR (A))&lt;/h2&gt;&lt;br /&gt;
-US Special Forces Group is conducting peacekeeping operations. It is also has to scout AOC positions and keep eye on its military forces. 
-&lt;font color='#FFD700'&gt;This group is the main story line for this mission.&lt;/font&gt; The mission will ends as soon as the last member of this group will be killed.
-&lt;img image='data\images\fractions\%1\group_main.paa' width='256' height='256'/&gt;
+				<English>&lt;h2&gt;%1 160th Special Operations Aviation Regiment (Airborne) (160th SOAR (A))&lt;/h2&gt;&lt;br /&gt;
+%2 Special Forces Group is conducting peacekeeping operations. It is also has to scout AOC positions and keep eye on its military forces. 
+&lt;font color='#FFD700'&gt;This group is the main story line for this mission.&lt;/font&gt; The mission will ends as soon as the last member of this group will be killed.&lt;br /&gt;&lt;br /&gt;
+&lt;img image='data\images\fractions\%3\group_main.paa' width='256' height='256'/&gt;
 				</English>
-				<Russian>&lt;h2&gt;160-й окремий авіаційний (десантний) повний спеціальний назначення (160 ОАП) США&lt;/h2&gt;&lt;br /&gt;
-Група спеціальних сил США проводить миротворчу операцію. Вона також має завдання розвідати позиції АОС та слідкувати за її військовими силами.
-&lt;font color='#FFD700'&gt;Ця група є головною сюжетною лінією цієї місії.&lt;/font&gt; Місія закінчується, як тільки буде вбитий останній член цієї групи.
-&lt;img image='data\images\fractions\%1\group_main.paa' width='256' height='256'/&gt;
+				<Russian>&lt;h2&gt;160-й окремий авіаційний (десантний) повний спеціальний назначення (160 ОАП) %1&lt;/h2&gt;&lt;br /&gt;
+Група спеціальних сил %2 проводить миротворчу операцію. Вона також має завдання розвідати позиції АОС та слідкувати за її військовими силами.
+&lt;font color='#FFD700'&gt;Ця група є головною сюжетною лінією цієї місії.&lt;/font&gt; Місія закінчується, як тільки буде вбитий останній член цієї групи.&lt;br /&gt;&lt;br /&gt;
+&lt;img image='data\images\fractions\%3\group_main.paa' width='256' height='256'/&gt;
 				</Russian>
 			</Key>
 			<Key ID="BRIEFING_07_TITLE">
@@ -252,27 +271,36 @@ US Special Forces Group is conducting peacekeeping operations. It is also has to
 				<Russian>Cитуація</Russian>
 			</Key>
 			<Key ID="BRIEFING_07_DESC">
-				<Original>Situation: Following the death of the former dictator, the Pulau National Guard (PNG) has broken up into several gangs, which are conducting situational battles over the cities and villages. Under the guise of a "peacekeeping operation", the Army of Sahri (AOC), led by General Puhlo Pu, started an military invasion. A ceasefire decision is currently in effect. US Special Task Force sould ensure the security of civilians and to facilitate a peaceful resolution of the conflict. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</Original>
-				<English>Situation: Following the death of the former dictator, the Pulau National Guard (PNG) has broken up into several gangs, which are conducting situational battles over the cities and villages. Under the guise of a "peacekeeping operation", the Army of Sahri (AOC), led by General Puhlo Pu, started an military invasion. A ceasefire decision is currently in effect. US Special Task Force sould ensure the security of civilians and to facilitate a peaceful resolution of the conflict. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</English>
-				<Russian>Обстановка: Після смерті колишнього диктатору Національна Гвардія Пулау (НГП) розвалилась на декілька бандитських угруповань які ведуть ситуативні бої за міста та села. Під прикриттям "миротворчої операції" Армія Островів Сахрі (AOC) на чолі з генералом Пухло Пу розпочала військове вторгнення. На цей час діє рішення про припинення вогню. Задача групи спеціального призначення США забезпечити безпеку мирного населення та сприяти мирному врегулюванню конфлікту. Активних дій за останні 24 години не зареєстровано. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</Russian>
+				<Original>Situation: Following the death of the former dictator, the Pulau National Guard (PNG) has broken up into several gangs, which are conducting situational battles over the cities and villages. Under the guise of a "peacekeeping operation", the Army of Sahri (AOC), led by General Puhlo Pu, started an military invasion. A ceasefire decision is currently in effect. West forces sould ensure the security of civilians and to facilitate a peaceful resolution of the conflict. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</Original>
+				<English>Situation: Following the death of the former dictator, the Pulau National Guard (PNG) has broken up into several gangs, which are conducting situational battles over the cities and villages. Under the guise of a "peacekeeping operation", the Army of Sahri (AOC), led by General Puhlo Pu, started an military invasion. A ceasefire decision is currently in effect. West forces sould ensure the security of civilians and to facilitate a peaceful resolution of the conflict. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</English>
+				<Russian>Обстановка: Після смерті колишнього диктатору Національна Гвардія Пулау (НГП) розвалилась на декілька бандитських угруповань які ведуть ситуативні бої за міста та села. Під прикриттям "миротворчої операції" Армія Островів Сахрі (AOC) на чолі з генералом Пухло Пу розпочала військове вторгнення. На цей час діє рішення про припинення вогню. Західні сили повинні забезпечити безпеку мирного населення та сприяти мирному врегулюванню конфлікту. Активних дій за останні 24 години не зареєстровано. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</Russian>
 			</Key>
 			<Key ID="BRIEFING_08_TITLE">
-				<Original>Fraction: USA Rescue Squad</Original>
-				<English>Fraction: USA Rescue Squad</English>
-				<Russian>Фракціїя: Рятувальний загін США</Russian>
+				<Original>Fraction: %1 Rescue Squad</Original>
+				<English>Fraction: %1 Rescue Squad</English>
+				<Russian>Фракціїя: Рятувальний загін %1</Russian>
 			</Key>
 			<Key ID="BRIEFING_08_DESC">
-				<Original>&lt;h2&gt;US Rescue Squad (US RQ)&lt;/h2&gt;&lt;br /&gt;
-US Rescue Squad will try to help US Special Forces group if it will be forced to leave the island. &lt;font color='#FFD700'&gt;It's primary mission to find and rescue any US military survivours&lt;/font&gt;.
-&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
+				<Original>&lt;h2&gt;%1 Rescue Squad (RQ)&lt;/h2&gt;&lt;br /&gt;
+%2 Rescue Squad will try to help %3 Special Forces group if it will be forced to leave the island. &lt;font color='#FFD700'&gt;It's primary mission to find and rescue any %4 military survivours&lt;/font&gt;.&lt;br /&gt;&lt;br /&gt;
+USS 'Freedom' destroyer has following equipment meant to be used for Rescue optation:&lt;br /&gt;&lt;br /&gt;
+* &lt;font color='#FFD700'&gt;1 light helicopter&lt;/font&gt;&lt;br /&gt;
+* &lt;font color='#FFD700'&gt;2 armed speedboats located on boat racks&lt;/font&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;img image='data\images\fractions\%5\group.paa' width='256' height='256'/&gt;
 				</Original>
-				<English>&lt;h2&gt;US Rescue Squad (US RQ)&lt;/h2&gt;&lt;br /&gt;
-US Rescue Squad will try to help US Special Forces group if it will be forced to leave the island. &lt;font color='#FFD700'&gt;It's primary mission to find and rescue any US military survivours&lt;/font&gt;.
-&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
+				<English>&lt;h2&gt;%1 Rescue Squad (RQ)&lt;/h2&gt;&lt;br /&gt;
+%2 Rescue Squad will try to help %3 Special Forces group if it will be forced to leave the island. &lt;font color='#FFD700'&gt;It's primary mission to find and rescue any %4 military survivours&lt;/font&gt;.&lt;br /&gt;&lt;br /&gt;
+USS 'Freedom' has following equipment meant to be used for Rescue optation:&lt;br /&gt;&lt;br /&gt;
+* &lt;font color='#FFD700'&gt;1 light helicopter&lt;/font&gt;&lt;br /&gt;
+* &lt;font color='#FFD700'&gt;2 armed speedboats located on boat racks&lt;/font&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;img image='data\images\fractions\%5\group.paa' width='256' height='256'/&gt;
 				</English>
-				<Russian>&lt;h2&gt;Рятувальний загін США(US RQ)&lt;/h2&gt;&lt;br /&gt;
-Рятувальний загін США намагатиметься допомогти групі спецназу США, якщо його змусять покинути острів. &lt;font color='#FFD700'&gt;Основна місія - знайти та врятувати виживших американських військових&lt;/font&gt;.
-&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
+				<Russian>&lt;h2&gt;Рятувальний загін %1 (RQ)&lt;/h2&gt;&lt;br /&gt;
+Рятувальний загін %1 намагатиметься допомогти групі спецназу %2, якщо його змусять покинути острів. &lt;font color='#FFD700'&gt;Основна місія - знайти та врятувати виживших військових %4&lt;/font&gt;.&lt;br /&gt;&lt;br /&gt;
+Есмінець USS 'Freedom' має наступне обладнання для рятувальних місій:&lt;br /&gt;&lt;br /&gt;
+* &lt;font color='#FFD700'&gt;1 легкий гелікоптер&lt;/font&gt;&lt;br /&gt;
+* &lt;font color='#FFD700'&gt;2 озброєні катери, розташовані на стійках для човнів&lt;/font&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;img image='data\images\fractions\%5\group.paa' width='256' height='256'/&gt;
 				</Russian>
 			</Key>
 			<Key ID="BRIEFING_09_TITLE">
@@ -282,16 +310,16 @@ US Rescue Squad will try to help US Special Forces group if it will be forced to
 			</Key>
 			<Key ID="BRIEFING_09_DESC">
 				<Original>&lt;h2&gt;Army Corps of Cahri (AOC)&lt;/h2&gt;&lt;br /&gt;
-Pro Russian military group from the Cahri islands. Is lead by odious leader named &lt;font color='#FFD700'&gt;Puhlo Pu&lt;/font&gt;. They are trying to expand their military presence over the region. Despite to "peacefull measures" they are extreamly invading the island with military force. To save it's influence US needs to stop or restrict AOC operations over the region. &lt;font color='#FFD700'&gt;More likely AOC will try to provoke US for a conflict&lt;/font&gt;.
-&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
+Pro Russian military group from the Cahri islands. Is lead by odious leader named &lt;font color='#FFD700'&gt;Puhlo Pu&lt;/font&gt;. They are trying to expand their military presence over the region. Despite to "peacefull measures" they are extreamly invading the island with military force. To save it's influence West needs to stop or restrict AOC operations over the region. &lt;font color='#FFD700'&gt;More likely AOC will try to provoke %1 forces for a conflict&lt;/font&gt;.
+&lt;br /&gt;&lt;br /&gt;&lt;img image='data\images\fractions\%2\group.paa' width='256' height='256'/&gt;
 				</Original>
 				<English>&lt;h2&gt;Army Corps of Cahri (AOC)&lt;/h2&gt;&lt;br /&gt;
-Pro Russian military group from the Cahri islands. Is lead by odious leader named &lt;font color='#FFD700'&gt;Puhlo Pu&lt;/font&gt;. They are trying to expand their military presence over the region. Despite to "peacefull measures" they are extreamly invading the island with military force. To save it's influence US needs to stop or restrict AOC operations over the region. &lt;font color='#FFD700'&gt;More likely AOC will try to provoke US for a conflict&lt;/font&gt;.
-&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
+Pro Russian military group from the Cahri islands. Is lead by odious leader named &lt;font color='#FFD700'&gt;Puhlo Pu&lt;/font&gt;. They are trying to expand their military presence over the region. Despite to "peacefull measures" they are extreamly invading the island with military force. To save it's influence West needs to stop or restrict AOC operations over the region. &lt;font color='#FFD700'&gt;More likely AOC will try to provoke %1 forces for a conflict&lt;/font&gt;.
+&lt;br /&gt;&lt;br /&gt;&lt;img image='data\images\fractions\%2\group.paa' width='256' height='256'/&gt;
 				</English>
 				<Russian>&lt;h2&gt;Армія Островів Сахрі (AOC) (AOC)&lt;/h2&gt;&lt;br /&gt;
-Проросійська військова група з островів Сахрі. Очолює одіозний лідер на ім’я &lt;font color='#FFD700'&gt;Пухло Пу&lt;/font&gt;. Вони намагаються розширити свою військову присутність у регіоні. Незважаючи на "миролюбні заходи", вони швидко накоплюють на острові величезні військові сили. Щоб зберегти свій вплив, США потребують припинення або обмеження операцій AOC над регіоном. &lt;font color='#FFD700'&gt;Скоріш за все, АОС спробує спровокувати бійців США на конфлікт&lt;/font&gt;. 
-&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
+Проросійська військова група з островів Сахрі. Очолює одіозний лідер на ім’я &lt;font color='#FFD700'&gt;Пухло Пу&lt;/font&gt;. Вони намагаються розширити свою військову присутність у регіоні. Незважаючи на "миролюбні заходи", вони швидко накоплюють на острові величезні військові сили. Щоб зберегти свій вплив, Захід потребує припинити або обмежити операції AOC у регіоні. &lt;font color='#FFD700'&gt;Скоріш за все, АОС спробує спровокувати сили %1 на конфлікт&lt;/font&gt;. 
+&lt;br /&gt;&lt;br /&gt;&lt;img image='data\images\fractions\%2\group.paa' width='256' height='256'/&gt;
 				</Russian>
 			</Key>
 			<Key ID="BRIEFING_10_TITLE">
@@ -302,15 +330,15 @@ Pro Russian military group from the Cahri islands. Is lead by odious leader name
 			<Key ID="BRIEFING_10_DESC">
 				<Original>&lt;h2&gt;Pulau National Guard (PNG)&lt;/h2&gt;&lt;br /&gt;
 The former leader of the Pulau islands had formed Pulau National Guard to defend and control the territory. After his death different military officers prononced themself as the leaders on Pulau Nation. Unfortunately this turns out into civil war. According to the latest repots NPG has been disbanded and tunrned into several bandit groups. Most noticed are lead by Marcio Moraz, Gonsales Capito and Solomon Maru. &lt;font color='#FFD700'&gt;We do have information that some of this leaders are supported by AOC&lt;/font&gt;. Currently they are figting over the island for the dominance.
-&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
 				</Original>
 				<English>&lt;h2&gt;Pulau National Guard (PNG)&lt;/h2&gt;&lt;br /&gt;
 The former leader of the Pulau islands had formed Pulau National Guard to defend and control the territory. After his death different military officers prononced themself as the leaders on Pulau Nation. Unfortunately this turns out into civil war. According to the latest repots NPG has been disbanded and tunrned into several bandit groups. Most noticed are lead by Marcio Moraz, Gonsales Capito and Solomon Maru. &lt;font color='#FFD700'&gt;We do have information that some of this leaders are supported by AOC&lt;/font&gt;. Currently they are figting over the island for the dominance.
-&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
 				</English>
 				<Russian>&lt;h2&gt;Національна гвардія Пулау (НГП)&lt;/h2&gt;&lt;br /&gt;
 Колишній ватажок островів Пулау сформував Національну гвардію Пулау для захисту та контролю території. Після його смерті різні військові офіцери виголошували себе лідерами нації Пулау. На жаль, це перетворилось на громадянську війну. За останніми данними, НГП було розформовано та перетворено на кілька бандитських груп. Найбільш помітні очолюються Марсіо Мороз, Гонсалес Капіто та Соломон Мару. &lt;font color='#FFD700'&gt;У нас є інформація, що деякі з цих лідерів підтримуються AOC&lt;/font&gt;. В даний час вони розбираються поміж собою.
-&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
 				</Russian>
 			</Key>
 			<Key ID="BRIEFING_11_TITLE">
@@ -320,16 +348,16 @@ The former leader of the Pulau islands had formed Pulau National Guard to defend
 			</Key>
 			<Key ID="BRIEFING_11_DESC">
 				<Original>&lt;h2&gt;Civilean Rebels (CR)&lt;/h2&gt;&lt;br /&gt;
-The most of civilians are sitting at homes or safehouses wating situation to resolve. However there are some groups for the people who dislike both former NPG leaders and AOC forces. &lt;font color='#FFD700'&gt;They might wish to establish connection to US to liberate the island&lt;/font&gt;.
-&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
+The most of civilians are sitting at homes or safehouses wating situation to resolve. However there are some groups for the people who dislike both former NPG leaders and AOC forces. &lt;font color='#FFD700'&gt;They might wish to establish connection to %1 forces to liberate the island&lt;/font&gt;.
+&lt;br /&gt;&lt;br /&gt;&lt;img image='data\images\fractions\%2\group.paa' width='256' height='256'/&gt;
 				</Original>
 				<English>&lt;h2&gt;Civilean Rebels (CR)&lt;/h2&gt;&lt;br /&gt;
-The most of civilians are sitting at homes or safehouses wating situation to resolve. However there are some groups for the people who dislike both former NPG leaders and AOC forces. &lt;font color='#FFD700'&gt;They might wish to establish connection to US to liberate the island&lt;/font&gt;.
-&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
+The most of civilians are sitting at homes or safehouses wating situation to resolve. However there are some groups for the people who dislike both former NPG leaders and AOC forces. &lt;font color='#FFD700'&gt;They might wish to establish connection to %1 forces to liberate the island&lt;/font&gt;.
+&lt;br /&gt;&lt;br /&gt;&lt;img image='data\images\fractions\%2\group.paa' width='256' height='256'/&gt;
 				</English>
 				<Russian>&lt;h2&gt;Цивільні повстанці (CR)&lt;/h2&gt;&lt;br /&gt;
-Більшість місцевих жителів сидять у будинках чи сховищах і очікують на вирішення ситуації. Однак є деякі групи людей, які не люблять колишніх лідерів НГП та сили AOC. &lt;font color='#FFD700'&gt;Вони, можливо, хотіли б встановити зв’язок із силами США що б визволити острів&lt;/font&gt;.
-&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
+Більшість місцевих жителів сидять у будинках чи сховищах і очікують на вирішення ситуації. Однак є деякі групи людей, які не люблять колишніх лідерів НГП та сили AOC. &lt;font color='#FFD700'&gt;Вони, можливо, хотіли б встановити зв’язок із силами %1 що б визволити острів&lt;/font&gt;.
+&lt;br /&gt;&lt;br /&gt;&lt;img image='data\images\fractions\%2\group.paa' width='256' height='256'/&gt;
 			</Russian>
 			</Key>
 			<Key ID="TASK_01_TITLE">
@@ -338,9 +366,9 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>Ліквідувати ватажка бунтівників</Russian>
 			</Key>
 			<Key ID="TASK_01_DESC">
-				<Original>Eliminate the rebel leader %1 on the base near the &lt;marker name = 'mrk_airfield'&gt;%2 airfield&lt;/marker&gt;.&lt;img image='data\images\fractions\%3\leader.paa' width='256' height='256'/&gt;</Original>
-				<English>Eliminate the rebel leader %1 on the base near the &lt;marker name = 'mrk_airfield'&gt;%2 airfield&lt;/marker&gt;.&lt;img image='data\images\fractions\%3\leader.paa' width='256' height='256'/&gt;</English>
-				<Russian>Ліквідувати ватажка бунтівників %1 на базі біля &lt;marker name='mrk_airfield'&gt;аеродрому %2&lt;/marker&gt;.&lt;img image='data\images\fractions\%3\leader.paa' width='256' height='256'/&gt;</Russian>
+				<Original>Eliminate the rebel leader %1 on the base near the &lt;marker name = 'mrk_airfield'&gt;%2 airfield&lt;/marker&gt;.&lt;br /&gt;&lt;br /&gt;&lt;img image='data\images\fractions\%3\leader.paa' width='256' height='256'/&gt;</Original>
+				<English>Eliminate the rebel leader %1 on the base near the &lt;marker name = 'mrk_airfield'&gt;%2 airfield&lt;/marker&gt;.&lt;br /&gt;&lt;br /&gt;&lt;img image='data\images\fractions\%3\leader.paa' width='256' height='256'/&gt;</English>
+				<Russian>Ліквідувати ватажка бунтівників %1 на базі біля &lt;marker name='mrk_airfield'&gt;аеродрому %2&lt;/marker&gt;.&lt;br /&gt;&lt;br /&gt;&lt;img image='data\images\fractions\%3\leader.paa' width='256' height='256'/&gt;</Russian>
 			</Key>
 			<Key ID="TASK_02_TITLE">
 				<Original>Get to the %1 airfield</Original>
@@ -518,9 +546,9 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>Занищіть виживших</Russian>
 			</Key>
 			<Key ID="TASK_AOC_03_DESC">
-				<Original>We took down US military plane. Couple survivors are scattered over the island. Find and eliminate them.</Original>
-				<English>We took down US military plane. Couple survivors are scattered over the island. Find and eliminate them.</English>
-				<Russian>Ми збили американський військовий літак. Декілька виживших розкидані по острову. Знайдіть і усуньте їх.</Russian>
+				<Original>We took down West forces military plane. Couple survivors are scattered over the island. Find and eliminate them.</Original>
+				<English>We took down West forces military plane. Couple survivors are scattered over the island. Find and eliminate them.</English>
+				<Russian>Ми збили військовий літак Заходу. Декілька виживших розкидані по острову. Знайдіть і усуньте їх.</Russian>
 			</Key>
 			<Key ID="TASK_AOC_04_TITLE">
 				<Original>Optional: Crash site</Original>
@@ -628,9 +656,9 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>Спланувати міссію</Russian>
 			</Key>
 			<Key ID="ACTION_07">
-				<Original>Ask about the US military</Original>
-				<English>Ask about the US military</English>
-				<Russian>Спитати про військових США</Russian>
+				<Original>Ask about the Western military</Original>
+				<English>Ask about the Western military</English>
+				<Russian>Спитати про військових Заходу</Russian>
 			</Key>
 			<Key ID="ACTION_08">
 				<Original>Recruit</Original>
@@ -653,14 +681,14 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>Відійди!</Russian>
 			</Key>
 			<Key ID="INFO_WAIT_01">
-				<Original>Wait for mission to be planned by the team leader</Original>
-				<English>Wait for mission to be planned by the team leader</English>
-				<Russian>Зачекайте, поки лідер гриппи запланує місію</Russian>
+				<Original>Wait for mission to be planned by the &lt;t color='#FFD700'&gt;Squad Leader&lt;/t&gt;</Original>
+				<English>Wait for mission to be planned by the &lt;t color='#FFD700'&gt;Squad Leader&lt;/t&gt;</English>
+				<Russian>Зачекайте, поки &lt;t color='#FFD700'&gt;Squad Leader&lt;/t&gt; запланує місію</Russian>
 			</Key>
 			<Key ID="INFO_WAIT_02">
-				<Original>Mission has been requested. Briefing updated!</Original>
-				<English>Mission has been requested. Briefing updated!</English>
-				<Russian>Місію було заплановано. Брифінг оновлено!</Russian>
+				<Original>Mission has been requested. &lt;t color='#FFD700'&gt;Briefing updated&lt;/t&gt;!</Original>
+				<English>Mission has been requested. &lt;t color='#FFD700'&gt;Briefing updated&lt;/t&gt;!</English>
+				<Russian>Місію було заплановано. &lt;t color='#FFD700'&gt;Брифінг оновлено&lt;/t&gt;!</Russian>
 			</Key>
 			<Key ID="INFO_DATE_01">
 				<Original>July 16, 2019 %1</Original>
@@ -903,9 +931,9 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>%1: Я вже розказав тобі все що знав, приходить пізніше!</Russian>
 			</Key>
 			<Key ID="INFO_PING_02">
-				<Original>%1: USA Soldier was seen at grid: %2 %3</Original>
-				<English>%1: USA Soldier was seen at grid: %2 %3</English>
-				<Russian>%1: Солдата США бачили за координатами: %2 %3</Russian>
+				<Original>%1: %2 Soldier was seen at grid: %3</Original>
+				<English>%1: %2 Soldier was seen at grid: %3</English>
+				<Russian>%1: Солдата %2 бачили за координатами: %3</Russian>
 			</Key>
 			<Key ID="INFO_JOINED_01">
 				<Original>%1: No, I am already in the group!</Original>
@@ -918,9 +946,9 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>%1: Ні, я не в товоїй в группі.</Russian>
 			</Key>
 			<Key ID="INFO_NOT_JOINED_02">
-				<Original>%1: No, I will not die for free, American! Give me 5 bananas.</Original>
-				<English>%1: No, I will not die for free, American! Give me 5 bananas.</English>
-				<Russian>%1: Ні, Я не буду помирати за ніщо, Американець! Дай мені 5 бананів.</Russian>
+				<Original>%1: No, I will not die for free! Give me 5 bananas.</Original>
+				<English>%1: No, I will not die for free! Give me 5 bananas.</English>
+				<Russian>%1: Ні, Я не буду помирати за ніщо! Дай мені 5 бананів.</Russian>
 			</Key>
 			<Key ID="INFO_NOT_JOINED_03">
 				<Original>%1: No, your rank is not allowing you to lead more than 2 units!</Original>
@@ -928,9 +956,9 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>%1: Ні, твій ранг не дозволяє тобі керувати групою більше за 2 людини!</Russian>
 			</Key>
 			<Key ID="KARMA_DROP_01">
-				<Original>American Soldier has killed a civilian. The rumors are spreading over the island now ...</Original>
-				<English>American Soldier has killed a civilian. The rumors are spreading over the island now ...</English>
-				<Russian>Американський солдат убив цивільного. Чутки поширюються островом ...</Russian>
+				<Original>%1 Soldier has killed a civilian. The rumors are spreading over the island now ...</Original>
+				<English>%1 Soldier has killed a civilian. The rumors are spreading over the island now ...</English>
+				<Russian>Солдат %1 убив цивільного. Чутки поширюються островом ...</Russian>
 			</Key>
 			
 		</Container>

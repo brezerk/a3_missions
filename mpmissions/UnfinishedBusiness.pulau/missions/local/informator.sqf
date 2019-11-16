@@ -18,6 +18,8 @@
 
 if (hasInterface) then {
 
+	D_FRATION_WEST_NAME = (getText (configFile >> "CfgFactionClasses" >> D_FRACTION_WEST >> "displayName"));
+
 	Fn_Local_Create_MissionInformator = {
 		private _uri = "";
 		{
@@ -65,7 +67,7 @@ if (hasInterface) then {
 						if (!(_x getVariable ["is_civilian", false])) then {
 							private _pos = getPos _x;
 							_pos = mapGridPosition [((_pos select 0) + (round(random 600) - 300)), ((_pos select 1) + (round(random 600) - 300)), _pos select 2];
-							systemChat format[localize "INFO_PING_02", _name, _pos];
+							systemChat format[localize "INFO_PING_02", _name, D_FRATION_WEST_NAME, _pos];
 						};
 					};
 				};
@@ -77,7 +79,7 @@ if (hasInterface) then {
 	};
 	
 	Fn_Local_CarmaKillCiv = {
-		systemChat format[localize "KARMA_DROP_01"];
+		systemChat format[localize "KARMA_DROP_01", D_FRATION_WEST_NAME];
 	};
 	
 	Fn_Local_Informator_Complete = {
@@ -95,7 +97,6 @@ if (hasInterface) then {
 						};
 					};
 				};
-				
 			} else {
 				call Fn_Local_Create_Task_West_WaponStash;
 				//Give some other missions
