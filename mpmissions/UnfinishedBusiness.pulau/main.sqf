@@ -20,7 +20,7 @@ real_weather_init = false;
 
 D_LOCATIONS = ['Gurun', 'Monyet'];
 
-D_DEBUG = false;
+D_DEBUG = true;
 
 // Check mods if loaded
 D_MOD_ACE = isClass(configFile >> "CfgPatches" >> "ace_main");
@@ -31,7 +31,8 @@ D_MOD_CBA = isClass(configFile >> "CfgPatches" >> "cba_main");
 D_MOD_ACRE = isClass(configFile >> "CfgPatches" >> "acre_main");
 D_MOD_TFAR = isClass(configFile >> "CfgPatches" >> "task_force_radio");
 
-D_MOD_CUP_VEHICLES = isClass(configFile>>"cfgPatches">>"cup_vehicles");
+D_MOD_CUP_VEHICLES = isClass(configFile >> "CfgPatches" >> "cup_vehicles");
+
 D_MOD_RHS_AFRF = false; // tbd
 D_MOD_RHS_USAF = false; // tbd
 D_MOD_RHS_GREF = false; // tbd

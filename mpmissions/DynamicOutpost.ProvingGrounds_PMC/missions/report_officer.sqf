@@ -104,7 +104,7 @@ if (isServer) then {
 			task_completed_00 = true;
 			publicVariable "task_completed_00";
 			deleteVehicle trgOfficerDead;
-			execVM 'missions\main.sqf';
+			execVM 'missions\init.sqf';
 		};
 	};
 	

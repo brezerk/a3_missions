@@ -211,8 +211,6 @@ if (isServer) then {
 	//wait a bit
 	sleep 5;
 	call Fn_Create_Objectives_Start;
-	
-	call Fn_Task_Create_ReportOfficer;
 
 	//Move all units into the one Groop (Required for ACE);
 	_grp = createGroup independent;

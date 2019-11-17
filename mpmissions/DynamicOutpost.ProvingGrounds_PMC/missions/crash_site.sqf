@@ -106,6 +106,15 @@ if (isServer) then {
 			};
 		} count allDeadMen;
 		[_marker] remoteExecCall ["Fn_Local_Task_Create_HelicopterCrashSite", [0,-2] select isDedicated];
+		
+		private _trg = createTrigger ["EmptyDetector", getMarkerPos _marker];
+		_trg setTriggerArea [250, 250, 0, false];
+		_trg setTriggerActivation ["ANYPLAYER", "PRESENT", false];
+		_trg setTriggerStatements [
+			"this",
+			"execVM 'missions\main.sqf';",
+			""
+		];
 	};
 	
 	/*

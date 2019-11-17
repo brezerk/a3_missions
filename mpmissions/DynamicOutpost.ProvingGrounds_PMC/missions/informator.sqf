@@ -125,6 +125,15 @@ if (isServer) then {
 			""
 		];
 		p_officer_01 setVariable ["BB_CorpseTTL", -1];
+		
+		private _trg = createTrigger ["EmptyDetector", getMarkerPos "wp_info_meetup_01"];
+		_trg setTriggerArea [250, 250, 0, false];
+		_trg setTriggerActivation ["ANYPLAYER", "PRESENT", false];
+		_trg setTriggerStatements [
+			"this",
+			"execVM 'missions\main.sqf';",
+			""
+		];
 	}; // Fn_Task_Create_Informator
 
 	/*

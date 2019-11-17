@@ -20,6 +20,7 @@
 Server init file
 */
 
+main_story_started = false;
 task_completed_00 = false; // officer
 task_completed_01 = false; // patrol
 task_completed_02 = false; // heli

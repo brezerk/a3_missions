@@ -61,10 +61,6 @@ player setVariable ["weapon_fiered", false, false];
 player setVariable ["is_civilian", false, true];
 player setVariable ["BB_CorpseTTL", -1, true];
 
-safezone_pos = getMarkerPos "respawn_west";
-
-
-
 [] execVM "briefing.sqf";
 
 #include "missions\local\intro.sqf";
@@ -96,6 +92,11 @@ safezone_pos = getMarkerPos "respawn_west";
 /* FIXME: CBA-only
 execVM "addons\brezblock\utils\marker_manager.sqf";
  */
+ 
+// Disable BIS Revive system if ACE Medical mod is loaded
+if (D_MOD_ACE_MEDICAL) then {
+    [player] call BIS_fnc_disableRevive;
+};
  
 Fn_Local_SetPersonalTaskState = {
 	params['_name', '_state', '_title'];
@@ -230,9 +231,7 @@ player addEventHandler
 [
    "Respawn",
    {
-		systemChat "Respawn...";
 		if (mission_plane_send) then {
-			systemChat "send...";
 			call Fn_Local_FailTasks;
 			player setVariable ["is_assault_group", false, true];
 			switch (playerSide) do
@@ -350,20 +349,39 @@ player addEventHandler
 ];
 
 /*
-player addEventHandler
-[
-    "Fired",
-    {
-		//params ["_shooter","_weapon","_muzzle","_mode","_ammo","_magazine","_projectile","_gunner"]; 
-		if (playerSide == west) then {
-			if (((_this select 0) distance2D safezone_pos) <= 200) then {
-				deletevehicle (_this select 6); 
-				player action ["WeaponOnBack", player];
-				cutText [localize "INFO_SAFEZONE", "PLAIN DOWN", 2];
+if (!D_MOD_ACE_MEDICAL) then {
+	// Custom Revive system enabled
+	test_001 addEventHandler
+	[
+		"HandleDamage",
+		{
+			params ["_unit", "_selection", "_damage", "_source", "_projectile", "_hitIndex", "_instigator", "_hitPoint"];
+			if ( lifeState _unit != "INCAPACITATED" ) then {
+				// Check body part
+				if !(_selection in ["arms", "hands", "legs"]) then {
+					// Check if fatal?
+					if (_damage >= 1) then {
+						if (local _unit) then {
+							_unit setVariable ["BB_Uncsious", true, true];
+							[_unit, ''] remoteExec ['playMoveNow'];
+							_unit setUnconscious true;
+							//_unit allowDamage false;
+							//_unit spawn G_fnc_enterIncapacitatedState;
+						};
+						//Output new, non-fatal damage value
+						_damage = 0.99;
+					} else {
+						//pass as is
+						_damage;
+					};
+				};
+			} else {
+				_damage = 0;
 			};
-		};
-    }
-];
+			_damage;
+		}
+	];
+};
 */
 
 execVM "missions\local\sync.sqf";

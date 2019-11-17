@@ -26,7 +26,7 @@ class Header
 };
 
 author			= "brezerk@brezblock.org.ua";
-OnLoadName		= "Dynamic Outpost v1.9.14";
+OnLoadName		= "Dynamic Outpost v1.10";
 OnLoadMission	= $STR_ONLOAD_INFO_01;
 briefingName    = $STR_ONLOAD_INFO_02;
 // FIXME: https://feedback.bistudio.com/T67181
@@ -44,6 +44,13 @@ respawnTemplates[] = {"Counter", "EndMission", "Tickets"};
 respawnDialog = 0;
 // When 1, the score table contains score of all playable units as opposed to players only.
 aikills = 0;
+
+// Revive
+reviveMode = 0;  //0 - disabled (we are using ACE); 1 - enabled
+reviveUnconsciousStateMode = 0;
+reviveRequiredItemsFakConsumed = 1;
+reviveRequiredTrait = 0; // all can revive
+reviveRequiredItems = 2; 
 
 respawnOnStart = -1;
 
@@ -86,7 +93,8 @@ class CfgSounds
 		// subtitle delay in seconds, subtitle text
 		titles[] = {
 			0, $STR_RADIO_CALL_01,
-			6, $STR_RADIO_CALL_04
+			6, $STR_RADIO_CALL_04,
+			12, $STR_RADIO_CALL_12
 		};
 	};
 	class outpost_wave03
@@ -115,8 +123,7 @@ class CfgSounds
 		// subtitle delay in seconds, subtitle text
 		titles[] = {
 			0, $STR_RADIO_CALL_07,
-			6, $STR_RADIO_CALL_08,
-			12, $STR_RADIO_CALL_12
+			6, $STR_RADIO_CALL_08
 		};
 	};
 	class outpost_docs_found
