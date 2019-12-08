@@ -22,7 +22,7 @@
 	// Real time vs fast time
 	// true: Real time is more realistic weather conditions change slowly (ideal for persistent game)
 	// false: fast time give more different weather conditions (ideal for non persistent game) 
-	_realtime = true;
+	_realtime = D_CODE43_REAL_WEATHER_REALTIME;
 
 	// Random time before new forecast
 	// true: forecast happens bewteen mintime and maxtime
