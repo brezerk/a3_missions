@@ -26,15 +26,15 @@ if (isServer) then {
 		[] remoteExecCall ["Fn_Local_Task_DocSearch", [0,-2] select isDedicated];
 		
 		// +3 mins: spawn 3 spec ops waves
-		_until = diag_tickTime + 10 * 60;
-		waitUntil {sleep 1; diag_tickTime > _until;};
+		//_until = diag_tickTime + 10 * 60;
+		//waitUntil {sleep 1; diag_tickTime > _until;};
 		
 		// spawn spec ops
 		["wp_spec_01", ["rus_spec", 4] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
 		["wp_spec_04", ["rus_spec", 4] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
 		
 		// +5 mins: spawn 5 spec ops waves
-		_until = diag_tickTime + 6 * 60;
+		_until = diag_tickTime + 5 * 60;
 		waitUntil {sleep 1; diag_tickTime > _until;};
 		
 		[["wp_spec", 8] call BrezBlock_fnc_Get_RND_Index, ["rus_spec", 4] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
@@ -131,6 +131,7 @@ if (isServer) then {
 		_trg setTriggerActivation ["GUER SEIZED", "PRESENT", false];
 		_trg setTriggerTimeout [10, 20, 30, true];
 		_trg setTriggerStatements ["this", "execVM 'missions\end.sqf';", ""];
+
 		
 	};
 };

@@ -72,6 +72,7 @@ Fn_Create_Objectives_Start = {
 		call Fn_Task_Create_RepairHeavy;
 		// Load Ural
 		call Fn_Task_Create_AmmoDelivery_Load;
+		//call Fn_Task_Create_ReportOfficer;
 		// Warzone enter
 		trgWarzoneEnter = createTrigger ["EmptyDetector", getMarkerPos "wp_defend_01"];
 		trgWarzoneEnter setTriggerArea [280, 280, 0, false];
