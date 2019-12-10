@@ -16,12 +16,10 @@
  *                                                                         *
  ***************************************************************************/
  
-comment "[!] UNIT MUST BE LOCAL [!]";
+// UNIT MUST BE LOCAL
 if (!local _this) exitWith {};
 
-comment "Exported from Arsenal by brezerk";
-
-comment "Remove existing items";
+//Remove existing items
 removeAllWeapons _this;
 removeAllItems _this;
 removeAllAssignedItems _this;
@@ -31,16 +29,21 @@ removeBackpack _this;
 removeHeadgear _this;
 removeGoggles _this;
 
-comment "Add containers";
+//Add weapons
+_this addWeapon "rhs_weap_ak74";
+_this addPrimaryWeaponItem "rhs_acc_dtk1983";
+_this addPrimaryWeaponItem "rhs_30Rnd_545x39_7N6_AK";
+
+//Add containers
 _this forceAddUniform "LOP_U_UKR_Fatigue_Digit";
-_this addItemToUniform "ACE_EarPlugs";
 _this addItemToUniform "ACE_CableTie";
-for "_i" from 1 to 2 do {_this addItemToUniform "ACE_epinephrine";};
 for "_i" from 1 to 10 do {_this addItemToUniform "ACE_morphine";};
-for "_i" from 1 to 10 do {_this addItemToUniform "ACE_fieldDressing";};
+_this addItemToUniform "ACE_EarPlugs";
+for "_i" from 1 to 20 do {_this addItemToUniform "ACE_fieldDressing";};
+_this addItemToUniform "ACE_Canteen";
 _this addVest "LOP_V_6B23_Medic_TAN";
 	
-comment "Give player a radio depending on radio mod loaded";
+//Give player a radio depending on radio mod loaded
 if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
 	_this addItemToVest "ACRE_SEM52SL";
 } else {
@@ -52,37 +55,54 @@ if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
 	};
 };
 	
-for "_i" from 1 to 5 do {_this addItemToVest "rhs_mag_rdg2_white";};
+for "_i" from 1 to 2 do {_this addItemToVest "rhs_mag_rdg2_white";};
 for "_i" from 1 to 2 do {_this addItemToVest "rhs_30Rnd_545x39_7N6_AK";};
 for "_i" from 1 to 2 do {_this addItemToVest "rhs_mag_rgd5";};
 for "_i" from 1 to 3 do {_this addItemToVest "rhs_30Rnd_545x39_7N6M_AK";};
 _this addBackpack "B_Kitbag_tan";
-for "_i" from 1 to 10 do {_this addItemToBackpack "ACE_bloodIV";};
-for "_i" from 1 to 50 do {_this addItemToBackpack "ACE_fieldDressing";};
-for "_i" from 1 to 20 do {_this addItemToBackpack "ACE_epinephrine";};
-for "_i" from 1 to 30 do {_this addItemToBackpack "ACE_morphine";};
-for "_i" from 1 to 2 do {_this addItemToBackpack "ACE_EarPlugs";};
+for "_i" from 1 to 4 do {_this addItemToBackpack "ACE_bloodIV";};
+for "_i" from 1 to 40 do {_this addItemToBackpack "ACE_fieldDressing";};
+for "_i" from 1 to 8 do {_this addItemToBackpack "ACE_epinephrine";};
+for "_i" from 1 to 20 do {_this addItemToBackpack "ACE_morphine";};
 _this addItemToBackpack "ACE_surgicalKit";
 _this addItemToBackpack "ACE_personalAidKit";
 for "_i" from 1 to 2 do {_this addItemToBackpack "ACE_bodyBag";};
-for "_i" from 1 to 3 do {_this addItemToBackpack "rhs_30Rnd_545x39_7N6_AK";};
+for "_i" from 1 to 10 do {_this addItemToBackpack "rhs_30Rnd_545x39_7N6_AK";};
 _this addHeadgear "LOP_H_6B27M_Digit";
 _this addGoggles "rhs_googles_clear";
 
-comment "Add weapons";
-_this addWeapon "rhs_weap_ak74";
-_this addPrimaryWeaponItem "rhs_acc_dtk1983";
 
-comment "Add items";
+
+//Add items
 _this linkItem "ItemMap";
 _this linkItem "ItemCompass";
 _this linkItem "ItemWatch";
 
-comment "Set identity";
-_this setFace "Default";
+//Set identity
+_this setFace (selectRandom ['WhiteHead_01',
+'WhiteHead_02',
+'WhiteHead_03',
+'WhiteHead_04',
+'WhiteHead_05',
+'WhiteHead_06',
+'WhiteHead_07',
+'WhiteHead_08',
+'WhiteHead_09',
+'WhiteHead_10',
+'WhiteHead_11',
+'WhiteHead_12',
+'WhiteHead_13',
+'WhiteHead_14',
+'WhiteHead_15',
+'WhiteHead_16',
+'WhiteHead_17',
+'WhiteHead_18',
+'WhiteHead_19',
+'WhiteHead_20',
+'WhiteHead_21',
+'WhiteHead_23']);
 _this setSpeaker "NoVoice";
 
 //ACEX
-_this addItemToVest "ACE_Canteen";
 _this addItemToBackpack "ACE_MRE_MeatballsPasta";
 for "_i" from 1 to 2 do {_this addItemToBackpack "ACE_MRE_CreamChickenSoup";};
