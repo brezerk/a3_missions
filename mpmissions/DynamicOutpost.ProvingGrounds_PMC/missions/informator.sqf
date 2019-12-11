@@ -69,7 +69,6 @@ if (hasInterface) then {
 
 if (isServer) then {
 	// mission pre init
-	inform_action_id = objNull;
 	inform_unit = objNull;
 	civil_units = [
 		p_rus_infromator_01,
@@ -178,11 +177,13 @@ if (isServer) then {
 			['t_info_meetup', 'Succeeded', localize 'TASK_08_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated];
 			[
 				p_officer_01,
-				{ _this remoteExec ["Fn_Task_Informator_DocsFound", 2] },
+				"_this remoteExec ['Fn_Task_Informator_DocsFound', 2]",
 				"holdactions\holdAction_search",
 				"ACTION_01",
-				"&& !task_completed_04"
-			] call BrezBlock_fnc_Attach_Hold_Action;
+				"&& !task_completed_04",
+				6,
+				true
+			] call BrezBlock_fnc_Attach_SearchIntel_Action;
 			[] remoteExecCall ["Fn_Local_Task_Create_Informator_BlockpostAttack", [0,-2] select isDedicated];
 		};
 	}; // Fn_Task_Create_Informator_BlockpostAttack

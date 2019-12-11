@@ -334,14 +334,14 @@
 				<Russian>Позиції 37 блокпосту.</Russian>
 			</Key>
 			<Key ID="INFO_SUBLOC_03">
-				<Original>Rampart 'Oles'.</Original>
-				<English>Rampart 'Oles'.</English>
-				<Russian>Опорний пункт 'Олесь'.</Russian>
+				<Original>Rampart 'Oles'</Original>
+				<English>Rampart 'Oles'</English>
+				<Russian>Опорний пункт 'Олесь'</Russian>
 			</Key>
 			<Key ID="INFO_SUBLOC_04">
-				<Original>The Farm.</Original>
-				<English>The Farm.</English>
-				<Russian>Ферма.</Russian>
+				<Original>The Farm</Original>
+				<English>The Farm</English>
+				<Russian>Ферма</Russian>
 			</Key>
 			<Key ID="INFO_SUBLOC_05">
 				<Original>Helicopter crash site.</Original>
@@ -363,6 +363,16 @@
 				<English>Reinforcement column</English>
 				<Russian>Колонна підкріплення</Russian>
 			</Key>
+			<Key ID="INFO_SUBLOC_09">
+				<Original>Blockpost</Original>
+				<English>Blockpost</English>
+				<Russian>Блокпост</Russian>
+			</Key>
+			<Key ID="INFO_SUBLOC_10">
+				<Original>Mines</Original>
+				<English>Mines</English>
+				<Russian>Міни</Russian>
+			</Key>
 			<Key ID="ACTION_01">
 				<Original>Search</Original>
 				<English>Search</English>
@@ -372,6 +382,11 @@
 				<Original>Talk to</Original>
 				<English>Talk to</English>
 				<Russian>Поговорити</Russian>
+			</Key>
+			<Key ID="ACTION_03">
+				<Original>Remove flag</Original>
+				<English>Remove flag</English>
+				<Russian>Зірвати флаг</Russian>
 			</Key>
 			<Key ID="STR_ONLOAD_INFO_01">
 				<Original>37th checkpoint 'Bunker' is defended by about 40 soldiers from the 88th Aeromobile Brigade. Following the Minsk Truce, the ringleaders of the pro-Russian armed groups assured that they would not open the fire and agreed to build their own base. Your order: deliver supplies and personnel to the 37th checkpoint and reinforce the military presence in the region.</Original>

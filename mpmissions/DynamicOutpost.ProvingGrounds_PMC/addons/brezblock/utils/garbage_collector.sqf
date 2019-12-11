@@ -22,13 +22,15 @@ Spawn start objectives, triggers for informator contact
 
 while {true} do {
 	{
-		private _timeStamp = _x getVariable "BB_CorpseTTL";
-		if (isNil "_timeStamp") then 
-		{
-			_x setVariable ["BB_CorpseTTL", time];
+		private _corpse = _x;
+		private _timeStamp = (_x getVariable ["BB_CorpseTTL", 0]);
+		
+		if (_timeStamp == 0) then {
+			_corpse setVariable ["BB_CorpseTTL", time];
 		} else {
 			private _playerNearby = false;
 			if (_timeStamp != -1) then {
+				systemChat format ["corps ttl: %1", _timeStamp];
 				if ((time - _timeStamp) > 300) then {
 					{
 						scopeName "units_loop";
@@ -39,9 +41,9 @@ while {true} do {
 						};
 					} forEach nearestObjects [_x, ["SoldierEB", "SoldierGB", "SoldierWB"], 100];
 					if (!_playerNearby) then {
-						deleteVehicle _x;
+						deleteVehicle _corpse;
 					} else {
-						_x setVariable ["BB_CorpseTTL", time];
+						_corpse setVariable ["BB_CorpseTTL", time];
 					};
 				};
 			};
@@ -49,3 +51,4 @@ while {true} do {
 	} forEach allDead;
 	sleep 10;
 };
+

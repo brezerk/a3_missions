@@ -79,11 +79,13 @@ if (isServer) then {
 		trgSpotterKilled setTriggerStatements ["!alive p_rus_spotter_01", "['t_recon_kill', 'Succeeded', localize 'TASK_21_TITLE'] remoteExecCall ['Fn_Local_SetPersonalTaskState', [0,-2] select isDedicated]; deleteVehicle trgSpotterKilled;", ""];
 		[
 			p_rus_spotter_01,
-			{ _this remoteExec ["Fn_Task_Spotter_DocsFound", 2] },
-				"holdactions\holdAction_search",
-				"ACTION_01",
-				"&& !task_completed_07"
-		] call BrezBlock_fnc_Attach_Hold_Action;
+			"_this remoteExec ['Fn_Task_Spotter_DocsFound', 2]",
+			"holdactions\holdAction_search",
+			"ACTION_01",
+			"&& !task_completed_07",
+			6,
+			true
+		] call BrezBlock_fnc_Attach_SearchIntel_Action;
 	};
 	
 	/*

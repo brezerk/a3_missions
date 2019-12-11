@@ -16,6 +16,15 @@
  *                                                                         *
  ***************************************************************************/
 
+"ua_secret_01" setMarkerText (localize "INFO_SUBLOC_03");
+"txt_marker_01" setMarkertext (localize "INFO_SUBLOC_04");
+"txt_marker_02" setMarkertext (localize "INFO_SUBLOC_07");
+"txt_marker_03" setMarkertext (localize "INFO_SUBLOC_09");
+"txt_marker_08" setMarkertext (localize "STR_ONLOAD_INFO_02");
+{
+	_x setMarkertext (localize "INFO_SUBLOC_10");
+} forEach ["txt_marker_04", "txt_marker_05", "txt_marker_06", "txt_marker_07"];
+
 waitUntil { !isNull player }; // Wait for player to initialize
 
 /*
@@ -81,3 +90,25 @@ _trgLocationInfo01 setTriggerStatements [
 	"[ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_03', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;",
 	""
 ];
+
+{
+	_x addAction [
+			localize "ACTION_03", 
+			{
+				params ["_target", "_caller", "_actionId", "_arguments"];
+				[_target, ''] remoteExec ['setFlagTexture', 2];
+			},
+			[],
+			1.5, 
+			true, 
+			true, 
+			"",
+			"true", // _target, _this, _originalTarget
+			3,
+			false,
+			"",
+			""
+		];
+} forEach [dpr_flag_01, dpr_flag_02, dpr_flag_03];
+
+

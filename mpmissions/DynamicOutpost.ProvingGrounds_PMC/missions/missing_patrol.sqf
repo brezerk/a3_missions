@@ -110,16 +110,19 @@ if (isServer) then {
 			if (_type == "GROUP") then {
 				{
 					_x setVariable ["BB_CorpseTTL", -1];
+					removeFromRemainsCollector [_x];
 				} count units _x;
 			};
-		} forEach ([_marker, ["ua_t_patrol", 5] call BrezBlock_fnc_Get_RND_Index] call BrezBlock_fnc_Spawn_Objective);
+		} forEach ([_marker, ["ua_t_patrol", 5] call BrezBlock_fnc_Get_RND_Index] call BrezBlock_fnc_Spawn_Objective);		
 		[
 			p_officer_03,
-			{ _this remoteExec ["Fn_Task_MissingPatrol_DocsFound", 2] },
-				"holdactions\holdAction_search",
-				"ACTION_01",
-				"&& !task_completed_06"
-		] call BrezBlock_fnc_Attach_Hold_Action;
+			"_this remoteExec ['Fn_Task_MissingPatrol_DocsFound', 2]",
+			"holdactions\holdAction_search",
+			"ACTION_01",
+			"&& !task_completed_06",
+			6,
+			true
+		] call BrezBlock_fnc_Attach_SearchIntel_Action;
 		[ua_injured_01, 0.3, "body", "bullet"] call ace_medical_fnc_addDamageToUnit;
 		[ua_injured_01, 0.8, "head", "stub"] call ace_medical_fnc_addDamageToUnit;
 		ua_injured_01 setVariable ["ACE_isUnconscious", true, true];
@@ -145,6 +148,7 @@ if (isServer) then {
 		{
 			if (_x inArea trgPatrolFound) then {
 				_x setVariable ["BB_CorpseTTL", -1];
+				removeFromRemainsCollector [_x];
 			};
 		} count allDeadMen;
 		[_marker, ["rus_spec", 5] call BrezBlock_fnc_Get_RND_Index] execVM 'addons\brezblock\utils\spawn_opfor_forces_guard.sqf';

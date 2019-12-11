@@ -86,12 +86,13 @@ if (isServer) then {
 		} forEach ([_marker, ["rus_heli_crash", 4] call BrezBlock_fnc_Get_RND_Index] call BrezBlock_fnc_Spawn_Objective);
 		[
 			p_officer_02,
-			{ _this remoteExec ["Fn_Task_HelicopterCrashSite_DocsFound", 2] },
+			"_this remoteExec ['Fn_Task_HelicopterCrashSite_DocsFound', 2]",
 			"holdactions\holdAction_search",
 			"ACTION_01",
-			"&& !task_completed_05"
-		] call BrezBlock_fnc_Attach_Hold_Action;
-		
+			"&& !task_completed_05",
+			6,
+			true
+		] call BrezBlock_fnc_Attach_SearchIntel_Action;
 		trgHeliSecured = createTrigger ["EmptyDetector", getMarkerPos _marker];
 		trgHeliSecured setTriggerArea [25, 25, 0, false];
 		trgHeliSecured setTriggerActivation ["ANYPLAYER", "PRESENT", false];
