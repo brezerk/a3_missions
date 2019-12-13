@@ -15,18 +15,40 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
  ***************************************************************************/
- 
- params["_center", "_types", "_distance"];
- private _markers = [];
- 
-{
-	if ((markerType _x) in _types) then {
-		if (_x find D_LOCATION >= 0) then {
-			if ((_center distance2D (getMarkerPos _x)) <= _distance) then {
-				_markers append [_x];
-			};
-		};
-	};
-} forEach allMapMarkers;
 
-_markers;
+/*
+Paradrop
+	Arguments: [Marker, Trigger Name]
+	Usage: [{Marker}, {TriggerName}] execVM ["addons/BrezBlock.framework/triggers/warzone_close.sqf"];
+	Return: true
+*/
+
+params ["_marker", "_trigger"];
+private ["_grp", "_veh"];
+
+waitUntil {
+	sleep 5;
+	{	
+		_grp = group _x;
+		if !(_grp getVariable [format ["%1_TriggerActivated", _marker], false]) then {
+			//systemChat "FOUND GROUP IN TRIGGER";
+			{
+				_veh = assignedVehicle _x;
+				if (!isNull _veh) exitWith {
+					//systemChat "MECHA";
+					{ 
+						if ((_x == gunner _veh) || (_x == driver _veh) || (_x == commander _veh)) then {
+						} else {
+							_x leaveVehicle _veh;
+							unassignVehicle _x;
+							//doGetOut _x;
+						};
+					} forEach (crew _veh);
+				};
+			} forEach units _x;
+			_grp setVariable [format ["%1_TriggerActivated", _marker], true];
+			[_grp, getMarkerPos _marker, 10, true] call CBA_fnc_taskAttack;
+		}
+	} forEach list _trigger;
+	false
+};

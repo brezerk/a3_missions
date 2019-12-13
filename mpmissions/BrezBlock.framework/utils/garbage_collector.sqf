@@ -15,36 +15,40 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
  ***************************************************************************/
-
-/*
-Create CBA defend
-	Arguments: [_marker]
-	Usage: [_marker] call BrezBlock_fnc_CreateArmor;
-	Return: Group
+ 
+ /*
+Spawn start objectives, triggers for informator contact
 */
-if (isServer) then {
 
-	params['_marker'];
-	
-	private _center = getMarkerPos _marker;
-	private _class = objNull;
-	private _grp = grpNull;
-
-	switch (markerType _marker) do
+while {true} do {
 	{
-		case "o_motor_inf": { _class = selectRandom D_FRACTION_EAST_UNITS_CARS; };
-		case "n_motor_inf": { _class = selectRandom D_FRACTION_INDEP_UNITS_CARS; };
-		case "o_mech_inf": { _class = selectRandom D_FRACTION_EAST_UNITS_LIGHT; };
-		case "n_mech_inf": { _class = selectRandom D_FRACTION_INDEP_UNITS_LIGHT; };
-		case "o_armor": { _class = selectRandom D_FRACTION_EAST_UNITS_HEAVY; };
-		case "n_armor": { _class = selectRandom D_FRACTION_INDEP_UNITS_HEAVY; };
-	};
-	
-	if (!isNil "_class") then {		
-		private _vehicle = createVehicle [_class, _center];
-		_vehicle setDir (markerDir _marker);
-		_grp = createVehicleCrew (_vehicle);
-	};
-
-	_grp;
+		private _corpse = _x;
+		private _timeStamp = (_x getVariable ["BB_CorpseTTL", 0]);
+		
+		if (_timeStamp == 0) then {
+			_corpse setVariable ["BB_CorpseTTL", time];
+		} else {
+			private _playerNearby = false;
+			if (_timeStamp != -1) then {
+				systemChat format ["corps ttl: %1", _timeStamp];
+				if ((time - _timeStamp) > 300) then {
+					{
+						scopeName "units_loop";
+						//player found withing 150m
+						if (isPlayer _x) then {
+							_playerNearby = true;
+							breakOut "units_loop";
+						};
+					} forEach nearestObjects [_x, ["SoldierEB", "SoldierGB", "SoldierWB"], 100];
+					if (!_playerNearby) then {
+						deleteVehicle _corpse;
+					} else {
+						_corpse setVariable ["BB_CorpseTTL", time];
+					};
+				};
+			};
+		};
+	} forEach allDead;
+	sleep 10;
 };
+

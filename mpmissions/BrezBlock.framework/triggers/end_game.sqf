@@ -17,17 +17,26 @@
  ***************************************************************************/
 
 /*
-Get random index
-	Arguments: [prefix, max, min]
-	Usage: [{SomeStringPrefix}],[{MaximumIndex},{MinimumIndex}] call BrezBlock_fnc_Get_RND_Index
-	Return: String composition using prefix and random index (in range from min to max) concated
+End game trigger
+	Usage: execVM ["addons/BrezBlock.framework/triggers/end_game.sqf"];
+	Return: true
 */
-params ["_prefix", "_max", ["_min", 1]];
-private ["_rnd"];
 
-_rnd = [_min, _max] call BIS_fnc_randomInt;
-if (_rnd < 10) then {
-	format ["%1_0%2", _prefix, _rnd];
-} else {
-	format ["%1_%2", _prefix, _rnd];
+if (isServer) then {
+	private ["_all_dead"];
+	_all_dead = false;
+	while {!_all_dead} do {
+	  sleep 5;
+	  if (count (allPlayers - (entities "HeadlessClient_F")) > 0) then {
+		  _all_dead = true;
+		  {
+			if ((alive _x) || (([_x,nil,true] call BIS_fnc_respawnTickets) > 0)) then {
+				_all_dead = false;
+			}
+		  } forEach (allPlayers - (entities "HeadlessClient_F"));
+		  if (_all_dead) then {
+			call Fn_Endgame_Loss;
+		  };
+	  };
+	};
 };

@@ -15,7 +15,26 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
  ***************************************************************************/
- 
-params ["_fade", "_timeout"];
- 
-[_fade, "BLACK", _timeout, 1] call BIS_fnc_fadeEffect;
+
+/*
+Paradrop
+	Arguments: [vehicle, group]
+	Usage: [{Vehicle}],[{Group}] execVM ["addons/BrezBlock.framework/systems/paradrop.sqf"];
+	Return: true
+*/
+
+_veh = _this select 0;
+_grp = _this select 1;
+
+{
+unassignVehicle _x;
+_x action ["EJECT", _veh];
+sleep 0.5;
+} forEach (units _grp);
+
+{
+_x action ["openParachute", _x];
+sleep 0.5;
+} forEach (units _grp);
+
+true
