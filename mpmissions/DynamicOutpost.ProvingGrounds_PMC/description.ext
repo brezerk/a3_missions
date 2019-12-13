@@ -159,7 +159,7 @@ class CfgSounds
 
 class CfgFunctions {
 	#include "addons\LARs\spawnComp\functions\functions.cpp"
-	#include "addons\brezblock\functions.cpp"
+	#include "addons\BrezBlock.framework\functions.cpp"
 };
 
 #include "compositions\compositions.cfg"
