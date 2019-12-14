@@ -1,3 +1,4 @@
+*.pbo
 BrezBlock.framework
 !/BrezBlock.framework/
 

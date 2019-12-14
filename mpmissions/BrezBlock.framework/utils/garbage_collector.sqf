@@ -30,7 +30,6 @@ while {true} do {
 		} else {
 			private _playerNearby = false;
 			if (_timeStamp != -1) then {
-				systemChat format ["corps ttl: %1", _timeStamp];
 				if ((time - _timeStamp) > 300) then {
 					{
 						scopeName "units_loop";
