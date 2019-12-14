@@ -22,4 +22,10 @@ On player respawn event handler
 
 //resore loadout
 [player, [missionNamespace, "outpost_saved_loadout"]] call BIS_fnc_loadInventory;
+
 player setVariable ["BB_CorpseTTL", -1, true];
+
+//add tfar radio
+if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
+	_this linkItem "tf_anprc152";
+};
