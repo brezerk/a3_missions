@@ -82,7 +82,7 @@ Fn_Create_Objectives_Start = {
 			"",
 			""
 		];
-		["wp_defend_01", trgWarzoneEnter] execVM "addons\brezblock\triggers\warzone_close.sqf";
+		["wp_defend_01", trgWarzoneEnter] execVM "addons\BrezBlock.framework\triggers\warzone_close.sqf";
 		// Gate trigger (only if keeper is alive)
 		trgOpenGate01 = createTrigger ["EmptyDetector", getPos ua_gate01];
 		trgOpenGate01 setTriggerArea [15, 15, 0, false];
@@ -129,7 +129,7 @@ Fn_Create_Objectives_Start = {
 			};
 		};
 		// Spawn transport
-		[Fn_Spawn_UAZ, 'wp_spawn_uaz_01', 20, 360] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
+		[Fn_Spawn_UAZ, 'wp_spawn_uaz_01', 20, 360] execVM 'addons\BrezBlock.framework\triggers\respawn_transport.sqf';
 	};
 };
 
@@ -222,7 +222,7 @@ if (isServer) then {
 	sleep 5;
 	
 	// We need to end game if all players are no longer alive
-	[] execVM "addons\brezblock\triggers\end_game.sqf";
-	[] execVM "addons\brezblock\utils\garbage_collector.sqf";
+	[] execVM "addons\BrezBlock.framework\triggers\end_game.sqf";
+	[] execVM "addons\BrezBlock.framework\utils\garbage_collector.sqf";
 };
 

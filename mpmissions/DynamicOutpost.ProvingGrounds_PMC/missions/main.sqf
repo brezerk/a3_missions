@@ -70,7 +70,7 @@ if (isServer) then {
 		_until = diag_tickTime + 10 * 60;
 		waitUntil {sleep 1; diag_tickTime > _until;};
 		
-		["wp_mort_spot", 10, 6] execVM "addons\brezblock\systems\incoming.sqf";
+		["wp_mort_spot", 10, 6] execVM "addons\BrezBlock.framework\systems\incoming.sqf";
 		
 		_until = diag_tickTime + 10;
 		waitUntil {sleep 1; diag_tickTime > _until;};
@@ -80,7 +80,7 @@ if (isServer) then {
 		
 		_cts = 5;
 		while {_cts = _cts - 1; sleep 30; _cts >= 0} do {
-			if (alive p_rus_spotter_01) then { ["wp_mort_spot", 10, 12] execVM "addons\brezblock\systems\incoming.sqf"; };
+			if (alive p_rus_spotter_01) then { ["wp_mort_spot", 10, 12] execVM "addons\BrezBlock.framework\systems\incoming.sqf"; };
 		};
 		
 		//Wave 2 (5 Minutes) med

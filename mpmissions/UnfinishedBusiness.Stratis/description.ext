@@ -148,12 +148,12 @@ class CfgFunctions {
 	{
 		class common
 		{
-			class Get_RND_Index {file = "addons\brezblock\utils\get_rnd_index.sqf";};
-			class Attach_Hold_Action {file = "addons\brezblock\actions\attach_hold.sqf";};
-			class CreateCivilianPresence {file = "addons\brezblock\systems\civilian.sqf";};
-			class CreatePatrol {file = "addons\brezblock\systems\patrol.sqf";};
-			class CreateDefend {file = "addons\brezblock\systems\defend.sqf";};
-			class GetAllCitiesInRange {file = "addons\brezblock\utils\get_cities.sqf";};
+			class Get_RND_Index {file = "addons\BrezBlock.framework\utils\get_rnd_index.sqf";};
+			class Attach_Hold_Action {file = "addons\BrezBlock.framework\actions\attach_hold.sqf";};
+			class CreateCivilianPresence {file = "addons\BrezBlock.framework\systems\civilian.sqf";};
+			class CreatePatrol {file = "addons\BrezBlock.framework\systems\patrol.sqf";};
+			class CreateDefend {file = "addons\BrezBlock.framework\systems\defend.sqf";};
+			class GetAllCitiesInRange {file = "addons\BrezBlock.framework\utils\get_cities.sqf";};
 		};
 	};
 };

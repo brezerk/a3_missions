@@ -43,5 +43,5 @@ if (isServer) then {
 			radio_box_01 addItemCargoGlobal ["ItemRadio", 30];
 		};
 	};
-	[] execVM "addons\brezblock\utils\garbage_collector.sqf";
+	[] execVM "addons\BrezBlock.framework\utils\garbage_collector.sqf";
 };

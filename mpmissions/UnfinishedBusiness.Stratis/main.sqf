@@ -121,9 +121,9 @@ if (isServer) then {
 	
 	call Fn_Create_MissionIntro;
 	
-	[Fn_Spawn_UAZ, 'wp_spawn_uaz_01', 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
+	[Fn_Spawn_UAZ, 'wp_spawn_uaz_01', 20, 10] execVM 'addons\BrezBlock.framework\triggers\respawn_transport.sqf';
 
 };
 
 // We need to end game if all players are no longer alive
-//[] execVM "addons\brezblock\triggers\end_game.sqf";
+//[] execVM "addons\BrezBlock.framework\triggers\end_game.sqf";

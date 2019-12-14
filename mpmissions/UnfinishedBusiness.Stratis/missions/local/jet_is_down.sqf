@@ -18,7 +18,7 @@
 
 if (hasInterface) then {
 	Fn_Local_Jet_GetOut = {
-		[0, 5] execVM "addons\brezblock\utils\fade.sqf";
+		[0, 5] execVM "addons\BrezBlock.framework\utils\fade.sqf";
 		//doGetOut player;
 		moveOut player;
 	};
@@ -29,7 +29,7 @@ if (hasInterface) then {
 		//do some damage
 		_dmgType = ["leg_l", "leg_r", "hand_r", "hand_l", "head"];
 		[player, 1, selectRandom _dmgType, "bullet"] call ace_medical_fnc_addDamageToUnit;
-		[1, 3] execVM "addons\brezblock\utils\fade.sqf";
+		[1, 3] execVM "addons\BrezBlock.framework\utils\fade.sqf";
 		player setUnconscious true;
 	};
 		

@@ -184,7 +184,7 @@ if (isServer) then {
 	
 	publicVariable "avaliable_pois";
 	
-	[_crashSitePos, 8000] execVM "addons\brezblock\utils\controller.sqf";
+	[_crashSitePos, 8000] execVM "addons\BrezBlock.framework\utils\controller.sqf";
 	execVM "missions\create_locations.sqf";
 		
 	//create tasks assigned to assault_group

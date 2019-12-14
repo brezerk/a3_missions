@@ -172,7 +172,7 @@ class CfgDebriefing
 
 class CfgFunctions {
 	#include "addons\LARs\spawnComp\functions\functions.cpp"
-	#include "addons\brezblock\functions.cpp"
+	#include "addons\BrezBlock.framework\functions.cpp"
 };
 
 //FIXME: Does not work for dedicated server

@@ -90,7 +90,7 @@ player setVariable ["BB_CorpseTTL", -1, true];
 } forEach ['mrk_east_stash_01', 'mrk_east_stash_02'];
 
 /* FIXME: CBA-only
-execVM "addons\brezblock\utils\marker_manager.sqf";
+execVM "addons\BrezBlock.framework\utils\marker_manager.sqf";
  */
  
 // Disable BIS Revive system if ACE Medical mod is loaded

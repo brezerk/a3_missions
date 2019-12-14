@@ -290,7 +290,7 @@ if (isServer) then {
 		_wp setWaypointBehaviour "COMBAT";
 		_wp setWaypointSpeed "NORMAL";
 		
-		[_uuid, _targetPos, 250] execVM "addons\brezblock\utils\vehicleAssault.sqf";
+		[_uuid, _targetPos, 250] execVM "addons\BrezBlock.framework\utils\vehicleAssault.sqf";
 		
 	};
 	

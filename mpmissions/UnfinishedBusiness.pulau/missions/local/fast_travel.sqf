@@ -20,20 +20,20 @@ if (hasInterface) then {
 	Fn_Local_FastTravel_Sleep = {
 		if (alive player) then {
 			playSound "radio_chatter_00";
-			[0, 5] execVM "addons\brezblock\utils\fade.sqf";
+			[0, 5] execVM "addons\BrezBlock.framework\utils\fade.sqf";
 		};
 	};
 		
 	Fn_Local_FastTravel_Wokeup = {
 		if (alive player) then {
 			playSound "radio_chatter_01";
-			[1, 5] execVM "addons\brezblock\utils\fade.sqf";
+			[1, 5] execVM "addons\BrezBlock.framework\utils\fade.sqf";
 		};
 	};
 	
 	Fn_Local_FastTravel_Wokeup_Express = {
 		if (alive player) then {
-			[1, 5] execVM "addons\brezblock\utils\fade.sqf";
+			[1, 5] execVM "addons\BrezBlock.framework\utils\fade.sqf";
 		};
 	};
 };

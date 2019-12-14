@@ -339,7 +339,7 @@ if (isServer) then {
 	call Fn_Create_MissionIntro;
 	
 	[] execVM "missions\create_locations.sqf";
-	[] execVM "addons\brezblock\utils\garbage_collector.sqf";
+	[] execVM "addons\BrezBlock.framework\utils\garbage_collector.sqf";
 		
 	addMissionEventHandler ["EntityKilled",
 	{

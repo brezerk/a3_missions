@@ -54,7 +54,7 @@ if (isServer) then {
 				private _marker = createMarker [format ["mrk_east_transport_%1", _forEachIndex], getMarkerPos _x];
 				_marker setMarkerType "hd_destroy";
 				_marker setMarkerAlpha 0;
-				[Fn_Spawn_East_Cars_Transport, _marker, 20, 10] execVM 'addons\brezblock\triggers\respawn_transport.sqf';
+				[Fn_Spawn_East_Cars_Transport, _marker, 20, 10] execVM 'addons\BrezBlock.framework\triggers\respawn_transport.sqf';
 			};
 		} forEach allMapMarkers;
 		private _filter = format ["wp_%1_east_apc_spawn", D_LOCATION];

@@ -106,8 +106,8 @@ if (isServer) then {
 				""
 			];
 		};
-		[["wp_ambush_start", 5] call BrezBlock_fnc_Get_RND_Index, ["rus_spec", 4] call BrezBlock_fnc_Get_RND_Index] execVM 'addons\brezblock\utils\spawn_opfor_forces_guard.sqf';
-		[["wp_ambush_start", 5] call BrezBlock_fnc_Get_RND_Index, ["rus_spec", 4] call BrezBlock_fnc_Get_RND_Index] execVM 'addons\brezblock\utils\spawn_opfor_forces_guard.sqf';
+		[["wp_ambush_start", 5] call BrezBlock_fnc_Get_RND_Index, ["rus_spec", 4] call BrezBlock_fnc_Get_RND_Index] execVM 'addons\BrezBlock.framework\utils\spawn_opfor_forces_guard.sqf';
+		[["wp_ambush_start", 5] call BrezBlock_fnc_Get_RND_Index, ["rus_spec", 4] call BrezBlock_fnc_Get_RND_Index] execVM 'addons\BrezBlock.framework\utils\spawn_opfor_forces_guard.sqf';
 	}; // Fn_Task_Create_InjuredEvacuation
 
 	Fn_Task_InjuredEvacuation_CallMedEvac = {

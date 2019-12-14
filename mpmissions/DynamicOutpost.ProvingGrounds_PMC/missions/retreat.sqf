@@ -87,6 +87,6 @@ if (isServer) then {
 	Fn_Spawn_T_Evac_Point = {
 		[["wp_evac_ambush", 6] call BrezBlock_fnc_Get_RND_Index, ["rus_spec", 4] call BrezBlock_fnc_Get_RND_Index, "ua_secret_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
 		[["wp_evac_ambush", 6] call BrezBlock_fnc_Get_RND_Index, ["rus_spec", 4] call BrezBlock_fnc_Get_RND_Index, "ua_secret_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
-		['wp_ambush_start_01', ["rus_spec", 4] call BrezBlock_fnc_Get_RND_Index] execVM 'addons\brezblock\utils\spawn_opfor_forces_guard.sqf';	
+		['wp_ambush_start_01', ["rus_spec", 4] call BrezBlock_fnc_Get_RND_Index] execVM 'addons\BrezBlock.framework\utils\spawn_opfor_forces_guard.sqf';	
 	};
 };

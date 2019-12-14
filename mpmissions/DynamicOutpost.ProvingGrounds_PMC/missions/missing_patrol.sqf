@@ -151,7 +151,7 @@ if (isServer) then {
 				removeFromRemainsCollector [_x];
 			};
 		} count allDeadMen;
-		[_marker, ["rus_spec", 5] call BrezBlock_fnc_Get_RND_Index] execVM 'addons\brezblock\utils\spawn_opfor_forces_guard.sqf';
+		[_marker, ["rus_spec", 5] call BrezBlock_fnc_Get_RND_Index] execVM 'addons\BrezBlock.framework\utils\spawn_opfor_forces_guard.sqf';
 		[_marker] remoteExecCall ["Fn_Local_Task_Create_MissingPatrol", [0,-2] select isDedicated];
 		
 		private _trg = createTrigger ["EmptyDetector", getMarkerPos _marker];

@@ -40,13 +40,13 @@ if (isServer) then {
 		while {_cts = _cts - 1; sleep 30; _cts >= 0} do {
 			// if spotter alive -- do full scale bombard
 			if (alive p_rus_spotter_01) then { 
-				["wp_mort_spot", 15, 16] execVM "addons\brezblock\systems\incoming.sqf"; 
+				["wp_mort_spot", 15, 16] execVM "addons\BrezBlock.framework\systems\incoming.sqf"; 
 			} else {
-				["wp_mort_spot", 10, 8] execVM "addons\brezblock\systems\incoming.sqf";
+				["wp_mort_spot", 10, 8] execVM "addons\BrezBlock.framework\systems\incoming.sqf";
 			};
 		};
 	} else {
-		["wp_mort_spot", 10, 2] execVM "addons\brezblock\systems\incoming.sqf";
+		["wp_mort_spot", 10, 2] execVM "addons\BrezBlock.framework\systems\incoming.sqf";
 		["outpost_artellery_down"] remoteExec ["playSound"];
 		["rhs_usa_land_rc_13"] remoteExec ["playSound"];
 	};
