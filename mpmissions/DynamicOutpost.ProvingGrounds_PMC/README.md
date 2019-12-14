@@ -1,6 +1,8 @@
 
 *DynamicOutpost* is a dynamic and semi-random multiplayer mission to defend Ukrainian territory from Russian invasion.
 
+![](https://github.com/brezerk/a3_missions/raw/master/mpmissions/DynamicOutpost.ProvingGrounds_PMC/images/outpost_logo.png)
+
 ## Briefing
 
 37th checkpoint 'Bunker' is defended by about 40 soldiers from the 88th Aeromobile Brigade. Following the Minsk Truce, the ringleaders of the pro-Russian armed groups assured that they would not open the fire and agreed to build their own base. Your order: deliver supplies and personnel to the 37th checkpoint and reinforce the military presence in the region.
