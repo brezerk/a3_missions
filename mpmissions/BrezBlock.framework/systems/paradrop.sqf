@@ -19,7 +19,7 @@
 /*
 Paradrop
 	Arguments: [vehicle, group]
-	Usage: [{Vehicle}],[{Group}] execVM ["addons/brezblock/systems/paradrop.sqf"];
+	Usage: [{Vehicle}],[{Group}] execVM ["addons/BrezBlock.framework/systems/paradrop.sqf"];
 	Return: true
 */
 

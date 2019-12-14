@@ -19,7 +19,7 @@
 /*
 Paradrop
 	Arguments: [Marker, Trigger Name]
-	Usage: [{Marker}, {TriggerName}] execVM ["addons/brezblock/triggers/warzone_close.sqf"];
+	Usage: [{Marker}, {TriggerName}] execVM ["addons/BrezBlock.framework/triggers/warzone_close.sqf"];
 	Return: true
 */
 

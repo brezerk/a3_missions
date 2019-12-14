@@ -19,7 +19,7 @@
 /*
 Start shelling on markers
 	Arguments: [spawn marker, targets, number of shells, shell type]
-	Usage: [{SpawnMarker}],[{Tagets},{NumberOfShells},{ShellType}] execVM ["addons/brezblock/systems/incoming.sqf"];
+	Usage: [{SpawnMarker}],[{Tagets},{NumberOfShells},{ShellType}] execVM ["addons/BrezBlock.framework/systems/incoming.sqf"];
 	Return: true
 */
 

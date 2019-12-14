@@ -18,7 +18,7 @@
 
 /*
 End game trigger
-	Usage: execVM ["addons/brezblock/triggers/end_game.sqf"];
+	Usage: execVM ["addons/BrezBlock.framework/triggers/end_game.sqf"];
 	Return: true
 */
 
