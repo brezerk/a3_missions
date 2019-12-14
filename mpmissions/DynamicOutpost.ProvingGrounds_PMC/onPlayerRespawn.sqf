@@ -27,5 +27,5 @@ player setVariable ["BB_CorpseTTL", -1, true];
 
 //add tfar radio
 if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
-	_this linkItem "tf_anprc152";
+	player linkItem "tf_anprc152";
 };
