@@ -21,9 +21,11 @@ Following MODs are **required**:
 * CUP ACE3 Compatibility Addon - Terrains
 * RHSUSAF
 * RHSAFRF
+* RHSGREF
 * Project OPFOR
 * ACE Compat - RHS Armed Forces of the Russian Federation
 * ACE Compat - RHS United States Armed Forces
+* ACE Compat - RHS: GREF
 * GRAD Trenches
 
 Optional mods (choose only one)
