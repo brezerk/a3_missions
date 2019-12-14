@@ -31,8 +31,8 @@ removeHeadgear _this;
 removeGoggles _this;
 
 //Add weapons
-_this addWeapon "rhs_weap_aks74u";
-_this addPrimaryWeaponItem "rhs_acc_pgs64_74u";
+_this addWeapon "rhs_weap_ak74";
+_this addPrimaryWeaponItem "rhs_acc_dtk1983";
 _this addPrimaryWeaponItem "rhs_30Rnd_545x39_7N6_AK";
 _this addWeapon "rhs_weap_rpg7";
 _this addSecondaryWeaponItem "rhs_acc_pgo7v";
