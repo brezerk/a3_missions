@@ -16,13 +16,13 @@
  *                                                                         *
  ***************************************************************************/
 
-"ua_secret_01" setMarkerText (localize "INFO_SUBLOC_03");
-"txt_marker_01" setMarkertext (localize "INFO_SUBLOC_04");
-"txt_marker_02" setMarkertext (localize "INFO_SUBLOC_07");
-"txt_marker_03" setMarkertext (localize "INFO_SUBLOC_09");
-"txt_marker_08" setMarkertext (localize "STR_ONLOAD_INFO_02");
+"ua_secret_01" setMarkerTextLocal (localize "INFO_SUBLOC_03");
+"txt_marker_01" setMarkerTextLocal (localize "INFO_SUBLOC_04");
+"txt_marker_02" setMarkerTextLocal (localize "INFO_SUBLOC_07");
+"txt_marker_03" setMarkerTextLocal (localize "INFO_SUBLOC_09");
+"txt_marker_08" setMarkerTextLocal (localize "STR_ONLOAD_INFO_02");
 {
-	_x setMarkertext (localize "INFO_SUBLOC_10");
+	_x setMarkerTextLocal (localize "INFO_SUBLOC_10");
 } forEach ["txt_marker_04", "txt_marker_05", "txt_marker_06", "txt_marker_07"];
 
 waitUntil { !isNull player }; // Wait for player to initialize
