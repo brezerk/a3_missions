@@ -21,9 +21,9 @@
 				<Russian>ІНФО: Мод ACEX не знайдено. Функції виживання будуть відключені.</Russian>
 			</Key>
 			<Key ID="INFO_MOD_NF_FACTIONS">
-				<Original>INFO: CBA Vehicles Mod not found. Advanced fractions will be unavailable.</Original>
-				<English>INFO: CBA Vehicles Mod not found. Advanced fractions will be unavailable.</English>
-				<Russian>ІНФО: Мод CBA Vehicles не знайдено. Розширені фракції будуть недоступні.</Russian>
+				<Original>INFO: CUP Vehicles Mod not found. Advanced fractions will be unavailable.</Original>
+				<English>INFO: CUP Vehicles Mod not found. Advanced fractions will be unavailable.</English>
+				<Russian>ІНФО: Мод CUP Vehicles не знайдено. Розширені фракції будуть недоступні.</Russian>
 			</Key>
 			<Key ID="INFO_SAFEZONE">
 				<Original>Stop shooting or throwing grenades! You are in a safe zone!</Original>
