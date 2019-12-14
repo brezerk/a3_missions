@@ -1,6 +1,8 @@
 
 *DynamicOutpost* is a dynamic and semi-random multiplayer mission to defend Ukrainian territory from Russian invasion.
 
+![](https://github.com/brezerk/a3_missions/raw/master/mpmissions/DynamicOutpost.ProvingGrounds_PMC/images/outpost_logo.png)
+
 ## Briefing
 
 37th checkpoint 'Bunker' is defended by about 40 soldiers from the 88th Aeromobile Brigade. Following the Minsk Truce, the ringleaders of the pro-Russian armed groups assured that they would not open the fire and agreed to build their own base. Your order: deliver supplies and personnel to the 37th checkpoint and reinforce the military presence in the region.
@@ -19,9 +21,11 @@ Following MODs are **required**:
 * CUP ACE3 Compatibility Addon - Terrains
 * RHSUSAF
 * RHSAFRF
+* RHSGREF
 * Project OPFOR
 * ACE Compat - RHS Armed Forces of the Russian Federation
 * ACE Compat - RHS United States Armed Forces
+* ACE Compat - RHS: GREF
 * GRAD Trenches
 
 Optional mods (choose only one)
@@ -30,6 +34,20 @@ Optional mods (choose only one)
 * Task Force Radio
 
 Steam Collection: https://steamcommunity.com/sharedfiles/filedetails/?id=1628253149
+
+## Building
+
+In prder to build this message from source code, follow this steps:
+
+0. Make sure you have Mikero's Dos Tools installed;
+1. Clone repository;
+2. Change directory to `mpmissions/DynamicOutpost.ProvingGrounds_PMC`;
+3. Run `Make.bat` (Windows) or `Make.sh` (Linux);
+
+Alternative way
+
+0. Copy over `mpmissions/BrezBlock.framework` to `mpmissions/DynamicOutpost.ProvingGrounds_PMC/addons`;
+1. Build pbo via `makepbo` (Mikero's Dos Tools) or via Arma3 Editor;
 
 ## Contributing
 
