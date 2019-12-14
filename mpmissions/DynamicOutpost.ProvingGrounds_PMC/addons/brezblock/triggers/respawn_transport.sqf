@@ -19,7 +19,7 @@
 /*
 Paradrop
 	Arguments: [CallBack, Spawn Position, Timeout (/6), Initial Spawn Delay]
-	Usage: [{CallBack},{SpawnPosition},{Timeout},{InitialSpawnDelay}] execVM ["addons/BrezBlock.framework/triggers/respawn_transport.sqf"];
+	Usage: [{CallBack},{SpawnPosition},{Timeout},{InitialSpawnDelay}] execVM ["addons/brezblock/triggers/respawn_transport.sqf"];
 	Return: true
 */
 

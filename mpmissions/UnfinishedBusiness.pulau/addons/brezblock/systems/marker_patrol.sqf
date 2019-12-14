@@ -17,23 +17,39 @@
  ***************************************************************************/
 
 /*
-Start shelling on markers
-	Arguments: [spawn marker, targets, number of shells, shell type]
-	Usage: [{SpawnMarker}],[{Tagets},{NumberOfShells},{ShellType}] execVM ["addons/BrezBlock.framework/systems/incoming.sqf"];
-	Return: true
+Create CBA patrol
+	Arguments: [_marker]
+	Usage: [_marker] call BrezBlock_fnc_MarkerCreatePatrol;
+	Return: Group
 */
-
 if (isServer) then {
-	params["_marker_name", "_targets", "_shells", ["_shell", "Sh_82mm_AMOS"]];
-	private["_pos", "_boom"];
-	while {_shells > 0} do {
-		_pos = getMarkerPos ([_marker_name, _targets] call BrezBlock_fnc_Get_RND_Index);
-	   //Sh_155mm_AMOS //Sh_120mm_HE //Sh_82mm_AMOS
-		_boom = createVehicle [_shell, _pos, [], 0, "FLY"];
-		_boom setPos [((getPos _boom select 0) + (round(random 250) - 150)), ((getPos _boom select 1) + (round(random 250) - 150)), 250 + round random 50];
-		_boom setVelocity [0,0,-50];
-		_shells = _shells - 1;
-		sleep 5;
+	params['_marker'];
+	private['_side'];
+	private _grp = grpNull;
+	private _radius = getMarkerSize _marker select 0;
+	private _center = getMarkerPos _marker;
+
+	private _count =  parseNumber (markerText _marker);
+	
+	if (_count <= 0) then {
+		_count = 2 + (D_DIFFICLTY / 2);
 	};
+	
+	//https://community.bistudio.com/wiki/Arma_3_CfgMarkerColors
+	switch (getMarkerColor _marker) do
+	{
+		case "ColorWEST": { _side = west; };
+		case "ColorEAST": { _side = east; };
+		case "ColorGUER": { _side = resistance; };
+		case "ColorCIV": { _side = civilian; };
+		default { _side = sideUnknown; };
+	};
+	
+	if (_side != sideUnknown) then {
+		_grp = [_center, _side, _count, _radius] call BrezBlock_fnc_CreatePatrol;
+	} else {
+		systemChat format ["Error: Can't get side from %1", _marker];
+	};
+	
+	_grp;
 };
-true
