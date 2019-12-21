@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="BrezBlock.org.ua">
+	<Package name="UnfinishedBusiness">
+		<Container name="l18n">
+			<Key ID="STR_ONLOAD_NAME">
+				<Original>Operation Crossfire v0.01</Original>
+			</Key>
+			<Key ID="STR_ONLOAD_INFO_01">
+				<Original>Operation Crossfire.</Original>
+				<English>Operation Crossfire.</English>
+				<Russian>Операція перехресний вогонь.</Russian>
+			</Key>
+			<Key ID="STR_ONLOAD_INFO_02">
+				<Original>Operation Crossfire.</Original>
+				<English>Operation Crossfire.</English>
+				<Russian>Операція перехресний вогонь.</Russian>
+			</Key>		
+			<Key ID="FROM_CITY_INFO_01">
+				<Original>Location:</Original>
+				<English>Location:</English>
+				<Russian>Локація:</Russian>
+			</Key>	
+			<Key ID="FROM_CITY_INFO_02">
+				<Original>Influence:</Original>
+				<English>Influence:</English>
+				<Russian>Вплив:</Russian>
+			</Key>	
+		</Container>
+	</Package>
+</Project>

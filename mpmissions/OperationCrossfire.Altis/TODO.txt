@@ -1,0 +1,12 @@
+
+ * Dynamic item spawn for EAST boats and heli;
+ * Boat fast travel?
+ 
+ * Rebel missions?
+    * Radio comm each town?
+	* Patrol Aria?
+	* Delivery?
+	* Defend fuel depot?
+	* Defend weapon stash?
+	* Defend rebel leader?
+	

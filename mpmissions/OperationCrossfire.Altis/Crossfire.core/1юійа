@@ -1,0 +1,31 @@
+_base = createSimpleObject ["Land_Destroyer_01_base_F",[0,0,0]] ;
+_data = (getArray (configfile >> "CfgVehicles" >> "Land_Destroyer_01_base_F" >> "multiStructureParts")) apply {
+	_pos = _base selectionPosition (_x select 1) ;
+	[
+		_x select 0,
+		[
+			-(_pos select 0),
+			-(_pos select 1),
+			(_pos select 2) - 2
+		]
+	]
+};
+
+{
+	_x params ["_class","_pos"] ;
+	if (!_disableAirport or _class != "Land_HelipadEmpty_F") then {
+		_part = createVehicle [_class,[0,0,0],[],0,"CAN_COLLIDE"] ;
+		_part attachTo [_obj,_pos vectorAdd _posCoef] ;
+		_part setDir 180 ;
+	} ;
+} forEach _data ;
+
+
+
+private _destroyer = createVehicle ["Land_Destroyer_01_base_F", position player vectoradd [20,0,0], [], 0, "CAN_COLLIDE"];
+
+[_destroyer] call bis_fnc_Destroyer01Init;
+
+works like a charm for me. can also move the base destroyer and call [_destroyer] call bis_fnc_Destroyer01PosUpdate after that. or with an editor placed one.
+
+To get a list of the part objects, once the destroyer is assembled, you can use _destroyer getVariable "bis_carrierParts"

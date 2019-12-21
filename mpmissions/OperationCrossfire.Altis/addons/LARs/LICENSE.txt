@@ -1,0 +1,12 @@
+Copyright (C)  2019  Larrow
+
+This program is WTFYL (What The F*** You Like) software;
+
+As per author comment: https://forums.bohemia.net/forums/topic/191902-eden-composition-spawning/?do=findComment&comment=3062589
+
+>I'm also hoping and assuming we have permission to use this in our own public mod/mission projects to spawn comps?
+Of course you are welcome to use it however you like, a mention is always welcome. Now wheres the WTFYL(What The F*** You Like) license i saw some one use the other day, made me laugh. 
+
+So be it :)
+
+Thank you Larrow!
