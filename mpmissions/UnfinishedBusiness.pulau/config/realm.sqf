@@ -27,4 +27,4 @@ D_LOCATIONS = ['Gurun', 'Monyet'];
 D_CODE43_REAL_WEATHER_REALTIME = true;
 
 // Debug only
-D_DEBUG = false;
+D_DEBUG = true;

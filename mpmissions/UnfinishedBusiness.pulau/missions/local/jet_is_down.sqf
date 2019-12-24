@@ -33,7 +33,7 @@ if (hasInterface) then {
 		};
 		[1, 3] execVM "addons\BrezBlock.framework\utils\fade.sqf";
 		player setUnconscious true;
-		[_diffclty] execVM "gear\player.sqf";
+		[_diffclty] execVM "UnfinishedBusiness.core\gear\player.sqf";
 	};
 		
 	Fn_Local_Jet_Player_Land = {

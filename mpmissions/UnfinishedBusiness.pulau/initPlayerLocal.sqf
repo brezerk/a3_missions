@@ -47,15 +47,15 @@ if (isServer) then {
 
 {if (_x find "respawn_" >= 0) then {_x setMarkerAlphaLocal 0;}} forEach allMapMarkers;
 
-waitUntil { sleep 1; [["mission_requested", "mission_plane_send"]] call Fn_Local_WaitPublicVariables; }; 
+waitUntil { sleep 1; [["mission_requested", "mission_plane_send"]] call Fn_Local_WaitPublicVariables; };
 
 if (!mission_requested) then {
-	[] call BrezBlock_fnc_WaitForStart;
+	["UnfinishedBusiness.core\ui\SettingsDialog.sqf"] call BrezBlock_fnc_WaitForStart;
 };
 
 waitUntil { sleep 1; [["D_LOCATION", "D_FRACTION_WEST", "D_FRACTION_EAST", "D_FRACTION_CIV", "D_FRACTION_INDEP", "D_NAVTOOL_MAP", "D_NAVTOOL_COMPASS"]] call Fn_Local_WaitPublicVariables; }; 
 
-execVM "gear\player\init.sqf";
+execVM "UnfinishedBusiness.core\gear\player\init.sqf";
 
 player setVariable ["weapon_fiered", false, false];
 player setVariable ["is_civilian", false, true];
@@ -95,7 +95,7 @@ execVM "addons\BrezBlock.framework\utils\marker_manager.sqf";
  
 // Disable BIS Revive system if ACE Medical mod is loaded
 if (D_MOD_ACE_MEDICAL) then {
-    [player] call BIS_fnc_disableRevive;
+	[player] call BIS_fnc_disableRevive;
 };
  
 Fn_Local_SetPersonalTaskState = {
@@ -171,6 +171,8 @@ Fn_Local_Switch_Side = {
 	selectPlayer _player;
 };
 
+
+
 player addEventHandler
 [
 	"Killed",
@@ -191,6 +193,14 @@ player addEventHandler
 			
 			if (!(alive obj_east_comtower)) then {
 				_sides = _sides - [east];
+			} else {
+				private _all_count = {alive _x} count (playableUnits + switchableUnits);
+				private _east_count = {side _x == east && alive _x} count (playableUnits + switchableUnits);
+				//systemChat format ["%1 of % 1 are east", _east_count, _all_count];
+				if (_east_count >= (floor(_all_count / 3))) then {
+					//systemChat "Removing east";
+					_sides = _sides - [east];
+				};
 			};
 			
 			if (count (nearestObjects [us_liberty_01, ["Ship", "Helicopter"], 100]) <= 0) then {
@@ -239,7 +249,7 @@ player addEventHandler
 				case east:
 				{
 					player setVariable ["is_civilian", false, true];
-					[] execVM "gear\player\east.sqf";
+					[] execVM "UnfinishedBusiness.core\gear\player\east.sqf";
 					player setPos getMarkerPos "respawn_east";
 					call Fn_Local_Create_SCAT_MissionIntro;
 				};
@@ -247,7 +257,7 @@ player addEventHandler
 				{
 					player setVariable ["is_civilian", true, true];
 					player setVariable ["weapon_fiered", false, false];
-					[] execVM "gear\player\civ.sqf";
+					[] execVM "UnfinishedBusiness.core\gear\player\civ.sqf";
 					private _civ_spawn_markers = [];
 					{
 						if (_x find "respawn_civilian_" >= 0) then {
@@ -264,13 +274,13 @@ player addEventHandler
 				{
 					player setVariable ["is_civilian", false, true];
 					private _pos = getMarkerPos "respawn_west";
-					[] execVM "gear\player\init.sqf";
+					[] execVM "UnfinishedBusiness.core\gear\player\init.sqf";
 					player setPos [_pos select 0, _pos select 1, 8];
 					call Fn_Local_Create_RescueMission;
 				};
 			};
 		} else {
-			[] execVM "gear\player\init.sqf";
+			[] execVM "UnfinishedBusiness.core\gear\player\init.sqf";
 			private _pos = getMarkerPos "respawn_west";
 			player setPos [(_pos select 0), (_pos select 1), 8];
 		};

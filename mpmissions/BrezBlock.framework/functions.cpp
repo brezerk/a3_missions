@@ -17,6 +17,7 @@ class BrezBlock
 		class MarkerCreateDefend {file = "addons\BrezBlock.framework\systems\marker_defend.sqf";};
 		class CreateCheckPoint {file = "addons\BrezBlock.framework\systems\checkpoint.sqf";};
 		class CreateArmor {file = "addons\BrezBlock.framework\systems\armor.sqf";};
+		class GetRandomCity {file = "addons\BrezBlock.framework\utils\get_random_city.sqf";};
 		class GetAllCitiesInRange {file = "addons\BrezBlock.framework\utils\get_cities.sqf";};
 		class GetAllMarkerTypesInRange {file = "addons\BrezBlock.framework\utils\get_all_marker_types_in_range.sqf";};
 		class GetEmptyRoads {file = "addons\BrezBlock.framework\utils\get_empty_roads.sqf";};

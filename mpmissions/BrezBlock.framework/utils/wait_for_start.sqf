@@ -16,7 +16,7 @@
  *                                                                         *
  ***************************************************************************/
 
-params ["_var"];
+params ["_settingDialog"];
 
 private _center = [(worldSize/2), (worldSize/2), 0];
 private _cam = "camera" camCreate _center;
@@ -32,7 +32,9 @@ private _intoFrame = 0;
 
 if (D_DEBUG) then {
 	_intoFrame = 4;
-	[0] execVM "ui\SettingsDialog.sqf";
+	if (!isNil "_settingDialog") then {
+		[0] execVM _settingDialog;
+	};
 };
 
 //text = "data\images\logo.paa";
@@ -158,7 +160,9 @@ if (!isNil "_missionLogo") then {
 					};
 					case 3: {
 						if (((roleDescription player) == "Squad Leader") || (D_DEBUG)) then {
-							[0] execVM "ui\SettingsDialog.sqf";
+							if (!isNil "_settingDialog") then {
+								[0] execVM _settingDialog;
+							};
 						};
 						_intoFrame = _intoFrame + 1;
 						if (!D_MOD_ACE) then { systemChat localize "INFO_MOD_NF_ACE"; };

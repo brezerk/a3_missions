@@ -46,7 +46,7 @@ if (isServer) then {
 		_group deleteGroupWhenEmpty true;
 		
 		{
-			[_x] execVM "gear\civilian_rebel.sqf";
+			[_x] execVM "UnfinishedBusiness.core\gear\civilian_rebel.sqf";
 			[_x] remoteExecCall ["Fn_Local_Attach_Recruit_Action"];
 		} forEach units _group;
 		
@@ -65,7 +65,7 @@ if (isServer) then {
 			_group deleteGroupWhenEmpty true;
 			
 			{
-				[_x] execVM "gear\civilian_rebel.sqf";
+				[_x] execVM "UnfinishedBusiness.core\gear\civilian_rebel.sqf";
 				[_x] remoteExecCall ["Fn_Local_Attach_Recruit_Action"];
 			} forEach units _group;
 			

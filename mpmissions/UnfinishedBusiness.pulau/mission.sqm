@@ -21,9 +21,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={974.08142,81.089478,9392.1543};
-		dir[]={0.90020621,-0.43479976,-0.02541898};
-		up[]={0.43466786,0.90050596,-0.012273748};
-		aside[]={-0.02822566,1.2379314e-007,-0.99963415};
+		dir[]={0.68391693,-0.57285565,-0.45184371};
+		up[]={0.47799006,0.81963331,-0.31579417};
+		aside[]={-0.55124933,1.6298145e-009,-0.83438051};
 	};
 };
 binarizationWanted=0;
@@ -54,7 +54,6 @@ addons[]=
 	"A3_Characters_F",
 	"A3_Structures_F_EPB_Civ_Camping",
 	"A3_Weapons_F_Ammoboxes",
-	"A3_Air_F_Heli_Light_01",
 	"A3_Props_F_Argo_Civilian_InfoBoards",
 	"A3_Structures_F_Mil_Flags",
 	"A3_Structures_F_Enoch_Military_Camps"
@@ -63,7 +62,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=20;
+		items=19;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -185,19 +184,12 @@ class AddonsMetaData
 		};
 		class Item17
 		{
-			className="A3_Air_F";
-			name="Arma 3 Alpha - Aircraft";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item18
-		{
 			className="A3_Props_F_Argo";
 			name="Arma 3 Malden - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item19
+		class Item18
 		{
 			className="A3_Structures_F_Enoch_Military";
 			name="Arma 3 Enoch - Military Buildings and Structures";
@@ -295,7 +287,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=906;
+		items=905;
 		class Item0
 		{
 			dataType="Marker";
@@ -11556,22 +11548,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2227.3367,95.515869,9039.71};
-				angles[]={0,5.0916066,0};
-			};
-			side="Empty";
-			class Attributes
-			{
-			};
-			id=7855;
-			type="B_Heli_Light_01_F";
-			atlOffset=113.9311;
-		};
-		class Item884
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={1000.0461,9.9288769,9465.9746};
 				angles[]={0,2.2525339,0};
 			};
@@ -11584,7 +11560,7 @@ class Mission
 			type="MapBoard_Tanoa_F";
 			atlOffset=0.074235916;
 		};
-		class Item885
+		class Item884
 		{
 			dataType="Object";
 			class PositionInfo
@@ -11625,7 +11601,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item886
+		class Item885
 		{
 			dataType="Group";
 			side="West";
@@ -11944,7 +11920,7 @@ class Mission
 			id=7904;
 			atlOffset=0.15976143;
 		};
-		class Item887
+		class Item886
 		{
 			dataType="Group";
 			side="West";
@@ -12263,7 +12239,7 @@ class Mission
 			id=7910;
 			atlOffset=29.694553;
 		};
-		class Item888
+		class Item887
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12279,7 +12255,7 @@ class Mission
 			type="FlagPole_F";
 			atlOffset=-0.017852783;
 		};
-		class Item889
+		class Item888
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12295,7 +12271,7 @@ class Mission
 			type="FlagPole_F";
 			atlOffset=0.0042915344;
 		};
-		class Item890
+		class Item889
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12311,7 +12287,7 @@ class Mission
 			type="FlagPole_F";
 			atlOffset=-0.0075073242;
 		};
-		class Item891
+		class Item890
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12327,7 +12303,7 @@ class Mission
 			type="FlagPole_F";
 			atlOffset=-0.0014305115;
 		};
-		class Item892
+		class Item891
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12343,7 +12319,7 @@ class Mission
 			type="FlagPole_F";
 			atlOffset=-0.0034599304;
 		};
-		class Item893
+		class Item892
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12359,7 +12335,7 @@ class Mission
 			type="FlagPole_F";
 			atlOffset=-0.021610737;
 		};
-		class Item894
+		class Item893
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12375,7 +12351,7 @@ class Mission
 			type="FlagPole_F";
 			atlOffset=-0.013329506;
 		};
-		class Item895
+		class Item894
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12391,7 +12367,7 @@ class Mission
 			type="FlagPole_F";
 			atlOffset=-0.069499969;
 		};
-		class Item896
+		class Item895
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12407,7 +12383,7 @@ class Mission
 			type="FlagPole_F";
 			atlOffset=0.001373291;
 		};
-		class Item897
+		class Item896
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12423,7 +12399,7 @@ class Mission
 			type="FlagPole_F";
 			atlOffset=0.11371613;
 		};
-		class Item898
+		class Item897
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12439,7 +12415,7 @@ class Mission
 			type="FlagPole_F";
 			atlOffset=0.0017204285;
 		};
-		class Item899
+		class Item898
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12455,7 +12431,7 @@ class Mission
 			type="FlagPole_F";
 			atlOffset=-0.023258209;
 		};
-		class Item900
+		class Item899
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12471,7 +12447,7 @@ class Mission
 			type="FlagPole_F";
 			atlOffset=0.00012016296;
 		};
-		class Item901
+		class Item900
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12487,7 +12463,7 @@ class Mission
 			type="FlagPole_F";
 			atlOffset=0.00094985962;
 		};
-		class Item902
+		class Item901
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12504,7 +12480,7 @@ class Mission
 			type="Land_MedicalTent_01_CSAT_brownhex_generic_inner_F";
 			atlOffset=-3.8146973e-006;
 		};
-		class Item903
+		class Item902
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12519,7 +12495,7 @@ class Mission
 			id=7938;
 			type="Land_MedicalTent_01_CSAT_brownhex_generic_inner_F";
 		};
-		class Item904
+		class Item903
 		{
 			dataType="Object";
 			class PositionInfo
@@ -12536,7 +12512,7 @@ class Mission
 			type="Land_MedicalTent_01_CSAT_brownhex_generic_inner_F";
 			atlOffset=-3.8146973e-006;
 		};
-		class Item905
+		class Item904
 		{
 			dataType="Object";
 			class PositionInfo
