@@ -6,7 +6,8 @@ class dlgCounter
 	idd = -1;
 	fadein = 0;
 	fadeout = 0;
-	duration = 10000;
+	duration = 1e+1000;
+	onLoad = "uiNamespace setVariable ['ui_score', _this select 0]";
 	class ControlsBackground
 	{
 		
@@ -48,13 +49,13 @@ class dlgCounter
 		class lblMoney
 		{
 			type = 0;
-			idc = 3501;
+			idc = 3701;
 			x = safeZoneX + safeZoneW * 0.04980469;
 			y = safeZoneY + safeZoneH * 0.00694445;
 			w = safeZoneW * 0.09472657;
 			h = safeZoneH * 0.03819445;
 			style = 0;
-			text = "100500$ (+100$/day)";
+			text = "";
 			colorBackground[] = {0,0,0,0};
 			colorText[] = {1,1,1,1};
 			font = "PuristaMedium";
@@ -64,7 +65,7 @@ class dlgCounter
 		class lblMedical
 		{
 			type = 0;
-			idc = 3503;
+			idc = 3703;
 			x = safeZoneX + safeZoneW * 0.29394532;
 			y = safeZoneY + safeZoneH * 0.00694445;
 			w = safeZoneW * 0.0703125;
@@ -112,7 +113,7 @@ class dlgCounter
 		class lblFuel
 		{
 			type = 0;
-			idc = 3504;
+			idc = 3704;
 			x = safeZoneX + safeZoneW * 0.39160157;
 			y = safeZoneY + safeZoneH * 0.00694445;
 			w = safeZoneW * 0.0703125;
@@ -144,7 +145,7 @@ class dlgCounter
 		class lblResources
 		{
 			type = 0;
-			idc = 3505;
+			idc = 3705;
 			x = safeZoneX + safeZoneW * 0.48925782;
 			y = safeZoneY + safeZoneH * 0.00694445;
 			w = safeZoneW * 0.0703125;
@@ -176,7 +177,7 @@ class dlgCounter
 		class lblFood
 		{
 			type = 0;
-			idc = 3506;
+			idc = 3706;
 			x = safeZoneX + safeZoneW * 0.58691407;
 			y = safeZoneY + safeZoneH * 0.00694445;
 			w = safeZoneW * 0.0703125;
@@ -208,7 +209,7 @@ class dlgCounter
 		class lblMoneyPersonal
 		{
 			type = 0;
-			idc = 3502;
+			idc = 3702;
 			x = safeZoneX + safeZoneW * 0.19628907;
 			y = safeZoneY + safeZoneH * 0.00694445;
 			w = safeZoneW * 0.0703125;
@@ -240,7 +241,7 @@ class dlgCounter
 		class lblScouts
 		{
 			type = 0;
-			idc = 3507;
+			idc = 3707;
 			x = safeZoneX + safeZoneW * 0.68457032;
 			y = safeZoneY + safeZoneH * 0.00694445;
 			w = safeZoneW * 0.04589844;
@@ -272,7 +273,7 @@ class dlgCounter
 		class lblRank
 		{
 			type = 0;
-			idc = 3508;
+			idc = 3708;
 			x = safeZoneX + safeZoneW * 0.7578125;
 			y = safeZoneY + safeZoneH * 0.00694445;
 			w = safeZoneW * 0.11914063;

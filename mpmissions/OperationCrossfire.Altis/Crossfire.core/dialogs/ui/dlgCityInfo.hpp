@@ -7,7 +7,7 @@ class dlgCityInfo
 	movingEnable = true;
 	fadein = 0;
 	fadeout = 0;
-	duration = 10000;
+	duration = 1e+1000;
 	class ControlsBackground
 	{
 		

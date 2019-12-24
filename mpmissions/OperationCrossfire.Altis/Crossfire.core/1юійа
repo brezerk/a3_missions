@@ -29,3 +29,6 @@ private _destroyer = createVehicle ["Land_Destroyer_01_base_F", position player 
 works like a charm for me. can also move the base destroyer and call [_destroyer] call bis_fnc_Destroyer01PosUpdate after that. or with an editor placed one.
 
 To get a list of the part objects, once the destroyer is assembled, you can use _destroyer getVariable "bis_carrierParts"
+
+
+multiStructureParts[] = {["Land_Destroyer_01_hull_01_F","pos_hull_1"],["Land_Destroyer_01_hull_02_F","pos_hull_2"],["Land_Destroyer_01_hull_03_F","pos_hull_3"],["Land_Destroyer_01_hull_04_F","pos_hull_4"],["Land_Destroyer_01_hull_05_F","pos_hull_5"],["Land_Destroyer_01_interior_02_F","pos_hull_2"],["Land_Destroyer_01_interior_03_F","pos_hull_3"],["Land_Destroyer_01_interior_04_F","pos_hull_4"],["Land_HelipadEmpty_F","pos_heliPad"],["ShipFlag_US_F","pos_Flag"]};

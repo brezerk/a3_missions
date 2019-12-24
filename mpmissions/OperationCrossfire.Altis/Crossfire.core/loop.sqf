@@ -16,27 +16,13 @@
  *                                                                         *
  ***************************************************************************/
 
-params ["_exitCode"];
+sleep 3;
 
-if (_exitCode in [0, 2]) then { 
+["pushSideUpdate"] call D_HQ_WEST;
 
-sleep 5;
-
-3 cutRsc ["dlgCityInfo", "PLAIN", 2, false];
- 
-//if (!isNil "_dlgCityInfo") then {
-	private _dialog = findDisplay 3000;
-	 
-	private _ctrl = _dialog displayCtrl 3001;
-	if (!isNil "_ctrl") then {
-		_ctrl ctrlSetText "fooo"; //localize "FROM_CITY_INFO_01";
-	};
-	
-	private _ctrl = _dialog displayCtrl 3002;
-	if (!isNil "_ctrl") then {
-		_ctrl ctrlSetText localize "FROM_CITY_INFO_02";
-	};
-	
-//};
-
-};	
+waitUntil {
+	sleep 1;
+	systemChat "Wait...";
+	["addMoney", 50] call D_HQ_WEST;
+	mission_requested;
+};

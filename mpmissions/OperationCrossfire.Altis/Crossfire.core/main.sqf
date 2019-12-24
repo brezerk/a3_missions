@@ -43,10 +43,15 @@ D_MOD_RHS_SAF = false; // tbd
 [] execVM "addons\code43\real_weather\real_weather.sqf";
 
 if (isServer) then {
-	_westHQ = createCenter west;
-	_eastHQ = createCenter east;
-	_indepHQ = createCenter independent;
-	_civilianHQ = createCenter civilian;
+
+	#include "..\addons\code43\oop.h\oop.h"
+	#include "classes\city.sqf"
+	#include "classes\side.sqf"
+	
+	D_HQ_WEST = ["new", west] call SideInfo;
+	D_HQ_EAST = ["new", east] call SideInfo;
+	D_HQ_GUER = ["new", resistance] call SideInfo;
+	D_HQ_CIV  = ["new", civilian] call SideInfo;
 	
 	D_DIFFICLTY = nil;
 	D_LOCATION = "Altis";
@@ -89,6 +94,18 @@ if (isServer) then {
 
 	// Global variables	
 	mission_requested = false;
+	
+	missionNamespace setVariable ["WEST_SIDE_COUNTS", []];
+	missionNamespace setVariable ["WEST_MONEY_COUNT", 0];
+	missionNamespace setVariable ["WEST_AMMO_COUNT",  0];
+	missionNamespace setVariable ["WEST_MED_COUNT",   0];
+	missionNamespace setVariable ["WEST_FUEL_COUNT",  0];
+	missionNamespace setVariable ["WEST_FOOD_COUNT",  0];
+	missionNamespace setVariable ["WEST_RES_COUNT",   0];
+	missionNamespace setVariable ["WEST_SCOUT_COUNT", 0];
+	missionNamespace setVariable ["EAST_SIDE_COUNTS", []];
+	missionNamespace setVariable ["GUER_SIDE_COUNTS", []];
+	missionNamespace setVariable ["CIV_SIDE_COUNTS", []];
 		
 	//public basic variables
 	publicVariable "D_LOCATION";
@@ -107,14 +124,13 @@ if (isServer) then {
 	// skip random time
 	skipTime ((random 3));
 	
-	#include "..\addons\code43\oop.h\oop.h"
-	#include "classes\city.sqf"
-	
 	[] execVM "Crossfire.core\planning.sqf";
+	[] execVM "Crossfire.core\loop.sqf";
 	
+	/*
 	waitUntil {
 		sleep 3;
 		systemChat "Wait...";
 		mission_requested;
-	};
+	};*/
 };
