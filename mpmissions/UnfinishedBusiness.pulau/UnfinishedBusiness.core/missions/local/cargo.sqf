@@ -120,7 +120,7 @@ if (hasInterface) then {
 	};
 	
 	Fn_Task_Civilian_WaponStash_Enter_Area = {
-		[ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_10', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;
+		[ format [localize 'INFO_LOC_01', D_LOCATION], localize 'INFO_SUBLOC_10', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;
 		if (player getVariable ["is_civilian", false]) then {
 			_task = ['t_civ_weapon_stash', player] call BIS_fnc_taskReal;
 			if (!isNull _task) then {
@@ -132,7 +132,7 @@ if (hasInterface) then {
 	};
 	
 	Fn_Task_Civilian_FloodedShip_Enter_Area = {
-		[ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_09', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;
+		[ format [localize 'INFO_LOC_01', D_LOCATION], localize 'INFO_SUBLOC_09', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;
 		/*if (player getVariable ["is_civilian", false]) then {
 			_task = ['t_civ_boat', player] call BIS_fnc_taskReal;
 			if (!isNull _task) then {

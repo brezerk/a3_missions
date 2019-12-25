@@ -29,7 +29,7 @@ if (hasInterface) then {
 		_trg setTriggerActivation ["ANYPLAYER", "PRESENT", true];
 		_trg setTriggerStatements [
 			"(vehicle player) in thisList",
-			"[ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_07', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;",
+			"[ format [localize 'INFO_LOC_01', D_LOCATION], localize 'INFO_SUBLOC_07', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;",
 			""
 		];
 		if (playerSide == west) then {

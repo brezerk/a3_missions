@@ -33,13 +33,38 @@ if (isServer) then {
 		private _class = selectRandom D_FRACTION_WEST_UNITS_TRANSPORT;
 		private _crew_class = getText(configFile >> "CfgVehicles" >> _class >> "crew");
 		
+		private _pad = [us_liberty_01, "Land_HelipadEmpty_F"] call BIS_fnc_Destroyer01GetShipPart;
+		
+		private _obj = createVehicle ["Land_MapBoard_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
+		_obj setPosASL (us_liberty_01 modelToWorldWorld [0,43.5,8.95]);
+		_obj setDir (getDir us_liberty_01);
+		_obj setObjectTextureGlobal [0, getText(configFile >> "CfgWorlds" >> worldName >> "pictureMap")];
+		//configfile >> "CfgWorlds" >> "pulau" >> "pictureMap"
+		//configfile >> "CfgWorlds" >> "pulau" >> "pictureShot"
+		
+		_obj = createVehicle ["Land_Camping_Light_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
+		_obj setPosASL (us_liberty_01 modelToWorldWorld [1.3,43.5,8.95]);
+		_obj setDir (getDir us_liberty_01);
+		
+		
+		_obj = createVehicle ["B_supplyCrate_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
+		_obj setPosASL (us_liberty_01 modelToWorldWorld [3.5,43.5,8.95]);
+		_obj setDir (getDir us_liberty_01 + 45);
+		[_obj, "base", west, D_FRACTION_WEST] call BrezBlock_fnc_PopulateBaseSupply;
+		
+		_obj = createVehicle ["B_supplyCrate_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
+		_obj setPosASL (us_liberty_01 modelToWorldWorld [-3.5,43.5,8.95]);
+		_obj setDir (getDir us_liberty_01 - 45);
+		[_obj, "base", west, D_FRACTION_WEST] call BrezBlock_fnc_PopulateBaseSupply;
+		
+		//_obj = createVehicle ["Land_Camping_Light_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
+		//_obj setPosASL (us_liberty_01 modelToWorldWorld [0,30,11]);
+		//_obj setDir (getDir us_liberty_01);
 		
 		us_airplane_01 = createVehicle [_class, [0, 0, 0], [], 0, "CAN_COLLIDE"];
 		us_airplane_01 allowDamage false;
-		private _pos = getPos land_00;
-		land_00 setPosAsl [_pos select 0, _pos select 1, (11 + ([west, D_FRACTION_WEST, "transport_z_offset"] call Fn_Config_GetFraction_Units))];
-	    us_airplane_01 attachTo [land_00, [0, 0, 0]];
-		detach us_airplane_01;
+
+		us_airplane_01 setPosASL (us_liberty_01 modelToWorldWorld [0,76.6011,8.95]);
 		us_airplane_01 setDir (getDir us_liberty_01);
 		us_airplane_01 animateDoor ['Door_1_source', 1];
 		us_airplane_01 setVehicleAmmo 0;
@@ -47,10 +72,10 @@ if (isServer) then {
 		private _grp = createVehicleCrew (us_airplane_01);
 		_grp setBehaviour "Careless";
 		
-		us_heli_01 = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_HELI), (getPos land_01), [], 0, "CAN_COLLIDE"];
-		private _pos = getPos land_01;
+		us_heli_01 = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_HELI), [0, 0, 0], [], 0, "CAN_COLLIDE"];
+		//private _pos = getPos land_01;
 		us_heli_01 allowDamage false;
-		us_heli_01 setPosAsl [_pos select 0, _pos select 1, 9];
+		us_heli_01 setPosASL (us_liberty_01 modelToWorldWorld [0,50.6011,8.95]);
 		us_heli_01 setDir (getDir us_liberty_01);
 		us_heli_01 setVehicleLock "LOCKED";
 		
@@ -102,6 +127,8 @@ if (isServer) then {
 		remoteExecCall ["Fn_Local_Create_MissionIntro", [0,-2] select isDedicated];
 		us_airplane_01 allowDamage true;
 		us_heli_01 allowDamage true;
+		
+		
 	}; // Fn_Create_MissionIntro
 	
 	

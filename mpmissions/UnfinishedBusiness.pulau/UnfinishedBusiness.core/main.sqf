@@ -108,6 +108,9 @@ if (isServer) then {
 	us_airplane_01 = objNull;
 	us_boat01 = objNull;
 	us_boat02 = objNull;
+	us_liberty_01 = objNull;
+	west_rack_01 = objNull;
+	west_rack_02 = objNull;
 	
 	//Task states
 	task_complete_commtower = false;
@@ -146,6 +149,11 @@ if (isServer) then {
 		};
 	}];
 	*/
+	private _destroyer = ['respawn_west'] call BrezBlock_fnc_Spawn_Destroyer;
+	
+	us_liberty_01 = _destroyer select 0;
+	west_rack_01 = _destroyer select 1;
+	west_rack_02 = _destroyer select 2;
 	
 	//public basic variables
 	publicVariable "D_LOCATION";
@@ -155,6 +163,7 @@ if (isServer) then {
 	publicVariable "D_FRACTION_CIV";
 	publicVariable "mission_plane_send";
 	publicVariable "mission_requested";
+	publicVariable "us_liberty_01";
 	
 	addMissionEventHandler ["PlayerDisconnected",
 	{
@@ -263,7 +272,6 @@ if (isServer) then {
 	};
 	
 	#include "..\config\items.sqf";
-	#include "..\config\stash.sqf";
 	#include "..\config\fractions.sqf"; 
 
 	#include "missions\patrols.sqf";
@@ -322,7 +330,6 @@ if (isServer) then {
 	// Create base marker
 	[getPos us_liberty_01] call Fn_West_MissionPlanning_CreateMarkers_Base;
 	
-	[west_base_suppy_01, "base", west, D_FRACTION_WEST] call BrezBlock_fnc_PopulateBaseSupply;
 	call Fn_Spawn_East_SupplyBoxes;
 	
 	[[us_liberty_01, "Land_Destroyer_01_hull_04_F"] call BIS_fnc_Destroyer01GetShipPart, 1, false] call BIS_fnc_Destroyer01AnimateHangarDoors;

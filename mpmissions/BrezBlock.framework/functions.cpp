@@ -24,6 +24,7 @@ class BrezBlock
 		class CotrollerCreate {file = "addons\BrezBlock.framework\utils\controller.sqf";};
 		class SpawnObjects {file = "addons\BrezBlock.framework\utils\spawn_objects.sqf";};
 		class Spawn_Objective {file = "addons\BrezBlock.framework\utils\spawn_objective.sqf";};
+		class Spawn_Destroyer {file = "addons\BrezBlock.framework\utils\spawn_destroyer.sqf";};
 		//class Spawn_OPFOR_Forces {file = "addons\BrezBlock.framework\utils\spawn_opfor_forces.sqf";};
 		class Spawn_OPFOR_Forces {file = "addons\BrezBlock.framework\utils\spawn_opfor_forces_v2.sqf";};
 		class Spawn_OPFOR_Forces_Guard {file = "addons\BrezBlock.framework\utils\spawn_opfor_forces_guard.sqf";};

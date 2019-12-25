@@ -23,8 +23,6 @@ Local player script
 //variables
 informator_told = false;
 
-waitUntil { !isNull player }; // Wait for player to initialize
-
 #include "..\config\fractions.sqf";
 
 Fn_Local_WaitPublicVariables = {
@@ -47,7 +45,11 @@ if (isServer) then {
 
 {if (_x find "respawn_" >= 0) then {_x setMarkerAlphaLocal 0;}} forEach allMapMarkers;
 
-waitUntil { sleep 1; [["mission_requested", "mission_plane_send"]] call Fn_Local_WaitPublicVariables; };
+waitUntil { sleep 1; [["mission_requested", "mission_plane_send", "us_liberty_01"]] call Fn_Local_WaitPublicVariables; };
+
+player setPosASL (us_liberty_01 modelToWorldWorld [(round(random 5) - 5), (35 + (round(random 5) - 4)),8.98]);
+
+waitUntil { !isNull player }; // Wait for player to initialize
 
 if (!mission_requested) then {
 	["UnfinishedBusiness.core\ui\SettingsDialog.sqf"] call BrezBlock_fnc_WaitForStart;
@@ -61,7 +63,7 @@ player setVariable ["weapon_fiered", false, false];
 player setVariable ["is_civilian", false, true];
 player setVariable ["BB_CorpseTTL", -1, true];
 
-[] execVM "briefing.sqf";
+[] execVM "UnfinishedBusiness.core\briefing.sqf";
 
 #include "missions\local\intro.sqf";
 #include "missions\local\fast_travel.sqf";
@@ -88,6 +90,10 @@ player setVariable ["BB_CorpseTTL", -1, true];
 	_mark setMarkerText format [localize "INFO_WEST_SAFESPOT_01", (['A', 'B'] select _forEachIndex)];
 	_mark setMarkerColor "ColorWEST";
 } forEach ['mrk_east_stash_01', 'mrk_east_stash_02'];
+
+
+
+systemChat format ["%1", getPosAsl us_airplane_01];
 
 /* FIXME: CBA-only
 execVM "addons\BrezBlock.framework\utils\marker_manager.sqf";
@@ -197,7 +203,7 @@ player addEventHandler
 				private _all_count = {alive _x} count (playableUnits + switchableUnits);
 				private _east_count = {side _x == east && alive _x} count (playableUnits + switchableUnits);
 				//systemChat format ["%1 of % 1 are east", _east_count, _all_count];
-				if (_east_count >= (floor(_all_count / 3))) then {
+				if (_east_count >= (floor(_all_count / 4))) then {
 					//systemChat "Removing east";
 					_sides = _sides - [east];
 				};
@@ -273,16 +279,14 @@ player addEventHandler
 				case west:
 				{
 					player setVariable ["is_civilian", false, true];
-					private _pos = getMarkerPos "respawn_west";
 					[] execVM "UnfinishedBusiness.core\gear\player\init.sqf";
-					player setPos [_pos select 0, _pos select 1, 8];
+					player setPosASL (us_liberty_01 modelToWorldWorld [(round(random 5) - 5), (35 + (round(random 5) - 4)),8.98]);
 					call Fn_Local_Create_RescueMission;
 				};
 			};
 		} else {
 			[] execVM "UnfinishedBusiness.core\gear\player\init.sqf";
-			private _pos = getMarkerPos "respawn_west";
-			player setPos [(_pos select 0), (_pos select 1), 8];
+			player setPosASL (us_liberty_01 modelToWorldWorld [(round(random 5) - 5), (35 + (round(random 5) - 4)),8.98]); 
 		};
 		player setVariable ["BB_CorpseTTL", -1, true];
    }
@@ -398,4 +402,4 @@ execVM "UnfinishedBusiness.core\missions\local\sync.sqf";
 
 sleep 5;
 
-[ localize 'INFO_LOC_01', localize 'INFO_SUBLOC_00', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;
+[ format [localize 'INFO_LOC_01', D_LOCATION], localize 'INFO_SUBLOC_00', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;
