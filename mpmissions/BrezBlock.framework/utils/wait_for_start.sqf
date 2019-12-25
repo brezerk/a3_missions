@@ -98,7 +98,7 @@ if (!isNil "_missionLogo") then {
 						sleep 2;
 						
 						ctrlSetText [2700, localize "INFO_DEV_01"];
-						ctrlSetText [2710, "data\images\logo_bb.paa"];
+						ctrlSetText [2710, "addons\BrezBlock.framework\data\logo_bb.paa"];
 						
 						_lblText ctrlSetFade 0;
 						_lblText ctrlCommit 2;
@@ -121,7 +121,7 @@ if (!isNil "_missionLogo") then {
 						_imgLogo ctrlCommit 0;
 						
 						ctrlSetText [2700, localize "INFO_DEV_02"];
-						ctrlSetText [2710, "data\images\logo_a3_ua.paa"];
+						ctrlSetText [2710, "addons\BrezBlock.framework\data\logo_a3_ua.paa"];
 						
 						_lblText ctrlSetFade 0;
 						_lblText ctrlCommit 2;
@@ -144,7 +144,7 @@ if (!isNil "_missionLogo") then {
 						_imgLogo ctrlCommit 0;
 						
 						ctrlSetText [2700, localize "INFO_DEV_03"];
-						ctrlSetText [2710, "data\images\logo.paa"];
+						ctrlSetText [2710, "data\mission_logo.paa"];
 						
 						_lblText ctrlSetFade 0;
 						_lblText ctrlCommit 2;

@@ -252,17 +252,17 @@
 				<Original>&lt;h2&gt;%1 160th Special Operations Aviation Regiment (Airborne) (160th SOAR (A))&lt;/h2&gt;&lt;br /&gt;
 %2 Special Forces Group is conducting peacekeeping operations. It is also has to scout AOC positions and keep eye on its military forces. 
 &lt;font color='#FFD700'&gt;This group is the main story line for this mission.&lt;/font&gt; The mission will ends as soon as the last member of this group will be killed.&lt;br /&gt;&lt;br /&gt;
-&lt;img image='data\images\fractions\%3\group_main.paa' width='256' height='256'/&gt;
+&lt;img image='UnfinishedBusiness.core\data\images\fractions\%3\group_main.paa' width='256' height='256'/&gt;
 				</Original>
 				<English>&lt;h2&gt;%1 160th Special Operations Aviation Regiment (Airborne) (160th SOAR (A))&lt;/h2&gt;&lt;br /&gt;
 %2 Special Forces Group is conducting peacekeeping operations. It is also has to scout AOC positions and keep eye on its military forces. 
 &lt;font color='#FFD700'&gt;This group is the main story line for this mission.&lt;/font&gt; The mission will ends as soon as the last member of this group will be killed.&lt;br /&gt;&lt;br /&gt;
-&lt;img image='data\images\fractions\%3\group_main.paa' width='256' height='256'/&gt;
+&lt;img image='UnfinishedBusiness.core\data\images\fractions\%3\group_main.paa' width='256' height='256'/&gt;
 				</English>
 				<Russian>&lt;h2&gt;160-й окремий авіаційний (десантний) повний спеціальний назначення (160 ОАП) %1&lt;/h2&gt;&lt;br /&gt;
 Група спеціальних сил %2 проводить миротворчу операцію. Вона також має завдання розвідати позиції АОС та слідкувати за її військовими силами.
 &lt;font color='#FFD700'&gt;Ця група є головною сюжетною лінією цієї місії.&lt;/font&gt; Місія закінчується, як тільки буде вбитий останній член цієї групи.&lt;br /&gt;&lt;br /&gt;
-&lt;img image='data\images\fractions\%3\group_main.paa' width='256' height='256'/&gt;
+&lt;img image='UnfinishedBusiness.core\data\images\fractions\%3\group_main.paa' width='256' height='256'/&gt;
 				</Russian>
 			</Key>
 			<Key ID="BRIEFING_07_TITLE">
@@ -286,21 +286,21 @@
 USS 'Democracy' destroyer has following equipment meant to be used for Rescue optation:&lt;br /&gt;&lt;br /&gt;
 * &lt;font color='#FFD700'&gt;1 light helicopter&lt;/font&gt;&lt;br /&gt;
 * &lt;font color='#FFD700'&gt;2 armed speedboats located on boat racks&lt;/font&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;img image='data\images\fractions\%5\group.paa' width='256' height='256'/&gt;
+&lt;img image='UnfinishedBusiness.core\data\images\fractions\%5\group.paa' width='256' height='256'/&gt;
 				</Original>
 				<English>&lt;h2&gt;%1 Rescue Squad (RQ)&lt;/h2&gt;&lt;br /&gt;
 %2 Rescue Squad will try to help %3 Special Forces group if it will be forced to leave the island. &lt;font color='#FFD700'&gt;It's primary mission to find and rescue any %4 military survivours&lt;/font&gt;.&lt;br /&gt;&lt;br /&gt;
 USS 'Democracy' has following equipment meant to be used for Rescue optation:&lt;br /&gt;&lt;br /&gt;
 * &lt;font color='#FFD700'&gt;1 light helicopter&lt;/font&gt;&lt;br /&gt;
 * &lt;font color='#FFD700'&gt;2 armed speedboats located on boat racks&lt;/font&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;img image='data\images\fractions\%5\group.paa' width='256' height='256'/&gt;
+&lt;img image='UnfinishedBusiness.core\data\images\fractions\%5\group.paa' width='256' height='256'/&gt;
 				</English>
 				<Russian>&lt;h2&gt;Рятувальний загін %1 (RQ)&lt;/h2&gt;&lt;br /&gt;
 Рятувальний загін %1 намагатиметься допомогти групі спецназу %2, якщо його змусять покинути острів. &lt;font color='#FFD700'&gt;Основна місія - знайти та врятувати виживших військових %4&lt;/font&gt;.&lt;br /&gt;&lt;br /&gt;
 Есмінець USS 'Democracy' має наступне обладнання для рятувальних місій:&lt;br /&gt;&lt;br /&gt;
 * &lt;font color='#FFD700'&gt;1 легкий гелікоптер&lt;/font&gt;&lt;br /&gt;
 * &lt;font color='#FFD700'&gt;2 озброєні катери, розташовані на стійках для човнів&lt;/font&gt;&lt;br /&gt;&lt;br /&gt;
-&lt;img image='data\images\fractions\%5\group.paa' width='256' height='256'/&gt;
+&lt;img image='UnfinishedBusiness.core\data\images\fractions\%5\group.paa' width='256' height='256'/&gt;
 				</Russian>
 			</Key>
 			<Key ID="BRIEFING_09_TITLE">
@@ -311,15 +311,15 @@ USS 'Democracy' has following equipment meant to be used for Rescue optation:&lt
 			<Key ID="BRIEFING_09_DESC">
 				<Original>&lt;h2&gt;Army Corps of Cahri (AOC)&lt;/h2&gt;&lt;br /&gt;
 Pro Russian military group from the Cahri islands. Is lead by odious leader named &lt;font color='#FFD700'&gt;Puhlo Pu&lt;/font&gt;. They are trying to expand their military presence over the region. Despite to "peacefull measures" they are extreamly invading the island with military force. To save it's influence West needs to stop or restrict AOC operations over the region. &lt;font color='#FFD700'&gt;More likely AOC will try to provoke %1 forces for a conflict&lt;/font&gt;.
-&lt;br /&gt;&lt;br /&gt;&lt;img image='data\images\fractions\%2\group.paa' width='256' height='256'/&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;img image='UnfinishedBusiness.core\data\images\fractions\%2\group.paa' width='256' height='256'/&gt;
 				</Original>
 				<English>&lt;h2&gt;Army Corps of Cahri (AOC)&lt;/h2&gt;&lt;br /&gt;
 Pro Russian military group from the Cahri islands. Is lead by odious leader named &lt;font color='#FFD700'&gt;Puhlo Pu&lt;/font&gt;. They are trying to expand their military presence over the region. Despite to "peacefull measures" they are extreamly invading the island with military force. To save it's influence West needs to stop or restrict AOC operations over the region. &lt;font color='#FFD700'&gt;More likely AOC will try to provoke %1 forces for a conflict&lt;/font&gt;.
-&lt;br /&gt;&lt;br /&gt;&lt;img image='data\images\fractions\%2\group.paa' width='256' height='256'/&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;img image='UnfinishedBusiness.core\data\images\fractions\%2\group.paa' width='256' height='256'/&gt;
 				</English>
 				<Russian>&lt;h2&gt;Армія Островів Сахрі (AOC) (AOC)&lt;/h2&gt;&lt;br /&gt;
 Проросійська військова група з островів Сахрі. Очолює одіозний лідер на ім’я &lt;font color='#FFD700'&gt;Пухло Пу&lt;/font&gt;. Вони намагаються розширити свою військову присутність у регіоні. Незважаючи на "миролюбні заходи", вони швидко накоплюють на острові величезні військові сили. Щоб зберегти свій вплив, Захід потребує припинити або обмежити операції AOC у регіоні. &lt;font color='#FFD700'&gt;Скоріш за все, АОС спробує спровокувати сили %1 на конфлікт&lt;/font&gt;. 
-&lt;br /&gt;&lt;br /&gt;&lt;img image='data\images\fractions\%2\group.paa' width='256' height='256'/&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;img image='UnfinishedBusiness.core\data\images\fractions\%2\group.paa' width='256' height='256'/&gt;
 				</Russian>
 			</Key>
 			<Key ID="BRIEFING_10_TITLE">
@@ -330,15 +330,15 @@ Pro Russian military group from the Cahri islands. Is lead by odious leader name
 			<Key ID="BRIEFING_10_DESC">
 				<Original>&lt;h2&gt;Pulau National Guard (PNG)&lt;/h2&gt;&lt;br /&gt;
 The former leader of the Pulau islands had formed Pulau National Guard to defend and control the territory. After his death different military officers prononced themself as the leaders on Pulau Nation. Unfortunately this turns out into civil war. According to the latest repots NPG has been disbanded and tunrned into several bandit groups. Most noticed are lead by Marcio Moraz, Gonsales Capito and Solomon Maru. &lt;font color='#FFD700'&gt;We do have information that some of this leaders are supported by AOC&lt;/font&gt;. Currently they are figting over the island for the dominance.
-&lt;br /&gt;&lt;br /&gt;&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;img image='UnfinishedBusiness.core\data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
 				</Original>
 				<English>&lt;h2&gt;Pulau National Guard (PNG)&lt;/h2&gt;&lt;br /&gt;
 The former leader of the Pulau islands had formed Pulau National Guard to defend and control the territory. After his death different military officers prononced themself as the leaders on Pulau Nation. Unfortunately this turns out into civil war. According to the latest repots NPG has been disbanded and tunrned into several bandit groups. Most noticed are lead by Marcio Moraz, Gonsales Capito and Solomon Maru. &lt;font color='#FFD700'&gt;We do have information that some of this leaders are supported by AOC&lt;/font&gt;. Currently they are figting over the island for the dominance.
-&lt;br /&gt;&lt;br /&gt;&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;img image='UnfinishedBusiness.core\data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
 				</English>
 				<Russian>&lt;h2&gt;Національна гвардія Пулау (НГП)&lt;/h2&gt;&lt;br /&gt;
 Колишній ватажок островів Пулау сформував Національну гвардію Пулау для захисту та контролю території. Після його смерті різні військові офіцери виголошували себе лідерами нації Пулау. На жаль, це перетворилось на громадянську війну. За останніми данними, НГП було розформовано та перетворено на кілька бандитських груп. Найбільш помітні очолюються Марсіо Мороз, Гонсалес Капіто та Соломон Мару. &lt;font color='#FFD700'&gt;У нас є інформація, що деякі з цих лідерів підтримуються AOC&lt;/font&gt;. В даний час вони розбираються поміж собою.
-&lt;br /&gt;&lt;br /&gt;&lt;img image='data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;img image='UnfinishedBusiness.core\data\images\fractions\%1\group.paa' width='256' height='256'/&gt;
 				</Russian>
 			</Key>
 			<Key ID="BRIEFING_11_TITLE">
@@ -349,15 +349,15 @@ The former leader of the Pulau islands had formed Pulau National Guard to defend
 			<Key ID="BRIEFING_11_DESC">
 				<Original>&lt;h2&gt;Civilean Rebels (CR)&lt;/h2&gt;&lt;br /&gt;
 The most of civilians are sitting at homes or safehouses wating situation to resolve. However there are some groups for the people who dislike both former NPG leaders and AOC forces. &lt;font color='#FFD700'&gt;They might wish to establish connection to %1 forces to liberate the island&lt;/font&gt;.
-&lt;br /&gt;&lt;br /&gt;&lt;img image='data\images\fractions\%2\group.paa' width='256' height='256'/&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;img image='UnfinishedBusiness.core\data\images\fractions\%2\group.paa' width='256' height='256'/&gt;
 				</Original>
 				<English>&lt;h2&gt;Civilean Rebels (CR)&lt;/h2&gt;&lt;br /&gt;
 The most of civilians are sitting at homes or safehouses wating situation to resolve. However there are some groups for the people who dislike both former NPG leaders and AOC forces. &lt;font color='#FFD700'&gt;They might wish to establish connection to %1 forces to liberate the island&lt;/font&gt;.
-&lt;br /&gt;&lt;br /&gt;&lt;img image='data\images\fractions\%2\group.paa' width='256' height='256'/&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;img image='UnfinishedBusiness.core\data\images\fractions\%2\group.paa' width='256' height='256'/&gt;
 				</English>
 				<Russian>&lt;h2&gt;Цивільні повстанці (CR)&lt;/h2&gt;&lt;br /&gt;
 Більшість місцевих жителів сидять у будинках чи сховищах і очікують на вирішення ситуації. Однак є деякі групи людей, які не люблять колишніх лідерів НГП та сили AOC. &lt;font color='#FFD700'&gt;Вони, можливо, хотіли б встановити зв’язок із силами %1 що б визволити острів&lt;/font&gt;.
-&lt;br /&gt;&lt;br /&gt;&lt;img image='data\images\fractions\%2\group.paa' width='256' height='256'/&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;img image='UnfinishedBusiness.core\data\images\fractions\%2\group.paa' width='256' height='256'/&gt;
 			</Russian>
 			</Key>
 			<Key ID="TASK_01_TITLE">
@@ -366,9 +366,9 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>Ліквідувати ватажка бунтівників</Russian>
 			</Key>
 			<Key ID="TASK_01_DESC">
-				<Original>Eliminate the rebel leader %1 on the base near the &lt;marker name = 'mrk_airfield'&gt;%2 airfield&lt;/marker&gt;.&lt;br /&gt;&lt;br /&gt;&lt;img image='data\images\fractions\%3\leader.paa' width='256' height='256'/&gt;</Original>
-				<English>Eliminate the rebel leader %1 on the base near the &lt;marker name = 'mrk_airfield'&gt;%2 airfield&lt;/marker&gt;.&lt;br /&gt;&lt;br /&gt;&lt;img image='data\images\fractions\%3\leader.paa' width='256' height='256'/&gt;</English>
-				<Russian>Ліквідувати ватажка бунтівників %1 на базі біля &lt;marker name='mrk_airfield'&gt;аеродрому %2&lt;/marker&gt;.&lt;br /&gt;&lt;br /&gt;&lt;img image='data\images\fractions\%3\leader.paa' width='256' height='256'/&gt;</Russian>
+				<Original>Eliminate the rebel leader %1 on the base near the &lt;marker name = 'mrk_airfield'&gt;%2 airfield&lt;/marker&gt;.&lt;br /&gt;&lt;br /&gt;&lt;img image='UnfinishedBusiness.core\data\images\fractions\%3\leader.paa' width='256' height='256'/&gt;</Original>
+				<English>Eliminate the rebel leader %1 on the base near the &lt;marker name = 'mrk_airfield'&gt;%2 airfield&lt;/marker&gt;.&lt;br /&gt;&lt;br /&gt;&lt;img image='UnfinishedBusiness.core\data\images\fractions\%3\leader.paa' width='256' height='256'/&gt;</English>
+				<Russian>Ліквідувати ватажка бунтівників %1 на базі біля &lt;marker name='mrk_airfield'&gt;аеродрому %2&lt;/marker&gt;.&lt;br /&gt;&lt;br /&gt;&lt;img image='UnfinishedBusiness.core\data\images\fractions\%3\leader.paa' width='256' height='256'/&gt;</Russian>
 			</Key>
 			<Key ID="TASK_02_TITLE">
 				<Original>Get to the %1 airfield</Original>

@@ -16,11 +16,29 @@
  *                                                                         *
  ***************************************************************************/
 
-/*
-waitUntil { !isNull player }; // Wait for player to initialize
-
-if (alive us_airplane_01) then {
-	[player, us_airplane_01] remoteExec ["assignAsCargo"];
-	[player, us_airplane_01] remoteExec ["moveInCargo"];
+if (hasInterface) then {
+	
 };
-*/
+
+if (isServer) then {
+
+	if (!mission_plane_send) then {
+		// Well. Some one destroyed the transport before every one got in 
+		// Happy end (not)
+		"EveryoneLost" call BIS_fnc_endMissionServer;
+	} else {
+		sleep 1;
+		
+		{
+			remoteExecCall ["Fn_Local_Jet_GetOut", _x];
+		} forEach assault_group;
+			
+		sleep 2;
+		
+		us_heli_01 setVehicleLock "UNLOCKED";
+		us_boat_01 setVehicleLock "UNLOCKED";
+		us_boat_02 setVehicleLock "UNLOCKED";
+		
+		[] execVM "UnfinishedBusiness.core\missions\crash_site.sqf";
+	};
+};

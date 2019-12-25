@@ -16,7 +16,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include "config\realm.sqf";
+#include "..\config\realm.sqf";
 
 real_weather_init = false;
 
@@ -36,7 +36,7 @@ D_MOD_RHS_USAF = false; // tbd
 D_MOD_RHS_GREF = false; // tbd
 D_MOD_RHS_SAF = false; // tbd
 
-[] execVM "addons\code43\real_weather.sqf";
+[] execVM "addons\code43\real_weather\real_weather.sqf";
 
 if (isServer) then {
 	_westHQ = createCenter west;
@@ -262,9 +262,9 @@ if (isServer) then {
 		};
 	};
 	
-	#include "config\items.sqf";
-	#include "config\stash.sqf";
-	#include "config\fractions.sqf"; 
+	#include "..\config\items.sqf";
+	#include "..\config\stash.sqf";
+	#include "..\config\fractions.sqf"; 
 
 	#include "missions\patrols.sqf";
 	#include "missions\intro.sqf";
@@ -338,7 +338,7 @@ if (isServer) then {
 	
 	call Fn_Create_MissionIntro;
 	
-	[] execVM "missions\create_locations.sqf";
+	[] execVM "UnfinishedBusiness.core\missions\create_locations.sqf";
 	[] execVM "addons\BrezBlock.framework\utils\garbage_collector.sqf";
 		
 	addMissionEventHandler ["EntityKilled",

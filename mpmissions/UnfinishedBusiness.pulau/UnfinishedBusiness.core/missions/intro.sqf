@@ -76,7 +76,7 @@ if (isServer) then {
 		_trg setTriggerActivation ["NONE", "PRESENT", false];
 		_trg setTriggerStatements [
 			"!canMove us_airplane_01 || !alive us_airplane_01",
-			"execVM 'missions\jet_is_down.sqf'; deleteVehicle thisTrigger;",
+			"execVM 'UnfinishedBusiness.core\missions\jet_is_down.sqf'; deleteVehicle thisTrigger;",
 			""
 		];
 		_trg = createTrigger ["EmptyDetector", getMarkerPos "mrk_east_base_02"];
@@ -94,7 +94,7 @@ if (isServer) then {
 			_trg setTriggerActivation ["WEST", "PRESENT", false];
 			_trg setTriggerStatements [
 				"this",
-				"execVM 'missions\intro_blowup.sqf'; deleteVehicle thisTrigger;",
+				"execVM 'UnfinishedBusiness.core\missions\intro_blowup.sqf'; deleteVehicle thisTrigger;",
 				""
 			];
 		};
@@ -110,7 +110,7 @@ if (isServer) then {
 		EAST setFriend [WEST, 0];
 		WEST setFriend [EAST, 0];
 		if (D_START_TYPE == 1) then {
-			execVM 'missions\intro_blowup.sqf';
+			execVM 'UnfinishedBusiness.core\missions\intro_blowup.sqf';
 		};
 	};
 
@@ -149,7 +149,7 @@ if (isServer) then {
 		us_airplane_01 flyInHeight 1500;
 		(driver us_airplane_01) setBehaviour "Careless";
 		(driver us_airplane_01) setCombatMode "Blue";
-		execVM "missions\fast_travel.sqf";
+		execVM "UnfinishedBusiness.core\missions\fast_travel.sqf";
 	}; // Fn_MissionIntro_SendAirplane
 	
 };

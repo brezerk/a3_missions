@@ -20,4 +20,4 @@
 Init mission file
 */
 
-[] execVM "main.sqf";
+[] execVM "UnfinishedBusiness.core\main.sqf";

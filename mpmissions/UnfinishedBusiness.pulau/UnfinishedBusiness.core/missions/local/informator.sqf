@@ -72,7 +72,7 @@ if (hasInterface) then {
 					};
 				};
 			} forEach (playableUnits + switchableUnits);
-			execVM 'missions\local\informator_reset.sqf';
+			execVM 'UnfinishedBusiness.core\missions\local\informator_reset.sqf';
 		} else {
 			systemChat format[localize "INFO_PING_01", _name];
 		};

@@ -105,9 +105,9 @@ if (isServer) then {
 		
 	sleep 5;
 		
-	[] execVM "missions\regroup.sqf";
-	[] execVM "missions\assoult_group_is_dead.sqf";
-	[] execVM "missions\informator.sqf";
+	[] execVM "UnfinishedBusiness.core\missions\regroup.sqf";
+	[] execVM "UnfinishedBusiness.core\missions\assoult_group_is_dead.sqf";
+	[] execVM "UnfinishedBusiness.core\missions\informator.sqf";
 	call Fn_Task_Create_AA;
 	
 
@@ -133,5 +133,5 @@ if (isServer) then {
 	
 	remoteExecCall ["Fn_Local_Civilian_AttachConfiscate_Action"];
 	
-	execVM "missions\ping.sqf";
+	execVM "UnfinishedBusiness.core\missions\ping.sqf";
 };

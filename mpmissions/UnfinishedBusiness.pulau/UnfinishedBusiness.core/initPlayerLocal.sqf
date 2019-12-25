@@ -25,7 +25,7 @@ informator_told = false;
 
 waitUntil { !isNull player }; // Wait for player to initialize
 
-#include "config\fractions.sqf";
+#include "..\config\fractions.sqf";
 
 Fn_Local_WaitPublicVariables = {
 	params ['_vars'];
@@ -394,7 +394,7 @@ if (!D_MOD_ACE_MEDICAL) then {
 };
 */
 
-execVM "missions\local\sync.sqf";
+execVM "UnfinishedBusiness.core\missions\local\sync.sqf";
 
 sleep 5;
 
