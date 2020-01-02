@@ -132,6 +132,8 @@ if (isServer) then {
 		[["wp_ambush_start", 5] call BrezBlock_fnc_Get_RND_Index, ["rus_spec", 4] call BrezBlock_fnc_Get_RND_Index] execVM 'addons\BrezBlock.framework\utils\spawn_opfor_forces_guard.sqf';
 		// report to officer
 		call Fn_Task_Create_ReportOfficer;
+		// Spawn transport
+		[Fn_Spawn_UAZ, 'wp_spawn_uaz_01', 20, 360] execVM 'addons\BrezBlock.framework\triggers\respawn_transport.sqf';
 	};
 
 	Fn_Task_Create_AmmoDelivery_Load = {
@@ -166,7 +168,7 @@ if (isServer) then {
 			""
 		];*/
 		// URAL Cargo extend
-		[ua_ural_ammo_01, 10] remoteExec ["ace_cargo_fnc_setSpace"];
+		[ua_ural_ammo_01, 11] remoteExec ["ace_cargo_fnc_setSpace"];
 	};
 	
 	/*

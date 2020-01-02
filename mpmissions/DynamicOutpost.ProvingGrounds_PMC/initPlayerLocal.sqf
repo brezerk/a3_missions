@@ -33,7 +33,7 @@ Local player script
 private ["_trgKickToSpecator", "_trgLocationInfo01"];
 
 //3 tickets per player
-[player, 4] call BIS_fnc_respawnTickets;
+[player, 6] call BIS_fnc_respawnTickets;
 
 // hide markers
 {if (_x find "wp_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;

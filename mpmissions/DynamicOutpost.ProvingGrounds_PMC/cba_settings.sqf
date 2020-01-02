@@ -33,11 +33,20 @@ force ace_advanced_fatigue_terrainGradientFactor = 1;
 force ace_repair_engineerSetting_repair = 0;
 
 // ACE Medical
-force ace_medical_amountOfReviveLives = -1;
-force ace_medical_enableRevive = 1;
-force ace_medical_increaseTrainingInLocations = true;
-ace_medical_menu_useMenu = 1;
 force ace_medical_preventInstaDeath = true;
+force ace_medical_fatalDamageSource = 0;
+ace_medical_feedback_painEffectType = 2;
+force ace_medical_limping = 0;
+force ace_medical_fractures = 0;
+force ace_medical_statemachine_fatalInjuriesPlayer = 2;
+force ace_medical_treatment_advancedBandages = false;
+force ace_medical_treatment_advancedMedication = false;
+force ace_medical_treatment_clearTraumaAfterBandage = true;
+force ace_medical_treatment_locationsBoostTraining = true;
+force ace_medical_treatment_medicEpinephrine = 1;
+
+// ACE Overheating
+force ace_overheating_unJamOnreload = true;
 
 // GRAD Trenches
 grad_trenches_functions_stopBuildingAtFatigueMax = true;

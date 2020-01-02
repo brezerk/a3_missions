@@ -74,6 +74,9 @@ if (D_MOD_ACEX) then {
 if (D_MOD_ACE_MEDICAL) then {
 	_obj addItemCargoGlobal ["ACE_fieldDressing", (25 * _multiplier)];
 	_obj addItemCargoGlobal ["ACE_morphine", (10 * _multiplier)];
+	_obj addItemCargoGlobal ["ACE_adenosine", (10 * _multiplier)];
+	_obj addItemCargoGlobal ["ACE_personalAidKit", (10 * _multiplier)];
+	_obj addItemCargoGlobal ["ACE_splint", (10 * _multiplier)];
 	_obj addItemCargoGlobal ["ACE_epinephrine", (5 * _multiplier)];
 	_obj addItemCargoGlobal ["ACE_bloodIV", (5 * _multiplier)];
 } else {
