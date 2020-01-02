@@ -25,6 +25,7 @@ if (isServer) then {
 	Fn_Task_Create_RescueMission = {
 		{
 			remoteExecCall ["Fn_Local_Create_RescueMission", _x];
+			_x setVariable ["allowDamage", true, true];
 			[_x, true] remoteExecCall ["allowDamage"];
 		} forEach  (playableUnits + switchableUnits);
 		
