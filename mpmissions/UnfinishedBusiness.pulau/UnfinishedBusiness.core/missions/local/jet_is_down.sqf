@@ -27,7 +27,7 @@ if (hasInterface) then {
 		//do some damage
 		if (isClass(configFile >> "CfgPatches" >> "ace_medical")) then {
 			private _dmgType = ["leg_l", "leg_r", "hand_r", "hand_l"];
-			for "_i" from 0 to ((random 3) + 1) do {
+			for "_i" from 0 to (random 2) do {
 				[player, ((random 2) + 1), (selectRandom _dmgType), "stab"] call ace_medical_fnc_addDamageToUnit;
 			};
 			[player, 0.8, (selectRandom _dmgType), "bullet"] call ace_medical_fnc_addDamageToUnit;
