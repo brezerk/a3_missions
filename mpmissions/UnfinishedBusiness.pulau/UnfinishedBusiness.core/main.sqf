@@ -28,8 +28,7 @@ D_MOD_CBA = isClass(configFile >> "CfgPatches" >> "cba_main");
 
 D_MOD_ACRE = isClass(configFile >> "CfgPatches" >> "acre_main");
 D_MOD_TFAR = isClass(configFile >> "CfgPatches" >> "task_force_radio");
-
-D_MOD_CUP_VEHICLES = isClass(configFile >> "CfgPatches" >> "cup_vehicles");
+D_MOD_CUP_VEHICLES = isClass(configFile >> "CfgPatches" >> "CUP_Vehicles_Core");
 
 D_MOD_RHS_AFRF = false; // tbd
 D_MOD_RHS_USAF = false; // tbd
