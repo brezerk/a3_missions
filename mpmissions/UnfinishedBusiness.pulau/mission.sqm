@@ -7340,7 +7340,7 @@ class Mission
 			name="wp_Monyet_hospital_02";
 			type="loc_Hospital";
 			id=7411;
-			atlOffset=3.8504825;
+			atlOffset=0.32114506;
 		};
 		class Item576
 		{
@@ -9033,7 +9033,7 @@ class Mission
 			b=75;
 			drawBorder=1;
 			id=7576;
-			atlOffset=22.132744;
+			atlOffset=21.089573;
 		};
 		class Item737
 		{

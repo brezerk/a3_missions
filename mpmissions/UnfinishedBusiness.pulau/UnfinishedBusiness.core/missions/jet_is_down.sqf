@@ -36,8 +36,6 @@ if (isServer) then {
 		sleep 2;
 		
 		us_heli_01 setVehicleLock "UNLOCKED";
-		us_boat_01 setVehicleLock "UNLOCKED";
-		us_boat_02 setVehicleLock "UNLOCKED";
 		
 		[] execVM "UnfinishedBusiness.core\missions\crash_site.sqf";
 	};

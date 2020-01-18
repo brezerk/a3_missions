@@ -290,7 +290,14 @@ player addEventHandler
 					player setVariable ["is_civilian", true, true];
 					player setVariable ["weapon_fiered", false, false];
 					[] execVM "UnfinishedBusiness.core\gear\player\civ.sqf";
-					player setPos (getMarkerPos "respawn_civ");
+					private _civ_spawn_markers = [];
+					{
+						if (_x find "respawn_civilian_" >= 0) then {
+							_civ_spawn_markers pushBack _x;
+						};
+					} forEach allMapMarkers;
+					player setPos getMarkerPos selectRandom _civ_spawn_markers;
+					//player setPos (getMarkerPos "respawn_civ");
 					call Fn_Local_Create_Task_Civilian_FloodedShip;
 					call Fn_Local_Create_Task_Civilian_WaponStash;
 					//call Fn_Local_Create_Task_Civilian_Police;
