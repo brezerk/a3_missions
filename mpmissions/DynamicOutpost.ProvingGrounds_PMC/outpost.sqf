@@ -171,7 +171,7 @@ Fn_Endgame_PreWin = {
 };
 
 Fn_Spawn_UAZ = {
-	params ["_spawnposition"];
+	params ["_spawnposition", "_spawndir"];
 	private ["_pos", "_vec"];
 	_vec = objNull;
 	if (isServer) then {
@@ -182,9 +182,9 @@ Fn_Spawn_UAZ = {
 			"LOP_UKR_UAZ_DshKM",
 			"LOP_UA_UAZ_SPG"
 		];
-		_pos = getMarkerPos _spawnposition findEmptyPosition [0, 15, _vec];
+		_pos = _spawnposition findEmptyPosition [0, 15, _vec];
 		_vec = createVehicle [_vec, _pos, [], 0];
-		_vec setDir (markerDir _spawnposition);
+		_vec setDir _spawndir;
 		
 	};
 	_vec;

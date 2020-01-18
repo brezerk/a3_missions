@@ -280,6 +280,7 @@ if (isServer) then {
 	#include "missions\liberate.sqf";
 	#include "missions\civilian\cargo.sqf";
 	#include "missions\civilian\transport.sqf";
+	#include "missions\civilian\objectives.sqf";
 	#include "missions\independent\objectives.sqf";
 	#include "missions\east\commtower.sqf";
 	#include "missions\east\aa.sqf";

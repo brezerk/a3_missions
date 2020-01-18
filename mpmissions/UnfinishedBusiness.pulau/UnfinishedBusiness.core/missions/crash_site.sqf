@@ -99,8 +99,8 @@ if (isServer) then {
 		
 	//create tasks assigned to assault_group
 	{
-		_x setVariable ["ACE_isUnconscious", false, true];
 		remoteExecCall ["Fn_Local_Jet_Player_Land", _x];
+		_x setVariable ["ACE_isUnconscious", false, true];
 	} forEach assault_group;
 		
 	sleep 5;

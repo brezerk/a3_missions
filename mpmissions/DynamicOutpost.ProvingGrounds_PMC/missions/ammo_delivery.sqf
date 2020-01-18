@@ -133,7 +133,7 @@ if (isServer) then {
 		// report to officer
 		call Fn_Task_Create_ReportOfficer;
 		// Spawn transport
-		[Fn_Spawn_UAZ, 'wp_spawn_uaz_01', 20, 360] execVM 'addons\BrezBlock.framework\triggers\respawn_transport.sqf';
+		[Fn_Spawn_UAZ, (getMarkerPos 'wp_spawn_uaz_01'), (markerDir 'wp_spawn_uaz_01'), 20, 360] execVM 'addons\BrezBlock.framework\triggers\respawn_transport.sqf';
 	};
 
 	Fn_Task_Create_AmmoDelivery_Load = {

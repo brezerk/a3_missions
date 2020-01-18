@@ -28,6 +28,24 @@ if (hasInterface) then {
 
 if (isServer) then {
 
+	Fn_Spawn_Boat_Rack01 = {
+		params['_pos', '_dir'];
+		private _veh = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_BOATS), [0, 0, 0], [], 0, "CAN_COLLIDE"];
+		_veh allowDamage false;
+		west_rack_01 setVehicleCargo _veh;
+		_veh allowDamage true;
+		_veh;
+	};
+	
+	Fn_Spawn_Boat_Rack02 = {
+		params['_pos', '_dir'];
+		private _veh = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_BOATS), [0, 0, 0], [], 0, "CAN_COLLIDE"];
+		_veh allowDamage false;
+		west_rack_02 setVehicleCargo _veh;
+		_veh allowDamage true;
+		_veh;
+	};
+
 	Fn_Create_MissionIntro = {
 	
 		private _class = selectRandom D_FRACTION_WEST_UNITS_TRANSPORT;
@@ -46,7 +64,6 @@ if (isServer) then {
 		_obj setPosASL (us_liberty_01 modelToWorldWorld [1.3,43.5,8.95]);
 		_obj setDir (getDir us_liberty_01);
 		
-		
 		_obj = createVehicle ["B_supplyCrate_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
 		_obj setPosASL (us_liberty_01 modelToWorldWorld [3.5,43.5,8.95]);
 		_obj setDir (getDir us_liberty_01 + 45);
@@ -55,6 +72,26 @@ if (isServer) then {
 		_obj = createVehicle ["B_supplyCrate_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
 		_obj setPosASL (us_liberty_01 modelToWorldWorld [-3.5,43.5,8.95]);
 		_obj setDir (getDir us_liberty_01 - 45);
+		[_obj, "base", west, D_FRACTION_WEST] call BrezBlock_fnc_PopulateBaseSupply;
+		
+		private _pos = getMarkerPos "mrk_west_specops";
+		private _dir = markerDir "mrk_west_specops";
+		private _obj_map = createVehicle ["Land_MapBoard_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
+		_obj_map setPosASL [(_pos select 0), (_pos select 1), 3];
+		_obj_map setDir (_dir);
+		
+		_obj = createVehicle ["Land_Camping_Light_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
+		_obj setPosASL (_obj_map modelToWorldWorld [1.3,-1.5,3]);
+		_obj setDir (getDir _obj_map);
+		
+		_obj = createVehicle ["B_supplyCrate_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
+		_obj setPosASL (_obj_map modelToWorldWorld [3.5,-3.5,3]);
+		_obj setDir (getDir _obj_map + 45);
+		[_obj, "base", west, D_FRACTION_WEST] call BrezBlock_fnc_PopulateBaseSupply;
+		
+		_obj = createVehicle ["B_supplyCrate_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
+		_obj setPosASL (_obj_map modelToWorldWorld [-3.5,-3.5,3]);
+		_obj setDir (getDir _obj_map - 45);
 		[_obj, "base", west, D_FRACTION_WEST] call BrezBlock_fnc_PopulateBaseSupply;
 		
 		//_obj = createVehicle ["Land_Camping_Light_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
@@ -71,6 +108,9 @@ if (isServer) then {
 		
 		private _grp = createVehicleCrew (us_airplane_01);
 		_grp setBehaviour "Careless";
+		{
+			_x allowDamage false;
+		} forEach (units _grp);
 		
 		us_heli_01 = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_HELI), [0, 0, 0], [], 0, "CAN_COLLIDE"];
 		//private _pos = getPos land_01;
@@ -79,13 +119,8 @@ if (isServer) then {
 		us_heli_01 setDir (getDir us_liberty_01);
 		us_heli_01 setVehicleLock "LOCKED";
 		
-		us_boat_01 = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_BOATS), [0, 0, 0], [], 0, "CAN_COLLIDE"];
-		west_rack_01 setVehicleCargo us_boat_01;
-		us_boat_01 setVehicleLock "LOCKED";
-		
-		us_boat_02 = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_BOATS), [0, 0, 0], [], 0, "CAN_COLLIDE"];
-		west_rack_02 setVehicleCargo us_boat_02;
-		us_boat_02 setVehicleLock "LOCKED";
+		[Fn_Spawn_Boat_Rack01, [0, 0, 0], 180, 20, 15] execVM 'addons\BrezBlock.framework\triggers\respawn_transport.sqf';
+		[Fn_Spawn_Boat_Rack02, [0, 0, 0], 180, 20, 15] execVM 'addons\BrezBlock.framework\triggers\respawn_transport.sqf';
 		
 		private _trg = createTrigger ["EmptyDetector", getMarkerPos "respawn_west" ];
 		_trg setTriggerArea [0, 0, 0, false];
@@ -162,8 +197,9 @@ if (isServer) then {
 			if (isPlayer _x) then {
 				assault_group = assault_group + [_x];
 				[_x, false] remoteExec ["allowDamage"];
-				_x setVariable ["allowDamage", false, true];
 				_x setVariable ["is_assault_group", true, true];
+			} else {
+				_x allowDamage true;
 			};
 		} forEach crew us_airplane_01;
 		us_airplane_01 animateDoor ['Door_1_source', 0];

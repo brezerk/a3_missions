@@ -79,6 +79,11 @@ if (D_MOD_ACE_MEDICAL) then {
 	_obj addItemCargoGlobal ["ACE_splint", (10 * _multiplier)];
 	_obj addItemCargoGlobal ["ACE_epinephrine", (5 * _multiplier)];
 	_obj addItemCargoGlobal ["ACE_bloodIV", (5 * _multiplier)];
+	_obj addItemCargoGlobal ["ACE_tourniquet", (5 * _multiplier)];
+	_obj addItemCargoGlobal ["ACE_surgicalKit", (5 * _multiplier)];
+	_obj addItemCargoGlobal ["ACE_packingBandage", (15 * _multiplier)];
+	_obj addItemCargoGlobal ["ACE_elasticBandage", (15 * _multiplier)];
+	_obj addItemCargoGlobal ["ACE_quikclot", (15 * _multiplier)];
 } else {
 	_obj addItemCargoGlobal ["FirstAidKit", (25 * _multiplier)];
 };

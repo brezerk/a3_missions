@@ -15,16 +15,38 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
  ***************************************************************************/
+ 
+ /*
+Spawn start objectives, triggers for informator contact
+*/
 
-// Available locations for play
-// This mps to different set of wp_<location>_ markers.
-// For example, Plau has two different islands, while Stratis or Tanoa has only one location
-D_LOCATIONS = ['Gurun', 'Monyet'];
+//Player side triggers
+// Client side code
+if (hasInterface) then {};
 
-// Real time vs fast time
-// true: Real time is more realistic weather conditions change slowly (ideal for persistent game)
-// false: fast time give more different weather conditions (ideal for non persistent game) 
-D_CODE43_REAL_WEATHER_REALTIME = true;
+if (isServer) then {
+	task_civ_leader = false;
+	
+	civ_leader = objNull;
 
-// Debug only
-D_DEBUG = true;
+	Fn_Task_Spawn_Civ_Objectives = {
+		params['_center'];
+		private _markers = [];
+		{
+			if ((markerType _x) == "n_mortar") then {
+				_markers append [_x];
+			};
+		} forEach avaliable_markers;
+		private _marker = selectRandom _markers;
+		avaliable_markers deleteAt (avaliable_markers find _marker);
+		private _center = getMarkerPos (_marker);
+		private _dir = markerDir _marker;
+		private _pos = [_center, 9, _dir + 90] call BIS_Fnc_relPos;
+		private _unitRef = ["civ_base", _center, [0,0,0], 0, true] call LARs_fnc_spawnComp;
+		
+		private _marker = createMarker ["respawn_civ", _center];
+		_marker setMarkerType "hd_destroy";
+		_marker setMarkerAlpha 1;
+	};
+	
+};

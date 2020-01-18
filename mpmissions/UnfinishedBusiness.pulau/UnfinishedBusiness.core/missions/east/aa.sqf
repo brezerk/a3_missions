@@ -33,6 +33,9 @@ if (isServer) then {
 		obj_east_antiair = createVehicle [_class, _pos];
 		obj_east_antiair setDir (markerDir _marker);
 		private _crew = createVehicleCrew (obj_east_antiair);
+		{
+			_x disableAI "MOVE";
+		} forEach (units _crew);
 		obj_east_antiair addEventHandler [
 			"HandleDamage", {
 				private _object = _this select 0;

@@ -3,7 +3,7 @@
 	<Package name="UnfinishedBusiness">
 		<Container name="l18n">
 			<Key ID="STR_ONLOAD_NAME">
-				<Original>Unfinished Business v0.99-BETA</Original>
+				<Original>Unfinished Business v1.0</Original>
 			</Key>
 			<Key ID="INFO_MOD_NF_ACE">
 				<Original>INFO: ACE Mod not found. Advanced Combat Environment features will be disabled.</Original>
@@ -273,7 +273,7 @@
 			<Key ID="BRIEFING_07_DESC">
 				<Original>Situation: Following the death of the former dictator, the Pulau National Guard (PNG) has broken up into several gangs, which are conducting situational battles over the cities and villages. Under the guise of a "peacekeeping operation", the Army of Sahri (AOC), led by General Puhlo Pu, started an military invasion. A ceasefire decision is currently in effect. West forces sould ensure the security of civilians and to facilitate a peaceful resolution of the conflict. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</Original>
 				<English>Situation: Following the death of the former dictator, the Pulau National Guard (PNG) has broken up into several gangs, which are conducting situational battles over the cities and villages. Under the guise of a "peacekeeping operation", the Army of Sahri (AOC), led by General Puhlo Pu, started an military invasion. A ceasefire decision is currently in effect. West forces sould ensure the security of civilians and to facilitate a peaceful resolution of the conflict. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</English>
-				<Russian>Обстановка: Після смерті колишнього диктатору Національна Гвардія Пулау (НГП) розвалилась на декілька бандитських угруповань які ведуть ситуативні бої за міста та села. Під прикриттям "миротворчої операції" Армія Островів Сахрі (AOC) на чолі з генералом Пухло Пу розпочала військове вторгнення. На цей час діє рішення про припинення вогню. Західні сили повинні забезпечити безпеку мирного населення та сприяти мирному врегулюванню конфлікту. Активних дій за останні 24 години не зареєстровано. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</Russian>
+				<Russian>Cитуація: Після смерті колишнього диктатору Національна Гвардія Пулау (НГП) розвалилась на декілька бандитських угруповань які ведуть ситуативні бої за міста та села. Під прикриттям "миротворчої операції" Армія Островів Сахрі (AOC) на чолі з генералом Пухло Пу розпочала військове вторгнення. На цей час діє рішення про припинення вогню. Західні сили повинні забезпечити безпеку мирного населення та сприяти мирному врегулюванню конфлікту. Активних дій за останні 24 години не зареєстровано. &lt;br /&gt;&lt;br /&gt;by brezerk@brezblock.org.ua</Russian>
 			</Key>
 			<Key ID="BRIEFING_08_TITLE">
 				<Original>Fraction: %1 Rescue Squad</Original>
@@ -358,7 +358,57 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>&lt;h2&gt;Цивільні повстанці (CR)&lt;/h2&gt;&lt;br /&gt;
 Більшість місцевих жителів сидять у будинках чи сховищах і очікують на вирішення ситуації. Однак є деякі групи людей, які не люблять колишніх лідерів НГП та сили AOC. &lt;font color='#FFD700'&gt;Вони, можливо, хотіли б встановити зв’язок із силами %1 що б визволити острів&lt;/font&gt;.
 &lt;br /&gt;&lt;br /&gt;&lt;img image='UnfinishedBusiness.core\data\images\fractions\%2\group.paa' width='256' height='256'/&gt;
-			</Russian>
+				</Russian>
+			</Key>
+			<Key ID="MISSION">
+				<Original>Mission</Original>
+				<English>Mission</English>
+				<Russian>Міссія</Russian>
+			</Key>
+			<Key ID="OBJ_PRI">
+				<Original>Primary Objective</Original>
+				<English>Primary Objective</English>
+				<Russian>Основна Задача</Russian>
+			</Key>
+			<Key ID="OBJ_SEC">
+				<Original>Secondary Objective</Original>
+				<English>Secondary Objective</English>
+				<Russian>Другорядна Задача</Russian>
+			</Key>
+			<Key ID="CUP_B_USMC_ORDER_HEADER_01">
+				<Original>DEPARTMENT OF THE NAVY\nHEADQUARTERS UNITED STATES MARINE CORPS\n3000 MARINE CORPS PENTAGON\nWASHINGTON, DC 20350-3000</Original>
+				<English>DEPARTMENT OF THE NAVY\nHEADQUARTERS UNITED STATES MARINE CORPS\n3000 MARINE CORPS PENTAGON\nWASHINGTON, DC 20350-3000</English>
+				<Russian>МІНІСТЕРСТВО ВІЙСЬКОВО-МОРСЬКИХ СИЛ\nШТАБ МОРСЬКОГО КОРПУСУ СПОЛУЧЕНИХ ШТАТІВ\n3000 МОРСЬКИЙ КОРПУС ПЕНТАГОН\nВАШИНГТОН, DC 20350-3000</Russian>
+			</Key>
+			<Key ID="CUP_B_USMC_BRIEFING_HEADER_01">
+				<Original>MARINE CORPS ORDER 1326.SE\n\nFrom:  Commandant of Marine Corps\nTo:    Distribution List</Original>
+				<English>MARINE CORPS ORDER 1326.SE\n\nFrom:  Commandant of Marine Corps\nTo:    Distribution List</English>
+				<Russian>ПРИКАЗ МОРСЬКОГО КОРПУСУ 1326.SE\n\nВід:  Комендант Корпусу морської піхоти\nКому:    Список розповсюдження</Russian>
+			</Key>
+			<Key ID="BLU_F_ORDER_HEADER_01">
+				<Original>NATO RESTRICTED\nSUPREME HEADQUARTERS\nALLIED POWERS EUROPE\nB-7010 SHAPE BELGIUM</Original>
+				<English>NATO RESTRICTED\nSUPREME HEADQUARTERS\nALLIED POWERS EUROPE\nB-7010 SHAPE BELGIUM</English>
+				<Russian>НАТО ОБМЕЖЕНО\nВЕРХОВНИЙ ШТАБ\nСОЮЗНІ СИЛИ ЕВРОПИ\nB-7010 БЕЛЬГІЯ</Russian>
+			</Key>
+			<Key ID="BLU_F_BRIEFING_HEADER_01">
+				<Original>MARINE CORPS ORDER 1326.SE\n\nFrom:  Commandant of Marine Corps\nTo:    Distribution List</Original>
+				<English>MARINE CORPS ORDER 1326.SE\n\nFrom:  Commandant of Marine Corps\nTo:    Distribution List</English>
+				<Russian>ПРИКАЗ МОРСЬКОГО КОРПУСУ 1326.SE\n\nВід:  Комендант Корпусу морської піхоти\nКому:    Список розповсюдження</Russian>
+			</Key>
+			<Key ID="WEST_BRIEFING_01">
+				<Original>Following the death of the former dictator, the Pulau National Guard (PNG) has broken up into several gangs, which are conducting situational battles over the cities and villages. The Army of Sahri (AOC), led by General Puhlo Pu, started an military invasion. A ceasefire decision is currently in effect.</Original>
+				<English>Following the death of the former dictator, the Pulau National Guard (PNG) has broken up into several gangs, which are conducting situational battles over the cities and villages. The Army of Sahri (AOC), led by General Puhlo Pu, started an military invasion. A ceasefire decision is currently in effect.</English>
+				<Russian>Після смерті колишнього диктатору Національна Гвардія Пулау (НГП) розвалилась на декілька бандитських угруповань які ведуть ситуативні бої за міста та села. Армія Островів Сахрі (AOC) на чолі з генералом Пухло Пу розпочала військове вторгнення. На цей час діє рішення про припинення вогню.</Russian>
+			</Key>
+			<Key ID="WEST_BRIEFING_02">
+				<Original>Board the transport and get to the %1 airfield. Report to the officer on arrival.</Original>
+				<English>Board the transport and get to the %1 airfield. Report to the officer on arrival.</English>
+				<Russian>Зайняти транспорт і прибути до аеродрому %1. Доповісти офіцеру про прибуття.</Russian>
+			</Key>
+			<Key ID="WEST_BRIEFING_03">
+				<Original>Scout AOC positions and keep eye on military forces movement.</Original>
+				<English>Scout AOC positions and keep eye on military forces movement.</English>
+				<Russian>Розвідати позиції АОС та стежити за переміщенням військових сил.</Russian>
 			</Key>
 			<Key ID="TASK_01_TITLE">
 				<Original>Eliminate rebel leader</Original>
@@ -376,8 +426,8 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Russian>Прибути до аеродрому %1</Russian>
 			</Key>
 			<Key ID="TASK_02_DESC">
-				<Original>Get to the &lt;marker name = 'mrk_airfield'&gt;%1 airfield&lt;/marker&gt; and report to the officer.</Original>
-				<English>Get to the &lt;marker name = 'mrk_airfield'&gt;%1 airfield&lt;/marker&gt; and report to the officer.</English>
+				<Original>Get to the &lt;marker name ='mrk_airfield'&gt;%1 airfield&lt;/marker&gt; and report to the officer.</Original>
+				<English>Get to the &lt;marker name ='mrk_airfield'&gt;%1 airfield&lt;/marker&gt; and report to the officer.</English>
 				<Russian>Прибути до &lt;marker name='mrk_airfield'&gt;аеродрому %1&lt;/marker&gt; та доповісти команидру.</Russian>
 			</Key>
 			<Key ID="TASK_03_TITLE">

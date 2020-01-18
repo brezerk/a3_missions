@@ -57,9 +57,8 @@ if (isServer) then {
 			private _class = (selectRandom ([independent, D_FRACTION_INDEP, "transport_ammo"] call Fn_Config_GetFraction_Units));
 			private _obj = createVehicle [_class, _pos, [], 0, "CAN_COLLIDE"];
 			_obj setDir _dir;
-						
 			private _unitRef = ["defence_point", _center, [0,0,0], 0, true] call LARs_fnc_spawnComp;
-			
+			{ avaliable_markers deleteAt (avaliable_markers find _x) } forEach ([_center, ["c_unknown"], 800] call BrezBlock_fnc_GetAllMarkerTypesInRange);
 			private _class = selectRandom (_classes);
 			_classes = _classes - [_class];
 			switch (_class) do {

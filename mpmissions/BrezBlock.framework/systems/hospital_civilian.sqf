@@ -75,6 +75,14 @@ if (isServer) then {
 			_vehicle addItemCargoGlobal ["ACE_morphine", 2];
 			_vehicle addItemCargoGlobal ["ACE_bodyBag", 10];
 			_vehicle addItemCargoGlobal ["ACE_epinephrine", 2];
+			_vehicle addItemCargoGlobal ["ACE_adenosine", 10];
+			_vehicle addItemCargoGlobal ["ACE_personalAidKit", 3];
+			_vehicle addItemCargoGlobal ["ACE_splint", 15];
+			_vehicle addItemCargoGlobal ["ACE_tourniquet", 10];
+			_vehicle addItemCargoGlobal ["ACE_surgicalKit", 1];
+			_vehicle addItemCargoGlobal ["ACE_packingBandage", 15];
+			_vehicle addItemCargoGlobal ["ACE_elasticBandage", 15];
+			_vehicle addItemCargoGlobal ["ACE_quikclot", 15];
 		} else {
 			_vehicle addItemCargoGlobal ["Medikit", 1];
 			_vehicle addItemCargoGlobal ["FirstAidKit", 10];
@@ -105,6 +113,14 @@ if (isServer) then {
 			_obj addItemCargoGlobal ["ACE_morphine", 8];
 			_obj addItemCargoGlobal ["ACE_bodyBag", 10];
 			_obj addItemCargoGlobal ["ACE_epinephrine", 2];
+			_obj addItemCargoGlobal ["ACE_adenosine", 10];
+			_obj addItemCargoGlobal ["ACE_personalAidKit", 3];
+			_obj addItemCargoGlobal ["ACE_splint", 15];
+			_obj addItemCargoGlobal ["ACE_tourniquet", 10];
+			_obj addItemCargoGlobal ["ACE_surgicalKit", 1];
+			_obj addItemCargoGlobal ["ACE_packingBandage", 15];
+			_obj addItemCargoGlobal ["ACE_elasticBandage", 15];
+			_obj addItemCargoGlobal ["ACE_quikclot", 15];
 		} else {
 			_obj addItemCargoGlobal ["Medikit", 2];
 			_obj addItemCargoGlobal ["FirstAidKit", 20];

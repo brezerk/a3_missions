@@ -75,6 +75,7 @@ if (isServer) then {
 	
 	[_crashSitePos] call Fn_Spawn_East_Comtower;
 	[_crashSitePos] call Fn_Task_Spawn_Indep_Objectives;
+	[_crashSitePos] call Fn_Task_Spawn_Civ_Objectives;
 	call Fn_Task_West_Hidden_WaponStash;
 	
 	[_crashSitePos, 1500, 50] call BrezBlock_fnc_SpawnObjects;

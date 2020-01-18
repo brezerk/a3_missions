@@ -48,6 +48,8 @@ if (isServer) then {
 		private _center = getMarkerPos (_marker);
 		deleteMarkerLocal _marker;
 		
+		{ avaliable_markers deleteAt (avaliable_markers find _x) } forEach ([_center, ["c_unknown"], 600] call BrezBlock_fnc_GetAllMarkerTypesInRange);
+		
 		_marker = createMarker ["mrk_east_commtower", _center];
 		_marker setMarkerType "hd_warning";
 		_marker setMarkerText 'AOC Commtower';

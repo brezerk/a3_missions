@@ -19,18 +19,19 @@
 if (hasInterface) then {
 	Fn_Local_Jet_GetOut = {
 		[0, 5] execVM "addons\BrezBlock.framework\utils\fade.sqf";
-		//doGetOut player;
 		moveOut player;
 	};
 		
 	Fn_Local_Jet_Player_DoParadrop = {
 		params ['_diffclty'];
-		private ['_dmgType'];
 		//do some damage
-		/*if (isClass(configFile >> "CfgPatches" >> "ace_medical")) then {
-			_dmgType = ["leg_l", "leg_r", "hand_r", "hand_l", "head"];
-			[player, 1, selectRandom _dmgType, "bullet"] call ace_medical_fnc_addDamageToUnit;
-		};*/
+		if (isClass(configFile >> "CfgPatches" >> "ace_medical")) then {
+			private _dmgType = ["leg_l", "leg_r", "hand_r", "hand_l"];
+			for "_i" from 0 to ((random 3) + 1) do {
+				[player, ((random 2) + 1), (selectRandom _dmgType), "stab"] call ace_medical_fnc_addDamageToUnit;
+			};
+			[player, 0.8, (selectRandom _dmgType), "bullet"] call ace_medical_fnc_addDamageToUnit;
+		};
 		[1, 3] execVM "addons\BrezBlock.framework\utils\fade.sqf";
 		player setUnconscious true;
 		[_diffclty] execVM "UnfinishedBusiness.core\gear\player.sqf";

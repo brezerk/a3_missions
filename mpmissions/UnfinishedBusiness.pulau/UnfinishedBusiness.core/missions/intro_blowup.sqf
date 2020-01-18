@@ -20,9 +20,9 @@ sleep 3;
 us_airplane_01 animateDoor ['Door_1_source', 1];
 sleep 3;
 private _expl1 = "DemoCharge_Remote_Ammo_Scripted" createVehicle (position us_airplane_01);
-_expl1 attachTo [us_airplane_01, [0.0,0.0,0.0]];
+_expl1 attachTo [us_airplane_01, [2.0,-2.0,0.0]];
 _expl1 setDamage 1;
-sleep 3;
+sleep 1;
 if (alive us_airplane_01) then {
 	us_airplane_01 setHitPointDamage ["hitEngine", 1.0];
 };

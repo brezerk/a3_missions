@@ -38,8 +38,6 @@ Fn_Local_WaitPublicVariables = {
 if (isServer) then {
 	{if (_x find "wp_" >= 0) then {_x setMarkerAlphaLocal 0;}} forEach allMapMarkers;
 } else {
-	//FIXME:
-	//{if (_x find "wp_" >= 0) then {deleteMarkerLocal _x;}} forEach allMapMarkers;
 	{if (_x find "wp_" >= 0) then {_x setMarkerAlphaLocal 0;}} forEach allMapMarkers;
 };
 
@@ -47,15 +45,41 @@ if (isServer) then {
 
 waitUntil { sleep 1; [["mission_requested", "mission_plane_send", "us_liberty_01"]] call Fn_Local_WaitPublicVariables; };
 
-player setPosASL (us_liberty_01 modelToWorldWorld [(round(random 5) - 5), (35 + (round(random 5) - 4)),8.98]);
-
 waitUntil { !isNull player }; // Wait for player to initialize
 
 if (!mission_requested) then {
-	["UnfinishedBusiness.core\ui\SettingsDialog.sqf"] call BrezBlock_fnc_WaitForStart;
+	["UnfinishedBusiness.core\ui\settingsDialog.sqf"] call BrezBlock_fnc_WaitForStart;
 };
 
 waitUntil { sleep 1; [["D_LOCATION", "D_FRACTION_WEST", "D_FRACTION_EAST", "D_FRACTION_CIV", "D_FRACTION_INDEP", "D_NAVTOOL_MAP", "D_NAVTOOL_COMPASS"]] call Fn_Local_WaitPublicVariables; }; 
+
+/*
+switch (playerSide) do {
+	case east: {
+
+	};
+	case civilian: {
+
+	};
+	case west: {
+		private _role = (roleDescription player);
+		systemChat _role;
+		if ((_role find "SpecOps ") >= 0) then {
+			private _pos = getMarkerPos "mrk_west_specops";
+			player setPosASL [((_pos select 0) + (round(random 5) - 5)), ((_pos select 1) - 6 + (round(random 5) - 5)), 3];
+		} else {
+			if ((_role find "Recon ") >= 0) then {
+				private _pos = getMarkerPos "mrk_west_specops";
+				player setPosASL [((_pos select 0) + (round(random 5) - 5)), ((_pos select 1) - 6 + (round(random 5) - 5)), 3];
+			} else {
+				player setPosASL (us_liberty_01 modelToWorldWorld [(round(random 5) - 5), (35 + (round(random 5) - 4)), 8.98]);
+			};
+		};
+	};
+};
+*/
+
+player setPosASL (us_liberty_01 modelToWorldWorld [(round(random 5) - 5), (35 + (round(random 5) - 4)), 8.98]);
 
 execVM "UnfinishedBusiness.core\gear\player\init.sqf";
 
@@ -64,6 +88,8 @@ player setVariable ["is_civilian", false, true];
 player setVariable ["BB_CorpseTTL", -1, true];
 
 [] execVM "UnfinishedBusiness.core\briefing.sqf";
+
+//[] execVM "UnfinishedBusiness.core\ui\orderDialog.sqf";
 
 #include "missions\local\intro.sqf";
 #include "missions\local\fast_travel.sqf";
@@ -91,10 +117,6 @@ player setVariable ["BB_CorpseTTL", -1, true];
 	_mark setMarkerColor "ColorWEST";
 } forEach ['mrk_east_stash_01', 'mrk_east_stash_02'];
 
-
-
-systemChat format ["%1", getPosAsl us_airplane_01];
-
 /* FIXME: CBA-only
 execVM "addons\BrezBlock.framework\utils\marker_manager.sqf";
  */
@@ -118,13 +140,17 @@ Fn_Local_FailTasks = {
 	{
 		_task = [_x, player] call BIS_fnc_taskReal;
 		if (!isNull _task) then {
-			if (taskState _task != "Succeeded") then { _task setTaskState "Failed"; };
+			if (taskState _task != "Succeeded") then {
+				[_x, "FAILED", false] call BIS_fnc_taskSetState;
+			};
 		};
 	} forEach ['t_crash_site', 't_regroup', 't_find_informator'];
 	{
 		_task = [_x, player] call BIS_fnc_taskReal;
 		if (!isNull _task) then {
-			if (!(taskState _task in ["Succeeded", "Failed"])) then { _task setTaskState "Canceled"; };
+			if (!(taskState _task in ["Succeeded", "Failed"])) then {
+				[_x, "CANCELED", false] call BIS_fnc_taskSetState;
+			};
 		};
 	} forEach [
 		't_west_rescue',
@@ -264,13 +290,7 @@ player addEventHandler
 					player setVariable ["is_civilian", true, true];
 					player setVariable ["weapon_fiered", false, false];
 					[] execVM "UnfinishedBusiness.core\gear\player\civ.sqf";
-					private _civ_spawn_markers = [];
-					{
-						if (_x find "respawn_civilian_" >= 0) then {
-							_civ_spawn_markers pushBack _x;
-						};
-					} forEach allMapMarkers;
-					player setPos getMarkerPos selectRandom _civ_spawn_markers;
+					player setPos (getMarkerPos "respawn_civ");
 					call Fn_Local_Create_Task_Civilian_FloodedShip;
 					call Fn_Local_Create_Task_Civilian_WaponStash;
 					//call Fn_Local_Create_Task_Civilian_Police;

@@ -26,24 +26,24 @@ if (hasInterface) then {};
 
 if (isServer) then {
 	Fn_Spawn_East_Cars_Transport = {
-        params ["_spawnposition"];
+        params ["_spawnposition", "_spawndir"];
         private ["_pos", "_vec"];
         _vec = objNull;
         private _class = (selectRandom ([east, D_FRACTION_EAST, "cars"] call Fn_Config_GetFraction_Units));
-        _pos = getMarkerPos _spawnposition findEmptyPosition [0, 15, _class];
+        _pos = _spawnposition findEmptyPosition [0, 15, _class];
         _vec = createVehicle [_class, _pos, [], 0];
-        _vec setDir (markerDir _spawnposition);
+        _vec setDir _spawndir;
         _vec;
 	};
 	
 	Fn_Spawn_East_Light_Transport = {
-        params ["_spawnposition"];
+        params ["_spawnposition", "_spawndir"];
         private ["_pos", "_vec"];
         _vec = objNull;
         private _class = (selectRandom ([east, D_FRACTION_EAST, "light"] call Fn_Config_GetFraction_Units));
-        _pos = getMarkerPos _spawnposition findEmptyPosition [0, 15, _class];
+        _pos = _spawnposition findEmptyPosition [0, 15, _class];
         _vec = createVehicle [_class, _pos, [], 0];
-        _vec setDir (markerDir _spawnposition);
+        _vec setDir _spawndir;
         _vec;
 	};
 	
@@ -54,13 +54,13 @@ if (isServer) then {
 				private _marker = createMarker [format ["mrk_east_transport_%1", _forEachIndex], getMarkerPos _x];
 				_marker setMarkerType "hd_destroy";
 				_marker setMarkerAlpha 0;
-				[Fn_Spawn_East_Cars_Transport, _marker, 20, 10] execVM 'addons\BrezBlock.framework\triggers\respawn_transport.sqf';
+				[Fn_Spawn_East_Cars_Transport, (getMarkerPos _marker), (markerDir _marker), 20, 10] execVM 'addons\BrezBlock.framework\triggers\respawn_transport.sqf';
 			};
 		} forEach allMapMarkers;
 		private _filter = format ["wp_%1_east_apc_spawn", D_LOCATION];
 		{
 			if (_x find _filter >= 0) then {
-				[_x] call Fn_Spawn_East_Light_Transport;
+				[(getMarkerPos _x), (markerDir _x)] call Fn_Spawn_East_Light_Transport;
 			};
 		} forEach allMapMarkers;
 	};

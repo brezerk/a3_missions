@@ -18,24 +18,24 @@
 
 /*
 Paradrop
-	Arguments: [CallBack, Spawn Position, Timeout (/6), Initial Spawn Delay]
-	Usage: [{CallBack},{SpawnPosition},{Timeout},{InitialSpawnDelay}] execVM ["addons/BrezBlock.framework/triggers/respawn_transport.sqf"];
+	Arguments: [CallBack, Spawn Position, Spawn Direction, Timeout (/6), Initial Spawn Delay]
+	Usage: [{CallBack},{SpawnPosition},{SpawnDir},{Timeout},{InitialSpawnDelay}] execVM ["addons/BrezBlock.framework/triggers/respawn_transport.sqf"];
 	Return: true
 */
 
 //Respawn vehicle on desired marker using provided function on vechicle death or timeout
 
 if (isServer) then {
-	params ["_callBackSpawn", "_spawnposition", ["_timeout", 10], ["_initialSpawnDelay", 0]];
+	params ["_callBackSpawn", "_spawnposition", "_spawndir", ["_timeout", 10], ["_initialSpawnDelay", 0]];
 	private ["_vehicle", "_counter", "_triggerArea"];
 
 	sleep _initialSpawnDelay;
 	
-	_vehicle = [_spawnposition] call _callBackSpawn;
+	_vehicle = [_spawnposition, _spawndir] call _callBackSpawn;
 	_counter = 0;
 
 	// trigger area
-	_triggerArea = createTrigger ["EmptyDetector", getMarkerPos _spawnposition];
+	_triggerArea = createTrigger ["EmptyDetector", _spawnposition];
 	_triggerArea setTriggerArea [100, 100, 0, false];
 	_triggerArea setTriggerActivation ["NONE", "PRESENT", true];
 	_triggerArea setTriggerStatements [
@@ -68,7 +68,7 @@ if (isServer) then {
 				sleep 15;
 				deleteVehicle _vehicle;
 			};
-			_vehicle = [_spawnposition] call _callBackSpawn;
+			_vehicle = [_spawnposition, _spawndir] call _callBackSpawn;
 			_counter = 0;
 		};
 		false

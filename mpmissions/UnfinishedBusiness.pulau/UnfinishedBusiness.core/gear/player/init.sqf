@@ -33,13 +33,13 @@ if (_role in ["Corpsman", "Recon Paramedic", "SpecOps Paramedic"]) then {
 };
 
 //Make SpecOps harder to detect
-if ((_role find "SpecOps_") >= 0) then {
+if ((_role find "SpecOps ") >= 0) then {
 	player setUnitTrait ["camouflageCoef ", 0.3];
 	player setUnitTrait ["audibleCoef ", 0.3];
 };
 
 //Make recons harder to detect
-if ((_role find "Recon_") >= 0) then {
+if ((_role find "Recon ") >= 0) then {
 	player setUnitTrait ["camouflageCoef ", 0.7];
 	player setUnitTrait ["audibleCoef ", 0.7];
 };
