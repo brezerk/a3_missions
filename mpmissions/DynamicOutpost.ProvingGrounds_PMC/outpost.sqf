@@ -205,7 +205,7 @@ if (isServer) then {
 	(allMines select 0) mineDetectedBy independent;
 	
 	//spawn random uaz
-	["wp_spawn_uaz_01"] call Fn_Spawn_UAZ;
+	[getMarkerPos("wp_spawn_uaz_01"), markerDir("wp_spawn_uaz_01")] call Fn_Spawn_UAZ;
 	
 	//wait a bit
 	sleep 5;
