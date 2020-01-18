@@ -106,12 +106,6 @@ if (isServer) then {
 		us_airplane_01 animateDoor ['Door_1_source', 1];
 		us_airplane_01 setVehicleAmmo 0;
 		
-		private _grp = createVehicleCrew (us_airplane_01);
-		_grp setBehaviour "Careless";
-		{
-			_x allowDamage false;
-		} forEach (units _grp);
-		
 		us_heli_01 = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_HELI), [0, 0, 0], [], 0, "CAN_COLLIDE"];
 		//private _pos = getPos land_01;
 		us_heli_01 allowDamage false;
@@ -162,6 +156,12 @@ if (isServer) then {
 		remoteExecCall ["Fn_Local_Create_MissionIntro", [0,-2] select isDedicated];
 		us_airplane_01 allowDamage true;
 		us_heli_01 allowDamage true;
+		
+		private _grp = createVehicleCrew (us_airplane_01);
+		{
+			_x allowDamage false;
+		} forEach (units _grp);
+		_grp setBehaviour "Careless";
 		
 		
 	}; // Fn_Create_MissionIntro
