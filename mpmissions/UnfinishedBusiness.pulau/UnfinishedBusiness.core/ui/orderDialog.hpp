@@ -81,7 +81,7 @@ class orderDialog
 			x = safeZoneX + safeZoneW * 0.38671875;
 			y = safeZoneY + safeZoneH * 0.35416667;
 			w = safeZoneW * 0.23144532;
-			h = safeZoneH * 0.39583334
+			h = safeZoneH * 0.39583334;
 			style = 16+512;
 			lineSpacing = 1;
 			text = "";
