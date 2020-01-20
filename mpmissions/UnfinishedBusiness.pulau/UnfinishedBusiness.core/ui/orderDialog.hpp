@@ -71,7 +71,7 @@ class orderDialog
 			colorBackground[] = {1,1,1,0};
 			colorText[] = {0,0,0,1};
 			font = "RobotoCondensed";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			sizeEx = (((((safezoneW / safezoneH) min 1) / 1) / 25) * 0.9);
 			
 		};
 		class txtOrder
@@ -89,7 +89,7 @@ class orderDialog
 			colorBackground[] = {1,1,1,0};
 			colorText[] = {0,0,0,1};
 			font = "RobotoCondensed";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			sizeEx = (((((safezoneW / safezoneH) min 0.8) / 0.8) / 25) * 0.9);
 		};
 		class txtDate
 		{
@@ -105,7 +105,7 @@ class orderDialog
 			lineSpacing = 1;
 			colorText[] = {0,0,0,1};
 			font = "RobotoCondensed";
-			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			sizeEx = (((((safezoneW / safezoneH) min 0.9) / 0.9) / 25) * 1);
 			
 		};
 		

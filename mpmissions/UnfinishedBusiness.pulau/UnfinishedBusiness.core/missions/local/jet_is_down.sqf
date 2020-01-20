@@ -30,7 +30,6 @@ if (hasInterface) then {
 			for "_i" from 0 to (random 2) do {
 				[player, ((random 2) + 1), (selectRandom _dmgType), "stab"] call ace_medical_fnc_addDamageToUnit;
 			};
-			[player, 0.8, (selectRandom _dmgType), "bullet"] call ace_medical_fnc_addDamageToUnit;
 		};
 		[1, 3] execVM "addons\BrezBlock.framework\utils\fade.sqf";
 		player setUnconscious true;

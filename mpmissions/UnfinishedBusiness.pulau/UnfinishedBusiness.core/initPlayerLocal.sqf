@@ -116,7 +116,6 @@ player setVariable ["BB_CorpseTTL", -1, true];
 
 [1, "BLACK", 1, 1] call BIS_fnc_fadeEffect;
 cutText [localize "INFO_WAIT_02", "PLAIN DOWN", 2, true, true];
-	
 [[""]] call BIS_fnc_music;
 
 [] execVM "UnfinishedBusiness.core\briefing.sqf";
@@ -270,7 +269,7 @@ player addEventHandler
 					};
 				};
 				
-				/*
+				
 				if (count (nearestObjects [us_liberty_01, ["Ship", "Helicopter"], 100]) <= 0) then {
 					_sides = _sides - [west];
 				};
@@ -278,9 +277,8 @@ player addEventHandler
 				if (count _sides > 2) then {
 					_sides = _sides - [playerSide];
 				};
-				*/
 				
-				private _side = selectRandom _sides;
+				_side = selectRandom _sides;
 				side_switched = true;
 			} else {
 				_side = playerSide;
@@ -305,8 +303,6 @@ player addEventHandler
 					[west] call Fn_Local_Switch_Side;
 				};
 			};
-			
-			
 		};
 	}
 ];
