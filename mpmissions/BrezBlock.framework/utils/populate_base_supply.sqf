@@ -63,7 +63,7 @@ if (D_MOD_ACE) then {
 private _multiplier = 1;
 
 if (_type == "base") then {
-	_multiplier = 5;
+	_multiplier = 10;
 };
 
 if (D_MOD_ACEX) then {
@@ -73,12 +73,12 @@ if (D_MOD_ACEX) then {
 		
 if (D_MOD_ACE_MEDICAL) then {
 	_obj addItemCargoGlobal ["ACE_fieldDressing", (25 * _multiplier)];
-	_obj addItemCargoGlobal ["ACE_morphine", (10 * _multiplier)];
+	_obj addItemCargoGlobal ["ACE_morphine", (15 * _multiplier)];
 	_obj addItemCargoGlobal ["ACE_adenosine", (10 * _multiplier)];
 	_obj addItemCargoGlobal ["ACE_personalAidKit", (10 * _multiplier)];
 	_obj addItemCargoGlobal ["ACE_splint", (10 * _multiplier)];
 	_obj addItemCargoGlobal ["ACE_epinephrine", (5 * _multiplier)];
-	_obj addItemCargoGlobal ["ACE_bloodIV", (5 * _multiplier)];
+	_obj addItemCargoGlobal ["ACE_bloodIV", (10 * _multiplier)];
 	_obj addItemCargoGlobal ["ACE_tourniquet", (5 * _multiplier)];
 	_obj addItemCargoGlobal ["ACE_surgicalKit", (5 * _multiplier)];
 	_obj addItemCargoGlobal ["ACE_packingBandage", (15 * _multiplier)];
