@@ -25,6 +25,10 @@ Spawn start objectives, triggers for game intro and players allocation
 if (hasInterface) then {
 
 	Fn_Local_Create_SCAT_MissionIntro = {
+		if (!east_order_seen) then {
+			[] execVM "UnfinishedBusiness.core\ui\orderDialog.sqf";
+			east_order_seen = true;
+		};
 		private _marker = format ["wp_%1_aa", D_LOCATION];
 		if (canFire obj_east_antiair) then {
 			[

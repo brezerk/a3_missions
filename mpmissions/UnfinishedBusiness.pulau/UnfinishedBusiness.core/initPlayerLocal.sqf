@@ -26,6 +26,7 @@ west_order_seen = false;
 east_order_seen = false;
 indep_order_seen = false;
 civ_order_seen = false;
+side_switched = false;
 
 #include "..\config\fractions.sqf";
 
@@ -252,29 +253,38 @@ player addEventHandler
 			
 			[player] call Fn_Local_Dismiss_Group;
 			
-			private _sides = [civilian, east, west];
+			private _side = objNull;
 			
-			if (!(alive obj_east_comtower)) then {
-				_sides = _sides - [east];
-			} else {
-				private _all_count = {alive _x} count (playableUnits + switchableUnits);
-				private _east_count = {side _x == east && alive _x} count (playableUnits + switchableUnits);
-				//systemChat format ["%1 of % 1 are east", _east_count, _all_count];
-				if (_east_count >= (floor(_all_count / 4))) then {
-					//systemChat "Removing east";
+			if (!side_switched) then {
+				private _sides = [civilian, east, west];
+				
+				if (!(alive obj_east_comtower)) then {
 					_sides = _sides - [east];
+				} else {
+					private _all_count = {alive _x} count (playableUnits + switchableUnits);
+					private _east_count = {side _x == east && alive _x} count (playableUnits + switchableUnits);
+					//systemChat format ["%1 of % 1 are east", _east_count, _all_count];
+					if (_east_count >= (floor(_all_count / 4))) then {
+						//systemChat "Removing east";
+						_sides = _sides - [east];
+					};
 				};
-			};
-			
-			if (count (nearestObjects [us_liberty_01, ["Ship", "Helicopter"], 100]) <= 0) then {
-				_sides = _sides - [west];
-			};
+				
+				/*
+				if (count (nearestObjects [us_liberty_01, ["Ship", "Helicopter"], 100]) <= 0) then {
+					_sides = _sides - [west];
+				};
 
-			if (count _sides > 2) then {
-				_sides = _sides - [playerSide];
+				if (count _sides > 2) then {
+					_sides = _sides - [playerSide];
+				};
+				*/
+				
+				private _side = selectRandom _sides;
+				side_switched = true;
+			} else {
+				_side = playerSide;
 			};
-			
-			private _side = selectRandom _sides;
 
 			switch (_side) do
 			{
@@ -282,7 +292,6 @@ player addEventHandler
 				{
 					//systemChat "switched";
 					[east] call Fn_Local_Switch_Side;
-					
 				};
 				case civilian:
 				{
@@ -296,6 +305,8 @@ player addEventHandler
 					[west] call Fn_Local_Switch_Side;
 				};
 			};
+			
+			
 		};
 	}
 ];

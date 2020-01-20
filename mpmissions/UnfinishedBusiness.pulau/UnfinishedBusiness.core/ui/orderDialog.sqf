@@ -17,6 +17,7 @@
  ***************************************************************************/
 
 private _fraction = "";
+private _logo = "";
 private _group = "";
 private _header = "";
 private _signature = "";
@@ -27,17 +28,27 @@ private _role = (roleDescription player);
 
 switch (playerSide) do {
 	case east: {
-		_fraction = D_FRACTION_EAST;
-		};
+		_logo = "UnfinishedBusiness.core\data\images\orders\AOC\faction.paa";
+		_group = "UnfinishedBusiness.core\data\images\orders\faction_empty.paa";
+		_header = localize "AOC_ORDER_HEADER_01";
+		_signature = format["BX.HO 1254\nB4: 5190 10\n%1 %2 %3", (_now select 2), (_now select 1), (_now select 0)];
+		_text = format["%1\n\n%2: %3\n\n%4: %5\n\n%6: %7", localize "AOC_BRIEFING_HEADER_01", localize "MISSION", localize "EAST_BRIEFING_01", localize "OBJ_PRI", localize "EAST_BRIEFING_02", localize "OBJ_SEC", localize "EAST_BRIEFING_03"];
+	};
 	case civilian: {
-		_fraction = D_FRACTION_CIV;
+		_logo = "UnfinishedBusiness.core\data\images\orders\faction_empty.paa";
+		_group = "UnfinishedBusiness.core\data\images\orders\faction_empty.paa";
+		_header = localize "CIV_ORDER_HEADER_01";
+		_signature = format["REVO\n%1 %2 %3", (_now select 2), (_now select 1), (_now select 0)];
+		_text = format["%1\n\n%2: %3\n\n%4: %5\n\n%6: %7", format [localize "CIV_BRIEFING_HEADER_01", name player], localize "MISSION", localize "CIV_BRIEFING_01", localize "OBJ_PRI", localize "CIV_BRIEFING_02", localize "OBJ_SEC", localize "CIV_BRIEFING_03"];
 	};
 	case west: {
 		_fraction = D_FRACTION_WEST;
+		_logo = format["UnfinishedBusiness.core\data\images\fractions\%1\faction.paa", _fraction];
 		//if ((_role find "SpecOps_") >= 0) then {
 		//	_group = format["UnfinishedBusiness.core\data\images\fractions\%1\group_spec_logo.paa", _fraction];
 		//} else {
 			if (mission_plane_send) then {
+				
 				_group = format["UnfinishedBusiness.core\data\images\fractions\%1\group_rescue_logo.paa", _fraction];
 				_header = localize format["%1_ORDER_HEADER_01", _fraction];
 				_signature = format["SCO 1169.SE\nMMEA-3\n%1 %2 %3", (_now select 2), (_now select 1), (_now select 0)];
@@ -61,7 +72,7 @@ if (!isNil "_orderDialog") then {
 	private _dialog = findDisplay 3800;
 	private _ctrl = _dialog displayCtrl 3810;
 	if (!isNil "_ctrl") then {
-		_ctrl ctrlSetText (format["UnfinishedBusiness.core\data\images\fractions\%1\faction.paa", _fraction]);
+		_ctrl ctrlSetText (_logo);
 	};
 	
 	private _ctrl = _dialog displayCtrl 3811;

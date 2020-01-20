@@ -375,6 +375,31 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<English>Secondary Objective</English>
 				<Russian>Другорядна Задача</Russian>
 			</Key>
+			<Key ID="CIV_ORDER_HEADER_01">
+				<Original>DESTROY IT SOON AS READ</Original>
+				<English>DESTROY IT SOON AS READ</English>
+				<Russian>ЗНИЩ ОДРАЗУ ЯК ПРОЧИТАЄШ</Russian>
+			</Key>
+			<Key ID="CIV_BRIEFING_HEADER_01">
+				<Original>From:  Alexes Kornau\nTo:    %1</Original>
+				<English>From:  Alexes Kornau\nTo:    %1</English>
+				<Russian>Від:  Алексес Корнау\nКому:    %1</Russian>
+			</Key>
+			<Key ID="CIV_BRIEFING_01">
+				<Original>These bastards from the Sahri Islands started the Invasion. The former guard robs and kills us. They came after my brother yesterday. There is no hope. We need to start a revolution immediately. While we still have a chance ...</Original>
+				<English>These bastards from the Sahri Islands started the Invasion. The former guard robs and kills us. They came after my brother yesterday. There is no hope. We need to start a revolution immediately. While we still have a chance ...</English>
+				<Russian>Ці ублюдки з Островів Сахрі почали Вторгнення. Колишня гвардія грабує і вбиває нас. Вчора прийшли за моїм братом. Надії немає. Нам треба розпочати революцію негайно. Доки в нас ще є шанс ...</Russian>
+			</Key>
+			<Key ID="CIV_BRIEFING_02">
+				<Original>We need to liberate our cities. I have noted in your diary the coordinates of our two weapon stashes. Not the best ones, but better than nothing.</Original>
+				<English>We need to liberate our cities. I have noted in your diary the coordinates of our two weapon stashes. Not the best ones, but better than nothing.</English>
+				<Russian>Треба звільнити наші міста. Я відмітив в твоєму щоденнику координати двох наших схронів. Неабищо, але краще ніж нічого.</Russian>
+			</Key>
+			<Key ID="CIV_BRIEFING_03">
+				<Original>Remember that boat that sank the day before yesterday? There were weapons. A lot. I heard the AOC brought down a western transport. Find them, they will help us.</Original>
+				<English>Remember that boat that sank the day before yesterday? There were weapons. A lot. I heard the AOC brought down a western transport. Find them, they will help us.</English>
+				<Russian>Пам'ятаєш той катер що затонув позавчора? Там була зброя. Багато. Я чув АОС збили західний літак. Знайди їх, вони допоможуть.</Russian>
+			</Key>
 			<Key ID="CUP_B_USMC_ORDER_HEADER_01">
 				<Original>DEPARTMENT OF THE NAVY\nHEADQUARTERS UNITED STATES MARINE CORPS\n3000 MARINE CORPS PENTAGON\nWASHINGTON, DC 20350-3000</Original>
 				<English>DEPARTMENT OF THE NAVY\nHEADQUARTERS UNITED STATES MARINE CORPS\n3000 MARINE CORPS PENTAGON\nWASHINGTON, DC 20350-3000</English>
@@ -409,6 +434,31 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Original>AIR FORCE ORDER 1169.SE\n\nFrom:  Commandant of Air Forces\nTo:    Distribution List</Original>
 				<English>AIR FORCE ORDER 1169.SE\n\nFrom:  Commandant of Air Forces\nTo:    Distribution List</English>
 				<Russian>ПРИКАЗ ПОВІТРЯНИХ СИЛ 1169.SE\n\nВід:  Комендант Корпусу повітряних сил\nКому:    Список розповсюдження</Russian>
+			</Key>
+			<Key ID="AOC_ORDER_HEADER_01">
+				<Original>ORDER\nTHE SAHRI DEFENSE DEPARTMENT\nSAHRI ISLAND ARMY\nHF 5190 SAHRI</Original>
+				<English>ORDER\nTHE SAHRI DEFENSE DEPARTMENT\nSAHRI ISLAND ARMY\nHF 5190 SAHRI</English>
+				<Russian>ПРИКАЗ\nМИНИСТРА ОБОРОНИ САХРІ\nАРМІЯ ОСТРОВІВ САХРІ\nВЧ 5190 САХРІ</Russian>
+			</Key>
+			<Key ID="AOC_BRIEFING_HEADER_01">
+				<Original>ORDER OF THE DEFENSE MINISTER 1254\n\nFrom:  Ministry of Defense of the Sahri\nWho:    1-St. Expeditionary Army Staff</Original>
+				<English>ORDER OF THE DEFENSE MINISTER 1254\n\nFrom:  Ministry of Defense of the Sahri\nWho:    1-St. Expeditionary Army Staff</English>
+				<Russian>ПРИКАЗ МИНИСТРА ОБОРОНИ 1254\n\nВід:  Міністерство оборони Сахрі\nКому:    Особовому складу першої єкспедиційної армії</Russian>
+			</Key>
+			<Key ID="EAST_BRIEFING_01">
+				<Original>The Sahri Islands 1-St. Expeditionary Army deployed two bases: supply and air defense. The invasion into the island goes according to the plan. We have deducted and eliminated the informant of the Western Forces. Expect provocations. Fire at will.</Original>
+				<English>The Sahri Islands 1-St. Expeditionary Army deployed two bases: supply and air defense. The invasion into the island goes according to the plan. We have deducted and eliminated the informant of the Western Forces. Expect provocations. Fire at will.</English>
+				<Russian>Перша експедиційна Армія Островів Сахрі розвернула дві бази: постачання та ППО. Вторгнення на острів йде за планом. Ми вирахували і ліквідували інформатора Західних сил. Очікуйте на провокації. Вогонь вільний.</Russian>
+			</Key>
+			<Key ID="EAST_BRIEFING_02">
+				<Original>Ensure the security of infrastructure facilities: EWB stations and air defense equipment.</Original>
+				<English>Ensure the security of infrastructure facilities: EWB stations and air defense equipment.</English>
+				<Russian>Забезпечити безпеку об'єктів інфраструктури: Станції РЕБ та засобів ППО.</Russian>
+			</Key>
+			<Key ID="EAST_BRIEFING_03">
+				<Original>Eliminate Western forces on the island.\n\nIn case of fire contact, allied forces will announce the location of the enemy.</Original>
+				<English>Eliminate Western forces on the island.\n\nIn case of fire contact, allied forces will announce the location of the enemy.</English>
+				<Russian>Ліквідувати західні сили на острові.\n\nПри вогневому контакті, союзні сили будуть повідомляти про місце знаходження супротивника.</Russian>
 			</Key>
 			<Key ID="WEST_BRIEFING_01">
 				<Original>Following the death of the former dictator, the Pulau National Guard (PNG) has broken up into several gangs, which are conducting situational battles over the cities and villages. The Army of Sahri (AOC), led by General Puhlo Pu, started an military invasion. A ceasefire decision is currently in effect.</Original>
