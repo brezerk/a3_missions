@@ -128,7 +128,7 @@
 				&lt;br /&gt;&lt;br /&gt;
 				&lt;h2&gt;Easy&lt;/h2&gt;&lt;br /&gt;
 				* Chance of weapon loss during landing - 40%&lt;br /&gt;
-				* Chance of weapon's ammo loss during landing - 50%&lt;br /&gt;
+				* Chance of weapon's ammo loss during landing - 0%&lt;br /&gt;
 				* Chance of weapon's attachments loss during landing - 40%&lt;br /&gt;
 				* Chance of radio transmitter loss during landing - 60%&lt;br /&gt;
 				* Chance of losing map during landing - 0%&lt;br /&gt;
@@ -140,7 +140,7 @@
 				* Chance of weapon loss during landing - 60%&lt;br /&gt;
 				* Chance of weapon's ammo loss during landing - 80%&lt;br /&gt;
 				* Chance of weapon's attachments loss during landing - 40%&lt;br /&gt;
-				* Chance of radio transmitter loss during landing - 80%&lt;br /&gt;
+				* Chance of radio transmitter loss during landing - 50%&lt;br /&gt;
 				* Chance of losing map during landing - 50%&lt;br /&gt;
 				* Chance of losing compass during landing - 50%&lt;br /&gt;
 				* Ping timeout - 45 seconds&lt;br /&gt;
@@ -165,7 +165,7 @@
 				* Шанс втрати зброї при десантуванні - 40%&lt;br /&gt;
 				* Шанс втрати патронів до зброї при дестантуванні - 50%&lt;br /&gt;
 				* Шанс втрати додаткового обладнаяння до зброї при дестантуванні - 40%&lt;br /&gt;
-				* Шанс втрати радіопередавача при дестантуванні - 60%&lt;br /&gt;
+				* Шанс втрати радіопередавача при дестантуванні - 0%&lt;br /&gt;
 				* Шанс втрати мапи при дестантуванні - 0%&lt;br /&gt;
 				* Шанс втрати компаса при дестантуванні - 0%&lt;br /&gt;
 				* Пінг таймаут - 60 секунд&lt;br /&gt;
@@ -175,7 +175,7 @@
 				* Шанс втрати зброї при дестантуванні - 60%&lt;br /&gt;
 				* Шанс втрати патронів до зброї при дестантуванні - 80%&lt;br /&gt;
 				* Шанс втрати додаткового обладнаяння до зброї при дестантуванні - 40%&lt;br /&gt;
-				* Шанс втрати радіопередавача при дестантуванні - 80%&lt;br /&gt;
+				* Шанс втрати радіопередавача при дестантуванні - 50%&lt;br /&gt;
 				* Шанс втрати мапи при дестантуванні - 50%&lt;br /&gt;
 				* Шанс втрати компаса при дестантуванні - 50%&lt;br /&gt;
 				* Пінг таймаут - 45 секунд&lt;br /&gt;
@@ -249,18 +249,21 @@
 				<Russian>Фракціїя: %1</Russian>
 			</Key>
 			<Key ID="BRIEFING_06_DESC">
-				<Original>&lt;h2&gt;%1 160th Special Operations Aviation Regiment (Airborne) (160th SOAR (A))&lt;/h2&gt;&lt;br /&gt;
-%2 Special Forces Group is conducting peacekeeping operations. It is also has to scout AOC positions and keep eye on its military forces. 
+				<Original>&lt;h2&gt;%1 4th Marine Regiment (4th MR)&lt;/h2&gt;&lt;br /&gt;
+The 4th Marine Regiment is an infantry regiment of the %2 Marine Corps. Based at Camp Schwab in Okinawa, Japan, it is part of the 3rd Marine Division of the III Marine Expeditionary Force.
+The Group is conducting peacekeeping operation. It is also has to scout AOC positions and keep eye on its military forces. 
 &lt;font color='#FFD700'&gt;This group is the main story line for this mission.&lt;/font&gt; The mission will ends as soon as the last member of this group will be killed.&lt;br /&gt;&lt;br /&gt;
 &lt;img image='UnfinishedBusiness.core\data\images\fractions\%3\group_main.paa' width='256' height='256'/&gt;
 				</Original>
-				<English>&lt;h2&gt;%1 160th Special Operations Aviation Regiment (Airborne) (160th SOAR (A))&lt;/h2&gt;&lt;br /&gt;
-%2 Special Forces Group is conducting peacekeeping operations. It is also has to scout AOC positions and keep eye on its military forces. 
+				<English>&lt;h2&gt;%1 4th Marine Regiment (4th MR)&lt;/h2&gt;&lt;br /&gt;
+The 4th Marine Regiment is an infantry regiment of the %2 Marine Corps. Based at Camp Schwab in Okinawa, Japan, it is part of the 3rd Marine Division of the III Marine Expeditionary Force.
+The Group is conducting peacekeeping operation. It is also has to scout AOC positions and keep eye on its military forces. 
 &lt;font color='#FFD700'&gt;This group is the main story line for this mission.&lt;/font&gt; The mission will ends as soon as the last member of this group will be killed.&lt;br /&gt;&lt;br /&gt;
 &lt;img image='UnfinishedBusiness.core\data\images\fractions\%3\group_main.paa' width='256' height='256'/&gt;
 				</English>
-				<Russian>&lt;h2&gt;160-й окремий авіаційний (десантний) повний спеціальний назначення (160 ОАП) %1&lt;/h2&gt;&lt;br /&gt;
-Група спеціальних сил %2 проводить миротворчу операцію. Вона також має завдання розвідати позиції АОС та слідкувати за її військовими силами.
+				<Russian>&lt;h2&gt;4-й морський полк %1 (4th MR)&lt;/h2&gt;&lt;br /&gt;
+4-й морський полк - піхотний полк морської піхоти США. Базується в таборі Шваб в Окінаві, Японія, він входить до складу 3-ї морської дивізії ІІІ морських експедиційних сил.
+Група проводить миротворчу операцію. Вона також має завдання розвідати позиції АОС та слідкувати за її військовими силами.
 &lt;font color='#FFD700'&gt;Ця група є головною сюжетною лінією цієї місії.&lt;/font&gt; Місія закінчується, як тільки буде вбитий останній член цієї групи.&lt;br /&gt;&lt;br /&gt;
 &lt;img image='UnfinishedBusiness.core\data\images\fractions\%3\group_main.paa' width='256' height='256'/&gt;
 				</Russian>
@@ -403,7 +406,7 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 			<Key ID="CUP_B_USMC_ORDER_HEADER_01">
 				<Original>DEPARTMENT OF THE NAVY\nHEADQUARTERS UNITED STATES MARINE CORPS\n3000 MARINE CORPS PENTAGON\nWASHINGTON, DC 20350-3000</Original>
 				<English>DEPARTMENT OF THE NAVY\nHEADQUARTERS UNITED STATES MARINE CORPS\n3000 MARINE CORPS PENTAGON\nWASHINGTON, DC 20350-3000</English>
-				<Russian>МІНІСТЕРСТВО ВІЙСЬКОВО-МОРСЬКИХ СИЛ\nШТАБ МОРСЬКОГО КОРПУСУ СПОЛУЧЕНИХ ШТАТІВ\n3000 МОРСЬКИЙ КОРПУС ПЕНТАГОН\nВАШИНГТОН, DC 20350-3000</Russian>
+				<Russian>МІНІСТЕРСТВО ВМС\nШТАБ МОРСЬКОГО КОРПУСУ СПОЛУЧЕНИХ ШТАТІВ\n3000 МОРСЬКИЙ КОРПУС ПЕНТАГОН\nВАШИНГТОН, DC 20350-3000</Russian>
 			</Key>
 			<Key ID="CUP_B_USMC_ORDER_HEADER_02">
 				<Original>DEPARTMENT OF THE AIR FORCE\nHEADQUARTERS UNITED STATES SPECIAL OPERATIONS CORPS\n3000 MARINE CORPS PENTAGON\nWASHINGTON, DC 20350-3000</Original>

@@ -8418,7 +8418,7 @@ class Mission
 			name="wp_Monyet_paradrop_66";
 			type="b_recon";
 			id=7517;
-			atlOffset=0.15392697;
+			atlOffset=1.4655185;
 		};
 		class Item680
 		{
@@ -9001,7 +9001,7 @@ class Mission
 			b=75;
 			drawBorder=1;
 			id=7576;
-			atlOffset=21.089573;
+			atlOffset=22.132744;
 		};
 		class Item735
 		{
@@ -13226,7 +13226,7 @@ class Mission
 			type="b_naval";
 			angle=356.04797;
 			id=12699;
-			atlOffset=11.56731;
+			atlOffset=24.403753;
 		};
 		class Item976
 		{
