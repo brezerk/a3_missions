@@ -416,7 +416,7 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 			<Key ID="CUP_B_USMC_BRIEFING_HEADER_01">
 				<Original>MARINE CORPS ORDER 1326.SE\n\nFrom:  Commandant of Marine Corps\nTo:    Distribution List</Original>
 				<English>MARINE CORPS ORDER 1326.SE\n\nFrom:  Commandant of Marine Corps\nTo:    Distribution List</English>
-				<Russian>ПРИКАЗ МОРСЬКОГО КОРПУСУ 1326.SE\n\nВід:  Комендант Корпусу морської піхоти\nКому:    Список розповсюдження</Russian>
+				<Russian>НАКАЗ МОРСЬКОГО КОРПУСУ 1326.SE\n\nВід:  Комендант Корпусу морської піхоти\nКому:    Список розповсюдження</Russian>
 			</Key>
 			<Key ID="BLU_F_ORDER_HEADER_01">
 				<Original>NATO RESTRICTED\nSUPREME HEADQUARTERS\nALLIED POWERS EUROPE\nB-7010 SHAPE BELGIUM</Original>
@@ -431,22 +431,22 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 			<Key ID="BLU_F_BRIEFING_HEADER_01">
 				<Original>MARINE CORPS ORDER 1326.SE\n\nFrom:  Commandant of Marine Corps\nTo:    Distribution List</Original>
 				<English>MARINE CORPS ORDER 1326.SE\n\nFrom:  Commandant of Marine Corps\nTo:    Distribution List</English>
-				<Russian>ПРИКАЗ МОРСЬКОГО КОРПУСУ 1326.SE\n\nВід:  Комендант Корпусу морської піхоти\nКому:    Список розповсюдження</Russian>
+				<Russian>НАКАЗ МОРСЬКОГО КОРПУСУ 1326.SE\n\nВід:  Комендант Корпусу морської піхоти\nКому:    Список розповсюдження</Russian>
 			</Key>
 			<Key ID="BLU_F_BRIEFING_HEADER_02">
 				<Original>AIR FORCE ORDER 1169.SE\n\nFrom:  Commandant of Air Forces\nTo:    Distribution List</Original>
 				<English>AIR FORCE ORDER 1169.SE\n\nFrom:  Commandant of Air Forces\nTo:    Distribution List</English>
-				<Russian>ПРИКАЗ ПОВІТРЯНИХ СИЛ 1169.SE\n\nВід:  Комендант Корпусу повітряних сил\nКому:    Список розповсюдження</Russian>
+				<Russian>НАКАЗ ПОВІТРЯНИХ СИЛ 1169.SE\n\nВід:  Комендант Корпусу повітряних сил\nКому:    Список розповсюдження</Russian>
 			</Key>
 			<Key ID="AOC_ORDER_HEADER_01">
 				<Original>ORDER\nTHE SAHRI DEFENSE DEPARTMENT\nSAHRI ISLAND ARMY\nHF 5190 SAHRI</Original>
 				<English>ORDER\nTHE SAHRI DEFENSE DEPARTMENT\nSAHRI ISLAND ARMY\nHF 5190 SAHRI</English>
-				<Russian>ПРИКАЗ\nМИНИСТРА ОБОРОНИ САХРІ\nАРМІЯ ОСТРОВІВ САХРІ\nВЧ 5190 САХРІ</Russian>
+				<Russian>НАКАЗ\nМІНІСТРА ОБОРОНИ САХРІ\nАРМІЯ ОСТРОВІВ САХРІ\nВЧ 5190 САХРІ</Russian>
 			</Key>
 			<Key ID="AOC_BRIEFING_HEADER_01">
 				<Original>ORDER OF THE DEFENSE MINISTER 1254\n\nFrom:  Ministry of Defense of the Sahri\nWho:    1-St. Expeditionary Army Staff</Original>
 				<English>ORDER OF THE DEFENSE MINISTER 1254\n\nFrom:  Ministry of Defense of the Sahri\nWho:    1-St. Expeditionary Army Staff</English>
-				<Russian>ПРИКАЗ МИНИСТРА ОБОРОНИ 1254\n\nВід:  Міністерство оборони Сахрі\nКому:    Особовому складу першої єкспедиційної армії</Russian>
+				<Russian>НАКАЗ МІНІСТРА ОБОРОНИ 1254\n\nВід:  Міністерство оборони Сахрі\nКому:    Особовому складу першої єкспедиційної армії</Russian>
 			</Key>
 			<Key ID="EAST_BRIEFING_01">
 				<Original>The Sahri Islands 1-St. Expeditionary Army deployed two bases: supply and air defense. The invasion into the island goes according to the plan. We have deducted and eliminated the informant of the Western Forces. Expect provocations. Fire at will.</Original>
