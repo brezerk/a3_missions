@@ -11,10 +11,10 @@ class orderDialog
 		{
 			type = 0;
 			idc = -1;
-			x = safeZoneX + safeZoneW * 0.37207032;
-			y = safeZoneY + safeZoneH * 0.22569445;
-			w = safeZoneW * 0.26074219;
-			h = safeZoneH * 0.54861112;
+			x = safeZoneX + safeZoneW * 0.34765625;
+			y = safeZoneY + safeZoneH * 0.17708334;
+			w = safeZoneW * 0.30957032;
+			h = safeZoneH * 0.64583334;
 			style = 0+48;
 			text = "UnfinishedBusiness.core\data\images\orders\paper.paa";
 			colorBackground[] = {0,0,0,0};
@@ -30,8 +30,8 @@ class orderDialog
 		{
 			type = 0;
 			idc = 3810;
-			x = safeZoneX + safeZoneW * 0.37890625;
-			y = safeZoneY + safeZoneH * 0.23958334;
+			x = safeZoneX + safeZoneW * 0.35449219;
+			y = safeZoneY + safeZoneH * 0.19097223;
 			w = safeZoneW * 0.04589844;
 			h = safeZoneH * 0.10069445;
 			style = 0+48;
@@ -45,8 +45,8 @@ class orderDialog
 		{
 			type = 0;
 			idc = 3811;
-			x = safeZoneX + safeZoneW * 0.58007813;
-			y = safeZoneY + safeZoneH * 0.23784723;
+			x = safeZoneX + safeZoneW * 0.60449219;
+			y = safeZoneY + safeZoneH * 0.18923612;
 			w = safeZoneW * 0.04589844;
 			h = safeZoneH * 0.10069445;
 			style = 0+48;
@@ -61,9 +61,9 @@ class orderDialog
 		{
 			type = 0;
 			idc = 3815;
-			x = safeZoneX + safeZoneW * 0.43066407;
-			y = safeZoneY + safeZoneH * 0.24305556;
-			w = safeZoneW * 0.14355469;
+			x = safeZoneX + safeZoneW * 0.40625;
+			y = safeZoneY + safeZoneH * 0.19444445;
+			w = safeZoneW * 0.19238282;
 			h = safeZoneH * 0.09548612;
 			style = 0+2+16+512;
 			text = "";
@@ -78,10 +78,10 @@ class orderDialog
 		{
 			type = 0;
 			idc = 3820;
-			x = safeZoneX + safeZoneW * 0.38671875;
-			y = safeZoneY + safeZoneH * 0.35416667;
-			w = safeZoneW * 0.23144532;
-			h = safeZoneH * 0.39583334;
+			x = safeZoneX + safeZoneW * 0.36230469;
+			y = safeZoneY + safeZoneH * 0.30555556;
+			w = safeZoneW * 0.28027344;
+			h = safeZoneH * 0.49305556;
 			style = 16+512;
 			lineSpacing = 1;
 			text = "";
@@ -95,8 +95,8 @@ class orderDialog
 		{
 			type = 0;
 			idc = 3819;
-			x = safeZoneX + safeZoneW * 0.56738282;
-			y = safeZoneY + safeZoneH * 0.35069445;
+			x = safeZoneX + safeZoneW * 0.59277344;
+			y = safeZoneY + safeZoneH * 0.30902778;
 			w = safeZoneW * 0.05566407;
 			h = safeZoneH * 0.08680556;
 			style = 16+512;
@@ -105,7 +105,7 @@ class orderDialog
 			lineSpacing = 1;
 			colorText[] = {0,0,0,1};
 			font = "RobotoCondensed";
-			sizeEx = (((((safezoneW / safezoneH) min 0.9) / 0.9) / 25) * 1);
+			sizeEx = (((((safezoneW / safezoneH) min 0.9) / 0.9) / 25) * 0.6);
 			
 		};
 		
