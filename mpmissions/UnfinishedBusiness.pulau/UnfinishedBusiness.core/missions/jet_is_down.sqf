@@ -37,6 +37,10 @@ if (isServer) then {
 		
 		us_heli_01 setVehicleLock "UNLOCKED";
 		
+		private _time = date;
+		mission_plane_down_time = format["%1:%2", _time select 3, _time select 4];
+		publicVariable "mission_plane_down_time";
+		
 		[] execVM "UnfinishedBusiness.core\missions\crash_site.sqf";
 	};
 };

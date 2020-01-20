@@ -22,6 +22,10 @@ Local player script
 
 //variables
 informator_told = false;
+west_order_seen = false;
+east_order_seen = false;
+indep_order_seen = false;
+civ_order_seen = false;
 
 #include "..\config\fractions.sqf";
 
@@ -43,9 +47,11 @@ if (isServer) then {
 
 {if (_x find "respawn_" >= 0) then {_x setMarkerAlphaLocal 0;}} forEach allMapMarkers;
 
-waitUntil { sleep 1; [["mission_requested", "mission_plane_send", "us_liberty_01"]] call Fn_Local_WaitPublicVariables; };
-
 waitUntil { !isNull player }; // Wait for player to initialize
+
+cutText ["", "BLACK"];
+
+waitUntil { sleep 1; [["mission_requested", "mission_plane_send", "us_liberty_01", "mission_plane_send_time", "mission_plane_down_time", "mission_plane_pass_count"]] call Fn_Local_WaitPublicVariables; };
 
 if (!mission_requested) then {
 	["UnfinishedBusiness.core\ui\settingsDialog.sqf"] call BrezBlock_fnc_WaitForStart;
@@ -87,9 +93,34 @@ player setVariable ["weapon_fiered", false, false];
 player setVariable ["is_civilian", false, true];
 player setVariable ["BB_CorpseTTL", -1, true];
 
+{
+	private _pos = getMarkerPos _x;
+    {
+		_x addAction 
+		[
+			localize "ACTION_12", 
+			{
+				[] execVM "UnfinishedBusiness.core\ui\orderDialog.sqf";
+			},
+			[],
+			1.5, 
+			true, 
+			true, 
+			"",
+			"", // _target, _this, _originalTarget
+			3
+		];
+	} forEach (_pos nearObjects ["Land_MapBoard_F", 50]);
+} forEach ["mrk_west_specops", "respawn_east", "respawn_west"];
+
+[1, "BLACK", 1, 1] call BIS_fnc_fadeEffect;
+cutText [localize "INFO_WAIT_02", "PLAIN DOWN", 2, true, true];
+	
+[[""]] call BIS_fnc_music;
+
 [] execVM "UnfinishedBusiness.core\briefing.sqf";
 
-//[] execVM "UnfinishedBusiness.core\ui\orderDialog.sqf";
+[] execVM "UnfinishedBusiness.core\ui\orderDialog.sqf";
 
 #include "missions\local\intro.sqf";
 #include "missions\local\fast_travel.sqf";

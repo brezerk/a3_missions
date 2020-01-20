@@ -39,6 +39,10 @@ if (hasInterface) then {
 			] call BIS_fnc_taskCreate;
 			['t_west_rescue', "run"] call BIS_fnc_taskSetType;
 			if (!(player getVariable ["is_assault_group", false])) then {
+				if (!west_order_seen) then {
+					[] execVM "UnfinishedBusiness.core\ui\orderDialog.sqf";
+					west_order_seen = true;
+				};
 				[
 					player,
 					"t_west_rescue_crash",

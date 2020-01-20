@@ -380,6 +380,11 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<English>DEPARTMENT OF THE NAVY\nHEADQUARTERS UNITED STATES MARINE CORPS\n3000 MARINE CORPS PENTAGON\nWASHINGTON, DC 20350-3000</English>
 				<Russian>МІНІСТЕРСТВО ВІЙСЬКОВО-МОРСЬКИХ СИЛ\nШТАБ МОРСЬКОГО КОРПУСУ СПОЛУЧЕНИХ ШТАТІВ\n3000 МОРСЬКИЙ КОРПУС ПЕНТАГОН\nВАШИНГТОН, DC 20350-3000</Russian>
 			</Key>
+			<Key ID="CUP_B_USMC_ORDER_HEADER_02">
+				<Original>DEPARTMENT OF THE AIR FORCE\nHEADQUARTERS UNITED STATES SPECIAL OPERATIONS CORPS\n3000 MARINE CORPS PENTAGON\nWASHINGTON, DC 20350-3000</Original>
+				<English>NATO RESTRICTED\nSUPREME HEADQUARTERS\nALLIED POWERS EUROPE\nB-7010 SHAPE BELGIUM</English>
+				<Russian>НАТО ОБМЕЖЕНО\nВЕРХОВНИЙ ШТАБ\nСОЮЗНІ СИЛИ ЕВРОПИ\nB-7010 БЕЛЬГІЯ</Russian>
+			</Key>
 			<Key ID="CUP_B_USMC_BRIEFING_HEADER_01">
 				<Original>MARINE CORPS ORDER 1326.SE\n\nFrom:  Commandant of Marine Corps\nTo:    Distribution List</Original>
 				<English>MARINE CORPS ORDER 1326.SE\n\nFrom:  Commandant of Marine Corps\nTo:    Distribution List</English>
@@ -390,10 +395,20 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<English>NATO RESTRICTED\nSUPREME HEADQUARTERS\nALLIED POWERS EUROPE\nB-7010 SHAPE BELGIUM</English>
 				<Russian>НАТО ОБМЕЖЕНО\nВЕРХОВНИЙ ШТАБ\nСОЮЗНІ СИЛИ ЕВРОПИ\nB-7010 БЕЛЬГІЯ</Russian>
 			</Key>
+			<Key ID="BLU_F_ORDER_HEADER_02">
+				<Original>NATO RESTRICTED\nSUPREME HEADQUARTERS\nALLIED POWERS EUROPE\nB-7010 SHAPE BELGIUM</Original>
+				<English>NATO RESTRICTED\nSUPREME HEADQUARTERS\nALLIED POWERS EUROPE\nB-7010 SHAPE BELGIUM</English>
+				<Russian>НАТО ОБМЕЖЕНО\nВЕРХОВНИЙ ШТАБ\nСОЮЗНІ СИЛИ ЕВРОПИ\nB-7010 БЕЛЬГІЯ</Russian>
+			</Key>
 			<Key ID="BLU_F_BRIEFING_HEADER_01">
 				<Original>MARINE CORPS ORDER 1326.SE\n\nFrom:  Commandant of Marine Corps\nTo:    Distribution List</Original>
 				<English>MARINE CORPS ORDER 1326.SE\n\nFrom:  Commandant of Marine Corps\nTo:    Distribution List</English>
 				<Russian>ПРИКАЗ МОРСЬКОГО КОРПУСУ 1326.SE\n\nВід:  Комендант Корпусу морської піхоти\nКому:    Список розповсюдження</Russian>
+			</Key>
+			<Key ID="BLU_F_BRIEFING_HEADER_02">
+				<Original>AIR FORCE ORDER 1169.SE\n\nFrom:  Commandant of Air Forces\nTo:    Distribution List</Original>
+				<English>AIR FORCE ORDER 1169.SE\n\nFrom:  Commandant of Air Forces\nTo:    Distribution List</English>
+				<Russian>ПРИКАЗ ПОВІТРЯНИХ СИЛ 1169.SE\n\nВід:  Комендант Корпусу повітряних сил\nКому:    Список розповсюдження</Russian>
 			</Key>
 			<Key ID="WEST_BRIEFING_01">
 				<Original>Following the death of the former dictator, the Pulau National Guard (PNG) has broken up into several gangs, which are conducting situational battles over the cities and villages. The Army of Sahri (AOC), led by General Puhlo Pu, started an military invasion. A ceasefire decision is currently in effect.</Original>
@@ -409,6 +424,21 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Original>Scout AOC positions and keep eye on military forces movement.</Original>
 				<English>Scout AOC positions and keep eye on military forces movement.</English>
 				<Russian>Розвідати позиції АОС та стежити за переміщенням військових сил.</Russian>
+			</Key>
+			<Key ID="WEST_BRIEFING_11">
+				<Original>A military plane with %1 people on board has disappeared en route to %2 island. The AF101 Blackfish transport aircraft took off from USS Freedom at %3 local time, and operators lost contact at %4.\n\nThose missing include 4 crew and %5 passengers.\n\nSurvivor count: UNKNOWN.\nEnemy numbers and activity data: UNKNOWN</Original>
+				<English>A military plane with %1 people on board has disappeared en route to %2 island. The AF101 Blackfish transport aircraft took off from USS Freedom at %3 local time, and operators lost contact at %4.\n\nThose missing include 4 crew and %5 passengers.\n\nSurvivor count: UNKNOWN.\nEnemy numbers and activity data: UNKNOWN</English>
+				<Russian>Військовий борт %1 зник по дорозі до остріву %2. Транспортний борт AF101 Blackfish вилетів з USS "Freedom" о %3 за локальним часом, оператори втратили зв'язок о %4.\nСереж зниклих безвісті: 4 члена екіпажу та %5 пасажирів.\n\nКількість виживших: НЕВІДОМО.\nВрожа активність та чисельність: НЕВІДОМО</Russian>
+			</Key>
+			<Key ID="WEST_BRIEFING_12">
+				<Original>Find the survivors and bring them aboard the USS Freedom.</Original>
+				<English>Find the survivors and bring them aboard the USS Freedom.</English>
+				<Russian>Розшукайте вцілілих та доставьте їх на борт USS "Freedom".</Russian>
+			</Key>
+			<Key ID="WEST_BRIEFING_13">
+				<Original>Check out the crash site and salvage the Black Box.</Original>
+				<English>Check out the crash site and salvage the Black Box.</English>
+				<Russian>Перевірте місце аварії та врятуйте Чорну Cкриню.</Russian>
 			</Key>
 			<Key ID="TASK_01_TITLE">
 				<Original>Eliminate rebel leader</Original>
@@ -729,6 +759,11 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Original>Get away!</Original>
 				<English>Get away!</English>
 				<Russian>Відійди!</Russian>
+			</Key>
+			<Key ID="ACTION_12">
+				<Original>View current mission</Original>
+				<English>View current mission</English>
+				<Russian>Переглянути поточну місію</Russian>
 			</Key>
 			<Key ID="INFO_WAIT_01">
 				<Original>Wait for mission to be planned by the &lt;t color='#FFD700'&gt;Squad Leader&lt;/t&gt;</Original>

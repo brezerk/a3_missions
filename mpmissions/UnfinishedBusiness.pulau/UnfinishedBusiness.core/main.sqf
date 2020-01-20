@@ -99,6 +99,9 @@ if (isServer) then {
 	// Global variables	
 	mission_requested = false;
 	mission_plane_send = false;
+	mission_plane_send_time = objNull;
+	mission_plane_down_time = objNull;
+	mission_plane_pass_count = 0;
 	
 	//Objects
 	obj_east_comtower = objNull;
@@ -162,6 +165,9 @@ if (isServer) then {
 	publicVariable "D_FRACTION_CIV";
 	publicVariable "mission_plane_send";
 	publicVariable "mission_requested";
+	publicVariable "mission_plane_send_time";
+	publicVariable "mission_plane_down_time";
+	publicVariable "mission_plane_pass_count";
 	publicVariable "us_liberty_01";
 	
 	addMissionEventHandler ["PlayerDisconnected",

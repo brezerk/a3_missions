@@ -34,18 +34,21 @@ switch (playerSide) do {
 	};
 	case west: {
 		_fraction = D_FRACTION_WEST;
-		if ((_role find "SpecOps_") >= 0) then {
-			_group = format["UnfinishedBusiness.core\data\images\fractions\%1\group_spec_logo.paa", _fraction];
-		} else {
-			if ((_role find "Recon_") >= 0) then {
-				_group = format["UnfinishedBusiness.core\data\images\fractions\%1\group_spec_logo.paa", _fraction];
+		//if ((_role find "SpecOps_") >= 0) then {
+		//	_group = format["UnfinishedBusiness.core\data\images\fractions\%1\group_spec_logo.paa", _fraction];
+		//} else {
+			if (mission_plane_send) then {
+				_group = format["UnfinishedBusiness.core\data\images\fractions\%1\group_rescue_logo.paa", _fraction];
+				_header = localize format["%1_ORDER_HEADER_01", _fraction];
+				_signature = format["SCO 1169.SE\nMMEA-3\n%1 %2 %3", (_now select 2), (_now select 1), (_now select 0)];
+				_text = format["%1\n\n%2: %3\n\n%4: %5\n\n%6: %7", localize format["%1_BRIEFING_HEADER_02", _fraction], localize "MISSION", format [localize "WEST_BRIEFING_11", mission_plane_pass_count, D_LOCATION, mission_plane_send_time, mission_plane_down_time, mission_plane_pass_count], localize "OBJ_PRI",  localize "WEST_BRIEFING_12", localize "OBJ_SEC", localize "WEST_BRIEFING_13"];
 			} else {
 				_group = format["UnfinishedBusiness.core\data\images\fractions\%1\group_logo.paa", _fraction];
 				_header = localize format["%1_ORDER_HEADER_01", _fraction];
 				_signature = format["SCO 1715.SE\nMMEA-5\n%1 %2 %3", (_now select 2), (_now select 1), (_now select 0)];
-				_text = format["%1\n\n%2: %3\n\n%4: %5\n\n%6: %7", localize format["%1_BRIEFING_HEADER_01", _fraction], localize "MISSION", localize "WEST_BRIEFING_01", localize "OBJ_PRI", format [localize "WEST_BRIEFING_02", D_LOCATION], localize "OBJ_SEC", localize "WEST_BRIEFING_03"]
+				_text = format["%1\n\n%2: %3\n\n%4: %5\n\n%6: %7", localize format["%1_BRIEFING_HEADER_01", _fraction], localize "MISSION", localize "WEST_BRIEFING_01", localize "OBJ_PRI", format [localize "WEST_BRIEFING_02", D_LOCATION], localize "OBJ_SEC", localize "WEST_BRIEFING_03"];
 			};
-		};
+		//};
 	};
 	case resistance: {
 		_fraction = D_FRACTION_INDEP;

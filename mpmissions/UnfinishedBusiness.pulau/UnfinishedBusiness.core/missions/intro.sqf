@@ -213,6 +213,11 @@ if (isServer) then {
 		us_airplane_01 flyInHeight 1500;
 		(driver us_airplane_01) setBehaviour "Careless";
 		(driver us_airplane_01) setCombatMode "Blue";
+		private _time = date;
+		mission_plane_send_time = format["%1:%2", _time select 3, _time select 4];
+		mission_plane_pass_count = (count assault_group);
+		publicVariable "mission_plane_send_time";
+		publicVariable "mission_plane_pass_count";
 		execVM "UnfinishedBusiness.core\missions\fast_travel.sqf";
 	}; // Fn_MissionIntro_SendAirplane
 	
