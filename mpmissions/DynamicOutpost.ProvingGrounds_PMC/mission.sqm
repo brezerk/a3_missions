@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1662.2719,68.484085,229.56015};
-		dir[]={-0.44641516,-0.62063813,0.64479291};
-		up[]={-0.35331306,0.7840212,0.51030606};
-		aside[]={0.8222689,3.8382132e-007,0.56929946};
+		pos[]={852.28778,79.256493,1154.833};
+		dir[]={-0.79419923,-0.60025841,0.095804706};
+		up[]={-0.59600163,0.79971284,0.071889907};
+		aside[]={0.11976836,8.1904e-007,0.99291897};
 	};
 };
 binarizationWanted=0;
@@ -20843,7 +20843,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[""ACE_VMH3""],[3]],[[],[]],[[""Binocular"",""rhs_tr8_periscope"",""ACE_MapTools"",""ACE_EarPlugs"",""ACE_fieldDressing"",""ACE_bloodIV"",""ACE_CableTie"",""ACE_DefusalKit"",""ACE_epinephrine"",""ACE_morphine"",""ACE_plasmaIV"",""ACE_Sandbag_empty"",""ACE_bodyBag"",""ACE_RangeTable_82mm"",""ACE_RangeCard""],[10,5,6,20,90,20,20,5,30,40,20,20,30,5,5]],[[],[]]],false]";
+							value="[[[[""ACE_VMH3""],[3]],[[],[]],[[""Binocular"",""rhs_tr8_periscope"",""ACE_MapTools"",""ACE_EarPlugs"",""ACE_fieldDressing"",""ACE_bloodIV"",""ACE_CableTie"",""ACE_DefusalKit"",""ACE_epinephrine"",""ACE_morphine"",""ACE_plasmaIV"",""ACE_Sandbag_empty"",""ACE_bodyBag"",""ACE_RangeTable_82mm"",""ACE_RangeCard"",""ACE_tourniquet"",""ACE_splint"",""ACE_bloodIV_500""],[10,5,6,20,90,20,20,5,30,40,20,20,30,5,5,48,31,21]],[[],[]]],false]";
 						};
 					};
 				};
@@ -30463,8 +30463,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={845.96405,50.269413,1177.8634};
-				angles[]={0,0.041914403,0.0024897563};
+				position[]={845.96399,50.269775,1177.863};
+				angles[]={0,0.041922808,0.0024958209};
 			};
 			side="Empty";
 			flags=4;
@@ -30473,7 +30473,7 @@ class Mission
 			};
 			id=6627;
 			type="ACE_medicalSupplyCrate";
-			atlOffset=-0.0093650818;
+			atlOffset=-0.0089988708;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -30491,7 +30491,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[],[]],[[],[]],[[""ACE_fieldDressing"",""ACE_morphine"",""ACE_epinephrine"",""ACE_bloodIV"",""ACE_bloodIV_500"",""ACE_bodyBag""],[13,7,3,3,5,10]],[[],[]]],false]";
+							value="[[[[],[]],[[],[]],[[""ACE_fieldDressing"",""ACE_morphine"",""ACE_epinephrine"",""ACE_bloodIV"",""ACE_bloodIV_500"",""ACE_bodyBag"",""ACE_tourniquet"",""ACE_surgicalKit""],[13,7,3,3,5,10,41,5]],[[],[]]],false]";
 						};
 					};
 				};
@@ -35054,7 +35054,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[],[]],[[],[]],[[""ACE_MRE_BeefStew"",""ACE_MRE_CreamChickenSoup"",""ACE_MRE_CreamTomatoSoup"",""ACE_MRE_LambCurry"",""ACE_MRE_MeatballsPasta"",""ACE_MRE_SteakVegetables"",""ACE_WaterBottle""],[24,23,24,22,21,23,43]],[[],[]]],false]";
+							value="[[[[],[]],[[],[]],[[""ACE_MRE_BeefStew"",""ACE_MRE_CreamChickenSoup"",""ACE_MRE_CreamTomatoSoup"",""ACE_MRE_LambCurry"",""ACE_MRE_MeatballsPasta"",""ACE_MRE_SteakVegetables"",""ACE_WaterBottle"",""ACE_tourniquet""],[24,23,24,22,21,23,43,34]],[[],[]]],false]";
 						};
 					};
 				};
