@@ -39,8 +39,9 @@ _this forceAddUniform "LOP_U_UKR_Fatigue_Digit";
 _this addItemToUniform "ACE_CableTie";
 for "_i" from 1 to 10 do {_this addItemToUniform "ACE_morphine";};
 _this addItemToUniform "ACE_EarPlugs";
-for "_i" from 1 to 20 do {_this addItemToUniform "ACE_fieldDressing";};
-_this addItemToUniform "ACE_Canteen";
+_this addItemToBackpack "ACE_Canteen";
+for "_i" from 1 to 10 do {_this addItemToUniform "ACE_epinephrine";};
+for "_i" from 1 to 20 do {_this addItemToUniform "ACE_morphine";};
 _this addVest "LOP_V_6B23_Medic_TAN";
 	
 //Give player a radio depending on radio mod loaded
@@ -54,6 +55,11 @@ if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
 		_this linkItem "ItemRadio";
 	};
 };
+
+for "_i" from 1 to 20 do {_this addItemToVest "ACE_epinephrine";};
+for "_i" from 1 to 10 do {_this addItemToVest "ACE_morphine";};
+for "_i" from 1 to 10 do {_this addItemToVest "ACE_adenosine";};
+for "_i" from 1 to 4 do {_this addItemToVest "ACE_bloodIV_500";};
 	
 for "_i" from 1 to 2 do {_this addItemToVest "rhs_mag_rdg2_white";};
 for "_i" from 1 to 2 do {_this addItemToVest "rhs_30Rnd_545x39_7N6_AK";};
@@ -61,17 +67,15 @@ for "_i" from 1 to 2 do {_this addItemToVest "rhs_mag_rgd5";};
 for "_i" from 1 to 3 do {_this addItemToVest "rhs_30Rnd_545x39_7N6M_AK";};
 _this addBackpack "B_Kitbag_tan";
 for "_i" from 1 to 4 do {_this addItemToBackpack "ACE_bloodIV";};
+
 for "_i" from 1 to 40 do {_this addItemToBackpack "ACE_fieldDressing";};
 for "_i" from 1 to 8 do {_this addItemToBackpack "ACE_epinephrine";};
 for "_i" from 1 to 20 do {_this addItemToBackpack "ACE_morphine";};
-_this addItemToBackpack "ACE_surgicalKit";
 _this addItemToBackpack "ACE_personalAidKit";
 for "_i" from 1 to 2 do {_this addItemToBackpack "ACE_bodyBag";};
 for "_i" from 1 to 10 do {_this addItemToBackpack "rhs_30Rnd_545x39_7N6_AK";};
 _this addHeadgear "LOP_H_6B27M_Digit";
 _this addGoggles "rhs_googles_clear";
-
-
 
 //Add items
 _this linkItem "ItemMap";

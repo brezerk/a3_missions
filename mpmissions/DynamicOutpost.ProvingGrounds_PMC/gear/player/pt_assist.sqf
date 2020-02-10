@@ -36,9 +36,10 @@ _this addPrimaryWeaponItem "rhs_acc_dtk";
 //Add containers
 _this forceAddUniform "LOP_U_UKR_Fatigue_Digit";
 _this addItemToUniform "ACE_CableTie";
-for "_i" from 1 to 10 do {_this addItemToUniform "ACE_morphine";};
+for "_i" from 1 to 3 do {_this addItemToUniform "ACE_epinephrine";};
+for "_i" from 1 to 2 do {_this addItemToUniform "ACE_morphine";};
 _this addItemToUniform "ACE_EarPlugs";
-for "_i" from 1 to 20 do {_this addItemToUniform "ACE_fieldDressing";};
+for "_i" from 1 to 5 do {_this addItemToUniform "ACE_fieldDressing";};
 _this addItemToUniform "ACE_Canteen";
 _this addVest "LOP_V_6B23_Rifleman_TAN";
 	
@@ -60,8 +61,8 @@ for "_i" from 1 to 2 do {_this addItemToVest "rhs_30Rnd_545x39_7N6_AK";};
 for "_i" from 1 to 2 do {_this addItemToVest "rhs_30Rnd_545x39_7N6M_AK";};
 _this addBackpack "rhs_rpg_empty";
 for "_i" from 1 to 10 do {_this addItemToBackpack "ACE_fieldDressing";};
-for "_i" from 1 to 2 do {_this addItemToBackpack "ACE_bloodIV";};
-for "_i" from 1 to 10 do {_this addItemToBackpack "ACE_morphine";};
+_this addItemToBackpack "ACE_bloodIV";
+for "_i" from 1 to 2 do {_this addItemToBackpack "ACE_bloodIV_500";};
 _this addItemToBackpack "rhs_rpg7_OG7V_mag";
 _this addItemToBackpack "rhs_rpg7_PG7VL_mag";
 for "_i" from 1 to 2 do {_this addItemToBackpack "rhs_30Rnd_545x39_7N6_AK";};
