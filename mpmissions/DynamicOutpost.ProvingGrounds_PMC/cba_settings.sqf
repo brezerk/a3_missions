@@ -33,12 +33,12 @@ force ace_advanced_fatigue_terrainGradientFactor = 1;
 force ace_repair_engineerSetting_repair = 0;
 
 // ACE Medical
-force ace_medical_preventInstaDeath = true;
-force ace_medical_fatalDamageSource = 0;
 ace_medical_feedback_painEffectType = 2;
 force ace_medical_limping = 0;
 force ace_medical_fractures = 0;
-force ace_medical_statemachine_fatalInjuriesPlayer = 0;
+force ace_medical_fatalDamageSource = 1;
+force ace_medical_statemachine_cardiacArrestTime = 600;
+force ace_medical_statemachine_fatalInjuriesPlayer = 2;
 force ace_medical_treatment_advancedBandages = false;
 force ace_medical_treatment_advancedMedication = false;
 force ace_medical_treatment_clearTraumaAfterBandage = true;
