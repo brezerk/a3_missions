@@ -62,6 +62,7 @@ _this addItemToVest "rhs_mag_rgd5";
 _this addBackpack "B_Kitbag_tan";
 for "_i" from 1 to 10 do {_this addItemToVest "ACE_fieldDressing";};
 for "_i" from 1 to 10 do {_this addItemToVest "ACE_morphine";};
+for "_i" from 1 to 2 do {_this addItemToVest "ACE_tourniquet";};
 for "_i" from 1 to 4 do {_this addItemToBackpack "rhs_100Rnd_762x54mmR_7N13";};
 _this addHeadgear "LOP_H_6B27M_ess_Digit";
 _this addGoggles "rhs_googles_clear";

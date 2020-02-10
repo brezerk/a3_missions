@@ -70,6 +70,7 @@ _this addItemToVest "rhs_mag_9x18_12_57N181S";
 for "_i" from 1 to 2 do {_this addItemToVest "rhs_30Rnd_545x39_7N6_AK";};
 for "_i" from 1 to 2 do {_this addItemToVest "rhs_VOG25";};
 for "_i" from 1 to 2 do {_this addItemToVest "rhs_mag_rgd5";};
+for "_i" from 1 to 2 do {_this addItemToVest "ACE_tourniquet";};
 
 //Backpack
 _this addBackpack "B_Kitbag_tan";
@@ -77,11 +78,11 @@ _this addBackpack "B_Kitbag_tan";
 _this addItemToBackpack "ACE_bloodIV";
 for "_i" from 1 to 2 do {_this addItemToBackpack "ACE_bloodIV_500";};
 for "_i" from 1 to 10 do {_this addItemToBackpack "ACE_fieldDressing";};
-
 for "_i" from 1 to 8 do {_this addItemToBackpack "rhs_VOG25";};
 for "_i" from 1 to 6 do {_this addItemToBackpack "rhs_30Rnd_545x39_7N6_AK";};
 for "_i" from 1 to 6 do {_this addItemToBackpack "rhs_30Rnd_545x39_7N6M_AK";};
 for "_i" from 1 to 2 do {_this addItemToBackpack "rhs_mag_rdg2_white";};
+
 
 //Headgear and Googles
 _this addHeadgear "LOP_H_6B27M_Digit";

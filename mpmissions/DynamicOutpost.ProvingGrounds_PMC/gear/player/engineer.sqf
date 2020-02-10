@@ -62,6 +62,7 @@ if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
 for "_i" from 1 to 2 do {_this addItemToVest "rhs_30Rnd_545x39_7N6_AK";};
 for "_i" from 1 to 6 do {_this addItemToVest "rhs_VOG25";};
 for "_i" from 1 to 2 do {_this addItemToVest "rhs_mag_rgd5";};
+for "_i" from 1 to 2 do {_this addItemToVest "ACE_tourniquet";};
 
 //Backpack
 _this addBackpack "B_Kitbag_tan";
