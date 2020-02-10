@@ -8,7 +8,7 @@ class EditorData
 	toggles=522;
 	class ItemIDProvider
 	{
-		nextID=7297;
+		nextID=7331;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={812.52136,59.876854,1198.3416};
-		dir[]={-0.60032058,-0.76530325,0.2327106};
-		up[]={-0.71355838,0.64362466,0.27659991};
-		aside[]={0.36146569,-1.4298712e-006,0.93249232};
+		pos[]={1662.2719,68.484085,229.56015};
+		dir[]={-0.44641516,-0.62063813,0.64479291};
+		up[]={-0.35331306,0.7840212,0.51030606};
+		aside[]={0.8222689,3.8382132e-007,0.56929946};
 	};
 };
 binarizationWanted=0;
@@ -2251,7 +2251,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=1013;
+		items=1019;
 		class Item0
 		{
 			dataType="Object";
@@ -20679,7 +20679,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[],[]],[[""rhs_30Rnd_545x39_7N6_AK"",""rhs_45Rnd_545X39_7N6_AK"",""rhs_100Rnd_762x54mmR_7N13"",""rhs_mag_9x18_8_57N181S"",""rhs_10Rnd_762x54mmR_7N14""],[60,30,10,10,20]],[[],[]],[[],[]]],false]";
+							value="[[[[],[]],[[""rhs_30Rnd_545x39_7N6_AK"",""rhs_45Rnd_545X39_7N6_AK"",""rhs_100Rnd_762x54mmR_7N13"",""rhs_mag_9x18_8_57N181S"",""rhs_10Rnd_762x54mmR_7N14""],[140,50,40,10,40]],[[],[]],[[],[]]],false]";
 						};
 					};
 				};
@@ -20762,7 +20762,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[],[]],[[""ATMine_Range_Mag"",""APERSMine_Range_Mag"",""rhs_mag_rdg2_white"",""rhs_mag_rgd5"",""rhs_rpg7_OG7V_mag"",""rhs_rpg7_PG7VL_mag"",""rhs_VOG25"",""rhs_mag_9k38_rocket""],[5,10,10,20,20,30,20,10]],[[],[]],[[],[]]],false]";
+							value="[[[[],[]],[[""ATMine_Range_Mag"",""APERSMine_Range_Mag"",""rhs_mag_rdg2_white"",""rhs_mag_rgd5"",""rhs_rpg7_OG7V_mag"",""rhs_rpg7_PG7VL_mag"",""rhs_VOG25"",""rhs_mag_9k38_rocket""],[5,10,10,20,40,40,40,10]],[[],[]],[[],[]]],false]";
 						};
 					};
 				};
@@ -20803,7 +20803,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[""rhs_weap_igla"",""rhs_weap_rpg26"",""rhs_weap_rpg7""],[8,15,4]],[[],[]],[[],[]],[[],[]]],false]";
+							value="[[[[""rhs_weap_igla"",""rhs_weap_rpg26"",""rhs_weap_rpg7""],[8,40,4]],[[],[]],[[],[]],[[],[]]],false]";
 						};
 					};
 				};
@@ -20843,7 +20843,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[""ACE_VMH3""],[3]],[[],[]],[[""Binocular"",""rhs_tr8_periscope"",""ACE_MapTools"",""ACE_EarPlugs"",""ACE_fieldDressing"",""ACE_bloodIV"",""ACE_CableTie"",""ACE_DefusalKit"",""ACE_epinephrine"",""ACE_morphine"",""ACE_plasmaIV"",""ACE_Sandbag_empty"",""ACE_bodyBag"",""ACE_RangeTable_82mm"",""ACE_RangeCard""],[10,5,6,20,60,20,20,5,30,40,20,20,30,5,5]],[[],[]]],false]";
+							value="[[[[""ACE_VMH3""],[3]],[[],[]],[[""Binocular"",""rhs_tr8_periscope"",""ACE_MapTools"",""ACE_EarPlugs"",""ACE_fieldDressing"",""ACE_bloodIV"",""ACE_CableTie"",""ACE_DefusalKit"",""ACE_epinephrine"",""ACE_morphine"",""ACE_plasmaIV"",""ACE_Sandbag_empty"",""ACE_bodyBag"",""ACE_RangeTable_82mm"",""ACE_RangeCard""],[10,5,6,20,90,20,20,5,30,40,20,20,30,5,5]],[[],[]]],false]";
 						};
 					};
 				};
@@ -26731,7 +26731,7 @@ class Mission
 			side="Independent";
 			class Entities
 			{
-				items=4;
+				items=5;
 				class Item0
 				{
 					dataType="Object";
@@ -27098,6 +27098,86 @@ class Mission
 						nAttributes=3;
 					};
 				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1662.9082,61.961811,227.9556};
+						angles[]={0,5.4472947,0};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						init="call{this call compile preprocessFileLineNumbers ""gear\player\rifelman_light.sqf"";}";
+						description="Стрілок (Rifleman)";
+						isPlayable=1;
+					};
+					id=7308;
+					type="LOP_UKR_Infantry_Light";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="RHS_Male03RUS";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.99000001;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="face";
+							expression="_this setface _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="";
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
 			};
 			class Attributes
 			{
@@ -27110,13 +27190,13 @@ class Mission
 			side="Independent";
 			class Entities
 			{
-				items=4;
+				items=5;
 				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={1671.252,62.391922,231.186};
+						position[]={1671.7772,62.421856,230.82152};
 						angles[]={0,5.3204441,0};
 					};
 					side="Independent";
@@ -27130,7 +27210,7 @@ class Mission
 					};
 					id=5256;
 					type="LOP_UKR_Infantry_sergeant";
-					atlOffset=-0.019001007;
+					atlOffset=-0.011875153;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -27471,12 +27551,93 @@ class Mission
 						nAttributes=3;
 					};
 				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1668.5447,62.202805,226.84605};
+						angles[]={0,5.4472947,0};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						init="call{this call compile preprocessFileLineNumbers ""gear\player\rifelman_light.sqf"";}";
+						description="Стрілок (Rifleman)";
+						isPlayable=1;
+					};
+					id=7310;
+					type="LOP_UKR_Infantry_Light";
+					atlOffset=-3.8146973e-006;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="RHS_Male03RUS";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.99000001;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="face";
+							expression="_this setface _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="";
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
 			};
 			class Attributes
 			{
 			};
 			id=5255;
-			atlOffset=-0.019001007;
+			atlOffset=-0.011875153;
 		};
 		class Item645
 		{
@@ -28518,7 +28679,7 @@ class Mission
 			side="Independent";
 			class Entities
 			{
-				items=4;
+				items=7;
 				class Item0
 				{
 					dataType="Object";
@@ -28898,6 +29059,249 @@ class Mission
 						nAttributes=3;
 					};
 				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1670.8347,62.296032,224.46254};
+						angles[]={0,5.4472947,0};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						init="call{this call compile preprocessFileLineNumbers ""gear\player\rifelman_light.sqf"";}";
+						description="Стрілок (Rifleman)";
+						isPlayable=1;
+					};
+					id=7298;
+					type="LOP_UKR_Infantry_Light";
+					atlOffset=0.11799622;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="RHS_Male03RUS";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.99000001;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="face";
+							expression="_this setface _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="";
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+				class Item5
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1674.4127,62.297802,225.83574};
+						angles[]={0,5.3992982,0};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						init="call{this call compile preprocessFileLineNumbers ""gear\player\pt.sqf"";}";
+						description="Гранатометник (Grenadier RPG-7)";
+						isPlayable=1;
+					};
+					id=7324;
+					type="LOP_UKR_Infantry_RPG";
+					atlOffset=-0.0010948181;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="RHS_Male01RUS";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.05;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+				class Item6
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1673.5256,62.247391,224.84373};
+						angles[]={0,5.3261862,0};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						init="call{this call compile preprocessFileLineNumbers ""gear\player\pt_assist.sqf"";}";
+						description="Помічник Гранатометника (Grenadier Assistant)";
+						isPlayable=1;
+					};
+					id=7325;
+					type="LOP_UKR_Infantry_RPG_Asst";
+					atlOffset=0.0091819763;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="RHS_Male05RUS";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.03;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
 			};
 			class Attributes
 			{
@@ -28910,7 +29314,7 @@ class Mission
 			side="Independent";
 			class Entities
 			{
-				items=4;
+				items=5;
 				class Item0
 				{
 					dataType="Object";
@@ -29330,6 +29734,86 @@ class Mission
 							};
 						};
 						nAttributes=4;
+					};
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1662.5422,61.906403,223.1564};
+						angles[]={0,5.4472947,0};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						init="call{this call compile preprocessFileLineNumbers ""gear\player\rifelman_light.sqf"";}";
+						description="Стрілок (Rifleman)";
+						isPlayable=1;
+					};
+					id=7300;
+					type="LOP_UKR_Infantry_Light";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="RHS_Male03RUS";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.99000001;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="face";
+							expression="_this setface _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="";
+								};
+							};
+						};
+						nAttributes=3;
 					};
 				};
 			};
@@ -34442,7 +34926,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[],[]],[[""rhs_VOG25"",""rhs_mag_rdg2_white"",""rhs_100Rnd_762x54mmR_7N13"",""rhs_30Rnd_545x39_7N6_AK"",""rhs_30Rnd_545x39_7N6M_AK"",""rhs_rpg7_OG7V_mag"",""rhs_rpg7_PG7V_mag"",""rhs_mag_rgd5""],[13,14,8,9,6,7,8,3]],[[],[]],[[],[]]],false]";
+							value="[[[[],[]],[[""rhs_VOG25"",""rhs_mag_rdg2_white"",""rhs_100Rnd_762x54mmR_7N13"",""rhs_30Rnd_545x39_7N6_AK"",""rhs_30Rnd_545x39_7N6M_AK"",""rhs_rpg7_OG7V_mag"",""rhs_rpg7_PG7V_mag"",""rhs_mag_rgd5""],[53,21,41,63,38,23,31,29]],[[],[]],[[],[]]],false]";
 						};
 					};
 				};
@@ -34482,7 +34966,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[],[]],[[""rhs_30Rnd_545x39_7N6_AK"",""rhs_30Rnd_545x39_7N6M_AK""],[11,17]],[[""ACE_fieldDressing"",""ACE_bloodIV"",""ACE_DefusalKit"",""ACE_EarPlugs"",""ACE_Sandbag_empty""],[18,5,1,5,13]],[[],[]]],false]";
+							value="[[[[],[]],[[""rhs_30Rnd_545x39_7N6_AK"",""rhs_30Rnd_545x39_7N6M_AK""],[51,37]],[[""ACE_fieldDressing"",""ACE_bloodIV"",""ACE_DefusalKit"",""ACE_EarPlugs"",""ACE_Sandbag_empty""],[41,28,1,5,13]],[[],[]]],false]";
 						};
 					};
 				};
@@ -34570,7 +35054,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[],[]],[[],[]],[[""ACE_MRE_BeefStew"",""ACE_MRE_CreamChickenSoup"",""ACE_MRE_CreamTomatoSoup"",""ACE_MRE_LambCurry"",""ACE_MRE_MeatballsPasta"",""ACE_MRE_SteakVegetables"",""ACE_WaterBottle""],[4,3,7,3,6,11,25]],[[],[]]],false]";
+							value="[[[[],[]],[[],[]],[[""ACE_MRE_BeefStew"",""ACE_MRE_CreamChickenSoup"",""ACE_MRE_CreamTomatoSoup"",""ACE_MRE_LambCurry"",""ACE_MRE_MeatballsPasta"",""ACE_MRE_SteakVegetables"",""ACE_WaterBottle""],[24,23,24,22,21,23,43]],[[],[]]],false]";
 						};
 					};
 				};
@@ -34582,7 +35066,7 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={757.12128,51.869633,1186.6589};
+				position[]={757.12097,51.869633,1186.6591};
 				angles[]={0,1.1009886,0};
 			};
 			side="Empty";
@@ -34610,7 +35094,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[""rhs_weap_igla"",""rhs_weap_rpg26"",""rhs_weap_rpg7""],[6,15,2]],[[],[]],[[],[]],[[],[]]],false]";
+							value="[[[[""rhs_weap_igla"",""rhs_weap_rpg26"",""rhs_weap_rpg7""],[6,35,2]],[[],[]],[[],[]],[[],[]]],false]";
 						};
 					};
 				};
@@ -34650,7 +35134,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[],[]],[[""ATMine_Range_Mag"",""APERSMine_Range_Mag"",""rhs_mag_rdg2_white"",""rhs_mag_rgd5"",""rhs_rpg7_OG7V_mag"",""rhs_rpg7_PG7VL_mag"",""rhs_VOG25"",""rhs_mag_9k38_rocket""],[4,11,7,11,6,8,7,9]],[[],[]],[[],[]]],false]";
+							value="[[[[],[]],[[""ATMine_Range_Mag"",""APERSMine_Range_Mag"",""rhs_mag_rdg2_white"",""rhs_mag_rgd5"",""rhs_rpg7_OG7V_mag"",""rhs_rpg7_PG7VL_mag"",""rhs_VOG25"",""rhs_mag_9k38_rocket""],[4,11,7,24,28,27,24,9]],[[],[]],[[],[]]],false]";
 						};
 					};
 				};
@@ -38584,7 +39068,7 @@ class Mission
 			side="Independent";
 			class Entities
 			{
-				items=4;
+				items=5;
 				class Item0
 				{
 					dataType="Object";
@@ -38962,6 +39446,86 @@ class Mission
 										};
 									};
 									value=1.03;
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1663.9689,61.932686,220.83003};
+						angles[]={0,5.4472947,0};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						init="call{this call compile preprocessFileLineNumbers ""gear\player\rifelman_light.sqf"";}";
+						description="Стрілок (Rifleman)";
+						isPlayable=1;
+					};
+					id=7306;
+					type="LOP_UKR_Infantry_Light";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="RHS_Male03RUS";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.99000001;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="face";
+							expression="_this setface _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="";
 								};
 							};
 						};
@@ -41415,6 +41979,1387 @@ class Mission
 					};
 				};
 				nAttributes=1;
+			};
+		};
+		class Item1013
+		{
+			dataType="Group";
+			side="Independent";
+			class Entities
+			{
+				items=5;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1672.5598,62.472015,238.76904};
+						angles[]={0,4.4648957,0};
+					};
+					side="Independent";
+					flags=7;
+					class Attributes
+					{
+						rank="CORPORAL";
+						init="call{this call compile preprocessFileLineNumbers ""gear\player\commander.sqf"";}";
+						description="Командир (Group leader)";
+						isPlayable=1;
+					};
+					id=7318;
+					type="LOP_UKR_Infantry_sergeant";
+					atlOffset=-0.1711998;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="RHS_Male03RUS";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.05;
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="face";
+							expression="_this setface _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="";
+								};
+							};
+						};
+						nAttributes=4;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1672.9703,62.418495,237.44415};
+						angles[]={0,4.6343732,0};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						init="call{this call compile preprocessFileLineNumbers ""gear\player\medic.sqf"";}";
+						description="Стрілець-санітар (Combat medic)";
+						isPlayable=1;
+						stance="Up";
+					};
+					id=7319;
+					type="LOP_UKR_Infantry_medic";
+					atlOffset=-0.23586655;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ace_isMedic";
+							expression="if (_value != -1 && {_value != (parseNumber (_this getUnitTrait 'medic'))}) then {_this setVariable [""ace_medical_medicClass"", _value, true]}";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="RHS_Male01RUS";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.98000002;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="face";
+							expression="_this setface _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="";
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1673.1251,62.356091,236.1745};
+						angles[]={0,4.5437555,0};
+					};
+					side="Independent";
+					flags=4;
+					class Attributes
+					{
+						init="call{this call compile preprocessFileLineNumbers ""gear\player\mg.sqf"";}";
+						description="Кулеметник (Machine Gunner)";
+						isPlayable=1;
+					};
+					id=7320;
+					type="LOP_UKR_Infantry_AR";
+					atlOffset=-0.29285049;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="RHS_Male01RUS";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.05;
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="face";
+							expression="_this setface _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="";
+								};
+							};
+						};
+						nAttributes=4;
+					};
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1673.3561,62.348972,234.93915};
+						angles[]={0,4.4706435,0};
+					};
+					side="Independent";
+					flags=4;
+					class Attributes
+					{
+						init="call{this call compile preprocessFileLineNumbers ""gear\player\mg_assist.sqf"";}";
+						description="Помічник Кулеметника (Machine Gunner Assistant)";
+						isPlayable=1;
+					};
+					id=7321;
+					type="LOP_UKR_Infantry_AR_Asst";
+					atlOffset=-0.26123428;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="RHS_Male05RUS";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1.03;
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="face";
+							expression="_this setface _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="";
+								};
+							};
+						};
+						nAttributes=4;
+					};
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1673.3882,62.205162,233.52962};
+						angles[]={0,4.1691322,0};
+					};
+					side="Independent";
+					flags=5;
+					class Attributes
+					{
+						init="call{this call compile preprocessFileLineNumbers ""gear\player\rifelman_light.sqf"";}";
+						description="Стрілок (Rifleman)";
+						isPlayable=1;
+					};
+					id=7322;
+					type="LOP_UKR_Infantry_Light";
+					atlOffset=-0.36856461;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="RHS_Male03RUS";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0.99000001;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="face";
+							expression="_this setface _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="";
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=7317;
+			atlOffset=-0.1711998;
+		};
+		class Item1014
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={755.54578,51.82172,1190.0441};
+				angles[]={0,1.0519358,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=7326;
+			type="Paleta1";
+		};
+		class Item1015
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={755.63757,52.197517,1189.8414};
+				angles[]={0,1.4353553,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=7327;
+			type="rhs_mags_crate";
+			atlOffset=0.00022888184;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[""rhs_VOG25"",""rhs_mag_rdg2_white"",""rhs_100Rnd_762x54mmR_7N13"",""rhs_30Rnd_545x39_7N6_AK"",""rhs_30Rnd_545x39_7N6M_AK"",""rhs_rpg7_OG7V_mag"",""rhs_rpg7_PG7V_mag"",""rhs_mag_rgd5""],[53,21,41,63,38,23,31,29]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item1016
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={803.17786,50.843945,1199.7019};
+				angles[]={0,3.7909021,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=7328;
+			type="Paleta1";
+			atlOffset=-0.00080108643;
+		};
+		class Item1017
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={803.01398,51.219933,1199.8521};
+				angles[]={0,4.1743217,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=7329;
+			type="rhs_mags_crate";
+			atlOffset=0.0004196167;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[],[]],[[""rhs_VOG25"",""rhs_mag_rdg2_white"",""rhs_100Rnd_762x54mmR_7N13"",""rhs_30Rnd_545x39_7N6_AK"",""rhs_30Rnd_545x39_7N6M_AK"",""rhs_mag_rgd5""],[53,21,41,63,38,29]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item1018
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={1693.209,64.511284,228.64053};
+				angles[]={0,4.4003415,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				textures="rhs_sand";
+			};
+			id=7330;
+			type="LOP_UKR_BTR80";
+			atlOffset=0.091999054;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="rhs_decalVV_type";
+					expression="_this setVariable ['rhs_decalVV_type', _value];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Platoon";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="rhs_decalArmy";
+					expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cBTRBackArmSymPlaces,  _this getVariable ['rhs_decalArmy_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="-1";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="crate_r2_unhide";
+					expression="[_this,_value,'crate_r2_unhide'] call rhs_fnc_setHabarEden";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="rhs_decalFront_type";
+					expression="_this setVariable ['rhs_decalFront_type', _value];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Army";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="rhs_decalNumber_type";
+					expression="if(_value != 'NoChange')then{ _this setVariable ['rhs_decalNumber_type', _value];[_this,[['Number', cBTR3NumberPlaces, _value]]] call rhs_fnc_decalsInit}";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="NoChange";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="crate_l3_unhide";
+					expression="[_this,_value,'crate_l3_unhide'] call rhs_fnc_setHabarEden";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="rhs_decalPlatoon";
+					expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cBTRPlnSymPlaces,  _this getVariable ['rhs_decalPlatoon_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="-1";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="rhs_decalArmy_type";
+					expression="_this setVariable ['rhs_decalArmy_type', _value];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Army";
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="rhs_decalFront";
+					expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cBTROMONSymbolPlaces,  _this getVariable ['rhs_decalFront_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="-1";
+						};
+					};
+				};
+				class Attribute9
+				{
+					property="rhs_externalMount";
+					expression="[_this,_value] call rhs_fnc_lockTop";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute10
+				{
+					property="crate_l1_unhide";
+					expression="[_this,_value,'crate_l1_unhide'] call rhs_fnc_setHabarEden";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute11
+				{
+					property="rhs_decalPlatoon_type";
+					expression="_this setVariable ['rhs_decalPlatoon_type', _value];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Platoon";
+						};
+					};
+				};
+				class Attribute12
+				{
+					property="rhs_decalRightTurret";
+					expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cBTRRightGvardSymPlaces,  _this getVariable ['rhs_decalRightTurret_type','Honor'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="-1";
+						};
+					};
+				};
+				class Attribute13
+				{
+					property="rhs_decalRightTurret_type";
+					expression="_this setVariable ['rhs_decalRightTurret_type', _value];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Honor";
+						};
+					};
+				};
+				class Attribute14
+				{
+					property="wheel_1_unhide";
+					expression="[_this,_value,'wheel_1_unhide'] call rhs_fnc_setHabarEden";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute15
+				{
+					property="crate_r1_unhide";
+					expression="[_this,_value,'crate_r1_unhide'] call rhs_fnc_setHabarEden";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute16
+				{
+					property="rhs_decalVV";
+					expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cBTRVVLetterSymPlaces,  _this getVariable ['rhs_decalVV_type','Platoon'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="-1";
+						};
+					};
+				};
+				class Attribute17
+				{
+					property="crate_l2_unhide";
+					expression="[_this,_value,'crate_l2_unhide'] call rhs_fnc_setHabarEden";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute18
+				{
+					property="VehicleCustomization";
+					expression="if (local _this) then {if (isSimpleObject _this) then {_this setVariable ['bis_fnc_initVehicle_customization',_value]} else {([_this] + _value + [true]) call (uinamespace getvariable 'bis_fnc_initVehicle');};};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"ARRAY"
+								};
+							};
+							class value
+							{
+								items=2;
+								class Item0
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"ARRAY"
+											};
+										};
+									};
+								};
+								class Item1
+								{
+									class data
+									{
+										class type
+										{
+											type[]=
+											{
+												"ARRAY"
+											};
+										};
+										class value
+										{
+											items=24;
+											class Item0
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="crate_l1_unhide";
+												};
+											};
+											class Item1
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item2
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="crate_l2_unhide";
+												};
+											};
+											class Item3
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item4
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="crate_l3_unhide";
+												};
+											};
+											class Item5
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=1;
+												};
+											};
+											class Item6
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="crate_l4_unhide";
+												};
+											};
+											class Item7
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item8
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="crate_r1_unhide";
+												};
+											};
+											class Item9
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=1;
+												};
+											};
+											class Item10
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="crate_r2_unhide";
+												};
+											};
+											class Item11
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item12
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="crate_r3_unhide";
+												};
+											};
+											class Item13
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item14
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="crate_r4_unhide";
+												};
+											};
+											class Item15
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=1;
+												};
+											};
+											class Item16
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="water_1_unhide";
+												};
+											};
+											class Item17
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+											class Item18
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="water_2_unhide";
+												};
+											};
+											class Item19
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=1;
+												};
+											};
+											class Item20
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="wheel_1_unhide";
+												};
+											};
+											class Item21
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=1;
+												};
+											};
+											class Item22
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"STRING"
+														};
+													};
+													value="wheel_2_unhide";
+												};
+											};
+											class Item23
+											{
+												class data
+												{
+													class type
+													{
+														type[]=
+														{
+															"SCALAR"
+														};
+													};
+													value=0;
+												};
+											};
+										};
+									};
+								};
+							};
+						};
+					};
+				};
+				nAttributes=19;
 			};
 		};
 	};
