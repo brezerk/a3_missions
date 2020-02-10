@@ -47,6 +47,7 @@ force ace_medical_treatment_medicEpinephrine = 1;
 
 // ACE Overheating
 force ace_overheating_unJamOnreload = true;
+force ace_overheating_enabled = true;
 
 // GRAD Trenches
 grad_trenches_functions_stopBuildingAtFatigueMax = true;
