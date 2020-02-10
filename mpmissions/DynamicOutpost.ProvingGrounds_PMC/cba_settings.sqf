@@ -55,6 +55,9 @@ grad_trenches_functions_stopBuildingAtFatigueMax = true;
 // ACE Pointing
 force ace_finger_enabled = true;
 
+// ACE Artillery
+force ace_artillerytables_disableArtilleryComputer = true;
+
 // ACEX Field Rations
 force acex_field_rations_enabled = true;
 force acex_field_rations_timeWithoutWater = 4;

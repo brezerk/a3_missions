@@ -8,7 +8,7 @@ class EditorData
 	toggles=522;
 	class ItemIDProvider
 	{
-		nextID=7296;
+		nextID=7297;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1663.3895,70.23452,213.90399};
-		dir[]={0.38030231,-0.54023474,0.75082844};
-		up[]={0.24412674,0.84143478,0.48199025};
-		aside[]={0.89218169,1.080909e-006,-0.45189121};
+		pos[]={812.52136,59.876854,1198.3416};
+		dir[]={-0.60032058,-0.76530325,0.2327106};
+		up[]={-0.71355838,0.64362466,0.27659991};
+		aside[]={0.36146569,-1.4298712e-006,0.93249232};
 	};
 };
 binarizationWanted=0;
@@ -2251,7 +2251,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=1012;
+		items=1013;
 		class Item0
 		{
 			dataType="Object";
@@ -20843,7 +20843,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="[[[[""ACE_VMH3""],[3]],[[],[]],[[""Binocular"",""rhs_tr8_periscope"",""ACE_MapTools"",""ACE_EarPlugs"",""ACE_fieldDressing"",""ACE_bloodIV"",""ACE_CableTie"",""ACE_DefusalKit"",""ACE_epinephrine"",""ACE_morphine"",""ACE_plasmaIV"",""ACE_Sandbag_empty"",""ACE_bodyBag"",""ACE_RangeTable_82mm"",""ACE_RangeCard""],[10,5,6,20,60,20,20,5,30,40,20,20,30,2,2]],[[],[]]],false]";
+							value="[[[[""ACE_VMH3""],[3]],[[],[]],[[""Binocular"",""rhs_tr8_periscope"",""ACE_MapTools"",""ACE_EarPlugs"",""ACE_fieldDressing"",""ACE_bloodIV"",""ACE_CableTie"",""ACE_DefusalKit"",""ACE_epinephrine"",""ACE_morphine"",""ACE_plasmaIV"",""ACE_Sandbag_empty"",""ACE_bodyBag"",""ACE_RangeTable_82mm"",""ACE_RangeCard""],[10,5,6,20,60,20,20,5,30,40,20,20,30,5,5]],[[],[]]],false]";
 						};
 					};
 				};
@@ -41375,6 +41375,47 @@ class Mission
 			type="n_hq";
 			id=7295;
 			atlOffset=-0.0083122253;
+		};
+		class Item1012
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={804.31152,51.00359,1198.7872};
+				angles[]={0,2.275089,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="ua_supply_box_08";
+			};
+			id=7296;
+			type="Box_NATO_Support_F";
+			atlOffset=-0.018001556;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""ACE_VMH3""],[3]],[[],[]],[[""Binocular"",""rhs_tr8_periscope"",""ACE_MapTools"",""ACE_EarPlugs"",""ACE_fieldDressing"",""ACE_morphine"",""ACE_Sandbag_empty"",""ACE_RangeTable_82mm"",""ACE_RangeCard"",""ACE_artilleryTable"",""ACE_WaterBottle""],[2,5,6,8,15,2,20,5,5,6,6]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 	class Connections
