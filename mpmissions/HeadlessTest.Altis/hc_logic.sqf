@@ -21,7 +21,7 @@
  private _center = getMarkerPos "start";
  //private _lcs = nearestLocations [_center, ["NameVillage", "NameCity", "NameCityCapital"], 1500];
 
-for "_i" from 1 to 5 do {
+for "_i" from 1 to 3 do {
 
 	[format ["Wave %1 of 5...", _i]] remoteExecCall ["systemChat"];
 
@@ -80,5 +80,67 @@ for "_i" from 1 to 5 do {
 	sleep 300;
 	
  };
+ 
+ for "_i" from 4 to 6 do {
+
+	[format ["Wave %1 of 6...", _i]] remoteExecCall ["systemChat"];
+
+	for "_i" from 1 to 10 do {
+
+		//private _lc = selectRandom _lcs;
+		//private _pos = (locationPosition _lc) findEmptyPosition [600, 600, "O_Soldier_F"];
+		private _pos = [_center, 700, 1000, 15, 0, 0, 0] call BIS_fnc_findSafePos;
+		private _grp = [_pos, east, [
+						'O_APC_Wheeled_02_rcws_v2_F',
+						'O_Soldier_F',
+						'O_Soldier_F',
+						'O_Soldier_F',
+						'O_Soldier_F',
+						'O_Soldier_lite_F',
+						'O_Soldier_SL_F',
+						'O_Soldier_TL_F',
+						'O_Soldier_GMG_F',
+						'O_Soldier_HMG_F',
+						'O_Soldier_AMG_F',
+						'O_Soldier_GL_F',
+						'O_Soldier_AR_F',
+						'O_Soldier_A_F',
+						'O_Soldier_AAR_F',
+						'O_medic_F']] call BIS_fnc_spawnGroup;
+		_grp deleteGroupWhenEmpty true;
+		[_grp, _center] call BIS_fnc_taskAttack;
+	 };
+	 
+	 for "_i" from 1 to 3 do {
+
+		//private _lc = selectRandom _lcs;
+		//private _pos = (locationPosition _lc) findEmptyPosition [600, 600, "O_Soldier_F"];
+		private _pos = [_center, 700, 1000, 15, 0, 0, 0] call BIS_fnc_findSafePos;
+		private _grp = [_pos, east, [
+						'O_MBT_02_cannon_F',
+						'O_Soldier_F',
+						'O_Soldier_F',
+						'O_Soldier_F',
+						'O_Soldier_F',
+						'O_Soldier_lite_F',
+						'O_Soldier_SL_F',
+						'O_Soldier_TL_F',
+						'O_Soldier_GMG_F',
+						'O_Soldier_HMG_F',
+						'O_Soldier_AMG_F',
+						'O_Soldier_GL_F',
+						'O_Soldier_AT_F',
+						'O_Soldier_A_F',
+						'O_Soldier_AAR_F',
+						'O_medic_F']] call BIS_fnc_spawnGroup;
+		_grp deleteGroupWhenEmpty true;
+		[_grp, _center] call BIS_fnc_taskAttack;
+	 };
+ 
+	sleep 300;
+	
+ };
+ 
+ sleep 600;
  
  "EveryoneWon" call BIS_fnc_endMissionServer;
