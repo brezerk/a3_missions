@@ -79,7 +79,7 @@ for "_i" from 1 to 3 do {
  
 	private _count = {alive _x && side _x == EAST} count allUnits;
 	
-	[format ["Total alive units count: %1", _i]] remoteExecCall ["systemChat"];
+	[format ["Total alive units count: %1", _count]] remoteExecCall ["systemChat"];
 	
 	
 	sleep 420;
@@ -140,7 +140,9 @@ for "_i" from 1 to 3 do {
 		[_grp, _center] call BIS_fnc_taskAttack;
 	 };
  
-	[format ["Total alive units count: %1", _i]] remoteExecCall ["systemChat"];
+	private _count = {alive _x && side _x == EAST} count allUnits;
+	
+	[format ["Total alive units count: %1", _count]] remoteExecCall ["systemChat"];
  
 	sleep 420;
 	
