@@ -21,7 +21,7 @@ if (!hasInterface && !isServer) then {
 	execVM "hc_logic.sqf";
 } else {
 	if (isServer) then {
-		if (count (allCurators) <= 0) then {
+		if (count (entities "HeadlessClient_F") <= 0) then {
 			["Headless client not found. Fallback..."] remoteExecCall ["systemChat"];
 			execVM "hc_logic.sqf";
 		} else {
