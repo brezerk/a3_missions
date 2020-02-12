@@ -17,9 +17,15 @@
  ***************************************************************************/
  
 if (!hasInterface && !isServer) then {
-	["Headless client found. Init..."] remoteExecCall ["systemChat"];
+	["Headless client Init..."] remoteExecCall ["systemChat"];
 	execVM "hc_logic.sqf";
 } else {
-	["Headless client not found. Fallback..."] remoteExecCall ["systemChat"];
-	execVM "hc_logic.sqf";
+	if (isServer) then {
+		if (count (allCurators) <= 0) then {
+			["Headless client not found. Fallback..."] remoteExecCall ["systemChat"];
+			execVM "hc_logic.sqf";
+		} else {
+			["Headless client conencted. Handover spawn logic..."] remoteExecCall ["systemChat"];
+		};
+	};
 };
