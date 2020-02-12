@@ -36,6 +36,8 @@ for "_i" from 1 to 3 do {
 						'O_Soldier_F',
 						'O_Soldier_F',
 						'O_Soldier_F',
+						'O_Soldier_F',
+						'O_Soldier_F',
 						'O_Soldier_lite_F',
 						'O_Soldier_SL_F',
 						'O_Soldier_TL_F',
@@ -62,6 +64,8 @@ for "_i" from 1 to 3 do {
 						'O_Soldier_F',
 						'O_Soldier_F',
 						'O_Soldier_F',
+						'O_Soldier_F',
+						'O_Soldier_F',
 						'O_Soldier_lite_F',
 						'O_Soldier_SL_F',
 						'O_Soldier_TL_F',
@@ -77,7 +81,7 @@ for "_i" from 1 to 3 do {
 		[_grp, _center] call BIS_fnc_taskAttack;
 	 };
  
-	sleep 300;
+	sleep 420;
 	
  };
  
@@ -92,6 +96,8 @@ for "_i" from 1 to 3 do {
 		private _pos = [_center, 700, 1000, 15, 0, 0, 0] call BIS_fnc_findSafePos;
 		private _grp = [_pos, east, [
 						'O_APC_Wheeled_02_rcws_v2_F',
+						'O_Soldier_F',
+						'O_Soldier_F',
 						'O_Soldier_F',
 						'O_Soldier_F',
 						'O_Soldier_F',
@@ -122,6 +128,8 @@ for "_i" from 1 to 3 do {
 						'O_Soldier_F',
 						'O_Soldier_F',
 						'O_Soldier_F',
+						'O_Soldier_F',
+						'O_Soldier_F',
 						'O_Soldier_lite_F',
 						'O_Soldier_SL_F',
 						'O_Soldier_TL_F',
@@ -137,7 +145,7 @@ for "_i" from 1 to 3 do {
 		[_grp, _center] call BIS_fnc_taskAttack;
 	 };
  
-	sleep 300;
+	sleep 420;
 	
  };
  
