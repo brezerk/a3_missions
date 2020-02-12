@@ -35,7 +35,7 @@ for "_i" from 1 to 3 do {
 						'O_Soldier_F',
 						'O_Soldier_F',
 						'O_Soldier_F',
-						'O_Soldier_F',,
+						'O_Soldier_F',
 						'O_Soldier_lite_F',
 						'O_Soldier_SL_F',
 						'O_Soldier_TL_F',
@@ -76,10 +76,10 @@ for "_i" from 1 to 3 do {
 		[_grp, _center] call BIS_fnc_taskAttack;
 	 };
  
- 
-	private _count = {alive _x && side _x == EAST} count allUnits;
+	private _count = {alive _x && side _x == east} count allUnits;
+	private _a_count = {alive _x && side _x == east} count allUnits;
 	
-	[format ["Total alive units count: %1", _count]] remoteExecCall ["systemChat"];
+	[format ["Total count: %1 alive units count: %2", _count, _a_count]] remoteExecCall ["systemChat"];
 	
 	
 	sleep 420;
@@ -140,9 +140,10 @@ for "_i" from 1 to 3 do {
 		[_grp, _center] call BIS_fnc_taskAttack;
 	 };
  
-	private _count = {alive _x && side _x == EAST} count allUnits;
+	private _count = {alive _x && side _x == east} count allUnits;
+	private _a_count = {alive _x && side _x == east} count allUnits;
 	
-	[format ["Total alive units count: %1", _count]] remoteExecCall ["systemChat"];
+	[format ["Total count: %1 alive units count: %2", _count, _a_count]] remoteExecCall ["systemChat"];
  
 	sleep 420;
 	
