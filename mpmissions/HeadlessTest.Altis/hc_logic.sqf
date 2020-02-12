@@ -25,7 +25,7 @@ for "_i" from 1 to 3 do {
 
 	[format ["Wave %1 of 5...", _i]] remoteExecCall ["systemChat"];
 
-	for "_i" from 1 to 10 do {
+	for "_i" from 1 to 3 do {
 
 		//private _lc = selectRandom _lcs;
 		//private _pos = (locationPosition _lc) findEmptyPosition [600, 600, "O_Soldier_F"];
@@ -35,9 +35,7 @@ for "_i" from 1 to 3 do {
 						'O_Soldier_F',
 						'O_Soldier_F',
 						'O_Soldier_F',
-						'O_Soldier_F',
-						'O_Soldier_F',
-						'O_Soldier_F',
+						'O_Soldier_F',,
 						'O_Soldier_lite_F',
 						'O_Soldier_SL_F',
 						'O_Soldier_TL_F',
@@ -53,16 +51,13 @@ for "_i" from 1 to 3 do {
 		[_grp, _center] call BIS_fnc_taskAttack;
 	 };
 	 
-	 for "_i" from 1 to 3 do {
+	 for "_i" from 1 to 1 do {
 
 		//private _lc = selectRandom _lcs;
 		//private _pos = (locationPosition _lc) findEmptyPosition [600, 600, "O_Soldier_F"];
 		private _pos = [_center, 700, 1000, 15, 0, 0, 0] call BIS_fnc_findSafePos;
 		private _grp = [_pos, east, [
 						'O_APC_Tracked_02_cannon_F',
-						'O_Soldier_F',
-						'O_Soldier_F',
-						'O_Soldier_F',
 						'O_Soldier_F',
 						'O_Soldier_F',
 						'O_Soldier_F',
@@ -89,16 +84,13 @@ for "_i" from 1 to 3 do {
 
 	[format ["Wave %1 of 6...", _i]] remoteExecCall ["systemChat"];
 
-	for "_i" from 1 to 10 do {
+	for "_i" from 1 to 3 do {
 
 		//private _lc = selectRandom _lcs;
 		//private _pos = (locationPosition _lc) findEmptyPosition [600, 600, "O_Soldier_F"];
 		private _pos = [_center, 700, 1000, 15, 0, 0, 0] call BIS_fnc_findSafePos;
 		private _grp = [_pos, east, [
 						'O_APC_Wheeled_02_rcws_v2_F',
-						'O_Soldier_F',
-						'O_Soldier_F',
-						'O_Soldier_F',
 						'O_Soldier_F',
 						'O_Soldier_F',
 						'O_Soldier_F',
@@ -117,16 +109,13 @@ for "_i" from 1 to 3 do {
 		[_grp, _center] call BIS_fnc_taskAttack;
 	 };
 	 
-	 for "_i" from 1 to 3 do {
+	 for "_i" from 1 to 2 do {
 
 		//private _lc = selectRandom _lcs;
 		//private _pos = (locationPosition _lc) findEmptyPosition [600, 600, "O_Soldier_F"];
 		private _pos = [_center, 700, 1000, 15, 0, 0, 0] call BIS_fnc_findSafePos;
 		private _grp = [_pos, east, [
 						'O_MBT_02_cannon_F',
-						'O_Soldier_F',
-						'O_Soldier_F',
-						'O_Soldier_F',
 						'O_Soldier_F',
 						'O_Soldier_F',
 						'O_Soldier_F',

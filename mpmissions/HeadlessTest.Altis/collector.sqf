@@ -16,18 +16,38 @@
  *                                                                         *
  ***************************************************************************/
  
-if (!hasInterface && !isServer) then {
-	["Headless client Init..."] remoteExecCall ["systemChat"];
-	execVM "hc_logic.sqf";
-} else {
-	if (isServer) then {
-		if (count (entities "HeadlessClient_F") <= 0) then {
-			["Headless client not found. Fallback..."] remoteExecCall ["systemChat"];
-			execVM "hc_logic.sqf";
+ /*
+Spawn start objectives, triggers for informator contact
+*/
+
+while {true} do {
+	{
+		private _corpse = _x;
+		private _timeStamp = (_x getVariable ["BB_CorpseTTL", 0]);
+		
+		if (_timeStamp == 0) then {
+			_corpse setVariable ["BB_CorpseTTL", time];
 		} else {
-			["Headless client conencted. Handover spawn logic..."] remoteExecCall ["systemChat"];
+			private _playerNearby = false;
+			if (_timeStamp != -1) then {
+				if ((time - _timeStamp) > 60) then {
+					{
+						scopeName "units_loop";
+						//player found withing 150m
+						if (isPlayer _x) then {
+							_playerNearby = true;
+							breakOut "units_loop";
+						};
+					} forEach nearestObjects [_x, ["SoldierEB", "SoldierGB", "SoldierWB"], 50];
+					if (!_playerNearby) then {
+						deleteVehicle _corpse;
+					} else {
+						_corpse setVariable ["BB_CorpseTTL", time];
+					};
+				};
+			};
 		};
-	};
+	} forEach allDead;
+	sleep 10;
 };
 
-execVM "collector.sqf";
