@@ -51,7 +51,7 @@ for "_i" from 1 to 3 do {
 		[_grp, _center] call BIS_fnc_taskAttack;
 	 };
 	 
-	 for "_i" from 1 to 1 do {
+	 for "_i" from 1 to 2 do {
 
 		//private _lc = selectRandom _lcs;
 		//private _pos = (locationPosition _lc) findEmptyPosition [600, 600, "O_Soldier_F"];
@@ -76,6 +76,12 @@ for "_i" from 1 to 3 do {
 		[_grp, _center] call BIS_fnc_taskAttack;
 	 };
  
+ 
+	private _count = {alive _x && side _x == EAST} count allUnits;
+	
+	[format ["Total alive units count: %1", _i]] remoteExecCall ["systemChat"];
+	
+	
 	sleep 420;
 	
  };
@@ -133,6 +139,8 @@ for "_i" from 1 to 3 do {
 		_grp deleteGroupWhenEmpty true;
 		[_grp, _center] call BIS_fnc_taskAttack;
 	 };
+ 
+	[format ["Total alive units count: %1", _i]] remoteExecCall ["systemChat"];
  
 	sleep 420;
 	
