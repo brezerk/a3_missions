@@ -21,11 +21,37 @@
 "txt_marker_02" setMarkerTextLocal (localize "INFO_SUBLOC_07");
 "txt_marker_03" setMarkerTextLocal (localize "INFO_SUBLOC_09");
 "txt_marker_08" setMarkerTextLocal (localize "STR_ONLOAD_INFO_02");
+
 {
 	_x setMarkerTextLocal (localize "INFO_SUBLOC_10");
 } forEach ["txt_marker_04", "txt_marker_05", "txt_marker_06", "txt_marker_07"];
 
 waitUntil { !isNull player }; // Wait for player to initialize
+
+if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
+	["ACRE_SEM52SL"] call acre_api_fnc_setItemRadioReplacement;
+
+	["ACRE_SEM52SL", "default", "example1"] call acre_api_fnc_copyPreset;
+	["ACRE_PRC77", "default", "example1"] call acre_api_fnc_copyPreset;
+	
+	["ACRE_SEM52SL", "example1", 1, "description", "GRPNET 1"] call acre_api_fnc_setPresetChannelField;
+	["ACRE_SEM52SL", "example1", 2, "description", "GRPNET 2"] call acre_api_fnc_setPresetChannelField;
+	["ACRE_SEM52SL", "example1", 3, "description", "GRPNET 3"] call acre_api_fnc_setPresetChannelField;
+	["ACRE_SEM52SL", "example1", 4, "description", "GRPNET 4"] call acre_api_fnc_setPresetChannelField;
+	["ACRE_SEM52SL", "example1", 5, "description", "GRPNET 5"] call acre_api_fnc_setPresetChannelField;
+	["ACRE_SEM52SL", "example1", 6, "description", "GRPNET 6"] call acre_api_fnc_setPresetChannelField;
+	
+	["ACRE_PRC77", "example1", 1, "label", "COM 1"] call acre_api_fnc_setPresetChannelField;
+	
+	["ACRE_SEM52SL", "example1"] call acre_api_fnc_setPreset;
+	["ACRE_PRC77", "example1"] call acre_api_fnc_setPreset;
+} else {
+	if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
+		//_this addItemToVest "tf_anprc148jem";
+		//_this linkItem "tf_anprc152";
+		//_this addBackpack "tf_anprc155_coyote";
+	};
+};
 
 /*
 Local player script
@@ -37,6 +63,10 @@ private ["_trgKickToSpecator", "_trgLocationInfo01"];
 
 // hide markers
 {if (_x find "wp_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
+
+waitUntil { ([] call acre_api_fnc_isInitialized) };
+	
+[ (["ACRE_SEM52SL"] call acre_api_fnc_getRadioByType), 1] call acre_api_fnc_setRadioChannel;
 
 sleep 1;
 

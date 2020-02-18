@@ -16,55 +16,50 @@
  *                                                                         *
  ***************************************************************************/
  
-sleep 15;
- 
-private _center = getMarkerPos "start";
- 
-private _cfg_inf = ['O_Soldier_F',
-				'O_Soldier_lite_F',
-				'O_Soldier_SL_F',
-				'O_Soldier_TL_F',
-				'O_Soldier_GMG_F',
-				'O_Soldier_HMG_F',
-				'O_Soldier_AMG_F',
-				'O_Soldier_GL_F',
-				'O_Soldier_AR_F',
-				'O_Soldier_A_F',
-				'O_Soldier_AAR_F',
-				'O_medic_F'];
+comment "[!] UNIT MUST BE LOCAL [!]";
+if (!local _this) exitWith {};
 
-private _cfg_veh = [
-	['O_MRAP_02_gmg_F', 'O_MRAP_02_hmg_F'],
-	['O_MRAP_02_gmg_F', 'O_MRAP_02_hmg_F'],
-	['O_APC_Wheeled_02_rcws_v2_F', 'O_APC_Tracked_02_cannon_F'],
-	['O_APC_Wheeled_02_rcws_v2_F', 'O_APC_Tracked_02_cannon_F'],
-	['O_MBT_02_cannon_F']
-];
+comment "Exported from Arsenal by brezerk";
 
-Fn_Generate_InfCop = {
-	private _comp = [];
-	for "_i" from 1 to 10 do {
-		_comp pushBack selectRandom _cfg_inf;
-	};
-	_comp;
-};
+comment "Remove existing items";
+removeAllWeapons _this;
+removeAllItems _this;
+removeAllAssignedItems _this;
+removeUniform _this;
+removeVest _this;
+removeBackpack _this;
+removeHeadgear _this;
+removeGoggles _this;
 
-for "_i" from 1 to 3 do {
-	[format ["Wave %1 of 5...", _i]] remoteExecCall ["systemChat"];
-	for "_x" from 1 to 5 do {
-		private _pos = [_center, 700, 1000, 15, 0, 0, 0] call BIS_fnc_findSafePos;
-		private _comp = [];
-		_comp pushBack selectRandom (_cfg_veh select _i);
-		_comp = _comp + (call Fn_Generate_InfCop);
-		
-		private _grp = [_pos, east, _comp] call BIS_fnc_spawnGroup;
-		_grp deleteGroupWhenEmpty true;
-		[_grp, _center] call BIS_fnc_taskAttack;
-	};
-	 
-	sleep 350;
-};
- 
-sleep 600;
- 
-"EveryoneWon" call BIS_fnc_endMissionServer;
+comment "Add containers";
+_this forceAddUniform "LOP_U_UKR_Fatigue_Digit";
+
+comment "Add items";
+_this linkItem "ItemMap";
+_this linkItem "ItemCompass";
+_this linkItem "ItemWatch";
+
+comment "Set identity";
+_this setFace (selectRandom ['WhiteHead_01',
+'WhiteHead_02',
+'WhiteHead_03',
+'WhiteHead_04',
+'WhiteHead_05',
+'WhiteHead_06',
+'WhiteHead_07',
+'WhiteHead_08',
+'WhiteHead_09',
+'WhiteHead_10',
+'WhiteHead_11',
+'WhiteHead_12',
+'WhiteHead_13',
+'WhiteHead_14',
+'WhiteHead_15',
+'WhiteHead_16',
+'WhiteHead_17',
+'WhiteHead_18',
+'WhiteHead_19',
+'WhiteHead_20',
+'WhiteHead_21',
+'WhiteHead_23']);
+_this setSpeaker "NoVoice";

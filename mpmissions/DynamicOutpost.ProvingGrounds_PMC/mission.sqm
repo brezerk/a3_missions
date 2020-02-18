@@ -8,7 +8,7 @@ class EditorData
 	toggles=522;
 	class ItemIDProvider
 	{
-		nextID=7331;
+		nextID=7333;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={852.28778,79.256493,1154.833};
-		dir[]={-0.79419923,-0.60025841,0.095804706};
-		up[]={-0.59600163,0.79971284,0.071889907};
-		aside[]={0.11976836,8.1904e-007,0.99291897};
+		pos[]={986.69305,121.50668,1142.9486};
+		dir[]={0.42191061,-0.12157725,-0.89858431};
+		up[]={0.051752567,0.99252468,-0.11020762};
+		aside[]={-0.90529072,4.8761722e-006,-0.42506722};
 	};
 };
 binarizationWanted=0;
@@ -162,21 +162,21 @@ class AddonsMetaData
 		{
 			className="ace_interaction";
 			name="ACE3 - Interaction";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item5
 		{
 			className="ace_cargo";
 			name="ACE3 - Cargo";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item6
 		{
 			className="ace_dragging";
 			name="ACE3 - Dragging";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item7
@@ -357,14 +357,14 @@ class AddonsMetaData
 		{
 			className="acex_field_rations";
 			name="ACEX - Field Rations";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item36
 		{
 			className="ace_logistics_wirecutter";
 			name="ACE3 - Logistics Wire Cutter";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item37
@@ -451,8 +451,8 @@ class AddonsMetaData
 		class Item50
 		{
 			className="cba_modules";
-			name="Community Base Addons - Modules";
-			author="CBA Team";
+			name="Community Base Addons - Компонент Модулей";
+			author="Команда CBA";
 			url="https://www.github.com/CBATeam/CBA_A3";
 		};
 		class Item51
@@ -480,28 +480,28 @@ class AddonsMetaData
 		{
 			className="ace_explosives";
 			name="ACE3 - Explosives";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item55
 		{
 			className="acex_sitting";
 			name="ACEX - Sitting";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item56
 		{
 			className="ace_medical_engine";
 			name="ACE3 - Medical Engine";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item57
 		{
 			className="ace_medical_treatment";
 			name="ACE3 - Medical Treatment";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item58
@@ -513,7 +513,7 @@ class AddonsMetaData
 		{
 			className="ace_spectator";
 			name="ACE3 - Spectator";
-			author="ACE-Team";
+			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
 		class Item60
@@ -26747,7 +26747,6 @@ class Mission
 						rank="LIEUTENANT";
 						init="call{this call compile preprocessFileLineNumbers ""gear\player\commander.sqf"";}";
 						description="Командир взводу (Squad leader)";
-						isPlayer=1;
 						isPlayable=1;
 						stance="Up";
 					};

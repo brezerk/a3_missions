@@ -20,6 +20,10 @@
 Init mission file
 */
 
+if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
+	[true, true] call acre_api_fnc_setupMission;
+};
+
 [] execVM "briefing.sqf";
 [] execVM "outpost.sqf";
 

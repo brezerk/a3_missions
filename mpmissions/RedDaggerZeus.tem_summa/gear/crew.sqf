@@ -16,55 +16,38 @@
  *                                                                         *
  ***************************************************************************/
  
-sleep 15;
- 
-private _center = getMarkerPos "start";
- 
-private _cfg_inf = ['O_Soldier_F',
-				'O_Soldier_lite_F',
-				'O_Soldier_SL_F',
-				'O_Soldier_TL_F',
-				'O_Soldier_GMG_F',
-				'O_Soldier_HMG_F',
-				'O_Soldier_AMG_F',
-				'O_Soldier_GL_F',
-				'O_Soldier_AR_F',
-				'O_Soldier_A_F',
-				'O_Soldier_AAR_F',
-				'O_medic_F'];
+comment "[!] UNIT MUST BE LOCAL [!]";
+if (!local _this) exitWith {};
 
-private _cfg_veh = [
-	['O_MRAP_02_gmg_F', 'O_MRAP_02_hmg_F'],
-	['O_MRAP_02_gmg_F', 'O_MRAP_02_hmg_F'],
-	['O_APC_Wheeled_02_rcws_v2_F', 'O_APC_Tracked_02_cannon_F'],
-	['O_APC_Wheeled_02_rcws_v2_F', 'O_APC_Tracked_02_cannon_F'],
-	['O_MBT_02_cannon_F']
-];
+comment "Exported from Arsenal by brezerk";
 
-Fn_Generate_InfCop = {
-	private _comp = [];
-	for "_i" from 1 to 10 do {
-		_comp pushBack selectRandom _cfg_inf;
-	};
-	_comp;
-};
+comment "Remove existing items";
+removeAllWeapons _this;
+removeAllItems _this;
+removeAllAssignedItems _this;
+removeUniform _this;
+removeVest _this;
+removeBackpack _this;
+removeHeadgear _this;
+removeGoggles _this;
 
-for "_i" from 1 to 3 do {
-	[format ["Wave %1 of 5...", _i]] remoteExecCall ["systemChat"];
-	for "_x" from 1 to 5 do {
-		private _pos = [_center, 700, 1000, 15, 0, 0, 0] call BIS_fnc_findSafePos;
-		private _comp = [];
-		_comp pushBack selectRandom (_cfg_veh select _i);
-		_comp = _comp + (call Fn_Generate_InfCop);
-		
-		private _grp = [_pos, east, _comp] call BIS_fnc_spawnGroup;
-		_grp deleteGroupWhenEmpty true;
-		[_grp, _center] call BIS_fnc_taskAttack;
-	};
-	 
-	sleep 350;
-};
- 
-sleep 600;
- 
-"EveryoneWon" call BIS_fnc_endMissionServer;
+comment "Add containers";
+_this forceAddUniform "LOP_U_UKR_Fatigue_Digit";
+_this addItemToUniform "FirstAidKit";
+for "_i" from 1 to 2 do {_this addItemToUniform "rhs_30Rnd_545x39_AK";};
+_this addVest "rhs_vest_pistol_holster";
+_this addItemToVest "rhs_mag_rdg2_white";
+_this addItemToVest "rhs_mag_nspd";
+_this addHeadgear "rhs_tsh4";
+
+comment "Add weapons";
+_this addWeapon "rhs_weap_aks74u";
+_this addPrimaryWeaponItem "rhs_acc_pgs64_74u";
+
+comment "Add items";
+_this linkItem "ItemMap";
+_this linkItem "ItemCompass";
+_this linkItem "ItemWatch";
+
+comment "Set identity";
+_this setSpeaker "NoVoice";
