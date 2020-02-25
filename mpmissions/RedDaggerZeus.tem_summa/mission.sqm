@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1078;
+		nextID=1079;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=4;
+		nextID=5;
 	};
 	class Camera
 	{
-		pos[]={1008.8412,263.42084,3870.623};
-		dir[]={-0.084945686,-0.45463353,-0.8867476};
-		up[]={-0.043356743,0.89062446,-0.45262656};
-		aside[]={-0.9955551,-3.209916e-007,0.09536662};
+		pos[]={588.526,11.890522,2799.6433};
+		dir[]={0.71621794,-0.6933077,-0.081196025};
+		up[]={0.6889087,0.72060442,-0.07809753};
+		aside[]={-0.11265882,-7.2852708e-007,-0.99374682};
 	};
 };
 binarizationWanted=0;
@@ -541,7 +541,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=451;
+		items=452;
 		class Item0
 		{
 			dataType="Marker";
@@ -10983,13 +10983,14 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={596.23596,7.4524889,2801.6487};
-				angles[]={6.2665229,5.6115193,0.083140828};
+				position[]={596.23621,7.452517,2801.6492};
+				angles[]={6.2665176,5.6115127,0.083147481};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				lock="UNLOCKED";
 			};
 			id=375;
 			type="rhsusf_m998_d_2dr_fulltop";
@@ -30028,6 +30029,142 @@ class Mission
 			b=150;
 			id=1077;
 			atlOffset=-1.3271666;
+		};
+		class Item451
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={350.37277,5.934516,3135.699};
+				angles[]={6.1835093,3.4786158,6.2631841};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				health=0.072360851;
+			};
+			id=1078;
+			type="rhs_uaz_vdv";
+			atlOffset=-4.7683716e-007;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="rhs_decalArmy_type";
+					expression="_this setVariable ['rhs_decalArmy_type', _value];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Army";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="rhs_decalNumber_type";
+					expression="_this setVariable ['rhs_decalNumber_type', _value];[_this,[['Number', cDecals4CarsNumberPlaces, _value]]] call rhs_fnc_decalsInit";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Default";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="rhs_decalArmy";
+					expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cDecalsCarsRightArmyPlaces,  _this getVariable ['rhs_decalArmy_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="-1";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="rhs_decalPlatoon_type";
+					expression="_this setVariable ['rhs_decalPlatoon_type', _value];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Army";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="rhs_decalPlatoon";
+					expression="if(parseNumber _value >= 0)then{ [_this, [ [ 'Label', cDecalsCarsRightPlatoonPlaces,  _this getVariable ['rhs_decalPlatoon_type','Army'],call compile _value] ] ] call rhs_fnc_decalsInit};";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="-1";
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""FirstAidKit"",""launch_O_Vorona_brown_F"",""rhs_weap_rpg26"",""ACE_VMM3"",""ACE_VMH3""],[4,1,3,2,2]],[[""rhs_mag_rgd5"",""rhs_mag_rdg2_white"",""rhs_mag_rdg2_black"",""ACE_Chemlight_HiYellow"",""ACE_Chemlight_UltraHiOrange"",""rhs_mag_f1"",""DemoCharge_Remote_Mag""],[18,10,22,25,11,28,12]],[[""ACE_Banana"",""ACE_wirecutter"",""ACE_MapTools"",""ACE_SpottingScope"",""ACE_EntrenchingTool"",""ACE_artilleryTable"",""ACE_CableTie"",""ACE_Clacker"",""ACE_M26_Clacker"",""ACE_DefusalKit"",""ACE_fieldDressing"",""ACE_splint"",""ACE_morphine"",""ACE_adenosine"",""ACE_epinephrine"",""ACE_bloodIV"",""ACE_bloodIV_500"",""ACE_personalAidKit"",""ACE_surgicalKit"",""ACE_bodyBag"",""ACE_RangeTable_82mm"",""ACE_WaterBottle"",""ACE_Canteen"",""ACE_Can_Franta"",""ACE_MRE_LambCurry"",""ACE_MRE_BeefStew"",""ACE_MRE_CreamTomatoSoup"",""ACE_MRE_CreamChickenSoup"",""ACE_MRE_ChickenTikkaMasala"",""ACE_MRE_SteakVegetables"",""ACE_MRE_ChickenHerbDumplings"",""Binocular""],[23,11,5,8,13,16,22,4,11,5,58,19,20,18,32,44,30,9,2,23,6,33,13,19,9,10,7,10,4,10,19,3]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=6;
+			};
 		};
 	};
 	class Connections
