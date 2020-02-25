@@ -103,3 +103,6 @@ _this setSpeaker "NoVoice";
 
 //ACEX
 for "_i" from 1 to 2 do {_this addItemToBackpack "ACE_MRE_CreamChickenSoup";};
+
+_this setVariable ["ace_medical_medicclass", 0, true];
+_this setVariable ["ACE_IsEngineer", 0, true];

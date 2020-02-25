@@ -63,3 +63,6 @@ _this setFace (selectRandom ['WhiteHead_01',
 'WhiteHead_21',
 'WhiteHead_23']);
 _this setSpeaker "NoVoice";
+
+_this setVariable ["ace_medical_medicclass", 0, true];
+_this setVariable ["ACE_IsEngineer", 0, true]; 

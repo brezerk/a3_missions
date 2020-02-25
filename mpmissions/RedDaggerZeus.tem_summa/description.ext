@@ -22,16 +22,16 @@ class Header
 {
 	gameType   =  Zeus;	// Game type
 	minPlayers =  2;	// minimum number of players the mission supports
-	maxPlayers = 20;	// maximum number of players the mission supports
+	maxPlayers = 25;	// maximum number of players the mission supports
 };
 
 author			= "brezerk@brezblock.org.ua";
-OnLoadName		= "RedDagger v0.0.1";
-OnLoadMission	= "Днями на північному напрямку проведення операції Об'єднаних сил спецпризначенці проводили заходи зі здобуття розвідувальної інформації. І несподівано помітили, що з боку противника до них наближаються диверсійно-розвідувальна група. Командиром було прийнято рішення вступити у вогневий контакт. За результатами контакту: ДРГ супротивника було знищено. Одного пораненого захоплено у полон. Доки триває допит полоненого, вам видалась хвилинка втомити спрагу та трішки відпочити.";
-briefingName    = "Операція: Червоний Кинджал. Дія I";
+OnLoadName		= "RedDagger II Act";
+OnLoadMission	= "За отриманими даними, вдалося ідентифікувати базу контрабандистів. Проте, вогнева група попала в засідку і понесла важкі втрати. При підтримці резервів, та виділеного БТР, вдалося ліквідувати супротив, отримати нові данні та знищити схованку з боєприпасами. Група вдало перетнула першу лінію фронту та взяла штурмом операційну базу супротивника: знищивши їх командира та радіовежу. Відступивши до лісу, ви отримали короткострокову перерву на відпочинок. Судячи з активності артилерії, ситуація на всьому фронті почала виходити з під контролю, часу вже майже не має.";
+briefingName    = "Операція: Червоний Кинджал. Дія II";
 // FIXME: https://feedback.bistudio.com/T67181
-overviewPicture = "data\reddagger01.paa";
-loadScreen      = "data\reddagger01.paa";
+overviewPicture = "data\reddagger02.paa";
+loadScreen      = "data\reddagger02.paa";
 //overviewTextLocked = $STR_LOCKED_INFO_01;
 
 // Respawn type

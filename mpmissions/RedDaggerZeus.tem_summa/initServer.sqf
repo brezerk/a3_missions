@@ -16,6 +16,17 @@
  *                                                                         *
  ***************************************************************************/
  
+ //remove AI-controled unis for playable objects
+{
+	_x addMPEventHandler ["MPRespawn", {
+		_unit = _this select 0;
+		if (!isPlayer _unit) exitWith {
+			deleteVehicle _unit
+		}
+	}]
+} forEach playableUnits;
+
+ 
 [ 
 	true, 
 	[

@@ -33,18 +33,42 @@ force ace_advanced_fatigue_terrainGradientFactor = 1;
 force ace_repair_engineerSetting_repair = 0;
 
 // ACE Medical
-ace_medical_feedback_painEffectType = 2;
-force ace_medical_limping = 0;
+force ace_medical_ai_enabledFor = 2;
+force ace_medical_AIDamageThreshold = 1.5;
+force ace_medical_bleedingCoefficient = 0.35;
+force ace_medical_fatalDamageSource = 0;
+force ace_medical_feedback_painEffectType = 2;
 force ace_medical_fractures = 0;
-force ace_medical_fatalDamageSource = 1;
+force ace_medical_ivFlowRate = 2.0;
+force ace_medical_limping = 1;
+force ace_medical_painCoefficient = 1;
+force ace_medical_playerDamageThreshold = 3;
+force ace_medical_spontaneousWakeUpChance = 0.35;
+force ace_medical_spontaneousWakeUpEpinephrineBoost = 15;
+force ace_medical_statemachine_AIUnconsciousness = true;
 force ace_medical_statemachine_cardiacArrestTime = 600;
-force ace_medical_statemachine_fatalInjuriesPlayer = 2;
 force ace_medical_treatment_advancedBandages = false;
-force ace_medical_treatment_advancedMedication = false;
-force ace_medical_treatment_clearTraumaAfterBandage = true;
+force ace_medical_treatment_advancedDiagnose = true;
+force ace_medical_treatment_advancedMedication = true;
+force ace_medical_treatment_allowSelfIV = 1;
+force ace_medical_treatment_allowSelfStitch = 1;
+force ace_medical_treatment_allowSharedEquipment = 0;
+force ace_medical_treatment_consumePAK = 0;
+force ace_medical_treatment_consumeSurgicalKit = 0;
+force ace_medical_treatment_convertItems = 0;
+force ace_medical_treatment_cprSuccessChance = 0.6;
+force ace_medical_treatment_locationEpinephrine = 0;
+force ace_medical_treatment_locationPAK = 0;
+force ace_medical_treatment_locationSurgicalKit = 0;
+force ace_medical_treatment_medicEpinephrine = 0;
+force ace_medical_treatment_medicPAK = 1;
+force ace_medical_treatment_medicSurgicalKit = 1;
+force ace_medical_treatment_timeCoefficientPAK = 0.20;
+force ace_medical_treatment_woundReopening = false;
 force ace_medical_treatment_locationsBoostTraining = true;
-force ace_medical_treatment_medicEpinephrine = 1;
-force force ace_medical_treatment_locationPAK = 0;
+
+// ACE Займання боєприпасів
+force ace_cookoff_enableAmmoCookoff = false;
 
 // ACE Overheating
 force ace_overheating_unJamOnreload = true;

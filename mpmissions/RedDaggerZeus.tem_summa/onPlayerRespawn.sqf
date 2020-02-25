@@ -21,4 +21,4 @@ On player respawn event handler
 */
 
 //resore loadout
-[player, [missionNamespace, "outpost_saved_loadout"]] call BIS_fnc_loadInventory;
+//[player, [missionNamespace, "outpost_saved_loadout"]] call BIS_fnc_loadInventory;
