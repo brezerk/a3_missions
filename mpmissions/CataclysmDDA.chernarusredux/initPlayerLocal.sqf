@@ -43,10 +43,29 @@ player addEventHandler
 	}
 ];
 
+Fn_MakeMeZombie = {
+	_none = player;
+	_unit = (createGroup [civilian, true]) createUnit ["zombie_runner", (markerPos "wp_test"), [], 0, "FORM"];
+	selectPlayer _unit;
+	deleteVehicle _none;
+	_unit;
+};
+
 player addEventHandler
 [
    "Respawn",
    {
+		_zed = call Fn_MakeMeZombie;
+		_zed addEventHandler
+		[
+		   "Respawn",
+		   {
+				_zed = call Fn_MakeMeZombie;
+				_zed 
+			}
+		];
+    }
+];
 		/*
 		_handler = [] spawn {
 			_noPlayer = createGroup sideLogic createUnit [
@@ -62,12 +81,9 @@ player addEventHandler
 			_unit = (createGroup [civilian, true]) createUnit ["zombie_runner", (markerPos "wp_test"), [], 0, "FORM"];
 			sleep 1;
 			selectPlayer _unit;
-		};*/
+		};
 		
-		_none = player;
-		_unit = (createGroup [civilian, true]) createUnit ["zombie_runner", (markerPos "wp_test"), [], 0, "FORM"];
-		selectPlayer _unit;
-		deleteVehicle _none;
+		
 		
 		/*
 		execVM "gear\zombie_runner.sqf";
@@ -85,5 +101,5 @@ player addEventHandler
 		_nul = [player] spawn rvg_fnc_zed_behaviour;*/
 		
 		//player switchCamera "EXTERNAL";
-   }
-];
+		*/
+
