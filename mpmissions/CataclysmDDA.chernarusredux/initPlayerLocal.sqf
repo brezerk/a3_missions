@@ -67,7 +67,8 @@ player addEventHandler
 		player enableStamina false;
 		player allowSprint true;
 		player setCombatMode "BLUE";
-		player setVariable ["_zTarget", false, true];
+		//player setVariable ["_zTarget", false, true];
+		hideObject player;
 		player setBehaviour "CARELESS";
 		//_zed setCombatMode "RED";
 		[player, 0.85] call rvg_fnc_setDamage;
