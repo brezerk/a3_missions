@@ -23,5 +23,7 @@ Init mission file
 if (isServer) then {
 
 	[stup,50,"SmokeShellGreen",0.4] execvm "AL_swarmer\al_hive.sqf";
+	// ACTIVE DURING NITGHT AND DAY
+	["strigoi_1",100,true,0.1,50] execvm "AL_strigoi\strigoi.sqf";
 	
 };
