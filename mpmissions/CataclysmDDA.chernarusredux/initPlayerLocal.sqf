@@ -63,6 +63,13 @@ player addEventHandler
 			sleep 1;
 			selectPlayer _unit;
 		};*/
+		
+		_none = player;
+		_unit = (createGroup [civilian, true]) createUnit ["zombie_runner", (markerPos "wp_test"), [], 0, "FORM"];
+		selectPlayer _unit;
+		deleteVehicle _none;
+		
+		/*
 		execVM "gear\zombie_runner.sqf";
 		player enableStamina false;
 		player allowSprint true;
@@ -75,7 +82,7 @@ player addEventHandler
 		player setVariable ["mrg_unit_sfx_hitRecently", true];//quickfix for mrgSFX mod
 		player addRating -7000;
 		player enableSimulationGlobal true;
-		_nul = [player] spawn rvg_fnc_zed_behaviour;
+		_nul = [player] spawn rvg_fnc_zed_behaviour;*/
 		
 		//player switchCamera "EXTERNAL";
    }
