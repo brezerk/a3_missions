@@ -15,16 +15,23 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
  ***************************************************************************/
+ 
+ //remove AI-controled unis for playable objects
+{
+	_x addMPEventHandler ["MPRespawn", {
+		_unit = _this select 0;
+		if (!isPlayer _unit) exitWith {
+			deleteVehicle _unit
+		}
+	}]
+} forEach playableUnits;
 
-// Available locations for play
-// This mps to different set of wp_<location>_ markers.
-// For example, Plau has two different islands, while Stratis or Tanoa has only one location
-D_LOCATIONS = ['Gurun', 'Monyet'];
-
-// Real time vs fast time
-// true: Real time is more realistic weather conditions change slowly (ideal for persistent game)
-// false: fast time give more different weather conditions (ideal for non persistent game) 
-D_CODE43_REAL_WEATHER_REALTIME = true;
-
-// Debug only
-D_DEBUG = true;
+ 
+[ 
+	true, 
+	[
+		[ independent , 0.3, 0.3, 0.4, 0.3 ],
+		[ WEST		  , 0.3, 0.3, 0.5, 0.5 ], 
+		[ EAST		  , 0.2, 0.2, 0.5, 0.5 ] 
+	]
+] call BIS_fnc_EXP_camp_dynamicAISkill;

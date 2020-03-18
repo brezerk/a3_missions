@@ -45,6 +45,15 @@ if (isServer) then {
 		_veh allowDamage true;
 		_veh;
 	};
+	
+	Fn_Spawn_Boat_At = {
+		params['_marker'];
+		private _veh = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_BOATS), [0, 0, 0], [], 0, "CAN_COLLIDE"];
+		_veh allowDamage false;
+		_veh setPosASL (markerPos _marker);
+		_veh setDir (markerDir _marker);
+		_veh allowDamage true;
+	};
 
 	Fn_Create_MissionIntro = {
 	
@@ -115,6 +124,9 @@ if (isServer) then {
 		
 		[Fn_Spawn_Boat_Rack01, [0, 0, 0], 180, 20, 15] execVM 'addons\BrezBlock.framework\triggers\respawn_transport.sqf';
 		[Fn_Spawn_Boat_Rack02, [0, 0, 0], 180, 20, 15] execVM 'addons\BrezBlock.framework\triggers\respawn_transport.sqf';
+		
+		["mrk_spec_boat01"] call Fn_Spawn_Boat_At;
+		["mrk_spec_boat02"] call Fn_Spawn_Boat_At;
 		
 		private _trg = createTrigger ["EmptyDetector", getMarkerPos "respawn_west" ];
 		_trg setTriggerArea [0, 0, 0, false];

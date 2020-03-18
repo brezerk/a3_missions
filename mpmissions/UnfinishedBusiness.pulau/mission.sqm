@@ -8,7 +8,7 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=12706;
+		nextID=12708;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={1524.4026,82.440941,4694.2876};
-		dir[]={0.67626339,-0.2536993,-0.69166613};
-		up[]={0.17739801,0.96726811,-0.18143784};
-		aside[]={-0.71505755,6.8219379e-007,-0.69913751};
+		pos[]={7954.0112,14.646311,1159.2664};
+		dir[]={-0.16560522,-0.65008777,-0.7416147};
+		up[]={-0.14167941,0.75984919,-0.63446903};
+		aside[]={-0.97598428,-4.8157744e-007,0.21794149};
 	};
 };
 binarizationWanted=0;
@@ -246,7 +246,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=981;
+		items=980;
 		class Item0
 		{
 			dataType="Marker";
@@ -11503,14 +11503,14 @@ class Mission
 			side="West";
 			class Entities
 			{
-				items=5;
+				items=6;
 				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2140.3284,13.128809,8607.6631};
-						angles[]={0,5.0652795,0};
+						position[]={2148.4138,13.351882,8613.1201};
+						angles[]={0,0.66335982,0};
 					};
 					side="West";
 					flags=7;
@@ -11521,6 +11521,7 @@ class Mission
 					};
 					id=7911;
 					type="B_Survivor_F";
+					atlOffset=-8.4877014e-005;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -11569,7 +11570,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2149.7463,13.290359,8612.4941};
+						position[]={2150.1504,13.150114,8612.9658};
 						angles[]={0,0.49226353,0};
 					};
 					side="West";
@@ -11581,7 +11582,7 @@ class Mission
 					};
 					id=7912;
 					type="B_Survivor_F";
-					atlOffset=-9.5367432e-007;
+					atlOffset=8.5830688e-005;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -11805,11 +11806,73 @@ class Mission
 						nAttributes=2;
 					};
 				};
+				class Item5
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2154.678,12.62876,8608.7207};
+						angles[]={0,0.85991985,0};
+					};
+					side="West";
+					flags=5;
+					class Attributes
+					{
+						description="SpecOps Saboteur";
+						isPlayable=1;
+					};
+					id=12707;
+					type="B_Survivor_F";
+					atlOffset=8.8691711e-005;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="Male03ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
 			};
 			class Attributes
 			{
 			};
 			id=7910;
+			atlOffset=-8.4877014e-005;
 		};
 		class Item874
 		{
@@ -12120,6 +12183,7 @@ class Mission
 					class Attributes
 					{
 						description="SpecOps Team Leader";
+						isPlayable=1;
 					};
 					id=7943;
 					type="O_Survivor_F";
@@ -12192,6 +12256,7 @@ class Mission
 					class Attributes
 					{
 						description="Team Leader";
+						isPlayable=1;
 					};
 					id=7945;
 					type="I_Survivor_F";
@@ -12251,6 +12316,7 @@ class Mission
 					class Attributes
 					{
 						description="Combat Life Saver";
+						isPlayable=1;
 					};
 					id=7946;
 					type="I_Survivor_F";
@@ -12324,6 +12390,7 @@ class Mission
 					class Attributes
 					{
 						description="Leader";
+						isPlayable=1;
 					};
 					id=7948;
 					type="C_man_polo_1_F";
@@ -12384,6 +12451,7 @@ class Mission
 					class Attributes
 					{
 						description="Hunter";
+						isPlayable=1;
 					};
 					id=7952;
 					type="C_man_1_1_F";
@@ -12444,6 +12512,7 @@ class Mission
 					class Attributes
 					{
 						description="Paramedic";
+						isPlayable=1;
 					};
 					id=7950;
 					type="C_man_polo_1_F";
@@ -13231,34 +13300,24 @@ class Mission
 		class Item976
 		{
 			dataType="Marker";
-			position[]={7952.2222,-0.001,1159.428};
+			position[]={7958.064,-0.125,1155.1851};
 			name="mrk_spec_boat01";
 			type="b_naval";
-			angle=354.8399;
+			angle=83.227982;
 			id=12701;
-			atlOffset=9.9840546;
+			atlOffset=9.1354837;
 		};
 		class Item977
 		{
 			dataType="Marker";
-			position[]={7969.5156,0.73731422,1157.4236};
-			name="mrk_spec_boat01_1";
+			position[]={7931.3491,-0.88317204,1145.92};
+			name="mrk_spec_boat02";
 			type="b_naval";
-			angle=85.032951;
-			id=12702;
-			atlOffset=9.9840546;
+			angle=355.2796;
+			id=12703;
+			atlOffset=10.724462;
 		};
 		class Item978
-		{
-			dataType="Marker";
-			position[]={7932.9707,-0.91178513,1140.8291};
-			name="mrk_spec_boat01_2";
-			type="b_naval";
-			angle=355.40741;
-			id=12703;
-			atlOffset=9.9840546;
-		};
-		class Item979
 		{
 			dataType="Object";
 			class PositionInfo
@@ -13274,7 +13333,7 @@ class Mission
 			id=12704;
 			type="Land_MapBoard_F";
 		};
-		class Item980
+		class Item979
 		{
 			dataType="Object";
 			class PositionInfo

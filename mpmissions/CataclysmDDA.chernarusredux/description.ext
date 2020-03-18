@@ -1,0 +1,64 @@
+/***************************************************************************
+ *   Copyright (C) 2008-2019 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *                                                                         *
+ *   This program is free software: you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation, either version 3 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
+ *                                                                         *
+ ***************************************************************************/
+ 
+ // Mission description file
+ 
+class Header
+{
+	gameType   =  Survival;	// Game type
+	minPlayers =  1;	// minimum number of players the mission supports
+	maxPlayers = 25;	// maximum number of players the mission supports
+};
+
+author			= "brezerk@brezblock.org.ua";
+OnLoadName		= "Cataclysm: Hic sunt dracones";
+OnLoadMission	= "2071 рік. Світ який ви знали загинув багато років тому. Після техногенної катастрофи, що забрала життя більшої частини населення розпочалась остання світова війна за їжу, воду та залишки ресурсів. В своїй агонії вцілілі держави пустили в хід все що в них лишилось: армію, авіацію, флот, бомби, біологічну та ядерну зброю. Вціліли об'єднувались у зграї та банди, забезпечуючи собі виживання у цьому новому страхітливому світі"
+
+briefingName    = "Катаклізм: тут живуть дракони";
+// FIXME: https://feedback.bistudio.com/T67181
+//overviewPicture = "data\reddagger02.paa";
+//loadScreen      = "data\reddagger02.paa";
+//overviewTextLocked = $STR_LOCKED_INFO_01;
+
+// Respawn type
+respawn = 2;
+// Delay in seconds before playable unit respawns.
+respawnDelay = 15;
+// Respawn templates from CfgRespawnTemplates. You can combine any number of them together.
+respawnTemplates[] = {"Counter"};
+// 0 to disable the score table (it can still be opened manually by pressing 'P' key).
+respawnDialog = 0;
+// When 1, the score table contains score of all playable units as opposed to players only.
+aikills = 0;
+
+respawnOnStart = -1;
+
+corpseManagerMode = 1;
+corpseLimit = 20;
+corpseRemovalMinTime = 120;
+corpseRemovalMaxTime = 1200;
+
+wreckManagerMode = 2;
+wreckLimit = 15; 
+wreckRemovalMinTime = 60;
+wreckRemovalMaxTime = 1200;
+
+minPlayerDistance = 100;
+
+// Force cba_settings.sqf loading
+cba_settings_hasSettingsFile = 1;

@@ -60,7 +60,7 @@ if (!mission_requested) then {
 
 waitUntil { sleep 1; [["D_LOCATION", "D_FRACTION_WEST", "D_FRACTION_EAST", "D_FRACTION_CIV", "D_FRACTION_INDEP", "D_NAVTOOL_MAP", "D_NAVTOOL_COMPASS"]] call Fn_Local_WaitPublicVariables; }; 
 
-/*
+
 switch (playerSide) do {
 	case east: {
 
@@ -75,18 +75,10 @@ switch (playerSide) do {
 			private _pos = getMarkerPos "mrk_west_specops";
 			player setPosASL [((_pos select 0) + (round(random 5) - 5)), ((_pos select 1) - 6 + (round(random 5) - 5)), 3];
 		} else {
-			if ((_role find "Recon ") >= 0) then {
-				private _pos = getMarkerPos "mrk_west_specops";
-				player setPosASL [((_pos select 0) + (round(random 5) - 5)), ((_pos select 1) - 6 + (round(random 5) - 5)), 3];
-			} else {
-				player setPosASL (us_liberty_01 modelToWorldWorld [(round(random 5) - 5), (35 + (round(random 5) - 4)), 8.98]);
-			};
+			player setPosASL (us_liberty_01 modelToWorldWorld [(round(random 5) - 5), (35 + (round(random 5) - 4)), 8.98]);
 		};
 	};
 };
-*/
-
-player setPosASL (us_liberty_01 modelToWorldWorld [(round(random 5) - 5), (35 + (round(random 5) - 4)), 8.98]);
 
 execVM "UnfinishedBusiness.core\gear\player\init.sqf";
 

@@ -16,15 +16,7 @@
  *                                                                         *
  ***************************************************************************/
 
-// Available locations for play
-// This mps to different set of wp_<location>_ markers.
-// For example, Plau has two different islands, while Stratis or Tanoa has only one location
-D_LOCATIONS = ['Gurun', 'Monyet'];
+/*
+Init mission file
+*/
 
-// Real time vs fast time
-// true: Real time is more realistic weather conditions change slowly (ideal for persistent game)
-// false: fast time give more different weather conditions (ideal for non persistent game) 
-D_CODE43_REAL_WEATHER_REALTIME = true;
-
-// Debug only
-D_DEBUG = true;
