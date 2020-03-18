@@ -20,3 +20,8 @@
 Init mission file
 */
 
+if (isServer) then {
+
+	[stup,50,"SmokeShellGreen",0.4] execvm "AL_swarmer\al_hive.sqf";
+	
+};

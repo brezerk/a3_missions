@@ -48,6 +48,8 @@ Fn_MakeMeZombie = {
 	_unit = (createGroup [civilian, true]) createUnit ["zombie_runner", (markerPos "wp_test"), [], 0, "FORM"];
 	selectPlayer _unit;
 	deleteVehicle _none;
+	[_unit, 0.85] call rvg_fnc_setDamage;
+	execVM "gear\base.sqf";
 	_unit;
 };
 
@@ -61,45 +63,18 @@ player addEventHandler
 		   "Respawn",
 		   {
 				_zed = call Fn_MakeMeZombie;
+				
 				_zed 
 			}
 		];
     }
 ];
-		/*
-		_handler = [] spawn {
-			_noPlayer = createGroup sideLogic createUnit [
-				"Logic",
-				[0,0,1000],
-				[],
-				0,
-				"NONE"
-			];
-			sleep 1;
-			selectPlayer _noPlayer;
-			systemChat format ["FOO: %s !", playerSide];
-			_unit = (createGroup [civilian, true]) createUnit ["zombie_runner", (markerPos "wp_test"), [], 0, "FORM"];
-			sleep 1;
-			selectPlayer _unit;
-		};
-		
-		
-		
-		/*
-		execVM "gear\zombie_runner.sqf";
-		player enableStamina false;
-		player allowSprint true;
-		player setCombatMode "BLUE";
-		//player setVariable ["_zTarget", false, true];
-		hideObject player;
-		player setBehaviour "CARELESS";
-		//_zed setCombatMode "RED";
-		[player, 0.85] call rvg_fnc_setDamage;
-		player setVariable ["mrg_unit_sfx_hitRecently", true];//quickfix for mrgSFX mod
-		player addRating -7000;
-		player enableSimulationGlobal true;
-		_nul = [player] spawn rvg_fnc_zed_behaviour;*/
-		
-		//player switchCamera "EXTERNAL";
-		*/
 
+_null = [] spawn {
+	if (vehicle player isKindOf "zombie") then {
+		player switchCamera "EXTERNAL";
+	} else {
+		player switchCamera "INTERNAL";
+	};
+	sleep 0.5;
+};
