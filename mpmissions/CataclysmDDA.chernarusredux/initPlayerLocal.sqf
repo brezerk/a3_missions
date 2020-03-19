@@ -70,15 +70,16 @@ player addEventHandler
 				_zed = call Fn_MakeMeZombie;
 			}
 		];
+		vehicle player switchCamera "EXTERNAL";
     }
 ];
 
 _null = [] spawn {
 	while{true} do {
-		if (player isKindOf "zombie") then {
-			vehicle player switchCamera "EXTERNAL";
-		} else {
-			vehicle player switchCamera "INTERNAL";
+		if (cameraView == "EXTERNAL") then {
+			if (!(player isKindOf "zombie")) then {
+				vehicle player switchCamera "INTERNAL";
+			};
 		};
 		sleep 0.5;
 	};

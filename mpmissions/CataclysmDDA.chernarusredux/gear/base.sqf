@@ -140,6 +140,7 @@ player setFace (selectRandom ['WhiteHead_01',
 'WhiteHead_20',
 'WhiteHead_21',
 'WhiteHead_23']);
+
 player setSpeaker "NoVoice";
 
 for "_i" from 1 to 2 do {player addItemToBackpack "ACE_tourniquet";};
@@ -160,3 +161,6 @@ for "_i" from 1 to 2 do {player addItemToBackpack "ACE_MRE_CreamChickenSoup";};
 
 for "_i" from 1 to 2 do {player addItemToBackpack "SmokeShell";};
 
+// Kick GPS if any
+player unassignItem "ItemGPS";
+player removeItem "ItemGPS";
