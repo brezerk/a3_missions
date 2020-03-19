@@ -31,14 +31,14 @@ OnLoadMission	= "2071 рік. Світ який ви знали загинув �
 
 briefingName    = "Катаклізм: тут живуть дракони";
 // FIXME: https://feedback.bistudio.com/T67181
-//overviewPicture = "data\reddagger02.paa";
-//loadScreen      = "data\reddagger02.paa";
+overviewPicture = "data\cataclysmdda.paa";
+loadScreen      = "data\cataclysmdda.paa";
 //overviewTextLocked = $STR_LOCKED_INFO_01;
 
 // Respawn type
 respawn = 2;
 // Delay in seconds before playable unit respawns.
-respawnDelay = 30;
+respawnDelay = 5;
 // Respawn templates from CfgRespawnTemplates. You can combine any number of them together.
 respawnTemplates[] = {"Instant"};
 // 0 to disable the score table (it can still be opened manually by pressing 'P' key).
@@ -274,5 +274,149 @@ class CfgSounds
 		name = "puls";
 		sound[] = {"\sound\puls.ogg", db+10, 1};
 		titles[] = {};
+	};
+	class uragan_1
+	{
+		name = "uragan_1";
+		sound[] = {"\sound\uragan_1.ogg", db+5, 1};
+		titles[] = {1, ""};
+	};
+	class bcg_wind
+	{
+		name = "bcg_wind";
+		sound[] = {"\sound\bcg_wind.ogg", db+5, 1};
+		titles[] = {1, ""};
+	};	
+	class rafala_1
+	{
+		name = "rafala_1";
+		sound[] = {"\sound\rafala_1.ogg", db+10, 1};
+		titles[] = {1, ""};
+	};	
+	class rafala_4_dr
+	{
+		name = "rafala_4_dr";
+		sound[] = {"\sound\rafala_4_dr.ogg", db+1, 1};
+		titles[] = {1, ""};
+	};	
+	class rafala_5_st
+	{
+		name = "rafala_5_st";
+		sound[] = {"\sound\rafala_5_st.ogg", db+1, 1};
+		titles[] = {1, ""};
+	};
+	class sandstorm
+	{
+		name = "sandstorm";
+		sound[] = {"\sound\sandstorm.ogg", db+10, 1};
+		titles[] = {1, ""};
+	};
+	class spark1
+	{
+		name = "spark1";
+		sound[] = {"\sound\spark1.ogg", db+30, 1};
+		titles[] = {};
+	};
+	class spark11
+	{
+		name = "spark11";
+		sound[] = {"\sound\spark11.ogg", db+30, 1};
+		titles[] = {};
+	};
+	class spark2
+	{
+		name = "spark2";
+		sound[] = {"\sound\spark2.ogg", db+30, 1};
+		titles[] = {};
+	};		
+	class spark22
+	{
+		name = "spark22";
+		sound[] = {"\sound\spark22.ogg", db+30, 1};
+		titles[] = {};
+	};	
+	class spark3	
+	{
+		name = "spark3";
+		sound[] = {"\sound\spark3.ogg", db+30, 1};
+		titles[] = {};
+	};
+	class spark4	
+	{
+		name = "spark4";
+		sound[] = {"\sound\spark4.ogg", db+30, 1};
+		titles[] = {};
+	};
+	class spark5	
+	{
+		name = "spark5";
+		sound[] = {"\sound\spark5.ogg", db+30, 1};
+		titles[] = {};
+	};	
+	class metalic1	
+	{
+		name = "metalic1";
+		sound[] = {"\sound\metalic1.ogg", db+25, 1};
+		titles[] = {};
+	};
+	class metalic2	
+	{
+		name = "metalic2";
+		sound[] = {"\sound\metalic2.ogg", db+25, 1};
+		titles[] = {};
+	};
+	class metalic3	
+	{
+		name = "metalic3";
+		sound[] = {"\sound\metalic3.ogg", db+35, 1};
+		titles[] = {};
+	};
+	class metalic4	
+	{
+		name = "metalic4";
+		sound[] = {"\sound\metalic4.ogg", db+35, 1};
+		titles[] = {};
+	};
+	class metalic5	
+	{
+		name = "metalic5";
+		sound[] = {"\sound\metalic5.ogg", db+20, 1};
+		titles[] = {};
+	};
+	class metalic6
+	{
+		name = "metalic6";
+		sound[] = {"\sound\metalic6.ogg", db+30, 1};
+		titles[] = {};
+	};
+	class metalic7
+	{
+		name = "metalic7";
+		sound[] = {"\sound\metalic7.ogg", db+30, 1};
+		titles[] = {};
+	};
+	class sound_twin
+	{
+		name = "sound_twin";
+		sound[] = {"\sound\sound_twin.ogg", 1, 1};
+		titles[] = {};
+	};
+	class murmur
+	{
+		name = "murmur"; // Name for mission editor
+		sound[] = {\Sound\murmur.ogg, 0.8, 1.0};
+		titles[] = {0, ""};
+	};
+	class geiger
+	{
+		name = "geiger"; // Name for mission editor
+		sound[] = {\Sound\geiger.ogg, .7, 1.0};
+		titles[] = {0, ""};
+	};
+	class earthquake_02
+	{
+		name = "earthquake_02";
+		sound[] = {"\sound\earthquake_02.ogg",0.7, 1};
+		titles[] = {1, ""};
 	};	
 };

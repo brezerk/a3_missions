@@ -45,7 +45,12 @@ player addEventHandler
 
 Fn_MakeMeZombie = {
 	_none = player;
-	_unit = (createGroup [civilian, true]) createUnit ["zombie_runner", (markerPos "wp_test"), [], 0, "FORM"];
+	_pos = markerPos "wp_test";
+	{
+		if (alive _x) exitWith { _pos = getPos _x };
+	} forEach (switchableUnits + playableUnits);
+	_pos = [_pos, 350, 500, 5, 0, 0, 0, [], []] call BIS_fnc_findSafePos;
+	_unit = (createGroup [civilian, true]) createUnit ["zombie_runner", _pos, [], 0, "FORM"];
 	selectPlayer _unit;
 	deleteVehicle _none;
 	[_unit, 0.85] call rvg_fnc_setDamage;
@@ -63,18 +68,33 @@ player addEventHandler
 		   "Respawn",
 		   {
 				_zed = call Fn_MakeMeZombie;
-				
-				_zed 
 			}
 		];
     }
 ];
 
 _null = [] spawn {
-	if (vehicle player isKindOf "zombie") then {
-		player switchCamera "EXTERNAL";
-	} else {
-		player switchCamera "INTERNAL";
+	while{true} do {
+		if (player isKindOf "zombie") then {
+			vehicle player switchCamera "EXTERNAL";
+		} else {
+			vehicle player switchCamera "INTERNAL";
+		};
+		sleep 0.5;
 	};
-	sleep 0.5;
 };
+
+
+waitUntil {!isNil "insecticid"};
+
+player addEventHandler
+[
+	"Fired",
+	{
+		private ["_al_throwable"];
+		_al_throwable = _this select 6;
+		_shooter = _this select 0;
+		[_al_throwable] execVM "AL_swarmer\smoke_detect.sqf";
+	}
+];
+

@@ -20,10 +20,25 @@
 Init mission file
 */
 
-if (isServer) then {
+[stup, 30, "SmokeShell", 0.8] execvm "AL_swarmer\al_hive.sqf";
 
-	[stup,50,"SmokeShellGreen",0.4] execvm "AL_swarmer\al_hive.sqf";
+if (isServer) then {
 	// ACTIVE DURING NITGHT AND DAY
-	["strigoi_1",100,true,0.1,50] execvm "AL_strigoi\strigoi.sqf";
+	["wp_strigoi_1",100,true,0.1,50] execvm "AL_strigoi\strigoi.sqf";
+	["wp_strigoi_2",100,true,0.1,50] execvm "AL_strigoi\strigoi.sqf";
 	
 };
+
+/*
+while {true} do {
+	if (isServer) then {
+		my_dust_storm_duration = 240 + random 600;
+		publicVariable "my_dust_storm_duration";
+		pause_between_dust_storm = 240 + random 600;
+		publicVariable "my_dust_storm_duration";
+	};
+	waitUntil {(!isNil "my_dust_storm_duration") and (!isNil "pause_between_dust_storm")};
+	null = [340,my_dust_storm_duration,false,false,false,0.3] execvm "AL_dust_storm\al_duststorm.sqf";
+	sleep (my_dust_storm_duration + pause_between_dust_storm);
+};
+*/

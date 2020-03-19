@@ -157,3 +157,6 @@ for "_i" from 1 to 5 do {player addItemToUniform "ACE_fieldDressing";};
 //ACEX
 player addItemToBackpack "ACE_MRE_MeatballsPasta";
 for "_i" from 1 to 2 do {player addItemToBackpack "ACE_MRE_CreamChickenSoup";};
+
+for "_i" from 1 to 2 do {player addItemToBackpack "SmokeShell";};
+

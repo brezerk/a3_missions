@@ -55,7 +55,7 @@ while {alive _mobile_s} do
 				//_mobile_s moveTo AGLToASL (_tgt_hiv modelToWorld [0,0,0]);
 				{[_mobile_s,_x] spawn fnc_avoid_hive} foreach _list_unit_range_hiv;
 				//for "_i" from 0 to 3 do	{[_mobile_s,_tgt_hiv] spawn fnc_ajust_poz; sleep 3};
-				sleep 10;
+				sleep 3;
 				atinge=false; publicVariable "atinge";
 				atak_swarmer = false; publicVariable "atak_swarmer";// hint str atak_swarmer;
 				//{[_mobile_s,_x] spawn fnc_avoid_hive} foreach _list_unit_range_hiv;
