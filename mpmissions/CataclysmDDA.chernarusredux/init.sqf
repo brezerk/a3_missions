@@ -26,6 +26,15 @@ if (isServer) then {
 	// ACTIVE DURING NITGHT AND DAY
 	["wp_strigoi_1",100,true,0.1,50] execvm "AL_strigoi\strigoi.sqf";
 	["wp_strigoi_2",100,true,0.1,50] execvm "AL_strigoi\strigoi.sqf";
+	["wp_strigoi_3",100,true,0.1,50] execvm "AL_strigoi\strigoi.sqf";
+	["wp_strigoi_4",100,true,0.1,50] execvm "AL_strigoi\strigoi.sqf";
+	["wp_strigoi_5",100,true,0.1,50] execvm "AL_strigoi\strigoi.sqf";
+	["wp_strigoi_6",100,true,0.1,50] execvm "AL_strigoi\strigoi.sqf";
+	["wp_strigoi_7",100,true,0.1,50] execvm "AL_strigoi\strigoi.sqf";
+	
+	{
+		{ _x setFuelCargo 1000; } forEach (nearestObjects [getMarkerPos _x, ["Land_fs_feed_F"], 100]); 
+    } forEach ["wp_fuel01", "wp_fuel02", "wp_fuel03", "wp_fuel04", "wp_fuel05"];
 	
 };
 

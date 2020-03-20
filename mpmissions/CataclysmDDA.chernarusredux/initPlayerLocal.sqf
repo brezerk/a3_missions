@@ -85,6 +85,31 @@ _null = [] spawn {
 	};
 };
 
+Fn_LoadSupply = {
+	params["_object"];
+	private _vechs = nearestObjects [player, ["CUP_C_V3S_Open_TKC"], 50];
+	private _loaded = false;
+	if ((count _vechs) > 0) then {
+		{ 
+			if (!(_x getVariable ["loaded", false])) exitWith {
+				_x setVariable ["loaded", true, true];
+				_object enableSimulation false;
+				_object allowDamage false;
+				_object attachTo [_x, [0, -1, 0]]; 
+				_loaded = true;
+			} 
+		} forEach (_vechs); 
+		if (!_loaded) then {
+			systemChat "Ці вантажівкі зайняти. Знайдіть вільну вантажівку з відкритим верхом!";
+		};
+	} else {
+		systemChat "Ці вантажівкі не підходять. Знайдіть вантажівку з відкритим верхом!";
+	};
+};
+
+gen_1 addAction ["Завантажити", {[gen_1] call Fn_LoadSupply;}];
+gen_2 addAction ["Завантажити", {[gen_2] call Fn_LoadSupply;}];
+gen_3 addAction ["Завантажити", {[gen_3] call Fn_LoadSupply;}];
 
 waitUntil {!isNil "insecticid"};
 
