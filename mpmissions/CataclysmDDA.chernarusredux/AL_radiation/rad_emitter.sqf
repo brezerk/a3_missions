@@ -19,7 +19,7 @@ while {(!isNull player)and(!isNull _obj_rad)} do
 				playsound "geiger";
 				//player say3D ["geiger", 15, 1.0, false];
 				//["", 10, 200, false];
-				sleep (0.1);
+				sleep (0.3);
 			};
 		};
 		

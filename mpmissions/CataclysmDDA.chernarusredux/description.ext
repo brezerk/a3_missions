@@ -269,7 +269,7 @@ class CfgSounds
 	class geiger
 	{
 		name = "geiger"; // Name for mission editor
-		sound[] = {\sound\geiger.ogg, db+20, 0.8};
+		sound[] = {\sound\geiger.ogg, db+20, 0.9};
 		titles[] = {0, ""};
 	};
 	class breath
