@@ -65,358 +65,318 @@ cba_settings_hasSettingsFile = 1;
 
 class CfgSounds
 {
-	class roi_02
-	{
-		name = "roi_02";
-		sound[] = {"\sounds\roi_02.ogg",1,1};
-		titles[] = {};
-	};
-	class roi_atk_01
-	{
-		name = "roi_atk_01";
-		sound[] = {"\sounds\roi_atk_01.ogg",1,1};
-		titles[] = {};
-	};
-	class roi_mort
-	{
-		name = "roi_mort";
-		sound[] = {"\sounds\roi_mort.ogg",1,1};
-		titles[] = {};
-	};
-	class eating
-	{
-		name = "eating";
-		sound[] = {"\sounds\eating.ogg",1,1};
-		titles[] = {};
-	};
-	class strigat_92
-	{
-		name = "strigat_92";
-		sound[] = {"\sounds\strigat_92.ogg", db+10, 1};
-		titles[] = {};
-	};
-	class insect_03
-	{
-		name = "insect_03";
-		sound[] = {"\sounds\insect_03.ogg",1,1};
-		titles[] = {};
-	};
-	class insect_01
-	{
-		name = "insect_01";
-		sound[] = {"\sounds\insect_01.ogg",1,1};
-		titles[] = {};
-	};
-	class insect_04
-	{
-		name = "insect_04";
-		sound[] = {"\sounds\insect_04.ogg",1,1};
-		titles[] = {};
-	};
-	class insect_05
-	{
-		name = "insect_05";
-		sound[] = {"\sounds\insect_05.ogg",1,1};
-		titles[] = {};
-	};
-	class insect_07
-	{
-		name = "insect_07";
-		sound[] = {"\sounds\insect_07.ogg",1,1};
-		titles[] = {};
-	};
-	class insect_08
-	{
-		name = "insect_08";
-		sound[] = {"\sounds\insect_08.ogg",1,1};
-		titles[] = {};
-	};
-	class hive_queen_01
-	{
-		name = "hive_queen_01";
-		sound[] = {"\sounds\hive_queen_01.ogg",1,1};
-		titles[] = {};
-	};
-	class hive_queen_02
-	{
-		name = "hive_queen_02";
-		sound[] = {"\sounds\hive_queen_02.ogg",1,1};
-		titles[] = {};
-	};
-	class casp_voice
-	{
-		name = "casp_voice";
-		sound[] = {"\sound\casp_voice.ogg", db+5, 1};
-		titles[] = {};
-	};
-	class 01_salt
-	{
-		name = "01_salt";
-		sound[] = {"\sound\01_salt.ogg", db+10, 1};
-		titles[] = {};
-	};
-	class 02_salt
-	{
-		name = "2";
-		sound[] = {"\sound\02_salt.ogg", db+10, 1};
-		titles[] = {};
-	};
-	class 03_salt
-	{
-		name = "03_salt";
-		sound[] = {"\sound\03_salt.ogg", db+10, 1};
-		titles[] = {};
-	};
-	class 01_tip_casp
-	{
-		name = "01_tip_casp";
-		sound[] = {"\sound\01_tip_casp.ogg", db+5, 1};
-		titles[] = {};
-	};
-	class 02_tip_casp
-	{
-		name = "02_tip_casp";
-		sound[] = {"\sound\02_tip_casp.ogg", 0.8, 1};
-		titles[] = {};
-	};
-	class 03_tip_casp
-	{
-		name = "03_tip_casp";
-		sound[] = {"\sound\03_tip_casp.ogg", db+5, 1};
-		titles[] = {};
-	};
-	class 04_tip_casp
-	{
-		name = "04_tip_casp";
-		sound[] = {"\sound\04_tip_casp.ogg", db+5, 1};
-		titles[] = {};
-	};
-	class 05_tip_casp
-	{
-		name = "05_tip_casp";
-		sound[] = {"\sound\05_tip_casp.ogg", db+5, 1};
-		titles[] = {};
-	};
-	class 06_tip_casp
-	{
-		name = "06_tip_casp";
-		sound[] = {"\sound\06_tip_casp.ogg", db+5, 1};
-		titles[] = {};
-	};
-	class 07_tip_casp
-	{
-		name = "07_tip_casp";
-		sound[] = {"\sound\07_tip_casp.ogg", db+5, 1};
-		titles[] = {};
-	};	
-	class 01_tease
-	{
-		name = "01_tease";
-		sound[] = {"\sound\01_tease.ogg", 1, 1};
-		titles[] = {};
-	};
-	class 02_tease
-	{
-		name = "02_tease";
-		sound[] = {"\sound\02_tease.ogg", 0.9, 1};
-		titles[] = {};
-	};
-	class 03_tease
-	{
-		name = "03_tease";
-		sound[] = {"\sound\03_tease.ogg", 1, 1};
-		titles[] = {};
-	};
-	class 04_tease
-	{
-		name = "04_tease";
-		sound[] = {"\sound\04_tease.ogg", 1, 1};
-		titles[] = {};
-	};	
 	class NoSound 
 	{
 		name = "NoSound";
 		sound[] = {"", 0, 1};
 		titles[] = {0, ""};
 	};	
-	class 01_atk_bg
+	class generator_04
 	{
-		name = "01_atk_bg";
-		sound[] = {"\sound\01_atk_bg.ogg", 1, 1};
+		name = "generator_04";
+		sound[] = {"\sound\generator_04.ogg", db+90, 1};
 		titles[] = {};
 	};
-	class 02_atk
+	//Shared
+	class tuse_5
 	{
-		name = "02_atk";
-		sound[] = {"\sound\02_atk.ogg", 1, 1};
-		titles[] = {};
-	};
-	class 03_atk
-	{
-		name = "03_atk";
-		sound[] = {"\sound\03_atk.ogg", 1, 1};
-		titles[] = {};
-	};
-	class 04_atk
-	{
-		name = "04_atk";
-		sound[] = {"\sound\04_atk.ogg", 1, 1};
-		titles[] = {};
-	};
-	class tiuit
-	{
-		name = "tiuit";
-		sound[] = {\sound\tiuit.ogg, 0.2, 1.0};
-		titles[] = {0, ""};	
-	};
-	class puls
-	{
-		name = "puls";
-		sound[] = {"\sound\puls.ogg", db+10, 1};
-		titles[] = {};
-	};
-	class uragan_1
-	{
-		name = "uragan_1";
-		sound[] = {"\sound\uragan_1.ogg", db+5, 1};
+		name = "tuse_5";
+		sound[] = {"\sound\tuse_5.ogg", 1, 1};
 		titles[] = {1, ""};
 	};
+	class tuse_6
+	{
+		name = "tuse_6";
+		sound[] = {"\sound\tuse_6.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+	//Snow storm
 	class bcg_wind
 	{
 		name = "bcg_wind";
-		sound[] = {"\sound\bcg_wind.ogg", db+5, 1};
+		sound[] = {"\sound\bcg_wind.ogg", 0.3, 1};
 		titles[] = {1, ""};
-	};	
+	};
+	class bcg_wind_mild
+	{
+		name = "bcg_wind_mild";
+		sound[] = {"\sound\bcg_wind_mild.ogg", 0.05, 1};
+		titles[] = {1, ""};
+	};		
 	class rafala_1
 	{
 		name = "rafala_1";
-		sound[] = {"\sound\rafala_1.ogg", db+10, 1};
+		sound[] = {"\sound\rafala_1.ogg",1,1};
 		titles[] = {1, ""};
 	};	
-	class rafala_4_dr
+	class rafala_2
 	{
-		name = "rafala_4_dr";
-		sound[] = {"\sound\rafala_4_dr.ogg", db+1, 1};
-		titles[] = {1, ""};
-	};	
-	class rafala_5_st
-	{
-		name = "rafala_5_st";
-		sound[] = {"\sound\rafala_5_st.ogg", db+1, 1};
+		name = "rafala_2";
+		sound[] = {"\sound\rafala_2.ogg",1,1};
 		titles[] = {1, ""};
 	};
-	class sandstorm
+	class rafala_3
 	{
-		name = "sandstorm";
-		sound[] = {"\sound\sandstorm.ogg", db+10, 1};
+		name = "rafala_3";
+		sound[] = {"\sound\rafala_3.ogg",1,1};
+		titles[] = {1, ""};
+	};	
+	class rafala_6
+	{
+		name = "rafala_6";
+		sound[] = {"\sound\rafala_6.ogg",1,1};
+		titles[] = {1, ""};
+	};	
+	class rafala_7
+	{
+		name = "rafala_7";
+		sound[] = {"\sound\rafala_7.ogg",1,1};
+		titles[] = {1, ""};
+	};	
+	class rafala_8
+	{
+		name = "rafala_8";
+		sound[] = {"\sound\rafala_8.ogg",1,1};
+		titles[] = {1, ""};
+	};	
+	class rafala_5
+	{
+		name = "rafala_9";
+		sound[] = {"\sound\rafala_9.ogg",1,1};
 		titles[] = {1, ""};
 	};
-	class spark1
+	class tree_crack_1
 	{
-		name = "spark1";
-		sound[] = {"\sound\spark1.ogg", db+30, 1};
-		titles[] = {};
+		name = "tree_crack_1";
+		sound[] = {"\sound\tree_crack_1.ogg", db+5, 1};
+		titles[] = {1, ""};
 	};
-	class spark11
+	class tree_crack_2
 	{
-		name = "spark11";
-		sound[] = {"\sound\spark11.ogg", db+30, 1};
-		titles[] = {};
+		name = "tree_crack_2";
+		sound[] = {"\sound\tree_crack_2.ogg", db+5, 1};
+		titles[] = {1, ""};
 	};
-	class spark2
+	class tree_crack_3
 	{
-		name = "spark2";
-		sound[] = {"\sound\spark2.ogg", db+30, 1};
-		titles[] = {};
-	};		
-	class spark22
-	{
-		name = "spark22";
-		sound[] = {"\sound\spark22.ogg", db+30, 1};
-		titles[] = {};
+		name = "tree_crack_3";
+		sound[] = {"\sound\tree_crack_3.ogg", db+5, 1};
+		titles[] = {1, ""};
 	};	
-	class spark3	
+	class tree_crack_4
 	{
-		name = "spark3";
-		sound[] = {"\sound\spark3.ogg", db+30, 1};
-		titles[] = {};
+		name = "tree_crack_4";
+		sound[] = {"\sound\tree_crack_4.ogg", db+5, 1};
+		titles[] = {1, ""};
 	};
-	class spark4	
+	class tree_crack_5
 	{
-		name = "spark4";
-		sound[] = {"\sound\spark4.ogg", db+30, 1};
-		titles[] = {};
+		name = "tree_crack_5";
+		sound[] = {"\sound\tree_crack_5.ogg", db+5, 1};
+		titles[] = {1, ""};
 	};
-	class spark5	
+	class tree_crack_6
 	{
-		name = "spark5";
-		sound[] = {"\sound\spark5.ogg", db+30, 1};
-		titles[] = {};
+		name = "tree_crack_6";
+		sound[] = {"\sound\tree_crack_6.ogg", db+5, 1};
+		titles[] = {1, ""};
 	};	
-	class metalic1	
+	class tree_crack_7
 	{
-		name = "metalic1";
-		sound[] = {"\sound\metalic1.ogg", db+25, 1};
+		name = "tree_crack_7";
+		sound[] = {"\sound\tree_crack_7.ogg", db+5, 1};
+		titles[] = {1, ""};
+	};	
+	class tree_crack_8
+	{
+		name = "tree_crack_8";
+		sound[] = {"\sound\tree_crack_8.ogg", db+5, 1};
+		titles[] = {1, ""};
+	};	
+	class tree_crack_9
+	{
+		name = "tree_crack_9";
+		sound[] = {"\sound\tree_crack_9.ogg", db+5, 1};
+		titles[] = {1, ""};
+	};
+	class lup_01
+	{
+		name = "lup_01";
+		sound[] = {"\sound\lup_01.ogg", 1, 1};
 		titles[] = {};
 	};
-	class metalic2	
+	class lup_02
 	{
-		name = "metalic2";
-		sound[] = {"\sound\metalic2.ogg", db+25, 1};
+		name = "lup_02";
+		sound[] = {"\sound\lup_02.ogg", 1, 1};
 		titles[] = {};
 	};
-	class metalic3	
+	class lup_03
 	{
-		name = "metalic3";
-		sound[] = {"\sound\metalic3.ogg", db+35, 1};
+		name = "lup_03";
+		sound[] = {"\sound\lup_03.ogg", 1, 1};
 		titles[] = {};
 	};
-	class metalic4	
+	class tremurat_1
 	{
-		name = "metalic4";
-		sound[] = {"\sound\metalic4.ogg", db+35, 1};
-		titles[] = {};
+		name = "tremurat_1";
+		sound[] = {"\sound\tremurat_1.ogg", 1, 1};
+		titles[] = {1, ""};
 	};
-	class metalic5	
+	class tremurat_2
 	{
-		name = "metalic5";
-		sound[] = {"\sound\metalic5.ogg", db+20, 1};
-		titles[] = {};
+		name = "tremurat_2";
+		sound[] = {"\sound\tremurat_2.ogg", 1, 1};
+		titles[] = {1, ""};
 	};
-	class metalic6
+	class tremurat_3
 	{
-		name = "metalic6";
-		sound[] = {"\sound\metalic6.ogg", db+30, 1};
-		titles[] = {};
+		name = "tremurat_3";
+		sound[] = {"\sound\tremurat_3.ogg", 1, 1};
+		titles[] = {1, ""};
 	};
-	class metalic7
+	class tremurat_4
 	{
-		name = "metalic7";
-		sound[] = {"\sound\metalic7.ogg", db+30, 1};
-		titles[] = {};
-	};
-	class sound_twin
+		name = "tremurat_4";
+		sound[] = {"\sound\tremurat_4.ogg", 1, 1};
+		titles[] = {1, ""};
+	};	
+	class tuse_1
 	{
-		name = "sound_twin";
-		sound[] = {"\sound\sound_twin.ogg", 1, 1};
-		titles[] = {};
+		name = "tuse_1";
+		sound[] = {"\sound\tuse_1.ogg", 1, 1};
+		titles[] = {1, ""};
 	};
-	class murmur
+	class tuse_2
 	{
-		name = "murmur"; // Name for mission editor
-		sound[] = {\Sound\murmur.ogg, 0.8, 1.0};
-		titles[] = {0, ""};
+		name = "tuse_2";
+		sound[] = {"\sound\tuse_2.ogg", 1, 1};
+		titles[] = {1, ""};
 	};
+	class tuse_3
+	{
+		name = "tuse_3";
+		sound[] = {"\sound\tuse_3.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+	class tuse_4
+	{
+		name = "tuse_4";
+		sound[] = {"\sound\tuse_4.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+	//Radiation
 	class geiger
 	{
 		name = "geiger"; // Name for mission editor
-		sound[] = {\Sound\geiger.ogg, .7, 1.0};
+		sound[] = {\sound\geiger.ogg, db+20, 0.8};
 		titles[] = {0, ""};
 	};
-	class earthquake_02
+	class breath
 	{
-		name = "earthquake_02";
-		sound[] = {"\sound\earthquake_02.ogg",0.7, 1};
+		name = "breath";
+		sound[] = {"\sound\breath.ogg", 0.6, 1.0};
+		titles[] = {0,""};
+	};
+	class cough
+	{
+		name = "cough";
+		sound[] = {"\sound\cough.ogg", db+1, 1.0};
+		titles[] = {0,""};
+	};
+	class echipare
+	{
+		name = "echipare";
+		sound[] = {"\sound\echipare.ogg", 1, 1.0};
+		titles[] = {0,""};
+	};	
+	class dezechipare
+	{
+		name = "dezechipare";
+		sound[] = {"\sound\dezechipare.ogg", 1, 1.0};
+		titles[] = {0,""};
+	};	
+	class puls_1
+	{
+		name = "puls_1";
+		sound[] = {"\sound\puls_1.ogg", db+1, 1};
 		titles[] = {1, ""};
 	};	
+	class sandstorm
+	{
+		name = "sandstorm";
+		sound[] = {"\sound\sandstorm.ogg", 0.2, 1};
+		titles[] = {1, ""};
+	};
+	class ambient_com
+	{
+		name = "ambient_com";
+		sound[] = {"\sound\ambient_com.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+	class ambient_fantoma
+	{
+		name = "ambient_fantoma";
+		sound[] = {"\sound\ambient_fantoma.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+	class ambient_fundal
+	{
+		name = "ambient_fundal";
+		sound[] = {"\sound\ambient_fundal.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+	class ambient_hall
+	{
+		name = "ambient_hall";
+		sound[] = {"\sound\ambient_hall.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+	class ambient_industrial
+	{
+		name = "ambient_industrial";
+		sound[] = {"\sound\ambient_industrial.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+	class ambient_jet
+	{
+		name = "ambient_jet";
+		sound[] = {"\sound\ambient_jet.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+	class ambient_spike
+	{
+		name = "ambient_spike";
+		sound[] = {"\sound\ambient_spike.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+	class ambient_steps
+	{
+		name = "ambient_steps";
+		sound[] = {"\sound\ambient_steps.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+	class ambient_tehnic
+	{
+		name = "ambient_tehnic";
+		sound[] = {"\sound\ambient_tehnic.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+	class ambient_vuumm
+	{
+		name = "ambient_vuumm";
+		sound[] = {"\sound\ambient_vuumm.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+	class ambient_wind
+	{
+		name = "ambient_wind";
+		sound[] = {"\sound\ambient_wind.ogg", 1, 1};
+		titles[] = {1, ""};
+	};
+};
+
+class RscTitles
+{
+	#include "AL_radiation\equipment_prot.hpp"
 };

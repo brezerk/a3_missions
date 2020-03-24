@@ -107,12 +107,22 @@ Fn_LoadSupply = {
 	};
 };
 
-gen_1 addAction ["Завантажити", {[gen_1] call Fn_LoadSupply;}];
+ 
+
+_null = [] spawn {
+	while {true} do
+	{
+		gen_1 say3D ["generator_04", 50, 1.0, false]; //, false];
+		sleep (1.5);
+	};
+};
+
+/*addAction ["Завантажити", {[gen_1] call Fn_LoadSupply;}];
 gen_2 addAction ["Завантажити", {[gen_2] call Fn_LoadSupply;}];
-gen_3 addAction ["Завантажити", {[gen_3] call Fn_LoadSupply;}];
+gen_3 addAction ["Завантажити", {[gen_3] call Fn_LoadSupply;}];*/
 
-waitUntil {!isNil "insecticid"};
-
+//waitUntil {!isNil "insecticid"};
+/*
 player addEventHandler
 [
 	"Fired",
@@ -122,5 +132,5 @@ player addEventHandler
 		_shooter = _this select 0;
 		[_al_throwable] execVM "AL_swarmer\smoke_detect.sqf";
 	}
-];
+];*/
 
