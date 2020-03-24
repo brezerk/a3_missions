@@ -8,20 +8,15 @@ _obj_rad 		= _this select 0;
 _rad_radius 	= _this select 1;
 _rad_dam_obj	= _this select 2;
 
+
 while {(!isNull player)and(!isNull _obj_rad)} do 
 {
 	waitUntil {alive player};
-
-	if ((player distance _obj_rad) < _rad_radius) then 
-	{
-		[] spawn {if (rad_det in (assigneditems player + items player)) then {
-				//systemChat "RED!";
-				playsound "geiger";
-				//player say3D ["geiger", 15, 1.0, false];
-				//["", 10, 200, false];
-				sleep (0.3);
-			};
-		};
+	
+	private _distance = player distance _obj_rad;
+	
+	if (_distance < _rad_radius) then {
+		player_distance = parseNumber ((_distance/_rad_radius) toFixed 1);
 		
 		if (glowindark) then 
 		{
@@ -83,6 +78,6 @@ while {(!isNull player)and(!isNull _obj_rad)} do
 			};
 			sleep _amplificat_effect;
 			};
-	} else {player setVariable ["glowing_player",false,true]; /*hint str (player getVariable "glowing_player");*/waitUntil {(player distance _obj_rad) < _rad_radius};};
+	} else {player setVariable ["glowing_player",false,true]; player_distance = 0; /*hint str (player getVariable "glowing_player");*/waitUntil {(player distance _obj_rad) < _rad_radius};};
 	sleep 0.1;
 };

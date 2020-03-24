@@ -46,6 +46,7 @@ player addEventHandler
 Fn_MakeMeZombie = {
 	_none = player;
 	_pos = markerPos "wp_test";
+	player setPos _pos;
 	{
 		if (alive _x) exitWith { _pos = getPos _x };
 	} forEach (switchableUnits + playableUnits);
@@ -53,17 +54,31 @@ Fn_MakeMeZombie = {
 	_unit = (createGroup [civilian, true]) createUnit ["zombie_runner", _pos, [], 0, "FORM"];
 	[_unit, 0.85] call rvg_fnc_setDamage;
 	execVM "gear\base.sqf";
-	sleep 5;
+	waitUntil {alive _unit};
 	selectPlayer _unit;
 	deleteVehicle _none;
+	[] execVM "AL_snowstorm\alias_hunt.sqf"; waitUntil {!isNil "hunt_alias"};
 	_unit;
 };
+
+_nill = [] spawn { 
+	while {(!isNull player)} do {
+		if (player_distance > 0) then {
+			playsound "geiger";
+			systemChat format ["d: %1", player_distance];
+			sleep (player_distance);
+			playing = false;
+		};
+		sleep 0.1;
+	};
+};
+
 
 player addEventHandler
 [
    "Respawn",
    {
-		_zed = call Fn_MakeMeZombie;
+		private _zed = call Fn_MakeMeZombie;
 		_zed addEventHandler
 		[
 		   "Respawn",

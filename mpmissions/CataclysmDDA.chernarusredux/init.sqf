@@ -20,6 +20,8 @@
 Init mission file
 */
 
+player_distance = 0;
+
 null = [
 	true, //boolean, if true snowflakes made out of particles will be created
 	3000, //number, life time of the SNOW STORM expressed in seconds
@@ -33,7 +35,9 @@ null = [
 	true   //boolean, if is true the at random units will sneeze/caugh and will shiver when snow burst occurs
 ] execVM "AL_snowstorm\al_snow.sqf";
 
-null = [rad_obj_01,15,0.05,"H_PilotHelmetFighter_B","MineDetector",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
+null = [rad_obj_01,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
+null = [rad_obj_02,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
+null = [rad_obj_03,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
 //null = [rad_obj_01,30,0.02,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",false,10,true] execvm "AL_radiation\radioactive_object.sqf";
 
 /*
