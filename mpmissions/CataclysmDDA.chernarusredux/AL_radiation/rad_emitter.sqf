@@ -14,10 +14,11 @@ while {(!isNull player)and(!isNull _obj_rad)} do
 	waitUntil {alive player};
 	
 	private _distance = player distance _obj_rad;
-	
-	if (_distance < _rad_radius) then {
-		player_distance = parseNumber ((_distance/_rad_radius) toFixed 1);
-		
+	if (_distance < (_rad_radius + 5)) then {
+		player_distance = 1.2;
+	};
+	if (_distance < (_rad_radius)) then {
+		player_distance = parseNumber ((_distance/(_rad_radius)) toFixed 1);
 		if (glowindark) then 
 		{
 			if (!(player getVariable "glowing_player")) then 
@@ -38,9 +39,9 @@ while {(!isNull player)and(!isNull _obj_rad)} do
 			
 			if (player getVariable "protejat_rad") then {sleep (1.2 + random 1)}
 			else {
-			_d_pre = getdammage player;
+			_d_pre = getDammage player;
 			_d_pre =_d_pre+_rad_dam_obj;
-			player setdammage _d_pre;
+			player setDammage _d_pre;
 			_amplificat_effect = linearConversion [0, 1,(getdammage player), 2, 0.1, true];
 			if (_d_pre>0.25) then 
 			{
@@ -78,6 +79,12 @@ while {(!isNull player)and(!isNull _obj_rad)} do
 			};
 			sleep _amplificat_effect;
 			};
-	} else {player setVariable ["glowing_player",false,true]; player_distance = 0; /*hint str (player getVariable "glowing_player");*/waitUntil {(player distance _obj_rad) < _rad_radius};};
+	} else {
+		player setVariable ["glowing_player",false,true];
+		if (_distance > (_rad_radius + 7)) then {
+			player_distance = 0; /*hint str (player getVariable "glowing_player");*/
+			waitUntil {(player distance _obj_rad) < (_rad_radius + 5)};
+		};
+	};
 	sleep 0.1;
 };

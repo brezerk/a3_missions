@@ -64,15 +64,14 @@ Fn_MakeMeZombie = {
 _nill = [] spawn { 
 	while {(!isNull player)} do {
 		if (player_distance > 0) then {
-			playsound "geiger";
-			systemChat format ["d: %1", player_distance];
-			sleep (player_distance);
-			playing = false;
+			if ("ChemicalDetector_01_watch_F" in assignedItems player) then {
+				playsound selectRandom["geiger_01", "geiger_02", "geiger_03"];
+				sleep (player_distance);
+			};
 		};
-		sleep 0.1;
+		sleep 0.2;
 	};
 };
-
 
 player addEventHandler
 [
@@ -123,8 +122,6 @@ Fn_LoadSupply = {
 	};
 };
 
- 
-
 _null = [] spawn {
 	while {true} do
 	{
@@ -132,6 +129,39 @@ _null = [] spawn {
 		sleep (1.5);
 	};
 };
+
+[
+	player,
+	"Використати Антірадін",
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa",
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa",
+	"(""ACE_plasmaIV"" in (items player))",
+	"true",
+	{
+		//Execute revive animation
+		[player, "AinvPknlMstpSnonWrflDr_medic3"] remoteExec ["playMoveNow", 0, false];
+		//Wait for revive animation to be set
+		waitUntil {sleep 0.05; ((animationState player) == "AinvPknlMstpSnonWrflDr_medic3")};
+		player removeItem "ACE_plasmaIV";
+	},
+	{ },
+	{ 
+		[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["playMoveNow", 0, true];
+		[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["switchMove", 0, true];
+		player setDamage 0;
+	},
+	{
+		[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["playMoveNow", 0, true];
+		[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["switchMove", 0, true];
+	},
+	[],
+	10,
+	100,
+	false,
+	false
+] call BIS_fnc_holdActionAdd;
+
+//player addAcction ["Db", {call Fn_UseAntirad;}];
 
 /*addAction ["Завантажити", {[gen_1] call Fn_LoadSupply;}];
 gen_2 addAction ["Завантажити", {[gen_2] call Fn_LoadSupply;}];

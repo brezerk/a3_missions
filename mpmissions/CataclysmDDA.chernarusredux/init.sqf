@@ -40,6 +40,10 @@ null = [rad_obj_02,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_wa
 null = [rad_obj_03,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
 //null = [rad_obj_01,30,0.02,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",false,10,true] execvm "AL_radiation\radioactive_object.sqf";
 
+sleep 60;
+
+[emp_me,500,true,true,0] execvm "AL_emp\emp_starter.sqf";
+
 /*
 [stup, 30, "SmokeShell", 0.8] execvm "AL_swarmer\al_hive.sqf";
 
