@@ -51,10 +51,11 @@ Fn_MakeMeZombie = {
 	} forEach (switchableUnits + playableUnits);
 	_pos = [_pos, 350, 500, 5, 0, 0, 0, [], []] call BIS_fnc_findSafePos;
 	_unit = (createGroup [civilian, true]) createUnit ["zombie_runner", _pos, [], 0, "FORM"];
-	selectPlayer _unit;
-	deleteVehicle _none;
 	[_unit, 0.85] call rvg_fnc_setDamage;
 	execVM "gear\base.sqf";
+	sleep 5;
+	selectPlayer _unit;
+	deleteVehicle _none;
 	_unit;
 };
 
