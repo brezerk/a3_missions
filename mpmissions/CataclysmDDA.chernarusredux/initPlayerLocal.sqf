@@ -35,11 +35,11 @@ player addEventHandler
 [
 	"Killed",
 	{
-		if (playerSide == west) then {
+		/*if (playerSide == west) then {
 			private _player = player; 
 			[player] joinSilent createGroup [civilian, true];
 			selectNoPlayer;
-		};
+		};*/
 	}
 ];
 
@@ -98,7 +98,10 @@ player addEventHandler
 [
    "Respawn",
    {
-		private _zed = call Fn_MakeMeZombie;
+		_pos = markerPos "wp_test";
+		player setPos _pos;
+		execVM "gear\base.sqf";
+		/*private _zed = call Fn_MakeMeZombie;
 		_zed addEventHandler
 		[
 		   "Respawn",
@@ -106,10 +109,11 @@ player addEventHandler
 				_zed = call Fn_MakeMeZombie;
 			}
 		];
-		vehicle player switchCamera "EXTERNAL";
+		vehicle player switchCamera "EXTERNAL";*/
     }
 ];
 
+/*
 _null = [] spawn {
 	while{true} do {
 		if (cameraView == "EXTERNAL") then {
@@ -119,7 +123,7 @@ _null = [] spawn {
 		};
 		sleep 0.5;
 	};
-};
+};*/
 
 Fn_LoadSupply = {
 	params["_object"];

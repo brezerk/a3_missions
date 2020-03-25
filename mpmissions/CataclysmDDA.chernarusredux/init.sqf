@@ -35,14 +35,16 @@ null = [
 	true   //boolean, if is true the at random units will sneeze/caugh and will shiver when snow burst occurs
 ] execVM "AL_snowstorm\al_snow.sqf";
 
-null = [rad_obj_01,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
-null = [rad_obj_02,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
-null = [rad_obj_03,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
+{
+	null = [_x,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
+} forEach [rad_test01, rad_obj_01, rad_obj_02, rad_obj_03, rad_obj_04, rad_obj_05, rad_obj_06, rad_obj_07, rad_obj_08, rad_obj_09, rad_obj_10, rad_obj_11, rad_obj_12, rad_obj_13, rad_obj_14, rad_obj_15, rad_obj_16, rad_obj_17, rad_obj_18, rad_obj_19, rad_obj_20, rad_obj_21, rad_obj_22, rad_obj_23, rad_obj_24, rad_obj_25, rad_obj_26, rad_obj_27, rad_obj_28, rad_obj_29, rad_obj_30];
+
+//null = [rad_obj_02,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
+//null = [rad_obj_03,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
 //null = [rad_obj_01,30,0.02,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",false,10,true] execvm "AL_radiation\radioactive_object.sqf";
 
-sleep 60;
-
-[emp_me,500,true,true,0] execvm "AL_emp\emp_starter.sqf";
+//sleep 60;
+//[emp_me,500,true,true,0] execvm "AL_emp\emp_starter.sqf";
 
 /*
 [stup, 30, "SmokeShell", 0.8] execvm "AL_swarmer\al_hive.sqf";
