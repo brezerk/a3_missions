@@ -62,14 +62,35 @@ Fn_MakeMeZombie = {
 };
 
 _nill = [] spawn { 
-	while {(!isNull player)} do {
-		if (player_distance > 0) then {
-			if ("ChemicalDetector_01_watch_F" in assignedItems player) then {
-				playsound selectRandom["geiger_01", "geiger_02", "geiger_03"];
-				sleep (player_distance);
+	while {true} do {
+		if (!isNull player) then {
+			if (player_distance > 0) then {
+				if ("ChemicalDetector_01_watch_F" in assignedItems player) then {
+					playsound selectRandom["geiger_01", "geiger_02", "geiger_03"];
+					sleep (player_distance);
+				};
+				//Chemical Detector Display
+				"ThreatDisplay" cutRsc ["RscWeaponChemicalDetector", "PLAIN", 1, false];  
+				private _ui = uiNamespace getVariable "RscWeaponChemicalDetector"; 
+				if (!isNull _ui) then {
+					private _obj = _ui displayCtrl 101; 
+					if (!isNull _obj) then {
+						_obj ctrlAnimateModel ["Threat_Level_Source", (1.4 - player_distance), true];
+					};
+				};
+			} else {
+				//Chemical Detector Display
+				"ThreatDisplay" cutRsc ["RscWeaponChemicalDetector", "PLAIN", 1, false];  
+				private _ui = uiNamespace getVariable "RscWeaponChemicalDetector"; 
+				if (!isNull _ui) then {
+					private _obj = _ui displayCtrl 101; 
+					if (!isNull _obj) then {
+						_obj ctrlAnimateModel ["Threat_Level_Source", 0.0, true];
+					};
+				};
+				waitUntil {player_distance > 0};
 			};
 		};
-		sleep 0.2;
 	};
 };
 
@@ -130,21 +151,40 @@ _null = [] spawn {
 	};
 };
 
+_action = [
+	"Використати Антірадін",
+	"Використати Антірадін",
+	"",
+	{
+		execVM "antiradin.sqf";
+	},
+	{("ACE_plasmaIV" in (items player))},
+	{},
+	[],
+	[0,0,0],
+	100] call ace_interact_menu_fnc_createAction;
+[player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
+
+/*
 [
 	player,
 	"Використати Антірадін",
 	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa",
 	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_reviveMedic_ca.paa",
-	"(""ACE_plasmaIV"" in (items player))",
+	" && ((getDammage player) > 0))",
 	"true",
 	{
 		//Execute revive animation
 		[player, "AinvPknlMstpSnonWrflDr_medic3"] remoteExec ["playMoveNow", 0, false];
 		//Wait for revive animation to be set
 		waitUntil {sleep 0.05; ((animationState player) == "AinvPknlMstpSnonWrflDr_medic3")};
-		player removeItem "ACE_plasmaIV";
 	},
-	{ },
+	{
+		params ["_target", "_caller", "_actionId", "_arguments", "_progress", "_maxProgress"];
+		if (_progress >= 10) then {
+			player removeItem "ACE_plasmaIV";
+		};
+	},
 	{ 
 		[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["playMoveNow", 0, true];
 		[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["switchMove", 0, true];
@@ -156,11 +196,11 @@ _null = [] spawn {
 	},
 	[],
 	10,
-	100,
+	0,
 	false,
 	false
 ] call BIS_fnc_holdActionAdd;
-
+*/
 //player addAcction ["Db", {call Fn_UseAntirad;}];
 
 /*addAction ["Завантажити", {[gen_1] call Fn_LoadSupply;}];
