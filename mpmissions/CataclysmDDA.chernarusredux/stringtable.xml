@@ -6,6 +6,11 @@
             <English>Антирадин для в/в вливания (1000 мл)</English>
             <Russian>Антирадин для в/в вливания (1000 мл)</Russian>
         </Key>
+		<Key ID="STR_ACE_Medical_Treatment_Plasma_IV_Desc_Short">
+            <Original>Антирадин для в/в вливания (1000 мл)</Original>
+            <English>Антирадин для в/в вливания (1000 мл)</English>
+            <Russian>Антирадин для в/в вливания (1000 мл)</Russian>
+        </Key>
 		<Key ID="str_a3_itemtype_chemicaldetector">
 			<Original>Антирадин для в/в вливания (1000 мл)</Original>
             <English>Антирадин для в/в вливания (1000 мл)</English>

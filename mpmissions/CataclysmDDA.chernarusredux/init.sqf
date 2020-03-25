@@ -22,29 +22,39 @@ Init mission file
 
 player_distance = 0;
 
-null = [
-	true, //boolean, if true snowflakes made out of particles will be created
-	3000, //number, life time of the SNOW STORM expressed in seconds
-	15,   //seconds/number, a random number will be generated based on your input value and used to set the frequency for played ambient sounds
-	true, //boolean, if true you will see breath vapors for all units, however if you have many units in your mission you should set this false to diminish the impact on frames
-	5,    //seconds/number, if higher than 0 burst of snow will be generated at intervals based on your value
-	false, //boolean, if is true occasionally a random object will be pushed by the wind during the snow burst if the later is enabled
-	false, //boolean, vanilla fog will be managed by the script if true, otherwise the values you set in editor will be used 
-	true, // boolean, if true particles will be used to create sort of waves of fog and snow
-	true, //boolean, if is true the wind will blow with force otherwise default value from Eden or other script will be used
-	true   //boolean, if is true the at random units will sneeze/caugh and will shiver when snow burst occurs
-] execVM "AL_snowstorm\al_snow.sqf";
+Fn_SetEnv = {
+	null = [
+		true, //boolean, if true snowflakes made out of particles will be created
+		3000000, //number, life time of the SNOW STORM expressed in seconds
+		30,   //seconds/number, a random number will be generated based on your input value and used to set the frequency for played ambient sounds
+		true, //boolean, if true you will see breath vapors for all units, however if you have many units in your mission you should set this false to diminish the impact on frames
+		15,    //seconds/number, if higher than 0 burst of snow will be generated at intervals based on your value
+		false, //boolean, if is true occasionally a random object will be pushed by the wind during the snow burst if the later is enabled
+		false, //boolean, vanilla fog will be managed by the script if true, otherwise the values you set in editor will be used 
+		true, // boolean, if true particles will be used to create sort of waves of fog and snow
+		true, //boolean, if is true the wind will blow with force otherwise default value from Eden or other script will be used
+		true   //boolean, if is true the at random units will sneeze/caugh and will shiver when snow burst occurs
+	] execVM "AL_snowstorm\al_snow.sqf";
+	[emp_me,500,true,true,0] execVM 'AL_emp\emp_starter.sqf';
+};
 
 {
 	null = [_x,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
-} forEach [rad_test01, rad_obj_01, rad_obj_02, rad_obj_03, rad_obj_04, rad_obj_05, rad_obj_06, rad_obj_07, rad_obj_08, rad_obj_09, rad_obj_10, rad_obj_11, rad_obj_12, rad_obj_13, rad_obj_14, rad_obj_15, rad_obj_16, rad_obj_17, rad_obj_18, rad_obj_19, rad_obj_20, rad_obj_21, rad_obj_22, rad_obj_23, rad_obj_24, rad_obj_25, rad_obj_26, rad_obj_27, rad_obj_28, rad_obj_29, rad_obj_30];
+} forEach [rad_obj_01, rad_obj_02, rad_obj_03, rad_obj_04, rad_obj_05, rad_obj_06, rad_obj_07, rad_obj_08, rad_obj_09, rad_obj_10, rad_obj_11, rad_obj_12, rad_obj_13, rad_obj_14, rad_obj_15, rad_obj_16, rad_obj_17, rad_obj_18, rad_obj_19, rad_obj_20, rad_obj_21, rad_obj_22, rad_obj_23, rad_obj_24, rad_obj_25, rad_obj_26, rad_obj_27, rad_obj_28, rad_obj_29, rad_obj_30];
 
 //null = [rad_obj_02,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
 //null = [rad_obj_03,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
 //null = [rad_obj_01,30,0.02,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",false,10,true] execvm "AL_radiation\radioactive_object.sqf";
 
-//sleep 60;
-//[emp_me,500,true,true,0] execvm "AL_emp\emp_starter.sqf";
+trgEvacPointEnter = createTrigger ["EmptyDetector", getPos emp_me];
+trgEvacPointEnter setTriggerArea [1000, 1000, 0, false];
+trgEvacPointEnter setTriggerActivation ["WEST", "PRESENT", true];
+trgEvacPointEnter setTriggerStatements [
+		"this",
+		"call Fn_SetEnv;",
+		""
+];
+
 
 /*
 [stup, 30, "SmokeShell", 0.8] execvm "AL_swarmer\al_hive.sqf";

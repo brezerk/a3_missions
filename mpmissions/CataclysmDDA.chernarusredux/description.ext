@@ -26,13 +26,13 @@ class Header
 };
 
 author			= "brezerk@brezblock.org.ua";
-OnLoadName		= "Cataclysm: Hic sunt dracones A2";
+OnLoadName		= "Cataclysm: Hic sunt dracones";
 OnLoadMission	= "2071 рік. Світ який ви знали загинув багато років тому. Після техногенної катастрофи, що забрала життя більшої частини населення розпочалась остання світова війна за їжу, воду та залишки ресурсів. В своїй агонії вцілілі держави пустили в хід все що в них лишилось: армію, авіацію, флот, бомби, біологічну та ядерну зброю. Вціліли об'єднувались у зграї та банди, забезпечуючи собі виживання у цьому новому страхітливому світі.";
 
 briefingName    = "Катаклізм: тут живуть дракони";
 // FIXME: https://feedback.bistudio.com/T67181
-overviewPicture = "data\cataclysmdda2.paa";
-loadScreen      = "data\cataclysmdda2.paa";
+overviewPicture = "data\cataclysmdda3.paa";
+loadScreen      = "data\cataclysmdda3.paa";
 //overviewTextLocked = $STR_LOCKED_INFO_01;
 
 // Respawn type
