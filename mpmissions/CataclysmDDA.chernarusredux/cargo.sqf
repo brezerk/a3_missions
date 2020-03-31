@@ -2,8 +2,6 @@
 _this setVariable ["loaded", false];
 _this setVariable ["place", -1];
 
-systemChat "cargo init..";
-
 _insertChildren = {
     params ["_target", "_player", "_params"];
     private _actions = [];
@@ -37,34 +35,20 @@ _action = [
 
 [_this, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 
-_insertChildren = {
-    params ["_target", "_player", "_params"];
-    private _actions = [];
-    {
-        private _childStatement = {
-			params ["_target", "_player", "_params"];
-			[_target, _params] execVM "cargo_unload.sqf";
-		};
-		_displayName = getText (configFile >>  "CfgVehicles" >> (typeOf _x) >> "displayName");
-		_displayIcon = getText (configfile >> "CfgVehicles" >> (typeOf _x) >> "icon");
-		_vehicle = _x;
-        private _action = [_displayName, _displayName, _displayIcon, _childStatement, {true}, {}, _vehicle] call ace_interact_menu_fnc_createAction;
-        _actions pushBack [_action, [], _target]; 
-    } forEach (nearestObjects [_player, ["CUP_C_V3S_Open_TKC"], 10]);
-    _actions
-};
-
 _action = [
-	"bb_interact_cargo_load",
+	"bb_interact_cargo_unload",
 	"Розвантажити",
     "a3\ui_f\data\IGUI\Cfg\Actions\loadVehicle_ca.paa", //"\ace_refuel\ui\icon_refuel_interact.paa",ace_medical.pbo\ui\icons\medical_cross.paa
-	{},
+	{
+		params ["_target", "_player", "_params"];
+		[_target, _params] execVM "cargo_unload.sqf";
+	},
 	{(_target getVariable['loaded', false])},
-	_insertChildren,
+	{},
 	[],
 	"",
 	5,
-	[false, false, false, true, false],
+	[false, false, false, false, false],
 	{}
 ] call ace_interact_menu_fnc_createAction;
 

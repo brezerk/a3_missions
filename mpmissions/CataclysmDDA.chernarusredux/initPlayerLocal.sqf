@@ -25,9 +25,11 @@ execVM "briefing.sqf";
 
 execVM "gear\base.sqf";
 
+setViewDistance 750;
+
 sleep 4;
 
-['Чернорусія.', 'Східна границя', format ['31 жовтня 2071 %s', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;
+['Чернорусія.', 'Пограничне поселення', format ['31 жовтня 2071 %s', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;
 
 //player addEventHandler ["Killed", {"zombie_runner" createUnit [getMarkerPos "wp_test", (createGroup [civilian, true])]}]
 
@@ -113,7 +115,7 @@ player addEventHandler
     }
 ];
 
-/*
+
 _null = [] spawn {
 	while{true} do {
 		if (cameraView == "EXTERNAL") then {
@@ -123,7 +125,7 @@ _null = [] spawn {
 		};
 		sleep 0.5;
 	};
-};*/
+};
 
 Fn_LoadSupply = {
 	params["_object"];
@@ -170,6 +172,19 @@ _action = [
 [player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 
 _null = [] execVM "fuel_consumption.sqf";
+
+null = [
+		true, //boolean, if true snowflakes made out of particles will be created
+		3000000, //number, life time of the SNOW STORM expressed in seconds
+		30,   //seconds/number, a random number will be generated based on your input value and used to set the frequency for played ambient sounds
+		true, //boolean, if true you will see breath vapors for all units, however if you have many units in your mission you should set this false to diminish the impact on frames
+		45,    //seconds/number, if higher than 0 burst of snow will be generated at intervals based on your value
+		false, //boolean, if is true occasionally a random object will be pushed by the wind during the snow burst if the later is enabled
+		false, //boolean, vanilla fog will be managed by the script if true, otherwise the values you set in editor will be used 
+		true, // boolean, if true particles will be used to create sort of waves of fog and snow
+		true, //boolean, if is true the wind will blow with force otherwise default value from Eden or other script will be used
+		true   //boolean, if is true the at random units will sneeze/caugh and will shiver when snow burst occurs
+	] execVM "AL_snowstorm\al_snow.sqf";
 
 /*
 [

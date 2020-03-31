@@ -18,6 +18,7 @@
  
 removeHeadgear player;
 removeGoggles player;
+removeAllPrimaryWeaponItems player;
 
 player addHeadgear selectRandom [
 	"FRITH_ruin_modhat_metgrn",

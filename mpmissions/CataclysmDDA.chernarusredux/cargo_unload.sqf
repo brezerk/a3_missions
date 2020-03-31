@@ -7,7 +7,7 @@ if (!isNull _cargo) then {
 		{
 			_this params ["_parameter"];
 			_parameter params ["_cargo"];
-			_pos = [player, 1, 6, 1, 0, 0, 0] call BIS_fnc_findSafePos;
+			_pos = [player, 1, 4, 1, 0, 0, 0] call BIS_fnc_findSafePos;
 			_vech = attachedTo _cargo;
 			if (!isNull _vech) then {
 				private _spots = _vech getVariable ["loaded", [0, 0, 0]];

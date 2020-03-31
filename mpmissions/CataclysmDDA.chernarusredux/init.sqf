@@ -39,19 +39,27 @@ Fn_SetEnv = {
 };
 
 {
-	{ _x setFuelCargo 0; } forEach (nearestObjects [getMarkerPos _x, ["Land_A_FuelStation_Feed"], 100]); 
+	{ 
+		_x setFuelCargo 0;
+		[_x, (random 55), false] call compile preprocessFileLineNumbers "refuel.sqf";
+	} forEach (nearestObjects [getMarkerPos _x, ["Land_A_FuelStation_Feed"], 100]); 
 } forEach ["wp_fuel_01", "wp_fuel_02", "wp_fuel_03", "wp_fuel_04", "wp_fuel_05", "wp_fuel_06"];
 
+
+if (isServer) then {
+	[] execVM "addons\BrezBlock.framework\utils\garbage_collector.sqf";
+};
 //
 
-//{
-//	null = [_x,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
-//} forEach [rad_obj_01, rad_obj_02, rad_obj_03, rad_obj_04, rad_obj_05, rad_obj_06, rad_obj_07, rad_obj_08, rad_obj_09, rad_obj_10, rad_obj_11, rad_obj_12, rad_obj_13, rad_obj_14, rad_obj_15, rad_obj_16, rad_obj_17, rad_obj_18, rad_obj_19, rad_obj_20, rad_obj_21, rad_obj_22, rad_obj_23, rad_obj_24, rad_obj_25, rad_obj_26, rad_obj_27, rad_obj_28, rad_obj_29, rad_obj_30];
+{
+	null = [_x,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
+} forEach [rad_obj_01, rad_obj_02, rad_obj_03, rad_obj_04];
 
 //null = [rad_obj_02,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
 //null = [rad_obj_03,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
 //null = [rad_obj_01,30,0.02,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",false,10,true] execvm "AL_radiation\radioactive_object.sqf";
 
+/*
 trgEvacPointEnter = createTrigger ["EmptyDetector", getPos emp_me];
 trgEvacPointEnter setTriggerArea [1000, 1000, 0, false];
 trgEvacPointEnter setTriggerActivation ["WEST", "PRESENT", true];
@@ -60,7 +68,7 @@ trgEvacPointEnter setTriggerStatements [
 		"call Fn_SetEnv;",
 		""
 ];
-
+*/
 
 /*
 [stup, 30, "SmokeShell", 0.8] execvm "AL_swarmer\al_hive.sqf";
@@ -80,6 +88,8 @@ if (isServer) then {
     } forEach ["wp_fuel01", "wp_fuel02", "wp_fuel03", "wp_fuel04", "wp_fuel05"];
 	
 };*/
+
+
 
 /*
 while {true} do {

@@ -31,8 +31,8 @@ OnLoadMission	= "2071 рік. Світ який ви знали загинув �
 
 briefingName    = "Катаклізм: тут живуть дракони";
 // FIXME: https://feedback.bistudio.com/T67181
-overviewPicture = "data\cataclysmdda3.paa";
-loadScreen      = "data\cataclysmdda3.paa";
+overviewPicture = "data\cataclysmdda.paa";
+loadScreen      = "data\cataclysmdda.paa";
 //overviewTextLocked = $STR_LOCKED_INFO_01;
 
 // Respawn type

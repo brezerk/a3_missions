@@ -14,7 +14,6 @@ if ((_src getVariable ["fuel_capacity", 0]) > 0) then {
 		{
 			_this params ["_parameter"];
 			_parameter params ["_src", "_dst"];
-			systemChat format ["refuel DONE: %1 to %2", _src, _dst];
 			[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["playMoveNow", 0, true];
 			[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["switchMove", 0, true];
 			_capacity = (_src getVariable ["fuel_capacity", 0]);
