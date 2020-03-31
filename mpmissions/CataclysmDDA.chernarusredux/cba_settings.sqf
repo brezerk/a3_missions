@@ -32,6 +32,9 @@ force ace_advanced_fatigue_terrainGradientFactor = 1;
 // ACE Logistics
 force ace_repair_engineerSetting_repair = 0;
 
+// ACE Мапа
+force ace_markers_moveRestriction = 0;
+
 // ACE Medical
 force ace_medical_ai_enabledFor = 2;
 force ace_medical_AIDamageThreshold = 1.5;

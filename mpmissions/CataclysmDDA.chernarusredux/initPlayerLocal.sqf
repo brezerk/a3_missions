@@ -169,6 +169,8 @@ _action = [
 	100] call ace_interact_menu_fnc_createAction;
 [player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 
+_null = [] execVM "fuel_consumption.sqf";
+
 /*
 [
 	player,

@@ -39,8 +39,14 @@ Fn_SetEnv = {
 };
 
 {
-	null = [_x,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
-} forEach [rad_obj_01, rad_obj_02, rad_obj_03, rad_obj_04, rad_obj_05, rad_obj_06, rad_obj_07, rad_obj_08, rad_obj_09, rad_obj_10, rad_obj_11, rad_obj_12, rad_obj_13, rad_obj_14, rad_obj_15, rad_obj_16, rad_obj_17, rad_obj_18, rad_obj_19, rad_obj_20, rad_obj_21, rad_obj_22, rad_obj_23, rad_obj_24, rad_obj_25, rad_obj_26, rad_obj_27, rad_obj_28, rad_obj_29, rad_obj_30];
+	{ _x setFuelCargo 0; } forEach (nearestObjects [getMarkerPos _x, ["Land_A_FuelStation_Feed"], 100]); 
+} forEach ["wp_fuel_01", "wp_fuel_02", "wp_fuel_03", "wp_fuel_04", "wp_fuel_05", "wp_fuel_06"];
+
+//
+
+//{
+//	null = [_x,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
+//} forEach [rad_obj_01, rad_obj_02, rad_obj_03, rad_obj_04, rad_obj_05, rad_obj_06, rad_obj_07, rad_obj_08, rad_obj_09, rad_obj_10, rad_obj_11, rad_obj_12, rad_obj_13, rad_obj_14, rad_obj_15, rad_obj_16, rad_obj_17, rad_obj_18, rad_obj_19, rad_obj_20, rad_obj_21, rad_obj_22, rad_obj_23, rad_obj_24, rad_obj_25, rad_obj_26, rad_obj_27, rad_obj_28, rad_obj_29, rad_obj_30];
 
 //null = [rad_obj_02,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
 //null = [rad_obj_03,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
