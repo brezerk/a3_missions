@@ -2,13 +2,16 @@
 _this setVariable ["loaded", false];
 _this setVariable ["place", -1];
 
+[_this, true, [0, 2, 0.5], 10] call ace_dragging_fnc_setCarryable;
+[_this, true, [0, 2, 0.5], 10] call ace_dragging_fnc_setDraggable;
+
 _insertChildren = {
     params ["_target", "_player", "_params"];
     private _actions = [];
     {
         private _childStatement = {
 			params ["_target", "_player", "_params"];
-			[_target, _params] execVM "cargo_actions.sqf";
+			[_target, _params] spawn BrezBlock_fnc_Local_Systems_Cargo_Load;
 		};
 		_displayName = getText (configFile >>  "CfgVehicles" >> (typeOf _x) >> "displayName");
 		_displayIcon = getText (configfile >> "CfgVehicles" >> (typeOf _x) >> "icon");
@@ -41,7 +44,7 @@ _action = [
     "a3\ui_f\data\IGUI\Cfg\Actions\loadVehicle_ca.paa", //"\ace_refuel\ui\icon_refuel_interact.paa",ace_medical.pbo\ui\icons\medical_cross.paa
 	{
 		params ["_target", "_player", "_params"];
-		[_target, _params] execVM "cargo_unload.sqf";
+		[_target, _params] spawn BrezBlock_fnc_Local_Systems_Cargo_Unload;
 	},
 	{(_target getVariable['loaded', false])},
 	{},

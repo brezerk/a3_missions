@@ -21,6 +21,8 @@ if (_index >= 0) then {
 					_object allowDamage false;
 					_object attachTo [_veh, [0, 0.3 - (_index * 1.45), 0.2]];
 					_object setVariable ["loaded", true, true];
+					[_object, false, [0, 2, 0.5], 10] call ace_dragging_fnc_setCarryable;
+					[_object, false, [0, 2, 0.5], 10] call ace_dragging_fnc_setDraggable;
 				};
 			} else {
 				systemChat "Ці вантажівкі зайняти. Знайдіть вільну вантажівку з відкритим верхом!";

@@ -16,23 +16,36 @@
  *                                                                         *
  ***************************************************************************/
 
-
-		//Execute revive animation
-		[player, "AinvPknlMstpSnonWrflDr_medic3"] remoteExec ["playMoveNow", 0, false];
-		//Wait for revive animation to be set
-		waitUntil {sleep 0.05; ((animationState player) == "AinvPknlMstpSnonWrflDr_medic3")};
-		//call progress
-		player removeItem "ACE_plasmaIV";
-		[
-			5,
-			[],
-			{
-				[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["playMoveNow", 0, true];
-				[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["switchMove", 0, true];
-				player setDamage 0;
-			},
-			{
-				[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["playMoveNow", 0, true];
-				[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["switchMove", 0, true];
-			}, "Використовую Антірадін"
-		] call ace_common_fnc_progressBar;
+while {true} do {
+	if (!isNull player) then {
+		waitUntil {"ChemicalDetector_01_watch_F" in assignedItems player};
+		if (bb_player_threat_rad > 0) then {
+			playsound selectRandom["geiger_01", "geiger_02", "geiger_03"];
+			sleep (bb_player_threat_rad);
+			//Chemical Detector Display
+			if (bb_player_threat_rad >= bb_player_threat_chem) then {
+				"ThreatDisplay" cutRsc ["RscWeaponChemicalDetector", "PLAIN", 1, false];  
+				private _ui = uiNamespace getVariable "RscWeaponChemicalDetector"; 
+				if (!isNull _ui) then {
+					private _obj = _ui displayCtrl 101; 
+					if (!isNull _obj) then {
+						_obj ctrlAnimateModel ["Threat_Level_Source", (1.4 - bb_player_threat_rad), true];
+					};
+				};
+			};
+		} else {
+			//Chemical Detector Display
+			if (bb_player_threat_chem == 0) then {
+				"ThreatDisplay" cutRsc ["RscWeaponChemicalDetector", "PLAIN", 1, false];  
+				private _ui = uiNamespace getVariable "RscWeaponChemicalDetector"; 
+				if (!isNull _ui) then {
+					private _obj = _ui displayCtrl 101; 
+					if (!isNull _obj) then {
+						_obj ctrlAnimateModel ["Threat_Level_Source", 0.0, true];
+					};
+				};
+			};
+			waitUntil {bb_player_threat_rad > 0};
+		};
+	};
+};

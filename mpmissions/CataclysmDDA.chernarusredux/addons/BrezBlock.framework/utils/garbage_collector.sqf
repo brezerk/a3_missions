@@ -20,20 +20,26 @@
 Spawn start objectives, triggers for informator contact
 */
 
+params [["_ttl", 300], ["_collectionRadius", 150]];
+
 while {true} do {
 	{
 		private _corpse = _x;
 		private _timeStamp = (_x getVariable ["BB_CorpseTTL", 0]);
-		
 		if (_timeStamp == 0) then {
 			_corpse setVariable ["BB_CorpseTTL", time];
 		} else {
 			if (_timeStamp != -1) then {
-				if ((time - _timeStamp) > 120) then {
-					if ({_x distance2d _unit < _collectionRadius} count allPlayers == 0) then {
+				if ((time - _timeStamp) > _ttl) then {
+					//Ravage handler
+					if (_corpse isKindOf "zombie") then {
 						deleteVehicle _corpse;
 					} else {
-						_corpse setVariable ["BB_CorpseTTL", time];
+						if ({_x distance2d _corpse < _collectionRadius} count allPlayers == 0) then {
+							deleteVehicle _corpse;
+						} else {
+							_corpse setVariable ["BB_CorpseTTL", time];
+						};
 					};
 				};
 			};

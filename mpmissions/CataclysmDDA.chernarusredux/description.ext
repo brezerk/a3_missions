@@ -290,6 +290,30 @@ class CfgSounds
 		sound[] = {\sound\geiger_03.ogg, db+9, 0.9};
 		titles[] = {0, ""};
 	};
+	class scanner
+	{
+		name = "scanner"; // Name for mission editor
+		sound[] = {\sound\scanner.ogg, db+2, 1.0};
+		titles[] = {0, ""};
+	};
+	class mask_01
+	{
+		name = "mask_01"; // Name for mission editor
+		sound[] = {\sound\mask_01.ogg, db+1, 1.0};
+		titles[] = {0, ""};
+	};
+	class mask_02
+	{
+		name = "mask_02"; // Name for mission editor
+		sound[] = {\sound\mask_02.ogg, db+1, 1.0};
+		titles[] = {0, ""};
+	};
+	class mask_03
+	{
+		name = "mask_03"; // Name for mission editor
+		sound[] = {\sound\mask_03.ogg, db+1, 1.0};
+		titles[] = {0, ""};
+	};
 	class breath
 	{
 		name = "breath";
@@ -457,4 +481,8 @@ class CfgSounds
 class RscTitles
 {
 	#include "AL_radiation\equipment_prot.hpp"
+};
+
+class CfgFunctions {
+	#include "addons\BrezBlock.framework\functions.cpp"
 };

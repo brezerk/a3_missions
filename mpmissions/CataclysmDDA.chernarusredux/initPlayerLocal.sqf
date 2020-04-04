@@ -63,38 +63,11 @@ Fn_MakeMeZombie = {
 	_unit;
 };
 
-_nill = [] spawn { 
-	while {true} do {
-		if (!isNull player) then {
-			if (player_distance > 0) then {
-				if ("ChemicalDetector_01_watch_F" in assignedItems player) then {
-					playsound selectRandom["geiger_01", "geiger_02", "geiger_03"];
-					sleep (player_distance);
-				};
-				//Chemical Detector Display
-				"ThreatDisplay" cutRsc ["RscWeaponChemicalDetector", "PLAIN", 1, false];  
-				private _ui = uiNamespace getVariable "RscWeaponChemicalDetector"; 
-				if (!isNull _ui) then {
-					private _obj = _ui displayCtrl 101; 
-					if (!isNull _obj) then {
-						_obj ctrlAnimateModel ["Threat_Level_Source", (1.4 - player_distance), true];
-					};
-				};
-			} else {
-				//Chemical Detector Display
-				"ThreatDisplay" cutRsc ["RscWeaponChemicalDetector", "PLAIN", 1, false];  
-				private _ui = uiNamespace getVariable "RscWeaponChemicalDetector"; 
-				if (!isNull _ui) then {
-					private _obj = _ui displayCtrl 101; 
-					if (!isNull _obj) then {
-						_obj ctrlAnimateModel ["Threat_Level_Source", 0.0, true];
-					};
-				};
-				waitUntil {player_distance > 0};
-			};
-		};
-	};
-};
+bb_player_threat_chem = 0;
+bb_player_threat_rad = 0;
+
+[] spawn BrezBlock_fnc_Local_Systems_Detector_Init;
+[] spawn BrezBlock_fnc_Local_Systems_Detector_Chem;
 
 player addEventHandler
 [
@@ -149,11 +122,14 @@ Fn_LoadSupply = {
 	};
 };
 
+
 _null = [] spawn {
 	while {true} do
 	{
-		gen_1 say3D ["generator_04", 50, 1.0, false]; //, false];
-		sleep (1.5);
+		waitUntil{goggles player in ['Mask_M40', 'Mask_M40_OD', 'Mask_M50']};
+		playsound selectRandom ["mask_01", "mask_02", "mask_03"];
+		//gen_1 say3D ["generator_04", 50, 1.0, false]; //, false];
+		sleep (2.5);
 	};
 };
 
@@ -171,8 +147,9 @@ _action = [
 	100] call ace_interact_menu_fnc_createAction;
 [player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 
-_null = [] execVM "fuel_consumption.sqf";
+[] spawn BrezBlock_fnc_Local_Systems_Fuel_Init;
 
+/*
 null = [
 		true, //boolean, if true snowflakes made out of particles will be created
 		3000000, //number, life time of the SNOW STORM expressed in seconds
@@ -184,7 +161,7 @@ null = [
 		true, // boolean, if true particles will be used to create sort of waves of fog and snow
 		true, //boolean, if is true the wind will blow with force otherwise default value from Eden or other script will be used
 		true   //boolean, if is true the at random units will sneeze/caugh and will shiver when snow burst occurs
-	] execVM "AL_snowstorm\al_snow.sqf";
+	] execVM "AL_snowstorm\al_snow.sqf";*/
 
 /*
 [

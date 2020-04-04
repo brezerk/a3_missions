@@ -20,29 +20,26 @@
 Spawn start objectives, triggers for informator contact
 */
 
+params [["_ttl", 300], ["_collectionRadius", 150]];
+
 while {true} do {
 	{
 		private _corpse = _x;
 		private _timeStamp = (_x getVariable ["BB_CorpseTTL", 0]);
-		
 		if (_timeStamp == 0) then {
 			_corpse setVariable ["BB_CorpseTTL", time];
 		} else {
-			private _playerNearby = false;
 			if (_timeStamp != -1) then {
-				if ((time - _timeStamp) > 300) then {
-					{
-						scopeName "units_loop";
-						//player found withing 150m
-						if (isPlayer _x) then {
-							_playerNearby = true;
-							breakOut "units_loop";
-						};
-					} forEach nearestObjects [_x, ["SoldierEB", "SoldierGB", "SoldierWB"], 100];
-					if (!_playerNearby) then {
+				if ((time - _timeStamp) > _ttl) then {
+					//Ravage handler
+					if (_corpse isKindOf "zombie") then {
 						deleteVehicle _corpse;
 					} else {
-						_corpse setVariable ["BB_CorpseTTL", time];
+						if ({_x distance2d _corpse < _collectionRadius} count allPlayers == 0) then {
+							deleteVehicle _corpse;
+						} else {
+							_corpse setVariable ["BB_CorpseTTL", time];
+						};
 					};
 				};
 			};

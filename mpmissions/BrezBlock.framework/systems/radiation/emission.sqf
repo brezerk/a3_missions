@@ -16,23 +16,29 @@
  *                                                                         *
  ***************************************************************************/
 
+params ["_object", "_radius", "_damage"];
 
-		//Execute revive animation
-		[player, "AinvPknlMstpSnonWrflDr_medic3"] remoteExec ["playMoveNow", 0, false];
-		//Wait for revive animation to be set
-		waitUntil {sleep 0.05; ((animationState player) == "AinvPknlMstpSnonWrflDr_medic3")};
-		//call progress
-		player removeItem "ACE_plasmaIV";
-		[
-			5,
-			[],
-			{
-				[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["playMoveNow", 0, true];
-				[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["switchMove", 0, true];
-				player setDamage 0;
-			},
-			{
-				[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["playMoveNow", 0, true];
-				[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["switchMove", 0, true];
-			}, "Використовую Антірадін"
-		] call ace_common_fnc_progressBar;
+if (!hasInterface) exitWith {};
+
+while {((!isNull player) && (!isNull _object))} do  {
+	waitUntil {alive player};
+	private _distance = player distance _object;
+	if (_distance < (_radius + 5)) then {
+		bb_player_threat_rad = 1.2;
+		if (_distance < (_radius)) then {
+			bb_player_threat_rad = parseNumber ((_distance/(_radius)) toFixed 1);
+			player setDammage (getDammage player + (((_radius - _distance) / _distance) * _damage));
+			if (getDammage player > 0.25) then  {
+				_efect = ["NoSound","NoSound","NoSound","cough","NoSound","NoSound","NoSound","NoSound","tuse_5","NoSound","NoSound","NoSound","NoSound","tuse_6","NoSound","NoSound","NoSound","NoSound"] call BIS_fnc_selectRandom;
+				playsound _efect;
+				playsound "puls_1";
+				sleep 0.5;
+			};
+		};
+	} else {
+		bb_player_threat_rad = 0;
+	};
+	sleep 0.1;
+};
+
+//Mask_M40

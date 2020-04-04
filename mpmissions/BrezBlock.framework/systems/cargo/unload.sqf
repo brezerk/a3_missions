@@ -22,6 +22,8 @@ if (!isNull _cargo) then {
 			_cargo enableSimulation false;
 			_cargo allowDamage false;
 			_cargo setVariable ["loaded", false, true];
+			[_object, true, [0, 2, 0.5], 10] call ace_dragging_fnc_setCarryable;
+			[_object, true, [0, 2, 0.5], 10] call ace_dragging_fnc_setDraggable;
 		},
 		{}, "Розвантажую"
 	] call ace_common_fnc_progressBar;

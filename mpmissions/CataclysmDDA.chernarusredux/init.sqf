@@ -39,21 +39,28 @@ Fn_SetEnv = {
 };
 
 {
-	{ 
-		_x setFuelCargo 0;
-		[_x, (random 55), false] call compile preprocessFileLineNumbers "refuel.sqf";
-	} forEach (nearestObjects [getMarkerPos _x, ["Land_A_FuelStation_Feed"], 100]); 
+	[(markerPos _x), (random 55), 1000, false] call BrezBlock_fnc_Systems_Refuel_Station;
 } forEach ["wp_fuel_01", "wp_fuel_02", "wp_fuel_03", "wp_fuel_04", "wp_fuel_05", "wp_fuel_06"];
 
 
 if (isServer) then {
-	[] execVM "addons\BrezBlock.framework\utils\garbage_collector.sqf";
+	[120] spawn  BrezBlock_fnc_Utils_Garbage_Collector;
 };
 //
 
 {
-	null = [_x,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
-} forEach [rad_obj_01, rad_obj_02, rad_obj_03, rad_obj_04];
+	//null = [_x,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
+	[_x, 15, 0.05] spawn BrezBlock_fnc_Local_Systems_Radiation_Emission;
+} forEach [rad_obj_01];
+
+
+[obj_haz01, 10, 0.05] spawn BrezBlock_fnc_Local_Systems_Chemical_Emission;
+
+
+
+box01 addItemCargoGlobal ["Mask_M40", 1];
+box01 addItemCargoGlobal ["Mask_M40_OD", 1];
+box01 addItemCargoGlobal ["Mask_M50", 1];
 
 //null = [rad_obj_02,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
 //null = [rad_obj_03,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
