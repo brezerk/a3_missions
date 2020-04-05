@@ -113,9 +113,9 @@ while {(!isNull player)} do  {
 			if (bb_srv_dmg_chem < 20) then {
 				_chance = 40;
 				_symptmos pushBack _hallucinations_01;
+				_symptmos pushBack _hallucinations_02;
 			} else {
 				_symptmos pushBack _puke;
-				_symptmos pushBack _hallucinations_02;
 				_chance = 60;
 			};
 		};

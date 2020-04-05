@@ -149,8 +149,11 @@ _action = [
 [] spawn BrezBlock_fnc_Local_Systems_Fuel_Init;
 
 [] spawn {
-	if (bb_lcoal_fog > 0) then {
-		0.5 setFog [bb_lcoal_fog, 0, getPos player];
+	while {true} do {
+		waitUntil{bb_local_fog > 0};
+		
+		0.5 setFog [bb_local_fog, 0, getPos player];
+		sleep 0.1;
 	};
 };
 
