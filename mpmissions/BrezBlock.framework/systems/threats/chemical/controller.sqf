@@ -59,5 +59,5 @@ while {(!isNull player)} do  {
 		};
 	} forEach bb_threat_chem_areas;
 	bb_player_threat_chem = _threat;
-	sleep 0.5;
+	sleep 0.4;
 };
