@@ -103,7 +103,7 @@ private _hallucinations_02 = {
 while {(!isNull player)} do  {
 	private _threat = 0;
 	waitUntil {alive player};
-	systemChat format ["c: %1 r: %2", bb_srv_dmg_chem, bb_srv_dmg_rad];
+	systemChat format ["Chemical: %1 Radiation: %2", bb_srv_dmg_chem, bb_srv_dmg_rad];
 	if (bb_srv_dmg_chem > 0) then {
 		_chance = 0;
 		_symptmos = [_cough];
