@@ -27,6 +27,7 @@ D_THREAT_CHEM_AREAL = 1;
 D_THREAT_RAD_LOCAL  = 0;
 bb_threat_chem_areas = [];
 bb_threat_rad_areas  = [];
+bb_local_fog = 0;
 
 Fn_SetEnv = {
 	null = [

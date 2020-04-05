@@ -31,15 +31,6 @@ while {(!isNull player)} do  {
 					_threat_new = 0.1;
 					if (_distance < (_radius)) then {
 						_threat_new = (1.0 - parseNumber ((_distance/(_radius)) toFixed 1)) + 0.1;
-						//FIXME: Apply stat modifyer. Move effects to player stats thread
-						/*
-						player setDammage (getDammage player + (((_radius - _distance) / _distance) * _damage));
-						if (getDammage player > 0.25) then  {
-							_efect = ["NoSound","NoSound","NoSound","cough","NoSound","NoSound","NoSound","NoSound","tuse_5","NoSound","NoSound","NoSound","NoSound","tuse_6","NoSound","NoSound","NoSound","NoSound"] call BIS_fnc_selectRandom;
-							playsound _efect;
-							playsound "puls_1";
-							sleep 0.5;
-						};*/
 					};
 				};
 			};

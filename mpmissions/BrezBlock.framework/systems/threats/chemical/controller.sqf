@@ -31,10 +31,10 @@ while {(!isNull player)} do  {
 					_threat_new = 0.1;
 					if (_distance < (_radius)) then {
 						_threat_new = (1.0 - parseNumber ((_distance/(_radius)) toFixed 1)) + 0.1;
-						_fog = (1.0 - (_distance/(_radius)));
-						systemChat format ["f: %1 t: %2", _fog, bb_player_threat_chem];
+						bb_local_fog = (1.0 - (_distance/(_radius)));
+						//systemChat format ["f: %1 t: %2", _fog, bb_player_threat_chem];
 						//if (_fog > fog ) then {
-							0.5 setFog [_fog, 0, getPos _object];
+						
 						//};
 						if (!(goggles player in ['Mask_M40', 'Mask_M40_OD', 'Mask_M50'])) then {
 							bb_srv_dmg_chem = bb_srv_dmg_chem + (_x select 3);
