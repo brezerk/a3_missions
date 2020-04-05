@@ -16,36 +16,6 @@
  *                                                                         *
  ***************************************************************************/
 
-while {true} do {
-	if (!isNull player) then {
-		waitUntil {"ChemicalDetector_01_watch_F" in assignedItems player};
-		if (bb_player_threat_rad > 0) then {
-			playsound selectRandom["geiger_01", "geiger_02", "geiger_03"];
-			sleep (bb_player_threat_rad);
-			//Chemical Detector Display
-			if (bb_player_threat_rad >= bb_player_threat_chem) then {
-				"ThreatDisplay" cutRsc ["RscWeaponChemicalDetector", "PLAIN", 1, false];  
-				private _ui = uiNamespace getVariable "RscWeaponChemicalDetector"; 
-				if (!isNull _ui) then {
-					private _obj = _ui displayCtrl 101; 
-					if (!isNull _obj) then {
-						_obj ctrlAnimateModel ["Threat_Level_Source", (1.4 - bb_player_threat_rad), true];
-					};
-				};
-			};
-		} else {
-			//Chemical Detector Display
-			if (bb_player_threat_chem == 0) then {
-				"ThreatDisplay" cutRsc ["RscWeaponChemicalDetector", "PLAIN", 1, false];  
-				private _ui = uiNamespace getVariable "RscWeaponChemicalDetector"; 
-				if (!isNull _ui) then {
-					private _obj = _ui displayCtrl 101; 
-					if (!isNull _obj) then {
-						_obj ctrlAnimateModel ["Threat_Level_Source", 0.0, true];
-					};
-				};
-			};
-			waitUntil {bb_player_threat_rad > 0};
-		};
-	};
-};
+params ["_object", "_radius", "_damage"];
+
+bb_threat_rad_areas pushBack [_object, D_THREAT_RAD_LOCAL, _radius, _damage];

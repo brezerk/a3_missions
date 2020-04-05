@@ -16,36 +16,27 @@
  *                                                                         *
  ***************************************************************************/
 
-while {true} do {
-	if (!isNull player) then {
-		waitUntil {"ChemicalDetector_01_watch_F" in assignedItems player};
-		if (bb_player_threat_chem > 0) then {
-			playsound "scanner";
-			sleep (bb_player_threat_chem);
-			//Chemical Detector Display
-			if (bb_player_threat_chem > bb_player_threat_rad) then {
-				"ThreatDisplay" cutRsc ["RscWeaponChemicalDetector", "PLAIN", 1, false];  
-				private _ui = uiNamespace getVariable "RscWeaponChemicalDetector"; 
-				if (!isNull _ui) then {
-					private _obj = _ui displayCtrl 101; 
-					if (!isNull _obj) then {
-						_obj ctrlAnimateModel ["Threat_Level_Source", (1.4 - bb_player_threat_chem), true];
-					};
-				};
-			};
-		} else {
-			//Chemical Detector Display
-			if (bb_player_threat_rad == 0) then {
-				"ThreatDisplay" cutRsc ["RscWeaponChemicalDetector", "PLAIN", 1, false];  
-				private _ui = uiNamespace getVariable "RscWeaponChemicalDetector"; 
-				if (!isNull _ui) then {
-					private _obj = _ui displayCtrl 101; 
-					if (!isNull _obj) then {
-						_obj ctrlAnimateModel ["Threat_Level_Source", 0.0, true];
-					};
-				};
-			};
-			waitUntil {bb_player_threat_chem > 0};
-		};
-	};
+class bb_geiger_01
+{
+	name = "bb_geiger"; // Name for mission editor
+	sound[] = {addons\BrezBlock.framework\sounds\threats\detector\geiger_01.ogg, db+9, 0.9};
+	titles[] = {0, ""};
+};
+class bb_geiger_02
+{
+	name = "bb_geiger_02"; // Name for mission editor
+	sound[] = {addons\BrezBlock.framework\sounds\threats\detector\geiger_02.ogg, db+9, 0.9};
+	titles[] = {0, ""};
+};
+class bb_geiger_03
+{
+	name = "bb_geiger_03"; // Name for mission editor
+	sound[] = {addons\BrezBlock.framework\sounds\threats\detector\geiger_03.ogg, db+9, 0.9};
+	titles[] = {0, ""};
+};
+class bb_scanner
+{
+	name = "bb_scanner"; // Name for mission editor
+	sound[] = {addons\BrezBlock.framework\sounds\threats\detector\scanner.ogg, db+2, 1.0};
+	titles[] = {0, ""};
 };

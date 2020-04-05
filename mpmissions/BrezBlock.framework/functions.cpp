@@ -38,9 +38,14 @@ class BrezBlock
 		class Systems_Refuel_Station {file = "addons\BrezBlock.framework\systems\refuel\station.sqf";};
 		class Utils_Garbage_Collector {file = "addons\BrezBlock.framework\utils\garbage_collector.sqf";};
 		class Local_Systems_Fuel_Init {file = "addons\BrezBlock.framework\systems\fuel\init.sqf";};
-		class Local_Systems_Radiation_Emission {file = "addons\BrezBlock.framework\systems\radiation\emission.sqf";};
-		class Local_Systems_Chemical_Emission {file = "addons\BrezBlock.framework\systems\chemical\emission.sqf";};
-		class Local_Systems_Detector_Init {file = "addons\BrezBlock.framework\systems\detector\init.sqf";};
-		class Local_Systems_Detector_Chem {file = "addons\BrezBlock.framework\systems\detector\chem.sqf";};
+		class Local_Systems_Radiation_Local {file = "addons\BrezBlock.framework\systems\threats\radiation\local.sqf";};
+		class Local_Systems_Radiation_Controller {file = "addons\BrezBlock.framework\systems\threats\radiation\controller.sqf";};
+		class Local_Systems_Chemical_Local {file = "addons\BrezBlock.framework\systems\threats\chemical\local.sqf";};
+		class Local_Systems_Chemical_Areal {file = "addons\BrezBlock.framework\systems\threats\chemical\areal.sqf";};
+		class Local_Systems_Chemical_Controller {file = "addons\BrezBlock.framework\systems\threats\chemical\controller.sqf";};
+		class Local_Systems_Detector_Radiation {file = "addons\BrezBlock.framework\systems\threats\detector\rad.sqf";};
+		class Local_Systems_Detector_Chemical {file = "addons\BrezBlock.framework\systems\threats\detector\chem.sqf";};
+		class Local_Systems_GasMask_Init {file = "addons\BrezBlock.framework\systems\threats\gasmask\init.sqf";};
+		class Local_Systems_Survival_Init {file = "addons\BrezBlock.framework\systems\survival\player.sqf";};
 	};
 };

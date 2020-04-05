@@ -16,29 +16,36 @@
  *                                                                         *
  ***************************************************************************/
 
-params ["_object", "_radius", "_damage"];
-
-if (!hasInterface) exitWith {};
-
-while {((!isNull player) && (!isNull _object))} do  {
-	waitUntil {alive player};
-	private _distance = player distance _object;
-	if (_distance < (_radius + 5)) then {
-		bb_player_threat_rad = 1.2;
-		if (_distance < (_radius)) then {
-			bb_player_threat_rad = parseNumber ((_distance/(_radius)) toFixed 1);
-			player setDammage (getDammage player + (((_radius - _distance) / _distance) * _damage));
-			if (getDammage player > 0.25) then  {
-				_efect = ["NoSound","NoSound","NoSound","cough","NoSound","NoSound","NoSound","NoSound","tuse_5","NoSound","NoSound","NoSound","NoSound","tuse_6","NoSound","NoSound","NoSound","NoSound"] call BIS_fnc_selectRandom;
-				playsound _efect;
-				playsound "puls_1";
-				sleep 0.5;
+while {true} do {
+	if (!isNull player) then {
+		waitUntil {"ChemicalDetector_01_watch_F" in assignedItems player};
+		if (bb_player_threat_rad > 0) then {
+			playSound selectRandom["bb_geiger_01", "bb_geiger_02", "bb_geiger_03"];
+			sleep (1.3 - bb_player_threat_rad);
+			//Chemical Detector Display
+			if (bb_player_threat_rad > bb_player_threat_chem) then {
+				"ThreatDisplay" cutRsc ["RscWeaponChemicalDetector", "PLAIN", 1, false];  
+				private _ui = uiNamespace getVariable "RscWeaponChemicalDetector"; 
+				if (!isNull _ui) then {
+					private _obj = _ui displayCtrl 101; 
+					if (!isNull _obj) then {
+						_obj ctrlAnimateModel ["Threat_Level_Source", bb_player_threat_rad, true];
+					};
+				};
 			};
+		} else {
+			//Chemical Detector Display
+			if (bb_player_threat_chem == 0) then {
+				"ThreatDisplay" cutRsc ["RscWeaponChemicalDetector", "PLAIN", 1, false];  
+				private _ui = uiNamespace getVariable "RscWeaponChemicalDetector"; 
+				if (!isNull _ui) then {
+					private _obj = _ui displayCtrl 101; 
+					if (!isNull _obj) then {
+						_obj ctrlAnimateModel ["Threat_Level_Source", 0.0, true];
+					};
+				};
+			};
+			waitUntil {bb_player_threat_rad > 0};
 		};
-	} else {
-		bb_player_threat_rad = 0;
 	};
-	sleep 0.1;
 };
-
-//Mask_M40

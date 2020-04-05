@@ -18,6 +18,9 @@
 
 waitUntil { !isNull player }; // Wait for player to initialize
 
+bb_player_threat_chem = 0;
+bb_player_threat_rad = 0;
+
 execVM "briefing.sqf";
 
 // hide markers
@@ -66,8 +69,13 @@ Fn_MakeMeZombie = {
 bb_player_threat_chem = 0;
 bb_player_threat_rad = 0;
 
-[] spawn BrezBlock_fnc_Local_Systems_Detector_Init;
-[] spawn BrezBlock_fnc_Local_Systems_Detector_Chem;
+[] spawn BrezBlock_fnc_Local_Systems_Chemical_Controller;
+[] spawn BrezBlock_fnc_Local_Systems_Radiation_Controller;
+
+[] spawn BrezBlock_fnc_Local_Systems_Detector_Radiation;
+[] spawn BrezBlock_fnc_Local_Systems_Detector_Chemical;
+
+[] spawn BrezBlock_fnc_Local_Systems_Survival_Init;
 
 player addEventHandler
 [
@@ -122,16 +130,7 @@ Fn_LoadSupply = {
 	};
 };
 
-
-_null = [] spawn {
-	while {true} do
-	{
-		waitUntil{goggles player in ['Mask_M40', 'Mask_M40_OD', 'Mask_M50']};
-		playsound selectRandom ["mask_01", "mask_02", "mask_03"];
-		//gen_1 say3D ["generator_04", 50, 1.0, false]; //, false];
-		sleep (2.5);
-	};
-};
+[] spawn BrezBlock_fnc_Local_Systems_GasMask_Init;
 
 _action = [
 	"Використати Антірадін",

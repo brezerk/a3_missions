@@ -20,7 +20,13 @@
 Init mission file
 */
 
-player_distance = 0;
+//FIME: move to global common config
+
+D_THREAT_CHEM_LOCAL = 0;
+D_THREAT_CHEM_AREAL = 1;
+D_THREAT_RAD_LOCAL  = 0;
+bb_threat_chem_areas = [];
+bb_threat_rad_areas  = [];
 
 Fn_SetEnv = {
 	null = [
@@ -50,13 +56,11 @@ if (isServer) then {
 
 {
 	//null = [_x,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
-	[_x, 15, 0.05] spawn BrezBlock_fnc_Local_Systems_Radiation_Emission;
+	[_x, 15, 0.05] spawn BrezBlock_fnc_Local_Systems_Radiation_Local;
 } forEach [rad_obj_01];
 
-
-[obj_haz01, 10, 0.05] spawn BrezBlock_fnc_Local_Systems_Chemical_Emission;
-
-
+[obj_haz01, 10, 0.05] spawn BrezBlock_fnc_Local_Systems_Chemical_Local;
+[obj_haz02, 200, 0.05] spawn BrezBlock_fnc_Local_Systems_Chemical_Areal;
 
 box01 addItemCargoGlobal ["Mask_M40", 1];
 box01 addItemCargoGlobal ["Mask_M40_OD", 1];
