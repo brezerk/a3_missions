@@ -16,11 +16,23 @@
  *                                                                         *
  ***************************************************************************/
 
+_hud_active = false;
+
 while {true} do
 {
-	waitUntil{goggles player in ['Mask_M40', 'Mask_M40_OD', 'Mask_M50']};
-	[] spawn { 0 cutRsc ["GasMaskHUD","PLAIN", 1, false]; sleep 0.1;};
-	playsound selectRandom ["bb_mask_01", "bb_mask_02", "bb_mask_03"];
-	//gen_1 say3D ["generator_04", 50, 1.0, false]; //, false];
-	sleep (2.6);
+	if (goggles player in ['Mask_M40', 'Mask_M40_OD', 'Mask_M50']) then {
+		if (!_hud_active) then {
+			0 cutRsc ["GasMaskHUD","PLAIN", 1, false];
+			_hud_active = true;
+		};
+		playsound selectRandom ["bb_mask_01", "bb_mask_02", "bb_mask_03"];
+		//gen_1 say3D ["generator_04", 50, 1.0, false]; //, false];
+		sleep (2.6);
+	} else {
+		if (_hud_active) then {
+			0 cutText ["", "PLAIN"];
+			_hud_active = false;
+		};
+	};
+	sleep 0.5;
 };

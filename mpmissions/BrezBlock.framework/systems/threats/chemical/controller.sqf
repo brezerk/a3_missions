@@ -18,6 +18,7 @@
 
 while {(!isNull player)} do  {
 	private _threat = 0;
+	private _fog = 0;
 	waitUntil {alive player};
 	{
 		private _object = _x select 0;
@@ -25,17 +26,14 @@ while {(!isNull player)} do  {
 		private _radius = _x select 2;
 		private _distance = player distance _object;
 		private _threat_new = 0;
+		private _fog_new = 0;
 		switch (_type) do {
 			case D_THREAT_CHEM_AREAL: {
 				if (_distance < (_radius + 100)) then {
 					_threat_new = 0.1;
 					if (_distance < (_radius)) then {
 						_threat_new = (1.0 - parseNumber ((_distance/(_radius)) toFixed 1)) + 0.1;
-						bb_local_fog = (1.0 - (_distance/(_radius)));
-						//systemChat format ["f: %1 t: %2", _fog, bb_player_threat_chem];
-						//if (_fog > fog ) then {
-						
-						//};
+						_fog_new = (1.0 - (_distance/(_radius)));
 						if (!(goggles player in ['Mask_M40', 'Mask_M40_OD', 'Mask_M50'])) then {
 							bb_srv_dmg_chem = bb_srv_dmg_chem + (_x select 3);
 						};
@@ -57,7 +55,11 @@ while {(!isNull player)} do  {
 		if (_threat_new > _threat) then {
 			_threat = _threat_new;
 		};
+		if (_fog_new > _fog) then {
+			_fog = _fog_new;
+		};
 	} forEach bb_threat_chem_areas;
 	bb_player_threat_chem = _threat;
-	sleep 0.4;
+	bb_local_fog = _fog;
+	sleep 0.5;
 };

@@ -157,6 +157,8 @@ _action = [
 	};
 };
 
+100 cutRsc ["BB_Survival_HUD","PLAIN", 1, false];
+
 
 /*
 null = [

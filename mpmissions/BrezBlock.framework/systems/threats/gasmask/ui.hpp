@@ -35,7 +35,7 @@ class GasMaskHUD {
 		y = safeZoneY;
 		w = safeZoneW;
 		h = safeZoneH;
-		text = "addons\BrezBlock.framework\data\threats\gasmask\hud_01.paa";
+		text = "addons\BrezBlock.framework\data\threats\gasmask\hud_02.paa";
 	};
 };
 
