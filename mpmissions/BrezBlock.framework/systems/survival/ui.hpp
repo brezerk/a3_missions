@@ -11,7 +11,7 @@ class BB_Survival_HUD
 	fadein = 0;
 	fadeout = 0;
 	name = "BB_Survival_HUD";
-	duration = 1e+1000;
+	duration = 10000000000;
 	onLoad = "uiNamespace setVariable ['bb_survival_hud', _this select 0]";
 	class ControlsBackground
 	{
