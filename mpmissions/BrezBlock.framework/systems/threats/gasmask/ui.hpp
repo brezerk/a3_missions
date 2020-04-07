@@ -17,7 +17,6 @@ class RscGasMaskPicture
     text = "";
     fixedWidth = 0;
 	shadow = 0;
-	access = 0;
 };
 
 class GasMaskHUD {
