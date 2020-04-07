@@ -17,6 +17,7 @@
  ***************************************************************************/
 
 _hud_active = false;
+_ctrl = nil;
 
 while {true} do
 {
@@ -24,10 +25,21 @@ while {true} do
 		if (!_hud_active) then {
 			0 cutRsc ["GasMaskHUD","PLAIN", 1, false];
 			_hud_active = true;
+			_ctrl = uiNamespace getVariable "bb_gasmask_hud" displayCtrl 9901;
 		};
 		playsound selectRandom ["bb_mask_01", "bb_mask_02", "bb_mask_03"];
 		//gen_1 say3D ["generator_04", 50, 1.0, false]; //, false];
-		sleep (2.6);
+		sleep 1.2;
+		for "_i" from 0 to 20 do {
+			if (!isNil "_ctrl") then { _ctrl ctrlSetTextColor [1, 1, 1, (_i * 0.05)]; };
+			sleep 0.02;
+		};
+		sleep 1.2;
+		for "_i" from 0 to 20 do {
+			if (!isNil "_ctrl") then { _ctrl ctrlSetTextColor [1, 1, 1, 1 - (_i * 0.05)]; };
+			sleep 0.02;
+		};
+		//sleep (2.6);
 	} else {
 		if (_hud_active) then {
 			0 cutText ["", "PLAIN"];

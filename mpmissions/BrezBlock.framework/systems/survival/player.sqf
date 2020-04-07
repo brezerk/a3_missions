@@ -21,6 +21,7 @@ bb_srv_dmg_chem   = 0; // 0 - 20 light damage; 30 - 100 heavy damage; 100 + leta
 bb_srv_dmg_rad    = 0; // 0 - 20 light damage; 300 - 1000 heavy damage; 1000 + letal damage
 bb_srv_dmg_bac    = 0; // 0 - 300 light damage; 300 - 1000 heavy damage; 1000 + letal damage
 bb_srv_temp_body  = 36.6; // 0 - 32 -- cold; 32 - 35 -- chilly; 36 comfort; 
+bb_srv_temp_body_feaver  = 0; // > 4.4 letal; 
 bb_srv_temp_local = 0; // 0 - 32 -- cold; 32 - 35 -- chilly; 36 comfort; 
 
 player setVariable['bb_srv_dmg_chem', bb_srv_dmg_chem,   true];
@@ -122,7 +123,7 @@ private _shiver = {
 
 Fn_Update_Temperature = {
 	_rain = rain;
-	_t_diff_base = -0.001 * (2.5 * _rain);
+	_t_diff_base = -0.009 * (2.5 * _rain);
 	_t_local = 16;
 	if ((vehicle player) != player) then {
 		_t_diff_base = 0.005;
@@ -150,8 +151,24 @@ Fn_Update_Temperature = {
 		_color = [0.8 - (0.35 * _rain), 0.9 - (0.35 * _rain), 1, 0.8];
 	};
 	bb_srv_temp_body = bb_srv_temp_body + _t_diff_base;
+	
 	private _ctrl = uiNamespace getVariable "bb_survival_hud" displayCtrl 2993;
 	if (!isNil "_ctrl") then { _ctrl ctrlSetText _img; _ctrl ctrlSetTextColor _color; };
+	
+	_t_diff_base = bb_srv_temp_body + bb_srv_temp_body_feaver;
+	
+	if (_t_diff_base > 36.9) then {
+		_color = [0.949, 0.949 - ((_t_diff_base - 36.9) * 0.25), 0.949 - ((_t_diff_base - 36.8) * 0.25), 0.9];
+	} else {
+		if (_t_diff_base <= 36.2) then {
+			_color = [0.949 - ((36.3 - _t_diff_base) * 0.5), 0.949 - ((36.2 - _t_diff_base) * 0.5), 0.949, 0.9];
+		} else {
+			_color = [0.949, 0.949, 0.949, 0.8];
+		};
+	};
+	
+	_ctrl = uiNamespace getVariable "bb_survival_hud" displayCtrl 2994;
+	if (!isNil "_ctrl") then { _ctrl ctrlSetTextColor _color; };
 };
 
 //sleep 4;

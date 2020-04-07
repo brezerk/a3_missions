@@ -24,18 +24,31 @@ class GasMaskHUD {
 	movingEnable = 0;
 	duration = 1000000000;
 	fadein = 0;
-	fadeout = 0;	
+	fadeout = 0;
+	onLoad = "uiNamespace setVariable ['bb_gasmask_hud', _this select 0]";
 	name = "GasMaskHUD";
-	controls[] = {"Picture"};
-	class Picture: RscGasMaskPicture
+	controls[] = {"Condencate", "GasMask"};
+	class Condencate: RscGasMaskPicture
+	{
+		idc = 9901;
+		x = safeZoneX;
+		y = safeZoneY;
+		w = safeZoneW;
+		h = safeZoneH;
+		colorText[] = {1,1,1,0};
+		text = "addons\BrezBlock.framework\data\threats\gasmask\hud_03_condensate01.paa";
+	};
+	class GasMask: RscGasMaskPicture
 	{
 		idc = 9900;
 		x = safeZoneX;
 		y = safeZoneY;
 		w = safeZoneW;
 		h = safeZoneH;
-		text = "addons\BrezBlock.framework\data\threats\gasmask\hud_02.paa";
+		text = "addons\BrezBlock.framework\data\threats\gasmask\hud_03.paa";
 	};
+	
+	
 };
 
 #endif
