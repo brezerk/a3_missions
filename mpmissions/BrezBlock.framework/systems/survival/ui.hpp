@@ -66,32 +66,64 @@ class BB_Survival_HUD
 			sizeEx = 1;
 			
 		};
-		class imgTempEnv
+		class imgTempMain
 		{
 			type = 0;
-			idc = 2993;
+			idc = 2980;
 			x = safeZoneX + safeZoneW - (safeZoneW * 0.035);
 			y = (safeZoneY + safeZoneH * 0.60) + (safeZoneW * 0.035 * 2);
 			w = safeZoneW * 0.035;
 			h = safeZoneW * 0.035;
 			style = 48+2;
-			text = "addons\BrezBlock.framework\data\survival\weather-hot.paa";
+			text = "addons\BrezBlock.framework\data\survival\temp_main.paa";
 			colorBackground[] = {0,0,0,1};
 			colorText[] = {0.949,0.949,0.949,0.7};
 			font = "RobotoCondensedLight";
 			sizeEx = 1;
 			
 		};
-		class imgTemp
+		class imgTempEnv
 		{
 			type = 0;
-			idc = 2994;
+			idc = 2981;
 			x = safeZoneX + safeZoneW - (safeZoneW * 0.035);
-			y = (safeZoneY + safeZoneH * 0.60) + (safeZoneW * 0.035 * 3);
+			y = (safeZoneY + safeZoneH * 0.60) + (safeZoneW * 0.035 * 2);
 			w = safeZoneW * 0.035;
 			h = safeZoneW * 0.035;
 			style = 48+2;
-			text = "addons\BrezBlock.framework\data\survival\temperature.paa";
+			text = "addons\BrezBlock.framework\data\survival\empty.paa";
+			colorBackground[] = {0,0,0,1};
+			colorText[] = {0.949,0.949,0.949,0.7};
+			font = "RobotoCondensedLight";
+			sizeEx = 1;
+			
+		};
+		class imgTempBody
+		{
+			type = 0;
+			idc = 2982;
+			x = safeZoneX + safeZoneW - (safeZoneW * 0.035);
+			y = (safeZoneY + safeZoneH * 0.60) + (safeZoneW * 0.035 * 2);
+			w = safeZoneW * 0.035;
+			h = safeZoneW * 0.035;
+			style = 48+2;
+			text = "addons\BrezBlock.framework\data\survival\temp_t03.paa";
+			colorBackground[] = {0,0,0,1};
+			colorText[] = {0.949,0.949,0.949,0.7};
+			font = "RobotoCondensedLight";
+			sizeEx = 1;
+			
+		};
+		class imgTempTrend
+		{
+			type = 0;
+			idc = 2983;
+			x = safeZoneX + safeZoneW - (safeZoneW * 0.035);
+			y = (safeZoneY + safeZoneH * 0.60) + (safeZoneW * 0.035 * 2);
+			w = safeZoneW * 0.035;
+			h = safeZoneW * 0.035;
+			style = 48+2;
+			text = "addons\BrezBlock.framework\data\survival\empty.paa";
 			colorBackground[] = {0,0,0,1};
 			colorText[] = {0.949,0.949,0.949,0.7};
 			font = "RobotoCondensedLight";
@@ -103,7 +135,7 @@ class BB_Survival_HUD
 			type = 0;
 			idc = 2995;
 			x = safeZoneX + safeZoneW - (safeZoneW * 0.035);
-			y = (safeZoneY + safeZoneH * 0.60) + (safeZoneW * 0.035 * 4);
+			y = (safeZoneY + safeZoneH * 0.60) + (safeZoneW * 0.035 * 3);
 			w = safeZoneW * 0.035;
 			h = safeZoneW * 0.035;
 			style = 48+2;
@@ -119,7 +151,7 @@ class BB_Survival_HUD
 			type = 0;
 			idc = 2996;
 			x = safeZoneX + safeZoneW - (safeZoneW * 0.035);
-			y = (safeZoneY + safeZoneH * 0.60) + (safeZoneW * 0.035 * 5);
+			y = (safeZoneY + safeZoneH * 0.60) + (safeZoneW * 0.035 * 4);
 			w = safeZoneW * 0.035;
 			h = safeZoneW * 0.035;
 			style = 48+2;
@@ -135,7 +167,7 @@ class BB_Survival_HUD
 			type = 0;
 			idc = 2997;
 			x = safeZoneX + safeZoneW - (safeZoneW * 0.035);
-			y = (safeZoneY + safeZoneH * 0.60) + (safeZoneW * 0.035 * 6);
+			y = (safeZoneY + safeZoneH * 0.60) + (safeZoneW * 0.035 * 5);
 			w = safeZoneW * 0.035;
 			h = safeZoneW * 0.035;
 			style = 48+2;

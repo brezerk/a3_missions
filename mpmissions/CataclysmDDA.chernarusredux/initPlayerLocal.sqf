@@ -146,6 +146,8 @@ _action = [
 	100] call ace_interact_menu_fnc_createAction;
 [player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 
+call BrezBlock_fnc_Local_Systems_Survival_Fireplace;
+
 [] spawn BrezBlock_fnc_Local_Systems_Fuel_Init;
 
 [] spawn {
@@ -158,7 +160,6 @@ _action = [
 };
 
 100 cutRsc ["BB_Survival_HUD","PLAIN", 1, false];
-
 
 /*
 null = [

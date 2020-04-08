@@ -16,29 +16,8 @@
  *                                                                         *
  ***************************************************************************/
 
-params ["_object", "_radius", "_damage"];
+params['_object'];
 
-bb_threat_chem_areas pushBack [_object, D_THREAT_CHEM_LOCAL, _radius, _damage];
+sleep 300;
 
-if (!hasInterface) exitWith {};
-
-private _fog_obj = objNull;
-
-while {((!isNull player) && (!isNull _object))} do  {
-	waitUntil {alive player};
-	private _distance = player distance _object;
-	if (_distance < 300) then {
-		if (isNull _fog_obj) then {
-			_fog_obj = "#particlesource" createVehicleLocal (getPos _object); 
-			_fog_obj setParticleCircle [10,[0.1,0.1,0]];
-			_fog_obj setParticleRandom [6,[0,0,0],[1,1,0],1,1,[0,0,0,0.1],0,0];
-			_fog_obj setParticleParams [["\A3\data_f\cl_basic", 1, 0, 1], "", "Billboard",1,10,[0,0,0],[-1,-1,0],3,10.15,7.9,0.01,[8,8,3],[[0.1,0.5,0.1,0],[0.5,0.5,0.5,0.1],[1,1,1,0]], [0.08], 1, 0, "", "", _object];
-			_fog_obj setDropInterval 0.01;
-		};
-	} else {
-		if (!isNull _fog_obj) then {
-			deleteVehicle _fog_obj;
-			waitUntil {((player distance _object) < (_radius + 300))};
-		};
-	};
-};
+deleteVehicle _object;

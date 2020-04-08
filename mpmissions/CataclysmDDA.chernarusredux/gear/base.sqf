@@ -144,6 +144,7 @@ player setFace (selectRandom ['WhiteHead_01',
 
 player setSpeaker "NoVoice";
 
+/*
 for "_i" from 1 to 2 do {player addItemToBackpack "ACE_tourniquet";};
 for "_i" from 1 to 2 do {player addItemToBackpack "ACE_bloodIV_500";};
 for "_i" from 1 to 20 do {player addItemToBackpack "ACE_fieldDressing";};
@@ -160,7 +161,16 @@ for "_i" from 1 to 5 do {player addItemToUniform "ACE_fieldDressing";};
 player addItemToBackpack "ACE_MRE_MeatballsPasta";
 for "_i" from 1 to 2 do {player addItemToBackpack "ACE_MRE_CreamChickenSoup";};
 
-for "_i" from 1 to 2 do {player addItemToBackpack "SmokeShell";};
+for "_i" from 1 to 2 do {player addItemToBackpack "SmokeShell";};*/
+
+player addItemToBackpack "rvg_antiRad";             // Протизапальне
+player addItemToBackpack "rvg_milk";                // Антидот
+player addItemToBackpack "rvg_purificationTablets"; // Жаропонижаюче
+player addItemToBackpack "rvg_notepad";
+player addItemToBackpack "rvg_flare";             // Розвести вогонь
+player addItemToBackpack "rvg_flare";             // Розвести вогонь
+player addItemToBackpack "rvg_flare";             // Розвести вогонь
+
 
 // Kick GPS if any
 player unassignItem "ItemGPS";

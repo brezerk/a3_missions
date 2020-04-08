@@ -16,29 +16,16 @@
  *                                                                         *
  ***************************************************************************/
 
-params ["_object", "_radius", "_damage"];
-
-bb_threat_chem_areas pushBack [_object, D_THREAT_CHEM_LOCAL, _radius, _damage];
-
-if (!hasInterface) exitWith {};
-
-private _fog_obj = objNull;
-
-while {((!isNull player) && (!isNull _object))} do  {
-	waitUntil {alive player};
-	private _distance = player distance _object;
-	if (_distance < 300) then {
-		if (isNull _fog_obj) then {
-			_fog_obj = "#particlesource" createVehicleLocal (getPos _object); 
-			_fog_obj setParticleCircle [10,[0.1,0.1,0]];
-			_fog_obj setParticleRandom [6,[0,0,0],[1,1,0],1,1,[0,0,0,0.1],0,0];
-			_fog_obj setParticleParams [["\A3\data_f\cl_basic", 1, 0, 1], "", "Billboard",1,10,[0,0,0],[-1,-1,0],3,10.15,7.9,0.01,[8,8,3],[[0.1,0.5,0.1,0],[0.5,0.5,0.5,0.1],[1,1,1,0]], [0.08], 1, 0, "", "", _object];
-			_fog_obj setDropInterval 0.01;
-		};
-	} else {
-		if (!isNull _fog_obj) then {
-			deleteVehicle _fog_obj;
-			waitUntil {((player distance _object) < (_radius + 300))};
-		};
-	};
-};
+_action = [
+	"bb_survival_fireplace",
+	"Розвести багаття",
+	"",
+	{
+		[] spawn BrezBlock_fnc_Local_Systems_Survival_Fireplace_Spawn;
+	},
+	{("rvg_flare" in (magazines player))},
+	{},
+	[],
+	[0,0,0],
+	100] call ace_interact_menu_fnc_createAction;
+[player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
