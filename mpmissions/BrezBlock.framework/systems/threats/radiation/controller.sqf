@@ -31,6 +31,7 @@ while {(!isNull player)} do  {
 					_threat_new = 0.1;
 					if (_distance < (_radius)) then {
 						_threat_new = (1.0 - parseNumber ((_distance/(_radius)) toFixed 1)) + 0.1;
+						bb_srv_dmg_rad = bb_srv_dmg_rad + (_x select 3);
 					};
 				};
 			};

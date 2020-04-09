@@ -132,21 +132,8 @@ Fn_LoadSupply = {
 
 [] spawn BrezBlock_fnc_Local_Systems_GasMask_Init;
 
-_action = [
-	"Використати Антірадін",
-	"Використати Антірадін",
-	"",
-	{
-		execVM "antiradin.sqf";
-	},
-	{("ACE_plasmaIV" in (items player))},
-	{},
-	[],
-	[0,0,0],
-	100] call ace_interact_menu_fnc_createAction;
-[player, 1, ["ACE_SelfActions"], _action] call ace_interact_menu_fnc_addActionToObject;
-
 call BrezBlock_fnc_Local_Systems_Survival_Fireplace;
+call BrezBlock_fnc_Local_Systems_Survival_Medical;
 
 [] spawn BrezBlock_fnc_Local_Systems_Fuel_Init;
 

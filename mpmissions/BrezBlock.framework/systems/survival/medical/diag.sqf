@@ -16,16 +16,27 @@
  *                                                                         *
  ***************************************************************************/
 
-_action = [
-	"bb_survival_fireplace",
-	"Розвести багаття",
-	"",
+params["_dst", "_src"];
+
+if (!alive _dst) exitWith {systemChat format ["%1 мертвий.", name _dst];};
+if ((_dst distance _src) > 6) exitWith {systemChat format ["%1 занадто далеко.", name _dst];};
+//Execute revive animation
+[player, "AinvPknlMstpSnonWrflDr_medic3"] remoteExec ["playMoveNow", 0, false];
+//Wait for revive animation to be set
+waitUntil {sleep 0.05; ((animationState player) == "AinvPknlMstpSnonWrflDr_medic3")};
+//call progress
+[
+	3,
+	[_src, _dst],
 	{
-		[] spawn BrezBlock_fnc_Local_Systems_Survival_Fireplace_Spawn;
+		_this params ["_parameter"];
+		_parameter params ["_src", "_dst"];
+		[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["playMoveNow", 0, true];
+		[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["switchMove", 0, true];
+		[owner _src] remoteExec ["BrezBlock_fnc_call_diag", _dst];
 	},
-	{("rvg_flare" in (magazines player))},
-	{},
-	[],
-	[0,0,0],
-	100] call ace_interact_menu_fnc_createAction;
-[player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToObject;
+	{
+		[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["playMoveNow", 0, true];
+		[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["switchMove", 0, true];
+	}, "Провожу обстеження"
+] call ace_common_fnc_progressBar;

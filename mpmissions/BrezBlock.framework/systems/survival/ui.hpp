@@ -43,7 +43,7 @@ class BB_Survival_HUD
 			w = safeZoneW * 0.035;
 			h = safeZoneW * 0.035;
 			style = 48+2;
-			text = "addons\BrezBlock.framework\data\survival\food.paa";
+			text = "addons\BrezBlock.framework\data\survival\empty.paa";
 			colorBackground[] = {0,0,0,1};
 			colorText[] = {0.949,0.949,0.949,0.7};
 			font = "RobotoCondensedLight";
@@ -59,7 +59,7 @@ class BB_Survival_HUD
 			w = safeZoneW * 0.035;
 			h = safeZoneW * 0.035;
 			style = 48+2;
-			text = "addons\BrezBlock.framework\data\survival\hydration.paa";
+			text = "addons\BrezBlock.framework\data\survival\empty.paa";
 			colorBackground[] = {0,0,0,1};
 			colorText[] = {0.949,0.949,0.949,0.7};
 			font = "RobotoCondensedLight";
@@ -107,7 +107,7 @@ class BB_Survival_HUD
 			w = safeZoneW * 0.035;
 			h = safeZoneW * 0.035;
 			style = 48+2;
-			text = "addons\BrezBlock.framework\data\survival\temp_t03.paa";
+			text = "addons\BrezBlock.framework\data\survival\empty.paa";
 			colorBackground[] = {0,0,0,1};
 			colorText[] = {0.949,0.949,0.949,0.7};
 			font = "RobotoCondensedLight";
@@ -139,7 +139,23 @@ class BB_Survival_HUD
 			w = safeZoneW * 0.035;
 			h = safeZoneW * 0.035;
 			style = 48+2;
-			text = "addons\BrezBlock.framework\data\survival\health-normal.paa";
+			text = "addons\BrezBlock.framework\data\survival\empty.paa";
+			colorBackground[] = {0,0,0,1};
+			colorText[] = {0.949,0.949,0.949,0.7};
+			font = "RobotoCondensedLight";
+			sizeEx = 1;
+			
+		};
+		class imgHealthTrend
+		{
+			type = 0;
+			idc = 2996;
+			x = safeZoneX + safeZoneW - (safeZoneW * 0.035);
+			y = (safeZoneY + safeZoneH * 0.60) + (safeZoneW * 0.035 * 3);
+			w = safeZoneW * 0.035;
+			h = safeZoneW * 0.035;
+			style = 48+2;
+			text = "addons\BrezBlock.framework\data\survival\empty.paa";
 			colorBackground[] = {0,0,0,1};
 			colorText[] = {0.949,0.949,0.949,0.7};
 			font = "RobotoCondensedLight";
@@ -149,13 +165,13 @@ class BB_Survival_HUD
 		class imgSymptom01
 		{
 			type = 0;
-			idc = 2996;
+			idc = 2997;
 			x = safeZoneX + safeZoneW - (safeZoneW * 0.035);
 			y = (safeZoneY + safeZoneH * 0.60) + (safeZoneW * 0.035 * 4);
 			w = safeZoneW * 0.035;
 			h = safeZoneW * 0.035;
 			style = 48+2;
-			text = "addons\BrezBlock.framework\data\survival\stomach.paa";
+			text = "addons\BrezBlock.framework\data\survival\empty.paa";
 			colorBackground[] = {0,0,0,1};
 			colorText[] = {1,0.6,0.6,0.9};
 			font = "RobotoCondensedLight";
@@ -165,13 +181,13 @@ class BB_Survival_HUD
 		class imgSymptom02
 		{
 			type = 0;
-			idc = 2997;
+			idc = 2998;
 			x = safeZoneX + safeZoneW - (safeZoneW * 0.035);
 			y = (safeZoneY + safeZoneH * 0.60) + (safeZoneW * 0.035 * 5);
 			w = safeZoneW * 0.035;
 			h = safeZoneW * 0.035;
 			style = 48+2;
-			text = "addons\BrezBlock.framework\data\survival\vomiting.paa";
+			text = "addons\BrezBlock.framework\data\survival\empty.paa";
 			colorBackground[] = {0,0,0,1};
 			colorText[] = {1,0.6,0.6,0.9};
 			font = "RobotoCondensedLight";
@@ -181,13 +197,13 @@ class BB_Survival_HUD
 		class imgSymptom03
 		{
 			type = 0;
-			idc = 2998;
+			idc = 2999;
 			x = safeZoneX + safeZoneW - (safeZoneW * 0.035);
 			y = (safeZoneY + safeZoneH * 0.60) + (safeZoneW * 0.035 * 7);
 			w = safeZoneW * 0.035;
 			h = safeZoneW * 0.035;
 			style = 48+2;
-			text = "addons\BrezBlock.framework\data\survival\stimulator.paa";
+			text = "addons\BrezBlock.framework\data\survival\empty.paa";
 			colorBackground[] = {0,0,0,1};
 			colorText[] = {1,0.6,0.6,0.9};
 			font = "RobotoCondensedLight";

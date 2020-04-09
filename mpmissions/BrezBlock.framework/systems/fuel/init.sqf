@@ -10,7 +10,7 @@ _lvls pushBack (0.0003631415);
 //_lvls pushBack ((0.0026314157+0.00025159)/(pi*2));
 //_lvls pushBack ((0.0036314157+0.00026159)/(pi*2));
 
-systemChat format ["start! %1", _lvls];
+//systemChat format ["start! %1", _lvls];
 
 while {true} do {
 	_veh = vehicle player;
@@ -34,7 +34,7 @@ while {true} do {
 			};
 		};
 		[_veh, ((fuel _veh) - _amount_f)] remoteExec ['setFuel', _veh];
-		systemChat format ["consumoing! %1", _amount_f];
+		//systemChat format ["consumoing! %1", _amount_f];
 	};
     sleep 1;
 };

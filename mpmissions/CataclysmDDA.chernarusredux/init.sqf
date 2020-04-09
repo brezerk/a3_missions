@@ -46,7 +46,7 @@ Fn_SetEnv = {
 };
 
 {
-	[(markerPos _x), (random 55), 1000, false] call BrezBlock_fnc_Systems_Refuel_Station;
+	[(markerPos _x), 10, (random 55), 1000, false] call BrezBlock_fnc_Systems_Refuel_Station;
 } forEach ["wp_fuel_01", "wp_fuel_02", "wp_fuel_03", "wp_fuel_04", "wp_fuel_05", "wp_fuel_06"];
 
 

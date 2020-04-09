@@ -15,17 +15,30 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
  ***************************************************************************/
+  
+_clientID = _this select 0;
 
-_action = [
-	"bb_survival_fireplace",
-	"Розвести багаття",
-	"",
-	{
-		[] spawn BrezBlock_fnc_Local_Systems_Survival_Fireplace_Spawn;
-	},
-	{("rvg_flare" in (magazines player))},
-	{},
-	[],
-	[0,0,0],
-	100] call ace_interact_menu_fnc_createAction;
-[player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToObject;
+//systemChat "i was called!";
+
+_response = "";
+
+if (bb_srv_dmg_chem > 0) then {
+	_response = " Має симптоми хімічного отруєння.";
+};
+
+if (bb_srv_dmg_rad > 0) then {
+	_response = _response + " Має симптоми радіаційного ураження.";
+};
+
+if (bb_srv_dmg_bac > 0) then {
+	_response = _response + " Має симптоми респираторної хвороби.";
+};
+
+
+if (_response == "") then {
+	_response = "виглядає Здоровим.";
+};
+
+_response = format ["%1: %2", name player, _response];
+
+[_response] remoteExec["BrezBlock_fnc_callback_diag", _clientID];
