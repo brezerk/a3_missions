@@ -58,10 +58,12 @@ if (isServer) then {
 {
 	//null = [_x,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
 	[_x, 15, 0.05] spawn BrezBlock_fnc_Local_Systems_Radiation_Local;
-} forEach [rad_obj_01];
+} forEach [rad_obj_01, rad_obj_02, rad_obj_03, rad_obj_04];
 
 [obj_haz01, 10, 0.05] spawn BrezBlock_fnc_Local_Systems_Chemical_Local;
+//[obj_haz03, 10, 0.05] spawn BrezBlock_fnc_Local_Systems_Chemical_Local;
 [obj_haz02, 200, 0.05] spawn BrezBlock_fnc_Local_Systems_Chemical_Areal;
+//[obj_haz04, 200, 0.05] spawn BrezBlock_fnc_Local_Systems_Chemical_Areal;
 
 box01 addItemCargoGlobal ["Mask_M40", 1];
 box01 addItemCargoGlobal ["Mask_M40_OD", 1];

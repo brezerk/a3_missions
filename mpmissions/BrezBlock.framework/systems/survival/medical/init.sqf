@@ -59,9 +59,14 @@ _action = [
 	"bb_survival_personalAidKit_diag",
 	"Діагностувати",
 	"addons\BrezBlock.framework\data\ace_medical_cross.paa",
+	{
+		params ["_target", "_player", "_params"];
+		[_target, _player] spawn BrezBlock_fnc_Local_Systems_Survival_Medical_Diag;
+	},
+	//{("ACE_personalAidKit" in (items player))},
+	{true},
 	{},
-	{("ACE_personalAidKit" in (items player))},
-	_insertChildren,
+	//_insertChildren,
 	[],
 	"",
 	5,
