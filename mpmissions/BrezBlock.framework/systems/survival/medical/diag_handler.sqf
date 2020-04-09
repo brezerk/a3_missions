@@ -41,4 +41,4 @@ if (_response == "") then {
 
 _response = format ["%1: %2", name player, _response];
 
-[_response] remoteExec["BrezBlock_fnc_callback_diag", _clientID];
+[_response] remoteExec ["BrezBlock_fnc_callback_diag", _clientID];

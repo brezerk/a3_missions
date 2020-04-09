@@ -18,4 +18,4 @@
  
 systemChat "Ви почуваєтесь краще";
 
-bb_srv_dmg_chem = 0;
+bb_srv_dmg_rad = 0;

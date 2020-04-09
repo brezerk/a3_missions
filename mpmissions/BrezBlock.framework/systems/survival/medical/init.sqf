@@ -42,7 +42,7 @@ _insertChildren = {
 			if (alive _x) then {
 				private _childStatement = {
 					params ["_target", "_player", "_params"];
-					[_player, _target] spawn BrezBlock_fnc_Local_Systems_Survival_Medical_Diag;
+					[_target, _player] spawn BrezBlock_fnc_Local_Systems_Survival_Medical_Diag;
 				};
 				_displayName = name _x;
 				_displayIcon = "addons\BrezBlock.framework\data\ace_team_white_ca.paa";
