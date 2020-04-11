@@ -45,6 +45,7 @@ class BrezBlock
 		class Local_Systems_Chemical_Controller {file = "addons\BrezBlock.framework\systems\threats\chemical\controller.sqf";};
 		class Local_Systems_Detector_Radiation {file = "addons\BrezBlock.framework\systems\threats\detector\rad.sqf";};
 		class Local_Systems_Detector_Chemical {file = "addons\BrezBlock.framework\systems\threats\detector\chem.sqf";};
+		class Local_Systems_Analyzer {file = "addons\BrezBlock.framework\systems\threats\analyzer\init.sqf";};
 		class Local_Systems_GasMask_Init {file = "addons\BrezBlock.framework\systems\threats\gasmask\init.sqf";};
 		class Local_Systems_Survival_Init {file = "addons\BrezBlock.framework\systems\survival\player.sqf";};
 		class Local_Systems_Survival_Fireplace {file = "addons\BrezBlock.framework\systems\survival\fireplace\init.sqf";};

@@ -74,6 +74,7 @@ bb_player_threat_rad = 0;
 
 [] spawn BrezBlock_fnc_Local_Systems_Detector_Radiation;
 [] spawn BrezBlock_fnc_Local_Systems_Detector_Chemical;
+[] spawn BrezBlock_fnc_Local_Systems_Analyzer;
 
 [] spawn BrezBlock_fnc_Local_Systems_Survival_Init;
 
