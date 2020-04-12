@@ -21,6 +21,8 @@ waitUntil { !isNull player }; // Wait for player to initialize
 bb_player_threat_chem = 0;
 bb_player_threat_rad = 0;
 
+bb_next_wave = false;
+
 execVM "briefing.sqf";
 
 // hide markers
@@ -36,35 +38,58 @@ sleep 4;
 
 //player addEventHandler ["Killed", {"zombie_runner" createUnit [getMarkerPos "wp_test", (createGroup [civilian, true])]}]
 
+/*
 player addEventHandler
 [
 	"Killed",
 	{
-		/*if (playerSide == west) then {
+		if (playerSide == west) then {
 			private _player = player; 
 			[player] joinSilent createGroup [civilian, true];
 			selectNoPlayer;
-		};*/
+		};
 	}
 ];
+*/
 
+/*
 Fn_MakeMeZombie = {
 	_none = player;
-	_pos = markerPos "wp_test";
+	_pos = markerPos "wp_zed";
 	player setPos _pos;
-	{
-		if (alive _x) exitWith { _pos = getPos _x };
-	} forEach (switchableUnits + playableUnits);
-	_pos = [_pos, 350, 500, 5, 0, 0, 0, [], []] call BIS_fnc_findSafePos;
-	_unit = (createGroup [civilian, true]) createUnit ["zombie_runner", _pos, [], 0, "FORM"];
-	[_unit, 0.85] call rvg_fnc_setDamage;
-	execVM "gear\base.sqf";
-	waitUntil {alive _unit};
-	selectPlayer _unit;
-	deleteVehicle _none;
-	[] execVM "AL_snowstorm\alias_hunt.sqf"; waitUntil {!isNil "hunt_alias"};
-	_unit;
-};
+	if (!bb_next_wave) then {
+		{
+			if (alive _x) exitWith { _pos = getPos _x };
+		} forEach (switchableUnits + playableUnits);
+		_pos = [_pos, 350, 500, 5, 0, 0, 0, [], []] call BIS_fnc_findSafePos;
+		_pos = markerPos "wp_test";
+		private _unit = (createGroup [civilian, true]) createUnit ["zombie_runner", _pos, [], 0, "FORM"];
+		
+		waitUntil {alive _unit};
+		
+		//[_unit, 35] call rvg_fnc_setDamage;
+		execVM "gear\base.sqf";
+		//
+		selectPlayer _unit;
+		
+		deleteVehicle _none;
+		vehicle player switchCamera "EXTERNAL";
+		
+		[_unit, _none] spawn { params ["_unit", "_none"]; waitUntil { !alive _unit; }; selectPlayer _none; player addEventHandler ["Respawn", { params ["_unit", "_corpse"]; _unit = call Fn_MakeMeZombie; _unit} ]; player setDamage 1.0; };
+		
+		bb_next_wave = true;
+		_unit;
+	} else {
+		private _unit = (createGroup [civilian, true]) createUnit ["B_Survivor_F", _pos, [], 0, "FORM"];
+		waitUntil {alive _unit};
+		selectPlayer _unit;
+		player addEventHandler ["Respawn", { params ["_unit", "_corpse"]; _unit = call Fn_MakeMeZombie; _unit} ];
+		execVM "gear\base.sqf";
+		_pos = markerPos "wp_test";
+		player setPos _pos;
+		bb_next_wave = false;
+	};
+};*/
 
 bb_player_threat_chem = 0;
 bb_player_threat_rad = 0;
@@ -74,29 +99,9 @@ bb_player_threat_rad = 0;
 
 [] spawn BrezBlock_fnc_Local_Systems_Detector_Radiation;
 [] spawn BrezBlock_fnc_Local_Systems_Detector_Chemical;
-[] spawn BrezBlock_fnc_Local_Systems_Analyzer;
+//[] spawn BrezBlock_fnc_Local_Systems_Analyzer;
 
 [] spawn BrezBlock_fnc_Local_Systems_Survival_Init;
-
-player addEventHandler
-[
-   "Respawn",
-   {
-		_pos = markerPos "wp_test";
-		player setPos _pos;
-		execVM "gear\base.sqf";
-		/*private _zed = call Fn_MakeMeZombie;
-		_zed addEventHandler
-		[
-		   "Respawn",
-		   {
-				_zed = call Fn_MakeMeZombie;
-			}
-		];
-		vehicle player switchCamera "EXTERNAL";*/
-    }
-];
-
 
 _null = [] spawn {
 	while{true} do {
@@ -141,13 +146,14 @@ call BrezBlock_fnc_Local_Systems_Survival_Medical;
 [] spawn {
 	while {true} do {
 		waitUntil{bb_local_fog > 0};
-		
 		0.5 setFog [bb_local_fog, 0, getPos player];
 		sleep 0.1;
 	};
 };
 
 100 cutRsc ["BB_Survival_HUD","PLAIN", 1, false];
+
+//player addEventHandler ["Respawn", { params ["_unit", "_corpse"]; _unit = call Fn_MakeMeZombie; _unit } ];
 
 /*
 null = [
