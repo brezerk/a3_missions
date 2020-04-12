@@ -63,10 +63,10 @@ _action = [
 		params ["_target", "_player", "_params"];
 		[_target, _player] spawn BrezBlock_fnc_Local_Systems_Survival_Medical_Diag;
 	},
-	//{("ACE_personalAidKit" in (items player))},
-	{true},
-	{},
-	//_insertChildren,
+	{("ACE_personalAidKit" in (items player))},
+	_insertChildren,
+	//{true},
+	//{},
 	[],
 	"",
 	5,

@@ -164,9 +164,9 @@ for "_i" from 1 to 2 do {player addItemToBackpack "ACE_MRE_CreamChickenSoup";};
 for "_i" from 1 to 2 do {player addItemToBackpack "SmokeShell";};*/
 
 player addItemToBackpack "rvg_antiRad";             // Протизапальне
-player addItemToBackpack "rvg_milk";                // Антидот
-player addItemToBackpack "rvg_purificationTablets"; // Жаропонижаюче
-player addItemToBackpack "rvg_notepad";
+//player addItemToBackpack "AntidoteKit_01_F";        // Антидот
+//player addItemToBackpack "rvg_purificationTablets"; // Жаропонижаюче
+//player addItemToBackpack "rvg_notepad";
 player addItemToBackpack "rvg_flare";             // Розвести вогонь
 player addItemToBackpack "rvg_flare";             // Розвести вогонь
 player addItemToBackpack "rvg_flare";             // Розвести вогонь

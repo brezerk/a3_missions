@@ -20,13 +20,13 @@ params["_src", "_dst"];
 
 if (!alive _dst) exitWith {systemChat format ["%1 мертвий.", name _dst];};
 if ((_dst distance _src) > 6) exitWith {systemChat format ["%1 занадто далеко.", name _dst];};
-if (!("ACE_salineIV" in (items player))) exitWith {systemChat format ["Потрібен антирадін для інфузії.", name _dst];};
+if (!("rvg_antiRad" in (items player))) exitWith {systemChat format ["Потрібен антирадін.", name _dst];};
 //Execute revive animation
 [player, "AinvPknlMstpSnonWrflDr_medic3"] remoteExec ["playMoveNow", 0, false];
 //Wait for revive animation to be set
 waitUntil {sleep 0.05; ((animationState player) == "AinvPknlMstpSnonWrflDr_medic3")};
 //call progress
-player removeItem "ACE_plasmaIV";
+player removeItem "rvg_antiRad";
 [
 	3,
 	[_src, _dst],

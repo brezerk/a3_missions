@@ -33,28 +33,7 @@ waitUntil {sleep 0.05; ((animationState player) == "AinvPknlMstpSnonWrflDr_medic
 		_parameter params ["_src", "_dst"];
 		[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["playMoveNow", 0, true];
 		[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["switchMove", 0, true];
-		//[owner _src] remoteExec ["BrezBlock_fnc_call_diag", _dst];
-		
-		_response = "";
-		
-		if (bb_srv_dmg_chem > 0) then {
-			_response = " Має симптоми хімічного отруєння.";
-		};
-
-		if (bb_srv_dmg_rad > 0) then {
-			_response = _response + " Має симптоми радіаційного ураження.";
-		};
-
-		if (bb_srv_dmg_bac > 0) then {
-			_response = _response + " Має симптоми респираторної хвороби.";
-		};
-
-
-		if (_response == "") then {
-			_response = "виглядає Здоровим.";
-		};
-
-		systemChat format ["%1: %2", name player, _response];
+		[owner _src] remoteExec ["BrezBlock_fnc_call_diag", (owner _dst)];
 	},
 	{
 		[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["playMoveNow", 0, true];
