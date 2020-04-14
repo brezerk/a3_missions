@@ -16,14 +16,13 @@
  *                                                                         *
  ***************************************************************************/
 
-
 _action = [
-	"bb_survival_personalAidKit_stimpack",
+	"bb_survival_stimpack",
 	"Вколоти стимулятор",
 	"addons\BrezBlock.framework\data\ace_medical_cross.paa",
 	{
 		params ["_target", "_player", "_params"];
-		[_player, _target] spawn BrezBlock_fnc_Local_Systems_Survival_Medical_Stimpack;
+		[_target, _player] spawn BrezBlock_fnc_Local_Systems_Survival_Medical_Stimpack;
 	},
 	{("ACE_morphine" in (items player))},
 	{},
@@ -33,81 +32,44 @@ _action = [
 	[false, false, false, false, false]] call ace_interact_menu_fnc_createAction;
 	
 [player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToObject;
-
-_insertChildren = {
-	params ["_target", "_player", "_params"];
-	private _actions = [];
-	{
-		if (_x in playableUnits) then {
-			if (alive _x) then {
-				private _childStatement = {
-					params ["_target", "_player", "_params"];
-					[_target, _player] spawn BrezBlock_fnc_Local_Systems_Survival_Medical_Diag;
-				};
-				_displayName = name _x;
-				_displayIcon = "addons\BrezBlock.framework\data\ace_team_white_ca.paa";
-				_vehicle = _x;
-				private _action = [_displayName, _displayName, _displayIcon, _childStatement, {true}, {}, _vehicle] call ace_interact_menu_fnc_createAction;
-				_actions pushBack [_action, [], _target];
-			};
-		};
-	} forEach (nearestObjects [_player, ["Man"], 6]);
-	_actions
-};
+["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
 
 _action = [
-	"bb_survival_personalAidKit_diag",
+	"bb_survival_diagnose",
 	"Діагностувати",
 	"addons\BrezBlock.framework\data\ace_medical_cross.paa",
 	{
 		params ["_target", "_player", "_params"];
 		[_target, _player] spawn BrezBlock_fnc_Local_Systems_Survival_Medical_Diag;
 	},
-	{("ACE_personalAidKit" in (items player))},
-	_insertChildren,
-	//{true},
-	//{},
+	{true},
+	{},
 	[],
 	"",
 	5,
 	[false, false, false, false, false]] call ace_interact_menu_fnc_createAction;
 	
 [player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToObject;
-
-_insertChildren = {
-	params ["_target", "_player", "_params"];
-	private _actions = [];
-	{
-		if (_x in playableUnits) then {
-			if (alive _x) then {
-				private _childStatement = {
-					params ["_target", "_player", "_params"];
-					[_target, _params] spawn BrezBlock_fnc_Local_Systems_Survival_Medical_Toxine;
-				};
-				_displayName = name _x;
-				_displayIcon = "addons\BrezBlock.framework\data\ace_team_white_ca.paa";
-				_vehicle = _x;
-				private _action = [_displayName, _displayName, _displayIcon, _childStatement, {true}, {}, _vehicle] call ace_interact_menu_fnc_createAction;
-				_actions pushBack [_action, [], _target]; 
-			};
-		};
-	} forEach (nearestObjects [_player, ["Man"], 6]);
-	_actions
-};
+["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
 
 _action = [
 	"bb_survival_personalAidKit_threat_detox",
 	"Детоксикація",
 	"addons\BrezBlock.framework\data\ace_medical_cross.paa",
-	{},
+	{
+		params ["_target", "_player", "_params"];
+		[_target, _player] spawn BrezBlock_fnc_Local_Systems_Survival_Medical_Toxine;
+	},
 	{("ACE_personalAidKit" in (items player))},
-	_insertChildren,
+	{},
 	[],
 	"",
 	5,
 	[false, false, false, false, false]] call ace_interact_menu_fnc_createAction;
 	
 [player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToObject;
+["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+
 
 _insertChildren = {
 	params ["_target", "_player", "_params"];
@@ -116,8 +78,7 @@ _insertChildren = {
 		if (_x in playableUnits) then {
 			if (alive _x) then {
 				private _childStatement = {
-					params ["_target", "_player", "_params"];
-					[_target, _params] spawn BrezBlock_fnc_Local_Systems_Survival_Medical_Rad;
+					
 				};
 				_displayName = name _x;
 				_displayIcon = "addons\BrezBlock.framework\data\ace_team_white_ca.paa";
@@ -134,47 +95,34 @@ _action = [
 	"bb_survival_personalAidKit_threat_antirad",
 	"Антирадін",
 	"addons\BrezBlock.framework\data\ace_medical_cross.paa",
-	{},
+	{
+		params ["_target", "_player", "_params"];
+		[_target, _player] spawn BrezBlock_fnc_Local_Systems_Survival_Medical_Rad;
+	},
 	{("ACE_personalAidKit" in (items player))},
-	_insertChildren,
+	{},
 	[],
 	"",
 	5,
 	[false, false, false, false, false]] call ace_interact_menu_fnc_createAction;
 	
 [player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToObject;
-
-_insertChildren = {
-	params ["_target", "_player", "_params"];
-	private _actions = [];
-	{
-		if (_x in playableUnits) then {
-			if (alive _x) then {
-				private _childStatement = {
-					params ["_target", "_player", "_params"];
-					[_target, _params] spawn BrezBlock_fnc_Local_Systems_Survival_Medical_Flue;
-				};
-				_displayName = name _x;
-				_displayIcon = "addons\BrezBlock.framework\data\ace_team_white_ca.paa";
-				_vehicle = _x;
-				private _action = [_displayName, _displayName, _displayIcon, _childStatement, {true}, {}, _vehicle] call ace_interact_menu_fnc_createAction;
-				_actions pushBack [_action, [], _target];
-			};
-		};
-	} forEach (nearestObjects [_player, ["Man"], 6]);
-	_actions
-};
+["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
 
 _action = [
 	"bb_survival_personalAidKit_threat_flue",
 	"Протизапальне",
 	"addons\BrezBlock.framework\data\ace_medical_cross.paa",
-	{},
+	{
+		params ["_target", "_player", "_params"];
+		[_target, _player] spawn BrezBlock_fnc_Local_Systems_Survival_Medical_Flue;
+	},
 	{("ACE_personalAidKit" in (items player))},
-	_insertChildren,
+	{},
 	[],
 	"",
 	5,
 	[false, false, false, false, false]] call ace_interact_menu_fnc_createAction;
-	
+
 [player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToObject;
+["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;

@@ -16,27 +16,94 @@
  *                                                                         *
  ***************************************************************************/
 
-params["_src", "_dst"];
+params["_target", "_player"];
 
-if (!alive _dst) exitWith {systemChat format ["%1 мертвий.", name _dst];};
-if ((_dst distance _src) > 6) exitWith {systemChat format ["%1 занадто далеко.", name _dst];};
+if (!alive _target) exitWith {systemChat format ["%1 мертвий.", name _target];};
+if ((_target distance _player) > 6) exitWith {systemChat format ["%1 занадто далеко.", name _target];};
+
 //Execute revive animation
-[player, "AinvPknlMstpSnonWrflDr_medic3"] remoteExec ["playMoveNow", 0, false];
+[_player, "AinvPknlMstpSnonWrflDr_medic3"] remoteExec ["playMoveNow", 0, false];
 //Wait for revive animation to be set
-waitUntil {sleep 0.05; ((animationState player) == "AinvPknlMstpSnonWrflDr_medic3")};
+waitUntil {sleep 0.05; ((animationState _player) == "AinvPknlMstpSnonWrflDr_medic3")};
 //call progress
 [
 	3,
-	[_src, _dst],
+	[_target, _player],
 	{
 		_this params ["_parameter"];
-		_parameter params ["_src", "_dst"];
-		[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["playMoveNow", 0, true];
-		[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["switchMove", 0, true];
-		[owner _src] remoteExec ["BrezBlock_fnc_call_diag", (owner _dst)];
+		_parameter params ["_target", "_player"];
+		[_player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["playMoveNow", 0, true];
+		[_player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["switchMove", 0, true];
+		_levels = _target getVariable["bb_srv_health", "000"]; // chem, rad, bac
+		_symptoms = [];
+		_response = "";
+		//systemChat format["levels %1", _levels];
+		if ((_player getVariable ["ace_medical_medicClass", 0]) > 0) then {
+			switch (_levels select [0,1]) do {
+				case "1": { _symptoms pushBack "легкого хімічного отруєння"; };
+				case "2": { _symptoms pushBack "середнього хімічного отруєння"; };
+				case "3": { _symptoms pushBack "важкого хімічного отруєння"; };
+			};
+			switch (_levels select [1,1]) do {
+				case "1": { _symptoms pushBack "легкого радіаційного ураження"; };
+				case "2": { _symptoms pushBack "середнього радіаційного ураження"; };
+				case "3": { _symptoms pushBack "важкого радіаційного ураження"; };
+			};
+			switch (_levels select [2,1]) do {
+				case "1": { _symptoms pushBack "легкої респираторної хвороби"; };
+				case "2": { _symptoms pushBack "середньої респираторної хвороби"; };
+				case "3": { _symptoms pushBack "важкої респираторної хвороби"; };
+			};
+		} else {
+			switch (_levels select [0,1]) do {
+				case "1": { _symptoms pushBack "легкої респираторної хвороби"; };//FIME: randomize? :)
+				case "2": { _symptoms pushBack "хімічного отруєння"; };
+				case "3": { _symptoms pushBack "хімічного отруєння"; };
+			};
+			switch (_levels select [1,1]) do {
+				case "2": { _symptoms pushBack "радіаційного ураження"; };
+				case "3": { _symptoms pushBack "радіаційного ураження"; };
+			};
+			switch (_levels select [2,1]) do {
+				case "1": { _symptoms pushBack "респираторної хвороби"; };
+				case "2": { _symptoms pushBack "респираторної хвороби"; };
+				case "3": { _symptoms pushBack "респираторної хвороби"; };
+			};
+		};
+
+		_damage = (damage _target);
+		if (_damage > 0) then {
+			if (_damage > 0.5) then {
+				_symptoms pushBack "обширного ураження тканин";
+			} else {
+				if (_damage > 0.3) then {
+					_symptoms pushBack "ураження тканини";
+				} else {
+					_symptoms pushBack "легкого ураження тканини";
+				};
+			};
+		};
+
+		if ((count _symptoms) == 0) then {
+			_response = "виглядає Здоровим.";
+		} else {
+			_response = "має симптоми: ";
+			{
+				if (_forEachIndex != 0) then {
+					_response = _response + ", " + _x;
+				} else {
+					_response = _response + _x;
+				};
+			} forEach _symptoms;
+		};
+
+		systemChat format ["%1: %2", name _target, _response];
+		
 	},
 	{
-		[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["playMoveNow", 0, true];
-		[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["switchMove", 0, true];
+		_this params ["_parameter"];
+		_parameter params ["_target", "_player"];
+		[_player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["playMoveNow", 0, true];
+		[_player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["switchMove", 0, true];
 	}, "Провожу обстеження"
 ] call ace_common_fnc_progressBar;

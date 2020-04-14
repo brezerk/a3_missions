@@ -16,46 +16,63 @@
  *                                                                         *
  ***************************************************************************/
 
-params["_dst", "_src"];
+params["_target", "_player"];
 
-if (!alive _dst) exitWith {systemChat format ["%1 мертвий.", name _dst];};
-if ((_dst distance _src) > 6) exitWith {systemChat format ["%1 занадто далеко.", name _dst];};
-if (!("ACE_morphine" in (items player))) exitWith {systemChat format ["Потрібен морфін.", name _dst];};
+if (!alive _target) exitWith {systemChat format ["%1 мертвий.", name _target];};
+if ((_target distance _player) > 6) exitWith {systemChat format ["%1 занадто далеко.", name _target];};
+
+//
+if (!("ACE_morphine" in (items _target))) then {
+	_target removeItem "ACE_morphine";
+} else {
+	if (!("ACE_morphine" in (items _player))) exitWith {systemChat "Потрібен морфін.";};
+	_player removeItem "ACE_morphine";
+};
+
 //Execute revive animation
-[player, "AinvPknlMstpSnonWrflDr_medic3"] remoteExec ["playMoveNow", 0, false];
+[_player, "AinvPknlMstpSnonWrflDr_medic3"] remoteExec ["playMoveNow", 0, false];
 //Wait for revive animation to be set
-waitUntil {sleep 0.05; ((animationState player) == "AinvPknlMstpSnonWrflDr_medic3")};
+waitUntil {sleep 0.05; ((animationState _player) == "AinvPknlMstpSnonWrflDr_medic3")};
 //call progress
-player removeItem "ACE_morphine";
 [
 	3,
-	[_src, _dst],
+	[_target, _player],
 	{
 		_this params ["_parameter"];
-		_parameter params ["_src", "_dst"];
-		[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["playMoveNow", 0, true];
-		[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["switchMove", 0, true];
-		if (bb_srv_stimpack_level < 4) then {
-			switch (bb_srv_stimpack_level) do {
+		_parameter params ["_target", "_player"];
+		[_player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["playMoveNow", 0, true];
+		[_player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["switchMove", 0, true];
+		_level = _target getVariable["bb_srv_st_lvl", 0];
+		if (_level < 4) then {
+			switch (_level) do {
 				case 0: {
-					player setDamage 0;
+					if ((damage _target) > 0) then {
+						_target setDamage 0;
+					};
 				};
 				case 1: {
-					player setDamage 0.1;
+					if ((damage _target) > 0.1) then {
+						_target setDamage 0.1;
+					};
 				};
 				case 2: {
-					player setDamage 0.2;
+					if ((damage _target) > 0.2) then {
+						_target setDamage 0.2;
+					};
 				};
 				case 3: {
-					player setDamage 0.3;
+					if ((damage _target) > 0.4) then {
+						_target setDamage 0.4;
+					};
 				};
 			};
-			bb_srv_stimpack_level = bb_srv_stimpack_level + 1;
-			[] spawn {sleep 600; bb_srv_stimpack_level = bb_srv_stimpack_level - 1;}
+			_target setVariable["bb_srv_st_lvl", (_level + 1)];
 		};
 	},
 	{
-		[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["playMoveNow", 0, true];
-		[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["switchMove", 0, true];
+		_this params ["_parameter"];
+		_parameter params ["_target", "_player"];
+		[_player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["playMoveNow", 0, true];
+		[_player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["switchMove", 0, true];
 	}, "Вводжу стимулятор"
 ] call ace_common_fnc_progressBar;

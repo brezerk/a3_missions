@@ -279,16 +279,55 @@ Fn_Update_Temperature = {
 			_img = "addons\BrezBlock.framework\data\survival\temp_down2.paa";
 			player setDamage ((damage player) + 0.001); 
 		};
+		if (bb_srv_dmg_chem > 0) then {
+			_timeStamp = player getVariable["bb_srv_dechem", 0];
+			if (_timeStamp > 0) then {
+				if ((time - _timeStamp) > 900) then {
+					player getVariable["bb_srv_dechem", 0, true];
+				} else {
+					bb_srv_dmg_chem = bb_srv_dmg_chem - 0.39;
+					if (bb_srv_dmg_chem < 0) then {
+						bb_srv_dmg_chem = 0;
+					};
+				};
+			};
+		};
+		if (bb_srv_dmg_rad > 0) then {
+			_timeStamp = player getVariable["bb_srv_derad", 0];
+			if (_timeStamp > 0) then {
+				if ((time - _timeStamp) > 900) then {
+					player getVariable["bb_srv_derad", 0, true];
+				} else {
+					bb_srv_dmg_rad = bb_srv_dmg_rad - 0.39;
+					if (bb_srv_dmg_rad < 0) then {
+						bb_srv_dmg_rad = 0;
+					};
+				};
+			};
+		};
+		if (bb_srv_dmg_bac > 0) then {
+			_timeStamp = player getVariable["bb_srv_debac", 0];
+			if (_timeStamp > 0) then {
+				if ((time - _timeStamp) > 900) then {
+					player getVariable["bb_srv_debac", 0, true];
+				} else {
+					bb_srv_dmg_bac = bb_srv_dmg_bac - 0.39;
+					if (bb_srv_dmg_bac < 0) then {
+						bb_srv_dmg_bac = 0;
+					};
+				};
+			};
+		};
 	} else {
-		if (damage player < 0) then {
+		if (damage player > 0) then {
 			_thirst = player getVariable ['ACEX_field_rations_thirst', 0];
 			_hunger = player getVariable ['ACEX_field_rations_hunger', 0];
 			if ((_thirst < 60) && (_hunger < 60)) then {
 				if ((_thirst < 30) && (_hunger < 30)) then {
-					player setDamage ((damage player) + 0.005);
+					player setDamage ((damage player) - 0.005);
 					_img = "addons\BrezBlock.framework\data\survival\temp_up2.paa";
 				} else {
-					player setDamage ((damage player) + 0.001);
+					player setDamage ((damage player) - 0.001);
 					_img = "addons\BrezBlock.framework\data\survival\temp_up1.paa";
 				};
 			} else {
@@ -354,22 +393,23 @@ while {(!isNull player)} do  {
 	call Fn_Update_ACEX_Rations;
 	call Fn_ProgressIllness;
 	
-	//systemChat format ["Chem: %1 Rad: %2 Temp: %3 F: %4 Body Result: %5 Bac: %6 T %7 H %8", bb_srv_dmg_chem, bb_srv_dmg_rad, bb_srv_temp_body, bb_srv_temp_body_feaver, (bb_srv_temp_body + bb_srv_temp_body_feaver), bb_srv_dmg_bac, player getVariable ['ACEX_field_rations_thirst', 'nan'], player getVariable ['ACEX_field_rations_hunger', 'nan']];
+	systemChat format ["Chem: %1 Rad: %2 Temp: %3 F: %4 Body Result: %5 Bac: %6 Dmg: %7", bb_srv_dmg_chem, bb_srv_dmg_rad, bb_srv_temp_body, bb_srv_temp_body_feaver, (bb_srv_temp_body + bb_srv_temp_body_feaver), bb_srv_dmg_bac, damage player];
 	
 	if (_count >= 15) then {
 		_symptmos = [];
 		if (bb_srv_dmg_chem > 0) then {
 			_symptmos pushBack _cough;
-			if (bb_srv_dmg_chem < 10) then {
-			} else {
-				if (bb_srv_dmg_chem < 20) then {
-					_chance = 40;
+			if (bb_srv_dmg_chem > 10) then {
+				if (bb_srv_dmg_chem > 20) then {
+					_symptmos pushBack _puke;
+				} else {
 					_symptmos pushBack _hallucinations_01;
 					_symptmos pushBack _hallucinations_02;
-				} else {
-					_symptmos pushBack _puke;
 				};
 			};
+		};
+		if (bb_srv_dmg_rad >= 10) then {
+			_symptmos pushBack _puke;
 		};
 		if (bb_srv_temp_body <= 36.2) then {
 			_symptmos pushBack _shiver;
@@ -385,6 +425,28 @@ while {(!isNull player)} do  {
 		};
 		if (count _symptmos > 0) then {
 			[] spawn selectRandom _symptmos;
+		};
+		_levels = player getVariable["bb_srv_health", "000"];
+		_new_levels = "";
+		{
+			if (_x > 0) then {
+				if (_x > 20) then {
+					_new_levels = _new_levels + "3";
+				} else {
+					if (_x > 10) then {
+						_new_levels = _new_levels + "2";
+					} else {
+						_new_levels = _new_levels + "1";
+					};
+				};
+			} else {
+				_new_levels = _new_levels + "0";
+			};
+		} forEach [bb_srv_dmg_chem, bb_srv_dmg_rad, bb_srv_dmg_bac];
+		
+		if (_levels != _new_levels) then {
+			//systemChat format["set old %1 new %2", _levels, _new_levels];
+			player setVariable["bb_srv_health", _new_levels, true];
 		};
 		_count = 0;
 	};

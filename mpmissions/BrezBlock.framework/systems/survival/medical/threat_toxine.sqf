@@ -16,29 +16,38 @@
  *                                                                         *
  ***************************************************************************/
 
-params["_src", "_dst"];
+params["_target", "_player"];
 
-if (!alive _dst) exitWith {systemChat format ["%1 мертвий.", name _dst];};
-if ((_dst distance _src) > 6) exitWith {systemChat format ["%1 занадто далеко.", name _dst];};
-if (!("ACE_salineIV" in (items player))) exitWith {systemChat format ["Потрібен фізрозчин для інфузії.", name _dst];};
+if (!alive _target) exitWith {systemChat format ["%1 мертвий.", name _target];};
+if ((_target distance _player) > 6) exitWith {systemChat format ["%1 занадто далеко.", name _target];};
+
+if (!("ACE_salineIV" in (items _target))) then {
+	_target removeItem "ACE_salineIV";
+} else {
+	if (!("ACE_salineIV" in (items _player))) exitWith {systemChat "Потрібен фізрозчин для інфузії.";};
+	_player removeItem "ACE_salineIV";
+};
+
 //Execute revive animation
-[player, "AinvPknlMstpSnonWrflDr_medic3"] remoteExec ["playMoveNow", 0, false];
+[_player, "AinvPknlMstpSnonWrflDr_medic3"] remoteExec ["playMoveNow", 0, false];
 //Wait for revive animation to be set
-waitUntil {sleep 0.05; ((animationState player) == "AinvPknlMstpSnonWrflDr_medic3")};
+waitUntil {sleep 0.05; ((animationState _player) == "AinvPknlMstpSnonWrflDr_medic3")};
 //call progress
-player removeItem "ACE_salineIV";
 [
 	3,
-	[_src, _dst],
+	[_target, _player],
 	{
 		_this params ["_parameter"];
-		_parameter params ["_src", "_dst"];
-		[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["playMoveNow", 0, true];
-		[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["switchMove", 0, true];
-		remoteExec ["BrezBlock_fnc_call_dechem", _dst];
+		_parameter params ["_target", "_player"];
+		[_player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["playMoveNow", 0, true];
+		[_player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["switchMove", 0, true];
+		_target setVariable["bb_srv_dechem", time, true];
+		//remoteExec ["BrezBlock_fnc_call_dechem", _target];
 	},
 	{
-		[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["playMoveNow", 0, true];
-		[player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["switchMove", 0, true];
+		_this params ["_parameter"];
+		_parameter params ["_target", "_player"];
+		[_player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["playMoveNow", 0, true];
+		[_player, "AmovPknlMstpSrasWrflDnon"] remoteExecCall ["switchMove", 0, true];
 	}, "Вводжу Детоксин"
 ] call ace_common_fnc_progressBar;
