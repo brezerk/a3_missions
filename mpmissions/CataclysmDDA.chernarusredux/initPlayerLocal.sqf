@@ -83,6 +83,7 @@ Fn_LoadSupply = {
 
 Fn_Local_RespawnWave = {
 	if (player isKindOf "zombie") then {
+		bb_next_wave = true;
 		player setDamage 1;
 	};
 };
