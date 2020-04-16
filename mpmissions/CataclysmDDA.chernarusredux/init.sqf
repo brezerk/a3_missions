@@ -27,7 +27,9 @@ D_THREAT_CHEM_AREAL = 1;
 D_THREAT_RAD_LOCAL  = 0;
 bb_threat_chem_areas = [];
 bb_threat_rad_areas  = [];
+bb_srv_dmg_chem = 0;
 bb_local_fog = 0;
+bb_next_wave = false;
 
 Fn_SetEnv = {
 	null = [
@@ -46,28 +48,77 @@ Fn_SetEnv = {
 };
 
 {
-	[(markerPos _x), 10, (random 55), 1000, false] call BrezBlock_fnc_Systems_Refuel_Station;
+	[(markerPos _x), 10, 15, 1000, false] call BrezBlock_fnc_Systems_Refuel_Station;
 } forEach ["wp_fuel_01", "wp_fuel_02", "wp_fuel_03", "wp_fuel_04", "wp_fuel_05", "wp_fuel_06"];
 
 
 if (isServer) then {
 	[120] spawn  BrezBlock_fnc_Utils_Garbage_Collector;
+	
+	box00 addItemCargoGlobal ["rvg_antiRad", 10];
+	
+	box01 addItemCargoGlobal ["Mask_M40", 1];
+	box01 addItemCargoGlobal ["Mask_M40_OD", 1];
+	box01 addItemCargoGlobal ["Mask_M50", 1];
+
+	box02 addItemCargoGlobal ["Mask_M40", 11];
+	box02 addItemCargoGlobal ["Mask_M40_OD", 13];
+	box02 addItemCargoGlobal ["Mask_M50", 8];
+	box02 addItemCargoGlobal ["rvg_antiRad", 15];
+	
+	{
+	//null = [_x,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
+		[_x, (10 + random(10)), 0.05] spawn BrezBlock_fnc_Local_Systems_Radiation_Local;
+	} forEach [rad_01, rad_02, rad_03, rad_04, rad_05, rad_06, rad_07, rad_08];
+
+	trgReSpawn01 = createTrigger ["EmptyDetector", getPos respawn01];
+	trgReSpawn01 setTriggerArea [0, 0, 0, false];
+	trgReSpawn01 setTriggerActivation ["NONE", "PRESENT", false];
+	trgReSpawn01 setTriggerStatements [
+			"!alive respawn01",
+			"remoteExecCall ['Fn_Local_RespawnWave', [0,-2] select isDedicated];",
+			""
+	];
+
+	trgReSpawn02 = createTrigger ["EmptyDetector", getPos respawn02];
+	trgReSpawn02 setTriggerArea [0, 0, 0, false];
+	trgReSpawn02 setTriggerActivation ["NONE", "PRESENT", false];
+	trgReSpawn02 setTriggerStatements [
+			"!alive respawn02",
+			"remoteExecCall ['Fn_Local_RespawnWave', [0,-2] select isDedicated];",
+			""
+	];
+
+	trgReSpawn03 = createTrigger ["EmptyDetector", getPos respawn03];
+	trgReSpawn03 setTriggerArea [0, 0, 0, false];
+	trgReSpawn03 setTriggerActivation ["NONE", "PRESENT", false];
+	trgReSpawn03 setTriggerStatements [
+			"!alive respawn03",
+			"remoteExecCall ['Fn_Local_RespawnWave', [0,-2] select isDedicated];",
+			""
+	];
+
 };
 //
 
-{
-	//null = [_x,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
-	[_x, 15, 0.05] spawn BrezBlock_fnc_Local_Systems_Radiation_Local;
-} forEach [rad_obj_01, rad_obj_02, rad_obj_03, rad_obj_04];
+/*
+
+
+
+
 
 [obj_haz01, 10, 0.05] spawn BrezBlock_fnc_Local_Systems_Chemical_Local;
 //[obj_haz03, 10, 0.05] spawn BrezBlock_fnc_Local_Systems_Chemical_Local;
 [obj_haz02, 200, 0.05] spawn BrezBlock_fnc_Local_Systems_Chemical_Areal;
 //[obj_haz04, 200, 0.05] spawn BrezBlock_fnc_Local_Systems_Chemical_Areal;
+*/
 
-box01 addItemCargoGlobal ["Mask_M40", 1];
-box01 addItemCargoGlobal ["Mask_M40_OD", 1];
-box01 addItemCargoGlobal ["Mask_M50", 1];
+
+if (hasInterface) then {
+	[obj_haz01, 1000, 0.05] spawn BrezBlock_fnc_Local_Systems_Chemical_Areal;
+	[obj_haz02, 1000, 0.05] spawn BrezBlock_fnc_Local_Systems_Chemical_Areal;
+	[obj_haz03, 1000, 0.05] spawn BrezBlock_fnc_Local_Systems_Chemical_Areal;
+};
 
 
 
@@ -75,16 +126,7 @@ box01 addItemCargoGlobal ["Mask_M50", 1];
 //null = [rad_obj_03,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
 //null = [rad_obj_01,30,0.02,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",false,10,true] execvm "AL_radiation\radioactive_object.sqf";
 
-/*
-trgEvacPointEnter = createTrigger ["EmptyDetector", getPos emp_me];
-trgEvacPointEnter setTriggerArea [1000, 1000, 0, false];
-trgEvacPointEnter setTriggerActivation ["WEST", "PRESENT", true];
-trgEvacPointEnter setTriggerStatements [
-		"this",
-		"call Fn_SetEnv;",
-		""
-];
-*/
+
 
 /*
 [stup, 30, "SmokeShell", 0.8] execvm "AL_swarmer\al_hive.sqf";

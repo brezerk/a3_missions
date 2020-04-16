@@ -16,6 +16,8 @@
  *                                                                         *
  ***************************************************************************/
 
+params ["_local"];
+
 _action = [
 	"bb_survival_stimpack",
 	"Вколоти стимулятор",
@@ -32,7 +34,9 @@ _action = [
 	[false, false, false, false, false]] call ace_interact_menu_fnc_createAction;
 	
 [player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToObject;
-["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+if (!_local) then {
+	["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+};
 
 _action = [
 	"bb_survival_diagnose",
@@ -50,7 +54,9 @@ _action = [
 	[false, false, false, false, false]] call ace_interact_menu_fnc_createAction;
 	
 [player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToObject;
-["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+if (!_local) then {
+	["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+};
 
 _action = [
 	"bb_survival_personalAidKit_threat_detox",
@@ -68,7 +74,9 @@ _action = [
 	[false, false, false, false, false]] call ace_interact_menu_fnc_createAction;
 	
 [player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToObject;
-["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+if (!_local) then {
+	["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+};
 
 
 _insertChildren = {
@@ -107,7 +115,9 @@ _action = [
 	[false, false, false, false, false]] call ace_interact_menu_fnc_createAction;
 	
 [player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToObject;
-["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+if (!_local) then {
+	["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+};
 
 _action = [
 	"bb_survival_personalAidKit_threat_flue",
@@ -125,4 +135,7 @@ _action = [
 	[false, false, false, false, false]] call ace_interact_menu_fnc_createAction;
 
 [player, 1, ["ACE_SelfActions", "ACE_Equipment"], _action] call ace_interact_menu_fnc_addActionToObject;
-["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+if (!_local) then {
+	["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+};
+

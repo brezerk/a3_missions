@@ -1,9 +1,9 @@
 
 _lvls = [];
-_lvls pushBack (0.0000163141);
-_lvls pushBack (0.0001631415);
-_lvls pushBack (0.0002631415);
-_lvls pushBack (0.0003631415);
+_lvls pushBack (0.0000193141);
+_lvls pushBack (0.0001931415);
+_lvls pushBack (0.0002931415);
+_lvls pushBack (0.0003931415);
 
 //_lvls pushBack (0.00066314157*1.00619);
 //_lvls pushBack ((0.0016314157+0.00014159)/(pi*2));

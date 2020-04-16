@@ -16,7 +16,6 @@
  *                                                                         *
  ***************************************************************************/
 
-
 bb_srv_dmg_chem   = 0; // 0 - 20 light damage; 30 - 100 heavy damage; 100 + letal damage
 bb_srv_dmg_rad    = 0; // 0 - 20 light damage; 300 - 1000 heavy damage; 1000 + letal damage
 bb_srv_dmg_bac    = 0; // 0 - 300 light damage; 300 - 1000 heavy damage; 1000 + letal damage
@@ -25,11 +24,10 @@ bb_srv_temp_body_feaver  = 0; // > 4.4 letal;
 bb_srv_temp_local = 0; // 0 - 32 -- cold; 32 - 35 -- chilly; 36 comfort; 
 bb_srv_stimpack_level = 0;
 
-
-player setVariable['bb_srv_dmg_chem', bb_srv_dmg_chem,   true];
-player setVariable['bb_srv_dmg_rad',  bb_srv_dmg_rad,    true];
-player setVariable['bb_srv_dmg_bac',  bb_srv_dmg_bac,    true];
-player setVariable['bb_srv_temp_body', bb_srv_temp_body, true];
+player setVariable['bb_srv_derad',  0, true];
+player setVariable['bb_srv_dechem', 0, true];
+player setVariable['bb_srv_debac',  0, true];
+player setVariable['bb_srv_st_lvl', 0, true];
 
 // symptoms
 
@@ -285,7 +283,7 @@ Fn_Update_Temperature = {
 				if ((time - _timeStamp) > 900) then {
 					player getVariable["bb_srv_dechem", 0, true];
 				} else {
-					bb_srv_dmg_chem = bb_srv_dmg_chem - 0.39;
+					bb_srv_dmg_chem = bb_srv_dmg_chem - 0.05;
 					if (bb_srv_dmg_chem < 0) then {
 						bb_srv_dmg_chem = 0;
 					};
@@ -298,7 +296,7 @@ Fn_Update_Temperature = {
 				if ((time - _timeStamp) > 900) then {
 					player getVariable["bb_srv_derad", 0, true];
 				} else {
-					bb_srv_dmg_rad = bb_srv_dmg_rad - 0.39;
+					bb_srv_dmg_rad = bb_srv_dmg_rad - 0.05;
 					if (bb_srv_dmg_rad < 0) then {
 						bb_srv_dmg_rad = 0;
 					};
@@ -311,7 +309,7 @@ Fn_Update_Temperature = {
 				if ((time - _timeStamp) > 900) then {
 					player getVariable["bb_srv_debac", 0, true];
 				} else {
-					bb_srv_dmg_bac = bb_srv_dmg_bac - 0.39;
+					bb_srv_dmg_bac = bb_srv_dmg_bac - 0.05;
 					if (bb_srv_dmg_bac < 0) then {
 						bb_srv_dmg_bac = 0;
 					};
@@ -340,8 +338,9 @@ Fn_Update_Temperature = {
 	private _ctrl = uiNamespace getVariable "bb_survival_hud" displayCtrl 2996;
 	if (!isNil "_ctrl") then { _ctrl ctrlSetText _img; };
 	
-	if (bb_srv_stimpack_level > 0) then {
-		_img = format ["addons\BrezBlock.framework\data\survival\stim%1.paa", round linearConversion [1, 5, bb_srv_stimpack_level, 1, 5, true]];
+	private _level = player getVariable ["bb_srv_st_lvl", 0];
+	if (_level > 0) then {
+		_img = format ["addons\BrezBlock.framework\data\survival\stim%1.paa", round linearConversion [1, 5, _level, 1, 5, true]];
 	} else {
 		_img = "addons\BrezBlock.framework\data\survival\empty.paa";
 	};
@@ -385,6 +384,8 @@ while {(!isNull player)} do  {
 	private _threat = 0;
 	_count = _count + 1;
 	waitUntil {alive player};
+	waitUntil {player isKindOf "CAManBase"};
+	
 	/*
 	if (!isNil "ACEX_field_rations_hud") then {
 		ACEX_field_rations_hud cutText ["", "PLAIN"];
@@ -393,7 +394,7 @@ while {(!isNull player)} do  {
 	call Fn_Update_ACEX_Rations;
 	call Fn_ProgressIllness;
 	
-	systemChat format ["Chem: %1 Rad: %2 Temp: %3 F: %4 Body Result: %5 Bac: %6 Dmg: %7", bb_srv_dmg_chem, bb_srv_dmg_rad, bb_srv_temp_body, bb_srv_temp_body_feaver, (bb_srv_temp_body + bb_srv_temp_body_feaver), bb_srv_dmg_bac, damage player];
+	//systemChat format ["Chem: %1 Rad: %2 Temp: %3 F: %4 Body Result: %5 Bac: %6 Dmg: %7", bb_srv_dmg_chem, bb_srv_dmg_rad, bb_srv_temp_body, bb_srv_temp_body_feaver, (bb_srv_temp_body + bb_srv_temp_body_feaver), bb_srv_dmg_bac, damage player];
 	
 	if (_count >= 15) then {
 		_symptmos = [];

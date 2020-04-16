@@ -56,11 +56,6 @@ class BrezBlock
 		class Local_Systems_Survival_Medical_Rad {file = "addons\BrezBlock.framework\systems\survival\medical\threat_rad.sqf";};
 		class Local_Systems_Survival_Medical_Toxine {file = "addons\BrezBlock.framework\systems\survival\medical\threat_toxine.sqf";};
 		class Local_Systems_Survival_Medical_Flue {file = "addons\BrezBlock.framework\systems\survival\medical\threat_flue.sqf";};
-		class call_diag {file = "addons\BrezBlock.framework\systems\survival\medical\diag_handler.sqf";};
-		class callback_diag {file = "addons\BrezBlock.framework\systems\survival\medical\diag_call.sqf";};
-		class call_derad {file = "addons\BrezBlock.framework\systems\survival\medical\call_derad.sqf";};
-		class call_dechem {file = "addons\BrezBlock.framework\systems\survival\medical\call_dechem.sqf";};
-		class call_debac {file = "addons\BrezBlock.framework\systems\survival\medical\call_debac.sqf";};
 		class Local_Systems_Survival_Medical_Stimpack {file = "addons\BrezBlock.framework\systems\survival\medical\stimpack.sqf";};
 	};
 };

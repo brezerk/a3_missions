@@ -20,5 +20,5 @@ params['_center', '_range', '_capacity', ['_capacity_max', 1000]];
 
 { 
 	_x setFuelCargo 0;
-	[_x, _capacity, _capacity_max, false] call BrezBlock_fnc_Systems_Refuel_Init;
+	[_x, (random _capacity), _capacity_max, false] call BrezBlock_fnc_Systems_Refuel_Init;
 } forEach (nearestObjects [_center, ["Land_A_FuelStation_Feed", "Land_fs_feed_F", "Land_FuelStation_Feed_PMC", "Land_Ind_FuelStation_Feed_EP1", "Land_FuelStation_03_F"], _range]);

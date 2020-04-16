@@ -24,39 +24,54 @@ On player respawn event handler
 //[player, [missionNamespace, "outpost_saved_loadout"]] call BIS_fnc_loadInventory;
 
 
-	_none = player;
-	_pos = markerPos "wp_zed";
-	player setPos _pos;
-	if (!bb_next_wave) then {
-		{
-			if (alive _x) exitWith { _pos = getPos _x };
-		} forEach (switchableUnits + playableUnits);
+bb_srv_dmg_chem   = 0; // 0 - 20 light damage; 30 - 100 heavy damage; 100 + letal damage
+bb_srv_dmg_rad    = 0; // 0 - 20 light damage; 300 - 1000 heavy damage; 1000 + letal damage
+bb_srv_dmg_bac    = 0; // 0 - 300 light damage; 300 - 1000 heavy damage; 1000 + letal damage
+bb_srv_temp_body  = 36.6; // 0 - 32 -- cold; 32 - 35 -- chilly; 36 comfort; 
+bb_srv_temp_body_feaver  = 0; // > 4.4 letal; 
+bb_srv_temp_local = 0; // 0 - 32 -- cold; 32 - 35 -- chilly; 36 comfort; 
+bb_srv_stimpack_level = 0;
+player setVariable['bb_srv_derad',  0, true];
+player setVariable['bb_srv_dechem', 0, true];
+player setVariable['bb_srv_debac',  0, true];
+player setVariable['bb_srv_st_lvl', 0, true];
+
+_none = player;
+_pos = markerPos "wp_zed";
+player setPos _pos;
+if (!bb_next_wave) then {
+	_pos = [];
+	{
+		if (alive _x) exitWith { _pos = getPos _x };
+	} forEach (switchableUnits + playableUnits);
+	if (count _pos > 0) then {
 		_pos = [_pos, 350, 500, 5, 0, 0, 0, [], []] call BIS_fnc_findSafePos;
-		_pos = markerPos "wp_test";
-		private _unit = (createGroup [civilian, true]) createUnit ["zombie_runner", _pos, [], 0, "FORM"];
-		
-		waitUntil {alive _unit};
-		
-		//[_unit, 35] call rvg_fnc_setDamage;
-		execVM "gear\base.sqf";
-		//
-		selectPlayer _unit;
-		
-		deleteVehicle _none;
-		vehicle player switchCamera "EXTERNAL";
-		
-		[_unit, _none] spawn { params ["_unit", "_none"]; waitUntil { !alive _unit; }; selectPlayer _none; player addEventHandler ["Respawn", { params ["_unit", "_corpse"]; _unit = call Fn_MakeMeZombie; _unit} ]; player setDamage 1.0; };
-		
-		bb_next_wave = true;
-		_unit;
 	} else {
-		private _unit = (createGroup [civilian, true]) createUnit ["B_Survivor_F", _pos, [], 0, "FORM"];
-		waitUntil {alive _unit};
-		selectPlayer _unit;
-		player addEventHandler ["Respawn", { params ["_unit", "_corpse"]; _unit = call Fn_MakeMeZombie; _unit} ];
-		execVM "gear\base.sqf";
 		_pos = markerPos "wp_test";
-		player setPos _pos;
-		bb_next_wave = false;
 	};
+	private _unit = (createGroup [civilian, true]) createUnit ["zombie_runner", _pos, [], 0, "FORM"];
+		
+	waitUntil {alive _unit};
+		
+	execVM "gear\zed_base.sqf";
+	selectPlayer _unit;
+	deleteVehicle _none;
+	vehicle player switchCamera "EXTERNAL";
+	[_unit, _none] spawn { params ["_unit", "_none"]; waitUntil { !alive _unit; }; selectPlayer _none; player addEventHandler ["Respawn", { params ["_unit", "_corpse"]; _unit = call Fn_MakeMeZombie; _unit} ]; player setDamage 1.0; };
+	100 cutText ["", "PLAIN"];
+	_unit addEventHandler ["InventoryOpened", {false}];
+	//_unit;
+} else {
+	private _unit = (createGroup [west, true]) createUnit ["B_Survivor_F", _pos, [], 0, "FORM"];
+	waitUntil {alive _unit};
+	selectPlayer _unit;
+	player addEventHandler ["Respawn", { params ["_unit", "_corpse"]; _unit = call Fn_MakeMeZombie; _unit} ];
+	execVM "gear\base.sqf";
+	_pos = markerPos "wp_test";
+	player setPos _pos;
+	bb_next_wave = false;
+	[true] call BrezBlock_fnc_Local_Systems_Survival_Medical;
+	[true] call BrezBlock_fnc_Local_Systems_Survival_Fireplace;
+	100 cutRsc ["BB_Survival_HUD","PLAIN", 1, false];
+};
 	

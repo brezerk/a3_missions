@@ -16,10 +16,11 @@
  *                                                                         *
  ***************************************************************************/
  
-/*
 removeHeadgear player;
 removeGoggles player;
-removeAllPrimaryWeaponItems player;
+removeUniform player;
+removeVest player;
+removeBackpack player;
 
 player addHeadgear selectRandom [
 	"FRITH_ruin_modhat_metgrn",
@@ -70,11 +71,6 @@ player addGoggles selectRandom [
 	"rvg_balaclava_5"
 ];
 
-private _items_u = uniformItems player;
-private _items_b = backpackItems player;
-private _items_v = vestItems player;
-
-removeUniform player;
 player forceAddUniform selectRandom [
 	"U_FRITH_RUIN_sdr_ltrdrk_rs",
 	"U_FRITH_RUIN_sdr_ltrdrk",
@@ -91,9 +87,6 @@ player forceAddUniform selectRandom [
 	"U_FRITH_RUIN_sdr_fabgrn"
 ];
 
-{ player addItemToUniform _x; } forEach _items_u;
-
-removeVest player;
 player addVest selectRandom [
 	"FRITH_ruin_vestia_tar",
 	"FRITH_ruin_vestia_nja",
@@ -110,69 +103,6 @@ player addVest selectRandom [
 	"FRITH_ruin_vestiaGL_tar",
 	"FRITH_ruin_vestiaGL_ghm"
 ];
-{ player addItemToVest _x; } forEach _items_v;
-
-removeBackpack player;
-player addBackpack selectRandom [
-	"rvg_kitbag",
-	"rvg_carryall_2",
-	"rvg_field"
-];
-{ player addItemToBackpack _x; } forEach _items_b;
-
-*/
-
-player setFace (selectRandom ['WhiteHead_01',
-'WhiteHead_02',
-'WhiteHead_03',
-'WhiteHead_04',
-'WhiteHead_05',
-'WhiteHead_06',
-'WhiteHead_07',
-'WhiteHead_08',
-'WhiteHead_09',
-'WhiteHead_10',
-'WhiteHead_11',
-'WhiteHead_12',
-'WhiteHead_13',
-'WhiteHead_14',
-'WhiteHead_15',
-'WhiteHead_16',
-'WhiteHead_17',
-'WhiteHead_18',
-'WhiteHead_19',
-'WhiteHead_20',
-'WhiteHead_21',
-'WhiteHead_23']);
-
-player setSpeaker "NoVoice";
-
-/*
-for "_i" from 1 to 2 do {player addItemToBackpack "ACE_tourniquet";};
-for "_i" from 1 to 2 do {player addItemToBackpack "ACE_bloodIV_500";};
-for "_i" from 1 to 20 do {player addItemToBackpack "ACE_fieldDressing";};
-player addItemToBackpack "ACE_Canteen";
-
-player addItemToUniform "ACE_CableTie";
-for "_i" from 1 to 3 do {player addItemToUniform "ACE_epinephrine";};
-for "_i" from 1 to 2 do {player addItemToUniform "ACE_morphine";};
-
-player addItemToUniform "ACE_EarPlugs";
-for "_i" from 1 to 5 do {player addItemToUniform "ACE_fieldDressing";};
-
-//ACEX
-player addItemToBackpack "ACE_MRE_MeatballsPasta";
-for "_i" from 1 to 2 do {player addItemToBackpack "ACE_MRE_CreamChickenSoup";};
-
-for "_i" from 1 to 2 do {player addItemToBackpack "SmokeShell";};*/
-
-player addItemToBackpack "rvg_antiRad";             // Протизапальне
-//player addItemToBackpack "AntidoteKit_01_F";        // Антидот
-//player addItemToBackpack "rvg_purificationTablets"; // Жаропонижаюче
-//player addItemToBackpack "rvg_notepad";
-player addItemToBackpack "rvg_flare";             // Розвести вогонь
-player addItemToBackpack "rvg_flare";             // Розвести вогонь
-player addItemToBackpack "rvg_flare";             // Розвести вогонь
 
 // Kick GPS if any
 player unassignItem "ItemGPS";
