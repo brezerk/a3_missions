@@ -62,12 +62,12 @@ if (!bb_next_wave) then {
 	_unit addEventHandler ["InventoryOpened", {false}];
 	//_unit;
 } else {
+	_pos = markerPos "wp_test";
 	private _unit = (createGroup [west, true]) createUnit ["B_Survivor_F", _pos, [], 0, "FORM"];
 	waitUntil {alive _unit};
 	selectPlayer _unit;
 	player addEventHandler ["Respawn", { params ["_unit", "_corpse"]; _unit = call Fn_MakeMeZombie; _unit} ];
 	execVM "gear\base.sqf";
-	_pos = markerPos "wp_test";
 	player setPos _pos;
 	bb_next_wave = false;
 	[true] call BrezBlock_fnc_Local_Systems_Survival_Medical;
