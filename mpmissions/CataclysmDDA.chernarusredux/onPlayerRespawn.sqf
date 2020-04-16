@@ -67,11 +67,11 @@ if (!bb_next_wave) then {
 	waitUntil {alive _unit};
 	selectPlayer _unit;
 	player addEventHandler ["Respawn", { params ["_unit", "_corpse"]; _unit = call Fn_MakeMeZombie; _unit} ];
-	execVM "gear\base.sqf";
 	player setPos _pos;
-	bb_next_wave = false;
 	[true] call BrezBlock_fnc_Local_Systems_Survival_Medical;
 	[true] call BrezBlock_fnc_Local_Systems_Survival_Fireplace;
+	[player, [missionNamespace, "outpost_saved_loadout"]] call BIS_fnc_loadInventory;
 	100 cutRsc ["BB_Survival_HUD","PLAIN", 1, false];
+	bb_next_wave = false;
 };
 	

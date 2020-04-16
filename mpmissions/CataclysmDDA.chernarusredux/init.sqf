@@ -55,7 +55,7 @@ Fn_SetEnv = {
 if (isServer) then {
 	[120] spawn  BrezBlock_fnc_Utils_Garbage_Collector;
 	
-	box00 addItemCargoGlobal ["rvg_antiRad", 10];
+	//box00 addItemCargoGlobal ["rvg_antiRad", 10];
 	
 	box01 addItemCargoGlobal ["Mask_M40", 1];
 	box01 addItemCargoGlobal ["Mask_M40_OD", 1];
@@ -66,10 +66,7 @@ if (isServer) then {
 	box02 addItemCargoGlobal ["Mask_M50", 8];
 	box02 addItemCargoGlobal ["rvg_antiRad", 15];
 	
-	{
-	//null = [_x,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
-		[_x, (10 + random(10)), 0.05] spawn BrezBlock_fnc_Local_Systems_Radiation_Local;
-	} forEach [rad_01, rad_02, rad_03, rad_04, rad_05, rad_06, rad_07, rad_08];
+
 
 	trgReSpawn01 = createTrigger ["EmptyDetector", getPos respawn01];
 	trgReSpawn01 setTriggerArea [0, 0, 0, false];
@@ -102,11 +99,6 @@ if (isServer) then {
 //
 
 /*
-
-
-
-
-
 [obj_haz01, 10, 0.05] spawn BrezBlock_fnc_Local_Systems_Chemical_Local;
 //[obj_haz03, 10, 0.05] spawn BrezBlock_fnc_Local_Systems_Chemical_Local;
 [obj_haz02, 200, 0.05] spawn BrezBlock_fnc_Local_Systems_Chemical_Areal;
@@ -118,7 +110,13 @@ if (hasInterface) then {
 	[obj_haz01, 1000, 0.05] spawn BrezBlock_fnc_Local_Systems_Chemical_Areal;
 	[obj_haz02, 1000, 0.05] spawn BrezBlock_fnc_Local_Systems_Chemical_Areal;
 	[obj_haz03, 1000, 0.05] spawn BrezBlock_fnc_Local_Systems_Chemical_Areal;
+	{
+		//null = [_x,15,0.05,"H_PilotHelmetFighter_B","Item_ChemicalDetector_01_watch_F",true,10,true] execVM "AL_radiation\radioactive_object.sqf";
+		[_x, (10 + random(5)), 0.05] spawn BrezBlock_fnc_Local_Systems_Radiation_Local;
+	} forEach [rad_01, rad_02, rad_03, rad_04, rad_05, rad_06, rad_07, rad_08];
 };
+
+
 
 
 

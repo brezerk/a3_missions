@@ -36,6 +36,8 @@ sleep 4;
 
 ['Чернорусія.', 'Блокпост', format ['14 листопада 2071 %s', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;
 
+[player, [missionNamespace, "outpost_saved_loadout"]] call BIS_fnc_saveInventory;
+
 bb_player_threat_chem = 0;
 bb_player_threat_rad = 0;
 
