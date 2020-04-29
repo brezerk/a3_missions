@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=60;
+		nextID=84;
 	};
 	class Camera
 	{
-		pos[]={2629.21,305.9328,10125.683};
-		dir[]={0.4854393,-0.63076973,-0.60553098};
-		up[]={0.39456007,0.77593625,-0.49216384};
-		aside[]={-0.78029937,7.1711838e-008,-0.6255514};
+		pos[]={2357.5635,359.24921,10702.517};
+		dir[]={-0.24499559,-0.35983297,0.90038401};
+		up[]={-0.094498366,0.93297535,0.34728035};
+		aside[]={0.96500653,1.1798147e-006,0.26258174};
 	};
 };
 binarizationWanted=0;
@@ -362,7 +362,7 @@ class Mission
 					};
 					id=87;
 					type="CL_B_US_Rangers_Soldier_Light_F";
-					atlOffset=0.031066895;
+					atlOffset=0.031219482;
 				};
 				class Item4
 				{
@@ -1236,7 +1236,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="IEDOnly";
+							value="RANDOM";
 						};
 					};
 				};
@@ -1331,7 +1331,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=25;
+							value=50;
 						};
 					};
 				};
@@ -3149,7 +3149,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=50;
+							value=100;
 						};
 					};
 				};
@@ -3225,7 +3225,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=25;
+							value=40;
 						};
 					};
 				};
@@ -3237,7 +3237,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2977.1631,339.87225,7440.0029};
+				position[]={2963.2444,336.21634,7407.8994};
+				angles[]={6.2008758,0,0.059926469};
 			};
 			id=659;
 			type="CL_Spawn_Ambush";
@@ -3429,7 +3430,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=25;
+							value=30;
 						};
 					};
 				};
@@ -3687,7 +3688,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=25;
+							value=50;
 						};
 					};
 				};
@@ -3763,7 +3764,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=15;
+							value=35;
 						};
 					};
 				};
