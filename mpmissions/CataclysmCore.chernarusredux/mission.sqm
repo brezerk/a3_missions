@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=666;
+		nextID=668;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=84;
+		nextID=96;
 	};
 	class Camera
 	{
-		pos[]={2357.5635,359.24921,10702.517};
-		dir[]={-0.24499559,-0.35983297,0.90038401};
-		up[]={-0.094498366,0.93297535,0.34728035};
-		aside[]={0.96500653,1.1798147e-006,0.26258174};
+		pos[]={2292.5366,359.24921,11068.017};
+		dir[]={-0.66862434,-0.47338235,0.57364327};
+		up[]={-0.35932764,0.88079917,0.30828249};
+		aside[]={0.65120649,1.7341226e-006,0.75902998};
 	};
 };
 binarizationWanted=0;
@@ -169,7 +169,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=41;
+		items=42;
 		class Item0
 		{
 			dataType="Marker";
@@ -1214,8 +1214,7 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2282.908,272.76065,10925};
-				angles[]={6.2806892,0,0.020001473};
+				position[]={2296.595,272.23999,10800.785};
 			};
 			id=647;
 			type="CL_Spawn_Ambush";
@@ -1419,12 +1418,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2651.635,274.22968,10105.848};
-				angles[]={6.2656798,0,6.2631841};
+				position[]={2641.0298,274.93988,10119.897};
+				angles[]={6.2432065,0,6.2481976};
 			};
 			id=648;
 			type="CL_Spawn_BlockPost";
-			atlOffset=3.0517578e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -1518,7 +1516,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=15;
+							value=50;
 						};
 					};
 				};
@@ -4291,6 +4289,59 @@ class Mission
 			colorName="ColorWEST";
 			id=665;
 			atlOffset=0.00039672852;
+		};
+		class Item41
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2038.3831,256.60684,10770.388};
+			};
+			id=666;
+			type="CL_GarbageCollector";
+			atlOffset=3.0517578e-005;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="CL_GarbageCollector_Range";
+					expression="_this setVariable ['Range',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=150;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="CL_GarbageCollector_Timeout";
+					expression="_this setVariable ['Timeout',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=300;
+						};
+					};
+				};
+				nAttributes=2;
+			};
 		};
 	};
 };
