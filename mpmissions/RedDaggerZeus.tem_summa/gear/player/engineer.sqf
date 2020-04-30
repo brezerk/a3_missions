@@ -44,6 +44,7 @@ _this addItemToUniform "ACE_EarPlugs";
 for "_i" from 1 to 5 do {_this addItemToUniform "ACE_fieldDressing";};
 _this addItemToUniform "ACE_DefusalKit";
 _this addItemToUniform "ACE_Canteen";
+_this addItemToUniform "ACE_Clacker";
 
 //Vest
 _this addVest "LOP_V_6B23_Rifleman_TAN";
@@ -76,7 +77,7 @@ for "_i" from 1 to 6 do {_this addItemToBackpack "rhs_30Rnd_545x39_7N6M_AK";};
 for "_i" from 1 to 2 do {_this addItemToBackpack "rhs_mag_rdg2_white";};
 _this addItemToBackpack "ACE_EntrenchingTool";
 for "_i" from 1 to 2 do {_this addItemToVest "ACE_Chemlight_UltraHiOrange";};
-for "_i" from 1 to 2 do {this addItemToBackpack "DemoCharge_Remote_Mag";};
+for "_i" from 1 to 2 do {_this addItemToBackpack "DemoCharge_Remote_Mag";};
 
 //Headgear and Googles
 _this addHeadgear "LOP_H_6B27M_Digit";

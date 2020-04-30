@@ -24,10 +24,10 @@ real_weather_init = false;
 
 D_DEBUG = false;
 
-[] execVM "addons\code43\real_weather.sqf";
+//[] execVM "addons\code43\real_weather.sqf";
 
 if (isServer) then {
-	waitUntil {real_weather_init};
+	//waitUntil {real_weather_init};
 	
 	if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
 		radio_box_01 addItemCargoGlobal ["ACRE_PRC148", 60];

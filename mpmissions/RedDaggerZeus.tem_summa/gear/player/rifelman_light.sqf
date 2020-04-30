@@ -68,7 +68,6 @@ for "_i" from 1 to 10 do {_this addItemToBackpack "ACE_fieldDressing";};
 _this addItemToBackpack "ACE_bloodIV";
 for "_i" from 1 to 2 do {_this addItemToBackpack "ACE_bloodIV_500";};
 _this addItemToBackpack "ACE_EntrenchingTool";
-for "_i" from 1 to 10 do {_this addItemToBackpack "ACE_morphine";};
 for "_i" from 1 to 10 do {_this addItemToBackpack "rhs_30Rnd_545x39_7N6_AK";};
 for "_i" from 1 to 10 do {_this addItemToBackpack "rhs_30Rnd_545x39_7N6M_AK";};
 _this addHeadgear "LOP_H_6B27M_Digit";
