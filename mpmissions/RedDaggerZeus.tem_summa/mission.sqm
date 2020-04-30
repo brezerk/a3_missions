@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=1417;
+		nextID=1422;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=7;
+		nextID=8;
 	};
 	class Camera
 	{
-		pos[]={4331.127,34.228943,3742.9304};
-		dir[]={-0.66587621,-0.21282691,-0.71507978};
-		up[]={-0.14504263,0.97708625,-0.15576099};
-		aside[]={-0.73184514,-1.6466947e-007,0.6814878};
+		pos[]={4489.1167,54.184216,3570.2683};
+		dir[]={-0.67587972,-0.44536543,0.58723009};
+		up[]={-0.33619705,0.89534873,0.29210079};
+		aside[]={0.65586799,-4.2840838e-008,0.75487918};
 	};
 };
 binarizationWanted=0;
@@ -55,13 +55,14 @@ addons[]=
 	"cba_modules",
 	"A3_Modules_F_ObjectModifiers",
 	"rhs_c_heavyweapons",
-	"A3_Modules_F_Sites"
+	"A3_Modules_F_Sites",
+	"A3_Structures_F_Tank_Military_Fortifications"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=26;
+		items=27;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -238,6 +239,13 @@ class AddonsMetaData
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
+		class Item26
+		{
+			className="A3_Structures_F_Tank";
+			name="Arma 3 Tank - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 randomSeed=15728659;
@@ -339,7 +347,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=221;
+		items=226;
 		class Item0
 		{
 			dataType="Marker";
@@ -3688,7 +3696,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={5196.7637,24.271439,6060.9009};
-						angles[]={-0,2.6527874,0};
+						angles[]={0,2.6527874,0};
 					};
 					side="East";
 					flags=4;
@@ -3704,7 +3712,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={5196.7637,24.271439,6060.9009};
-						angles[]={-0,2.6527874,0};
+						angles[]={0,2.6527874,0};
 					};
 					side="East";
 					flags=6;
@@ -3768,7 +3776,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={5168.9302,23.951672,6108.5391};
-						angles[]={-0,2.626507,6.2798738};
+						angles[]={0,2.626507,6.2798738};
 					};
 					side="East";
 					flags=4;
@@ -3784,7 +3792,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={5162.6514,23.991438,6123.0781};
-						angles[]={-0,2.8562119,0};
+						angles[]={0,2.8562119,0};
 					};
 					side="East";
 					flags=4;
@@ -3800,7 +3808,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={5162.6514,23.991438,6123.0781};
-						angles[]={-0,2.8562119,0};
+						angles[]={0,2.8562119,0};
 					};
 					side="East";
 					flags=4;
@@ -4001,7 +4009,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={5196.8184,25.916323,6060.8184};
-				angles[]={-0,2.6527874,0};
+				angles[]={0,2.6527874,0};
 			};
 			side="East";
 			flags=6;
@@ -4881,7 +4889,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={5168.8921,25.859051,6108.4321};
-				angles[]={-0,2.626507,6.2798738};
+				angles[]={0,2.626507,6.2798738};
 			};
 			side="East";
 			flags=4;
@@ -4997,7 +5005,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={5162.8037,26.169434,6122.8247};
-				angles[]={-0,2.8562119,0};
+				angles[]={0,2.8562119,0};
 			};
 			side="East";
 			flags=4;
@@ -5543,7 +5551,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={5196.7637,24.271439,6060.9009};
-						angles[]={-0,2.6527874,0};
+						angles[]={0,2.6527874,0};
 					};
 					side="East";
 					flags=7;
@@ -5560,7 +5568,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={5196.7637,24.271439,6060.9009};
-						angles[]={-0,2.6527874,0};
+						angles[]={0,2.6527874,0};
 					};
 					side="East";
 					flags=5;
@@ -5578,7 +5586,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={5196.7637,24.271439,6060.9009};
-						angles[]={-0,2.6527874,0};
+						angles[]={0,2.6527874,0};
 					};
 					side="East";
 					flags=5;
@@ -5595,7 +5603,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={5196.7637,24.271439,6060.9009};
-						angles[]={-0,2.6527874,0};
+						angles[]={0,2.6527874,0};
 					};
 					side="East";
 					flags=5;
@@ -5612,7 +5620,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={5196.7637,24.271439,6060.9009};
-						angles[]={-0,2.6527874,0};
+						angles[]={0,2.6527874,0};
 					};
 					side="East";
 					flags=5;
@@ -5629,7 +5637,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={5196.7637,24.271439,6060.9009};
-						angles[]={-0,2.6527874,0};
+						angles[]={0,2.6527874,0};
 					};
 					side="East";
 					flags=5;
@@ -5646,7 +5654,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={5196.7637,24.271439,6060.9009};
-						angles[]={-0,2.6527874,0};
+						angles[]={0,2.6527874,0};
 					};
 					side="East";
 					flags=5;
@@ -5663,7 +5671,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={5196.7637,24.271439,6060.9009};
-						angles[]={-0,2.6527874,0};
+						angles[]={0,2.6527874,0};
 					};
 					side="East";
 					flags=5;
@@ -5680,7 +5688,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={5196.7637,24.271439,6060.9009};
-						angles[]={-0,2.6527874,0};
+						angles[]={0,2.6527874,0};
 					};
 					side="East";
 					flags=5;
@@ -5697,7 +5705,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={5196.7637,24.271439,6060.9009};
-						angles[]={-0,2.6527874,0};
+						angles[]={0,2.6527874,0};
 					};
 					side="East";
 					flags=5;
@@ -11458,7 +11466,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={5199.8247,25.123009,4045.0862};
-				angles[]={-0,0.073251083,6.276526};
+				angles[]={0,0.073251083,6.276526};
 			};
 			side="Empty";
 			flags=4;
@@ -11481,7 +11489,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={5199.5776,24.057585,4044.9612};
-						angles[]={-0,3.3024406,6.276526};
+						angles[]={0,3.3024406,6.276526};
 					};
 					side="East";
 					flags=6;
@@ -11526,7 +11534,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={5199.8071,25.658672,4044.895};
-				angles[]={-0,3.3024406,6.276526};
+				angles[]={0,3.3024406,6.276526};
 			};
 			side="East";
 			flags=6;
@@ -16040,7 +16048,7 @@ class Mission
 				};
 			};
 			id=1316;
-			atlOffset=-0.20226955;
+			atlOffset=-0.20227051;
 		};
 		class Item178
 		{
@@ -16057,7 +16065,7 @@ class Mission
 			};
 			id=1327;
 			type="rhs_btr70_msv";
-			atlOffset=-0.20226955;
+			atlOffset=-0.20227051;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -19949,6 +19957,7 @@ class Mission
 			};
 			id=1413;
 			type="CBA_ModuleDefend";
+			atlOffset=9.5367432e-007;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -20147,6 +20156,86 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item221
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4330.6738,15.746854,3627.1511};
+				angles[]={6.276526,2.9297633,0.049956869};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1417;
+			type="Land_DragonsTeeth_01_4x2_old_F";
+		};
+		class Item222
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3388.0439,16.828009,4232.9336};
+				angles[]={0.016666256,2.9297633,6.2398791};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1418;
+			type="Land_DragonsTeeth_01_4x2_old_F";
+		};
+		class Item223
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={5579.894,3.1060476,3942.5374};
+				angles[]={6.2665191,2.6642978,6.2365522};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1419;
+			type="Land_DragonsTeeth_01_4x2_old_F";
+		};
+		class Item224
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={6129.3354,9.8305225,3939.114};
+				angles[]={0.0066682254,2.9297633,0.11614123};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1420;
+			type="Land_DragonsTeeth_01_4x2_old_F";
+		};
+		class Item225
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4480.2334,7.3928347,3641.7195};
+				angles[]={0.089758366,4.1730032,6.2066684};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1421;
+			type="Land_DragonsTeeth_01_4x2_old_F";
 		};
 	};
 	class Connections
