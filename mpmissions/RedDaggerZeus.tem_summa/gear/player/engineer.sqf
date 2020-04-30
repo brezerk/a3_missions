@@ -75,6 +75,7 @@ for "_i" from 1 to 6 do {_this addItemToBackpack "rhs_30Rnd_545x39_7N6M_AK";};
 for "_i" from 1 to 2 do {_this addItemToBackpack "rhs_mag_rdg2_white";};
 _this addItemToBackpack "ACE_EntrenchingTool";
 for "_i" from 1 to 2 do {_this addItemToBackpack "ClaymoreDirectionalMine_Remote_Mag";};
+for "_i" from 1 to 2 do {_this addItemToVest "ACE_Chemlight_UltraHiOrange";};
 
 //Headgear and Googles
 _this addHeadgear "LOP_H_6B27M_Digit";

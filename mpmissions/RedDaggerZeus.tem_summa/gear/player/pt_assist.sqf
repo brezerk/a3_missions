@@ -71,6 +71,8 @@ for "_i" from 1 to 2 do {_this addItemToBackpack "rhs_30Rnd_545x39_7N6M_AK";};
 _this addHeadgear "LOP_H_6B27M_Digit";
 _this addGoggles "rhs_googles_clear";
 
+for "_i" from 1 to 2 do {_this addItemToVest "ACE_Chemlight_UltraHiOrange";};
+
 //Add items
 _this linkItem "ItemMap";
 _this linkItem "ItemCompass";

@@ -26,20 +26,20 @@ class Header
 };
 
 author			= "brezerk@brezblock.org.ua";
-OnLoadName		= "RedDagger II Act";
-OnLoadMission	= "За отриманими даними, вдалося ідентифікувати базу контрабандистів. Проте, вогнева група попала в засідку і понесла важкі втрати. При підтримці резервів, та виділеного БТР, вдалося ліквідувати супротив, отримати нові данні та знищити схованку з боєприпасами. Група вдало перетнула першу лінію фронту та взяла штурмом операційну базу супротивника: знищивши їх командира та радіовежу. Відступивши до лісу, ви отримали короткострокову перерву на відпочинок.";
-briefingName    = "Операція: Червоний Кинджал. Дія II";
+OnLoadName		= "Операція: ВІТРОЛОМ";
+OnLoadMission	= "Розвідка отримала інформацію про вірогідні вогневі позиції мінометів. Завдання диверсійної групи - пошук, та знищення батареї, збір розвідданих, знищення логістичних та комунікаційних ліній супротивника.";
+briefingName    = "Операція: ВІТРОЛОМ";
 // FIXME: https://feedback.bistudio.com/T67181
-overviewPicture = "data\reddagger02.paa";
-loadScreen      = "data\reddagger02.paa";
+overviewPicture = "data\mission01.paa";
+loadScreen      = "data\mission01.paa";
 //overviewTextLocked = $STR_LOCKED_INFO_01;
 
 // Respawn type
-respawn = 3;
+respawn = 0;
 // Delay in seconds before playable unit respawns.
 respawnDelay = 15;
 // Respawn templates from CfgRespawnTemplates. You can combine any number of them together.
-respawnTemplates[] = {"Counter"};
+respawnTemplates[] = {"ace_spectator"};
 // 0 to disable the score table (it can still be opened manually by pressing 'P' key).
 respawnDialog = 0;
 // When 1, the score table contains score of all playable units as opposed to players only.

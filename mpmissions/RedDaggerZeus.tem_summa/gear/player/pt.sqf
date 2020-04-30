@@ -72,6 +72,8 @@ _this addItemToBackpack "rhs_rpg7_OG7V_mag";
 for "_i" from 1 to 2 do {_this addItemToBackpack "rhs_30Rnd_545x39_7N6_AK";};
 for "_i" from 1 to 2 do {_this addItemToBackpack "rhs_30Rnd_545x39_7N6M_AK";};
 
+for "_i" from 1 to 2 do {_this addItemToVest "ACE_Chemlight_UltraHiOrange";};
+
 
 _this addHeadgear "LOP_H_6B27M_ess_Digit";
 _this addGoggles "rhs_googles_clear";

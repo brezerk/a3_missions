@@ -33,7 +33,7 @@ force ace_advanced_fatigue_terrainGradientFactor = 1;
 force ace_repair_engineerSetting_repair = 0;
 
 // ACE Medical
-force ace_medical_ai_enabledFor = 2;
+force ace_medical_ai_enabledFor = 0;
 force ace_medical_AIDamageThreshold = 1.5;
 force ace_medical_bleedingCoefficient = 0.35;
 force ace_medical_fatalDamageSource = 0;
