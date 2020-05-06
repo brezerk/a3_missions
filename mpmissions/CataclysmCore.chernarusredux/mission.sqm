@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=731;
+		nextID=757;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=216;
+		nextID=444;
 	};
 	class Camera
 	{
-		pos[]={2243.5925,331.2377,11236.881};
-		dir[]={-0.56834006,-0.70892274,0.41789705};
-		up[]={-0.57115752,0.7052384,0.41996646};
-		aside[]={0.59245068,1.9695144e-006,0.80573547};
+		pos[]={2233.4683,322.48584,11237.276};
+		dir[]={-0.38693458,-0.7976281,0.46292189};
+		up[]={-0.51153344,0.60312635,0.61198646};
+		aside[]={0.76735038,1.7715865e-006,0.64139301};
 	};
 };
 binarizationWanted=0;
@@ -34,10 +34,10 @@ addons[]=
 	"CL_B_US_Rangers",
 	"a3ua_cl_main",
 	"ravage",
-	"A3_Supplies_F_Heli_CargoNets",
 	"A3_Characters_F",
 	"ace_explosives",
-	"A3_Characters_F_Tank"
+	"A3_Characters_F_Tank",
+	"A3_Supplies_F_Heli_CargoNets"
 };
 class AddonsMetaData
 {
@@ -79,29 +79,29 @@ class AddonsMetaData
 		};
 		class Item5
 		{
-			className="A3_Supplies_F_Heli";
-			name="Arma 3 Helicopters - Ammoboxes and Supplies";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item6
-		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item7
+		class Item6
 		{
 			className="ace_explosives";
 			name="ACE3 - Explosives";
 			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
-		class Item8
+		class Item7
 		{
 			className="A3_Characters_F_Tank";
 			name="Arma 3 Tank - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item8
+		{
+			className="A3_Supplies_F_Heli";
+			name="Arma 3 Helicopters - Ammoboxes and Supplies";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -201,7 +201,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=56;
+		items=57;
 		class Item0
 		{
 			dataType="Marker";
@@ -546,17 +546,41 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2223.0444,303.51086,11252.455};
-				angles[]={0,2.5582366,0};
+				position[]={2223.0439,303.51071,11252.455};
+				angles[]={0,2.5582337,0};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				fuel=0.25419506;
 			};
 			id=91;
 			type="CL_B_US_Rangers_Coyote_L2A1_F";
-			atlOffset=0.18212891;
+			atlOffset=0.18200684;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""CUP_arifle_L85A2_G"",""CUP_launch_M136"",""FirstAidKit"",""Medikit""],[4,2,20,2]],[[""CUP_30Rnd_556x45_Stanag"",""CUP_200Rnd_TE4_Red_Tracer_556x45_M249"",""CUP_1Rnd_HEDP_M203"",""CUP_M136_M"",""CUP_HandGrenade_M67"",""SmokeShell"",""SmokeShellOrange"",""Chemlight_red""],[20,4,10,2,4,4,4,4]],[[""ToolKit""],[1]],[[""CUP_B_Bergen_BAF""],[8]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item6
 		{
@@ -709,8 +733,7 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2698.4431,274.02368,9985.4697};
-				angles[]={6.2806892,0,0};
+				position[]={2745.6426,274.04999,9962.3223};
 			};
 			id=114;
 			type="CL_Spawn_Garrison";
@@ -1330,6 +1353,25 @@ class Mission
 				};
 				class Attribute4
 				{
+					property="CL_Spawn_Ambush_CustomType";
+					expression="_this setVariable ['CustomType',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute5
+				{
 					property="CL_Spawn_Ambush_MinUnitsCount";
 					expression="_this setVariable ['MinUnitsCount',_value,true];";
 					class Value
@@ -1347,7 +1389,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute5
+				class Attribute6
 				{
 					property="CL_Spawn_Ambush_SpawnRange";
 					expression="_this setVariable ['SpawnRange',_value,true];";
@@ -1366,7 +1408,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute6
+				class Attribute7
 				{
 					property="CL_Spawn_Ambush_GroupsCount";
 					expression="_this setVariable ['GroupsCount',_value,true];";
@@ -1385,7 +1427,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute7
+				class Attribute8
 				{
 					property="CL_Spawn_Ambush_Faction";
 					expression="_this setVariable ['Faction',_value,true];";
@@ -1404,7 +1446,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute8
+				class Attribute9
 				{
 					property="CL_Spawn_Ambush_CustomClasses";
 					expression="_this setVariable ['CustomClasses',_value,true];";
@@ -1423,7 +1465,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute9
+				class Attribute10
 				{
 					property="CL_Spawn_Ambush_AmbushRange";
 					expression="_this setVariable ['AmbushRange',_value,true];";
@@ -1442,7 +1484,7 @@ class Mission
 						};
 					};
 				};
-				nAttributes=10;
+				nAttributes=11;
 			};
 		};
 		class Item25
@@ -1685,7 +1727,26 @@ class Mission
 						};
 					};
 				};
-				nAttributes=12;
+				class Attribute12
+				{
+					property="CL_Spawn_BlockPost_CustomType";
+					expression="_this setVariable ['CustomType',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=13;
 			};
 		};
 		class Item26
@@ -1693,11 +1754,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2550.4771,271.23358,10077.75};
+				position[]={2495.509,269.69876,10120.902};
+				angles[]={6.22824,0,0.042478051};
 			};
 			id=649;
 			type="Ravage_zombies";
-			atlOffset=3.0517578e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -2183,11 +2244,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2551.3911,269.9136,10050.931};
+				position[]={2520.032,264.99481,9977.0352};
+				angles[]={6.2506957,0,0.03748076};
 			};
 			id=650;
 			type="Ravage_settings";
-			atlOffset=3.0517578e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -2369,11 +2430,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2527.0149,269.29855,10077.445};
+				position[]={2413.7659,266.44138,10129.077};
+				angles[]={6.2432065,0,0.049961641};
 			};
 			id=651;
 			type="Ravage_vehicles";
-			atlOffset=3.0517578e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -2517,7 +2578,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2528.843,268.40906,10050.626};
+				position[]={2400.687,260.45471,10011.367};
+				angles[]={6.22824,0,0.057432342};
 			};
 			id=652;
 			type="Ravage_atmosphere";
@@ -2662,7 +2724,7 @@ class Mission
 		class Item30
 		{
 			dataType="Marker";
-			position[]={2682.4814,274.01999,9984.5859};
+			position[]={2783.8425,273.43759,10031.997};
 			name="marker_5";
 			type="mil_unknown";
 			id=654;
@@ -2801,8 +2863,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2510.1421,254.76665,9688.7402};
-				angles[]={6.2806892,0,0};
+				position[]={2520.032,256.5705,9743.25};
+				angles[]={6.2432051,0,0.015002378};
 			};
 			id=657;
 			type="CL_Spawn_Garrison";
@@ -3147,6 +3209,25 @@ class Mission
 				};
 				class Attribute4
 				{
+					property="CL_Spawn_Ambush_CustomType";
+					expression="_this setVariable ['CustomType',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute5
+				{
 					property="CL_Spawn_Ambush_MinUnitsCount";
 					expression="_this setVariable ['MinUnitsCount',_value,true];";
 					class Value
@@ -3164,7 +3245,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute5
+				class Attribute6
 				{
 					property="CL_Spawn_Ambush_SpawnRange";
 					expression="_this setVariable ['SpawnRange',_value,true];";
@@ -3183,7 +3264,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute6
+				class Attribute7
 				{
 					property="CL_Spawn_Ambush_GroupsCount";
 					expression="_this setVariable ['GroupsCount',_value,true];";
@@ -3202,7 +3283,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute7
+				class Attribute8
 				{
 					property="CL_Spawn_Ambush_Faction";
 					expression="_this setVariable ['Faction',_value,true];";
@@ -3221,7 +3302,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute8
+				class Attribute9
 				{
 					property="CL_Spawn_Ambush_CustomClasses";
 					expression="_this setVariable ['CustomClasses',_value,true];";
@@ -3240,7 +3321,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute9
+				class Attribute10
 				{
 					property="CL_Spawn_Ambush_AmbushRange";
 					expression="_this setVariable ['AmbushRange',_value,true];";
@@ -3259,7 +3340,7 @@ class Mission
 						};
 					};
 				};
-				nAttributes=10;
+				nAttributes=11;
 			};
 		};
 		class Item34
@@ -3352,6 +3433,25 @@ class Mission
 				};
 				class Attribute4
 				{
+					property="CL_Spawn_Ambush_CustomType";
+					expression="_this setVariable ['CustomType',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute5
+				{
 					property="CL_Spawn_Ambush_MinUnitsCount";
 					expression="_this setVariable ['MinUnitsCount',_value,true];";
 					class Value
@@ -3369,7 +3469,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute5
+				class Attribute6
 				{
 					property="CL_Spawn_Ambush_SpawnRange";
 					expression="_this setVariable ['SpawnRange',_value,true];";
@@ -3388,7 +3488,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute6
+				class Attribute7
 				{
 					property="CL_Spawn_Ambush_GroupsCount";
 					expression="_this setVariable ['GroupsCount',_value,true];";
@@ -3407,7 +3507,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute7
+				class Attribute8
 				{
 					property="CL_Spawn_Ambush_Faction";
 					expression="_this setVariable ['Faction',_value,true];";
@@ -3426,7 +3526,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute8
+				class Attribute9
 				{
 					property="CL_Spawn_Ambush_CustomClasses";
 					expression="_this setVariable ['CustomClasses',_value,true];";
@@ -3445,7 +3545,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute9
+				class Attribute10
 				{
 					property="CL_Spawn_Ambush_AmbushRange";
 					expression="_this setVariable ['AmbushRange',_value,true];";
@@ -3464,7 +3564,7 @@ class Mission
 						};
 					};
 				};
-				nAttributes=10;
+				nAttributes=11;
 			};
 		};
 		class Item35
@@ -3686,6 +3786,25 @@ class Mission
 				};
 				class Attribute4
 				{
+					property="CL_Spawn_Ambush_CustomType";
+					expression="_this setVariable ['CustomType',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute5
+				{
 					property="CL_Spawn_Ambush_MinUnitsCount";
 					expression="_this setVariable ['MinUnitsCount',_value,true];";
 					class Value
@@ -3703,7 +3822,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute5
+				class Attribute6
 				{
 					property="CL_Spawn_Ambush_SpawnRange";
 					expression="_this setVariable ['SpawnRange',_value,true];";
@@ -3722,7 +3841,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute6
+				class Attribute7
 				{
 					property="CL_Spawn_Ambush_GroupsCount";
 					expression="_this setVariable ['GroupsCount',_value,true];";
@@ -3741,7 +3860,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute7
+				class Attribute8
 				{
 					property="CL_Spawn_Ambush_Faction";
 					expression="_this setVariable ['Faction',_value,true];";
@@ -3760,7 +3879,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute8
+				class Attribute9
 				{
 					property="CL_Spawn_Ambush_CustomClasses";
 					expression="_this setVariable ['CustomClasses',_value,true];";
@@ -3779,7 +3898,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute9
+				class Attribute10
 				{
 					property="CL_Spawn_Ambush_AmbushRange";
 					expression="_this setVariable ['AmbushRange',_value,true];";
@@ -3798,7 +3917,7 @@ class Mission
 						};
 					};
 				};
-				nAttributes=10;
+				nAttributes=11;
 			};
 		};
 		class Item37
@@ -4309,7 +4428,26 @@ class Mission
 						};
 					};
 				};
-				nAttributes=12;
+				class Attribute12
+				{
+					property="CL_Spawn_BlockPost_CustomType";
+					expression="_this setVariable ['CustomType',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				nAttributes=13;
 			};
 		};
 		class Item40
@@ -4380,12 +4518,11 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2390.7141,275.21979,10523.247};
-				angles[]={6.2681928,0,0.16109388};
+				position[]={2552.7292,284.00934,10500.19};
+				angles[]={6.2681909,0,0.049960449};
 			};
 			id=668;
 			type="CL_Spawn_Patrol";
-			atlOffset=3.0517578e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -4690,6 +4827,25 @@ class Mission
 				};
 				class Attribute6
 				{
+					property="CL_Spawn_Base_CustomType";
+					expression="_this setVariable ['CustomType',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute7
+				{
 					property="CL_Spawn_Base_StashRandomize";
 					expression="_this setVariable ['StashRandomize',_value,true];";
 					class Value
@@ -4707,7 +4863,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute7
+				class Attribute8
 				{
 					property="CL_Spawn_Base_MinUnitsCount";
 					expression="_this setVariable ['MinUnitsCount',_value,true];";
@@ -4726,7 +4882,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute8
+				class Attribute9
 				{
 					property="CL_Spawn_Base_Faction";
 					expression="_this setVariable ['Faction',_value,true];";
@@ -4745,7 +4901,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute9
+				class Attribute10
 				{
 					property="CL_Spawn_Base_GroupsCount";
 					expression="_this setVariable ['GroupsCount',_value,true];";
@@ -4764,7 +4920,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute10
+				class Attribute11
 				{
 					property="CL_Spawn_Base_SpawnRange";
 					expression="_this setVariable ['SpawnRange',_value,true];";
@@ -4783,7 +4939,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute11
+				class Attribute12
 				{
 					property="CL_Spawn_Base_CustomClasses";
 					expression="_this setVariable ['CustomClasses',_value,true];";
@@ -4802,27 +4958,10 @@ class Mission
 						};
 					};
 				};
-				nAttributes=12;
+				nAttributes=13;
 			};
 		};
 		class Item44
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2219.4785,302.75616,11247.076};
-				angles[]={6.1245341,0,0.062419467};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=672;
-			type="CargoNet_01_barrels_F";
-			atlOffset=0.00015258789;
-		};
-		class Item45
 		{
 			dataType="Group";
 			side="East";
@@ -4900,7 +5039,7 @@ class Mission
 			};
 			id=675;
 		};
-		class Item46
+		class Item45
 		{
 			dataType="Group";
 			side="East";
@@ -5011,7 +5150,7 @@ class Mission
 			};
 			id=680;
 		};
-		class Item47
+		class Item46
 		{
 			dataType="Group";
 			side="East";
@@ -5057,7 +5196,7 @@ class Mission
 			};
 			id=687;
 		};
-		class Item48
+		class Item47
 		{
 			dataType="Group";
 			side="East";
@@ -5135,7 +5274,7 @@ class Mission
 			};
 			id=690;
 		};
-		class Item49
+		class Item48
 		{
 			dataType="Group";
 			side="East";
@@ -5278,7 +5417,7 @@ class Mission
 			};
 			id=695;
 		};
-		class Item50
+		class Item49
 		{
 			dataType="Group";
 			side="East";
@@ -5373,7 +5512,7 @@ class Mission
 			};
 			id=704;
 		};
-		class Item51
+		class Item50
 		{
 			dataType="Group";
 			side="East";
@@ -5484,7 +5623,7 @@ class Mission
 			};
 			id=710;
 		};
-		class Item52
+		class Item51
 		{
 			dataType="Group";
 			side="Independent";
@@ -5562,7 +5701,7 @@ class Mission
 			};
 			id=717;
 		};
-		class Item53
+		class Item52
 		{
 			dataType="Group";
 			side="Independent";
@@ -5640,7 +5779,7 @@ class Mission
 			};
 			id=722;
 		};
-		class Item54
+		class Item53
 		{
 			dataType="Group";
 			side="Independent";
@@ -5686,7 +5825,7 @@ class Mission
 			};
 			id=727;
 		};
-		class Item55
+		class Item54
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -5831,6 +5970,104 @@ class Mission
 					};
 				};
 				nAttributes=7;
+			};
+		};
+		class Item55
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2222.8347,302.77139,11245.771};
+				angles[]={6.1342912,0,0.059934605};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="test01";
+			};
+			id=755;
+			type="CargoNet_01_barrels_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ace_refuel_fuelCargo";
+					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=100;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ace_cargo_size";
+					expression="[_this,_value] call ace_cargo_fnc_setSize;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=2;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item56
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2228.2627,303.345,11248.064};
+				angles[]={6.1859879,0,0.027488936};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=756;
+			type="CargoNet_01_barrels_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="NECK_f_amount";
+					expression="_this setVariable ['NECK_f_amount', _value, true]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=10;
+						};
+					};
+				};
+				nAttributes=1;
 			};
 		};
 	};
