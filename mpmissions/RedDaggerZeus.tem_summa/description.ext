@@ -26,12 +26,12 @@ class Header
 };
 
 author			= "brezerk@brezblock.org.ua";
-OnLoadName		= "Операція: ВІТРОЛОМ";
-OnLoadMission	= "Розвідка отримала інформацію про вірогідні вогневі позиції мінометів. Завдання диверсійної групи - пошук, та знищення батареї, збір розвідданих, знищення логістичних та комунікаційних ліній супротивника.";
-briefingName    = "Операція: ВІТРОЛОМ";
+OnLoadName		= "Операція: Ранковий грім";
+OnLoadMission	= "Станом на початок серпня 2015 р. взяттям с. Тихе і с. Вовкове було проведено успішну операцію з розблокування підрозділів 24 ОМБр, 72 ОМБр, що впродовж тижнів перебували під обстрілами зі сторони РФ. Розвиваючи успіх, Штаб Антитерористичної операції видав бойовий наказ військам Сектору «Б» на оточення і штурм м. Сума.";
+briefingName    = "Операція: Ранковий грім";
 // FIXME: https://feedback.bistudio.com/T67181
-overviewPicture = "data\mission01.paa";
-loadScreen      = "data\mission01.paa";
+overviewPicture = "data\mission02.paa";
+loadScreen      = "data\mission02.paa";
 //overviewTextLocked = $STR_LOCKED_INFO_01;
 
 // Respawn type

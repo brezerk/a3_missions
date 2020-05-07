@@ -85,5 +85,11 @@ force ace_artillerytables_disableArtilleryComputer = true;
 
 // ACEX Field Rations
 force acex_field_rations_enabled = true;
-force acex_field_rations_timeWithoutWater = 4;
-force acex_field_rations_timeWithoutFood = 6;
+force acex_field_rations_timeWithoutWater = 10;
+force acex_field_rations_timeWithoutFood = 20;
+
+// ACE Карта
+force ace_markers_moveRestriction = 0;
+
+// ACE Ограничитель дальности видимости
+force ace_viewdistance_limitViewDistance = 1000;

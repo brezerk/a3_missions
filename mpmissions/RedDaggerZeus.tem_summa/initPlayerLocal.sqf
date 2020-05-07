@@ -35,5 +35,11 @@ supply_box_01 addAction ["Помічник Гранатометника (Grenadi
 supply_box_01 addAction ["Влучний стрілець (Marksman)", {player call compile preprocessFileLineNumbers "gear\player\marksman.sqf"; [player, [missionNamespace, "outpost_saved_loadout"]] call BIS_fnc_saveInventory;}];
 supply_box_01 addAction ["Заступник командира (Dep. Squad leader)", {player call compile preprocessFileLineNumbers "gear\player\rifelman_light.sqf"; [player, [missionNamespace, "outpost_saved_loadout"]] call BIS_fnc_saveInventory;}];
 supply_box_01 addAction ["Командир (Group leader)", {player call compile preprocessFileLineNumbers "gear\player\commander.sqf"; [player, [missionNamespace, "outpost_saved_loadout"]] call BIS_fnc_saveInventory;}];
+supply_box_01 addAction ["Оператор-розвідник (DLC Contact)", {player call compile preprocessFileLineNumbers "gear\player\operator.sqf"; [player, [missionNamespace, "outpost_saved_loadout"]] call BIS_fnc_saveInventory;}];
 
-['Україна. Зона ООС.', 'Позиції логістичної бази', format ['28 вересня 2019 %s', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;
+
+//[] execVM "addons\BrezBlock.framework\ambient.sqf";
+
+[] execVM "addons\BrezBlock.framework\analyzer\init.sqf";
+
+['Україна. Зона ООС.', 'Позиції логістичної бази', format ['1 вересня 2015 %s', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;
