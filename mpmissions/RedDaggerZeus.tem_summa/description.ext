@@ -35,11 +35,16 @@ loadScreen      = "data\mission02.paa";
 //overviewTextLocked = $STR_LOCKED_INFO_01;
 
 // Respawn type
-respawn = 0;
-// Delay in seconds before playable unit respawns.
-respawnDelay = 15;
+//respawn = 0;
 // Respawn templates from CfgRespawnTemplates. You can combine any number of them together.
-respawnTemplates[] = {"ace_spectator"};
+//respawnTemplates[] = {"ace_spectator"};
+
+respawn = 3;
+respawnTemplates[] = {"ace_spectator", "Counter"};
+
+// Delay in seconds before playable unit respawns.
+respawnDelay = 30;
+
 // 0 to disable the score table (it can still be opened manually by pressing 'P' key).
 respawnDialog = 0;
 // When 1, the score table contains score of all playable units as opposed to players only.

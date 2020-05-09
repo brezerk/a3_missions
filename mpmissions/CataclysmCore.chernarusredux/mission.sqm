@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=761;
+		nextID=767;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=492;
+		nextID=672;
 	};
 	class Camera
 	{
-		pos[]={2230.6956,304.10068,11234.441};
-		dir[]={-0.69622838,-0.28583828,0.65863162};
-		up[]={-0.2077347,0.95821929,0.19651373};
-		aside[]={0.6872949,1.9212384e-006,0.72652853};
+		pos[]={2236.1113,313.63309,11231.056};
+		dir[]={-0.089877851,-0.29471084,0.95147288};
+		up[]={-0.027728837,0.9555276,0.29352099};
+		aside[]={0.99567741,1.9245927e-006,0.094053768};
 	};
 };
 binarizationWanted=0;
@@ -37,15 +37,20 @@ addons[]=
 	"A3_Characters_F",
 	"ace_explosives",
 	"A3_Characters_F_Tank",
-	"A3_Supplies_F_Heli_CargoNets",
 	"CUP_CAStructuresHouse_A_FuelStation",
-	"CUP_Terrains_ACE_compat"
+	"CUP_Terrains_ACE_compat",
+	"CUP_WheeledVehicles_V3S",
+	"A3_Supplies_F_Orange_CargoNets",
+	"A3_Supplies_F_Heli_CargoNets",
+	"A3_Supplies_F_Heli_Slingload",
+	"ace_rearm",
+	"ace_cargo"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=11;
+		items=15;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -102,21 +107,47 @@ class AddonsMetaData
 		};
 		class Item8
 		{
+			className="CUP_CAStructuresHouse_A_FuelStation";
+			name="CUP_CAStructuresHouse_A_FuelStation";
+		};
+		class Item9
+		{
+			className="CUP_Terrains_ACE_compat";
+			name="CUP_Terrains_ACE_compat";
+			author="Community Upgrade Project";
+		};
+		class Item10
+		{
+			className="CUP_WheeledVehicles_V3S";
+			name="CUP_WheeledVehicles_V3S";
+		};
+		class Item11
+		{
+			className="A3_Supplies_F_Orange";
+			name="Arma 3 Orange - Ammoboxes and Supplies";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item12
+		{
 			className="A3_Supplies_F_Heli";
 			name="Arma 3 Helicopters - Ammoboxes and Supplies";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item9
+		class Item13
 		{
-			className="CUP_CAStructuresHouse_A_FuelStation";
-			name="CUP_CAStructuresHouse_A_FuelStation";
+			className="ace_rearm";
+			name="ACE3 - Rearm";
+			author="Команда ACE";
+			url="http://ace3mod.com/";
 		};
-		class Item10
+		class Item14
 		{
-			className="CUP_Terrains_ACE_compat";
-			name="CUP_Terrains_ACE_compat";
-			author="Community Upgrade Project";
+			className="ace_cargo";
+			name="ACE3 - Cargo";
+			author="Команда ACE";
+			url="http://ace3mod.com/";
 		};
 	};
 };
@@ -214,7 +245,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=59;
+		items=62;
 		class Item0
 		{
 			dataType="Marker";
@@ -342,7 +373,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2217.7705,302.79373,11251.491};
+						position[]={2217.7705,302.76266,11251.491};
 						angles[]={0,1.875155,0};
 					};
 					side="West";
@@ -353,14 +384,13 @@ class Mission
 					};
 					id=84;
 					type="CL_B_US_Rangers_Sergant_F";
-					atlOffset=0.031066895;
 				};
 				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2216.6882,302.69601,11251.135};
+						position[]={2216.6882,302.66489,11251.135};
 						angles[]={0,6.129014,0};
 					};
 					side="West";
@@ -371,14 +401,13 @@ class Mission
 					};
 					id=85;
 					type="CL_B_US_Rangers_Soldier_F";
-					atlOffset=0.03112793;
 				};
 				class Item2
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2218.5276,302.99637,11252.692};
+						position[]={2218.5276,302.96524,11252.692};
 						angles[]={0,6.129014,0};
 					};
 					side="West";
@@ -389,14 +418,13 @@ class Mission
 					};
 					id=86;
 					type="CL_B_US_Rangers_Soldier_F";
-					atlOffset=0.03112793;
 				};
 				class Item3
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2217.1589,303.07495,11253.604};
+						position[]={2217.1589,303.04373,11253.604};
 						angles[]={0,6.129014,0};
 					};
 					side="West";
@@ -407,14 +435,13 @@ class Mission
 					};
 					id=87;
 					type="CL_B_US_Rangers_Soldier_Light_F";
-					atlOffset=0.031219482;
 				};
 				class Item4
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2215.6152,302.771,11251.972};
+						position[]={2215.6152,302.73993,11251.972};
 						angles[]={0,6.129014,0};
 					};
 					side="West";
@@ -425,7 +452,6 @@ class Mission
 					};
 					id=88;
 					type="CL_B_US_Rangers_Soldier_M79_F";
-					atlOffset=0.031066895;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -474,7 +500,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2216.1689,303.16705,11254.499};
+						position[]={2216.1689,303.13599,11254.499};
 						angles[]={0,6.129014,0};
 					};
 					side="West";
@@ -485,14 +511,13 @@ class Mission
 					};
 					id=89;
 					type="CL_B_US_Rangers_Engineer_F";
-					atlOffset=0.031066895;
 				};
 				class Item6
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2214.6143,302.93219,11253.046};
+						position[]={2214.6143,302.90112,11253.046};
 						angles[]={0,6.129014,0};
 					};
 					side="West";
@@ -503,7 +528,6 @@ class Mission
 					};
 					id=93;
 					type="CL_B_US_Rangers_Medic_F";
-					atlOffset=0.031066895;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -552,25 +576,23 @@ class Mission
 			{
 			};
 			id=83;
-			atlOffset=0.031066895;
 		};
 		class Item5
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2223.0439,303.51071,11252.455};
-				angles[]={0,2.5582337,0};
+				position[]={2207.0784,305.61401,11267.281};
+				angles[]={6.0930142,2.3336556,6.2731848};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				fuel=0.25419506;
 			};
 			id=91;
 			type="CL_B_US_Rangers_Coyote_L2A1_F";
-			atlOffset=0.18200684;
+			atlOffset=-0.065795898;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -600,17 +622,41 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2217.1216,304.10815,11260.479};
-				angles[]={6.0978374,2.5334327,6.2108102};
+				position[]={2199.9033,306.98077,11274.142};
+				angles[]={6.0833879,2.3700891,6.2731848};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
+				fuel=0.94733238;
 			};
 			id=92;
 			type="CL_B_US_Rangers_LR_110_M2_F";
-			atlOffset=-0.048980713;
+			atlOffset=-0.0025939941;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[[[[""CUP_arifle_Sa58P"",""CUP_launch_RPG18"",""FirstAidKit"",""Medikit""],[2,1,10,1]],[[""CUP_30Rnd_Sa58_M"",""CUP_RPG18_M"",""SmokeShell"",""SmokeShellOrange"",""Chemlight_red""],[20,2,2,2,2]],[[""ToolKit""],[1]],[[""CUP_B_ACRScout_m95_Sa58""],[4]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 		class Item7
 		{
@@ -5841,251 +5887,6 @@ class Mission
 		};
 		class Item54
 		{
-			dataType="Logic";
-			class PositionInfo
-			{
-				position[]={1532.2321,476.9379,11494.56};
-			};
-			id=730;
-			type="CL_EconomyFuel";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="CL_EconomyFuel_Speed60";
-					expression="_this setVariable ['Speed60',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="0.0000193141";
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="CL_EconomyFuel_Speed90";
-					expression="_this setVariable ['Speed90',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="0.0002931415";
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="CL_EconomyFuel_EnableAdvancedRefuelSystem";
-					expression="_this setVariable ['EnableAdvancedRefuelSystem',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=1;
-						};
-					};
-				};
-				class Attribute3
-				{
-					property="CL_EconomyFuel_Speed100";
-					expression="_this setVariable ['Speed100',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="0.0003931415";
-						};
-					};
-				};
-				class Attribute4
-				{
-					property="CL_EconomyFuel_MaxFuel";
-					expression="_this setVariable ['MaxFuel',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=70;
-						};
-					};
-				};
-				class Attribute5
-				{
-					property="CL_EconomyFuel_Speed10";
-					expression="_this setVariable ['Speed10',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"STRING"
-								};
-							};
-							value="0.0000193141";
-						};
-					};
-				};
-				class Attribute6
-				{
-					property="CL_EconomyFuel_MinFuel";
-					expression="_this setVariable ['MinFuel',_value,true];";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				nAttributes=7;
-			};
-		};
-		class Item55
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2222.8347,302.77139,11245.771};
-				angles[]={6.1342912,0,0.059934605};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				name="test01";
-			};
-			id=755;
-			type="CargoNet_01_barrels_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ace_refuel_fuelCargo";
-					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=100;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="ace_cargo_size";
-					expression="[_this,_value] call ace_cargo_fnc_setSize;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=2;
-						};
-					};
-				};
-				nAttributes=2;
-			};
-		};
-		class Item56
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2228.2627,303.345,11248.064};
-				angles[]={6.1859879,0,0.027488936};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=756;
-			type="CargoNet_01_barrels_F";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="NECK_f_amount";
-					expression="_this setVariable ['NECK_f_amount', _value, true]";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"SCALAR"
-								};
-							};
-							value=10;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item57
-		{
 			dataType="Group";
 			side="West";
 			class Entities
@@ -6155,7 +5956,7 @@ class Mission
 			};
 			id=757;
 		};
-		class Item58
+		class Item55
 		{
 			dataType="Object";
 			class PositionInfo
@@ -6170,6 +5971,127 @@ class Mission
 			};
 			id=760;
 			type="Land_A_FuelStation_Feed";
+		};
+		class Item56
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2226.9822,304.03287,11243.252};
+				angles[]={6.1099367,2.7501414,0.0524491};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=761;
+			type="CUP_I_V3S_Open_TKG";
+		};
+		class Item57
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2228.7617,303.69165,11248.422};
+				angles[]={6.1859889,4.3378181,0.027496781};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=762;
+			type="C_IDAP_CargoNet_01_supplies_F";
+			atlOffset=3.0517578e-005;
+		};
+		class Item58
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2221.4756,302.64563,11245.535};
+				angles[]={6.1245351,0,0.069882989};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=763;
+			type="CargoNet_01_barrels_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="NECK_f_amount";
+					expression="_this setVariable ['NECK_f_amount', _value, true]";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=200;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item59
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2222.0222,305.1972,11251.841};
+				angles[]={6.163754,2.6426573,0.039979152};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=764;
+			type="CL_B_US_Rangers_Ural_Open_F";
+			atlOffset=9.1552734e-005;
+		};
+		class Item60
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2226.9558,303.79779,11251.959};
+				angles[]={6.2008677,4.1632853,0.024996169};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=765;
+			type="CargoNet_01_box_F";
+		};
+		class Item61
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2217.4697,305.68463,11262.051};
+				angles[]={6.0978374,2.3755696,6.2108102};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=766;
+			type="B_Slingload_01_Ammo_F";
 		};
 	};
 };

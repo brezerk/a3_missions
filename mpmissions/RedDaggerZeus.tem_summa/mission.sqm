@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=93;
+		nextID=129;
 	};
 	class Camera
 	{
-		pos[]={5221.6919,130.91077,5320.8989};
-		dir[]={-0.74265695,-0.65476364,0.14056914};
-		up[]={-0.64334023,0.75583124,0.12177043};
-		aside[]={0.18597743,8.0326572e-008,0.98255867};
+		pos[]={5529.5981,151.00192,3237.939};
+		dir[]={-0.027267242,-0.82170129,0.56929749};
+		up[]={-0.039314352,0.56981677,0.82082897};
+		aside[]={0.99886984,-4.5937486e-007,0.047843289};
 	};
 };
 binarizationWanted=0;
@@ -1362,21 +1362,22 @@ class Mission
 		class Item60
 		{
 			dataType="Marker";
-			position[]={5445.0122,32.991371,1969.9017};
-			name="respawn_guerrila";
+			position[]={5445.0122,32.991001,1969.902};
+			name="marker_oles";
 			text="Опорна точка ""Олесь""";
 			type="n_hq";
 			id=1105;
+			atlOffset=-0.00038528442;
 		};
 		class Item61
 		{
 			dataType="Marker";
-			position[]={4179.5171,-4.4787598,1912.823};
-			name="marker_41";
+			position[]={4202.6538,25.461,1853.272};
+			name="respawn_guerrila";
 			text="Логістична база";
 			type="n_motor_inf";
 			id=1106;
-			atlOffset=-30.41643;
+			atlOffset=-0.00044250488;
 		};
 		class Item62
 		{
@@ -12977,7 +12978,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5344.1602,1.8683578,3063.8665};
+						position[]={5344.1602,1.8683138,3063.866};
 						angles[]={0,4.3019919,0};
 					};
 					side="Independent";
@@ -12985,7 +12986,7 @@ class Mission
 					class Attributes
 					{
 						rank="SERGEANT";
-						init="call{this call compile preprocessFileLineNumbers ""gear\player\commander.sqf"";}";
+						init="call{this call compile preprocessFileLineNumbers ""gear\player\sso\commander.sqf"";}";
 						description="Командир@Перша ДРГ";
 						isPlayable=1;
 					};
@@ -13039,7 +13040,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5339.9697,1.4716409,3063.7009};
+						position[]={5339.9702,1.471658,3063.7009};
 						angles[]={0,1.2251164,0};
 					};
 					side="Independent";
@@ -13048,7 +13049,7 @@ class Mission
 					{
 						skill=0.44999999;
 						rank="CORPORAL";
-						init="call{this call compile preprocessFileLineNumbers ""gear\player\commander.sqf"";}";
+						init="call{this call compile preprocessFileLineNumbers ""gear\player\sso\commander.sqf"";}";
 						description="Заступник командира";
 						isPlayable=1;
 					};
@@ -13128,7 +13129,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						init="call{this call compile preprocessFileLineNumbers ""gear\player\rifelman_light.sqf"";}";
+						init="call{this call compile preprocessFileLineNumbers ""gear\player\sso\rifelman_light.sqf"";}";
 						description="Стрілець";
 						isPlayable=1;
 					};
@@ -13182,14 +13183,14 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5341.3506,1.0878353,3060.124};
+						position[]={5341.3511,1.0878768,3060.124};
 						angles[]={0,1.2311203,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
-						init="call{this call compile preprocessFileLineNumbers ""gear\player\rifelman_light.sqf"";}";
+						init="call{this call compile preprocessFileLineNumbers ""gear\player\sso\rifelman_light.sqf"";}";
 						description="Стрілець";
 						isPlayable=1;
 					};
@@ -13271,7 +13272,7 @@ class Mission
 					{
 						skill=0.44999999;
 						rank="CORPORAL";
-						init="call{this call compile preprocessFileLineNumbers ""gear\player\medic.sqf"";}";
+						init="call{this call compile preprocessFileLineNumbers ""gear\player\sso\medic.sqf"";}";
 						description="Стрілець-санітар";
 						isPlayable=1;
 					};
@@ -13351,7 +13352,7 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						init="call{this call compile preprocessFileLineNumbers ""gear\player\engineer.sqf"";}";
+						init="call{this call compile preprocessFileLineNumbers ""gear\player\sso\engineer.sqf"";}";
 						description="Сапер";
 						isPlayable=1;
 					};
@@ -13424,20 +13425,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5339.7217,1.0080527,3057.6499};
+						position[]={5339.7222,1.0079758,3057.6501};
 						angles[]={0,1.2183446,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
-						init="call{this call compile preprocessFileLineNumbers ""gear\player\engineer.sqf"";}";
+						init="call{this call compile preprocessFileLineNumbers ""gear\player\sso\engineer.sqf"";}";
 						description="Сапер";
 						isPlayable=1;
 					};
 					id=1705;
 					type="LOP_UKR_Infantry_engineer";
-					atlOffset=1.1920929e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -13478,7 +13478,26 @@ class Mission
 								};
 							};
 						};
-						nAttributes=2;
+						class Attribute2
+						{
+							property="face";
+							expression="_this setface _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="";
+								};
+							};
+						};
+						nAttributes=3;
 					};
 				};
 				class Item7
@@ -13486,14 +13505,14 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5338.3613,1.2310396,3061.3965};
+						position[]={5338.3608,1.2311001,3061.396};
 						angles[]={0,1.2893096,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
-						init="call{this call compile preprocessFileLineNumbers ""gear\player\operator.sqf"";}";
+						init="call{this call compile preprocessFileLineNumbers ""gear\player\sso\operator.sqf"";}";
 						description="Оператор-розвідник (DLC Contact)";
 						isPlayable=1;
 					};
@@ -13561,7 +13580,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3922.0825,11.858461,2869.9041};
+						position[]={3922.083,11.858584,2869.9041};
 						angles[]={0,4.3019919,0};
 					};
 					side="Independent";
@@ -13569,13 +13588,12 @@ class Mission
 					class Attributes
 					{
 						rank="SERGEANT";
-						init="call{this call compile preprocessFileLineNumbers ""gear\player\commander.sqf"";}";
+						init="call{this call compile preprocessFileLineNumbers ""gear\player\sso\commander.sqf"";}";
 						description="Командир@Друга ДРГ";
 						isPlayable=1;
 					};
 					id=1709;
 					type="LOP_UKR_Infantry_sergeant";
-					atlOffset=-9.5367432e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -13624,7 +13642,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3917.8921,11.215057,2869.738};
+						position[]={3917.8921,11.215058,2869.738};
 						angles[]={0,1.2251164,0};
 					};
 					side="Independent";
@@ -13633,13 +13651,12 @@ class Mission
 					{
 						skill=0.44999999;
 						rank="CORPORAL";
-						init="call{this call compile preprocessFileLineNumbers ""gear\player\commander.sqf"";}";
+						init="call{this call compile preprocessFileLineNumbers ""gear\player\sso\commander.sqf"";}";
 						description="Заступник командира";
 						isPlayable=1;
 					};
 					id=1710;
 					type="LOP_UKR_Infantry_junior_sergeant";
-					atlOffset=-9.5367432e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -13707,19 +13724,20 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3918.6182,11.560042,2867.9241};
+						position[]={3918.6179,11.560043,2867.9241};
 						angles[]={0,1.2893096,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
-						init="call{this call compile preprocessFileLineNumbers ""gear\player\rifelman_light.sqf"";}";
+						init="call{this call compile preprocessFileLineNumbers ""gear\player\sso\rifelman_light.sqf"";}";
 						description="Стрілець";
 						isPlayable=1;
 					};
 					id=1711;
 					type="LOP_UKR_Infantry_Rifleman";
+					atlOffset=9.5367432e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -13768,20 +13786,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3919.2729,11.919961,2866.1611};
+						position[]={3919.2729,11.919962,2866.1611};
 						angles[]={0,1.2311203,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
-						init="call{this call compile preprocessFileLineNumbers ""gear\player\rifelman_light.sqf"";}";
+						init="call{this call compile preprocessFileLineNumbers ""gear\player\sso\rifelman_light.sqf"";}";
 						description="Стрілець";
 						isPlayable=1;
 					};
 					id=1712;
 					type="LOP_UKR_Infantry_Rifleman";
-					atlOffset=-9.5367432e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -13849,7 +13866,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3919.6992,12.173727,2864.3252};
+						position[]={3919.699,12.173738,2864.325};
 						angles[]={0,1.2251164,0};
 					};
 					side="Independent";
@@ -13858,7 +13875,7 @@ class Mission
 					{
 						skill=0.44999999;
 						rank="CORPORAL";
-						init="call{this call compile preprocessFileLineNumbers ""gear\player\medic.sqf"";}";
+						init="call{this call compile preprocessFileLineNumbers ""gear\player\sso\medic.sqf"";}";
 						description="Стрілець-санітар";
 						isPlayable=1;
 					};
@@ -13932,20 +13949,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3917.0132,11.744065,2865.3821};
+						position[]={3917.0129,11.74403,2865.3821};
 						angles[]={0,1.2569163,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
-						init="call{this call compile preprocessFileLineNumbers ""gear\player\engineer.sqf"";}";
+						init="call{this call compile preprocessFileLineNumbers ""gear\player\sso\engineer.sqf"";}";
 						description="Сапер";
 						isPlayable=1;
 					};
 					id=1714;
 					type="LOP_UKR_Infantry_engineer";
-					atlOffset=-9.5367432e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -14020,13 +14036,12 @@ class Mission
 					flags=5;
 					class Attributes
 					{
-						init="call{this call compile preprocessFileLineNumbers ""gear\player\engineer.sqf"";}";
+						init="call{this call compile preprocessFileLineNumbers ""gear\player\sso\engineer.sqf"";}";
 						description="Сапер";
 						isPlayable=1;
 					};
 					id=1715;
 					type="LOP_UKR_Infantry_engineer";
-					atlOffset=9.5367432e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -14067,7 +14082,26 @@ class Mission
 								};
 							};
 						};
-						nAttributes=2;
+						class Attribute2
+						{
+							property="face";
+							expression="_this setface _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="";
+								};
+							};
+						};
+						nAttributes=3;
 					};
 				};
 				class Item7
@@ -14075,19 +14109,20 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3916.2837,11.368003,2867.4336};
+						position[]={3916.2839,11.367949,2867.4341};
 						angles[]={0,1.2893096,0};
 					};
 					side="Independent";
 					flags=5;
 					class Attributes
 					{
-						init="call{this call compile preprocessFileLineNumbers ""gear\player\rifelman_light.sqf"";}";
+						init="call{this call compile preprocessFileLineNumbers ""gear\player\sso\rifelman_light.sqf"";}";
 						description="Стрілець";
 						isPlayable=1;
 					};
 					id=1716;
 					type="LOP_UKR_Infantry_Rifleman";
+					atlOffset=9.5367432e-007;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -14137,7 +14172,6 @@ class Mission
 				name="group_05";
 			};
 			id=1708;
-			atlOffset=-9.5367432e-007;
 		};
 		class Item176
 		{
