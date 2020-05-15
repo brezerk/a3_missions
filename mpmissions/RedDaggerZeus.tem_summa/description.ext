@@ -26,12 +26,12 @@ class Header
 };
 
 author			= "brezerk@brezblock.org.ua";
-OnLoadName		= "Операція: Ранковий грім";
-OnLoadMission	= "Станом на початок серпня 2015 р. взяттям с. Тихе і с. Вовкове було проведено успішну операцію з розблокування підрозділів 24 ОМБр, 72 ОМБр, що впродовж тижнів перебували під обстрілами зі сторони РФ. Розвиваючи успіх, Штаб Антитерористичної операції видав бойовий наказ військам Сектору «Б» на оточення і штурм м. Сума.";
-briefingName    = "Операція: Ранковий грім";
+OnLoadName		= $STR_MISSION_NAME;
+OnLoadMission	= $STR_MISSION_ONLOAD;
+briefingName    = $STR_MISSION_NAME;
 // FIXME: https://feedback.bistudio.com/T67181
-overviewPicture = "data\mission02.paa";
-loadScreen      = "data\mission02.paa";
+overviewPicture = "data\mission03.paa";
+loadScreen      = "data\mission03.paa";
 //overviewTextLocked = $STR_LOCKED_INFO_01;
 
 // Respawn type

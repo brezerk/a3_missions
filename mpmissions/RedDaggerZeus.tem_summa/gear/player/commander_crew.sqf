@@ -32,10 +32,9 @@ removeHeadgear _this;
 removeGoggles _this;
 
 //Add weapons
-_this addWeapon "rhs_weap_ak74_gp25";
+_this addWeapon "rhs_weap_aks74u";
+_this addPrimaryWeaponItem "rhs_acc_dtk";
 _this addPrimaryWeaponItem "rhs_30Rnd_545x39_7N6_AK";
-_this addPrimaryWeaponItem "rhs_VOG25";
-_this addPrimaryWeaponItem "rhs_acc_tgpa";
 _this addWeapon "rhs_weap_makarov_pm";
 _this addHandgunItem "rhs_mag_9x18_8_57N181S";
 
@@ -70,32 +69,30 @@ if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
 	
 _this addItemToVest "rhs_mag_9x18_12_57N181S";
 for "_i" from 1 to 2 do {_this addItemToVest "rhs_30Rnd_545x39_7N6_AK";};
-for "_i" from 1 to 2 do {_this addItemToVest "rhs_VOG25";};
+
 for "_i" from 1 to 2 do {_this addItemToVest "rhs_mag_rgd5";};
 for "_i" from 1 to 1 do {_this addItemToVest "ACE_tourniquet";};
 
 _this addItemToBackpack "ACE_bloodIV";
 for "_i" from 1 to 2 do {_this addItemToBackpack "ACE_bloodIV_500";};
-for "_i" from 1 to 8 do {_this addItemToBackpack "rhs_VOG25";};
+
 for "_i" from 1 to 2 do {_this addItemToVest "rhs_GRD40_White";};
 for "_i" from 1 to 6 do {_this addItemToBackpack "rhs_30Rnd_545x39_7N6_AK";};
 for "_i" from 1 to 6 do {_this addItemToBackpack "rhs_30Rnd_545x39_7N6M_AK";};
-for "_i" from 1 to 2 do {_this addItemToBackpack "rhs_mag_rdg2_white";};
 
 for "_i" from 1 to 2 do {_this addItemToVest "ACE_Chemlight_UltraHiOrange";};
 
 
 //Headgear and Googles
-_this addHeadgear "LOP_H_6B27M_Digit";
+_this addHeadgear "rhs_tsh4";
 _this addGoggles "rhs_googles_clear";
 
 _this addWeapon "Binocular";
 
 //Add items
-_this linkItem "ItemMap";
-_this linkItem "ItemCompass";
-_this linkItem "ItemWatch";
-_this linkItem "rhs_1PN138";
+//_this linkItem "ItemMap";
+//_this linkItem "ItemCompass";
+//_this linkItem "ItemWatch";
 
 //Set identity
 _this setFace (selectRandom ['WhiteHead_01',
@@ -126,6 +123,6 @@ _this setSpeaker "NoVoice";
 _this addItemToBackpack "ACE_MRE_MeatballsPasta";
 for "_i" from 1 to 2 do {_this addItemToBackpack "ACE_MRE_CreamChickenSoup";};
 
-_this setVariable ["ace_medical_medicclass", 0, true];
+_this setVariable ["ace_medical_medicclass", 1, true];
 _this setVariable ["ACE_IsEngineer", 0, true];
 

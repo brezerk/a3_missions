@@ -33,11 +33,11 @@ removeGoggles _this;
 
 //Add weapons
 _this addWeapon "rhs_weap_ak74_gp25";
+_this addPrimaryWeaponItem "rhs_acc_dtk";
 _this addPrimaryWeaponItem "rhs_30Rnd_545x39_7N6_AK";
 _this addPrimaryWeaponItem "rhs_VOG25";
-_this addPrimaryWeaponItem "rhs_acc_tgpa";
 _this addWeapon "rhs_weap_makarov_pm";
-_this addHandgunItem "rhs_mag_9x18_8_57N181S";
+_this addHandgunItem "rhs_mag_9x18_12_57N181S";
 
 //Uniform
 _this forceAddUniform "LOP_U_UKR_Fatigue_Digit";
@@ -45,28 +45,14 @@ _this addItemToUniform "ACE_CableTie";
 for "_i" from 1 to 3 do {_this addItemToUniform "ACE_epinephrine";};
 for "_i" from 1 to 2 do {_this addItemToUniform "ACE_morphine";};
 _this addItemToUniform "ACE_EarPlugs";
-for "_i" from 1 to 10 do {_this addItemToUniform "ACE_fieldDressing";};
+for "_i" from 1 to 5 do {_this addItemToUniform "ACE_fieldDressing";};
 _this addItemToUniform "ACE_MapTools";
 _this addItemToUniform "ACE_Canteen";
 
 //Vest
 _this addVest "LOP_V_6B23_CrewOfficer_TAN";
 	
-//Give player a radio depending on radio mod loaded
-if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
-	_this addBackpack "B_Kitbag_tan";
-	_this addItemToBackpack "ACRE_PRC77";
-} else {
-	if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
-		//_this addItemToVest "tf_anprc148jem";
-		_this linkItem "tf_anprc152";
-		_this addBackpack "TFAR_rt1523g_sage";
-	} else {
-		//Fallback to native arma3 radio
-		_this linkItem "ItemRadio";
-		_this addBackpack "B_Kitbag_tan";
-	};
-};
+_this addBackpack "B_Kitbag_tan";
 	
 _this addItemToVest "rhs_mag_9x18_12_57N181S";
 for "_i" from 1 to 2 do {_this addItemToVest "rhs_30Rnd_545x39_7N6_AK";};
@@ -76,6 +62,7 @@ for "_i" from 1 to 1 do {_this addItemToVest "ACE_tourniquet";};
 
 _this addItemToBackpack "ACE_bloodIV";
 for "_i" from 1 to 2 do {_this addItemToBackpack "ACE_bloodIV_500";};
+for "_i" from 1 to 10 do {_this addItemToBackpack "ACE_fieldDressing";};
 for "_i" from 1 to 8 do {_this addItemToBackpack "rhs_VOG25";};
 for "_i" from 1 to 2 do {_this addItemToVest "rhs_GRD40_White";};
 for "_i" from 1 to 6 do {_this addItemToBackpack "rhs_30Rnd_545x39_7N6_AK";};
@@ -92,10 +79,9 @@ _this addGoggles "rhs_googles_clear";
 _this addWeapon "Binocular";
 
 //Add items
-_this linkItem "ItemMap";
-_this linkItem "ItemCompass";
-_this linkItem "ItemWatch";
-_this linkItem "rhs_1PN138";
+//_this linkItem "ItemMap";
+//_this linkItem "ItemCompass";
+//_this linkItem "ItemWatch";
 
 //Set identity
 _this setFace (selectRandom ['WhiteHead_01',

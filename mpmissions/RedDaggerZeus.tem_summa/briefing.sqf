@@ -21,12 +21,18 @@ Briefing script
 */
 
 player createDiaryRecord ["Diary", [ "Додаткове Завдання",  "Збір розвідданих"]];
-player createDiaryRecord ["Diary", [ "Завдання Другої ДРГ групи",  " Знайти в тилу ворога розміщення мінометної батареї та знищити її. Додатково: Знищіти коорданаційний штаб. Замінувати шляхі підходу підкріплень."]];
-player createDiaryRecord ["Diary", [ "Завдання Першої ДРГ групи",  " За допомогою електронних приладів знайти в тилу ворога розміщення мобільних радіостанцій РФ та знищити їх. Додатково: Знищіти коорданаційний штаб. Замінувати шляхі підходу підкріплень."]];
-player createDiaryRecord ["Diary", [ "Завдання механізованих бригад",  "Оточити і зачистити місто."]];
+player createDiaryRecord ["Diary", [ localize "STR_Extra_Mission",  localize "STR_Extra_Mission_Desc"]];
+player createDiaryRecord ["Diary", [ localize "STR_DRG_2_Mission",  localize "STR_DRG_2_Mission_Desc"]];
+player createDiaryRecord ["Diary", [ localize "STR_DRG_1_Mission",  localize "STR_DRG_1_Mission_Desc"]];
+player createDiaryRecord ["Diary", [ localize "STR_Mech",  localize "STR_Mech_Desc"]];
 player createDiaryRecord ["Diary", ["-------------", ""]];
-player createDiaryRecord ["Diary", [ "Зав'язка",  "Розвиваючи успіх, Штаб Антитерористичної операції видав бойовий наказ військам Сектору «Б» на оточення і штурм м. Сума."]];
+player createDiaryRecord ["Diary", [ localize "STR_Env",  localize "STR_Env_Desc"]];
+player createDiaryRecord ["Diary", [ localize "STR_Loc",  localize "STR_Loc_Desc"]];
+player createDiaryRecord ["Diary", [ localize "STR_Comms",  localize "STR_Comms_Desc"]];
 player createDiaryRecord ["Diary", ["-------------", ""]];
-player createDiaryRecord ["Diary", [ "Ситуація",  "Станом на початок серпня 2015 р. взяттям с. Тихе і с. Вовкове було проведено успішну операцію з розблокування підрозділів 24 ОМБр, 72 ОМБр, що впродовж тижнів перебували під обстрілами зі сторони РФ."]];
+player createDiaryRecord ["Diary", [ localize "STR_Enemy",  localize "STR_Enemy_Desc"]];
+player createDiaryRecord ["Diary", [ localize "STR_Allies",  localize "STR_Allies_Desc"]];
+player createDiaryRecord ["Diary", ["-------------", ""]];
+player createDiaryRecord ["Diary", [ localize "STR_Situation",  localize "STR_Situation_Desc"]];
 
 

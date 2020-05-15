@@ -21,7 +21,28 @@ waitUntil { !isNull player }; // Wait for player to initialize
 execVM "briefing.sqf";
 
 // hide markers
-{if (_x find "wp_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
+{
+	if (_x find "wp_" >= 0) then {_x setMarkerAlphaLocal 0} else {
+		if (_x find "mrk_mines_" >= 0) then {_x setMarkerTextLocal (localize "STR_Minefileds")} else {
+			if (_x find "mrk_rampat_" >= 0) then {_x setMarkerTextLocal (localize "STR_Rampat")} else {
+				if (_x find "mrk_reinf_" >= 0) then {_x setMarkerTextLocal (localize "STR_Reinf")} else {
+					if (_x find "mrk_strike_" >= 0) then {_x setMarkerTextLocal (localize "STR_Strike")} else {
+						if (_x find "mrk_mortars_" >= 0) then {_x setMarkerTextLocal (localize "STR_Mortars")};
+					};
+				};
+			};
+		};
+	};
+} forEach allMapMarkers;
+
+"respawn_guerrila" setMarkerTextLocal (localize "STR_Logistic");
+"respawn_east" setMarkerTextLocal (localize "STR_Logistic");
+"marker_oles" setMarkerTextLocal (localize "STR_Rampat_Oles");
+"mrk_drg_01" setMarkerTextLocal (localize "STR_DRG_1");
+"mrk_drg_02" setMarkerTextLocal (localize "STR_DRG_2");
+"mrk_mech_01" setMarkerTextLocal (localize "STR_Mech_01");
+"mrk_mech_02" setMarkerTextLocal (localize "STR_Mech_02");
+
 
 sleep 1;
 

@@ -30,7 +30,9 @@ force ace_advanced_fatigue_swayFactor = 1;
 force ace_advanced_fatigue_terrainGradientFactor = 1;
 
 // ACE Logistics
-force ace_repair_engineerSetting_repair = 0;
+force ace_repair_engineerSetting_repair = 1;
+force ace_repair_engineerSetting_fullRepair = 1;
+force ace_repair_fullRepairLocation = 3;
 
 // ACE Medical
 force ace_medical_ai_enabledFor = 0;
@@ -55,7 +57,7 @@ force ace_medical_treatment_allowSelfStitch = 1;
 force ace_medical_treatment_allowSharedEquipment = 0;
 force ace_medical_treatment_consumePAK = 0;
 force ace_medical_treatment_consumeSurgicalKit = 0;
-force ace_medical_treatment_convertItems = 0;
+force ace_medical_treatment_convertItems = 1;
 force ace_medical_treatment_cprSuccessChance = 0.6;
 force ace_medical_treatment_locationEpinephrine = 0;
 force ace_medical_treatment_locationPAK = 0;
@@ -66,6 +68,7 @@ force ace_medical_treatment_medicSurgicalKit = 1;
 force ace_medical_treatment_timeCoefficientPAK = 0.20;
 force ace_medical_treatment_woundReopening = false;
 force ace_medical_treatment_locationsBoostTraining = true;
+force ace_medical_treatment_holsterRequired = 4;
 
 // ACE Займання боєприпасів
 force ace_cookoff_enableAmmoCookoff = false;
@@ -85,11 +88,19 @@ force ace_artillerytables_disableArtilleryComputer = true;
 
 // ACEX Field Rations
 force acex_field_rations_enabled = true;
-force acex_field_rations_timeWithoutWater = 10;
-force acex_field_rations_timeWithoutFood = 20;
+force acex_field_rations_timeWithoutWater = 15;
+force acex_field_rations_timeWithoutFood = 25;
 
 // ACE Карта
 force ace_markers_moveRestriction = 0;
 
 // ACE Ограничитель дальности видимости
-force ace_viewdistance_limitViewDistance = 1000;
+force ace_viewdistance_limitViewDistance = 1200;
+
+//Respawn
+force ace_respawn_removeDeadBodiesDisconnected = false;
+
+//TFAR
+force force TFAR_Teamspeak_Channel_Name = "A3UATaskForceRadio";
+force force TFAR_setting_defaultFrequencies_lr_independent = "37";
+force force TFAR_setting_defaultFrequencies_sr_independent = "100";

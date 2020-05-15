@@ -29,20 +29,8 @@ D_DEBUG = false;
 if (isServer) then {
 	//waitUntil {real_weather_init};
 	
-	if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
-		radio_box_01 addItemCargoGlobal ["ACRE_PRC148", 60];
-		radio_box_01 addItemCargoGlobal ["ACRE_SEM52SL", 60];
-		radio_box_01 addItemCargoGlobal ["ACRE_PRC77", 20];
-	} else {
-		if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
-			radio_box_01 addItemCargoGlobal ["tf_anprc148jem", 60];
-			radio_box_01 addItemCargoGlobal ["tf_anprc154", 60];
-			radio_box_01 addItemCargoGlobal ["tf_anprc155", 20];
-			radio_box_01 addItemCargoGlobal ["tf_anprc155_coyote", 20];
-		} else {
-			radio_box_01 addItemCargoGlobal ["ItemRadio", 30];
-		};
-	};
-	radio_box_01 addItemCargoGlobal ["DemoCharge_Remote_Mag", 20];
+	{
+		_x addItemCargoGlobal ["LOP_H_6B27M_Digit", 3];
+	} forEach [bmp_01, bmp_02];
 	[] execVM "addons\BrezBlock.framework\utils\garbage_collector.sqf";
 };
