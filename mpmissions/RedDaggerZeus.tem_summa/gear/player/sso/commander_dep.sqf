@@ -37,7 +37,7 @@ _this addPrimaryWeaponItem "rhs_30Rnd_545x39_7N6_AK";
 _this addPrimaryWeaponItem "rhs_VOG25";
 _this addPrimaryWeaponItem "rhs_acc_tgpa";
 _this addWeapon "rhs_weap_makarov_pm";
-_this addHandgunItem "rhs_mag_9x18_12_57N181S";
+_this addHandgunItem "rhs_mag_9x18_8_57N181S";
 
 //Uniform
 _this forceAddUniform "LOP_U_UKR_Fatigue_Digit";

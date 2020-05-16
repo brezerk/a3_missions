@@ -85,6 +85,7 @@ _this linkItem "ItemMap";
 _this linkItem "ItemCompass";
 _this linkItem "ItemWatch";
 _this linkItem "rhs_1PN138";
+_this addWeapon "Binocular";
 
 //Set identity
 _this setFace (selectRandom ['WhiteHead_01',

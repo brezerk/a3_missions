@@ -22,8 +22,8 @@ missionNamespace setVariable ["#EM_SMin", -60];
 missionNamespace setVariable ["#EM_SMax", -10];
 missionNamespace setVariable ["#EM_SelMin", 140.6];
 missionNamespace setVariable ["#EM_SelMax", 165.9];
-
-_TargetSigs = [["target_01", 91.8],["target_02", 310.85],["target_03", 120.45]];
+ 
+_TargetSigs = [["target_01", 91.8],["target_02", 310.85],["target_03", 178.3]];
 _ScannerRange = 2000;
 _DirDifrence = 0;
 _TargetSigsArray = [];

@@ -20,7 +20,6 @@
 Briefing script
 */
 
-player createDiaryRecord ["Diary", [ "Додаткове Завдання",  "Збір розвідданих"]];
 player createDiaryRecord ["Diary", [ localize "STR_Extra_Mission",  localize "STR_Extra_Mission_Desc"]];
 player createDiaryRecord ["Diary", [ localize "STR_DRG_2_Mission",  localize "STR_DRG_2_Mission_Desc"]];
 player createDiaryRecord ["Diary", [ localize "STR_DRG_1_Mission",  localize "STR_DRG_1_Mission_Desc"]];

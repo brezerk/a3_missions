@@ -247,6 +247,21 @@ Last Light is at 18:30</English>
 				<English>Collect intelligence, destroy enemy's communication and logistics points.</English>
 				<Russian>Збір розвідданих, знищення комунікаційних, та логістичних пунктів супротивника.</Russian>
 			</Key>
+			<Key ID="STR_ZONE">
+				<Original>Ukraine. ATO Zone.</Original>
+				<English>Ukraine. ATO Zone.</English>
+				<Russian>Україна. Зона ATO.</Russian>
+			</Key>
+			<Key ID="STR_ZONE_LOC">
+				<Original>Front line</Original>
+				<English>Front line</English>
+				<Russian>Прифронтова лінія</Russian>
+			</Key>
+			<Key ID="STR_ZONE_DATE">
+				<Original>16 September 2015 %1</Original>
+				<English>16 September 2015 %1</English>
+				<Russian>16 Вересня 2015 %1</Russian>
+			</Key>
 		</Container>
 	</Package>
 </Project>
