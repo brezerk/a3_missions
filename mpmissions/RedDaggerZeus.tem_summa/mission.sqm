@@ -16,7 +16,7 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=273;
+		nextID=291;
 	};
 	class Camera
 	{
@@ -2330,7 +2330,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="Everyone";
+							value="No";
 						};
 					};
 				};
@@ -2497,7 +2497,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="Everyone";
+							value="No";
 						};
 					};
 				};
@@ -9070,7 +9070,7 @@ class Mission
 			};
 			id=1683;
 			type="LOP_UKR_BMP2";
-			atlOffset=-0.0020027161;
+			atlOffset=-0.0020046234;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -24074,7 +24074,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="Everyone";
+							value="No";
 						};
 					};
 				};
@@ -24241,7 +24241,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="Everyone";
+							value="No";
 						};
 					};
 				};
@@ -24387,7 +24387,7 @@ class Mission
 			class PositionInfo
 			{
 				position[]={4730.8818,1.0631262,4116.2939};
-				angles[]={0.06988623,3.3523414,0.053282689};
+				angles[]={0.069882989,3.3523412,0.053284902};
 			};
 			id=2851;
 			type="Site_Minefield";
@@ -24408,7 +24408,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="Everyone";
+							value="No";
 						};
 					};
 				};
@@ -24575,7 +24575,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="Everyone";
+							value="No";
 						};
 					};
 				};
@@ -24743,7 +24743,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="Everyone";
+							value="No";
 						};
 					};
 				};
@@ -24910,7 +24910,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="Everyone";
+							value="No";
 						};
 					};
 				};
@@ -28425,6 +28425,7 @@ class Mission
 			};
 			id=2968;
 			type="LOP_UKR_BMP2";
+			atlOffset=1.9073486e-006;
 			class CustomAttributes
 			{
 				class Attribute0
