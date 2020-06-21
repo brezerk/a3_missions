@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=804;
+		nextID=808;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1188;
+		nextID=1212;
 	};
 	class Camera
 	{
-		pos[]={2227.6187,304.74796,11248.26};
-		dir[]={-0.062392596,-0.55150402,0.831981};
-		up[]={-0.0412484,0.83409619,0.5500266};
-		aside[]={0.99730796,9.975729e-007,0.074791878};
+		pos[]={2225.1118,311.6528,11245.4};
+		dir[]={-0.45634535,-0.66977292,0.58600086};
+		up[]={-0.41153875,0.74250072,0.52846462};
+		aside[]={0.78906769,4.2383908e-007,0.61448222};
 	};
 };
 binarizationWanted=0;
@@ -47,7 +47,6 @@ addons[]=
 	"ace_cargo",
 	"A3_Weapons_F_Enoch",
 	"a3ua_cl_items",
-	"A3_Animals_F_Rabbit",
 	"A3_Structures_F_Civ_Camping",
 	"cba_xeh"
 };
@@ -55,7 +54,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=19;
+		items=18;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -169,13 +168,6 @@ class AddonsMetaData
 			url="http://gg.gg/arma3ua";
 		};
 		class Item17
-		{
-			className="A3_Animals_F";
-			name="Arma 3 Alpha - Fauna";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item18
 		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
@@ -1412,11 +1404,10 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={4134.958,339.336,10725.505};
+				position[]={2687.292,274.24783,10036.427};
 			};
 			id=115;
 			type="CL_Spawn_Stash";
-			atlOffset=0.27600098;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -2171,11 +2162,12 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2495.509,269.69876,10120.902};
-				angles[]={6.22824,0,0.042478051};
+				position[]={1779.3882,246.13139,10559.371};
+				angles[]={6.2606897,0,0.039979152};
 			};
 			id=649;
 			type="Ravage_zombies";
+			atlOffset=1.5258789e-005;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -2661,8 +2653,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2520.032,264.99481,9977.0352};
-				angles[]={6.2506957,0,0.03748076};
+				position[]={1803.9111,243.19888,10415.504};
+				angles[]={6.2656851,0,0.027492445};
 			};
 			id=650;
 			type="Ravage_settings";
@@ -2847,8 +2839,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2413.7659,266.44138,10129.077};
-				angles[]={6.2432065,0,0.049961641};
+				position[]={1697.645,243.37779,10567.546};
+				angles[]={6.2706842,0,0.032489564};
 			};
 			id=651;
 			type="Ravage_vehicles";
@@ -2995,8 +2987,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2400.687,260.45471,10011.367};
-				angles[]={6.22824,0,0.057432342};
+				position[]={1684.5662,241.32037,10449.836};
+				angles[]={6.2681832,0,0.0050033992};
 			};
 			id=652;
 			type="Ravage_atmosphere";
@@ -3152,7 +3144,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={4156.4673,339.06,10631.866};
+				position[]={2720.6277,273.69339,9869.3418};
+				angles[]={6.2531958,0,0.0050033992};
 			};
 			id=655;
 			type="Ravage_hordes";
@@ -3280,8 +3273,7 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2520.032,256.5705,9743.25};
-				angles[]={6.2432051,0,0.015002378};
+				position[]={2698.2871,274.04999,9996.083};
 			};
 			id=657;
 			type="CL_Spawn_Garrison";
@@ -4611,7 +4603,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2362.1179,265.96429,9185.8379};
+				position[]={2651.2346,274.19946,10103.866};
+				angles[]={6.268187,0,6.268187};
 			};
 			id=664;
 			type="CL_Spawn_BlockPost";
@@ -4935,8 +4928,7 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={3239.5969,307.45773,10027.68};
-				angles[]={6.2581892,0,0.084795304};
+				position[]={2742.7378,274.04999,9968.3135};
 			};
 			id=668;
 			type="CL_Spawn_Patrol";
@@ -5121,8 +5113,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2141.4053,262.83304,10726.835};
-				angles[]={0.0075011365,0,0.059933435};
+				position[]={2130.4492,261.91751,10789.775};
+				angles[]={6.2806959,0,0.062418513};
 			};
 			id=669;
 			type="CL_Spawn_Base";
@@ -6923,8 +6915,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2224.282,303.24536,11247.474};
-				angles[]={6.134294,0,0.052450236};
+				position[]={2226.2493,303.62302,11250.108};
+				angles[]={6.1859884,0,0.024996169};
 			};
 			side="Empty";
 			flags=4;
@@ -6933,15 +6925,14 @@ class Mission
 			};
 			id=769;
 			type="Item_ChemicalDetector_01_watch_F";
-			atlOffset=0.0082702637;
 		};
 		class Item65
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2225.436,303.34821,11247.875};
-				angles[]={6.1465449,0,0.039973188};
+				position[]={2226.3601,303.55557,11249.422};
+				angles[]={6.1711612,0,0.039971694};
 			};
 			side="Empty";
 			flags=4;
@@ -6950,15 +6941,14 @@ class Mission
 			};
 			id=770;
 			type="Item_ChemicalDetector_01_watch_F";
-			atlOffset=0.0067138672;
 		};
 		class Item66
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2226.3254,303.48862,11248.797};
-				angles[]={6.1711612,0,0.039971694};
+				position[]={2226.9438,303.55603,11249.243};
+				angles[]={6.1859884,0,0.024996169};
 			};
 			side="Empty";
 			flags=4;
@@ -6967,7 +6957,6 @@ class Mission
 			};
 			id=771;
 			type="Item_ChemicalDetector_01_watch_F";
-			atlOffset=0.0047607422;
 		};
 		class Item67
 		{
@@ -7015,7 +7004,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=0.1;
+							value=0.30000001;
 						};
 					};
 				};
@@ -7046,8 +7035,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2249.9509,277.28964,11045.887};
-				angles[]={6.183527,0,6.2631841};
+				position[]={2313.323,273.52426,10699.613};
+				angles[]={0.020001473,0,0.012496558};
 			};
 			id=773;
 			type="CL_ChemicalZone";
@@ -7125,7 +7114,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=0.5;
+							value=0.30000001;
 						};
 					};
 				};
@@ -7144,7 +7133,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=150;
+							value=300;
 						};
 					};
 				};
@@ -7298,69 +7287,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={2219.2659,302.53897,11248.366};
-			};
-			side="Ambient";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=789;
-			type="Rabbit_F";
-		};
-		class Item73
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2219.8599,302.62668,11248.774};
-				angles[]={0,5.1924858,0};
-			};
-			side="Ambient";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=790;
-			type="Rabbit_F";
-		};
-		class Item74
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2218.3184,302.43057,11248.044};
-				angles[]={0,0.77378905,0};
-			};
-			side="Ambient";
-			flags=5;
-			class Attributes
-			{
-			};
-			id=791;
-			type="Rabbit_F";
-		};
-		class Item75
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={2219.6873,302.61459,11249.72};
-				angles[]={6.151453,0,0.042471033};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=792;
-			type="CL_Meat_Raw";
-		};
-		class Item76
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={2214.4187,304.15979,11259.413};
 				angles[]={6.1172233,0,6.2756925};
 			};
@@ -7373,7 +7299,7 @@ class Mission
 			type="Campfire_burning_F";
 			atlOffset=-0.00030517578;
 		};
-		class Item77
+		class Item73
 		{
 			dataType="Object";
 			class PositionInfo
@@ -7390,7 +7316,7 @@ class Mission
 			type="CL_AntiradinBag";
 			atlOffset=-9.1552734e-005;
 		};
-		class Item78
+		class Item74
 		{
 			dataType="Object";
 			class PositionInfo
@@ -7407,7 +7333,7 @@ class Mission
 			type="CL_PainKillers";
 			atlOffset=0.00018310547;
 		};
-		class Item79
+		class Item75
 		{
 			dataType="Object";
 			class PositionInfo
@@ -7424,7 +7350,7 @@ class Mission
 			type="CL_Antidote";
 			atlOffset=0.00012207031;
 		};
-		class Item80
+		class Item76
 		{
 			dataType="Object";
 			class PositionInfo
@@ -7440,7 +7366,7 @@ class Mission
 			id=800;
 			type="CL_Knife";
 		};
-		class Item81
+		class Item77
 		{
 			dataType="Object";
 			class PositionInfo
@@ -7457,7 +7383,7 @@ class Mission
 			type="CL_Matches";
 			atlOffset=-3.0517578e-005;
 		};
-		class Item82
+		class Item78
 		{
 			dataType="Object";
 			class PositionInfo
@@ -7474,7 +7400,7 @@ class Mission
 			type="CL_HeatPack";
 			atlOffset=6.1035156e-005;
 		};
-		class Item83
+		class Item79
 		{
 			dataType="Object";
 			class PositionInfo
@@ -7490,6 +7416,294 @@ class Mission
 			id=803;
 			type="CL_Antibiotic";
 			atlOffset=0.00012207031;
+		};
+		class Item80
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2646.3213,272.27597,9926.9521};
+				angles[]={6.0125022,0,6.2257466};
+			};
+			id=804;
+			type="CL_RadiationZone";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="CL_RadiationZone_CreateMarker";
+					expression="_this setVariable ['CreateMarker',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="CL_RadiationZone_Damage";
+					expression="_this setVariable ['Damage',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0.30000001;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="CL_RadiationZone_Radius";
+					expression="_this setVariable ['Radius',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=50;
+						};
+					};
+				};
+				nAttributes=3;
+			};
+		};
+		class Item81
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2763.7983,274.04633,9929.6611};
+				angles[]={6.0125022,0,6.2257466};
+			};
+			id=805;
+			type="CL_RadiationZone";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="CL_RadiationZone_CreateMarker";
+					expression="_this setVariable ['CreateMarker',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="CL_RadiationZone_Damage";
+					expression="_this setVariable ['Damage',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0.30000001;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="CL_RadiationZone_Radius";
+					expression="_this setVariable ['Radius',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=50;
+						};
+					};
+				};
+				nAttributes=3;
+			};
+		};
+		class Item82
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2758.7197,273.88205,10062.035};
+				angles[]={6.0125022,0,6.2257466};
+			};
+			id=806;
+			type="CL_RadiationZone";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="CL_RadiationZone_CreateMarker";
+					expression="_this setVariable ['CreateMarker',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="CL_RadiationZone_Damage";
+					expression="_this setVariable ['Damage',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0.30000001;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="CL_RadiationZone_Radius";
+					expression="_this setVariable ['Radius',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=50;
+						};
+					};
+				};
+				nAttributes=3;
+			};
+		};
+		class Item83
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2659.186,274.04999,10014.977};
+				angles[]={6.0125022,0,6.2257466};
+			};
+			id=807;
+			type="CL_RadiationZone";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="CL_RadiationZone_CreateMarker";
+					expression="_this setVariable ['CreateMarker',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="CL_RadiationZone_Damage";
+					expression="_this setVariable ['Damage',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0.30000001;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="CL_RadiationZone_Radius";
+					expression="_this setVariable ['Radius',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=50;
+						};
+					};
+				};
+				nAttributes=3;
+			};
 		};
 	};
 };

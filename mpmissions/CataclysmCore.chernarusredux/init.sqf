@@ -23,4 +23,6 @@
 if (isServer) then {
 	box_01 addMagazineCargo ["CL_Antibiotic", 20];
 	box_01 addMagazineCargo ["CL_PainKillers", 20];
+	box_01 addItemCargo ["CL_Axe", 20];
+	box_01 addItemCargo ["CL_Matches", 20];
 };
