@@ -18,3 +18,9 @@
 	private _marker = createMarker [(format ["mrk_hospital_%1", _forEachIndex]), _x];
 	_marker setMarkerType "flag_UN";
  } forEach D_HOSPITAL_LCS;
+
+
+if (isServer) then {
+	box_01 addMagazineCargo ["CL_Antibiotic", 20];
+	box_01 addMagazineCargo ["CL_PainKillers", 20];
+};

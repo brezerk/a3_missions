@@ -428,12 +428,7 @@ class CfgSounds
 		titles[] = {0, ""};	
 	};
 	
-	class bb_head_03
-	{
-		name = "bb_head_03"; // Name for mission editor
-		sound[] = {"@A3\Sounds_f\characters\human-sfx\Other\hum_inside_head1.wss", db+5, 1.0};
-		titles[] = {0, ""};	
-	};
+	
 	#include "addons\BrezBlock.framework\systems\threats\detector\cfgSounds.hpp"
 	#include "addons\BrezBlock.framework\systems\threats\gasmask\cfgSounds.hpp"
 };
