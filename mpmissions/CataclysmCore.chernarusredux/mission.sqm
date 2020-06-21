@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=808;
+		nextID=820;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1212;
+		nextID=1224;
 	};
 	class Camera
 	{
 		pos[]={2225.1118,311.6528,11245.4};
-		dir[]={-0.45634535,-0.66977292,0.58600086};
-		up[]={-0.41153875,0.74250072,0.52846462};
-		aside[]={0.78906769,4.2383908e-007,0.61448222};
+		dir[]={0.18849729,-0.81620771,0.54636753};
+		up[]={0.2661902,0.57773823,0.77156192};
+		aside[]={0.94542491,6.6997018e-007,-0.32617283};
 	};
 };
 binarizationWanted=0;
@@ -596,7 +596,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=84;
+		items=86;
 		class Item0
 		{
 			dataType="Marker";
@@ -1404,7 +1404,7 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2687.292,274.24783,10036.427};
+				position[]={2701.8125,274.04999,10011.865};
 			};
 			id=115;
 			type="CL_Spawn_Stash";
@@ -1678,7 +1678,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2296.595,272.23999,10800.785};
+				position[]={2284.0991,272.42148,10887.148};
+				angles[]={6.2731905,0,0};
 			};
 			id=647;
 			type="CL_Spawn_Ambush";
@@ -4928,7 +4929,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2742.7378,274.04999,9968.3135};
+				position[]={2746.7212,274.00803,10023.753};
+				angles[]={0.0049914722,0,0.0024897563};
 			};
 			id=668;
 			type="CL_Spawn_Patrol";
@@ -7004,7 +7006,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=0.30000001;
+							value=0.0070000002;
 						};
 					};
 				};
@@ -7035,8 +7037,7 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2313.323,273.52426,10699.613};
-				angles[]={0.020001473,0,0.012496558};
+				position[]={2367.46,273.81,10536.871};
 			};
 			id=773;
 			type="CL_ChemicalZone";
@@ -7114,7 +7115,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=0.30000001;
+							value=0.0099999998;
 						};
 					};
 				};
@@ -7422,10 +7423,10 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2646.3213,272.27597,9926.9521};
-				angles[]={6.0125022,0,6.2257466};
+				position[]={2592.0854,269.71118,9999.8906};
+				angles[]={6.2257533,0,0.087271675};
 			};
-			id=804;
+			id=814;
 			type="CL_RadiationZone";
 			class CustomAttributes
 			{
@@ -7463,7 +7464,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=0.30000001;
+							value=0.0070000002;
 						};
 					};
 				};
@@ -7494,10 +7495,10 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2763.7983,274.04633,9929.6611};
-				angles[]={6.0125022,0,6.2257466};
+				position[]={2754.5808,274.95193,10078.129};
+				angles[]={6.1736255,0,0.064910568};
 			};
-			id=805;
+			id=815;
 			type="CL_RadiationZone";
 			class CustomAttributes
 			{
@@ -7535,7 +7536,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=0.30000001;
+							value=0.0070000002;
 						};
 					};
 				};
@@ -7566,10 +7567,10 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2758.7197,273.88205,10062.035};
-				angles[]={6.0125022,0,6.2257466};
+				position[]={2665.3999,274.10349,9967.6104};
+				angles[]={0.0024897563,0,6.270689};
 			};
-			id=806;
+			id=816;
 			type="CL_RadiationZone";
 			class CustomAttributes
 			{
@@ -7607,7 +7608,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=0.30000001;
+							value=0.0070000002;
 						};
 					};
 				};
@@ -7638,10 +7639,10 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={2659.186,274.04999,10014.977};
-				angles[]={6.0125022,0,6.2257466};
+				position[]={2727.2246,271.77225,9842.8662};
+				angles[]={6.1391926,0,0.10708671};
 			};
-			id=807;
+			id=817;
 			type="CL_RadiationZone";
 			class CustomAttributes
 			{
@@ -7679,7 +7680,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=0.30000001;
+							value=0.0070000002;
 						};
 					};
 				};
@@ -7703,6 +7704,264 @@ class Mission
 					};
 				};
 				nAttributes=3;
+			};
+		};
+		class Item84
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2802.1807,274.09799,9951.1973};
+				angles[]={6.2806959,0,0};
+			};
+			id=818;
+			type="CL_RadiationZone";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="CL_RadiationZone_CreateMarker";
+					expression="_this setVariable ['CreateMarker',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="CL_RadiationZone_Damage";
+					expression="_this setVariable ['Damage',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0.0070000002;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="CL_RadiationZone_Radius";
+					expression="_this setVariable ['Radius',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=50;
+						};
+					};
+				};
+				nAttributes=3;
+			};
+		};
+		class Item85
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={2730.3076,274.02451,9939.4961};
+				angles[]={6.2806959,0,0.0024897563};
+			};
+			id=819;
+			type="CL_Spawn_Patrol";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="CL_Spawn_Patrol_MinUnitsCount";
+					expression="_this setVariable ['MinUnitsCount',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=4;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="CL_Spawn_Patrol_PatrolRange";
+					expression="_this setVariable ['PatrolRange',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=300;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="CL_Spawn_Patrol_SpawnRange";
+					expression="_this setVariable ['SpawnRange',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=150;
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="CL_Spawn_Patrol_CustomClasses";
+					expression="_this setVariable ['CustomClasses',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[]";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="CL_Spawn_Patrol_TriggerRadius";
+					expression="_this setVariable ['TriggerRadius',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=400;
+						};
+					};
+				};
+				class Attribute5
+				{
+					property="CL_Spawn_Patrol_MaxUnitsCount";
+					expression="_this setVariable ['MaxUnitsCount',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=4;
+						};
+					};
+				};
+				class Attribute6
+				{
+					property="CL_Spawn_Patrol_Faction";
+					expression="_this setVariable ['Faction',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="Independent";
+						};
+					};
+				};
+				class Attribute7
+				{
+					property="CL_Spawn_Patrol_GroupsCount";
+					expression="_this setVariable ['GroupsCount',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=1;
+						};
+					};
+				};
+				class Attribute8
+				{
+					property="CL_Spawn_Patrol_Multiplier";
+					expression="_this setVariable ['Multiplier',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0.5;
+						};
+					};
+				};
+				nAttributes=9;
 			};
 		};
 	};
