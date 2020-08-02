@@ -203,16 +203,21 @@ if (isServer) then {
 
 	Fn_MissionIntro_Evaluate = {
 		private _all_on_board = true;
+		private _players = 0;
+		
 		{
-			if (_x distance2d us_airplane_01) < 500) then {
+			if ((_x distance2d us_airplane_01) <= 300) then{
+				_players = _players + 1;
 				if (objectParent _x != us_airplane_01) then {
 					_all_on_board = false;
 				};
 			};
 		} forEach (playableUnits + switchableUnits);
-		if ((count (playableUnits + switchableUnits)) == 0) then {
+		
+		if (_players == 0) then {
 			_all_on_board = false;
 		};
+		
 		_all_on_board;
 	}; // Fn_MissionIntro_Evaluate
 	
