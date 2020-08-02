@@ -64,6 +64,29 @@ D_FRACTION_INDEP_CFG = [
 			'transport', [
 					'I_Truck_02_transport_F',
 					'I_Truck_02_covered_F']
+			],
+			[
+			'stash_base_items', [
+				["launch_RPG32_F",				 4 ],
+				["arifle_Katiba_F",				 6 ],
+				["LMG_Zafir_F",					 5 ],
+				["16Rnd_9x21_Mag",				 25],
+				["30Rnd_65x39_caseless_green",	 15],
+				["10Rnd_762x54_Mag",			 15],
+				["150Rnd_762x54_Box",			 8 ],
+				["1Rnd_HE_Grenade_shell",		 10],
+				["Chemlight_red",				 10],
+				["RPG32_F",						 5 ],
+				["RPG32_HE_F",					 5 ],
+				["Laserbatteries",				 4 ],
+				["HandGrenade",					 10],
+				["SmokeShell",					 10],
+				["SmokeShellRed",				 10],
+				["30Rnd_9x21_Mag_SMG_02",		 16],
+				["Laserdesignator_02",			 2 ],
+				["acc_flashlight",				 4 ],
+				["bipod_02_F_blk",				 4 ],
+				["B_FieldPack_ocamo",			 10]]
 			]
 		]
 	],
@@ -134,6 +157,29 @@ D_FRACTION_INDEP_CFG = [
 					["bipod_01_F_blk",			  2 ]
 				]
 				]
+			],
+			[
+			'stash_base_items', [
+				["launch_RPG32_F",				 4 ],
+				["arifle_Katiba_F",				 6 ],
+				["LMG_Zafir_F",					 5 ],
+				["16Rnd_9x21_Mag",				 25],
+				["30Rnd_65x39_caseless_green",	 15],
+				["10Rnd_762x54_Mag",			 15],
+				["150Rnd_762x54_Box",			 8 ],
+				["1Rnd_HE_Grenade_shell",		 10],
+				["Chemlight_red",				 10],
+				["RPG32_F",						 5 ],
+				["RPG32_HE_F",					 5 ],
+				["Laserbatteries",				 4 ],
+				["HandGrenade",					 10],
+				["SmokeShell",					 10],
+				["SmokeShellRed",				 10],
+				["30Rnd_9x21_Mag_SMG_02",		 16],
+				["Laserdesignator_02",			 2 ],
+				["acc_flashlight",				 4 ],
+				["bipod_02_F_blk",				 4 ],
+				["B_FieldPack_ocamo",			 10]]
 			]
 		]
 	]
@@ -397,6 +443,29 @@ D_FRACTION_CIV_CFG = [
 					'C_Boat_Civil_01_police_F',
 					'C_Rubberboat',
 					'C_Boat_Civil_01_rescue_F']
+			],
+			[
+			'stash_base_items', [
+				["launch_RPG32_F",				 4 ],
+				["arifle_Katiba_F",				 6 ],
+				["LMG_Zafir_F",					 5 ],
+				["16Rnd_9x21_Mag",				 25],
+				["30Rnd_65x39_caseless_green",	 15],
+				["10Rnd_762x54_Mag",			 15],
+				["150Rnd_762x54_Box",			 8 ],
+				["1Rnd_HE_Grenade_shell",		 10],
+				["Chemlight_red",				 10],
+				["RPG32_F",						 5 ],
+				["RPG32_HE_F",					 5 ],
+				["Laserbatteries",				 4 ],
+				["HandGrenade",					 10],
+				["SmokeShell",					 10],
+				["SmokeShellRed",				 10],
+				["30Rnd_9x21_Mag_SMG_02",		 16],
+				["Laserdesignator_02",			 2 ],
+				["acc_flashlight",				 4 ],
+				["bipod_02_F_blk",				 4 ],
+				["B_FieldPack_ocamo",			 10]]
 			]
 		]
 	]

@@ -15,29 +15,22 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
  ***************************************************************************/
+ 
+private _respawnDelay = D_RESPAWN_DELAY;
 
-if (isServer) then {
-	sleep 10;
+while {true} do {
+	sleep (_respawnDelay - (servertime % _respawnDelay));
+	
+	[west_rack_01] call Fn_Spawn_Boat_At_Rack;
+	[west_rack_02] call Fn_Spawn_Boat_At_Rack;
+	[(us_liberty_01 modelToWorldWorld [0,50.6011,8.95]), (getDir us_liberty_01)] call Fn_Spawn_Heli;
+	
 	{
-		remoteExecCall ["Fn_Local_FastTravel_Sleep", _x];
-	} forEach assault_group;
-	sleep 8;
-	//skipTime 1;
-	private _markerPos = getMarkerPos "mrk_flight_waypoint";
-	private _vel = velocity us_airplane_01;
-	us_airplane_01 setPosASL [(_markerPos select 0), (_markerPos select 1), ((_markerPos select 2) + 1500)];
-	us_airplane_01 setDir (markerDir "mrk_flight_waypoint");
-	us_airplane_01 setVelocity _vel;
-	private _group = (group (driver us_airplane_01));
-	private _wp = _group addWaypoint [getMarkerPos "mrk_airfield", 0, 0];
-	_wp setWaypointCombatMode "YELLOW";
-	_wp setWaypointBehaviour "SAFE";
-	_wp setWaypointSpeed "FULL";
-	_wp setWaypointFormation "NO CHANGE";
-	_wp setWaypointType "MOVE";
-	us_airplane_01 flyInHeight 1500;
-	(driver us_airplane_01) setBehaviour "Careless";
-	{
-		remoteExecCall ["Fn_Local_FastTravel_Wokeup", _x];
-	} forEach assault_group;
+		if (_x find "mrk_east_transport_" >= 0) then {
+			[(getMarkerPos _x), (markerDir _x)] call Fn_Spawn_East_Cars_Transport;
+		};
+	} forEach allMapMarkers;
+	
 };
+
+

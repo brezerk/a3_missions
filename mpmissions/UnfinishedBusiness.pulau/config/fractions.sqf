@@ -191,6 +191,17 @@
 					["ToolKit",                   1 ],
 					["CUP_bipod_Harris_1A2_L",	  4 ]
 				]
+			],
+			['prison_items', 	[
+					["CUP_hgun_Colt1911",         4 ],
+					["CUP_7Rnd_45ACP_1911",	      6 ],
+					["Chemlight_green",			  8 ],
+					["CUP_HandGrenade_M67",  	  2 ],
+					["SmokeShell",				  2 ],
+					["SmokeShellGreen",			  2 ],
+					["Medikit",					  10],
+					["ToolKit",                   1 ]
+				]
 			]
 		]
 	],
@@ -309,6 +320,17 @@
 					["ToolKit",                   1 ],
 					["MineDetector",              2 ],
 					["bipod_01_F_blk",			  1 ]
+				]
+			],
+			['prison_items', 	[
+					["hgun_P07_F",                4 ],
+					["16Rnd_9x21_Mag",	          6 ],
+					["Chemlight_green",			  8 ],
+					["HandGrenade",  	          2 ],
+					["SmokeShell",				  2 ],
+					["SmokeShellGreen",			  2 ],
+					["Medikit",					  10],
+					["ToolKit",                   1 ]
 				]
 			]
 		]

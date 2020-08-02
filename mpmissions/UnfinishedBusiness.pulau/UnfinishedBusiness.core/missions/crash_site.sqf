@@ -80,16 +80,59 @@ if (isServer) then {
 			};
 		};
 	} forEach allMapMarkers;
+	
+	private _prisoners = [];
 
 	{
-		private _marker = selectRandom _free_landing_markers;
-		//_free_landing_markers = _free_landing_markers - [_marker];
-		private _markerPos = getMarkerPos _marker;
-		//parachute
-		_x setPos [((_markerPos select 0) + (200 - (random 400))), ((_markerPos select 1) + (200 - (random 400))), ((_markerPos select 2) + 400 + random 100)];
-		_x setVariable ["ACE_isUnconscious", true, true];
-		[D_DIFFICLTY] remoteExecCall ["Fn_Local_Jet_Player_DoParadrop", _x];
+		if (((random 100) <= D_IMPRISON_CHANCE) && (!isNil "obj_prison")) then {
+			_prisoners pushBackUnique _x;
+		} else {
+			private _marker = selectRandom _free_landing_markers;
+			//_free_landing_markers = _free_landing_markers - [_marker];
+			private _markerPos = getMarkerPos _marker;
+			//parachute
+			_x setPos [((_markerPos select 0) + (200 - (random 400))), ((_markerPos select 1) + (200 - (random 400))), ((_markerPos select 2) + 400 + random 100)];
+			_x setVariable ["ACE_isUnconscious", true, true];
+			[D_DIFFICLTY] remoteExecCall ["Fn_Local_Jet_Player_DoParadrop", _x];
+		};
 	} forEach assault_group;
+	
+	if (!isNil "obj_prison") then {
+		private _free_bpos = obj_prison buildingPos -1;
+		
+		/*
+		private _grp = createGroup civilian;
+		private _dummy = _grp createUnit ["B_Survivor_F", [0,0,0],[],0,"NONE"];
+		_dummy hideObject true;
+		_dummy allowdamage false;
+		_dummy addBackpack "B_Kitbag_tan";
+		for "_i" from 1 to 10 do {_dummy addItemToBackpack "ACE_EarPlugs";};
+		for "_i" from 1 to 2 do {_dummy addItemToBackpack "ACE_WaterBottle";};
+		for "_i" from 1 to 4 do {_dummy addItemToBackpack "CUP_hgun_Colt1911";};
+		for "_i" from 1 to 12 do {_dummy addItemToBackpack "CUP_7Rnd_45ACP_1911";};
+
+		private _itemBox = "GroundWeaponHolder" createVehicle [0,0,0];
+		_itemBox setPos (selectRandom _free_bpos);
+		
+		_dummy action ["DropBag", _itemBox, backpack _dummy];
+		
+		sleep 1;
+
+		deletevehicle _dummy;
+		deleteGroup _grp;
+		*/
+		
+		[(getPos obj_prison), resistance, 3, 25] call BrezBlock_fnc_CreatePatrol;
+		
+		{
+			private _bpos = selectRandom _free_bpos;
+			_free_bpos = _free_bpos - [_bpos];
+			_x setPos _bpos;
+			_x setVariable ["ACE_isUnconscious", true, true];
+			_x setCaptive true;
+			[D_DIFFICLTY] remoteExecCall ["Fn_Local_Jet_Player_DoPreason", _x];
+		} forEach _prisoners;
+	};
 		
 	{deleteVehicle _x} foreach crew us_airplane_01; deleteVehicle us_airplane_01;
 	

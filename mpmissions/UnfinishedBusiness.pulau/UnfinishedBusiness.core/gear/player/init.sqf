@@ -15,6 +15,8 @@ removeGoggles player;
 private _class = "";
 private _role = (roleDescription player);
 
+_role = _role splitString "@" select 0;
+
 if (mission_plane_send) then {
 	_class = format ["rescue_%1", _role];
 } else {

@@ -27,6 +27,7 @@ if (!mission_requested) then {
 	private _cbStart = lbCurSel 2102;
 	private _cbDiff = lbCurSel 2101;
 	private _cbLocation = lbCurSel 2100;
+	private _cbPrisoner = lbCurSel 2109;
 
 	private _D_LOCATION = nil;
 
@@ -42,7 +43,7 @@ if (!mission_requested) then {
 		};
 	};
 
-	PUB_fnc_missionPlanned = [_cbDiff, _D_LOCATION, _cbStart, _cbNavToolsMap, _cbNavToolsCompass, _cbFractionWest, _cbFractionEast, _cbFractionIndep, _cbFractionCiv];
+	PUB_fnc_missionPlanned = [_cbDiff, _D_LOCATION, _cbStart, _cbNavToolsMap, _cbNavToolsCompass, _cbFractionWest, _cbFractionEast, _cbFractionIndep, _cbFractionCiv, _cbPrisoner];
 	publicVariableServer "PUB_fnc_missionPlanned";
 	
 	closeDialog 1;

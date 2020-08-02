@@ -28,21 +28,16 @@ if (hasInterface) then {
 
 if (isServer) then {
 
-	Fn_Spawn_Boat_Rack01 = {
-		params['_pos', '_dir'];
-		private _veh = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_BOATS), [0, 0, 0], [], 0, "CAN_COLLIDE"];
-		_veh allowDamage false;
-		west_rack_01 setVehicleCargo _veh;
-		_veh allowDamage true;
-		_veh;
-	};
-	
-	Fn_Spawn_Boat_Rack02 = {
-		params['_pos', '_dir'];
-		private _veh = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_BOATS), [0, 0, 0], [], 0, "CAN_COLLIDE"];
-		_veh allowDamage false;
-		west_rack_02 setVehicleCargo _veh;
-		_veh allowDamage true;
+	Fn_Spawn_Boat_At_Rack = {
+		params['_rack'];
+		private _veh = objNull;
+		if (count (getVehicleCargo _rack) == 0) then {
+			_veh = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_BOATS), [0, 0, 0], [], 0, "CAN_COLLIDE"];
+			_veh allowDamage false;
+			_rack setVehicleCargo _veh;
+			_veh allowDamage true;
+			[_veh] execVM 'addons\BrezBlock.framework\triggers\despawn_transport.sqf';
+		};
 		_veh;
 	};
 	
@@ -54,15 +49,26 @@ if (isServer) then {
 		_veh setDir (markerDir _marker);
 		_veh allowDamage true;
 	};
+	
+	Fn_Spawn_Heli = {
+		params['_pos', '_dir'];
+		private _veh = objNull;
+		if (count (nearestObjects [_pos, ["Car", "Tank", "APC", "Boat", "Drone", "Plane", "Helicopter"], 6]) == 0) then {
+			_veh = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_HELI), [0, 0, 0], [], 0, "CAN_COLLIDE"];
+			_veh allowDamage false;
+			_veh setPosASL (_pos);
+			_veh setDir (_dir);
+			[_veh] execVM 'addons\BrezBlock.framework\triggers\despawn_transport.sqf';
+		};
+		_veh;
+	};
 
 	Fn_Create_MissionIntro = {
-	
 		private _class = selectRandom D_FRACTION_WEST_UNITS_TRANSPORT;
 		private _crew_class = getText(configFile >> "CfgVehicles" >> _class >> "crew");
-		
 		private _pad = [us_liberty_01, "Land_HelipadEmpty_F"] call BIS_fnc_Destroyer01GetShipPart;
-		
 		private _obj = createVehicle ["Land_MapBoard_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
+		
 		_obj setPosASL (us_liberty_01 modelToWorldWorld [0,43.5,8.95]);
 		_obj setDir (getDir us_liberty_01);
 		_obj setObjectTextureGlobal [0, getText(configFile >> "CfgWorlds" >> worldName >> "pictureMap")];
@@ -115,15 +121,22 @@ if (isServer) then {
 		us_airplane_01 animateDoor ['Door_1_source', 1];
 		us_airplane_01 setVehicleAmmo 0;
 		
-		us_heli_01 = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_HELI), [0, 0, 0], [], 0, "CAN_COLLIDE"];
+		us_heli_01 = [(us_liberty_01 modelToWorldWorld [0,50.6011,8.95]), (getDir us_liberty_01)] call Fn_Spawn_Heli;
+		
+		/*createVehicle [(selectRandom D_FRACTION_WEST_UNITS_HELI), [0, 0, 0], [], 0, "CAN_COLLIDE"];
 		//private _pos = getPos land_01;
 		us_heli_01 allowDamage false;
-		us_heli_01 setPosASL (us_liberty_01 modelToWorldWorld [0,50.6011,8.95]);
-		us_heli_01 setDir (getDir us_liberty_01);
+		us_heli_01 setPosASL ();
+		us_heli_01 setDir ();*/
 		us_heli_01 setVehicleLock "LOCKED";
 		
-		[Fn_Spawn_Boat_Rack01, [0, 0, 0], 180, 20, 15] execVM 'addons\BrezBlock.framework\triggers\respawn_transport.sqf';
-		[Fn_Spawn_Boat_Rack02, [0, 0, 0], 180, 20, 15] execVM 'addons\BrezBlock.framework\triggers\respawn_transport.sqf';
+		us_boat01 = [west_rack_01] call Fn_Spawn_Boat_At_Rack;
+		us_boat01 setVehicleLock "LOCKED";
+		us_boat02 = [west_rack_02] call Fn_Spawn_Boat_At_Rack;
+		us_boat02 setVehicleLock "LOCKED";
+		
+		//[Fn_Spawn_Boat_Rack01, [0, 0, 0], 180, 20, 15] execVM 'addons\BrezBlock.framework\triggers\respawn_transport.sqf';
+		//[Fn_Spawn_Boat_Rack02, [0, 0, 0], 180, 20, 15] execVM 'addons\BrezBlock.framework\triggers\respawn_transport.sqf';
 		
 		["mrk_spec_boat01"] call Fn_Spawn_Boat_At;
 		["mrk_spec_boat02"] call Fn_Spawn_Boat_At;
@@ -191,8 +204,10 @@ if (isServer) then {
 	Fn_MissionIntro_Evaluate = {
 		private _all_on_board = true;
 		{
-			if (objectParent _x != us_airplane_01) then {
-				_all_on_board = false;
+			if (_x distance2d us_airplane_01) < 500) then {
+				if (objectParent _x != us_airplane_01) then {
+					_all_on_board = false;
+				};
 			};
 		} forEach (playableUnits + switchableUnits);
 		if ((count (playableUnits + switchableUnits)) == 0) then {

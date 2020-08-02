@@ -63,6 +63,7 @@ if (isServer) then {
 	D_NAVTOOL_COMPASS = nil;
 	D_PING_TIMEOUT = 30;
 	D_PING_RANGE = 150;
+	D_IMPRISON_CHANCE = 25;
 	
 	D_ADD_INTEL_ACTION = [east, independent];
 	
@@ -95,6 +96,8 @@ if (isServer) then {
 	D_FRACTION_CIV_UNITS_MENS = [];
 	D_FRACTION_CIV_UNITS_CARS = [];
 	D_FRACTION_CIV_UNITS_BOATS = [];
+	
+	D_PRISON_ITEMS = [];
 
 	// Global variables	
 	mission_requested = false;
@@ -113,6 +116,7 @@ if (isServer) then {
 	us_liberty_01 = objNull;
 	west_rack_01 = objNull;
 	west_rack_02 = objNull;
+	obj_prison = objNull;
 	
 	//Task states
 	task_complete_commtower = false;
@@ -228,7 +232,7 @@ if (isServer) then {
 	Event Handler for loaded or unloaded box
 	*/
 	EventHander_MissionPlanned = {
-		params ["_difficlty", "_location", "_start_type", "_navtool_map", "_navtool_compass", "_fraction_west", "_fraction_east", "_fraction_indep", "_fraction_civ"];
+		params ["_difficlty", "_location", "_start_type", "_navtool_map", "_navtool_compass", "_fraction_west", "_fraction_east", "_fraction_indep", "_fraction_civ", "_prisoner"];
 		if (!mission_requested) then {
 			D_DIFFICLTY = _difficlty;
 			D_LOCATION = _location;
@@ -239,6 +243,7 @@ if (isServer) then {
 			D_FRACTION_EAST = (([east] call Fn_Config_GetFractions) select _fraction_east);
 			D_FRACTION_INDEP = (([independent] call Fn_Config_GetFractions) select _fraction_indep);
 			D_FRACTION_CIV = (([civilian] call Fn_Config_GetFractions) select _fraction_civ);
+			D_IMPRISON_CHANCE = ([0, 25, 50, 75, 100] # _prisoner);
 			mission_requested = true;
 			publicVariable "D_LOCATION";
 			publicVariable "D_FRACTION_WEST";
@@ -312,6 +317,7 @@ if (isServer) then {
 	D_FRACTION_WEST_UNITS_TRANSPORT = ([west, D_FRACTION_WEST, 'transport'] call Fn_Config_GetFraction_Units);
 	D_FRACTION_WEST_UNITS_HELI = ([west, D_FRACTION_WEST, 'heli'] call Fn_Config_GetFraction_Units);
 	D_FRACTION_WEST_UNITS_BOATS = ([west, D_FRACTION_WEST, 'boats'] call Fn_Config_GetFraction_Units);
+	D_PRISON_ITEMS = ([west, D_FRACTION_WEST, 'prison_items'] call Fn_Config_GetFraction_Units);
 	
 	//Load fraction unit configurations
 	D_FRACTION_INDEP_UNITS_PATROL = ([independent, D_FRACTION_INDEP, 'patrol'] call Fn_Config_GetFraction_Units);

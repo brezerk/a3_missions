@@ -8,7 +8,7 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=12708;
+		nextID=12723;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7954.0112,14.646311,1159.2664};
-		dir[]={-0.16560522,-0.65008777,-0.7416147};
-		up[]={-0.14167941,0.75984919,-0.63446903};
-		aside[]={-0.97598428,-4.8157744e-007,0.21794149};
+		pos[]={3531.2222,71.310173,9922.9639};
+		dir[]={0.7018587,-0.65705144,0.2753396};
+		up[]={0.61165309,0.75384653,0.23995295};
+		aside[]={0.36522502,9.1653783e-007,-0.93098152};
 	};
 };
 binarizationWanted=0;
@@ -37,11 +37,13 @@ addons[]=
 	"A3_Structures_F_Exp_Military_Fortifications",
 	"A3_Structures_F_Exp_Military_Pillboxes",
 	"A3_Structures_F_EPA_Mil_Scrapyard",
+	"ace_cargo",
 	"A3_Structures_F_Orange_Humanitarian_Camps",
 	"A3_Structures_F_Civ_Camping",
 	"A3_Structures_F_EPB_Items_Luggage",
 	"A3_Structures_F_Mil_BagFence",
 	"A3_Structures_F_Argo_Military_Fortifications",
+	"cba_xeh",
 	"A3_Structures_F_Civ_Garbage",
 	"A3_Props_F_Exp_Civilian_Garbage",
 	"A3_Structures_F_Civ_Accessories",
@@ -50,13 +52,14 @@ addons[]=
 	"A3_Characters_F",
 	"A3_Structures_F_Mil_Flags",
 	"A3_Structures_F_Enoch_Military_Camps",
+	"ace_map",
 	"A3_Structures_F_Civ_InfoBoards"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=14;
+		items=16;
 		class Item0
 		{
 			className="A3_Ui_F";
@@ -101,59 +104,73 @@ class AddonsMetaData
 		};
 		class Item6
 		{
+			className="ace_cargo";
+			name="ACE3 - Cargo";
+			author="Команда ACE";
+			url="http://ace3mod.com/";
+		};
+		class Item7
+		{
 			className="A3_Structures_F_Orange";
 			name="Arma 3 Orange - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item7
+		class Item8
 		{
 			className="A3_Structures_F";
 			name="Arma 3 - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item8
+		class Item9
 		{
 			className="A3_Structures_F_EPB";
 			name="Arma 3 Adapt Episode - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item9
+		class Item10
 		{
 			className="A3_Structures_F_Argo";
 			name="Arma 3 Malden - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item10
-		{
-			className="A3_Props_F_Exp";
-			name="Arma 3 Apex - Decorative and Mission Objects";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
 		class Item11
-		{
-			className="A3_Structures_F_Exp_Industrial";
-			name="Arma 3 Apex - Industrial Structures";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item12
 		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item13
+		class Item12
 		{
-			className="A3_Structures_F_Enoch_Military";
-			name="Arma 3 Enoch - Military Buildings and Structures";
+			className="A3_Props_F_Exp";
+			name="Arma 3 Apex - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
+		};
+		class Item13
+		{
+			className="A3_Structures_F_Exp_Industrial";
+			name="Arma 3 Apex - Industrial Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item14
+		{
+			className="A3_Structures_F_Enoch_Military";
+			name="Arma 3 Contact Platform - Military Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item15
+		{
+			className="ace_map";
+			name="ACE3 - Map";
+			author="Команда ACE";
+			url="http://ace3mod.com/";
 		};
 	};
 };
@@ -213,6 +230,30 @@ class CustomAttributes
 			};
 		};
 		nAttributes=2;
+	};
+	class Category1
+	{
+		name="Scenario";
+		class Attribute0
+		{
+			property="cba_settings_hasSettingsFile";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"BOOL"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		nAttributes=1;
 	};
 };
 class Mission
@@ -2589,17 +2630,16 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6525.4248,29.976185,6928.1133};
-				angles[]={6.2798738,3.4033921,0};
+				position[]={5361.0845,952.58453,6303.1211};
+				angles[]={0,3.4033921,0};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
 			};
 			id=6987;
 			type="Land_HBarrier_01_big_tower_green_F";
-			atlOffset=1.9073486e-006;
+			atlOffset=904.06573;
 		};
 		class Item200
 		{
@@ -10475,7 +10515,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						description="Squad Leader";
+						description="Squad Leader@Assault group 1";
 						isPlayer=1;
 					};
 					id=7792;
@@ -10792,7 +10832,7 @@ class Mission
 				class Attribute0
 				{
 					property="groupID";
-					expression="_this setGroupID [_value];";
+					expression="[_this, _value] call CBA_fnc_setCallsign";
 					class Value
 					{
 						class data
@@ -10823,19 +10863,19 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2147.2747,14.507726,8592.8525};
-						angles[]={0,2.9686999,0};
+						position[]={2147.2749,14.507764,8592.8525};
+						angles[]={0,2.9687002,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Team Leader";
+						description="Team Leader@Assault group 2";
 						isPlayable=1;
 					};
 					id=7797;
 					type="B_Survivor_F";
-					atlOffset=-2.4795532e-005;
+					atlOffset=1.9073486e-006;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -11127,13 +11167,13 @@ class Mission
 			{
 			};
 			id=7796;
-			atlOffset=-2.4795532e-005;
+			atlOffset=1.9073486e-006;
 			class CustomAttributes
 			{
 				class Attribute0
 				{
 					property="groupID";
-					expression="_this setGroupID [_value];";
+					expression="[_this, _value] call CBA_fnc_setCallsign";
 					class Value
 					{
 						class data
@@ -11194,19 +11234,18 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2147.9866,13.918359,8610.3877};
-						angles[]={0,0.078510925,0};
+						position[]={2147.9871,13.918318,8610.3877};
+						angles[]={0,0.078504913,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="Recon Team Leader";
+						description="Recon Team Leader@Support group";
 						isPlayable=1;
 					};
 					id=7905;
 					type="B_Survivor_F";
-					atlOffset=3.9100647e-005;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -11495,7 +11534,6 @@ class Mission
 			{
 			};
 			id=7904;
-			atlOffset=3.9100647e-005;
 		};
 		class Item873
 		{
@@ -11509,19 +11547,18 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2148.4138,13.351882,8613.1201};
-						angles[]={0,0.66335982,0};
+						position[]={2148.4141,13.351918,8613.1201};
+						angles[]={0,0.66336471,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						description="SpecOps Team Leader";
+						description="SpecOps Team Leader@SpecOps";
 						isPlayable=1;
 					};
 					id=7911;
 					type="B_Survivor_F";
-					atlOffset=-8.4877014e-005;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -11872,7 +11909,6 @@ class Mission
 			{
 			};
 			id=7910;
-			atlOffset=-8.4877014e-005;
 		};
 		class Item874
 		{
@@ -12087,16 +12123,16 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6459.7803,35.215485,6910.4614};
+				position[]={5942.6274,1442.7,13100.398};
 			};
 			side="Empty";
-			flags=5;
+			flags=1;
 			class Attributes
 			{
 			};
 			id=7931;
 			type="FlagPole_F";
-			atlOffset=0.00094985962;
+			atlOffset=1463.7618;
 		};
 		class Item888
 		{
@@ -13303,7 +13339,7 @@ class Mission
 			position[]={7958.064,-0.125,1155.1851};
 			name="mrk_spec_boat01";
 			type="b_naval";
-			angle=83.227982;
+			angle=83.227951;
 			id=12701;
 			atlOffset=9.1354837;
 		};

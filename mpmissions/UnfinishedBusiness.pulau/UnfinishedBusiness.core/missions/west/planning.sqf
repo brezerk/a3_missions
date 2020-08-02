@@ -114,6 +114,12 @@ if (isServer) then {
 		_marker setMarkerType "hd_destroy";
 		_marker setMarkerAlpha 0;
 		
+		private _house = selectRandom (nearestObjects [_center, D_PRISONS, 2000]);
+		obj_prison = _house;
+		private _marker = createMarker ["mrk_prison_01", getPos obj_prison];
+		_marker setMarkerType "b_naval";
+		_marker setMarkerText 'PRISON';
+		
 		[_center] call Fn_Task_West_SafeHouse_WaponStash;
 	};
 };

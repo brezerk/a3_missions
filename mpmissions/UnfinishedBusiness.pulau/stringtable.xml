@@ -3,7 +3,7 @@
 	<Package name="UnfinishedBusiness">
 		<Container name="l18n">
 			<Key ID="STR_ONLOAD_NAME">
-				<Original>Unfinished Business v1.1.3</Original>
+				<Original>Unfinished Business v1.2.9</Original>
 			</Key>
 			<Key ID="INFO_MOD_NF_ACE">
 				<Original>INFO: ACE Mod not found. Advanced Combat Environment features will be disabled.</Original>
@@ -1012,6 +1012,11 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Original>Fraction: Сivilian</Original>
 				<English>Fraction: Сivilian</English>
 				<Russian>Фракція: Цивільні</Russian>
+			</Key>
+			<Key ID="STR_FROM_01_INFO_10">
+				<Original>Chance to be captured</Original>
+				<English>Chance to be captured</English>
+				<Russian>Шанс потрапити в полон</Russian>
 			</Key>
 			<Key ID="STR_FROM_01_CMD_01">
 				<Original>Start mission</Original>

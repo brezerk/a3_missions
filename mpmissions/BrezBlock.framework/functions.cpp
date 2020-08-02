@@ -57,5 +57,6 @@ class BrezBlock
 		class Local_Systems_Survival_Medical_Toxine {file = "addons\BrezBlock.framework\systems\survival\medical\threat_toxine.sqf";};
 		class Local_Systems_Survival_Medical_Flue {file = "addons\BrezBlock.framework\systems\survival\medical\threat_flue.sqf";};
 		class Local_Systems_Survival_Medical_Stimpack {file = "addons\BrezBlock.framework\systems\survival\medical\stimpack.sqf";};
+		class manager {file = "addons\BrezBlock.framework\utils\manager.sqf";};
 	};
 };

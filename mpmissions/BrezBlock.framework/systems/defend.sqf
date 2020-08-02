@@ -91,4 +91,5 @@ if (isServer) then {
 	};
 	
 	_grp;
+	[_center, _grp, 1000] spawn BrezBlock_fnc_manager;
 };

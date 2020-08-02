@@ -27,13 +27,15 @@ if (hasInterface) then {};
 if (isServer) then {
 	Fn_Spawn_East_Cars_Transport = {
         params ["_spawnposition", "_spawndir"];
-        private ["_pos", "_vec"];
-        _vec = objNull;
-        private _class = (selectRandom ([east, D_FRACTION_EAST, "cars"] call Fn_Config_GetFraction_Units));
-        _pos = _spawnposition findEmptyPosition [0, 15, _class];
-        _vec = createVehicle [_class, _pos, [], 0];
-        _vec setDir _spawndir;
-        _vec;
+		private _veh = objNull;
+		if (count (nearestObjects [_spawnposition, ["Car", "Tank", "APC", "Boat", "Drone", "Plane", "Helicopter"], 6]) == 0) then {
+			private _class = (selectRandom ([east, D_FRACTION_EAST, "cars"] call Fn_Config_GetFraction_Units));
+			private _pos = _spawnposition findEmptyPosition [0, 6, _class];
+			_veh = createVehicle [_class, _pos, [], 0];
+			_veh setDir _spawndir;
+			[_veh] execVM 'addons\BrezBlock.framework\triggers\despawn_transport.sqf';
+		};
+        _veh;
 	};
 	
 	Fn_Spawn_East_Light_Transport = {
@@ -41,7 +43,7 @@ if (isServer) then {
         private ["_pos", "_vec"];
         _vec = objNull;
         private _class = (selectRandom ([east, D_FRACTION_EAST, "light"] call Fn_Config_GetFraction_Units));
-        _pos = _spawnposition findEmptyPosition [0, 15, _class];
+        _pos = _spawnposition findEmptyPosition [0, 6, _class];
         _vec = createVehicle [_class, _pos, [], 0];
         _vec setDir _spawndir;
         _vec;
@@ -54,7 +56,7 @@ if (isServer) then {
 				private _marker = createMarker [format ["mrk_east_transport_%1", _forEachIndex], getMarkerPos _x];
 				_marker setMarkerType "hd_destroy";
 				_marker setMarkerAlpha 0;
-				[Fn_Spawn_East_Cars_Transport, (getMarkerPos _marker), (markerDir _marker), 20, 10] execVM 'addons\BrezBlock.framework\triggers\respawn_transport.sqf';
+				[(getMarkerPos _marker), (markerDir _marker)] call Fn_Spawn_East_Cars_Transport;
 			};
 		} forEach allMapMarkers;
 		private _filter = format ["wp_%1_east_apc_spawn", D_LOCATION];

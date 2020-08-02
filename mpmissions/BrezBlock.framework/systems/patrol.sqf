@@ -103,4 +103,6 @@ if (isServer) then {
 		] call BrezBlock_fnc_Attach_SearchIntel_Action;
 	};
 	_grp;
+	
+	[_center, _grp, 1000] spawn BrezBlock_fnc_manager;
 };

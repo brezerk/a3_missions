@@ -10,6 +10,8 @@
  **************************************************************************************/
  
  
+
+ 
  waitUntil {!isNil "D_HOSPITAL_LCS"};
  
  systemChat str D_HOSPITAL_LCS;

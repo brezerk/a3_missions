@@ -56,4 +56,6 @@ if (isServer) then {
 	_obj setVariable ["#unitcount",    (round (_radius / 50) + 3)];
 	
 	_grp;
+	
+	//[_pos, _grp, 1000] spawn BrezBlock_fnc_manager;
 };

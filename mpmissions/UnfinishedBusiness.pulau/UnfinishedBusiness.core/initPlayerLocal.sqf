@@ -232,6 +232,8 @@ player addEventHandler
 [
 	"Killed",
 	{
+		private _respawnDelay = D_RESPAWN_DELAY;
+		setPlayerRespawnTime (_respawnDelay - (servertime % _respawnDelay));
 		if (mission_plane_send) then {
 			deleteVehicle trgCivPlayerDetected;
 			deleteVehicle trgCivFloodedShip;

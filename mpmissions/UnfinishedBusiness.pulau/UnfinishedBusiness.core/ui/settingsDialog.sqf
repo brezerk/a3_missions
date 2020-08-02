@@ -67,6 +67,16 @@ if (!isNil "_settingsDialog") then {
 		_cbNavToolsCompass lbSetCurSel 0;
 	};
 	
+	private _cbPrisoner = _dialog displayCtrl 2109;
+	if (!isNil "_cbPrisoner") then {
+		_cbPrisoner lbAdd ("0");
+		_cbPrisoner lbAdd ("25");
+		_cbPrisoner lbAdd ("50");
+		_cbPrisoner lbAdd ("75");
+		_cbPrisoner lbAdd ("100");
+		_cbPrisoner lbSetCurSel 1;
+	};
+	
 	private _cbFractionWest = _dialog displayCtrl 2105;
 	if (!isNil "_cbFractionWest") then {
 		{

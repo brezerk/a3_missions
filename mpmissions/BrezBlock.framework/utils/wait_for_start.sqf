@@ -159,7 +159,9 @@ if (!isNil "_missionLogo") then {
 						_intoFrame = _intoFrame + 1;
 					};
 					case 3: {
-						if (((roleDescription player) == "Squad Leader") || (D_DEBUG)) then {
+						private _role = roleDescription player;
+						_role = (_role splitString "@") select 0;
+						if ((_role == "Squad Leader") || (D_DEBUG)) then {
 							if (!isNil "_settingDialog") then {
 								[0] execVM _settingDialog;
 							};

@@ -48,7 +48,7 @@ class SettingsDialog
 			x = safeZoneX + safeZoneW * 0.329375;
 			y = safeZoneY + safeZoneH * 0.41;
 			w = safeZoneW * 0.1725;
-			h = safeZoneH * 0.22666667;
+			h = safeZoneH * 0.3;
 			text = "";
 			
 		};
@@ -304,6 +304,34 @@ class SettingsDialog
 			idc = 2104;
 			x = safeZoneX + safeZoneW * 0.333125;
 			y = safeZoneY + safeZoneH * 0.60222223;
+			w = safeZoneW * 0.164375;
+			h = safeZoneH * 0.02222223;
+			class ComboScrollBar
+			{
+				color[] = {1,1,1,1};
+				thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa";
+				arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa";
+				arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
+				border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+				
+			};
+			
+		};
+		class lblPrisoner : RscText 
+		{
+			idc = 1002;
+			x = safeZoneX + safeZoneW * 0.328125;
+			y = safeZoneY + safeZoneH * 0.64222223;
+			w = safeZoneW * 0.170625;
+			h = safeZoneH * 0.02222223;
+			text = "$STR_FROM_01_INFO_10";
+			
+		};
+		class cbPrisoner : RscCombo 
+		{
+			idc = 2109;
+			x = safeZoneX + safeZoneW * 0.333125;
+			y = safeZoneY + safeZoneH * 0.67555556;
 			w = safeZoneW * 0.164375;
 			h = safeZoneH * 0.02222223;
 			class ComboScrollBar

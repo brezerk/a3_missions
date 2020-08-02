@@ -35,6 +35,41 @@ if (hasInterface) then {
 		player setUnconscious true;
 		[_diffclty] execVM "UnfinishedBusiness.core\gear\player.sqf";
 	};
+	
+	Fn_Local_Jet_Player_DoPreason = {
+		params ['_diffclty'];
+		//do some damage
+		[_diffclty] execVM "UnfinishedBusiness.core\gear\prisoner.sqf";
+		if (isClass(configFile >> "CfgPatches" >> "ace_medical")) then {
+			private _dmgType = ["leg_l", "leg_r", "hand_r", "hand_l"];
+			for "_i" from 0 to (random 1) do {
+				[player, ((random 2) + 1), (selectRandom _dmgType), "stab"] call ace_medical_fnc_addDamageToUnit;
+			};
+		};
+		[player, true] remoteExec ["setCaptive",0];
+		[player, "Acts_AidlPsitMstpSsurWnonDnon_loop"] remoteExec ["switchMove",0];
+		[
+			player,
+			"Cut Binds",
+			"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_unbind_ca.paa",
+			"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_unbind_ca.paa",
+			"true",
+			"true",
+			{},
+			{},
+			{
+				[player, false] remoteExec ["setCaptive", 0];
+				[player, "Acts_AidlPsitMstpSsurWnonDnon_out"] remoteExec ["switchMove",0];
+			},
+			{},
+			[],
+			5,
+			10,
+			true,
+			false
+		] call BIS_fnc_holdActionAdd;
+		[1, 3] execVM "addons\BrezBlock.framework\utils\fade.sqf";
+	};
 		
 	Fn_Local_Jet_Player_Land = {
 		call Fn_Local_MissionIntro_Fail;
