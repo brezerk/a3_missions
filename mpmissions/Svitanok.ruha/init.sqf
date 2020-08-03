@@ -16,19 +16,21 @@
  *                                                                         *
  ***************************************************************************/
 
-// Available locations for play
-// This mps to different set of wp_<location>_ markers.
-// For example, Plau has two different islands, while Stratis or Tanoa has only one location
-D_LOCATIONS = ['Gurun', 'Monyet'];
+/*
+Init mission file
+*/
 
-// Real time vs fast time
-// true: Real time is more realistic weather conditions change slowly (ideal for persistent game)
-// false: fast time give more different weather conditions (ideal for non persistent game) 
-D_CODE43_REAL_WEATHER_REALTIME = true;
+real_weather_init = false;
 
-// Debug only
-D_DEBUG = true;
+D_DEBUG = false;
 
-D_PRISONS = ["Land_Slum_03_F", "Land_Shed_05", "Land_Shed_07", "Land_House_Small_03_F", "Land_House_Small_01_F"];
+//[] execVM "addons\code43\real_weather.sqf";
 
-D_RESPAWN_DELAY = 300;
+if (isServer) then {
+	//waitUntil {real_weather_init};
+	
+	{
+		_x addItemCargoGlobal ["LOP_H_6B27M_Digit", 3];
+	} forEach [bmp_01, bmp_02];
+	[] execVM "addons\BrezBlock.framework\utils\garbage_collector.sqf";
+};

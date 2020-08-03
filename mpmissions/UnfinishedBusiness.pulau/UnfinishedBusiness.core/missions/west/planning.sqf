@@ -114,12 +114,31 @@ if (isServer) then {
 		_marker setMarkerType "hd_destroy";
 		_marker setMarkerAlpha 0;
 		
-		private _house = selectRandom (nearestObjects [_center, D_PRISONS, 2000]);
-		obj_prison = _house;
-		private _marker = createMarker ["mrk_prison_01", getPos obj_prison];
-		_marker setMarkerType "b_naval";
-		_marker setMarkerText 'PRISON';
+		_markers = [];
+		{
+			if ((_x find "mrk_blacklist_") >= 0) then {
+				_markers pushBack _x;
+			};
+		} forEach allMapMarkers;
 		
+		private _houses = nearestObjects [_center, D_PRISONS, 2000];
+		while {count _houses > 0} do {
+			private _blaklisted = false;
+			private _house = selectRandom(_houses);
+			{
+				if (_house inArea _x) exitWith { _blaklisted = true; };
+			} forEach _markers;
+			if (!_blaklisted) exitWith {
+				obj_prison = _house;
+				private _marker = createMarker ["mrk_prison_01", getPos obj_prison];
+				_marker setMarkerType "b_naval";
+				_marker setMarkerText 'PRISON';
+				_marker setMarkerAlpha 0;
+			};
+			if (_blaklisted) then {
+				_houses = _houses - [_house];
+			};
+		};
 		[_center] call Fn_Task_West_SafeHouse_WaponStash;
 	};
 };

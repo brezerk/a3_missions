@@ -15,20 +15,23 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
  ***************************************************************************/
+ 
+ /*
+Briefing script
+*/
 
-// Available locations for play
-// This mps to different set of wp_<location>_ markers.
-// For example, Plau has two different islands, while Stratis or Tanoa has only one location
-D_LOCATIONS = ['Gurun', 'Monyet'];
+player createDiaryRecord ["Diary", [ localize "STR_Extra_Mission",  localize "STR_Extra_Mission_Desc"]];
+player createDiaryRecord ["Diary", [ localize "STR_DRG_2_Mission",  localize "STR_DRG_2_Mission_Desc"]];
+player createDiaryRecord ["Diary", [ localize "STR_DRG_1_Mission",  localize "STR_DRG_1_Mission_Desc"]];
+player createDiaryRecord ["Diary", [ localize "STR_Mech",  localize "STR_Mech_Desc"]];
+player createDiaryRecord ["Diary", ["-------------", ""]];
+player createDiaryRecord ["Diary", [ localize "STR_Env",  localize "STR_Env_Desc"]];
+player createDiaryRecord ["Diary", [ localize "STR_Loc",  localize "STR_Loc_Desc"]];
+player createDiaryRecord ["Diary", [ localize "STR_Comms",  localize "STR_Comms_Desc"]];
+player createDiaryRecord ["Diary", ["-------------", ""]];
+player createDiaryRecord ["Diary", [ localize "STR_Enemy",  localize "STR_Enemy_Desc"]];
+player createDiaryRecord ["Diary", [ localize "STR_Allies",  localize "STR_Allies_Desc"]];
+player createDiaryRecord ["Diary", ["-------------", ""]];
+player createDiaryRecord ["Diary", [ localize "STR_Situation",  localize "STR_Situation_Desc"]];
 
-// Real time vs fast time
-// true: Real time is more realistic weather conditions change slowly (ideal for persistent game)
-// false: fast time give more different weather conditions (ideal for non persistent game) 
-D_CODE43_REAL_WEATHER_REALTIME = true;
 
-// Debug only
-D_DEBUG = true;
-
-D_PRISONS = ["Land_Slum_03_F", "Land_Shed_05", "Land_Shed_07", "Land_House_Small_03_F", "Land_House_Small_01_F"];
-
-D_RESPAWN_DELAY = 300;

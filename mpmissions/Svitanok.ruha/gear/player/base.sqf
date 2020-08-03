@@ -15,20 +15,54 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
  ***************************************************************************/
+ 
+comment "[!] UNIT MUST BE LOCAL [!]";
+if (!local _this) exitWith {};
 
-// Available locations for play
-// This mps to different set of wp_<location>_ markers.
-// For example, Plau has two different islands, while Stratis or Tanoa has only one location
-D_LOCATIONS = ['Gurun', 'Monyet'];
+comment "Exported from Arsenal by brezerk";
 
-// Real time vs fast time
-// true: Real time is more realistic weather conditions change slowly (ideal for persistent game)
-// false: fast time give more different weather conditions (ideal for non persistent game) 
-D_CODE43_REAL_WEATHER_REALTIME = true;
+comment "Remove existing items";
+removeAllWeapons _this;
+removeAllItems _this;
+removeAllAssignedItems _this;
+removeUniform _this;
+removeVest _this;
+removeBackpack _this;
+removeHeadgear _this;
+removeGoggles _this;
 
-// Debug only
-D_DEBUG = true;
+comment "Add containers";
+_this forceAddUniform "LOP_U_UKR_Fatigue_Digit";
 
-D_PRISONS = ["Land_Slum_03_F", "Land_Shed_05", "Land_Shed_07", "Land_House_Small_03_F", "Land_House_Small_01_F"];
+comment "Add items";
+_this linkItem "ItemMap";
+_this linkItem "ItemCompass";
+_this linkItem "ItemWatch";
 
-D_RESPAWN_DELAY = 300;
+comment "Set identity";
+_this setFace (selectRandom ['WhiteHead_01',
+'WhiteHead_02',
+'WhiteHead_03',
+'WhiteHead_04',
+'WhiteHead_05',
+'WhiteHead_06',
+'WhiteHead_07',
+'WhiteHead_08',
+'WhiteHead_09',
+'WhiteHead_10',
+'WhiteHead_11',
+'WhiteHead_12',
+'WhiteHead_13',
+'WhiteHead_14',
+'WhiteHead_15',
+'WhiteHead_16',
+'WhiteHead_17',
+'WhiteHead_18',
+'WhiteHead_19',
+'WhiteHead_20',
+'WhiteHead_21',
+'WhiteHead_23']);
+_this setSpeaker "NoVoice";
+
+_this setVariable ["ace_medical_medicclass", 0, true];
+_this setVariable ["ACE_IsEngineer", 0, true]; 

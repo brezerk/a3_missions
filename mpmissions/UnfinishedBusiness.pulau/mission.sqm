@@ -8,7 +8,7 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=12723;
+		nextID=12729;
 	};
 	class MarkerIDProvider
 	{
@@ -287,7 +287,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=980;
+		items=986;
 		class Item0
 		{
 			dataType="Marker";
@@ -13385,6 +13385,87 @@ class Mission
 			id=12705;
 			type="Land_MapBoard_F";
 			atlOffset=-1.9073486e-006;
+		};
+		class Item980
+		{
+			dataType="Marker";
+			position[]={1155.043,-16.086645,11396.146};
+			name="wp_blacklist_00";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorEAST";
+			fillName="FDiagonal";
+			a=100;
+			b=100;
+			id=12723;
+		};
+		class Item981
+		{
+			dataType="Marker";
+			position[]={2184.5649,-2.3588843,8476.166};
+			name="mrk_blacklist_01";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorEAST";
+			fillName="FDiagonal";
+			a=800;
+			b=800;
+			id=12724;
+		};
+		class Item982
+		{
+			dataType="Marker";
+			position[]={7466.3179,0,1048.6289};
+			name="mrk_blacklist_02";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorEAST";
+			fillName="FDiagonal";
+			a=800;
+			b=800;
+			id=12725;
+			atlOffset=19.185604;
+		};
+		class Item983
+		{
+			dataType="Marker";
+			position[]={9307.335,15.174805,2967.8518};
+			name="mrk_blacklist_03";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorEAST";
+			fillName="FDiagonal";
+			a=800;
+			b=800;
+			id=12726;
+			atlOffset=-0.00016593933;
+		};
+		class Item984
+		{
+			dataType="Marker";
+			position[]={7721.5806,21.235352,9957.7314};
+			name="mrk_blacklist_04";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorEAST";
+			fillName="FDiagonal";
+			a=800;
+			b=800;
+			id=12727;
+			atlOffset=-0.00010299683;
+		};
+		class Item985
+		{
+			dataType="Marker";
+			position[]={9065.1445,15.437754,8956.6436};
+			name="mrk_blacklist_05";
+			markerType="ELLIPSE";
+			type="ellipse";
+			colorName="ColorEAST";
+			fillName="FDiagonal";
+			a=800;
+			b=800;
+			id=12728;
 		};
 	};
 	class Connections

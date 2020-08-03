@@ -15,20 +15,41 @@
  *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
  *                                                                         *
  ***************************************************************************/
+ 
+comment "[!] UNIT MUST BE LOCAL [!]";
+if (!local _this) exitWith {};
 
-// Available locations for play
-// This mps to different set of wp_<location>_ markers.
-// For example, Plau has two different islands, while Stratis or Tanoa has only one location
-D_LOCATIONS = ['Gurun', 'Monyet'];
+comment "Exported from Arsenal by brezerk";
+ 
+comment "Remove existing items";
+removeAllWeapons _this;
+removeAllItems _this;
+removeAllAssignedItems _this;
+removeUniform _this;
+removeVest _this;
+removeBackpack _this;
+removeHeadgear _this;
+removeGoggles _this;
 
-// Real time vs fast time
-// true: Real time is more realistic weather conditions change slowly (ideal for persistent game)
-// false: fast time give more different weather conditions (ideal for non persistent game) 
-D_CODE43_REAL_WEATHER_REALTIME = true;
+comment "Add containers";
+_this forceAddUniform "LOP_U_UKR_Fatigue_Digit";
+_this addItemToUniform "FirstAidKit";
+for "_i" from 1 to 5 do {_this addItemToUniform "rhs_30Rnd_545x39_7N10_AK";};
+_this addItemToUniform "rhs_mag_rgd5";
+_this addVest "LOP_V_6B23_6Sh92_TAN_ACU";
+_this addItemToVest "rhs_30Rnd_545x39_7N10_AK";
+_this addItemToVest "rhs_mag_rgd5";
+_this addItemToVest "rhs_mag_nspn_red";
+_this addHeadgear "LOP_H_Beanie_digit";
 
-// Debug only
-D_DEBUG = true;
+comment "Add weapons";
+_this addWeapon "rhs_weap_aks74u";
+_this addPrimaryWeaponItem "rhs_acc_pgs64_74u";
 
-D_PRISONS = ["Land_Slum_03_F", "Land_Shed_05", "Land_Shed_07", "Land_House_Small_03_F", "Land_House_Small_01_F"];
+comment "Add items";
+_this linkItem "ItemMap";
+_this linkItem "ItemCompass";
+_this linkItem "ItemWatch";
 
-D_RESPAWN_DELAY = 300;
+comment "Set identity";
+_this setSpeaker "NoVoice";

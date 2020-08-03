@@ -16,19 +16,9 @@
  *                                                                         *
  ***************************************************************************/
 
-// Available locations for play
-// This mps to different set of wp_<location>_ markers.
-// For example, Plau has two different islands, while Stratis or Tanoa has only one location
-D_LOCATIONS = ['Gurun', 'Monyet'];
+/*
+On player respawn event handler
+*/
 
-// Real time vs fast time
-// true: Real time is more realistic weather conditions change slowly (ideal for persistent game)
-// false: fast time give more different weather conditions (ideal for non persistent game) 
-D_CODE43_REAL_WEATHER_REALTIME = true;
-
-// Debug only
-D_DEBUG = true;
-
-D_PRISONS = ["Land_Slum_03_F", "Land_Shed_05", "Land_Shed_07", "Land_House_Small_03_F", "Land_House_Small_01_F"];
-
-D_RESPAWN_DELAY = 300;
+//resore loadout
+//[player, [missionNamespace, "outpost_saved_loadout"]] call BIS_fnc_loadInventory;

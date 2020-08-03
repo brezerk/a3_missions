@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="RedDaggerZeus">
+	<Package name="BrezBlock">
+		<Container name="l10n">
+			<Key ID="STR_Minefileds">
+				<Original>Minefileds</Original>
+				<English>Minefileds</English>
+				<Russian>Міни</Russian>
+			</Key>
+			<Key ID="STR_Rampat">
+				<Original>Rampat</Original>
+				<English>Rampat</English>
+				<Russian>Опорний пункт</Russian>
+			</Key>
+			<Key ID="STR_Logistic">
+				<Original>Logistics base</Original>
+				<English>Logistics base</English>
+				<Russian>Логістична База</Russian>
+			</Key>
+			<Key ID="STR_Rampat_Oles">
+				<Original>Rampat 'Oles'</Original>
+				<English>Rampat 'Oles'</English>
+				<Russian>Опорний пункт 'Олесь'</Russian>
+			</Key>
+			<Key ID="STR_Reinf">
+				<Original>Reinforcement</Original>
+				<English>Reinforcement</English>
+				<Russian>Підкріплення</Russian>
+			</Key>
+			
+			<Key ID="STR_Strike">
+				<Original>Mechanized Brigade (Strike force)</Original>
+				<English>Mechanized Brigade (Strike force)</English>
+				<Russian>Механізована бригада (Ударна група)</Russian>
+			</Key>
+			<Key ID="STR_DRG_1">
+				<Original>1-st Recon and sabotage group</Original>
+				<English>1-st Recon and sabotage group</English>
+				<Russian>Перша ДРГ</Russian>
+			</Key>
+			<Key ID="STR_DRG_2">
+				<Original>2-nd Recon and sabotage group</Original>
+				<English>2-nd Recon and sabotage group</English>
+				<Russian>Друга ДРГ</Russian>
+			</Key>
+			<Key ID="STR_Mech_01">
+				<Original>1-st Mechanized platoon</Original>
+				<English>1-st Mechanized platoon</English>
+				<Russian>1-ший Механізований взвод</Russian>
+			</Key>
+			<Key ID="STR_Mech_02">
+				<Original>2-nd Mechanized platoon</Original>
+				<English>2-nd Mechanized platoon</English>
+				<Russian>2-ший Механізований взвод</Russian>
+			</Key>
+			<Key ID="STR_Mortars">
+				<Original>Mortars</Original>
+				<English>Mortars</English>
+				<Russian>Міномети</Russian>
+			</Key>
+			<Key ID="STR_MISSION_NAME">
+				<Original>Operation: Morning down</Original>
+				<English>Operation: Morning down</English>
+				<Russian>Операція: Світанок</Russian>
+			</Key>
+			<Key ID="STR_MISSION_ONLOAD">
+				<Original>As of the beginning of August 2015, the successful capture of the Vikove an Vovkove villages allowed to conduct an operation to unblock units of 24th Mechanized Brigade and 72th Mechanized Brigade that had been under fire from the Russian Federation armed forces for a weeks. Building on the success, the Anti-Terrorist Operation Headquarters issued a combat order to Sector D troops to surround and capture Summa city.</Original>
+				<English>As of the beginning of August 2015, the successful capture of the Vikove an Vovkove villages allowed to conduct an operation to unblock units of 24th Mechanized Brigade and 72th Mechanized Brigade that had been under fire from the Russian Federation armed forces for a weeks. Building on the success, the Anti-Terrorist Operation Headquarters issued a combat order to Sector D troops to surround and capture Summa city.</English>
+				<Russian>Станом на початок серпня 2015 р. взяттям с. Тихе і с. Вовкове було проведено успішну операцію з розблокування підрозділів 24 ОМБр, 72 ОМБр, що впродовж тижнів перебували під обстрілами зі сторони РФ. Розвиваючи успіх, Штаб Антитерористичної операції видав бойовий наказ військам Сектору «Д» на оточення і штурм м. Сума.</Russian>
+			</Key>
+			<Key ID="STR_Situation">
+				<Original>Situation</Original>
+				<English>Situation</English>
+				<Russian>Ситуація</Russian>
+			</Key>
+			<Key ID="STR_Situation_Desc">
+				<Original>As of the beginning of August 2015, the successful capture of the Vikove an Vovkove villages allowed to conduct an operation to unblock units of 24th Mechanized Brigade and 72th Mechanized Brigade that had been under fire from the Russian Federation armed forces for a weeks. Building on the success, the Anti-Terrorist Operation Headquarters issued a combat order to Sector D troops to surround and capture Summa city.</Original>
+				<English>As of the beginning of August 2015, the successful capture of the Vikove an Vovkove villages allowed to conduct an operation to unblock units of 24th Mechanized Brigade and 72th Mechanized Brigade that had been under fire from the Russian Federation armed forces for a weeks. Building on the success, the Anti-Terrorist Operation Headquarters issued a combat order to Sector D troops to surround and capture Summa city.</English>
+				<Russian>Станом на початок серпня 2015 р. взяттям с. Тихе і с. Вовкове було проведено успішну операцію з розблокування підрозділів 24 ОМБр, 72 ОМБр, що впродовж тижнів перебували під обстрілами зі сторони РФ. Розвиваючи успіх, Штаб Антитерористичної операції видав бойовий наказ військам Сектору «Д» на оточення і штурм м. Сумма.</Russian>
+			</Key>
+			<Key ID="STR_Allies">
+				<Original>Friendly Forces</Original>
+				<English>Friendly Forces</English>
+				<Russian>Союзники</Russian>
+			</Key>
+			<Key ID="STR_Allies_Desc">
+				<Original>&lt;h2&gt;Identification&lt;/h2&gt;&lt;br /&gt;
+&lt;br /&gt;
+Infantry has mixed camo patterns TTsKO, MTP, Digital, DPMD&lt;br /&gt;
+Vehicles in Sand camo&lt;br /&gt;
+&lt;br /&gt;
+&lt;h2&gt;Composition&lt;/h2&gt;&lt;br /&gt;
+&lt;br /&gt;
+Two mechanized brigades (strike forces) with a tank support will be moving along us and flanks.&lt;br /&gt;
+&lt;br /&gt;
+&lt;img image='data\friend.paa' width='256' height='256'/&gt;
+</Original>
+				<English>&lt;h2&gt;Identification&lt;/h2&gt;&lt;br /&gt;
+&lt;br /&gt;
+Infantry has mixed camo patterns TTsKO, MTP, Digital, DPMD&lt;br /&gt;
+Vehicles in Sand camo&lt;br /&gt;
+&lt;br /&gt;
+&lt;h2&gt;Composition&lt;/h2&gt;&lt;br /&gt;
+&lt;br /&gt;
+Two mechanized brigades (strike forces) with a tank support will be moving along us and flanks.&lt;br /&gt;
+&lt;br /&gt;
+&lt;img image='data\friend.paa' width='256' height='256'/&gt;</English>
+				<Russian>&lt;h2&gt;Ідентифікація&lt;/h2&gt;&lt;br /&gt;
+&lt;br /&gt;
+Піхота має змішаний камуфляж, здебільшого TTsKO, MTP, Digital, DPMD&lt;br /&gt;
+Машини покрашені у пісочний колір.&lt;br /&gt;
+&lt;br /&gt;
+&lt;h2&gt;Склад&lt;/h2&gt;&lt;br /&gt;
+&lt;br /&gt;
+Дві механізовані бригади (Ударні групи) підсилені танками будуть рухатись поряд з вами.&lt;br /&gt;
+&lt;br /&gt;
+&lt;img image='data\friend.paa' width='256' height='256'/&gt;</Russian>
+			</Key>
+			<Key ID="STR_Enemy">
+				<Original>Enemy Forces</Original>
+				<English>Enemy Forces</English>
+				<Russian>Вороги</Russian>
+			</Key>
+			<Key ID="STR_Enemy_Desc">
+				<Original>&lt;h2&gt;Identification&lt;/h2&gt;&lt;br /&gt;
+&lt;br /&gt;
+Infantry in EPM, Flora and Gorka camos.&lt;br /&gt;
+Vehicles in solid tan colour&lt;br /&gt;
+&lt;br /&gt;
+&lt;h2&gt;Composition&lt;/h2&gt;&lt;br /&gt;
+&lt;br /&gt;
+The enemy forces consists of at least a company mechanised infantry, and tanks, that have dug into the high ground along all the front line. There are a lot of ramparts and strongpoints scattered around as well as support and hidden bases (Comm arrays, POV camps, logistics (cargo and fuel) centers e.t.c.). &lt;br /&gt;
+Enemy diversion mobile group found near the front line on our territory.&lt;br /&gt;
+Enemy zone is patrolled with an anti-diversion mobile group both on foot and on armored vehicles.&lt;br /&gt;
+The enemy may have some helicopters in the area.&lt;br /&gt;
+There may also be local separatists militia to support the enemy's main forces.&lt;br /&gt;
+&lt;br /&gt;
+&lt;img image='data\enemy.paa' width='256' height='256'/&gt;
+</Original>
+				<English>&lt;h2&gt;Identification&lt;/h2&gt;&lt;br /&gt;
+&lt;br /&gt;
+Infantry in EPM, Flora and Gorka camos.&lt;br /&gt;
+Vehicles in solid tan colour&lt;br /&gt;
+&lt;br /&gt;
+&lt;h2&gt;Composition&lt;/h2&gt;&lt;br /&gt;
+&lt;br /&gt;
+The enemy forces consists of at least a company mechanised infantry, and tanks, that have dug into the high ground along all the front line. There are a lot of ramparts and strongpoints scattered around as well as support and hidden bases (Comm arrays, POV camps, logistics (cargo and fuel) centers e.t.c.). &lt;br /&gt;
+Enemy diversion mobile group found near the front line on our territory.&lt;br /&gt;
+Enemy zone is patrolled with an anti-diversion mobile group both on foot and on armored vehicles.&lt;br /&gt;
+The enemy may have some helicopters in the area.&lt;br /&gt;
+There may also be local separatists militia to support the enemy's main forces.&lt;br /&gt;
+&lt;br /&gt;
+&lt;img image='data\enemy.paa' width='256' height='256'/&gt;
+</English>
+				<Russian>&lt;h2&gt;Ідентифікація&lt;/h2&gt;&lt;br /&gt;
+Піхота має змішаний камуфляж EPM, Флора та Горка.&lt;br /&gt;
+Машини покрашені в суцільний зелений колір.&lt;br /&gt;
+&lt;br /&gt;
+&lt;h2&gt;Склад&lt;/h2&gt;&lt;br /&gt;
+&lt;br /&gt;
+Ворожі сили состоять з мотопіхотних з’єднань підсилені танками, викопних в землю на протязі всього фронту. Помічено багато опорних точок, а також тилових баз (комунікаційні масиви, концентраційні лагеря, логістичні бази з паливом та пальним)&lt;br /&gt;
+В прифронтовій зоні були помічені ворожі ДРГ.&lt;br /&gt;
+Ворожі протидиверсійні патрулі, та мобільні групи швидкого реагування патрулюють місцевість за лінією фронту.&lt;br /&gt;
+Скоріш за все, у ворога є кілька гелікоптерів вогневої підтримки, та швидкого переброски мобільних груп.&lt;br /&gt;
+Можлива присутність угруповань так званого «місцевого ополчєнія», які підтримують ворожі сили.&lt;br /&gt;
+&lt;br /&gt;
+&lt;img image='data\enemy.paa' width='256' height='256'/&gt;</Russian>
+			</Key>
+			<Key ID="STR_Comms">
+				<Original>Signal</Original>
+				<English>Signal</English>
+				<Russian>Частоти</Russian>
+			</Key>
+			<Key ID="STR_Comms_Desc">
+				<Original>1-st Mechanized platoon [LRR] Freq 37 [SRR] Freq 100&lt;br /&gt;&lt;br /&gt;2-nd Mechanized platoon [LRR] Freq 37 [SRR] Freq 125&lt;br /&gt;&lt;br /&gt;1-st Recon and Sabotage group [LRR] Freq 37 [SRR] Freq 300&lt;br /&gt;&lt;br /&gt;2-nd Recon and Sabotage group [LRR] Freq 37 [SRR] Freq 325</Original>
+				<English>1-st Mechanized platoon [LRR] Freq 37 [SRR] Freq 100&lt;br /&gt;&lt;br /&gt;2-nd Mechanized platoon [LRR] Freq 37 [SRR] Freq 125&lt;br /&gt;&lt;br /&gt;1-st Recon and Sabotage group [LRR] Freq 37 [SRR] Freq 300&lt;br /&gt;&lt;br /&gt;2-nd Recon and Sabotage group [LRR] Freq 37 [SRR] Freq 325</English>
+				<Russian>1-ший Механізований взвод [ДВ] Частота 37 [КХ] Частота 100&lt;br /&gt;&lt;br /&gt;2-гий Механізований взвод [ДВ] Частота 37 [КХ] Частота 125&lt;br /&gt;&lt;br /&gt;1-ша ДРГ [ДВ] Частота 37 [КХ] Частота 300&lt;br /&gt;&lt;br /&gt;2-га ДРГ [ДВ] Частота 37 [КХ] Частота 325</Russian>
+			</Key>
+			<Key ID="STR_Loc">
+				<Original>Terrain Analysis</Original>
+				<English>Terrain Analysis</English>
+				<Russian>Аналіз місцевості</Russian>
+			</Key>
+			<Key ID="STR_Loc_Desc">
+				<Original>For the start of the operation the ground is a rouge forest with undulating hills. Frontline is a low ground with swamps, derbies and landmines. Beyond the frontline is a rouge forest with undulating hills, which will limit our vehicles sight lines. Be aware of being ambushed by AT weapons and ensure infantry take the lead. Send engineers to defuse the mines.</Original>
+				<English>For the start of the operation the ground is a rouge forest with undulating hills. Frontline is a low ground with swamps, derbies and landmines. Beyond the frontline is a rouge forest with undulating hills, which will limit our vehicles sight lines. Be aware of being ambushed by AT weapons and ensure infantry take the lead. Send engineers to defuse the mines.</English>
+				<Russian>Початок буде в щільному лісі з хвилястими пагорбами. Лінія фронту являє собою низину з болотами, буреломом та мінами. За лінією фронту починаються густі ліси та хвилясті пагорби, які будуть заважати піхоті та техніці. Стережіться протитанкових засідок і переконайтесь, що піхота буде попереду бронетехніки, виявляючи засідки та знешкоджуючи міни.</Russian>
+			</Key>
+			<Key ID="STR_Env">
+				<Original>Environmental Conditions</Original>
+				<English>Environmental Conditions</English>
+				<Russian>Оточення</Russian>
+			</Key>
+			<Key ID="STR_Env_Desc">
+				<Original>It is a rainy autumn morning with a strong fog that limits our visibility to around ~1000 meters, this should improve as the day goes on.
+&lt;br /&gt;&lt;br /&gt;
+First Light is at 05:00&lt;br /&gt;
+Last Light is at 18:30
+</Original>
+				<English>It is a rainy autumn morning with a strong fog that limits our visibility to around ~1000 meters, this should improve as the day goes on.
+&lt;br /&gt;&lt;br /&gt;
+First Light is at 05:00&lt;br /&gt;
+Last Light is at 18:30</English>
+				<Russian>Дощовий Вересневий ранок. Сильний туман знижує дальність бачення до ~1000 метрів. Очікується що ситуація покращиться вдень.
+&lt;br /&gt;&lt;br /&gt;
+Схід сонця о 05:00&lt;br /&gt;
+Захід сонця о 18:30
+</Russian>
+			</Key>
+			<Key ID="STR_Mech">
+				<Original>Mechanized platoons mission</Original>
+				<English>Mechanized platoons mission</English>
+				<Russian>Завдання механізованих груп</Russian>
+			</Key>
+			<Key ID="STR_Mech_Desc">
+				<Original>Mechanized platoons mission is to push East of the Summa city to disable strongpoints. After this we need to siege and secure the Summa city.</Original>
+				<English>Mechanized platoons mission is to push East of the Summa city to disable strongpoints. After this we need to siege and secure the Summa city.</English>
+				<Russian>Завдання механізованих груп прорвати оборону на східній частині фронту, подавити та знищити опорні точки. Після цього, оточити та зачистити місто Сумма..</Russian>
+			</Key>
+			<Key ID="STR_DRG_1_Mission">
+				<Original>1-st Recon and sabotage group mission</Original>
+				<English>1-st Recon and sabotage group mission</English>
+				<Russian>Завдання Першої ДРГ </Russian>
+			</Key>
+			<Key ID="STR_DRG_1_Mission_Desc">
+				<Original>Keeping low profile advance through minefield and cross the front line. Using radio-detector seek and eliminate enemy commander and communication arrays. Stop any possible reinforcements coming from the East. Retreat through the front line back to starting positions.</Original>
+				<English>Keeping low profile advance through minefield and cross the front line. Using radio-detector seek and eliminate enemy commander and communication arrays. Stop any possible reinforcements coming from the East. Retreat through the front line back to starting positions.</English>
+				<Russian>Зберігаючи тишу, непомітно пройти через мінне поле та перетнути лінію фронту. За допомогою електронних приладів знайти в тилу ворога розміщення мобільних радіостанцій РФ та знищити їх. Додатково: Знищіти коорданаційний штаб. Замінувати шляхі підходу підкріплень і по можливості, ліквідувати їх. Відійти на початкові поцзиції.</Russian>
+			</Key>
+			<Key ID="STR_DRG_2_Mission">
+				<Original>2-nd Recon and sabotage group mission</Original>
+				<English>2-nd Recon and sabotage group mission</English>
+				<Russian>Завдання Другої ДРГ </Russian>
+			</Key>
+			<Key ID="STR_DRG_2_Mission_Desc">
+				<Original>Keeping low profile advance through minefield and cross the front line. Mortar's exact location is unknown, you will have to scout possible locations to find you target. Seek and eliminate mortars. Stop any possible reinforcements coming from the East. Retreat through the front line back to starting positions.</Original>
+				<English>Keeping low profile advance through minefield and cross the front line. Mortar's exact location is unknown, you will have to scout possible locations to find you target. Seek and eliminate mortars. Stop any possible reinforcements coming from the East. Retreat through the front line back to starting positions.</English>
+				<Russian>Зберігаючи тишу, непомітно пройти через мінне поле та перетнути лінію фронту. Знайти в тилу ворога розміщення мінометної батареї та знищити її. Замінувати шляхі підходу підкріплень і по можливості, ліквідувати їх. Відійти на початкові поцзиції.</Russian>
+			</Key>
+			<Key ID="STR_Extra_Mission">
+				<Original>Additional Tasks</Original>
+				<English>Additional Tasks</English>
+				<Russian>Додаткове Завдання</Russian>
+			</Key>
+			<Key ID="STR_Extra_Mission_Desc">
+				<Original>Collect intelligence, destroy enemy's communication and logistics points.</Original>
+				<English>Collect intelligence, destroy enemy's communication and logistics points.</English>
+				<Russian>Збір розвідданих, знищення комунікаційних, та логістичних пунктів супротивника.</Russian>
+			</Key>
+			<Key ID="STR_ZONE">
+				<Original>Ukraine. ATO Zone.</Original>
+				<English>Ukraine. ATO Zone.</English>
+				<Russian>Україна. Зона ATO.</Russian>
+			</Key>
+			<Key ID="STR_ZONE_LOC">
+				<Original>Front line</Original>
+				<English>Front line</English>
+				<Russian>Прифронтова лінія</Russian>
+			</Key>
+			<Key ID="STR_ZONE_DATE">
+				<Original>16 September 2015 %1</Original>
+				<English>16 September 2015 %1</English>
+				<Russian>16 Вересня 2015 %1</Russian>
+			</Key>
+		</Container>
+	</Package>
+</Project>
