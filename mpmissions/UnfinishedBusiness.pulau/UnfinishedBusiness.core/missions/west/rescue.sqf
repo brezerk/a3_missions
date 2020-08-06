@@ -40,6 +40,8 @@ if (isServer) then {
 			"['t_west_rescue', 'SUCCEEDED'] call BIS_fnc_taskSetState; call Fn_Endgame_EvacPoint;",
 			""
 		];
+		
+		"mrk_west_safezone_01" setMarkerAlpha 1;
 	};
 	
 	Fn_RescueMission_TriggerEval = {

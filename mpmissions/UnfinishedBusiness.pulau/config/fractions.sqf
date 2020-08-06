@@ -394,6 +394,17 @@
 					'CUP_C_V3S_Covered_TKC']
 			],
 			[
+			'transport', [
+					'C_Offroad_01_F',
+					'C_Van_01_transport_F',
+					'CUP_C_Datsun',
+					'C_SUV_01_F',
+					'CUP_C_Skoda_Blue_CIV',
+					'CUP_C_Dutsan_Tubeframe',
+					'CUP_C_Dutsan_Covered',
+					'CUP_C_Volha_Blue_TKCIV']
+			],
+			[
 			'transport_medic', [
 					'CUP_O_LR_Ambulance_TKA']
 			],
@@ -559,6 +570,12 @@
 					'C_Truck_02_box_F',
 					'C_Truck_02_transport_F',
 					'C_Truck_02_covered_F']
+			],
+			[
+			'transport', [
+					'C_Offroad_01_F',
+					'C_Van_01_transport_F',
+					'C_SUV_01_F']
 			],
 			[
 			'transport_medic', [

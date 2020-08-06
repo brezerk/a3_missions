@@ -25,61 +25,63 @@ Spawn start objectives, triggers for informator contact
 if (hasInterface) then {
 	Fn_Local_Create_RescueMission = {
 		if (playerSide == west) then {
-			[
-				player,
-				"t_west_rescue",
-				[
-				format [localize "TASK_09_DESC", D_LOCATION],
-				format [localize "TASK_09_TITLE"],
-				localize "TASK_ORIG_01"],
-				getPos us_liberty_01,
-				"CREATED",
-				0,
-				true
-			] call BIS_fnc_taskCreate;
-			['t_west_rescue', "run"] call BIS_fnc_taskSetType;
-			if (!(player getVariable ["is_assault_group", false])) then {
-				if (!west_order_seen) then {
-					[] execVM "UnfinishedBusiness.core\ui\orderDialog.sqf";
-					west_order_seen = true;
-				};
+			if (!(player getVariable ["is_specops_group", false])) then {
 				[
 					player,
-					"t_west_rescue_crash",
+					"t_west_rescue",
 					[
-					format [localize "TASK_10_DESC", D_LOCATION, D_LOCATION],
-					format [localize "TASK_10_TITLE"],
+					format [localize "TASK_09_DESC", D_LOCATION],
+					format [localize "TASK_09_TITLE"],
 					localize "TASK_ORIG_01"],
-					getMarkerPos "mrk_west_crashsite",
+					getPos us_liberty_01,
 					"CREATED",
 					0,
 					true
 				] call BIS_fnc_taskCreate;
-				['t_west_rescue_crash', "search"] call BIS_fnc_taskSetType;
-				{
-					private _task = format["t_west_rescue_city_%1", _forEachIndex];
+				['t_west_rescue', "run"] call BIS_fnc_taskSetType;
+				if (!(player getVariable ["is_assault_group", false])) then {
+					if (!west_order_seen) then {
+						[] execVM "UnfinishedBusiness.core\ui\orderDialog.sqf";
+						west_order_seen = true;
+					};
 					[
 						player,
-						_task,
-						[format[localize "TASK_11_DESC", _forEachIndex, _x select 0],
-						format[localize "TASK_11_TITLE", _x select 0],
+						"t_west_rescue_crash",
+						[
+						format [localize "TASK_10_DESC", D_LOCATION, D_LOCATION],
+						format [localize "TASK_10_TITLE"],
 						localize "TASK_ORIG_01"],
-						getMarkerPos (format ["mrk_city_%1", _forEachIndex]),
+						getMarkerPos "mrk_west_crashsite",
 						"CREATED",
 						0,
 						true
 					] call BIS_fnc_taskCreate;
-					[_task, "talk"] call BIS_fnc_taskSetType;			
-				} forEach avaliable_pois;
-				
-				trgWestCrashSite = createTrigger ["EmptyDetector", getMarkerPos "mrk_west_crashsite"];
-				trgWestCrashSite setTriggerArea [50, 50, 0, false];
-				trgWestCrashSite setTriggerActivation ["ANYPLAYER", "PRESENT", false];
-				trgWestCrashSite setTriggerStatements [
-					"(vehicle player) in thisList",
-					"call Fn_Local_CrashSite_Complete;",
-					""
-				];
+					['t_west_rescue_crash', "search"] call BIS_fnc_taskSetType;
+					{
+						private _task = format["t_west_rescue_city_%1", _forEachIndex];
+						[
+							player,
+							_task,
+							[format[localize "TASK_11_DESC", _forEachIndex, _x select 0],
+							format[localize "TASK_11_TITLE", _x select 0],
+							localize "TASK_ORIG_01"],
+							getMarkerPos (format ["mrk_city_%1", _forEachIndex]),
+							"CREATED",
+							0,
+							true
+						] call BIS_fnc_taskCreate;
+						[_task, "talk"] call BIS_fnc_taskSetType;			
+					} forEach avaliable_pois;
+					
+					trgWestCrashSite = createTrigger ["EmptyDetector", getMarkerPos "mrk_west_crashsite"];
+					trgWestCrashSite setTriggerArea [50, 50, 0, false];
+					trgWestCrashSite setTriggerActivation ["ANYPLAYER", "PRESENT", false];
+					trgWestCrashSite setTriggerStatements [
+						"(vehicle player) in thisList",
+						"call Fn_Local_CrashSite_Complete;",
+						""
+					];
+				};
 			};
 		};
 	};

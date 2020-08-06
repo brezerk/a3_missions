@@ -58,7 +58,7 @@ if (!mission_requested) then {
 	["UnfinishedBusiness.core\ui\settingsDialog.sqf"] call BrezBlock_fnc_WaitForStart;
 };
 
-waitUntil { sleep 1; [["D_LOCATION", "D_FRACTION_WEST", "D_FRACTION_EAST", "D_FRACTION_CIV", "D_FRACTION_INDEP", "D_NAVTOOL_MAP", "D_NAVTOOL_COMPASS"]] call Fn_Local_WaitPublicVariables; }; 
+waitUntil { sleep 1; [["D_LOCATION", "D_FRACTION_WEST", "D_FRACTION_EAST", "D_FRACTION_CIV", "D_FRACTION_INDEP", "D_NAVTOOL_MAP", "D_NAVTOOL_COMPASS", "obj_specops_target"]] call Fn_Local_WaitPublicVariables; }; 
 
 
 switch (playerSide) do {
@@ -66,15 +66,19 @@ switch (playerSide) do {
 
 	};
 	case civilian: {
-
+		private _pos = [(getMarkerPos "respawn_civ"), 5, 20, 3, 0, 0, 0] call BIS_fnc_findSafePos;
+		player setPos _pos;
 	};
 	case west: {
 		private _role = (roleDescription player);
 		systemChat _role;
-		if ((_role find "SpecOps ") >= 0) then {
+		if (((_role find "SpecOps ") >= 0) && (!mission_plane_send)) then {
 			private _pos = getMarkerPos "mrk_west_specops";
+			"mrk_west_specops" setMarkerAlphaLocal 1;
+			"mrk_west_specops" setMarkerTextLocal (localize "INFO_SUBLOC_11");
 			player setPosASL [((_pos select 0) + (round(random 5) - 5)), ((_pos select 1) - 6 + (round(random 5) - 5)), 3];
 		} else {
+			"mrk_west_base_01" setMarkerAlphaLocal 1;
 			player setPosASL (us_liberty_01 modelToWorldWorld [(round(random 5) - 5), (35 + (round(random 5) - 4)), 8.98]);
 		};
 	};
@@ -136,8 +140,11 @@ cutText [localize "INFO_WAIT_02", "PLAIN DOWN", 2, true, true];
 {
 	private _mark = createMarkerLocal [(format ['mrk_em_%1', _forEachIndex]), (getMarkerPos _x)];
 	_mark setMarkerType "hd_objective";
-	_mark setMarkerText format [localize "INFO_WEST_SAFESPOT_01", (['A', 'B'] select _forEachIndex)];
-	_mark setMarkerColor "ColorWEST";
+	_mark setMarkerTextLocal format [localize "INFO_WEST_SAFESPOT_01", (['A', 'B'] select _forEachIndex)];
+	_mark setMarkerColorLocal "ColorWEST";
+	if (((roleDescription player find "SpecOps ") >= 0) && (!mission_plane_send)) then {
+		_mark setMarkerAlphaLocal 0;
+	};
 } forEach ['mrk_east_stash_01', 'mrk_east_stash_02'];
 
 /* FIXME: CBA-only
@@ -278,6 +285,7 @@ player addEventHandler
 				_side = playerSide;
 			};
 
+			_side = civilian;
 			switch (_side) do
 			{
 				case east:
@@ -319,16 +327,29 @@ player addEventHandler
 				};
 				case civilian:
 				{
+					"respawn_civ" setMarkerTextLocal (localize "INFO_SUBLOC_12");
+					"respawn_civ" setMarkerAlphaLocal 1;
+					"mrk_west_base_01" setMarkerAlphaLocal 0;
+					"mrk_west_specops" setMarkerAlphaLocal 0;
+					"mrk_west_safezone_01" setMarkerAlphaLocal 0;
+					"mrk_west_safezone_01" setMarkerAlphaLocal 0;
+					"mrk_west_safezone_01" setMarkerAlphaLocal 0;
+					
+				
 					player setVariable ["is_civilian", true, true];
 					player setVariable ["weapon_fiered", false, false];
 					[] execVM "UnfinishedBusiness.core\gear\player\civ.sqf";
+					/*
 					private _civ_spawn_markers = [];
 					{
 						if (_x find "respawn_civilian_" >= 0) then {
 							_civ_spawn_markers pushBack _x;
 						};
 					} forEach allMapMarkers;
-					player setPos getMarkerPos selectRandom _civ_spawn_markers;
+					*/
+					
+					private _pos = [(getMarkerPos "respawn_civ"), 5, 20, 3, 0, 0, 0] call BIS_fnc_findSafePos;
+					player setPos _pos;
 					//player setPos (getMarkerPos "respawn_civ");
 					call Fn_Local_Create_Task_Civilian_FloodedShip;
 					call Fn_Local_Create_Task_Civilian_WaponStash;
@@ -461,4 +482,12 @@ execVM "UnfinishedBusiness.core\missions\local\sync.sqf";
 
 sleep 5;
 
-[ format [localize 'INFO_LOC_01', D_LOCATION], localize 'INFO_SUBLOC_00', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;
+switch (playerSide) do {
+	case west: {
+		if (((roleDescription player find "SpecOps ") >= 0) && (!mission_plane_send)) then {
+			[ format [localize 'INFO_LOC_01', D_LOCATION], localize 'INFO_SUBLOC_11', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;
+		} else {
+			[ format [localize 'INFO_LOC_01', D_LOCATION], localize 'INFO_SUBLOC_00', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;
+		};
+	};
+};

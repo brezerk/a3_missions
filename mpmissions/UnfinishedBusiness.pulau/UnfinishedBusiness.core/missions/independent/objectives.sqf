@@ -40,6 +40,7 @@ if (isServer) then {
 		//Land_Research_HQ_F, Land_Cargo_HQ_V4_F
 		private _classes = ["Land_Medevac_house_V1_F", "Land_Cargo_Patrol_V1_F", "Land_wpp_Turbine_V1_off_F", "Land_dp_smallTank_F"];
 		private _markers = [];
+		private _objectives = [];
 		{
 			if ((markerType _x) == "n_mortar") then {
 				_markers append [_x];
@@ -66,6 +67,16 @@ if (isServer) then {
 					private _obj = createVehicle [_class, _center];
 					_obj setVectorUp [0,0,1];
 					//_obj setDir _dir;
+					_obj allowDamage true;
+					_obj addEventHandler [
+						"HandleDamage", {
+							private _object = _this select 0;
+							private _projectile = _this select 4;
+							if ( _projectile isKindOf "PipeBombBase" ) then {
+								_object setDammage 1;
+							};
+						}
+					];
 					private _pos = selectRandom (_obj buildingPos -1);
 					if (!isNil "_pos") then {
 						private _group = createGroup [independent, true];
@@ -80,11 +91,11 @@ if (isServer) then {
 						"call Fn_Task_DestroyAmmo_Complete; deleteVehicle thisTrigger;",
 						""
 					];
+					_objectives pushBack indep_lab_01;
 				};
 				case 'Land_Cargo_Patrol_V1_F': {
 					private _obj = createVehicle [_class, _center];
 					_obj setVectorUp [0,0,1];
-
 					private _dir = markerDir _marker;
 					private _pos = [_center, 8, _dir] call BIS_Fnc_relPos;
 					indep_ammo_01 = createVehicle ["B_Slingload_01_Ammo_F", _pos, [], 0, "CAN_COLLIDE"]; // Land_Pallet_MilBoxes_F
@@ -99,6 +110,7 @@ if (isServer) then {
 							};
 						}
 					];
+					_objectives pushBack indep_ammo_01;
 					private _trg = createTrigger ["EmptyDetector", getPos indep_ammo_01];
 					_trg setTriggerArea [0, 0, 0, false];
 					_trg setTriggerActivation ["NONE", "PRESENT", false];
@@ -111,6 +123,7 @@ if (isServer) then {
 				case 'Land_wpp_Turbine_V1_off_F': {
 					indep_wind_01 = createVehicle [_class, _center];
 					indep_wind_01 setVectorUp [0,0,1];
+					_objectives pushBack indep_wind_01;
 					indep_wind_01 allowDamage true;
 					indep_wind_01 addEventHandler [
 						"HandleDamage", {
@@ -134,6 +147,7 @@ if (isServer) then {
 					indep_fuel_01 = createVehicle [_class, _center];
 					indep_fuel_01 setVectorUp [0,0,1];
 					indep_fuel_01 allowDamage true;
+					_objectives pushBack indep_fuel_01;
 					indep_fuel_01 addEventHandler [
 						"HandleDamage", {
 							private _object = _this select 0;
@@ -154,6 +168,9 @@ if (isServer) then {
 				};
 			};
 			
+			
+			
+			
 			[_center, resistance, 2, 150] call BrezBlock_fnc_CreatePatrol;
 			[_center, resistance, 2, 150] call BrezBlock_fnc_CreatePatrol;
 			[_center, resistance, 5, 20] call BrezBlock_fnc_CreateDefend;
@@ -161,6 +178,8 @@ if (isServer) then {
 			
 			deleteMarkerLocal _marker;
 		};
+		obj_specops_target = selectRandom _objectives;
+		publicVariable "obj_specops_target";
 	};
 	
 	Fn_Create_Mission_DestroyAmmo = {

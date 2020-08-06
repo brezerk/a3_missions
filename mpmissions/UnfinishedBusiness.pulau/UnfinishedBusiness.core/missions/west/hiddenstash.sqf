@@ -24,6 +24,8 @@ Spawn start objectives, triggers for informator contact
 // Client side code
 
 if (isServer) then {
+
+	/*
 	Fn_Task_West_Hidden_WaponStash = {
 		private _markers = [];
 		{
@@ -146,5 +148,6 @@ if (isServer) then {
 	    _obj setDir (_dir + 90);
 
 	};
+	*/
 
 };

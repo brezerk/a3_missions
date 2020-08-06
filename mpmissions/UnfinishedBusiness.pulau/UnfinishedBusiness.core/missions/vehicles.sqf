@@ -31,6 +31,10 @@ while {true} do {
 		};
 	} forEach allMapMarkers;
 	
+	{
+		[(getPos _x), (getDir _x)] call Fn_Spawn_Civ_Cars_Transport;
+	} forEach [place_civ_car01, place_civ_car02];	
+	
 };
 
 

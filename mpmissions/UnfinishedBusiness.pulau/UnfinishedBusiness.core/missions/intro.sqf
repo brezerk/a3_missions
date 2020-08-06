@@ -234,6 +234,13 @@ if (isServer) then {
 				_x allowDamage true;
 			};
 		} forEach crew us_airplane_01;
+		{
+			if (side _x == west) then {
+				if ((_x distance2d us_airplane_01) > 500) then {
+					_x setVariable ["is_specops_group", true, true];
+				};
+			};
+		} forEach (playableUnits + switchableUnits);
 		us_airplane_01 animateDoor ['Door_1_source', 0];
 		private _group = group driver us_airplane_01;
 		private _wp = _group addWaypoint [getMarkerPos "mrk_airfield", 0];

@@ -37,6 +37,7 @@ if (isServer) then {
 		//Place naval marker
 		private _marker = createMarker ["mrk_west_base_01", _center];
 		_marker setMarkerType "b_naval";
+		_marker setMarkerAlpha 0;
 		_marker setMarkerText 'USS "Democracy"';
 		
 		//Mark 'safe' area
@@ -46,6 +47,11 @@ if (isServer) then {
 		_marker setMarkerBrush "BDiagonal";
 		_marker setMarkerShape "ellipse";
 		_marker setMarkerColor "ColorWEST";
+		_marker setMarkerAlpha 0;
+		
+		"mrk_west_specops" setMarkerAlpha 0;
+		"mrk_spec_boat02" setMarkerAlpha 0;
+		"mrk_spec_boat01" setMarkerAlpha 0;
 	};
 	
 	Fn_West_MissionPlanning_CreateMarkers_EastBase = {
@@ -118,6 +124,7 @@ if (isServer) then {
 		{
 			if ((_x find "mrk_blacklist_") >= 0) then {
 				_markers pushBack _x;
+				_x setMarkerAlpha 0;
 			};
 		} forEach allMapMarkers;
 		

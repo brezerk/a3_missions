@@ -28,6 +28,20 @@ if (isServer) then {
 	task_civ_leader = false;
 	
 	civ_leader = objNull;
+	
+	Fn_Spawn_Civ_Cars_Transport = {
+        params ["_spawnposition", "_spawndir"];
+		private _veh = objNull;
+		if (count (nearestObjects [_spawnposition, ["Car", "Tank", "APC", "Boat", "Drone", "Plane", "Helicopter"], 2]) == 0) then {
+			private _class = (selectRandom D_FRACTION_CIV_UNITS_TRANSPORT);
+			private _pos = _spawnposition; // findEmptyPosition [0, 25, _class];
+			systemChat format ["%1 %2", _class, _pos];
+			private _veh = createVehicle [_class, _pos, [], 0];
+			_veh setDir _spawndir;
+			[_veh] execVM 'addons\BrezBlock.framework\triggers\despawn_transport.sqf';
+		};
+        _veh;
+	};	
 
 	Fn_Task_Spawn_Civ_Objectives = {
 		params['_center'];
@@ -46,7 +60,14 @@ if (isServer) then {
 		
 		private _marker = createMarker ["respawn_civ", _center];
 		_marker setMarkerType "hd_destroy";
-		_marker setMarkerAlpha 1;
+		_marker setMarkerAlpha 0;
+		
+		[civ_base_stash_01, "base", civilian, D_FRACTION_CIV] call BrezBlock_fnc_PopulateBaseSupply;
+		//[civ_base_stash_02, "base", civilian, D_FRACTION_CIV] call BrezBlock_fnc_PopulateBaseSupply;
+		
+		{
+			[(getPos _x), (getDir _x)] call Fn_Spawn_Civ_Cars_Transport;
+		} forEach [place_civ_car01, place_civ_car02];
 	};
 	
 };

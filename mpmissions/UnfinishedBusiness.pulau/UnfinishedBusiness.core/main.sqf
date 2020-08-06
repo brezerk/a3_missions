@@ -117,6 +117,7 @@ if (isServer) then {
 	west_rack_01 = objNull;
 	west_rack_02 = objNull;
 	obj_prison = objNull;
+	obj_specops_target = objNull;
 	
 	//Task states
 	task_complete_commtower = false;
@@ -306,7 +307,7 @@ if (isServer) then {
 	waitUntil {real_weather_init};
 	
 	// skip random time
-	skipTime ((random 5) + 6);
+	skipTime ((random 4) + 7);
 	
 	waitUntil {
 		sleep 3;
@@ -337,6 +338,7 @@ if (isServer) then {
 	
 	D_FRACTION_CIV_UNITS_MENS = ([civilian, D_FRACTION_CIV, 'mens'] call Fn_Config_GetFraction_Units);
 	D_FRACTION_CIV_UNITS_CARS = ([civilian, D_FRACTION_CIV, 'cars'] call Fn_Config_GetFraction_Units);
+	D_FRACTION_CIV_UNITS_TRANSPORT = ([civilian, D_FRACTION_CIV, 'transport'] call Fn_Config_GetFraction_Units);
 	D_FRACTION_CIV_UNITS_BOATS = ([civilian, D_FRACTION_CIV, 'boats'] call Fn_Config_GetFraction_Units);
 	
 	// Create base marker

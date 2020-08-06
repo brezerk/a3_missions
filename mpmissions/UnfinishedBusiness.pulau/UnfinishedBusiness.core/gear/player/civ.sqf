@@ -40,6 +40,13 @@ switch (D_NAVTOOL_COMPASS) do {
 	};
 };
 
+
+player addBackpack "B_FieldPack_oucamo";
+
+for "_i" from 1 to 3 do {player addItemToBackpack "16Rnd_9x21_Mag";};
+player addItemToBackpack "CUP_HandGrenade_M67";
+player addItemToBackpack "hgun_P07_F";
+
 if (D_MOD_ACEX) then {
 	player addItemToUniform selectRandom(["ACE_MRE_BeefStew",
 										"ACE_MRE_ChickenTikkaMasala",

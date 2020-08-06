@@ -152,9 +152,7 @@ if (isServer) then {
 	[] execVM "UnfinishedBusiness.core\missions\assoult_group_is_dead.sqf";
 	[] execVM "UnfinishedBusiness.core\missions\informator.sqf";
 	call Fn_Task_Create_AA;
-	
 
-		
 	//Send vehicles on patrol
 	call Fn_Patrols_Create_Random_Waypoints;
 	

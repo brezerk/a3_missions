@@ -37,19 +37,47 @@ if (hasInterface) then {
 	};
 
 	Fn_Local_Create_MissionIntro = {
-		[
-			player,
-			"t_arrive_to_island",
-			[
-			format [localize "TASK_02_DESC", D_LOCATION],
-			format [localize "TASK_02_TITLE", D_LOCATION],
-			localize "TASK_ORIG_01"],
-			getMarkerPos "mrk_airfield",
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_arrive_to_island', "land"] call BIS_fnc_taskSetType;
+		switch (playerSide) do {
+			case east: {
+
+			};
+			case civilian: {
+
+			};
+			case west: {
+				if ((roleDescription player find "SpecOps") >= 0) then {
+					waitUntil {!isNull obj_specops_target};
+					switch (typeOf obj_specops_target) do {
+						case "C_scientist_F": {
+							[getPos obj_specops_target] call Fn_Local_Create_Mission_KillDoctor;
+						};
+						case "B_Slingload_01_Ammo_F": {
+							[getPos obj_specops_target] call Fn_Local_Create_Mission_DestroyAmmo;
+						};
+						case "Land_wpp_Turbine_V1_off_F": {
+							[getPos obj_specops_target] call Fn_Local_Create_Mission_DestroyWindMill;
+						};
+						case "Land_dp_smallTank_F": {
+							[getPos obj_specops_target] call Fn_Local_Create_Mission_DestroyFuel;
+						};
+					};
+				} else {
+					[
+						player,
+						"t_arrive_to_island",
+						[
+						format [localize "TASK_02_DESC", D_LOCATION],
+						format [localize "TASK_02_TITLE", D_LOCATION],
+						localize "TASK_ORIG_01"],
+						getMarkerPos "mrk_airfield",
+						"CREATED",
+						0,
+						true
+					] call BIS_fnc_taskCreate;
+					['t_arrive_to_island', "land"] call BIS_fnc_taskSetType;
+				};
+			};
+		};
 	};
 	
 	Fn_Local_MissionIntro_Fail = {
