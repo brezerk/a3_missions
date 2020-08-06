@@ -58,8 +58,7 @@ if (!mission_requested) then {
 	["UnfinishedBusiness.core\ui\settingsDialog.sqf"] call BrezBlock_fnc_WaitForStart;
 };
 
-waitUntil { sleep 1; [["D_LOCATION", "D_FRACTION_WEST", "D_FRACTION_EAST", "D_FRACTION_CIV", "D_FRACTION_INDEP", "D_NAVTOOL_MAP", "D_NAVTOOL_COMPASS", "obj_specops_target"]] call Fn_Local_WaitPublicVariables; }; 
-
+waitUntil { sleep 1; [["D_LOCATION", "D_FRACTION_WEST", "D_FRACTION_EAST", "D_FRACTION_CIV", "D_FRACTION_INDEP", "D_NAVTOOL_MAP", "D_NAVTOOL_COMPASS"]] call Fn_Local_WaitPublicVariables; }; 
 
 switch (playerSide) do {
 	case east: {
@@ -316,6 +315,8 @@ player addEventHandler
 		if (mission_plane_send) then {
 			call Fn_Local_FailTasks;
 			player setVariable ["is_assault_group", false, true];
+			player setVariable ["is_specops_group", false, true];
+			player setVariable ["is_civilian", false, true];
 			switch (playerSide) do
 			{
 				case east:
@@ -334,7 +335,6 @@ player addEventHandler
 					"mrk_west_safezone_01" setMarkerAlphaLocal 0;
 					"mrk_west_safezone_01" setMarkerAlphaLocal 0;
 					"mrk_west_safezone_01" setMarkerAlphaLocal 0;
-					
 				
 					player setVariable ["is_civilian", true, true];
 					player setVariable ["weapon_fiered", false, false];

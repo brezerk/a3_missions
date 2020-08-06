@@ -237,7 +237,7 @@ if (isServer) then {
 				if (task_complete_regroup) then {
 					{
 						[(getPos indep_lab_01)] remoteExecCall ["Fn_Local_Create_Mission_KillDoctor", _x];
-					} forEach assault_group;
+					} forEach (playableUnits + switchableUnits);
 				} else {
 					shared_missions pushBack "Fn_Local_Create_Mission_KillDoctor";
 				};
@@ -250,7 +250,7 @@ if (isServer) then {
 		if (!isNull indep_ammo_01) then {
 			{
 				[(getPos indep_ammo_01)] remoteExecCall ["Fn_Local_Task_DestroyAmmo_Complete", _x];
-			} forEach assault_group;
+			} forEach (playableUnits + switchableUnits);
 		};
 	};
 	
@@ -258,7 +258,7 @@ if (isServer) then {
 		if (!isNull indep_fuel_01) then {
 			{
 				[(getPos indep_fuel_01)] remoteExecCall ["Fn_Local_Task_DestroyFuel_Complete", _x];
-			} forEach assault_group;
+			} forEach (playableUnits + switchableUnits);
 		};
 	};
 	
@@ -266,7 +266,7 @@ if (isServer) then {
 		if (!isNull indep_wind_01) then {
 			{
 				[(getPos indep_wind_01)] remoteExecCall ["Fn_Local_Task_DestroyWindMill_Complete", _x];
-			} forEach assault_group;
+			} forEach (playableUnits + switchableUnits);
 		};
 	};
 	
@@ -274,7 +274,7 @@ if (isServer) then {
 		if (!isNull indep_lab_01) then {
 			{
 				[(getPos indep_lab_01)] remoteExecCall ["Fn_Local_Task_KillDoctor_Complete", _x];
-			} forEach assault_group;
+			} forEach (playableUnits + switchableUnits);
 		};
 	};
 	

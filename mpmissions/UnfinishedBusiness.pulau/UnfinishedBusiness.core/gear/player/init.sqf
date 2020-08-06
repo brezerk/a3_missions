@@ -48,8 +48,10 @@ if ((_role find "Recon ") >= 0) then {
 
 // If plane was not sent yet -- give player a parashute
 if (!mission_plane_send) then {
-	removeBackpack player;
-	player addBackpack "B_Parachute";
+	if ((_role find "SpecOps ") == -1) then { 
+		removeBackpack player;
+		player addBackpack "B_Parachute";
+	};
 };
 
 //Set identity

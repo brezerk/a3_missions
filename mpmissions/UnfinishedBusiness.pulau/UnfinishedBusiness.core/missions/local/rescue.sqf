@@ -25,7 +25,7 @@ Spawn start objectives, triggers for informator contact
 if (hasInterface) then {
 	Fn_Local_Create_RescueMission = {
 		if (playerSide == west) then {
-			if (!(player getVariable ["is_specops_group", false])) then {
+			if ((!player getVariable ["is_specops_group", false]) && (!player getVariable ["is_civilian", false])) then {
 				[
 					player,
 					"t_west_rescue",

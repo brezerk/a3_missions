@@ -32,7 +32,7 @@ if (isServer) then {
 	Fn_Spawn_Civ_Cars_Transport = {
         params ["_spawnposition", "_spawndir"];
 		private _veh = objNull;
-		if (count (nearestObjects [_spawnposition, ["Car", "Tank", "APC", "Boat", "Drone", "Plane", "Helicopter"], 2]) == 0) then {
+		if (count (nearestObjects [_spawnposition, ["Car", "Tank", "APC", "Boat", "Drone", "Plane", "Helicopter"], 4]) == 0) then {
 			private _class = (selectRandom D_FRACTION_CIV_UNITS_TRANSPORT);
 			private _pos = _spawnposition; // findEmptyPosition [0, 25, _class];
 			systemChat format ["%1 %2", _class, _pos];
