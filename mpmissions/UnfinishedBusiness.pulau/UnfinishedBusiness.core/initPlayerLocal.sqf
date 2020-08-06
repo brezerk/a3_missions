@@ -154,6 +154,11 @@ execVM "addons\BrezBlock.framework\utils\marker_manager.sqf";
 if (D_MOD_ACE_MEDICAL) then {
 	[player] call BIS_fnc_disableRevive;
 };
+
+//ACE Specator
+
+[1, objNull] call ace_spectator_fnc_setCameraAttributes;
+[[west], [east,civilian]] call ace_spectator_fnc_updateSides;
  
 Fn_Local_SetPersonalTaskState = {
 	params['_name', '_state', '_title'];
@@ -284,24 +289,25 @@ player addEventHandler
 				_side = playerSide;
 			};
 
-			_side = civilian;
-			switch (_side) do
-			{
+			switch (_side) do {
 				case east:
 				{
 					//systemChat "switched";
 					[east] call Fn_Local_Switch_Side;
+					[[east], [west,civilian]] call ace_spectator_fnc_updateSides;
 				};
 				case civilian:
 				{
 					//systemChat "switched";
 					[civilian] call Fn_Local_Switch_Side;
+					[[civilian], [east,west]] call ace_spectator_fnc_updateSides;
 					
 				};
 				case west:
 				{
 					//systemChat "switched";
 					[west] call Fn_Local_Switch_Side;
+					[[west], [east,civilian]] call ace_spectator_fnc_updateSides;
 				};
 			};
 		};
