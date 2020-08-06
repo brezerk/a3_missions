@@ -35,7 +35,7 @@ if (isServer) then {
 		if (count (nearestObjects [_spawnposition, ["Car", "Tank", "APC", "Boat", "Drone", "Plane", "Helicopter"], 4]) == 0) then {
 			private _class = (selectRandom D_FRACTION_CIV_UNITS_TRANSPORT);
 			private _pos = _spawnposition; // findEmptyPosition [0, 25, _class];
-			systemChat format ["%1 %2", _class, _pos];
+			//systemChat format ["%1 %2", _class, _pos];
 			private _veh = createVehicle [_class, _pos, [], 0];
 			_veh setDir _spawndir;
 			[_veh] execVM 'addons\BrezBlock.framework\triggers\despawn_transport.sqf';
