@@ -173,6 +173,7 @@ if (isServer) then {
 	publicVariable "mission_plane_send_time";
 	publicVariable "mission_plane_down_time";
 	publicVariable "mission_plane_pass_count";
+	publicVariable "obj_specops_target";
 	publicVariable "us_liberty_01";
 	
 	addMissionEventHandler ["PlayerDisconnected",

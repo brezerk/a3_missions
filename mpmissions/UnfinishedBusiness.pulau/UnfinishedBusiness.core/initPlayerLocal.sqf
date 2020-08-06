@@ -28,6 +28,7 @@ indep_order_seen = false;
 civ_order_seen = false;
 side_switched = false;
 
+
 #include "..\config\fractions.sqf";
 
 Fn_Local_WaitPublicVariables = {
@@ -52,7 +53,7 @@ waitUntil { !isNull player }; // Wait for player to initialize
 
 cutText ["", "BLACK"];
 
-waitUntil { sleep 1; [["mission_requested", "mission_plane_send", "us_liberty_01", "mission_plane_send_time", "mission_plane_down_time", "mission_plane_pass_count"]] call Fn_Local_WaitPublicVariables; };
+waitUntil { sleep 1; [["mission_requested", "mission_plane_send", "us_liberty_01", "mission_plane_send_time", "mission_plane_down_time", "mission_plane_pass_count", "obj_specops_target"]] call Fn_Local_WaitPublicVariables; };
 
 if (!mission_requested) then {
 	["UnfinishedBusiness.core\ui\settingsDialog.sqf"] call BrezBlock_fnc_WaitForStart;
@@ -210,7 +211,8 @@ Fn_Local_FailTasks = {
 		't_west_destroy_fuel',
 		't_west_kill_doctor',
 		't_west_destroy_ammo',
-		't_west_collect_intel'
+		't_west_collect_intel',
+		't_west_extract'
 	];
 };
 

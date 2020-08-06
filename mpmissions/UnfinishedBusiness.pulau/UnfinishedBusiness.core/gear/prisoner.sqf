@@ -12,7 +12,7 @@ removeHeadgear player;
 removeGoggles player;
 
 comment "Add containers";
-player addGoggles "G_Blindfold_01_white_F";
+//player addGoggles "G_Blindfold_01_white_F";
 player addItemToUniform _hWeap;
 player addItemToUniform _hWeapMagazine;
 player addItemToUniform _hWeapMagazine;

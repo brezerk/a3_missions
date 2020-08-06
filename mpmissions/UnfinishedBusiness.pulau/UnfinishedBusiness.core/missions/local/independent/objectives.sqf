@@ -134,8 +134,8 @@ if (hasInterface) then {
 	Fn_Local_Task_DestroyWindMill_Complete = {
 		switch (playerSide) do {
 			case west: {
-				private _title = "TASK_15_TITLE";
-				if ((roleDescription player find "SpecOps") >= 0) then { _title = "TASK_15_SPEC_TITLE"; call Fn_SpecOps_Extract; };
+				private _title = "TASK_14_TITLE";
+				if ((roleDescription player find "SpecOps") >= 0) then { _title = "TASK_14_SPEC_TITLE"; call Fn_SpecOps_Extract; };
 				['t_west_destroy_windmill', 'Succeeded', localize _title] call Fn_Local_SetPersonalTaskState;
 			};
 			case independent: {
@@ -147,8 +147,8 @@ if (hasInterface) then {
 	Fn_Local_Task_DestroyFuel_Complete = {
 		switch (playerSide) do {
 			case west: {
-				private _title = "TASK_15_TITLE";
-				if ((roleDescription player find "SpecOps") >= 0) then { _title = "TASK_15_SPEC_TITLE"; call Fn_SpecOps_Extract; };
+				private _title = "TASK_13_TITLE";
+				if ((roleDescription player find "SpecOps") >= 0) then { _title = "TASK_13_SPEC_TITLE"; call Fn_SpecOps_Extract; };
 				['t_west_destroy_fuel', 'Succeeded', localize _title] call Fn_Local_SetPersonalTaskState;
 			};
 			case independent: {
@@ -160,8 +160,8 @@ if (hasInterface) then {
 	Fn_Local_Task_DestroyAmmo_Complete = {
 		switch (playerSide) do {
 			case west: {
-				private _title = "TASK_15_TITLE";
-				if ((roleDescription player find "SpecOps") >= 0) then { _title = "TASK_15_SPEC_TITLE"; call Fn_SpecOps_Extract; };
+				private _title = "TASK_12_TITLE";
+				if ((roleDescription player find "SpecOps") >= 0) then { _title = "TASK_12_SPEC_TITLE"; call Fn_SpecOps_Extract; };
 				['t_west_destroy_ammo', 'Succeeded', localize _title] call Fn_Local_SetPersonalTaskState;
 			};
 			case independent: {

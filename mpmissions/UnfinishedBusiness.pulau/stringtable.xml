@@ -94,8 +94,8 @@
 				* Chance of weapon loss during landing - 40%&lt;br /&gt;
 				* Chance of weapon's ammo loss during landing - 50%&lt;br /&gt;
 				* Chance of weapon's attachments loss during landing - 40%&lt;br /&gt;
-				* Chance of radio transmitter loss during landing - 0%&lt;br /&gt;
-				* Chance of losing map during landing - 0%&lt;br /&gt;
+				* Chance of radio transmitter loss during landing - 25%&lt;br /&gt;
+				* Chance of losing map during landing - 25%&lt;br /&gt;
 				* Chance of losing compass during landing - 0%&lt;br /&gt;
 				* Ping timeout - 60 seconds&lt;br /&gt;
 				* Ping range - 150 meters&lt;br /&gt;
@@ -116,7 +116,7 @@
 				* Chance of weapon's attachments loss during landing - 100%&lt;br /&gt;
 				* Chance of radio transmitter loss during landin - 100%&lt;br /&gt;
 				* Chance of losing map during landing - 100%&lt;br /&gt;
-				* Chance of losing compass during landing - 100%&lt;br /&gt;
+				* Chance of losing compass during landing - 0%&lt;br /&gt;
 				* Ping timeout - 30 seconds&lt;br /&gt;
 				* Ping range - 500 meters&lt;br /&gt;
 				&lt;br /&gt;
@@ -130,8 +130,8 @@
 				* Chance of weapon loss during landing - 40%&lt;br /&gt;
 				* Chance of weapon's ammo loss during landing - 0%&lt;br /&gt;
 				* Chance of weapon's attachments loss during landing - 40%&lt;br /&gt;
-				* Chance of radio transmitter loss during landing - 60%&lt;br /&gt;
-				* Chance of losing map during landing - 0%&lt;br /&gt;
+				* Chance of radio transmitter loss during landing - 25%&lt;br /&gt;
+				* Chance of losing map during landing - 25%&lt;br /&gt;
 				* Chance of losing compass during landing - 0%&lt;br /&gt;
 				* Ping timeout - 60 seconds&lt;br /&gt;
 				* Ping range - 150 meters&lt;br /&gt;
@@ -142,7 +142,7 @@
 				* Chance of weapon's attachments loss during landing - 40%&lt;br /&gt;
 				* Chance of radio transmitter loss during landing - 50%&lt;br /&gt;
 				* Chance of losing map during landing - 50%&lt;br /&gt;
-				* Chance of losing compass during landing - 50%&lt;br /&gt;
+				* Chance of losing compass during landing - 0%&lt;br /&gt;
 				* Ping timeout - 45 seconds&lt;br /&gt;
 				* Ping range - 300 meters&lt;br /&gt;
 				&lt;br /&gt;
@@ -152,7 +152,7 @@
 				* Chance of weapon's attachments loss during landing - 100%&lt;br /&gt;
 				* Chance of radio transmitter loss during landin - 100%&lt;br /&gt;
 				* Chance of losing map during landing - 100%&lt;br /&gt;
-				* Chance of losing compass during landing - 100%&lt;br /&gt;
+				* Chance of losing compass during landing - 0%&lt;br /&gt;
 				* Ping timeout - 30 seconds&lt;br /&gt;
 				* Ping range - 500 meters&lt;br /&gt;
 				&lt;br /&gt;
@@ -165,8 +165,8 @@
 				* Шанс втрати зброї при десантуванні - 40%&lt;br /&gt;
 				* Шанс втрати патронів до зброї при дестантуванні - 50%&lt;br /&gt;
 				* Шанс втрати додаткового обладнаяння до зброї при дестантуванні - 40%&lt;br /&gt;
-				* Шанс втрати радіопередавача при дестантуванні - 0%&lt;br /&gt;
-				* Шанс втрати мапи при дестантуванні - 0%&lt;br /&gt;
+				* Шанс втрати радіопередавача при дестантуванні - 25%&lt;br /&gt;
+				* Шанс втрати мапи при дестантуванні - 25%&lt;br /&gt;
 				* Шанс втрати компаса при дестантуванні - 0%&lt;br /&gt;
 				* Пінг таймаут - 60 секунд&lt;br /&gt;
 				* Пінг дистанція - 150 метрів&lt;br /&gt;
