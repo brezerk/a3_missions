@@ -23,7 +23,9 @@ while {true} do {
 	
 	[west_rack_01] call Fn_Spawn_Boat_At_Rack;
 	[west_rack_02] call Fn_Spawn_Boat_At_Rack;
-	[(us_liberty_01 modelToWorldWorld [0,50.6011,8.95]), (getDir us_liberty_01)] call Fn_Spawn_Heli;
+	[(us_liberty_01 modelToWorldWorld [0,50.6011,8.95]), (getDir us_liberty_01)] call Fn_Spawn_West_LightHeli;
+	
+	[(us_liberty_01 modelToWorldWorld [7,50.6011,8.95]), (getDir us_liberty_01)] call Fn_Spawn_West_LightTransport;
 	
 	{
 		if (_x find "mrk_east_transport_" >= 0) then {

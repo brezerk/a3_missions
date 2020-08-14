@@ -46,8 +46,6 @@ if (!isNil "_missionLogo") then {
 	private _lblText = _dialog displayCtrl 2700;
 	private _imgLogo = _dialog displayCtrl 2710;
 	
-
-
 	[
 		["AmbientTrack01b_F_EXP",
 		 "AmbientTrack02b_F_EXP",
@@ -84,8 +82,14 @@ if (!isNil "_missionLogo") then {
 		{
 			sleep 1;
 			if (_forEachIndex in [0, 4, 8]) then {
-				if (_intoFrame > 2) then {
+				if (!mission_requested) then {
 					cutText [localize "INFO_WAIT_01", "PLAIN DOWN", 2, true, true];
+				} else {
+					if (!mission_generated) then {
+						cutText [localize "INFO_WAIT_03", "PLAIN", 2, true, true];
+						_imgLogo ctrlSetFade 1;
+						_imgLogo ctrlCommit 2;
+					};
 				};
 				switch (_intoFrame) do {
 					case 0: {
@@ -174,7 +178,7 @@ if (!isNil "_missionLogo") then {
 					};
 				};
 			};
-			if (mission_requested) then { breakTo "main"; };
+			if (mission_generated) then { breakTo "main"; };
 		} forEach [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 		cutText ["", "BLACK OUT"];
 		//

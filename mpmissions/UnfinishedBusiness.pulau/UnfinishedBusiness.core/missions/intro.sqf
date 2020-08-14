@@ -50,14 +50,29 @@ if (isServer) then {
 		_veh allowDamage true;
 	};
 	
-	Fn_Spawn_Heli = {
+	Fn_Spawn_West_LightHeli = {
 		params['_pos', '_dir'];
 		private _veh = objNull;
-		if (count (nearestObjects [_pos, ["Car", "Tank", "APC", "Boat", "Drone", "Plane", "Helicopter"], 6]) == 0) then {
+		if (count (nearestObjects [_pos, ["Car", "Tank", "APC", "Boat", "Drone", "Plane", "Helicopter"], 4]) == 0) then {
 			_veh = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_HELI), [0, 0, 0], [], 0, "CAN_COLLIDE"];
 			_veh allowDamage false;
 			_veh setPosASL (_pos);
 			_veh setDir (_dir);
+			_veh allowDamage true;
+			[_veh] execVM 'addons\BrezBlock.framework\triggers\despawn_transport.sqf';
+		};
+		_veh;
+	};
+	
+	Fn_Spawn_West_LightTransport = {
+		params['_pos', '_dir'];
+		private _veh = objNull;
+		if (count (nearestObjects [_pos, ["Car", "Tank", "APC", "Boat", "Drone", "Plane", "Helicopter"], 4]) == 0) then {
+			_veh = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_LIGHT), [0, 0, 0], [], 0, "CAN_COLLIDE"];
+			_veh allowDamage false;
+			_veh setPosASL (_pos);
+			_veh setDir (_dir);
+			//_veh allowDamage true;
 			[_veh] execVM 'addons\BrezBlock.framework\triggers\despawn_transport.sqf';
 		};
 		_veh;
@@ -121,7 +136,9 @@ if (isServer) then {
 		us_airplane_01 animateDoor ['Door_1_source', 1];
 		us_airplane_01 setVehicleAmmo 0;
 		
-		us_heli_01 = [(us_liberty_01 modelToWorldWorld [0,50.6011,8.95]), (getDir us_liberty_01)] call Fn_Spawn_Heli;
+		us_heli_01 = [(us_liberty_01 modelToWorldWorld [0,50.6011,8.95]), (getDir us_liberty_01)] call Fn_Spawn_West_LightHeli;
+		[(us_liberty_01 modelToWorldWorld [7,54.5011,8.95]), (getDir us_liberty_01)] call Fn_Spawn_West_LightTransport;
+		[(us_liberty_01 modelToWorldWorld [7,44.6011,8.95]), (getDir us_liberty_01)] call Fn_Spawn_West_LightTransport;
 		
 		/*createVehicle [(selectRandom D_FRACTION_WEST_UNITS_HELI), [0, 0, 0], [], 0, "CAN_COLLIDE"];
 		//private _pos = getPos land_01;

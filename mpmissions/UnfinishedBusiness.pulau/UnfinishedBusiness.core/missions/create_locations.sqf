@@ -147,4 +147,7 @@ if (isServer) then {
 	
 	diag_log format ["Count: %1", count reinforcement_roads];
 	
+	mission_generated = true;
+	publicVariable "mission_generated";
+	
 };

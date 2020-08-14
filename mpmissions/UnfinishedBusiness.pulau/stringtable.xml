@@ -3,7 +3,7 @@
 	<Package name="UnfinishedBusiness">
 		<Container name="l18n">
 			<Key ID="STR_ONLOAD_NAME">
-				<Original>Unfinished Business v1.2.9</Original>
+				<Original>Unfinished Business v1.3.12</Original>
 			</Key>
 			<Key ID="INFO_MOD_NF_ACE">
 				<Original>INFO: ACE Mod not found. Advanced Combat Environment features will be disabled.</Original>
@@ -877,6 +877,11 @@ The most of civilians are sitting at homes or safehouses wating situation to res
 				<Original>Mission has been requested. &lt;t color='#FFD700'&gt;Briefing updated&lt;/t&gt;!</Original>
 				<English>Mission has been requested. &lt;t color='#FFD700'&gt;Briefing updated&lt;/t&gt;!</English>
 				<Russian>Місію було заплановано. &lt;t color='#FFD700'&gt;Брифінг оновлено&lt;/t&gt;!</Russian>
+			</Key>
+			<Key ID="INFO_WAIT_03">
+				<Original>Wait for mission to be &lt;t color='#FFD700'&gt;generated&lt;/t&gt;!</Original>
+				<English>Wait for mission to be &lt;t color='#FFD700'&gt;generated&lt;/t&gt;!</English>
+				<Russian>Зачекайте, доки місію буде &lt;t color='#FFD700'&gt;згенеровано&lt;/t&gt;!</Russian>
 			</Key>
 			<Key ID="INFO_DATE_01">
 				<Original>July 16, 2019 %1</Original>

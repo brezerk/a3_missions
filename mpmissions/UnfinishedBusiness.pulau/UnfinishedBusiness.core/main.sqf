@@ -72,6 +72,7 @@ if (isServer) then {
 	D_FRACTION_WEST_UNITS_TRANSPORT = [];
 	D_FRACTION_WEST_UNITS_HELI = [];
 	D_FRACTION_WEST_UNITS_BOATS = [];
+	D_FRACTION_WEST_UNITS_LIGHT = [];
 
 	D_FRACTION_INDEP = nil;
 	
@@ -101,6 +102,7 @@ if (isServer) then {
 
 	// Global variables	
 	mission_requested = false;
+	mission_generated = false;
 	mission_plane_send = false;
 	mission_plane_send_time = objNull;
 	mission_plane_down_time = objNull;
@@ -170,6 +172,7 @@ if (isServer) then {
 	publicVariable "D_FRACTION_CIV";
 	publicVariable "mission_plane_send";
 	publicVariable "mission_requested";
+	publicVariable "mission_generated";
 	publicVariable "mission_plane_send_time";
 	publicVariable "mission_plane_down_time";
 	publicVariable "mission_plane_pass_count";
@@ -317,6 +320,7 @@ if (isServer) then {
 	
 	//Load fraction unit configurations
 	D_FRACTION_WEST_UNITS_TRANSPORT = ([west, D_FRACTION_WEST, 'transport'] call Fn_Config_GetFraction_Units);
+	D_FRACTION_WEST_UNITS_LIGHT = ([west, D_FRACTION_WEST, 'light'] call Fn_Config_GetFraction_Units);
 	D_FRACTION_WEST_UNITS_HELI = ([west, D_FRACTION_WEST, 'heli'] call Fn_Config_GetFraction_Units);
 	D_FRACTION_WEST_UNITS_BOATS = ([west, D_FRACTION_WEST, 'boats'] call Fn_Config_GetFraction_Units);
 	D_PRISON_ITEMS = ([west, D_FRACTION_WEST, 'prison_items'] call Fn_Config_GetFraction_Units);
@@ -362,6 +366,8 @@ if (isServer) then {
 	
 	[] execVM "UnfinishedBusiness.core\missions\create_locations.sqf";
 	[] execVM "addons\BrezBlock.framework\utils\garbage_collector.sqf";
+	
+	
 		
 	addMissionEventHandler ["EntityKilled",
 	{

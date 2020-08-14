@@ -53,9 +53,9 @@ waitUntil { !isNull player }; // Wait for player to initialize
 
 cutText ["", "BLACK"];
 
-waitUntil { sleep 1; [["mission_requested", "mission_plane_send", "us_liberty_01", "mission_plane_send_time", "mission_plane_down_time", "mission_plane_pass_count", "obj_specops_target"]] call Fn_Local_WaitPublicVariables; };
+waitUntil { sleep 1; [["mission_requested", "mission_generated", "mission_plane_send", "us_liberty_01", "mission_plane_send_time", "mission_plane_down_time", "mission_plane_pass_count", "obj_specops_target"]] call Fn_Local_WaitPublicVariables; };
 
-if (!mission_requested) then {
+if ((!mission_requested) || (!mission_generated)) then {
 	["UnfinishedBusiness.core\ui\settingsDialog.sqf"] call BrezBlock_fnc_WaitForStart;
 };
 
@@ -63,15 +63,20 @@ waitUntil { sleep 1; [["D_LOCATION", "D_FRACTION_WEST", "D_FRACTION_EAST", "D_FR
 
 switch (playerSide) do {
 	case east: {
-
+		[] execVM "UnfinishedBusiness.core\gear\player\east.sqf";
+		private _pos = [(getMarkerPos "respawn_east"), 5, 20, 3, 0, 0, 0] call BIS_fnc_findSafePos;
+		player setPos _pos;
 	};
 	case civilian: {
+		player setVariable ["is_civilian", true, true];
+		player setVariable ["weapon_fiered", false, false];
+		[] execVM "UnfinishedBusiness.core\gear\player\civ.sqf";
 		private _pos = [(getMarkerPos "respawn_civ"), 5, 20, 3, 0, 0, 0] call BIS_fnc_findSafePos;
 		player setPos _pos;
 	};
 	case west: {
 		private _role = (roleDescription player);
-		systemChat _role;
+		execVM "UnfinishedBusiness.core\gear\player\init.sqf";
 		if (((_role find "SpecOps ") >= 0) && (!mission_plane_send)) then {
 			private _pos = getMarkerPos "mrk_west_specops";
 			"mrk_west_specops" setMarkerAlphaLocal 1;
@@ -83,8 +88,6 @@ switch (playerSide) do {
 		};
 	};
 };
-
-execVM "UnfinishedBusiness.core\gear\player\init.sqf";
 
 player setVariable ["weapon_fiered", false, false];
 player setVariable ["is_civilian", false, true];
@@ -157,9 +160,10 @@ if (D_MOD_ACE_MEDICAL) then {
 };
 
 //ACE Specator
-
-[1, objNull] call ace_spectator_fnc_setCameraAttributes;
-[[west], [east,civilian]] call ace_spectator_fnc_updateSides;
+if (D_MOD_ACE) then {
+	[1, objNull] call ace_spectator_fnc_setCameraAttributes;
+	[[west], [east,civilian]] call ace_spectator_fnc_updateSides;
+};
  
 Fn_Local_SetPersonalTaskState = {
 	params['_name', '_state', '_title'];
@@ -296,20 +300,20 @@ player addEventHandler
 				{
 					//systemChat "switched";
 					[east] call Fn_Local_Switch_Side;
-					[[east], [west,civilian]] call ace_spectator_fnc_updateSides;
+					if (D_MOD_ACE) then { [[east], [west,civilian]] call ace_spectator_fnc_updateSides; };
 				};
 				case civilian:
 				{
 					//systemChat "switched";
 					[civilian] call Fn_Local_Switch_Side;
-					[[civilian], [east,west]] call ace_spectator_fnc_updateSides;
+					if (D_MOD_ACE) then { [[civilian], [east,west]] call ace_spectator_fnc_updateSides; };
 					
 				};
 				case west:
 				{
 					//systemChat "switched";
 					[west] call Fn_Local_Switch_Side;
-					[[west], [east,civilian]] call ace_spectator_fnc_updateSides;
+					if (D_MOD_ACE) then { [[west], [east,civilian]] call ace_spectator_fnc_updateSides; };
 				};
 			};
 		};

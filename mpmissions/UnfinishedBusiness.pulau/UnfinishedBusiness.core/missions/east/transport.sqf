@@ -28,9 +28,9 @@ if (isServer) then {
 	Fn_Spawn_East_Cars_Transport = {
         params ["_spawnposition", "_spawndir"];
 		private _veh = objNull;
-		if (count (nearestObjects [_spawnposition, ["Car", "Tank", "APC", "Boat", "Drone", "Plane", "Helicopter"], 6]) == 0) then {
+		if (count (nearestObjects [_spawnposition, ["Car", "Tank", "APC", "Boat", "Drone", "Plane", "Helicopter"], 7]) == 0) then {
 			private _class = (selectRandom ([east, D_FRACTION_EAST, "cars"] call Fn_Config_GetFraction_Units));
-			private _pos = _spawnposition findEmptyPosition [0, 6, _class];
+			private _pos = _spawnposition; // findEmptyPosition [0, 6, _class];
 			_veh = createVehicle [_class, _pos, [], 0];
 			_veh setDir _spawndir;
 			[_veh] execVM 'addons\BrezBlock.framework\triggers\despawn_transport.sqf';
