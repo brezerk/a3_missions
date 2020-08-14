@@ -10,9 +10,3 @@ if (!isServer) exitWith {};
 	};
 } count (allUnits - switchableUnits - allCurators - playableUnits);
 
-{
-	private _side = side _x;
-	if (_side == independent) then {
-		_x addRating -9000; 
-	};
-} count (switchableUnits + playableUnits);
