@@ -8,7 +8,11 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=19;
+		nextID=22;
+	};
+	class MarkerIDProvider
+	{
+		nextID=1;
 	};
 	class Camera
 	{
@@ -24,13 +28,14 @@ addons[]=
 	"A3_Characters_F",
 	"A3_Weapons_F_Rifles_Khaybar",
 	"A3_Weapons_F",
-	"A3_Structures_F_Argo_Civilian_House_Big02"
+	"A3_Structures_F_Argo_Civilian_House_Big02",
+	"A3_Ui_F"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=3;
+		items=4;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -49,6 +54,13 @@ class AddonsMetaData
 		{
 			className="A3_Structures_F_Argo";
 			name="Arma 3 Malden - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item3
+		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -80,7 +92,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=6;
+		items=9;
 		class Item0
 		{
 			dataType="Group";
@@ -278,7 +290,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3017.2205,5.0014391,5205.9639};
+						position[]={2954.9556,5.0014391,5205.2354};
 						angles[]={0,1.5408171,0};
 					};
 					side="Independent";
@@ -311,6 +323,30 @@ class Mission
 			};
 			id=18;
 			type="Land_House_Big_02_b_brown_ruins_F";
+		};
+		class Item6
+		{
+			dataType="Marker";
+			position[]={2996.3101,5,5203.3418};
+			name="respawn_guerrila_00";
+			type="mil_circle";
+			id=19;
+		};
+		class Item7
+		{
+			dataType="Marker";
+			position[]={3058.3682,5,5153.9873};
+			name="respawn_guerrila_01";
+			type="mil_circle";
+			id=20;
+		};
+		class Item8
+		{
+			dataType="Marker";
+			position[]={3054.8279,5,5258.7363};
+			name="respawn_guerrila_02";
+			type="mil_circle";
+			id=21;
 		};
 	};
 };
