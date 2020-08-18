@@ -218,7 +218,7 @@ Fn_Local_FailTasks = {
 		if (!isNull _task) then {
 			if (!(([_x] call BIS_fnc_taskState) in ["FAILED", "SUCCEEDED"])) then {
 				[_x, "CANCELED", false] call BIS_fnc_taskSetState;
-				[_x, player] call BIS_fnc_deleteTask;
+				//[_x, player] call BIS_fnc_deleteTask;
 			};
 		};
 	} forEach [
@@ -267,7 +267,7 @@ player addEventHandler
 	{
 		private _respawnDelay = D_RESPAWN_DELAY;
 		setPlayerRespawnTime (_respawnDelay - (servertime % _respawnDelay));
-		
+		[[1,2], [0]] call ace_spectator_fnc_updateCameraModes;
 		if ((side player) == west) then {
 			if (player getVariable ["is_civilian", false]) then {
 				player setVariable ["weapon_fiered", false, true];

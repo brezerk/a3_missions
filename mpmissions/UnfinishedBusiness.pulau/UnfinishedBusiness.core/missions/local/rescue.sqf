@@ -37,7 +37,8 @@ if (hasInterface) then {
 		};
 		if ((side player) != west) exitWith {};
 
-
+			private _task = ["t_west_rescue", player] call BIS_fnc_taskReal;
+			if (isNull _task) then {
 				[
 					player,
 					"t_west_rescue",
@@ -51,25 +52,29 @@ if (hasInterface) then {
 					true
 				] call BIS_fnc_taskCreate;
 				['t_west_rescue', "run"] call BIS_fnc_taskSetType;
+			};
 				if (!(player getVariable ["is_assault_group", false])) then {
 					if (!west_rq_order_seen) then {
 						[] execVM "UnfinishedBusiness.core\ui\orderDialog.sqf";
 						west_rq_order_seen = true;
 					};
 					{
-						private _task = format["t_west_rescue_city_%1", _forEachIndex];
-						[
-							player,
-							_task,
-							[format[localize "TASK_11_DESC", _forEachIndex, _x select 0],
-							format[localize "TASK_11_TITLE", _x select 0],
-							localize "TASK_ORIG_01"],
-							getMarkerPos (format ["mrk_city_%1", _forEachIndex]),
-							"CREATED",
-							0,
-							true
-						] call BIS_fnc_taskCreate;
-						[_task, "talk"] call BIS_fnc_taskSetType;			
+						private _task_name = format["t_west_rescue_city_%1", _forEachIndex];
+						private _task = [_task_name, player] call BIS_fnc_taskReal;
+						if (isNull _task) then {
+							[
+								player,
+								_task_name,
+								[format[localize "TASK_11_DESC", _forEachIndex, _x select 0],
+								format[localize "TASK_11_TITLE", _x select 0],
+								localize "TASK_ORIG_01"],
+								getMarkerPos (format ["mrk_city_%1", _forEachIndex]),
+								"CREATED",
+								0,
+								true
+							] call BIS_fnc_taskCreate;
+							[_task_name, "talk"] call BIS_fnc_taskSetType;
+						};
 					} forEach avaliable_pois;
 				};
 	};

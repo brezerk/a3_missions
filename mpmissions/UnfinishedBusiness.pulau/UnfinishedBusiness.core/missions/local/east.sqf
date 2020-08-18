@@ -77,7 +77,11 @@ if (hasInterface) then {
 	
 	Fn_Local_Create_EAST_MissionCrashSite = {
 		if (side player != east) exitWith {};
-		if (!alive us_airplane_01) then {
+		private _us_airplane_01_alive = false;
+		if (!isNil "us_airplane_01") then {
+			_us_airplane_01_alive = alive us_airplane_01;
+		};
+		if (!_us_airplane_01_alive) then {
 			private _task = ['t_east_eliminate_survivals', player] call BIS_fnc_taskReal;
 			if (isNull _task) then {
 				[
