@@ -144,6 +144,7 @@ if (isServer) then {
 	avaliable_pois = [];
 	avaliable_markers = [];
 	
+
 	if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
 		tf_give_personal_radio_to_regular_soldier = true;
 		publicVariable "tf_give_personal_radio_to_regular_soldier";
@@ -153,7 +154,7 @@ if (isServer) then {
 
 		tf_same_sw_frequencies_for_side = true;
 		publicVariable "tf_same_sw_frequencies_for_side";
-
+		/*
 		private _settingsSwWest = false call TFAR_fnc_generateSwSettings;
 		_settingsSwWest set [2, ["311","312","313","314","315","316","317","318"]];
 		tf_freq_west = _settingsSwWest;
@@ -163,7 +164,9 @@ if (isServer) then {
 		_settingsSwEast set [2, ["101","110","117","134","195","131","171","188"]];
 		tf_freq_east = _settingsSwEast;
 		publicVariable "tf_freq_east";
+		*/
 	};
+	
 	
 	/* FIXME: CBA-only
 	addMissionEventHandler ["PlayerConnected",
