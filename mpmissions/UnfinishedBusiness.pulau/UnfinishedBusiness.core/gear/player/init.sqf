@@ -26,7 +26,7 @@ if (mission_plane_send) then {
 player setUnitLoadout (configFile >> "CfgVehicles" >> ([west, D_FRACTION_WEST, _class] call Fn_Config_GetFraction_Units));
 
 //Give medic trait
-if (_role in ["Corpsman", "Recon Paramedic", "SpecOps Paramedic"]) then {
+if (_role in ["Paramedic", "Corpsman", "Recon Paramedic", "SpecOps Paramedic", "Chief Corpsman"]) then {
 	if (D_MOD_ACE) then {
 		player setVariable ["ace_medical_medicclass", 1, true];
 	} else {
@@ -44,6 +44,13 @@ if ((_role find "SpecOps ") >= 0) then {
 if ((_role find "Recon ") >= 0) then {
 	player setUnitTrait ["camouflageCoef ", 0.7];
 	player setUnitTrait ["audibleCoef ", 0.7];
+	if (_role == "Recon Marksman") then {
+		removeAllWeapons player;
+		player addWeapon "CUP_srifle_M110_black";
+		player addPrimaryWeaponItem "CUP_optic_Elcan_SpecterDR_KF_RMR_black";
+		player addPrimaryWeaponItem "CUP_20Rnd_762x51_B_M110";
+		for "_i" from 1 to 4 do {player addItemToVest "CUP_20Rnd_762x51_B_M110";};
+	};
 };
 
 // If plane was not sent yet -- give player a parashute
@@ -51,6 +58,25 @@ if (!mission_plane_send) then {
 	if ((_role find "SpecOps ") == -1) then { 
 		removeBackpack player;
 		player addBackpack "B_Parachute";
+	} else {
+		switch (_role) do {
+			case "SpecOps Sniper": {
+				removeAllWeapons player;
+				player addWeapon "CUP_srifle_M110_woodland";
+				player addPrimaryWeaponItem "CUP_muzzle_snds_M110_woodland";
+				player addPrimaryWeaponItem "CUP_optic_Elcan_SpecterDR_KF_RMR_od";
+				player addPrimaryWeaponItem "CUP_20Rnd_762x51_B_M110";
+				for "_i" from 1 to 4 do {player addItemToVest "CUP_20Rnd_762x51_B_M110";};
+			};
+			default {
+				removeAllWeapons player;
+				player addWeapon "CUP_arifle_M4A3_camo";
+				player addPrimaryWeaponItem "CUP_muzzle_snds_M16_camo";
+				player addPrimaryWeaponItem "CUP_optic_ACOG_Reflex_Wood";
+				player addPrimaryWeaponItem "CUP_30Rnd_556x45_Stanag";
+				for "_i" from 1 to 6 do {player addItemToVest "CUP_30Rnd_556x45_Stanag";};
+			};
+		};
 	};
 };
 
@@ -117,6 +143,7 @@ if (D_MOD_ACEX) then {
 sleep 1;
 
 // Give player a radio depending on radio mod loaded
+/*
 if (D_MOD_ACRE) then {
 	// remove default radio
 	player unassignItem "ItemRadio";
@@ -141,3 +168,4 @@ if (D_MOD_ACRE) then {
 		player linkItem "ItemRadio";
 	};
 };
+*/

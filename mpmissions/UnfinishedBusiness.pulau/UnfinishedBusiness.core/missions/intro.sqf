@@ -115,6 +115,8 @@ if (isServer) then {
 		private _pad = [us_liberty_01, "Land_HelipadEmpty_F"] call BIS_fnc_Destroyer01GetShipPart;
 		private _obj = createVehicle ["Land_MapBoard_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
 		
+		us_liberty_01 setVariable ["ace_medical_isMedicalFacility", true, true];
+		
 		_obj setPosASL (us_liberty_01 modelToWorldWorld [0,43.5,8.95]);
 		_obj setDir (getDir us_liberty_01);
 		_obj setObjectTextureGlobal [0, getText(configFile >> "CfgWorlds" >> worldName >> "pictureMap")];
@@ -151,13 +153,13 @@ if (isServer) then {
 		_obj setPosASL (_obj_map modelToWorldWorld [3.5,-3.5,3]);
 		_obj setDir (getDir _obj_map + 45);
 		_obj setVectorUp surfaceNormal position _obj;
-		[_obj, "base", west, D_FRACTION_WEST] call BrezBlock_fnc_PopulateBaseSupply;
+		[_obj, "specops_base", west, D_FRACTION_WEST] call BrezBlock_fnc_PopulateBaseSupply;
 		
 		_obj = createVehicle ["B_supplyCrate_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
 		_obj setPosASL (_obj_map modelToWorldWorld [-3.5,-3.5,3]);
 		_obj setDir (getDir _obj_map - 45);
 		_obj setVectorUp surfaceNormal position _obj;
-		[_obj, "base", west, D_FRACTION_WEST] call BrezBlock_fnc_PopulateBaseSupply;
+		[_obj, "specops_base", west, D_FRACTION_WEST] call BrezBlock_fnc_PopulateBaseSupply;
 		
 		//_obj = createVehicle ["Land_Camping_Light_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
 		//_obj setPosASL (us_liberty_01 modelToWorldWorld [0,30,11]);

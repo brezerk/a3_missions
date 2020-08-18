@@ -63,6 +63,38 @@ if (isServer) then {
 		_marker setMarkerAlpha 0;
 		
 		[civ_base_stash_01, "base", civilian, D_FRACTION_CIV] call BrezBlock_fnc_PopulateBaseSupply;
+		
+		if (D_MOD_ACE_MEDICAL) then {
+			civ_base_stash_01 addItemCargoGlobal ["ACE_fieldDressing", 20];
+			civ_base_stash_01 addItemCargoGlobal ["ACE_bloodIV", 8];
+			civ_base_stash_01 addItemCargoGlobal ["ACE_morphine", 8];
+			civ_base_stash_01 addItemCargoGlobal ["ACE_bodyBag", 10];
+			civ_base_stash_01 addItemCargoGlobal ["ACE_epinephrine", 2];
+			civ_base_stash_01 addItemCargoGlobal ["ACE_adenosine", 10];
+			civ_base_stash_01 addItemCargoGlobal ["ACE_personalAidKit", 3];
+			civ_base_stash_01 addItemCargoGlobal ["ACE_splint", 15];
+			civ_base_stash_01 addItemCargoGlobal ["ACE_tourniquet", 10];
+			civ_base_stash_01 addItemCargoGlobal ["ACE_surgicalKit", 1];
+			civ_base_stash_01 addItemCargoGlobal ["ACE_packingBandage", 15];
+			civ_base_stash_01 addItemCargoGlobal ["ACE_elasticBandage", 15];
+			civ_base_stash_01 addItemCargoGlobal ["ACE_quikclot", 15];
+			//make location a hospital
+		} else {
+			civ_base_stash_01 addItemCargoGlobal ["Medikit", 2];
+			civ_base_stash_01 addItemCargoGlobal ["FirstAidKit", 20];
+		};
+		
+		private _builing = nearestObjects [_center, ["House", "Building"], 50];
+		if (count _builing >= 0) then {
+			_builing = _builing # 0;
+			_builing setVariable ["ace_medical_isMedicalFacility", true, true];
+		
+			private _marker = createMarker ["mrk_civ_hospital", getPos _builing];
+			_marker setMarkerType "loc_Hospital";
+			_marker setMarkerAlpha 0;
+			
+		};
+		
 		//[civ_base_stash_02, "base", civilian, D_FRACTION_CIV] call BrezBlock_fnc_PopulateBaseSupply;
 		
 		{

@@ -28,11 +28,13 @@ if (hasInterface) then {
 			[] execVM "UnfinishedBusiness.core\ui\orderDialog.sqf";
 			"respawn_civ" setMarkerTextLocal (localize "INFO_SUBLOC_12");
 			"respawn_civ" setMarkerAlphaLocal 1;
+			"mrk_civ_hospital" setMarkerAlphaLocal 1;
 			"mrk_west_base_01" setMarkerAlphaLocal 0;
 			"mrk_west_specops" setMarkerAlphaLocal 0;
 			"mrk_west_safezone_01" setMarkerAlphaLocal 0;
 			"mrk_east_stash_01" setMarkerAlphaLocal 0;
 			"mrk_east_stash_02" setMarkerAlphaLocal 0;
+			
 		};
 
 		//player setPos (getMarkerPos "respawn_civ");

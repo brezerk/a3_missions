@@ -854,9 +854,9 @@ Most civilians are sitting at homes or safehouses waiting for a situation to res
 				<Russian>Переглянути поточну місію</Russian>
 			</Key>
 			<Key ID="INFO_WAIT_01">
-				<Original>Wait for mission to be planned by the &lt;t color='#FFD700'&gt;Squad Leader&lt;/t&gt;</Original>
-				<English>Wait for mission to be planned by the &lt;t color='#FFD700'&gt;Squad Leader&lt;/t&gt;</English>
-				<Russian>Зачекайте, доки &lt;t color='#FFD700'&gt;Squad Leader&lt;/t&gt; запланує місію</Russian>
+				<Original>Wait for mission to be planned by the &lt;t color='#FFD700'&gt;Company comander&lt;/t&gt;</Original>
+				<English>Wait for mission to be planned by the &lt;t color='#FFD700'&gt;Company comander&lt;/t&gt;</English>
+				<Russian>Зачекайте, доки &lt;t color='#FFD700'&gt;Company comander&lt;/t&gt; запланує місію</Russian>
 			</Key>
 			<Key ID="INFO_WAIT_02">
 				<Original>Mission has been requested. &lt;t color='#FFD700'&gt;Briefing updated&lt;/t&gt;!</Original>

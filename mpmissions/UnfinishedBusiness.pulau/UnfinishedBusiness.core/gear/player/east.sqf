@@ -69,6 +69,7 @@ player setSpeaker "NoVoice";
 
 sleep 1;
 
+/*
 comment "Give player a radio depending on radio mod loaded";
 if (D_MOD_ACRE) then {
 	player unassignItem "ItemRadio";
@@ -81,4 +82,10 @@ if (D_MOD_ACRE) then {
 		comment "Fallback to native arma3 radio";
 		player linkItem "ItemRadio";
 	};
+};*/
+
+if (primaryWeapon player != "") then {
+ player addPrimaryWeaponItem "CUP_optic_Kobra";
 };
+
+

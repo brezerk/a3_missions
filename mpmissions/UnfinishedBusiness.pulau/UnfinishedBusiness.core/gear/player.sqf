@@ -85,10 +85,12 @@ if ((random 100) <= _chance_lost_radio) then {
 		} forEach (items player);
 	} else {
 		if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
-			if (_x find "tf_" >= 0 ) then {
-				player unassignItem _x;
-				player removeItem _x;
-			};
+			{
+				if (_x find "tf_" >= 0 ) then {
+					player unassignItem _x;
+					player removeItem _x;
+				};
+			} forEach (assignedItems player);
 		} else {
 			comment "Fallback to native arma3 radio";
 			player unassignItem "ItemRadio";

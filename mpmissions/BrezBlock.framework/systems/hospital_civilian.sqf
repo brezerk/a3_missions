@@ -123,7 +123,7 @@ if (isServer) then {
 				_obj addItemCargoGlobal ["ACE_elasticBandage", 15];
 				_obj addItemCargoGlobal ["ACE_quikclot", 15];
 				//make location a hospital
-				_builing setVariable ["ace_medical_medicClass", 1, true];
+				_builing setVariable ["ace_medical_isMedicalFacility", true, true];
 			} else {
 				_obj addItemCargoGlobal ["Medikit", 2];
 				_obj addItemCargoGlobal ["FirstAidKit", 20];
