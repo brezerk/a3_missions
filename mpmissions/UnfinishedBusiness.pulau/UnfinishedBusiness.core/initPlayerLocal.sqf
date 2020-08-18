@@ -27,6 +27,7 @@ east_order_seen = false;
 indep_order_seen = false;
 civ_order_seen = false;
 
+
 #include "..\config\fractions.sqf";
 
 Fn_Local_WaitPublicVariables = {
@@ -53,7 +54,7 @@ cutText ["", "BLACK"];
 
 waitUntil { sleep 1; [["mission_requested", "mission_generated", "mission_plane_send", "us_liberty_01", "mission_plane_send_time", "mission_plane_down_time", "mission_plane_pass_count", "obj_specops_target"]] call Fn_Local_WaitPublicVariables; };
 
-if ((!mission_requested) || (!mission_generated)) then {
+if ((!mission_requested) && (!mission_generated)) then {
 	["UnfinishedBusiness.core\ui\settingsDialog.sqf"] call BrezBlock_fnc_WaitForStart;
 };
 
