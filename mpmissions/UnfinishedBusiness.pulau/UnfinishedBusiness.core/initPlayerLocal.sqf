@@ -34,7 +34,7 @@ Fn_Local_WaitPublicVariables = {
 	params ['_vars'];
 	private _done = true;
 	{
-		if ( isNil _x) then { _done = false; };
+		if (isNil _x) then { _done = false; };
 	} forEach _vars;
 	_done;
 };
@@ -59,8 +59,6 @@ if ((!mission_requested) || (!mission_generated)) then {
 };
 
 waitUntil { sleep 1; [["D_LOCATION", "D_FRACTION_WEST", "D_FRACTION_EAST", "D_FRACTION_CIV", "D_FRACTION_INDEP", "D_NAVTOOL_MAP", "D_NAVTOOL_COMPASS"]] call Fn_Local_WaitPublicVariables; }; 
-
-waitUntill { mission_generated; };
 
 Fn_Local_Init_Spawn = {
 
