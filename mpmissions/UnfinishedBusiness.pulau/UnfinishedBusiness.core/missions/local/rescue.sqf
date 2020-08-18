@@ -35,6 +35,7 @@ if (hasInterface) then {
 			if ((side player) != west) exitWith {};
 			if (player getVariable ["is_specops_group", false]) exitWith {};
 		};
+		if ((side player) != west) exitWith {};
 
 
 				[

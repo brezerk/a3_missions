@@ -29,6 +29,7 @@ if (hasInterface) then {
 		} else {
 			if ((side player) != west) exitWith {};
 		};
+		if ((side player) == east) exitWith {};
 		[
 			player,
 			"t_west_collect_intel",

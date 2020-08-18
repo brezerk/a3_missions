@@ -40,7 +40,7 @@ if (hasInterface) then {
 			if ((side player) != west) exitWith {};
 		};
 		if (player getVariable ["is_civilian", false]) exitWith {};
-
+		if ((side player) == east) exitWith {};
 		[
 			player,
 			"t_west_destroy_aa",

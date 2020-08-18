@@ -22,7 +22,7 @@ if (hasInterface) then {
 	trgWestCrashSite = objNull;
 
 	Fn_Local_Create_Mission_CrashSite = {
-		if ((!alive us_airplane_01) || (!canMove us_airplane_01)) then {
+		//if ((!alive us_airplane_01) || (!canMove us_airplane_01)) then {
 			private _markerPos = getMarkerPos "mrk_west_crashsite";
 			private _side = (side player);
 			if ((_side == west) && (player getVariable ["is_civilian", false])) then { _side = civilian; };
@@ -55,7 +55,7 @@ if (hasInterface) then {
 					""
 				];
 			};
-		};
+		//};
 	};
 	
 	Fn_Local_CrashSite_Complete = {

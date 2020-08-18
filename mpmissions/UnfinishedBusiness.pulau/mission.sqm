@@ -21,9 +21,9 @@ class EditorData
 	class Camera
 	{
 		pos[]={2167.5366,11.359562,8615.5928};
-		dir[]={-0.41969523,-0.19813788,0.88588542};
-		up[]={-0.084882699,0.98015034,0.17917225};
-		aside[]={0.90380472,-2.0830194e-006,0.42818332};
+		dir[]={-0.14006121,-0.090087414,0.98613685};
+		up[]={-0.012685874,0.99592191,0.089328252};
+		aside[]={0.99016511,-2.2460881e-006,0.14063253};
 	};
 };
 binarizationWanted=0;
@@ -12706,11 +12706,11 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2157.5977,12.27599,8601.1045};
+						position[]={853.82849,1568.7185,12266.121};
 						angles[]={0,2.9687002,0};
 					};
 					side="West";
-					flags=7;
+					flags=3;
 					class Attributes
 					{
 						description="Team Leader@Assault group 2";
@@ -12718,7 +12718,7 @@ class Mission
 					};
 					id=12867;
 					type="B_Survivor_F";
-					atlOffset=-9.5367432e-007;
+					atlOffset=1590.15;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -13072,7 +13072,7 @@ class Mission
 				name="us_group_02";
 			};
 			id=12866;
-			atlOffset=-9.5367432e-007;
+			atlOffset=1590.15;
 		};
 		class Item981
 		{

@@ -253,6 +253,7 @@ if (isServer) then {
 		};
 	};
 
+	test_me = false;
 	Fn_MissionIntro_Evaluate = {
 		private _all_on_board = true;
 		private _players = 0;
@@ -271,6 +272,7 @@ if (isServer) then {
 		};
 		
 		_all_on_board;
+		test_me;
 	}; // Fn_MissionIntro_Evaluate
 	
 	Fn_MissionIntro_SendAirplane = {

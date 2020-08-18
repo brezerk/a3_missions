@@ -27,6 +27,7 @@ if (hasInterface) then {
 	
 	Fn_Local_Create_Mission_Destroy_Commtower = {
 		if ((side player) != west) exitWith {};
+
 		if (player getVariable ["is_civilian", false]) exitWith {};
 		[
 			player,
