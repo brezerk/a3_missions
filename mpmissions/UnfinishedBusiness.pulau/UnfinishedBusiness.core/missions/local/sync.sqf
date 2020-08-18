@@ -23,6 +23,8 @@ Sync client state
 //Check mainline mission state
 if (mission_requested) then {
 	//Check if airplane was already send
+	call Fn_Local_Create_MissionIntro;
+	/*
 	if (mission_plane_send) then {
 		private _us_airplane_01_alive = false;
 		if (!isNil "us_airplane_01") then {
@@ -45,6 +47,6 @@ if (mission_requested) then {
 		};
 	} else {
 		//Mission requested, but plane was not send yet. Create regular task;
-		call Fn_Local_Create_MissionIntro;
-	};
+		
+	};*/
 };

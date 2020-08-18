@@ -34,29 +34,35 @@ if (hasInterface) then {
 	];
 	
 	Fn_Local_Create_MissionAA = {
-		if (playerSide == west) then {
-			[
-				player,
-				"t_west_destroy_aa",
-				[localize "TASK_06_DESC",
-				localize "TASK_06_TITLE",
-				localize "TASK_ORIG_01"],
-				getMarkerPos "mrk_aa",
-				"CREATED",
-				0,
-				true
-			] call BIS_fnc_taskCreate;
-			['t_west_destroy_aa', "destroy"] call BIS_fnc_taskSetType;
+		if (side player == civilian) then {
+			if (!(player getVariable ["is_assault_group", false])) exitWith {};
+		} else {
+			if ((side player) != west) exitWith {};
 		};
+		if (player getVariable ["is_civilian", false]) exitWith {};
+
+		[
+			player,
+			"t_west_destroy_aa",
+			[localize "TASK_06_DESC",
+			localize "TASK_06_TITLE",
+			localize "TASK_ORIG_01"],
+			getMarkerPos "mrk_aa",
+			"CREATED",
+			0,
+			true
+		] call BIS_fnc_taskCreate;
+		['t_west_destroy_aa', "destroy"] call BIS_fnc_taskSetType;
 	};
 	
 	Fn_Local_Task_AA_Complete = {
-		switch (playerSide) do {
+		switch (side player) do {
 			case west: {
+				if (player getVariable ["is_civilian", false]) exitWith {};
 				['t_west_destroy_aa', 'Succeeded', localize "TASK_06_TITLE"] call Fn_Local_SetPersonalTaskState;
 			};
 			case east: {
-				['t_east_defend_aa', 'Failed', localize "TASK_06_TITLE"] call Fn_Local_SetPersonalTaskState;
+				['t_east_defend_aa', 'Failed', localize "TASK_AOC_01_TITLE"] call Fn_Local_SetPersonalTaskState;
 			};
 		};
 	};

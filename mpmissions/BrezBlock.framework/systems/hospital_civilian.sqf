@@ -92,38 +92,61 @@ if (isServer) then {
 	};
 	
 	private _builing = nearestBuilding (_center);
-	private _pos = selectRandom (_builing buildingPos -1);
-	if (!isNil "_pos") then {
-		private _class = "";
-		if (D_MOD_ACE_MEDICAL) then {
-			_class = "ACE_medicalSupplyCrate"
-		} else {
-			_class = selectRandom ['Land_PlasticCase_01_small_idap_F', 'Land_PlasticCase_01_large_idap_F', 'Land_PlasticCase_01_medium_idap_F'];
-		};
-		private _obj = _class createVehicle [0,0,0];
-		_obj setPos _pos;
-		clearWeaponCargoGlobal _obj;
-		clearMagazineCargoGlobal _obj;
-		clearItemCargoGlobal _obj;
-		clearBackpackCargoGlobal _obj;
+	if (!isNil "_builing") then {
+		private _pos = selectRandom (_builing buildingPos -1);
+		if (!isNil "_pos") then {
+			private _class = "";
+			if (D_MOD_ACE_MEDICAL) then {
+				_class = "ACE_medicalSupplyCrate"
+			} else {
+				_class = selectRandom ['Land_PlasticCase_01_small_idap_F', 'Land_PlasticCase_01_large_idap_F', 'Land_PlasticCase_01_medium_idap_F'];
+			};
+			private _obj = _class createVehicle [0,0,0];
+			_obj setPos _pos;
+			clearWeaponCargoGlobal _obj;
+			clearMagazineCargoGlobal _obj;
+			clearItemCargoGlobal _obj;
+			clearBackpackCargoGlobal _obj;
 
-		if (D_MOD_ACE_MEDICAL) then {
-			_obj addItemCargoGlobal ["ACE_fieldDressing", 20];
-			_obj addItemCargoGlobal ["ACE_bloodIV", 8];
-			_obj addItemCargoGlobal ["ACE_morphine", 8];
-			_obj addItemCargoGlobal ["ACE_bodyBag", 10];
-			_obj addItemCargoGlobal ["ACE_epinephrine", 2];
-			_obj addItemCargoGlobal ["ACE_adenosine", 10];
-			_obj addItemCargoGlobal ["ACE_personalAidKit", 3];
-			_obj addItemCargoGlobal ["ACE_splint", 15];
-			_obj addItemCargoGlobal ["ACE_tourniquet", 10];
-			_obj addItemCargoGlobal ["ACE_surgicalKit", 1];
-			_obj addItemCargoGlobal ["ACE_packingBandage", 15];
-			_obj addItemCargoGlobal ["ACE_elasticBandage", 15];
-			_obj addItemCargoGlobal ["ACE_quikclot", 15];
+			if (D_MOD_ACE_MEDICAL) then {
+				_obj addItemCargoGlobal ["ACE_fieldDressing", 20];
+				_obj addItemCargoGlobal ["ACE_bloodIV", 8];
+				_obj addItemCargoGlobal ["ACE_morphine", 8];
+				_obj addItemCargoGlobal ["ACE_bodyBag", 10];
+				_obj addItemCargoGlobal ["ACE_epinephrine", 2];
+				_obj addItemCargoGlobal ["ACE_adenosine", 10];
+				_obj addItemCargoGlobal ["ACE_personalAidKit", 3];
+				_obj addItemCargoGlobal ["ACE_splint", 15];
+				_obj addItemCargoGlobal ["ACE_tourniquet", 10];
+				_obj addItemCargoGlobal ["ACE_surgicalKit", 1];
+				_obj addItemCargoGlobal ["ACE_packingBandage", 15];
+				_obj addItemCargoGlobal ["ACE_elasticBandage", 15];
+				_obj addItemCargoGlobal ["ACE_quikclot", 15];
+				//make location a hospital
+				_builing setVariable ["ace_medical_medicClass", 1, true];
+			} else {
+				_obj addItemCargoGlobal ["Medikit", 2];
+				_obj addItemCargoGlobal ["FirstAidKit", 20];
+			};
+			
+			//clear marker
+			_pos = getPos _builing;
+			private _marker = createMarker [(format ["civ_hospital_%1", _pos]), _pos];
+			_marker setMarkerType "loc_Hospital";
+			
+			//create a flag
+			_obj = createVehicle ["Flag_RedCrystal_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
+			_obj allowDamage false;
+			_obj enableSimulation false;
+			_pos = _builing modelToWorldWorld [0, -8.5, 0];
+			_obj setPosASL [_pos # 0, _pos # 1, 0];
+			_obj setVectorUp surfaceNormal position _obj;
+			_obj enableSimulation true;
+			
 		} else {
-			_obj addItemCargoGlobal ["Medikit", 2];
-			_obj addItemCargoGlobal ["FirstAidKit", 20];
+			diag_log format ["[EE]: Was not able to find proper position at house: %1", _builing];
 		};
-	};	
+	} else {
+		diag_log format ["[EE]: Was not able to find proper house at: %1", _center];
+	};
 };

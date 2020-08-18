@@ -24,25 +24,29 @@ Spawn start objectives, triggers for informator contact
 // Client side code
 if (hasInterface) then {
 	Fn_Local_West_Create_Mission_CollectIntel = {
-		if (playerSide == west) then {
-			[
-				player,
-				"t_west_collect_intel",
-				[localize "TASK_08_DESC",
-				localize "TASK_08_TITLE",
-				localize "TASK_ORIG_01"],
-				objNull,
-				"CREATED",
-				0,
-				true
-			] call BIS_fnc_taskCreate;
-			['t_west_collect_intel', "documents"] call BIS_fnc_taskSetType;
+		if (side player == civilian) then {
+			if (!(player getVariable ["is_assault_group", false])) exitWith {};
+		} else {
+			if ((side player) != west) exitWith {};
 		};
+		[
+			player,
+			"t_west_collect_intel",
+			[localize "TASK_08_DESC",
+			localize "TASK_08_TITLE",
+			localize "TASK_ORIG_01"],
+			objNull,
+			"CREATED",
+			0,
+			true
+		] call BIS_fnc_taskCreate;
+		['t_west_collect_intel', "documents"] call BIS_fnc_taskSetType;
+
 	};
 	
 	Fn_Local_West_Task_CollectIntel_Complete = {
 		params ['_side'];
-		switch (playerSide) do {
+		switch (side player) do {
 			case west: {
 				PUB_fnc_intelFound = [player, _this select 0, _side];
 				publicVariableServer "PUB_fnc_intelFound";

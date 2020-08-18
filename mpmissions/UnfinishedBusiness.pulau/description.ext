@@ -170,6 +170,20 @@ class CfgDebriefing
 	};
 };
 
+class CfgCommunicationMenu
+{
+	class SupplyRequest
+	{
+		text = "Supply Request";		// Text displayed in the menu and in a notification
+		submenu = "";					// Submenu opened upon activation (expression is ignored when submenu is not empty.)
+		expression = "systemChat 'Wooooo'";	// Code executed upon activation
+		icon = "\a3\Ui_f\data\GUI\Cfg\CommunicationMenu\supplydrop_ca.paa";				// Icon displayed permanently next to the command menu
+		cursor = "\a3\Ui_f\data\IGUI\Cfg\Cursors\iconCursorSupport_ca.paa";				// Custom cursor displayed when the item is selected
+		enable = "1";					// Simple expression condition for enabling the item
+		removeAfterExpressionCall = 1;	// 1 to remove the item after calling
+	};
+};
+
 class CfgFunctions {
 	#include "addons\LARs\spawnComp\functions\functions.cpp"
 	#include "addons\BrezBlock.framework\functions.cpp"
@@ -183,4 +197,5 @@ class CfgFunctions {
 #include "UnfinishedBusiness.core\ui\settingsDialog.hpp"
 #include "UnfinishedBusiness.core\ui\orderDialog.hpp"
 #include "UnfinishedBusiness.core\ui\MissionLogo.hpp"
+#include "UnfinishedBusiness.core\ui\idDialog.hpp"
 #include "UnfinishedBusiness.core\compositions\compositions.cfg"

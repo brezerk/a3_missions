@@ -46,7 +46,7 @@ if (isServer) then {
 						case (_marker_type == "loc_Hospital"): {
 							if (markerAlpha _x == 0) then {
 								[_x] call BrezBlock_fnc_CreateCivilianHospital;
-								_x setMarkerAlpha 1;
+								deleteMarkerLocal _x;
 							};
 						};
 						case (_marker_type in ["o_mech_inf", "n_mech_inf", "o_motor_inf", "n_motor_inf", "o_armor", "n_armor"]): {

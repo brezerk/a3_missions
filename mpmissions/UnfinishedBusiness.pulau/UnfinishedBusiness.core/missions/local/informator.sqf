@@ -84,7 +84,7 @@ if (hasInterface) then {
 	
 	Fn_Local_Informator_Complete = {
 		params['_target'];
-		if (playerSide == west) then {
+		if ((side player) == west) then {
 			private _pos = getPos _target;
 			if (((_pos distance2D (getMarkerPos "mrk_city_0")) <= 200) || ((_pos distance2D (getMarkerPos "mrk_city_1")) <= 200)) then {
 				private _task = ["t_find_informator", player] call BIS_fnc_taskReal;

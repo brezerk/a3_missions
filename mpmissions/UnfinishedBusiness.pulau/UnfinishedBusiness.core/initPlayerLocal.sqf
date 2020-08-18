@@ -26,8 +26,6 @@ west_order_seen = false;
 east_order_seen = false;
 indep_order_seen = false;
 civ_order_seen = false;
-side_switched = false;
-
 
 #include "..\config\fractions.sqf";
 
@@ -61,37 +59,53 @@ if ((!mission_requested) || (!mission_generated)) then {
 
 waitUntil { sleep 1; [["D_LOCATION", "D_FRACTION_WEST", "D_FRACTION_EAST", "D_FRACTION_CIV", "D_FRACTION_INDEP", "D_NAVTOOL_MAP", "D_NAVTOOL_COMPASS"]] call Fn_Local_WaitPublicVariables; }; 
 
-switch (playerSide) do {
-	case east: {
-		[] execVM "UnfinishedBusiness.core\gear\player\east.sqf";
-		private _pos = [(getMarkerPos "respawn_east"), 5, 20, 3, 0, 0, 0] call BIS_fnc_findSafePos;
-		player setPos _pos;
+Fn_Local_Init_Spawn = {
+
+	if ((side player) == west) then {
+		if (player getVariable ["is_civilian", false]) then {
+			player setVariable ["weapon_fiered", false, true];
+			[civilian] call Fn_Local_Switch_Side;
+		};
 	};
-	case civilian: {
-		player setVariable ["is_civilian", true, true];
-		player setVariable ["weapon_fiered", false, false];
-		[] execVM "UnfinishedBusiness.core\gear\player\civ.sqf";
-		private _pos = [(getMarkerPos "respawn_civ"), 5, 20, 3, 0, 0, 0] call BIS_fnc_findSafePos;
-		player setPos _pos;
-	};
-	case west: {
-		private _role = (roleDescription player);
-		execVM "UnfinishedBusiness.core\gear\player\init.sqf";
-		if (((_role find "SpecOps ") >= 0) && (!mission_plane_send)) then {
-			private _pos = getMarkerPos "mrk_west_specops";
-			"mrk_west_specops" setMarkerAlphaLocal 1;
-			"mrk_west_specops" setMarkerTextLocal (localize "INFO_SUBLOC_11");
-			player setPosASL [((_pos select 0) + (round(random 5) - 5)), ((_pos select 1) - 6 + (round(random 5) - 5)), 3];
-		} else {
-			"mrk_west_base_01" setMarkerAlphaLocal 1;
-			player setPosASL (us_liberty_01 modelToWorldWorld [(round(random 5) - 5), (35 + (round(random 5) - 4)), 8.98]);
+
+	switch ((side player)) do {
+		case east: {
+			[] execVM "UnfinishedBusiness.core\gear\player\east.sqf";
+			private _pos = [(getMarkerPos "respawn_east"), 5, 20, 3, 0, 0, 0] call BIS_fnc_findSafePos;
+			player setPos _pos;
+		};
+		case civilian: {
+			player setVariable ["is_civilian", true, true];
+			player setVariable ["weapon_fiered", false, false];
+			[] execVM "UnfinishedBusiness.core\gear\player\civ.sqf";
+			private _pos = [(getMarkerPos "respawn_civ"), 5, 20, 3, 0, 0, 0] call BIS_fnc_findSafePos;
+			player setPos _pos;
+		};
+		case west: {
+			private _role = (roleDescription player);
+			execVM "UnfinishedBusiness.core\gear\player\init.sqf";
+			if (((_role find "SpecOps ") >= 0) && (!mission_plane_send)) then {
+				private _pos = getMarkerPos "mrk_west_specops";
+				"mrk_west_specops" setMarkerAlphaLocal 1;
+				"mrk_west_specops" setMarkerTextLocal (localize "INFO_SUBLOC_11");
+				player setPosATL [((_pos select 0) + (round(random 5) - 5)), ((_pos select 1) + (round(random 5) - 5)), 0];
+			} else {
+				"mrk_west_base_01" setMarkerAlphaLocal 1;
+				player setPosASL (us_liberty_01 modelToWorldWorld [(round(random 5) - 5), (35 + (round(random 5) - 4)), 8.98]);
+			};
+			
+			//0 = [player, "SupplyRequest"] call BIS_fnc_addCommMenuItem;
 		};
 	};
 };
 
+
+
 player setVariable ["weapon_fiered", false, false];
 player setVariable ["is_civilian", false, true];
 player setVariable ["BB_CorpseTTL", -1, true];
+
+call Fn_Local_Init_Spawn;
 
 {
 	private _pos = getMarkerPos _x;
@@ -119,7 +133,6 @@ cutText [localize "INFO_WAIT_02", "PLAIN DOWN", 2, true, true];
 
 [] execVM "UnfinishedBusiness.core\briefing.sqf";
 
-[] execVM "UnfinishedBusiness.core\ui\orderDialog.sqf";
 
 #include "missions\local\intro.sqf";
 #include "missions\local\fast_travel.sqf";
@@ -128,6 +141,7 @@ cutText [localize "INFO_WAIT_02", "PLAIN DOWN", 2, true, true];
 #include "missions\local\west\aa.sqf";
 #include "missions\local\west\commtower.sqf";
 #include "missions\local\west\intel.sqf";
+#include "missions\local\west\intro.sqf";
 #include "missions\local\leader.sqf";
 #include "missions\local\east.sqf";
 #include "missions\local\west.sqf";
@@ -139,6 +153,10 @@ cutText [localize "INFO_WAIT_02", "PLAIN DOWN", 2, true, true];
 #include "missions\local\recruit.sqf";
 #include "missions\local\independent\objectives.sqf";
 #include "missions\local\civilian\confiscate.sqf";
+#include "missions\local\civilian\intro.sqf";
+
+/*
+*/
 
 {
 	private _mark = createMarkerLocal [(format ['mrk_em_%1', _forEachIndex]), (getMarkerPos _x)];
@@ -163,6 +181,24 @@ if (D_MOD_ACE_MEDICAL) then {
 if (D_MOD_ACE) then {
 	[1, objNull] call ace_spectator_fnc_setCameraAttributes;
 	[[west], [east,civilian]] call ace_spectator_fnc_updateSides;
+	
+	//Document check
+	_action = [
+		"bb_document_check",
+		localize "STR_ACTION_DOC_CHECK",
+		"",
+		{
+			params ["_target", "_player", "_params"];
+			[(side _target)] execVM "UnfinishedBusiness.core\ui\idDialog.sqf";
+		},
+		{true},
+		{},
+		[],
+		"",
+		5,
+		[false, false, false, false, false]] call ace_interact_menu_fnc_createAction;
+	
+	["CAManBase", 0, ["ACE_MainActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
 };
  
 Fn_Local_SetPersonalTaskState = {
@@ -179,44 +215,23 @@ Fn_Local_FailTasks = {
 	{
 		_task = [_x, player] call BIS_fnc_taskReal;
 		if (!isNull _task) then {
-			if (taskState _task != "Succeeded") then {
-				[_x, "FAILED", false] call BIS_fnc_taskSetState;
-			};
-		};
-	} forEach ['t_crash_site', 't_regroup', 't_find_informator'];
-	{
-		_task = [_x, player] call BIS_fnc_taskReal;
-		if (!isNull _task) then {
-			if (!(taskState _task in ["Succeeded", "Failed"])) then {
+			if (!(([_x] call BIS_fnc_taskState) in ["FAILED", "SUCCEEDED"])) then {
 				[_x, "CANCELED", false] call BIS_fnc_taskSetState;
+				[_x, player] call BIS_fnc_deleteTask;
 			};
 		};
 	} forEach [
+		't_WEST_crash_site',
+		't_WEST_01_crash_site',
+		't_regroup',
 		't_west_rescue',
-		't_east_defend_aa',
-		't_east_defend_commtower',
-		't_east_eliminate_survivals',
-		't_west_destroy_aa',
-		't_west_destroy_comtower',
-		't_west_kill_leader',
-		't_civ_boat',
-		//'t_civ_police',
-		't_civ_weapon_stash',
-		't_civ_weapon_stash',
-		't_civ_libirate_0',
-		't_civ_libirate_1',
-		't_west_rescue_crash',
-		't_west_rescue_city_0',
-		't_west_rescue_city_1',
-		't_east_crash',
-		't_east_city_0',
-		't_east_city_1',
 		't_west_destroy_windmill',
 		't_west_destroy_fuel',
 		't_west_kill_doctor',
 		't_west_destroy_ammo',
-		't_west_collect_intel',
-		't_west_extract'
+		't_west_extract',
+		't_find_informator',
+		't_arrive_to_island'
 	];
 };
 
@@ -251,69 +266,60 @@ player addEventHandler
 	{
 		private _respawnDelay = D_RESPAWN_DELAY;
 		setPlayerRespawnTime (_respawnDelay - (servertime % _respawnDelay));
-		if (mission_plane_send) then {
-			deleteVehicle trgCivPlayerDetected;
-			deleteVehicle trgCivFloodedShip;
-			deleteVehicle trgCivStash01;
-			deleteVehicle trgCivStash02;
-			deleteVehicle trgCivPlayerDetected;
-			deleteVehicle trgCivLiberate00;
-			deleteVehicle trgCivLiberate01;
-			deleteVehicle trgWestCrashSite;
-			
-			[player] call Fn_Local_Dismiss_Group;
-			
-			private _side = objNull;
-			
-			if (!side_switched) then {
-				private _sides = [civilian, east, west];
-				
-				if (!(alive obj_east_comtower)) then {
-					_sides = _sides - [east];
-				} else {
-					private _all_count = {alive _x} count (playableUnits + switchableUnits);
-					private _east_count = {side _x == east && alive _x} count (playableUnits + switchableUnits);
-					//systemChat format ["%1 of % 1 are east", _east_count, _all_count];
-					if (_east_count >= (floor(_all_count / 4))) then {
-						//systemChat "Removing east";
-						_sides = _sides - [east];
-					};
-				};
-				
-				
-				if (count (nearestObjects [us_liberty_01, ["Ship", "Helicopter"], 100]) <= 0) then {
-					_sides = _sides - [west];
-				};
-
-				if (count _sides > 2) then {
-					_sides = _sides - [playerSide];
-				};
-				
-				_side = selectRandom _sides;
-				side_switched = true;
+		
+		if ((side player) == west) then {
+			if (player getVariable ["is_civilian", false]) then {
+				player setVariable ["weapon_fiered", false, true];
+				[civilian] call Fn_Local_Switch_Side;
+				if (D_MOD_ACE) then { [[civilian], [east,west]] call ace_spectator_fnc_updateSides; };
 			} else {
-				_side = playerSide;
-			};
-
-			switch (_side) do {
-				case east:
-				{
-					//systemChat "switched";
-					[east] call Fn_Local_Switch_Side;
-					if (D_MOD_ACE) then { [[east], [west,civilian]] call ace_spectator_fnc_updateSides; };
-				};
-				case civilian:
-				{
-					//systemChat "switched";
-					[civilian] call Fn_Local_Switch_Side;
-					if (D_MOD_ACE) then { [[civilian], [east,west]] call ace_spectator_fnc_updateSides; };
+				if ((player getVariable ["is_assault_group", false]) || (player getVariable ["is_specops_group", false])) then {
+				
 					
-				};
-				case west:
-				{
-					//systemChat "switched";
-					[west] call Fn_Local_Switch_Side;
-					if (D_MOD_ACE) then { [[west], [east,civilian]] call ace_spectator_fnc_updateSides; };
+					
+					private _side = objNull;
+					
+					private _sides = [civilian, east, west];
+						
+					if (!(alive obj_east_comtower)) then {
+						_sides = _sides - [east];
+					} else {
+						private _all_count = {alive _x} count (playableUnits + switchableUnits);
+						private _east_count = {side _x == east && alive _x} count (playableUnits + switchableUnits);
+						//systemChat format ["%1 of % 1 are east", _east_count, _all_count];
+						if (_east_count >= (floor(_all_count / 4))) then {
+							//systemChat "Removing east";
+							_sides = _sides - [east];
+						};
+					};
+
+					if (count _sides > 2) then {
+						_sides = _sides - [(side player)];
+					};
+						
+					_side = selectRandom _sides;
+
+					switch (_side) do {
+						case east:
+						{
+							//systemChat "switched";
+							[east] call Fn_Local_Switch_Side;
+							if (D_MOD_ACE) then { [[east], [west,civilian]] call ace_spectator_fnc_updateSides; };
+						};
+						case civilian:
+						{
+							//systemChat "switched";
+							[civilian] call Fn_Local_Switch_Side;
+							if (D_MOD_ACE) then { [[civilian], [east,west]] call ace_spectator_fnc_updateSides; };
+							
+						};
+						case west:
+						{
+							//systemChat "switched";
+							[west] call Fn_Local_Switch_Side;
+							if (D_MOD_ACE) then { [[west], [east,civilian]] call ace_spectator_fnc_updateSides; };
+						};
+					};
 				};
 			};
 		};
@@ -325,18 +331,36 @@ player addEventHandler
    "Respawn",
    {
 		if (mission_plane_send) then {
-			call Fn_Local_FailTasks;
-			player setVariable ["is_assault_group", false, true];
-			player setVariable ["is_specops_group", false, true];
-			player setVariable ["is_civilian", false, true];
-			switch (playerSide) do
+			if (player getVariable ["is_assault_group", false]) then {
+				player setVariable ["is_assault_group", false, true];
+				call Fn_Local_FailTasks;
+				call Fn_Local_Create_Mission_CrashSite;
+			};
+			if (player getVariable ["is_specops_group", false]) then {
+				player setVariable ["is_specops_group", false, true];
+				call Fn_Local_FailTasks;
+				call Fn_Local_Create_Mission_CrashSite;
+			};
+			
+			if ((side player) == west) then {
+				if (player getVariable ["is_civilian", false]) then {
+					player setVariable ["weapon_fiered", false, true];
+					[civilian] call Fn_Local_Switch_Side;
+				};
+			};
+			
+			switch ((side player)) do
 			{
 				case east:
 				{
-					player setVariable ["is_civilian", false, true];
+					"mrk_west_base_01" setMarkerAlphaLocal 0;
+					"mrk_west_specops" setMarkerAlphaLocal 0;
+					"mrk_west_safezone_01" setMarkerAlphaLocal 0;
+					"mrk_east_stash_01" setMarkerAlphaLocal 0;
+					"mrk_east_stash_02" setMarkerAlphaLocal 0;
 					[] execVM "UnfinishedBusiness.core\gear\player\east.sqf";
 					player setPos getMarkerPos "respawn_east";
-					call Fn_Local_Create_SCAT_MissionIntro;
+					call Fn_Local_Create_EAST_MissionIntro;
 				};
 				case civilian:
 				{
@@ -345,9 +369,8 @@ player addEventHandler
 					"mrk_west_base_01" setMarkerAlphaLocal 0;
 					"mrk_west_specops" setMarkerAlphaLocal 0;
 					"mrk_west_safezone_01" setMarkerAlphaLocal 0;
-					"mrk_west_safezone_01" setMarkerAlphaLocal 0;
-					"mrk_west_safezone_01" setMarkerAlphaLocal 0;
-				
+					"mrk_east_stash_01" setMarkerAlphaLocal 0;
+					"mrk_east_stash_02" setMarkerAlphaLocal 0;
 					player setVariable ["is_civilian", true, true];
 					player setVariable ["weapon_fiered", false, false];
 					[] execVM "UnfinishedBusiness.core\gear\player\civ.sqf";
@@ -370,15 +393,13 @@ player addEventHandler
 				};
 				case west:
 				{
-					player setVariable ["is_civilian", false, true];
 					[] execVM "UnfinishedBusiness.core\gear\player\init.sqf";
 					player setPosASL (us_liberty_01 modelToWorldWorld [(round(random 5) - 5), (35 + (round(random 5) - 4)),8.98]);
 					call Fn_Local_Create_RescueMission;
 				};
 			};
 		} else {
-			[] execVM "UnfinishedBusiness.core\gear\player\init.sqf";
-			player setPosASL (us_liberty_01 modelToWorldWorld [(round(random 5) - 5), (35 + (round(random 5) - 4)),8.98]); 
+			call Fn_Local_Init_Spawn;
 		};
 		player setVariable ["BB_CorpseTTL", -1, true];
    }
@@ -388,10 +409,10 @@ player addEventHandler [
 	"GetInMan", 
 	{
 		params ["_unit", "_role", "_vehicle", "_turret"];
-		if (playerSide == civilian) then {
+		if ((side player) == civilian) then {
 			private _v_side = side _vehicle;
 			if ((_v_side == east) or (_v_side == independent)) then {
-				player setVariable ["is_civilian", false, true];
+				//player setVariable ["is_civilian", false, true];
 				hint (parseText (format ["<t size='2.0'>%1</t>", localize "INFO_CIV_WARNING_03"]));
 				[west] call Fn_Local_Switch_Side;
 				doGetOut player;
@@ -404,10 +425,10 @@ player addEventHandler [
 	"InventoryOpened",
 	{
 		params ["_unit", "_container"];
-		if (playerSide == civilian) then {
+		if ((side player) == civilian) then {
 			private _v_side = side _container;
 			if ((_v_side == east) or (_v_side == independent)) then {
-				player setVariable ["is_civilian", false, true];
+				//player setVariable ["is_civilian", false, true];
 				hint (parseText (format ["<t size='2.0'>%1</t>", localize "INFO_CIV_WARNING_03"]));
 				[west] call Fn_Local_Switch_Side;
 			};
@@ -419,7 +440,7 @@ player addEventHandler
 [
     "Take",
     {
-		if (playerSide == civilian) then {
+		if ((side player) == civilian) then {
 			if (!(player getVariable ["weapon_fiered", false])) then {
 				if (primaryWeapon player != "" || secondaryWeapon player != "" || handgunWeapon player != "") then {
 					[west] call Fn_Local_Switch_Side;
@@ -494,7 +515,7 @@ execVM "UnfinishedBusiness.core\missions\local\sync.sqf";
 
 sleep 5;
 
-switch (playerSide) do {
+switch ((side player)) do {
 	case west: {
 		if (((roleDescription player find "SpecOps ") >= 0) && (!mission_plane_send)) then {
 			[ format [localize 'INFO_LOC_01', D_LOCATION], localize 'INFO_SUBLOC_11', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;

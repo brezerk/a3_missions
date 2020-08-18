@@ -96,8 +96,24 @@ if (D_MOD_ACRE) then {
 		_obj addItemCargoGlobal ["ACRE_PRC343", 10];
 } else {
 	if (D_MOD_TFAR) then {
-		_obj addItemCargoGlobal ["tf_anprc148jem", 4];
-		_obj addItemCargoGlobal ["tf_anprc152", 10];
+		switch (_side) do {
+			case west: {
+				_obj addItemCargoGlobal ["tf_anprc152", 10];
+				_obj addBackpackCargoGlobal ["tf_rt1523g_fabric", 4];
+			};
+			case east: { 
+				_obj addItemCargoGlobal ["tf_fadak", 10];
+				_obj addBackpackCargoGlobal ["tf_mr3000", 4];
+			};
+			case independent: {
+				_obj addItemCargoGlobal ["tf_anprc148jem", 10];
+				_obj addBackpackCargoGlobal ["tf_anprc155", 4];
+			};
+			case civilian: {
+				_obj addItemCargoGlobal ["tf_anprc148jem", 10];
+				_obj addBackpackCargoGlobal ["tf_anprc155", 4];
+			};
+		};
 	} else {
 		_obj addItemCargoGlobal ["ItemRadio", 10];
 	};

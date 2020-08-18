@@ -163,12 +163,14 @@ if (!isNil "_missionLogo") then {
 						_intoFrame = _intoFrame + 1;
 					};
 					case 3: {
-						private _role = roleDescription player;
-						_role = (_role splitString "@") select 0;
-						if ((_role == "Squad Leader") || (D_DEBUG)) then {
-							if (!isNil "_settingDialog") then {
-								[0] execVM _settingDialog;
-							};
+						if (side player == west) then {
+							private _role = roleDescription player;
+							_role = (_role splitString "@") select 0;
+							//if ((_role == "Company comander") || (D_DEBUG)) then {
+								if (!isNil "_settingDialog") then {
+									[0] execVM _settingDialog;
+								};
+							//};
 						};
 						_intoFrame = _intoFrame + 1;
 						if (!D_MOD_ACE) then { systemChat localize "INFO_MOD_NF_ACE"; };

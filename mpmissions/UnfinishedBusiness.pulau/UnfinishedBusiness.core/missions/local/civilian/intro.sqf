@@ -16,18 +16,30 @@
  *                                                                         *
  ***************************************************************************/
 
-/*
-Spawn start objectives, triggers for game intro and players allocation
-*/
-
-//Player side triggers
-// Client side code
-/*
+// Intended to be executed on player side
 if (hasInterface) then {
-	Fn_Local_Create_EAST_MissionIntro = {
-		if (!alive us_airplane_01) then {
-			call Fn_Local_Create_RescueMission;
+
+	Fn_Local_Create_CIV_MissionIntro = {
+		if (side player != civilian) exitWith {};
+		if (player getVariable ["is_assault_group", false]) exitWith {};
+	
+		if (!civ_order_seen) then {
+			civ_order_seen = true;
+			[] execVM "UnfinishedBusiness.core\ui\orderDialog.sqf";
+			"respawn_civ" setMarkerTextLocal (localize "INFO_SUBLOC_12");
+			"respawn_civ" setMarkerAlphaLocal 1;
+			"mrk_west_base_01" setMarkerAlphaLocal 0;
+			"mrk_west_specops" setMarkerAlphaLocal 0;
+			"mrk_west_safezone_01" setMarkerAlphaLocal 0;
+			"mrk_east_stash_01" setMarkerAlphaLocal 0;
+			"mrk_east_stash_02" setMarkerAlphaLocal 0;
 		};
+
+		//player setPos (getMarkerPos "respawn_civ");
+		call Fn_Local_Create_Task_Civilian_FloodedShip;
+		call Fn_Local_Create_Task_Civilian_WaponStash;
+		//call Fn_Local_Create_Task_Civilian_Police;
+		call Fn_Local_Create_Task_Civilian_Liberate_MissionIntro;
+		call Fn_Local_Create_Mission_CrashSite;
 	};
 };
-*/

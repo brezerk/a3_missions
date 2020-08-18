@@ -25,7 +25,9 @@ while {true} do {
 	[west_rack_02] call Fn_Spawn_Boat_At_Rack;
 	[(us_liberty_01 modelToWorldWorld [0,50.6011,8.95]), (getDir us_liberty_01)] call Fn_Spawn_West_LightHeli;
 	
-	[(us_liberty_01 modelToWorldWorld [7,50.6011,8.95]), (getDir us_liberty_01)] call Fn_Spawn_West_LightTransport;
+	[(us_liberty_01 modelToWorldWorld [7,51.6011,9]), (getDir us_liberty_01)] call Fn_Spawn_West_LightTransport;
+	sleep 2;
+	[(us_liberty_01 modelToWorldWorld [7,40.6011,9]), (getDir us_liberty_01)] call Fn_Spawn_West_LightTransport;
 	
 	{
 		if (_x find "mrk_east_transport_" >= 0) then {
@@ -37,6 +39,10 @@ while {true} do {
 		[(getPos _x), (getDir _x)] call Fn_Spawn_Civ_Cars_Transport;
 	} forEach [place_civ_car01, place_civ_car02];	
 	
+	
+	call Fn_Spawn_West_ResqueHeli;
+	call Fn_Spawn_East_Helicopter;
+	call Fn_Spawn_East_Truck_Transport;
 };
 
 

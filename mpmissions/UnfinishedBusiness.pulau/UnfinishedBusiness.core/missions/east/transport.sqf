@@ -28,7 +28,7 @@ if (isServer) then {
 	Fn_Spawn_East_Cars_Transport = {
         params ["_spawnposition", "_spawndir"];
 		private _veh = objNull;
-		if (count (nearestObjects [_spawnposition, ["Car", "Tank", "APC", "Boat", "Drone", "Plane", "Helicopter"], 7]) == 0) then {
+		if (count (nearestObjects [_spawnposition, ["Car", "Tank", "APC", "Boat", "Drone", "Plane", "Helicopter"], 8]) == 0) then {
 			private _class = (selectRandom ([east, D_FRACTION_EAST, "cars"] call Fn_Config_GetFraction_Units));
 			private _pos = _spawnposition; // findEmptyPosition [0, 6, _class];
 			_veh = createVehicle [_class, _pos, [], 0];
@@ -49,6 +49,41 @@ if (isServer) then {
         _vec;
 	};
 	
+	Fn_Spawn_East_Ammo_Transport = {
+		private _marker = "mrk_east_ammo";
+        private _pos = getMarkerPos _marker;
+		private _dir = markerDir _marker;
+        private _veh = objNull;
+        private _class = (selectRandom ([east, D_FRACTION_EAST, "transport_ammo"] call Fn_Config_GetFraction_Units));
+        _veh = createVehicle [_class, _pos, [], 0];
+		_veh setDir _dir;
+        _veh;
+	};
+	
+	Fn_Spawn_East_Fuel_Transport = {
+		private _marker = "mrk_east_fuel";
+        private _pos = getMarkerPos _marker;
+		private _dir = markerDir _marker;
+        private _veh = objNull;
+        private _class = (selectRandom ([east, D_FRACTION_EAST, "transport_fuel"] call Fn_Config_GetFraction_Units));
+        _veh = createVehicle [_class, _pos, [], 0];
+		_veh setDir _dir;
+        _veh;
+	};
+	
+	Fn_Spawn_East_Truck_Transport = {
+		private _marker = "mrk_east_truck";
+        private _pos = getMarkerPos _marker;
+		private _dir = markerDir _marker;
+        private _veh = objNull;
+		if (count (nearestObjects [_pos, ["Car", "Tank", "APC", "Boat", "Drone", "Plane", "Helicopter"], 8]) == 0) then {
+			private _class = (selectRandom ([east, D_FRACTION_EAST, "transport"] call Fn_Config_GetFraction_Units));
+			_veh = createVehicle [_class, _pos, [], 0];
+			_veh setDir _dir;
+		};
+        _veh;
+	};
+	
 	Fn_Spawn_East_Transport = {
 		private _filter = format ["wp_%1_east_transport_spawn", D_LOCATION];
 		{
@@ -65,5 +100,8 @@ if (isServer) then {
 				[(getMarkerPos _x), (markerDir _x)] call Fn_Spawn_East_Light_Transport;
 			};
 		} forEach allMapMarkers;
+		call Fn_Spawn_East_Truck_Transport;
+		call Fn_Spawn_East_Ammo_Transport;
+		call Fn_Spawn_East_Fuel_Transport;
 	};
 };

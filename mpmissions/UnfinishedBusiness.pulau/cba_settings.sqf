@@ -65,8 +65,8 @@ ace_viewdistance_viewDistanceOnFoot = 4;
 
 // ACEX Field Rations
 force acex_field_rations_enabled = true;
-force acex_field_rations_timeWithoutWater = 2;
-force acex_field_rations_timeWithoutFood = 4;
+force acex_field_rations_timeWithoutWater = 6;
+force acex_field_rations_timeWithoutFood = 10;
 
 // ACE Overheating
 ace_overheating_displayTextOnJam = true;
@@ -80,3 +80,7 @@ force ace_overheating_unJamOnreload = true;
 // ACE User Interface
 force ace_ui_allowSelectiveUI = true;
 ace_ui_groupBar = false;
+
+//TFar
+
+

@@ -142,9 +142,10 @@ if (isServer) then {
 		
 	//create tasks assigned to assault_group
 	{
-		remoteExecCall ["Fn_Local_Jet_Player_Land", _x];
 		_x setVariable ["ACE_isUnconscious", false, true];
 	} forEach assault_group;
+	
+	remoteExecCall ["Fn_Local_Jet_Player_Land", [0,-2] select isDedicated];
 		
 	sleep 5;
 		

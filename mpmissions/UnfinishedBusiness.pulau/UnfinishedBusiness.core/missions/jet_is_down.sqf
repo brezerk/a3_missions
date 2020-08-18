@@ -39,9 +39,15 @@ if (isServer) then {
 		us_boat01 setVehicleLock "UNLOCKED";
 		us_boat02 setVehicleLock "UNLOCKED";
 		
+		{
+			_x setVehicleLock "UNLOCKED";
+		} forEach nearestObjects [(getPos us_liberty_01), ["Car", "Tank", "APC", "Boat", "Drone", "Plane", "Helicopter"], 400];
+		
 		private _time = date;
 		mission_plane_down_time = format["%1:%2", _time select 3, _time select 4];
 		publicVariable "mission_plane_down_time";
+		
+		call Fn_Spawn_West_ResqueHeli;
 		
 		[] execVM "UnfinishedBusiness.core\missions\crash_site.sqf";
 		[] execVM "UnfinishedBusiness.core\missions\vehicles.sqf";

@@ -26,7 +26,7 @@ private _now = date;
 
 private _role = (roleDescription player);
 
-switch (playerSide) do {
+switch (side player) do {
 	case east: {
 		_logo = "UnfinishedBusiness.core\data\images\orders\AOC\faction.paa";
 		_group = "UnfinishedBusiness.core\data\images\orders\faction_empty.paa";

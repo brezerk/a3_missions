@@ -62,7 +62,6 @@ if (hasInterface) then {
 	};
 
 	Fn_Local_Create_Task_Civilian_WaponStash = {
-		[] execVM "UnfinishedBusiness.core\ui\orderDialog.sqf";
 		[
 				player,
 				"t_civ_weapon_stash",

@@ -74,6 +74,16 @@ if (isServer) then {
 		_marker setMarkerShape "ellipse";
 		_marker setMarkerColor "ColorEAST";
 		
+		{
+			private _marker = format["wp_%1_%2", D_LOCATION, _x];
+			_center = getMarkerPos _marker;
+			_dir = markerDir _marker;
+			_marker = createMarker [format ["mrk_%1", _x], _center];
+			_marker setMarkerDir _dir;
+			_marker setMarkerType "hd_destroy";
+			_marker setMarkerAlpha 0;
+		} forEach ["east_helicopter", "east_fuel", "east_ammo", "east_truck"];
+		
 		// East base AntiAir
 		_center = getMarkerPos format ["wp_%1_aa", D_LOCATION];
 		_marker = createMarker ["mrk_east_base_02", _center];
@@ -127,6 +137,38 @@ if (isServer) then {
 				_x setMarkerAlpha 0;
 			};
 		} forEach allMapMarkers;
+		
+		/*
+		_markers = [];
+		{
+			if (_x find format["wp_west_specops", D_LOCATION] >= 0) then {
+				_markers pushBack _x;
+			};
+		} forEach allMapMarkers;
+	
+		//Create crash site marker
+		
+		_center = getMarkerPos (selectRandom _markers);
+		_marker = createMarker ["mrk_west_specops", _center];
+		_marker setMarkerType "b_recon";
+		_marker setMarkerAlpha 0;
+		
+		{
+			private _pos = _x select 0;
+			private _marker = createMarker [(format ["mrk_spec_boat0%1", (_forEachIndex + 1)]), _pos];
+			_marker setMarkerType "b_naval";
+			_marker setMarkerAlpha 0;
+			if (_forEachIndex == 1) exitWith {};
+			
+			private _obj = ((selectRandom D_FRACTION_WEST_UNITS_BOATS) createVehicle (_pos));
+			_obj addItemCargoGlobal ["V_RebreatherIA", 6];
+			_obj addItemCargoGlobal ["I_Assault_Diver", 6];
+			_obj addItemCargoGlobal ["G_I_Diving", 6];
+			if (D_MOD_ACE) then {
+				_obj addItemCargoGlobal ["ACE_EarPlugs", 6];
+			};
+		} forEach (selectBestPlaces [_center, 600, "((waterDepth factor [1,1.4])/(1 + waterDepth))", 15, 12]);
+		*/
 		
 		private _houses = nearestObjects [_center, D_PRISONS, 2000];
 		while {count _houses > 0} do {

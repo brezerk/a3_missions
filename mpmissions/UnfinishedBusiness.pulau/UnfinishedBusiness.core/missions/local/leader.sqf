@@ -32,7 +32,7 @@ if (hasInterface) then {
 			"[ format [localize 'INFO_LOC_01', D_LOCATION], localize 'INFO_SUBLOC_07', format [localize 'INFO_DATE_01', daytime call BIS_fnc_timeToString], mapGridPosition player ] spawn BIS_fnc_infoText;",
 			""
 		];
-		if (playerSide == west) then {
+		if ((side player) == west) then {
 			[
 				player,
 				"t_west_kill_leader",

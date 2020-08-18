@@ -33,9 +33,11 @@ if (isServer) then {
 		private _veh = objNull;
 		if (count (getVehicleCargo _rack) == 0) then {
 			_veh = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_BOATS), [0, 0, 0], [], 0, "CAN_COLLIDE"];
+			_veh enableSimulation false;
 			_veh allowDamage false;
 			_rack setVehicleCargo _veh;
 			_veh allowDamage true;
+			_veh enableSimulation true;
 			[_veh] execVM 'addons\BrezBlock.framework\triggers\despawn_transport.sqf';
 		};
 		_veh;
@@ -44,35 +46,64 @@ if (isServer) then {
 	Fn_Spawn_Boat_At = {
 		params['_marker'];
 		private _veh = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_BOATS), [0, 0, 0], [], 0, "CAN_COLLIDE"];
+		_veh enableSimulation false;
 		_veh allowDamage false;
 		_veh setPosASL (markerPos _marker);
 		_veh setDir (markerDir _marker);
 		_veh allowDamage true;
+		_veh enableSimulation true;
 	};
 	
 	Fn_Spawn_West_LightHeli = {
 		params['_pos', '_dir'];
 		private _veh = objNull;
-		if (count (nearestObjects [_pos, ["Car", "Tank", "APC", "Boat", "Drone", "Plane", "Helicopter"], 4]) == 0) then {
+		
+		if (count (nearestObjects [_pos, ["Car", "Tank", "APC", "Boat", "Drone", "Plane", "Helicopter"], 8]) == 0) then {
 			_veh = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_HELI), [0, 0, 0], [], 0, "CAN_COLLIDE"];
+			_veh enableSimulation false;
 			_veh allowDamage false;
 			_veh setPosASL (_pos);
 			_veh setDir (_dir);
 			_veh allowDamage true;
+			_veh enableSimulation true;
 			[_veh] execVM 'addons\BrezBlock.framework\triggers\despawn_transport.sqf';
 		};
+		_veh;
+	};
+	
+	Fn_Spawn_West_ResqueHeli = {
+		private _veh = objNull;
+		//if (isNull us_resque_heli01) then {
+			if (!alive us_resque_heli01) then {
+				private _pad = [us_liberty_01, "Land_HelipadEmpty_F"] call BIS_fnc_Destroyer01GetShipPart;
+				private _pos = getPosASL _pad;
+				private _dir = getDir _pad;
+				if (count (nearestObjects [_pos, ["Car", "Tank", "APC", "Boat", "Drone", "Plane", "Helicopter"], 12]) == 0) then {
+					_veh = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_HELI_RQ), [0, 0, 0], [], 0, "CAN_COLLIDE"];
+					_veh enableSimulation false;
+					_veh allowDamage false;
+					_veh setPosASL (_pos);
+					_veh setDir (_dir + 90);
+					_veh allowDamage true;
+					_veh enableSimulation true;
+					us_resque_heli01 = _veh;
+				};
+			};
+		//};
 		_veh;
 	};
 	
 	Fn_Spawn_West_LightTransport = {
 		params['_pos', '_dir'];
 		private _veh = objNull;
-		if (count (nearestObjects [_pos, ["Car", "Tank", "APC", "Boat", "Drone", "Plane", "Helicopter"], 4]) == 0) then {
+		if (count (nearestObjects [_pos, ["Car", "Tank", "APC", "Boat", "Drone", "Plane", "Helicopter"], 8]) == 0) then {
 			_veh = createVehicle [(selectRandom D_FRACTION_WEST_UNITS_LIGHT), [0, 0, 0], [], 0, "CAN_COLLIDE"];
+			_veh enableSimulation false;
 			_veh allowDamage false;
 			_veh setPosASL (_pos);
 			_veh setDir (_dir);
-			//_veh allowDamage true;
+			_veh allowDamage true;
+			_veh enableSimulation true;
 			[_veh] execVM 'addons\BrezBlock.framework\triggers\despawn_transport.sqf';
 		};
 		_veh;
@@ -109,19 +140,23 @@ if (isServer) then {
 		private _obj_map = createVehicle ["Land_MapBoard_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
 		_obj_map setPosASL [(_pos select 0), (_pos select 1), 3];
 		_obj_map setDir (_dir);
+		_obj_map setVectorUp surfaceNormal position _obj_map;
 		
 		_obj = createVehicle ["Land_Camping_Light_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
 		_obj setPosASL (_obj_map modelToWorldWorld [1.3,-1.5,3]);
 		_obj setDir (getDir _obj_map);
+		_obj setVectorUp surfaceNormal position _obj;
 		
 		_obj = createVehicle ["B_supplyCrate_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
 		_obj setPosASL (_obj_map modelToWorldWorld [3.5,-3.5,3]);
 		_obj setDir (getDir _obj_map + 45);
+		_obj setVectorUp surfaceNormal position _obj;
 		[_obj, "base", west, D_FRACTION_WEST] call BrezBlock_fnc_PopulateBaseSupply;
 		
 		_obj = createVehicle ["B_supplyCrate_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
 		_obj setPosASL (_obj_map modelToWorldWorld [-3.5,-3.5,3]);
 		_obj setDir (getDir _obj_map - 45);
+		_obj setVectorUp surfaceNormal position _obj;
 		[_obj, "base", west, D_FRACTION_WEST] call BrezBlock_fnc_PopulateBaseSupply;
 		
 		//_obj = createVehicle ["Land_Camping_Light_F", [0, 0, 0], [], 0, "CAN_COLLIDE"];
@@ -136,15 +171,15 @@ if (isServer) then {
 		us_airplane_01 animateDoor ['Door_1_source', 1];
 		us_airplane_01 setVehicleAmmo 0;
 		
-		us_heli_01 = [(us_liberty_01 modelToWorldWorld [0,50.6011,8.95]), (getDir us_liberty_01)] call Fn_Spawn_West_LightHeli;
-		[(us_liberty_01 modelToWorldWorld [7,54.5011,8.95]), (getDir us_liberty_01)] call Fn_Spawn_West_LightTransport;
-		[(us_liberty_01 modelToWorldWorld [7,44.6011,8.95]), (getDir us_liberty_01)] call Fn_Spawn_West_LightTransport;
 		
-		/*createVehicle [(selectRandom D_FRACTION_WEST_UNITS_HELI), [0, 0, 0], [], 0, "CAN_COLLIDE"];
-		//private _pos = getPos land_01;
-		us_heli_01 allowDamage false;
-		us_heli_01 setPosASL ();
-		us_heli_01 setDir ();*/
+		us_heli_01 = [(us_liberty_01 modelToWorldWorld [0,50.6011,8.95]), (getDir us_liberty_01)] call Fn_Spawn_West_LightHeli;
+		sleep 1;
+		private _veh = [(us_liberty_01 modelToWorldWorld [7,51.6011,9]), (getDir us_liberty_01)] call Fn_Spawn_West_LightTransport;
+		_veh setVehicleLock "LOCKED";
+		sleep 2;
+		private _veh = [(us_liberty_01 modelToWorldWorld [7,40.6011,9]), (getDir us_liberty_01)] call Fn_Spawn_West_LightTransport;
+		_veh setVehicleLock "LOCKED";
+		
 		us_heli_01 setVehicleLock "LOCKED";
 		
 		us_boat01 = [west_rack_01] call Fn_Spawn_Boat_At_Rack;
@@ -152,8 +187,6 @@ if (isServer) then {
 		us_boat02 = [west_rack_02] call Fn_Spawn_Boat_At_Rack;
 		us_boat02 setVehicleLock "LOCKED";
 		
-		//[Fn_Spawn_Boat_Rack01, [0, 0, 0], 180, 20, 15] execVM 'addons\BrezBlock.framework\triggers\respawn_transport.sqf';
-		//[Fn_Spawn_Boat_Rack02, [0, 0, 0], 180, 20, 15] execVM 'addons\BrezBlock.framework\triggers\respawn_transport.sqf';
 		
 		["mrk_spec_boat01"] call Fn_Spawn_Boat_At;
 		["mrk_spec_boat02"] call Fn_Spawn_Boat_At;
@@ -179,7 +212,7 @@ if (isServer) then {
 		_trg setTriggerArea [1500, 1500, 0, false];
 		_trg setTriggerActivation ["WEST", "PRESENT", false];
 		_trg setTriggerStatements [
-			"this",
+			"(us_airplane_01 in thisList)",
 			"call Fn_MissionIntro_MakeEnemies; deleteVehicle thisTrigger;",
 			""
 		];
@@ -189,7 +222,7 @@ if (isServer) then {
 			_trg setTriggerArea [1100, 1100, 0, false];
 			_trg setTriggerActivation ["WEST", "PRESENT", false];
 			_trg setTriggerStatements [
-				"this",
+				"(us_airplane_01 in thisList)",
 				"execVM 'UnfinishedBusiness.core\missions\intro_blowup.sqf'; deleteVehicle thisTrigger;",
 				""
 			];
@@ -229,7 +262,7 @@ if (isServer) then {
 					_all_on_board = false;
 				};
 			};
-		} forEach (playableUnits + switchableUnits);
+		} forEach ((units us_group_01) + (units us_group_02) + (units us_group_03));
 		
 		if (_players == 0) then {
 			_all_on_board = false;

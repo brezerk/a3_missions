@@ -41,7 +41,7 @@ if (isServer) then {
 			//Move trigger if member is still alive
 			if (!alive _x) then {
 				assault_group = assault_group - [_x];
-				_x setVariable ["is_assault_group", false, true];
+				//_x setVariable ["is_assault_group", false, true];
 			} else {
 				if (alive _x) exitWith {
 					_count = 0;

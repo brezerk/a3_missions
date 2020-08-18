@@ -26,29 +26,30 @@ if (hasInterface) then {
 
 	
 	Fn_Local_Create_Mission_Destroy_Commtower = {
-		if (playerSide == west) then {
-			[
-				player,
-				"t_west_destroy_comtower",
-				[localize "TASK_07_DESC",
-				localize "TASK_07_TITLE",
-				localize "TASK_ORIG_01"],
-				getMarkerPos "mrk_east_commtower",
-				"CREATED",
-				0,
-				true
-			] call BIS_fnc_taskCreate;
-			['t_west_destroy_comtower', "destroy"] call BIS_fnc_taskSetType;
-		};
+		if ((side player) != west) exitWith {};
+		if (player getVariable ["is_civilian", false]) exitWith {};
+		[
+			player,
+			"t_west_destroy_comtower",
+			[localize "TASK_07_DESC",
+			localize "TASK_07_TITLE",
+			localize "TASK_ORIG_01"],
+			getMarkerPos "mrk_east_commtower",
+			"CREATED",
+			0,
+			true
+		] call BIS_fnc_taskCreate;
+		['t_west_destroy_comtower', "destroy"] call BIS_fnc_taskSetType;
 	};
 	
 	Fn_Local_Task_Destroy_Commtower_Complete = {
-		switch (playerSide) do {
+		switch (side player) do {
 			case west: {
+				if (player getVariable ["is_civilian", false]) exitWith {};
 				['t_west_destroy_comtower', 'Succeeded', localize "TASK_07_TITLE"] call Fn_Local_SetPersonalTaskState;
 			};
 			case east: {
-				['t_east_defend_commtower', 'Failed', localize "TASK_07_TITLE"] call Fn_Local_SetPersonalTaskState;
+				['t_east_defend_commtower', 'Failed', localize "TASK_AOC_02_TITLE"] call Fn_Local_SetPersonalTaskState;
 			};
 		};
 	};

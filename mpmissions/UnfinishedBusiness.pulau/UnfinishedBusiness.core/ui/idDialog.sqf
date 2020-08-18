@@ -16,18 +16,35 @@
  *                                                                         *
  ***************************************************************************/
 
-/*
-Spawn start objectives, triggers for game intro and players allocation
-*/
+params ["_side"];
 
-//Player side triggers
-// Client side code
-/*
-if (hasInterface) then {
-	Fn_Local_Create_EAST_MissionIntro = {
-		if (!alive us_airplane_01) then {
-			call Fn_Local_Create_RescueMission;
+private _fraction = "";
+
+switch (_side) do {
+	case east: {
+		_fraction = "UnfinishedBusiness.core\data\images\id\east.paa";
+	};
+	case civilian: {
+		_fraction = "UnfinishedBusiness.core\data\images\id\guer.paa";
+	};
+	case west: {
+		if (player getVariable ["is_civilian", false]) then {
+			_fraction = "UnfinishedBusiness.core\data\images\id\guer.paa";
+		} else {
+			_fraction = "UnfinishedBusiness.core\data\images\id\west.paa";
 		};
 	};
+	case resistance: {
+		_fraction = "UnfinishedBusiness.core\data\images\id\guer.paa";
+	};
 };
-*/
+
+private _dialog = createDialog "IDDialog";
+ 
+if (!isNil "_dialog") then {
+	private _dialog = findDisplay 4000;
+	private _ctrl = _dialog displayCtrl 4533;
+	if (!isNil "_ctrl") then {
+		_ctrl ctrlSetText (_fraction);
+	};
+};

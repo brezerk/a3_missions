@@ -112,6 +112,8 @@ if (isServer) then {
 	obj_east_comtower = objNull;
 	obj_east_antiair = objNull;
 	us_heli01 = objNull;
+	us_resque_heli01 = objNull;
+	east_resque_heli01 = objNull;
 	us_airplane_01 = objNull;
 	us_boat01 = objNull;
 	us_boat02 = objNull;
@@ -141,6 +143,27 @@ if (isServer) then {
 	avaliable_locations = [];
 	avaliable_pois = [];
 	avaliable_markers = [];
+	
+	if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then {
+		tf_give_personal_radio_to_regular_soldier = true;
+		publicVariable "tf_give_personal_radio_to_regular_soldier";
+
+		tf_no_auto_long_range_radio = true;
+		publicVariable "tf_no_auto_long_range_radio";
+
+		tf_same_sw_frequencies_for_side = true;
+		publicVariable "tf_same_sw_frequencies_for_side";
+
+		private _settingsSwWest = false call TFAR_fnc_generateSwSettings;
+		_settingsSwWest set [2, ["311","312","313","314","315","316","317","318"]];
+		tf_freq_west = _settingsSwWest;
+		publicVariable "tf_freq_west";
+		
+		private _settingsSwEast = false call TFAR_fnc_generateSwSettings;
+		_settingsSwEast set [2, ["101","110","117","134","195","131","171","188"]];
+		tf_freq_east = _settingsSwEast;
+		publicVariable "tf_freq_east";
+	};
 	
 	/* FIXME: CBA-only
 	addMissionEventHandler ["PlayerConnected",
@@ -321,6 +344,7 @@ if (isServer) then {
 	//Load fraction unit configurations
 	D_FRACTION_WEST_UNITS_TRANSPORT = ([west, D_FRACTION_WEST, 'transport'] call Fn_Config_GetFraction_Units);
 	D_FRACTION_WEST_UNITS_LIGHT = ([west, D_FRACTION_WEST, 'light'] call Fn_Config_GetFraction_Units);
+	D_FRACTION_WEST_UNITS_HELI_RQ = ([west, D_FRACTION_WEST, 'heli_rescue'] call Fn_Config_GetFraction_Units);
 	D_FRACTION_WEST_UNITS_HELI = ([west, D_FRACTION_WEST, 'heli'] call Fn_Config_GetFraction_Units);
 	D_FRACTION_WEST_UNITS_BOATS = ([west, D_FRACTION_WEST, 'boats'] call Fn_Config_GetFraction_Units);
 	D_PRISON_ITEMS = ([west, D_FRACTION_WEST, 'prison_items'] call Fn_Config_GetFraction_Units);
@@ -340,6 +364,7 @@ if (isServer) then {
 	D_FRACTION_EAST_UNITS_LIGHT = ([east, D_FRACTION_EAST, 'light'] call Fn_Config_GetFraction_Units);
 	D_FRACTION_EAST_UNITS_HEAVY = ([east, D_FRACTION_EAST, 'heavy'] call Fn_Config_GetFraction_Units);
 	D_FRACTION_EAST_UNITS_TRANSPORT = ([east, D_FRACTION_EAST, 'transport'] call Fn_Config_GetFraction_Units);
+	D_FRACTION_EAST_UNITS_HELI_RQ = ([east, D_FRACTION_EAST, 'heli'] call Fn_Config_GetFraction_Units);
 	
 	D_FRACTION_CIV_UNITS_MENS = ([civilian, D_FRACTION_CIV, 'mens'] call Fn_Config_GetFraction_Units);
 	D_FRACTION_CIV_UNITS_CARS = ([civilian, D_FRACTION_CIV, 'cars'] call Fn_Config_GetFraction_Units);
@@ -386,7 +411,7 @@ if (isServer) then {
 				if (isPlayer _instigator) then {
 					if ((_killed_side == east) || (_killed_side == independent)) then {
 						if ((side _instigator) == civilian) then {
-							_instigator setVariable ["is_civilian", false, true];
+							//_instigator setVariable ["is_civilian", false, true];
 							[west] remoteExec ["Fn_Local_Switch_Side", _instigator];
 						};
 					};

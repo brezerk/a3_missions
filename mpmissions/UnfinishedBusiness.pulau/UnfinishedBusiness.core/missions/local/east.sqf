@@ -24,89 +24,96 @@ Spawn start objectives, triggers for game intro and players allocation
 // Client side code
 if (hasInterface) then {
 
-	Fn_Local_Create_SCAT_MissionIntro = {
+	east_order_seen = false;
+
+	Fn_Local_Create_EAST_MissionIntro = {
+		if (side player != east) exitWith {};
 		if (!east_order_seen) then {
 			[] execVM "UnfinishedBusiness.core\ui\orderDialog.sqf";
 			east_order_seen = true;
+			"mrk_west_base_01" setMarkerAlphaLocal 0;
+			"mrk_west_specops" setMarkerAlphaLocal 0;
+			"mrk_west_safezone_01" setMarkerAlphaLocal 0;
+			"mrk_east_stash_01" setMarkerAlphaLocal 0;
+			"mrk_east_stash_02" setMarkerAlphaLocal 0;
 		};
-		private _marker = format ["wp_%1_aa", D_LOCATION];
-		if (canFire obj_east_antiair) then {
-			[
-				player,
-				"t_east_defend_aa",
-				[format [localize "TASK_AOC_01_DESC", D_LOCATION],
-				localize "TASK_AOC_01_TITLE",
-				localize "TASK_ORIG_01"],
-				getPos obj_east_antiair,
-				"CREATED",
-				0,
-				true
-			] call BIS_fnc_taskCreate;
-			['t_east_defend_aa', "defend"] call BIS_fnc_taskSetType;
+		private _task = ['t_east_defend_aa', player] call BIS_fnc_taskReal;
+		if (isNull _task) then {
+			private _marker = format ["wp_%1_aa", D_LOCATION];
+			if (canFire obj_east_antiair) then {
+				[
+					player,
+					"t_east_defend_aa",
+					[format [localize "TASK_AOC_01_DESC", D_LOCATION],
+					localize "TASK_AOC_01_TITLE",
+					localize "TASK_ORIG_01"],
+					getPos obj_east_antiair,
+					"CREATED",
+					0,
+					true
+				] call BIS_fnc_taskCreate;
+				['t_east_defend_aa', "defend"] call BIS_fnc_taskSetType;
+			};
 		};
-		if (alive obj_east_comtower) then {
-			[
-				player,
-				"t_east_defend_commtower",
-				[format [localize "TASK_AOC_02_DESC", D_LOCATION],
-				localize "TASK_AOC_02_TITLE",
-				localize "TASK_ORIG_02"],
-				getPos obj_east_comtower,
-				"CREATED",
-				0,
-				true
-			] call BIS_fnc_taskCreate;
-			['t_east_defend_commtower', "defend"] call BIS_fnc_taskSetType;
+		_task = ['t_east_defend_commtower', player] call BIS_fnc_taskReal;
+		if (isNull _task) then {
+			if (alive obj_east_comtower) then {
+				[
+					player,
+					"t_east_defend_commtower",
+					[format [localize "TASK_AOC_02_DESC", D_LOCATION],
+					localize "TASK_AOC_02_TITLE",
+					localize "TASK_ORIG_02"],
+					getPos obj_east_comtower,
+					"CREATED",
+					0,
+					true
+				] call BIS_fnc_taskCreate;
+				['t_east_defend_commtower', "defend"] call BIS_fnc_taskSetType;
+			};
 		};
-		[
-			player,
-			"t_east_eliminate_survivals",
-			[localize "TASK_AOC_03_DESC",
-			localize "TASK_AOC_03_TITLE",
-			localize "TASK_ORIG_03"],
-			objNull,
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_east_eliminate_survivals', "kill"] call BIS_fnc_taskSetType;
-		[
-			player,
-			"t_east_crash",
-			[format [localize "TASK_10_DESC", D_LOCATION, D_LOCATION],
-			format [localize "TASK_10_TITLE"],
-			localize "TASK_ORIG_01"],
-			getMarkerPos "mrk_west_crashsite",
-			"CREATED",
-			0,
-			true
-		] call BIS_fnc_taskCreate;
-		['t_east_crash', "search"] call BIS_fnc_taskSetType;
-		{
-			private _task = format["t_east_city_%1", _forEachIndex];
-			[
-				player,
-				_task,
-				[format[localize "TASK_11_DESC", _forEachIndex, _x select 0],
-				format[localize "TASK_11_TITLE", _x select 0],
-				localize "TASK_ORIG_01"],
-				getMarkerPos (format ["mrk_city_%1", _forEachIndex]),
-				"CREATED",
-				0,
-				true
-			] call BIS_fnc_taskCreate;
-			[_task, "talk"] call BIS_fnc_taskSetType;			
-		} forEach avaliable_pois;
-				
-		trgWestCrashSite = createTrigger ["EmptyDetector", (getMarkerPos "crash_site")];
-		trgWestCrashSite setTriggerArea [50, 50, 0, false];
-		trgWestCrashSite setTriggerActivation ["ANYPLAYER", "PRESENT", false];
-		trgWestCrashSite setTriggerStatements [
-			"(vehicle player) in thisList",
-			"call Fn_Local_CrashSite_Complete;",
-			""
-		];
-		
+		call Fn_Local_Create_EAST_MissionCrashSite;
+	};
+	
+	Fn_Local_Create_EAST_MissionCrashSite = {
+		if (side player != east) exitWith {};
+		if (!alive us_airplane_01) then {
+			private _task = ['t_east_eliminate_survivals', player] call BIS_fnc_taskReal;
+			if (isNull _task) then {
+				[
+					player,
+					"t_east_eliminate_survivals",
+					[localize "TASK_AOC_03_DESC",
+					localize "TASK_AOC_03_TITLE",
+					localize "TASK_ORIG_03"],
+					objNull,
+					"CREATED",
+					0,
+					true
+				] call BIS_fnc_taskCreate;
+				['t_east_eliminate_survivals', "kill"] call BIS_fnc_taskSetType;
+			};
+			call Fn_Local_Create_Mission_CrashSite;
+			{
+				private _task_name = format["t_east_city_%1", _forEachIndex];
+				_task = [_task_name, player] call BIS_fnc_taskReal;
+				if (isNull _task) then {
+					[
+						player,
+						_task_name,
+						[format[localize "TASK_11_DESC", _forEachIndex, _x select 0],
+						format[localize "TASK_11_TITLE", _x select 0],
+						localize "TASK_ORIG_01"],
+						getMarkerPos (format ["mrk_city_%1", _forEachIndex]),
+						"CREATED",
+						0,
+						true
+					] call BIS_fnc_taskCreate;
+					[_task_name, "talk"] call BIS_fnc_taskSetType;		
+				};
+			} forEach avaliable_pois;
+		};
+		/*
 		{
 			if (!(_x in playableunits) && !(_x in switchableunits)) then {
 				if ((side _x) == east) then {
@@ -115,5 +122,6 @@ if (hasInterface) then {
 				};
 			};
 		} forEach (nearestObjects [getMarkerPos "respawn_east", ["Man"], 150]); //Note CUP does not really follow SoldierEB classification :)
+		*/
 	};
 };

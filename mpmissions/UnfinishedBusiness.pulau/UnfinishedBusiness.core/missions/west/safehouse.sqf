@@ -29,32 +29,34 @@ if (isServer) then {
 		
 		private _markers = [_center, ["o_mortar", "n_mortar", "b_mortar"], 2000] call BrezBlock_fnc_GetAllMarkerTypesInRange;
 		
-		{
-			private _marker = selectRandom _markers;
-			_center = getMarkerPos _marker;
-			avaliable_markers deleteAt (avaliable_markers find _marker);
-			
-			private _pos = objNull;
-			
-			private _builing = nearestBuilding (_center);
-			
-			if ((_center distance2D (getPos _builing)) >= 100) then {
-				_pos = [_center, 0, 60, 4, 0, 0, 0] call BIS_fnc_findSafePos;
-			} else {
-				_pos = selectRandom (_builing buildingPos -1);
-			};
+		if (count _markers > 0) then {
+			{
+				private _marker = selectRandom _markers;
+				_center = getMarkerPos _marker;
+				avaliable_markers deleteAt (avaliable_markers find _marker);
+				
+				private _pos = objNull;
+				
+				private _builing = nearestBuilding (_center);
+				
+				if ((_center distance2D (getPos _builing)) >= 100) then {
+					_pos = [_center, 0, 60, 4, 0, 0, 0] call BIS_fnc_findSafePos;
+				} else {
+					_pos = selectRandom (_builing buildingPos -1);
+				};
 
-			if (!isNil "_pos") then {
-				private _mark = createMarker [format ["mrk_east_stash_0%1", _x], _pos];
-				_mark setMarkerType "hd_objective";
-				_mark setMarkerAlpha 0;
-			
-				[_pos] call Fn_Task_West_Safe_SpawnRandomCargo;
+				if (!isNil "_pos") then {
+					private _mark = createMarker [format ["mrk_east_stash_0%1", _x], _pos];
+					_mark setMarkerType "hd_objective";
+					_mark setMarkerAlpha 0;
+				
+					[_pos] call Fn_Task_West_Safe_SpawnRandomCargo;
 
-				_markers = _markers - [_marker];
-				deleteMarker _marker;
-			};
-		} forEach ['1', '2'];
+					_markers = _markers - [_marker];
+					deleteMarker _marker;
+				};
+			} forEach ['1', '2'];
+		};
 	};
 	
 	Fn_Task_West_Safe_SpawnRandomCargo = {

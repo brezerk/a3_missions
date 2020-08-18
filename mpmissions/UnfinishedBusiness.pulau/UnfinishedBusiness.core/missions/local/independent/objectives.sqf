@@ -25,7 +25,7 @@ Spawn start objectives, triggers for informator contact
 if (hasInterface) then {
 	Fn_Local_Create_Mission_DestroyAmmo = {
 		params['_pos'];
-		if (playerSide == west) then {
+		if (side player == west) then {
 			private _title = "TASK_12_TITLE";
 			if ((roleDescription player find "SpecOps") >= 0) then { _title = "TASK_12_SPEC_TITLE"; };
 			[
@@ -44,7 +44,7 @@ if (hasInterface) then {
 	};
 	Fn_Local_Create_Mission_DestroyFuel = {
 		params['_pos'];
-		if (playerSide == west) then {
+		if (side player == west) then {
 			private _title = "TASK_13_TITLE";
 			if ((roleDescription player find "SpecOps") >= 0) then { _title = "TASK_13_SPEC_TITLE"; };
 			[
@@ -63,7 +63,7 @@ if (hasInterface) then {
 	};
 	Fn_Local_Create_Mission_DestroyWindMill = {
 		params['_pos'];
-		if (playerSide == west) then {
+		if (side player == west) then {
 			private _title = "TASK_14_TITLE";
 			if ((roleDescription player find "SpecOps") >= 0) then { _title = "TASK_14_SPEC_TITLE"; };
 			[
@@ -82,7 +82,7 @@ if (hasInterface) then {
 	};
 	Fn_Local_Create_Mission_KillDoctor = {
 		params['_pos'];
-		if (playerSide == west) then {
+		if (side player == west) then {
 			private _title = "TASK_15_TITLE";
 			if ((roleDescription player find "SpecOps") >= 0) then { _title = "TASK_15_SPEC_TITLE"; };
 			[
@@ -119,7 +119,7 @@ if (hasInterface) then {
 	};
 	
 	Fn_Local_Task_KillDoctor_Complete = {
-		switch (playerSide) do {
+		switch (side player) do {
 			case west: {
 				private _title = "TASK_15_TITLE";
 				if ((roleDescription player find "SpecOps") >= 0) then { _title = "TASK_15_SPEC_TITLE"; call Fn_SpecOps_Extract; };
@@ -132,7 +132,7 @@ if (hasInterface) then {
 	};
 	
 	Fn_Local_Task_DestroyWindMill_Complete = {
-		switch (playerSide) do {
+		switch (side player) do {
 			case west: {
 				private _title = "TASK_14_TITLE";
 				if ((roleDescription player find "SpecOps") >= 0) then { _title = "TASK_14_SPEC_TITLE"; call Fn_SpecOps_Extract; };
@@ -145,7 +145,7 @@ if (hasInterface) then {
 	};
 	
 	Fn_Local_Task_DestroyFuel_Complete = {
-		switch (playerSide) do {
+		switch (side player) do {
 			case west: {
 				private _title = "TASK_13_TITLE";
 				if ((roleDescription player find "SpecOps") >= 0) then { _title = "TASK_13_SPEC_TITLE"; call Fn_SpecOps_Extract; };
@@ -158,7 +158,7 @@ if (hasInterface) then {
 	};
 	
 	Fn_Local_Task_DestroyAmmo_Complete = {
-		switch (playerSide) do {
+		switch (side player) do {
 			case west: {
 				private _title = "TASK_12_TITLE";
 				if ((roleDescription player find "SpecOps") >= 0) then { _title = "TASK_12_SPEC_TITLE"; call Fn_SpecOps_Extract; };

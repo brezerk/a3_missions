@@ -64,7 +64,7 @@ _obj setPosASL (_obj_destroyer modelToWorldWorld [0,-79.08,12.1]);
 _obj = createVehicle ["B_Ship_MRLS_01_F", [0,0,0], [], 0, "NONE"];
 _obj allowDamage false;
 _obj setDir (getDir _obj_destroyer + 180);
-_obj setPosASL (_obj_destroyer modelToWorldWorld [0,-62.4229,10.7]);
+_obj setPosASL (_obj_destroyer modelToWorldWorld [0,-62.4229,10.8]);
 //_obj enableSimulation true;
 //_obj allowDamage true;
 

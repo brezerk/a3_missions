@@ -23,13 +23,13 @@
 */
 
 if (isServer) then {
-	while {count assault_group != 0} do {
+	while { (count(units us_group_01) + count(units us_group_02) + count(units us_group_03)) != 0} do {
 		sleep 10;
 		{
 			//cleanup disconnected? members
 			if (!alive _x) then {
 				assault_group = assault_group - [_x];
-				_x setVariable ["is_assault_group", false, true];
+				//_x setVariable ["is_assault_group", false, true];
 			};
 		} forEach assault_group;
 		// Send ping

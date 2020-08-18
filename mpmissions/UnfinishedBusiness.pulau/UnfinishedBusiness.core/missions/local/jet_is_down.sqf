@@ -73,8 +73,12 @@ if (hasInterface) then {
 		
 	Fn_Local_Jet_Player_Land = {
 		call Fn_Local_MissionIntro_Fail;
-		player setUnconscious false;
-		call Fn_Local_Create_Mission_CrashSite;
-		call Fn_Local_Create_RegroupMission;
+		//if ((side player) == west) then {
+			call Fn_Local_Create_Mission_CrashSite;
+		//};
+		if (player getVariable ["is_assault_group", false]) then {
+			player setUnconscious false;
+			call Fn_Local_Create_RegroupMission;
+		};
 	};
 };

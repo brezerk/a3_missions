@@ -25,9 +25,27 @@ Spawn start objectives, triggers for informator contact
 if (hasInterface) then {};
 
 if (isServer) then {
-	
+
 	Fn_Spawn_East_Helicopter = {
-		private _class = (selectRandom ([east, D_FRACTION_EAST, "heli"] call Fn_Config_GetFraction_Units));
-		private _vehicle = createVehicle [_class, (getMarkerPos format["wp_%1_east_helicopter", D_LOCATION])];
+		private _veh = objNull;
+		//if (isNull east_resque_heli01) then {
+			if (!alive east_resque_heli01) then {
+				private _marker = "mrk_east_helicopter";
+				private _pos = getMarkerPos _marker;
+				private _dir = markerDir _marker;
+				if (count (nearestObjects [_pos, ["Car", "Tank", "APC", "Boat", "Drone", "Plane", "Helicopter"], 12]) == 0) then {
+					_veh = createVehicle [(selectRandom D_FRACTION_EAST_UNITS_HELI_RQ), [0, 0, 0], [], 0, "CAN_COLLIDE"];
+					_veh enableSimulation false;
+					_veh allowDamage false;
+					_veh setPosATL [_pos # 0, _pos # 1, 0];
+					_veh setDir (_dir);
+					_veh allowDamage true;
+					_veh enableSimulation true;
+					east_resque_heli01 = _veh;
+				};
+			};
+		//};
+		_veh;
 	};
+	
 };

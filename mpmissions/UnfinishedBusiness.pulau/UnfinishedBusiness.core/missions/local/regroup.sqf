@@ -24,7 +24,7 @@ Spawn start objectives, triggers for informator contact
 // Client side code
 if (hasInterface) then {
 	Fn_Local_Create_RegroupMission = {
-		if (playerSide == west) then {
+		if ((side player) == west) then {
 			[
 				player,
 				"t_regroup",

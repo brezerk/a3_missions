@@ -67,18 +67,19 @@
 			'heli', ['CUP_B_MH6J_USA']
 			],
 			[
-			'heli_rescue', ['CUP_B_MH60S_USMC']
+			'heli_rescue', ['CUP_B_CH53E_USMC']
 			],
 			[
 			'boats', ['CUP_B_RHIB2Turret_USMC', 'CUP_B_RHIB_USMC']
 			],
 			[
 			'light', [
-				'CUP_B_HMMWV_SOV_M2_USA',
-				'CUP_B_HMMWV_SOV_USA',
-				'CUP_B_HMMWV_MK2_USA',
-				'CUP_B_HMMWV_TOW_USA',
-				'CUP_B_HMMWV_MK19_USA']
+				'CUP_B_M1165_GMV_USMC',
+				'CUP_B_M1151_M2_USMC',
+				'CUP_B_M1151_Mk19_USMC',
+				'CUP_B_HMMWV_M1114_USMC',
+				'CUP_B_HMMWV_TOW_USMC',
+				'CUP_B_HMMWV_MK19_USMC']
 			],
 			['transport_wreck', 'Land_UWreck_MV22_F'],
 			['transport_z_offset', 4.7],
