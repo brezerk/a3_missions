@@ -54,11 +54,13 @@ cutText ["", "BLACK"];
 
 waitUntil { sleep 1; [["mission_requested", "mission_generated", "mission_plane_send", "us_liberty_01", "mission_plane_send_time", "mission_plane_down_time", "mission_plane_pass_count", "obj_specops_target"]] call Fn_Local_WaitPublicVariables; };
 
-if ((!mission_requested) && (!mission_generated)) then {
+if ((!mission_requested) || (!mission_generated)) then {
 	["UnfinishedBusiness.core\ui\settingsDialog.sqf"] call BrezBlock_fnc_WaitForStart;
 };
 
 waitUntil { sleep 1; [["D_LOCATION", "D_FRACTION_WEST", "D_FRACTION_EAST", "D_FRACTION_CIV", "D_FRACTION_INDEP", "D_NAVTOOL_MAP", "D_NAVTOOL_COMPASS"]] call Fn_Local_WaitPublicVariables; }; 
+
+waitUntill { mission_generated; };
 
 Fn_Local_Init_Spawn = {
 
