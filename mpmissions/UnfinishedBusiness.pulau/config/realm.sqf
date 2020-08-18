@@ -31,4 +31,6 @@ D_DEBUG = true;
 
 D_PRISONS = ["Land_Slum_03_F", "Land_Shed_05", "Land_Shed_07", "Land_House_Small_03_F", "Land_House_Small_01_F"];
 
-D_RESPAWN_DELAY = 300;
+//
+//D_RESPAWN_DELAY = 300;
+D_RESPAWN_DELAY = 30;
