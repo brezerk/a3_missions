@@ -37,14 +37,14 @@ respawnDelay = "10";
 // DO NOT SET THIS FOR PROD
 // enableDebugConsole = 2;
 // Respawn templates from CfgRespawnTemplates. You can combine any number of them together.
-respawnTemplates[] = {"Counter", "Base", "MenuPosition"};
+respawnTemplates[] = {"Counter", "Base"};
 // 0 to disable the score table (it can still be opened manually by pressing 'P' key).
 respawnDialog = 0;
 // When 1, the score table contains score of all playable units as opposed to players only.
 aikills = 0;
 
 // No respawn
-respawnOnStart = 1;
+respawnOnStart = 0;
 
 
 // Skip briefingName
