@@ -15,10 +15,10 @@ class NECK
 	{
 		class Init {file = "addons\BrezBlock.framework\init.sqf";};
 		class Logger {file = "addons\BrezBlock.framework\utils\logger.sqf";};
-	}
+	};
 	class persistance
 	{
 		class PersistanceLoad {file = "addons\BrezBlock.framework\systems\persitance\load.sqf";};
 		class PersistanceSave {file = "addons\BrezBlock.framework\systems\persitance\save.sqf";};
-	}
-}
+	};
+};
