@@ -10,8 +10,8 @@
  **************************************************************************************/
 
 ["Loading from profile..."] call NECK_fnc_Logger;
-private _PERSISTANCE_DB = profileNamespace getVariable "bb_persistance";
-[format["Loaded objects: %1", count _PERSISTANCE_DB]] call NECK_fnc_Logger;
+private _PERSISTANCE_DB = profileNamespace getVariable ["bb_persistance", []];
+[format["Loaded objects: %1", (count _PERSISTANCE_DB)]] call NECK_fnc_Logger;
 {
 	private _object = missionNamespace getVariable [(_x # 0), objNull];
 	if (!isNull _object) then {
