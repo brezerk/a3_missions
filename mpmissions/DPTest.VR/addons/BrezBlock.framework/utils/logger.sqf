@@ -10,7 +10,7 @@
  **************************************************************************************/
  
 params ["_msg"];
-if (hasInterface || isDedicated) then {
+if (hasInterface) then {
 	systemChat _msg;
 } else {
 	diag_log _msg;
