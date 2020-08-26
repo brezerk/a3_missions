@@ -8,18 +8,9 @@
  * work. If not, see <http://creativecommons.org/licenses/by-nc-nd/4.0/>.              *
  *                                                                                     *
  **************************************************************************************/
-
-#include "config\realm.sqf";
-
-if (!isServer) exitWith {};
-
-civilian setFriend [resistance, 0];
-
-0 = [] spawn NECK_fnc_PersistanceLoad;
-
-{
-	//Enable arsenal
-	0 = ["AmmoboxInit", [_x, true] ] spawn BIS_fnc_arsenal;
-} count D_PERSISTANCE_OBJECTS;
-
-0 = [] spawn NECK_fnc_PersistanceSave;
+ 
+ D_NECK_MAJOR = 0;
+ D_NECK_MINOR = 21;
+ D_NECK_TYPE = "Embedded";
+ 
+ [format["NECK Framework %1.%2-%3 initialized"], D_NECK_MAJOR, D_NECK_MINOR, D_NECK_TYPE] call NECK_fnc_Logger;

@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2167.5366,11.359562,8615.5928};
-		dir[]={-0.14006121,-0.090087414,0.98613685};
-		up[]={-0.012685874,0.99592191,0.089328252};
-		aside[]={0.99016511,-2.2460881e-006,0.14063253};
+		pos[]={2186.5925,53.071388,8568.0205};
+		dir[]={0.22268045,-0.64967006,0.7270093};
+		up[]={0.19028169,0.76017648,0.62122893};
+		aside[]={0.95625091,-1.4149118e-006,-0.29289839};
 	};
 };
 binarizationWanted=0;
@@ -7316,7 +7316,7 @@ class Mission
 			name="wp_Monyet_hospital_02";
 			type="loc_Hospital";
 			id=7411;
-			atlOffset=0.32114506;
+			atlOffset=3.8504825;
 		};
 		class Item572
 		{
@@ -8426,7 +8426,7 @@ class Mission
 			name="wp_Monyet_paradrop_66";
 			type="b_recon";
 			id=7517;
-			atlOffset=0.15392697;
+			atlOffset=1.4655185;
 		};
 		class Item678
 		{
@@ -9009,7 +9009,7 @@ class Mission
 			b=75;
 			drawBorder=1;
 			id=7576;
-			atlOffset=21.089573;
+			atlOffset=22.132744;
 		};
 		class Item733
 		{

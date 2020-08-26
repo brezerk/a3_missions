@@ -8,18 +8,13 @@
  * work. If not, see <http://creativecommons.org/licenses/by-nc-nd/4.0/>.              *
  *                                                                                     *
  **************************************************************************************/
-
-#include "config\realm.sqf";
-
-if (!isServer) exitWith {};
-
-civilian setFriend [resistance, 0];
-
-0 = [] spawn NECK_fnc_PersistanceLoad;
-
-{
-	//Enable arsenal
-	0 = ["AmmoboxInit", [_x, true] ] spawn BIS_fnc_arsenal;
-} count D_PERSISTANCE_OBJECTS;
-
-0 = [] spawn NECK_fnc_PersistanceSave;
+ 
+//10 seconds
+D_PERSISTANCE_SAVE_DELAY = 10;
+D_PERSISTANCE_OBJECTS = [
+	box_01,
+	box_02,
+	box_03,
+	car_01,
+	car_02
+];
