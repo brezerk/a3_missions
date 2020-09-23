@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=2;
+	toggles=514;
 	class ItemIDProvider
 	{
-		nextID=47;
+		nextID=48;
 	};
 	class MarkerIDProvider
 	{
@@ -33,8 +33,8 @@ addons[]=
 	"A3_Supplies_F_Orange_CargoNets",
 	"A3_Weapons_F_Ammoboxes",
 	"A3_Armor_F_Beta_APC_Tracked_01",
-	"A3_Soft_F_Gamma_Truck_02",
-	"A3_Missions_F_Oldman"
+	"A3_Missions_F_Oldman",
+	"A3_Soft_F_Beta_Truck_02"
 };
 class AddonsMetaData
 {
@@ -85,15 +85,15 @@ class AddonsMetaData
 		};
 		class Item6
 		{
-			className="A3_Soft_F_Gamma";
-			name="Arma 3 - Unarmored Land Vehicles";
+			className="A3_Missions_F_Oldman";
+			name="Arma 3 Oldman - Playable Content";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
 		class Item7
 		{
-			className="A3_Missions_F_Oldman";
-			name="Arma 3 Oldman - Playable Content";
+			className="A3_Soft_F_Beta";
+			name="Arma 3 Beta - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -371,23 +371,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={3053.5146,7.3817043,5202.5625};
-				angles[]={0,0.87101424,0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				name="car_02";
-			};
-			id=44;
-			type="I_Truck_02_box_F";
-		};
-		class Item8
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={3041.9551,6.3607702,5224.0361};
 			};
 			side="Empty";
@@ -398,6 +381,23 @@ class Mission
 			};
 			id=46;
 			type="VirtualReammoBox_camonet_F";
+		};
+		class Item8
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3050.7549,7.3817577,5209.6401};
+				angles[]={0,1.011523,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="car_02";
+			};
+			id=47;
+			type="I_Truck_02_covered_F";
 		};
 	};
 };

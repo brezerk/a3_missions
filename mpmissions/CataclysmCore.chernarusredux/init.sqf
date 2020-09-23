@@ -27,4 +27,15 @@ if (isServer) then {
 	box_01 addMagazineCargo ["CL_PainKillers", 20];
 	box_01 addItemCargo ["CL_Axe", 20];
 	box_01 addItemCargo ["CL_Matches", 20];
+	
+	[west, 50] call BIS_fnc_respawnTickets;
+	[east, 50] call BIS_fnc_respawnTickets;
+	[civilian, 50] call BIS_fnc_respawnTickets;
+	[independent, 50] call BIS_fnc_respawnTickets;
 };
+
+
+
+
+
+[] call BIS_fnc_showMissionStatus;

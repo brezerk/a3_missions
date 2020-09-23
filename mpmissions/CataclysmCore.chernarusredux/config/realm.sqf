@@ -9,6 +9,20 @@
  *                                                                                     *
  **************************************************************************************/
 
+D_INDEP_FLAG = "";
+
+D_EAST_FLAG = "a3\data_f_exp\flags\flag_viper_co.paa";
+D_WEST_FLAG = "a3\data_f_enoch\flags\flag_eaf_co.paa";
+D_CIV_FLAG = "a3\data_f\flags\flag_fia_co.paa";
+
+
+D_PERSISTANCE_OBJECTS = [
+	box_01,
+	box_02,
+	box_03,
+	car_01,
+	car_02
+]; 
  
 D_HOSPITAL_LCS = [
 	[8636.66,13431.1,-4.14808],
