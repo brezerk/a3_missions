@@ -24,3 +24,4 @@
 		[ EAST		  , 0.1, 0.1, 0.2, 0.2 ] 
 	]
 ] call BIS_fnc_EXP_camp_dynamicAISkill;
+

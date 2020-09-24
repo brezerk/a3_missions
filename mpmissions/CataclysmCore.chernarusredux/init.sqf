@@ -22,17 +22,33 @@
  } forEach D_HOSPITAL_LCS;
 */
 
-resistance setFriend [civilian, 0];
-civilian setFriend [resistance, 0];
+
+east_base_built = 0;
+west_base_built = 0;
+
+//resistance setFriend [civilian, 0];
+//civilian setFriend [resistance, 0];
 
 if (isServer) then {
+
 	box_01 addMagazineCargo ["CL_Antibiotic", 20];
 	box_01 addMagazineCargo ["CL_PainKillers", 20];
-	box_01 addItemCargo ["CL_Axe", 20];
-	box_01 addItemCargo ["CL_Matches", 20];
-	
+	box_01 addMagazineCargo ["CUP_10Rnd_762x39_SKS_M", 120];
+	box_01 addMagazineCargo ["CUP_HandGrenade_RGD5", 40];
+	box_01 addItemCargo ["CL_Axe", 5];
+	box_01 addItemCargo ["CL_Matches", 10];
+
+	box_02 addMagazineCargo ["CL_Antibiotic", 20];
+	box_02 addMagazineCargo ["CL_PainKillers", 20];
+	box_02 addMagazineCargo ["CUP_10Rnd_762x39_SKS_M", 120];
+	box_02 addMagazineCargo ["CUP_HandGrenade_RGD5", 40];
+	box_02 addItemCargo ["CL_Axe", 5];
+	box_02 addItemCargo ["CL_Matches", 10];
+
 	[west, 50] call BIS_fnc_respawnTickets;
 	[east, 50] call BIS_fnc_respawnTickets;
-	[civilian, 50] call BIS_fnc_respawnTickets;
-	[independent, 50] call BIS_fnc_respawnTickets;
+	
+	publicVariable "base_built"; 
+//	[civilian, 50] call BIS_fnc_respawnTickets;
+//	[independent, 50] call BIS_fnc_respawnTickets;
 };

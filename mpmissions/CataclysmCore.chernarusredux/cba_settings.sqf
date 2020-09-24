@@ -23,59 +23,33 @@
  // ACE Advanced Fatigue
 force ace_advanced_fatigue_enabled = true;
 force ace_advanced_fatigue_enableStaminaBar = true;
-force ace_advanced_fatigue_loadFactor = 0.5;
-force ace_advanced_fatigue_performanceFactor = 1;
-force ace_advanced_fatigue_recoveryFactor = 1.5;
+force ace_advanced_fatigue_loadFactor = 0.3;
+force ace_advanced_fatigue_performanceFactor = 0.3;
+force ace_advanced_fatigue_recoveryFactor = 2.5;
 force ace_advanced_fatigue_swayFactor = 1;
-force ace_advanced_fatigue_terrainGradientFactor = 1;
+force ace_advanced_fatigue_terrainGradientFactor = 0.5;
 
 // ACE Logistics
-force ace_repair_engineerSetting_repair = 1;
-force ace_repair_engineerSetting_fullRepair = 1;
-force ace_repair_fullRepairLocation = 3;
+force ace_repair_engineerSetting_repair = 0;
 
 // ACE Medical
-force ace_medical_ai_enabledFor = 0;
-force ace_medical_AIDamageThreshold = 1.5;
-force ace_medical_bleedingCoefficient = 0.35;
+//force ace_medical_amountOfReviveLives = 3;
+//force ace_medical_enableRevive = 1;
+//force ace_medical_increaseTrainingInLocations = true;
+//ace_medical_menu_useMenu = 1;
+//force ace_medical_preventInstaDeath = true;
+
+force ace_medical_preventInstaDeath = true;
 force ace_medical_fatalDamageSource = 0;
-force ace_medical_feedback_painEffectType = 2;
+ace_medical_feedback_painEffectType = 2;
+force ace_medical_limping = 0;
 force ace_medical_fractures = 0;
-force ace_medical_ivFlowRate = 2.0;
-force ace_medical_limping = 1;
-force ace_medical_painCoefficient = 1;
-force ace_medical_playerDamageThreshold = 3;
-force ace_medical_spontaneousWakeUpChance = 0.35;
-force ace_medical_spontaneousWakeUpEpinephrineBoost = 15;
-force ace_medical_statemachine_AIUnconsciousness = true;
-force ace_medical_statemachine_cardiacArrestTime = 600;
+force ace_medical_statemachine_fatalInjuriesPlayer = 2;
 force ace_medical_treatment_advancedBandages = false;
-force ace_medical_treatment_advancedDiagnose = true;
-force ace_medical_treatment_advancedMedication = true;
-force ace_medical_treatment_allowSelfIV = 1;
-force ace_medical_treatment_allowSelfStitch = 1;
-force ace_medical_treatment_allowSharedEquipment = 0;
-force ace_medical_treatment_consumePAK = 0;
-force ace_medical_treatment_consumeSurgicalKit = 0;
-force ace_medical_treatment_convertItems = 1;
-force ace_medical_treatment_cprSuccessChance = 0.6;
-force ace_medical_treatment_locationEpinephrine = 0;
-force ace_medical_treatment_locationPAK = 0;
-force ace_medical_treatment_locationSurgicalKit = 0;
-force ace_medical_treatment_medicEpinephrine = 0;
-force ace_medical_treatment_medicPAK = 1;
-force ace_medical_treatment_medicSurgicalKit = 1;
-force ace_medical_treatment_timeCoefficientPAK = 0.20;
-force ace_medical_treatment_woundReopening = false;
+force ace_medical_treatment_advancedMedication = false;
+force ace_medical_treatment_clearTraumaAfterBandage = true;
 force ace_medical_treatment_locationsBoostTraining = true;
-force ace_medical_treatment_holsterRequired = 0;
-
-// ACE Займання боєприпасів
-force ace_cookoff_enableAmmoCookoff = false;
-
-// ACE Overheating
-force ace_overheating_unJamOnreload = true;
-force ace_overheating_enabled = true;
+force ace_medical_treatment_medicEpinephrine = 0;
 
 // GRAD Trenches
 grad_trenches_functions_stopBuildingAtFatigueMax = true;
@@ -83,24 +57,30 @@ grad_trenches_functions_stopBuildingAtFatigueMax = true;
 // ACE Pointing
 force ace_finger_enabled = true;
 
-// ACE Artillery
-force ace_artillerytables_disableArtilleryComputer = true;
+// ACE View Distance Limiter
+force ace_viewdistance_limitViewDistance = 2500;
+ace_viewdistance_viewDistanceAirVehicle = 7;
+ace_viewdistance_viewDistanceLandVehicle = 5;
+ace_viewdistance_viewDistanceOnFoot = 4;
 
 // ACEX Field Rations
 force acex_field_rations_enabled = true;
-force acex_field_rations_timeWithoutWater = 15;
-force acex_field_rations_timeWithoutFood = 25;
+force acex_field_rations_timeWithoutWater = 6;
+force acex_field_rations_timeWithoutFood = 10;
 
-// ACE Карта
-force ace_markers_moveRestriction = 0;
+// ACE Overheating
+ace_overheating_displayTextOnJam = true;
+force ace_overheating_enabled = true;
+force ace_overheating_overheatingDispersion = true;
+ace_overheating_showParticleEffects = true;
+ace_overheating_showParticleEffectsForEveryone = true;
+force ace_overheating_unJamFailChance = 0.1;
+force ace_overheating_unJamOnreload = true;
 
-// ACE Ограничитель дальности видимости
-force ace_viewdistance_limitViewDistance = 1200;
+// ACE User Interface
+force ace_ui_allowSelectiveUI = true;
+ace_ui_groupBar = false;
 
-//Respawn
-force ace_respawn_removeDeadBodiesDisconnected = false;
+//TFar
 
-//TFAR
-//force force TFAR_Teamspeak_Channel_Name = "A3UATaskForceRadio";
-//force force TFAR_setting_defaultFrequencies_lr_independent = "37";
-//force force TFAR_setting_defaultFrequencies_sr_independent = "100";
+
