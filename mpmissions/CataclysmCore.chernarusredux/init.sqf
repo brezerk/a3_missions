@@ -11,7 +11,7 @@
  
  
 
- 
+ /*
  waitUntil {!isNil "D_HOSPITAL_LCS"};
  
  systemChat str D_HOSPITAL_LCS;
@@ -20,7 +20,10 @@
 	private _marker = createMarker [(format ["mrk_hospital_%1", _forEachIndex]), _x];
 	_marker setMarkerType "flag_UN";
  } forEach D_HOSPITAL_LCS;
+*/
 
+resistance setFriend [civilian, 0];
+civilian setFriend [resistance, 0];
 
 if (isServer) then {
 	box_01 addMagazineCargo ["CL_Antibiotic", 20];
@@ -33,9 +36,3 @@ if (isServer) then {
 	[civilian, 50] call BIS_fnc_respawnTickets;
 	[independent, 50] call BIS_fnc_respawnTickets;
 };
-
-
-
-
-
-[] call BIS_fnc_showMissionStatus;
