@@ -56,12 +56,17 @@ if (isServer) then {
 	[east, 35] call BIS_fnc_respawnTickets;
 	[independent, 16] call BIS_fnc_respawnTickets;
 	
-	publicVariable "base_built"; 
+	publicVariable "east_base_built"; 
+	publicVariable "west_base_built"; 
 	
 	waitUntil { time > 5 };
 	
+	setTimeMultiplier 6;
 	
-	//start west
+	bb_threat_chem_areas pushBack [obj_target_x25, D_THREAT_CHEM_LOCAL, 140, 0.0003];
+	publicVariable "bb_threat_chem_areas";
+	
+		//start west
 	box_west_01 addItemCargo ["ACE_MRE_ChickenTikkaMasala", 25];
 	box_west_01 addItemCargo ["ACE_Canteen", 25];
 	box_west_01 addItemCargo ["ACE_EntrenchingTool", 5];
@@ -146,11 +151,6 @@ if (isServer) then {
 	box_east_01 addWeaponCargo ["CUP_arifle_AKS74_Early", 20];
 	box_east_01 addMagazineCargo ["CUP_20Rnd_545x39_AKSU_M", 60];
 	box_east_01 addMagazineCargo ["CL_Rounds_CUP_B_545x39_Ball", 240];
-	
-	setTimeMultiplier 6;
-	
-	bb_threat_chem_areas pushBack [obj_target_x25, D_THREAT_CHEM_LOCAL, 140, 0.0003];
-	publicVariable "bb_threat_chem_areas";
 	
 //	[civilian, 50] call BIS_fnc_respawnTickets;
 //	[independent, 50] call BIS_fnc_respawnTickets;
