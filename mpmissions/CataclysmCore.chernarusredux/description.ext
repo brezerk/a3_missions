@@ -38,7 +38,7 @@ loadScreen      = "data\cataclysmdda.paa";
 // Respawn type
 respawn = 3;
 // Delay in seconds before playable unit respawns.
-respawnDelay = 5;
+respawnDelay = 480;
 // Respawn templates from CfgRespawnTemplates. You can combine any number of them together.
 respawnTemplates[] = {"MenuPosition", "Base", "Counter", "Tickets"};
 // 0 to disable the score table (it can still be opened manually by pressing 'P' key).
