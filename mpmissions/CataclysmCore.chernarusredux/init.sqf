@@ -66,7 +66,91 @@ if (isServer) then {
 	bb_threat_chem_areas pushBack [obj_target_x25, D_THREAT_CHEM_LOCAL, 140, 0.0003];
 	publicVariable "bb_threat_chem_areas";
 	
-	execVM "cargo.sqf";
+	//start west
+	box_west_01 addItemCargoGlobal  ["ACE_MRE_ChickenTikkaMasala", 25];
+	box_west_01 addItemCargoGlobal  ["ACE_Canteen", 25];
+	box_west_01 addItemCargoGlobal  ["ACE_EntrenchingTool", 5];
+	box_west_01 addItemCargoGlobal  ["CL_FuelHose", 2];
+	box_west_01 addItemCargoGlobal  ["ChemicalDetector_01_watch_F", 15];
+	box_west_01 addItemCargoGlobal  ["CL_Axe", 3];
+	box_west_01 addMagazineCargoGlobal ["CL_Matches", 5];
+	box_west_01 addItemCargoGlobal  ["CL_GasMask_03", 15];
+	box_west_01 addItemCargoGlobal  ["ToolKit", 1];
+	box_west_01 addItemCargoGlobal  ["ACE_DefusalKit", 2];
+	box_west_01 addWeaponCargoGlobal ["ACE_VMH3", 2];
+	box_west_01 addWeaponCargoGlobal ["ACE_Flashlight_Maglite_ML300L", 25];
+	box_west_01 addItemCargoGlobal  ["ACE_MapTools", 5];
+	box_west_01 addItemCargoGlobal  ["ACE_fieldDressing", 25];
+	box_west_01 addItemCargoGlobal  ["ACE_tourniquet", 10];
+	box_west_01 addItemCargoGlobal  ["ACE_bloodIV_500", 10];
+	box_west_01 addItemCargoGlobal  ["ACE_morphine", 10];
+	box_west_01 addItemCargoGlobal  ["ACE_adenosine", 10];
+	box_west_01 addItemCargoGlobal  ["ACE_personalAidKit", 5];
+	box_west_01 addItemCargoGlobal  ["CL_AntiradinBag", 15];
+	box_west_01 addItemCargoGlobal  ["CL_Antidote", 15];
+	box_west_01 addMagazineCargoGlobal ["CL_Matches", 5];
+	box_west_01 addMagazineCargoGlobal ["CL_Antibiotic", 5];
+	box_west_01 addMagazineCargoGlobal ["CL_PainKillers", 7];
+	box_west_01 addMagazineCargoGlobal ["CUP_8Rnd_9x18_Makarov_M", 15];
+	box_west_01 addMagazineCargoGlobal ["CL_Rounds_CUP_B_9x18_Ball", 100];
+	box_west_01 addItemCargoGlobal  ["CUP_HandGrenade_RGD5", 8];
+	box_west_01 addItemCargoGlobal  ["SmokeShell", 25];
+	box_west_01 addItemCargoGlobal  ["SmokeShellRed", 10];
+	box_west_01 addItemCargoGlobal  ["SmokeShellYellow", 10];
+	
+	//extra
+	box_west_01 addItemCargoGlobal  ["ACE_EntrenchingTool", 4];
+	box_west_01 addItemCargoGlobal  ["ChemicalDetector_01_watch_F", 8];
+	box_west_01 addItemCargoGlobal  ["CL_GasMask_03", 10];
+	box_west_01 addWeaponCargoGlobal ["Binocular", 10];
+	box_west_01 addItemCargoGlobal  ["ACE_fieldDressing", 25];
+	box_west_01 addItemCargoGlobal  ["ACE_tourniquet", 5];
+	box_west_01 addItemCargoGlobal  ["ACE_bloodIV_500", 5];
+	box_west_01 addItemCargoGlobal  ["CL_AntiradinBag", 10];
+	box_west_01 addItemCargoGlobal  ["CL_Antidote", 20];
+	box_west_01 addItemCargoGlobal  ["APERSTripMine_Wire_Mag", 3];
+	box_west_01 addWeaponCargoGlobal ["CUP_arifle_L85A2", 15];
+	box_west_01 addMagazineCargoGlobal ["CUP_20Rnd_556x45_Stanag", 40];
+	box_west_01 addMagazineCargoGlobal ["CL_Rounds_B_556x45_Ball_Tracer_Red", 172];
+
+	//start east
+	box_east_01 addItemCargoGlobal  ["ACE_MRE_ChickenTikkaMasala", 25];
+	box_east_01 addItemCargoGlobal  ["ACE_Canteen", 25];
+	box_east_01 addItemCargoGlobal  ["ACE_EntrenchingTool", 5];
+	box_east_01 addItemCargoGlobal  ["CL_FuelHose", 2];
+	box_east_01 addItemCargoGlobal  ["ChemicalDetector_01_watch_F", 15];
+	box_east_01 addItemCargoGlobal  ["CL_Axe", 3];
+	box_east_01 addMagazineCargoGlobal ["CL_Matches", 5];
+	box_east_01 addItemCargoGlobal  ["CL_GasMask_03", 15];
+	box_east_01 addItemCargoGlobal  ["ToolKit", 1];
+	box_east_01 addItemCargoGlobal  ["ACE_DefusalKit", 2];
+	box_east_01 addWeaponCargoGlobal ["ACE_VMH3", 2];
+	box_east_01 addWeaponCargoGlobal ["ACE_Flashlight_Maglite_ML300L", 25];
+	box_east_01 addItemCargoGlobal  ["ACE_MapTools", 5];
+	box_east_01 addItemCargoGlobal  ["ACE_fieldDressing", 25];
+	box_east_01 addItemCargoGlobal  ["ACE_tourniquet", 10];
+	box_east_01 addItemCargoGlobal  ["ACE_bloodIV_500", 10];
+	box_east_01 addItemCargoGlobal  ["ACE_morphine", 10];
+	box_east_01 addItemCargoGlobal  ["ACE_adenosine", 10];
+	box_east_01 addItemCargoGlobal  ["ACE_personalAidKit", 5];
+	box_east_01 addItemCargoGlobal  ["CL_AntiradinBag", 15];
+	box_east_01 addItemCargoGlobal  ["CL_Antidote", 15];
+	box_east_01 addMagazineCargoGlobal ["CL_Matches", 5];
+	box_east_01 addMagazineCargoGlobal ["CL_Antibiotic", 5];
+	box_east_01 addMagazineCargoGlobal ["CL_PainKillers", 7];
+	box_east_01 addMagazineCargoGlobal ["CUP_8Rnd_9x18_Makarov_M", 15];
+	box_east_01 addMagazineCargoGlobal ["CL_Rounds_CUP_B_9x18_Ball", 100];
+	box_east_01 addItemCargoGlobal  ["CUP_HandGrenade_RGD5", 8];
+	box_east_01 addItemCargoGlobal  ["SmokeShell", 25];
+	box_east_01 addItemCargoGlobal  ["SmokeShellRed", 10];
+	box_east_01 addItemCargoGlobal  ["SmokeShellYellow", 10];
+	
+	//extra
+	box_east_01 addItemCargoGlobal  ["ACE_fieldDressing", 41];
+	box_east_01 addItemCargoGlobal  ["FRITH_ruin_vestia_lite_ltr", 20];
+	box_east_01 addWeaponCargoGlobal ["CUP_arifle_AKS74_Early", 20];
+	box_east_01 addMagazineCargoGlobal ["CUP_20Rnd_545x39_AKSU_M", 60];
+	box_east_01 addMagazineCargoGlobal ["CL_Rounds_CUP_B_545x39_Ball", 240];
 	
 //	[civilian, 50] call BIS_fnc_respawnTickets;
 //	[independent, 50] call BIS_fnc_respawnTickets;
