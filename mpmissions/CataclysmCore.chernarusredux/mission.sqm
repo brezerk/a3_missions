@@ -8,15 +8,15 @@ class EditorData
 	toggles=641;
 	class ItemIDProvider
 	{
-		nextID=1481;
+		nextID=1483;
 	};
 	class MarkerIDProvider
 	{
-		nextID=36;
+		nextID=37;
 	};
 	class LayerIndexProvider
 	{
-		nextID=2052;
+		nextID=2064;
 	};
 	class Camera
 	{
@@ -605,7 +605,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=125;
+		items=127;
 		class Item0
 		{
 			dataType="Layer";
@@ -13345,8 +13345,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={11350.09,87.345299,14118.188};
-				angles[]={0,3.2580934,0};
+				position[]={11362.421,87.355301,14120.617};
+				angles[]={-0,3.2580934,0};
 			};
 			side="Empty";
 			flags=4;
@@ -13356,7 +13356,6 @@ class Mission
 			};
 			id=1445;
 			type="B_CargoNet_01_ammo_F";
-			atlOffset=-0.010002136;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -14559,8 +14558,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={6895.7451,393.96469,11379.95};
-				angles[]={6.2456956,0.5736897,6.2806892};
+				position[]={6893.9429,394.36414,11386.756};
+				angles[]={6.2157898,0.5736897,0.062419467};
 			};
 			side="Empty";
 			flags=4;
@@ -14570,7 +14569,7 @@ class Mission
 			};
 			id=1475;
 			type="B_CargoNet_01_ammo_F";
-			atlOffset=3.0517578e-005;
+			atlOffset=-0.0021057129;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -15140,6 +15139,23 @@ class Mission
 			id=1480;
 			type="Campfire_burning_F";
 			atlOffset=-7.6293945e-006;
+		};
+		class Item125
+		{
+			dataType="Marker";
+			position[]={11349.816,86.529999,14118.093};
+			name="wp_poi_west_cargo01";
+			type="mil_objective";
+			id=1481;
+		};
+		class Item126
+		{
+			dataType="Marker";
+			position[]={6895.7061,393.14301,11380.045};
+			name="wp_poi_east_cargo01";
+			type="mil_objective";
+			id=1482;
+			atlOffset=0.00024414063;
 		};
 	};
 	class Connections
