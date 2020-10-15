@@ -51,7 +51,16 @@ if (isServer) then {
 		tf_freq_east = _settingsSwEast;
 		publicVariable "tf_freq_east";
 	};
-
+	
+	[west, 35] call BIS_fnc_respawnTickets;
+	[east, 35] call BIS_fnc_respawnTickets;
+	[independent, 16] call BIS_fnc_respawnTickets;
+	
+	publicVariable "base_built"; 
+	
+	waitUntil { time > 5 };
+	
+	
 	//start west
 	box_west_01 addItemCargo ["ACE_MRE_ChickenTikkaMasala", 25];
 	box_west_01 addItemCargo ["ACE_Canteen", 25];
@@ -137,14 +146,6 @@ if (isServer) then {
 	box_east_01 addWeaponCargo ["CUP_arifle_AKS74_Early", 20];
 	box_east_01 addMagazineCargo ["CUP_20Rnd_545x39_AKSU_M", 60];
 	box_east_01 addMagazineCargo ["CL_Rounds_CUP_B_545x39_Ball", 240];
-	
-	[west, 35] call BIS_fnc_respawnTickets;
-	[east, 35] call BIS_fnc_respawnTickets;
-	[independent, 16] call BIS_fnc_respawnTickets;
-	
-	publicVariable "base_built"; 
-	
-	waitUntil { time > 5 };
 	
 	setTimeMultiplier 6;
 	
