@@ -31,6 +31,7 @@ if (isServer) then {
 		
 		// spawn spec ops
 		["wp_spec_01", ["rus_spec", 4] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
+		sleep 15;
 		["wp_spec_04", ["rus_spec", 4] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
 		
 		// +5 mins: spawn 5 spec ops waves
@@ -38,6 +39,7 @@ if (isServer) then {
 		waitUntil {sleep 1; diag_tickTime > _until;};
 		
 		[["wp_spec", 8] call BrezBlock_fnc_Get_RND_Index, ["rus_spec", 4] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
+		sleep 15;
 		[["wp_spec", 8] call BrezBlock_fnc_Get_RND_Index, ["rus_spec", 4] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
 
 		// Wave 1 (+5 min start light invasion)
@@ -59,11 +61,15 @@ if (isServer) then {
 		//call Fn_Get_Task_State;
 		
 		["wp_main", ["rus_p_light", 6] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
+		sleep 15;
 		["wp_main", ["rus_p_light", 6] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
+		sleep 15;
 		["wp_main", ["rus_mech_light", 7] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
 
 		["wp_nov_main", ["nov_mech_light", 2] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
+		sleep 15;
 		[["wp_nov", 5] call BrezBlock_fnc_Get_RND_Index, ["nov_p_light", 4] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
+		sleep 15;
 		[["wp_nov", 5] call BrezBlock_fnc_Get_RND_Index, ["nov_p_light", 4] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
 
 		//Wave 2 (5 Minutes) artilery
@@ -96,26 +102,35 @@ if (isServer) then {
 		
 		// rus med at full scale
 		[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_p_med", 3] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
+		sleep 15;
 		[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_p_med", 3] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
-
+		sleep 15;
 		if (!task_completed_01) then {
 			[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_mech_light", 7] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
+			sleep 15;
 			[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_mech_med", 4] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
+			sleep 15;
 			[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_p_med", 3] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
+			sleep 15;
 			[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_p_light", 6] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
 		} else {
 			[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_mech_med", 4] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
+			sleep 15;
 			[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_p_med", 3] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
+			sleep 15;
 			[["wp", 10] call BrezBlock_fnc_Get_RND_Index, ["rus_p_light", 6] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
 		};
 
 		// if inform docs found, skip heavy
 		if (!task_completed_04) then {
 			["wp_nov_main", ["nov_mech_med", 2] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
+			sleep 15;
 			[["wp_nov", 5] call BrezBlock_fnc_Get_RND_Index, ["nov_p_med", 3] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
+			sleep 15;
 			[["wp_nov", 5] call BrezBlock_fnc_Get_RND_Index, ["nov_p_light", 4] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
 		} else {
 			["wp_nov_main", ["nov_mech_light", 2] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
+			sleep 15;
 			[["wp_nov", 5] call BrezBlock_fnc_Get_RND_Index, ["nov_p_light", 4] call BrezBlock_fnc_Get_RND_Index, "wp_defend_01"] call BrezBlock_fnc_Spawn_OPFOR_Forces;
 		};
 			

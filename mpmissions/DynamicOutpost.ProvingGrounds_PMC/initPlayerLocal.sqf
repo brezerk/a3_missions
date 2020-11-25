@@ -64,9 +64,11 @@ private ["_trgKickToSpecator", "_trgLocationInfo01"];
 // hide markers
 {if (_x find "wp_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
 
-waitUntil { ([] call acre_api_fnc_isInitialized) };
-	
-[ (["ACRE_SEM52SL"] call acre_api_fnc_getRadioByType), 1] call acre_api_fnc_setRadioChannel;
+if (isClass(configFile >> "CfgPatches" >> "acre_main")) then {
+	waitUntil { ([] call acre_api_fnc_isInitialized) };
+		
+	[ (["ACRE_SEM52SL"] call acre_api_fnc_getRadioByType), 1] call acre_api_fnc_setRadioChannel;
+};
 
 sleep 1;
 

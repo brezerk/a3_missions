@@ -123,8 +123,8 @@ if (isServer) then {
 			6,
 			true
 		] call BrezBlock_fnc_Attach_SearchIntel_Action;
-		[ua_injured_01, 0.3, "body", "bullet"] call ace_medical_fnc_addDamageToUnit;
-		[ua_injured_01, 0.8, "head", "stub"] call ace_medical_fnc_addDamageToUnit;
+		//[ua_injured_01, 0.3, "body", "bullet"] call ace_medical_fnc_addDamageToUnit;
+		[ua_injured_01, 0.3, "head", "stub"] call ace_medical_fnc_addDamageToUnit;
 		ua_injured_01 setVariable ["ACE_isUnconscious", true, true];
 		ua_injured_01 setUnconscious true;
 		[ua_uaz_02, ["hitEngine", 0.95, true]] remoteExec ["setHitPointDamage"];
