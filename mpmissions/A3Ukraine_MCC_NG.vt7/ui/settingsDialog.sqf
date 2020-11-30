@@ -18,18 +18,6 @@
 
 params ["_exitCode"];
 
-//FIXME
-/*
-						if (side player == west) then {
-							private _role = roleDescription player;
-							_role = (_role splitString "@") select 0;
-							if ((_role == "Company comander") || (D_DEBUG)) then {
-
-							};
-						};
-						*/
-
-
 if (_exitCode in [0, 2]) then { 
 
 sleep 5;
@@ -89,6 +77,7 @@ if (!isNil "_settingsDialog") then {
 		_cbPrisoner lbSetCurSel 1;
 	};
 	
+	/*
 	private _cbFractionWest = _dialog displayCtrl 2105;
 	if (!isNil "_cbFractionWest") then {
 		{
@@ -124,6 +113,7 @@ if (!isNil "_settingsDialog") then {
 		} forEach ([civilian] call Fn_Config_GetFractions);
 		_cbFractionCiv lbSetCurSel 0;
 	};
+	*/
 };
 
 };

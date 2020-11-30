@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="BrezBlock.org.ua">
+	<Package name="UnfinishedBusiness">
+		<Container name="l18n">
+			<Key ID="STR_ONLOAD_NAME">
+				<Original>Arma 3 Ukraine MCC Sanbox v0.0.6</Original>
+			</Key>
+			<Key ID="INFO_MOD_NF_ACE">
+				<Original>INFO: ACE Mod not found. Advanced Combat Environment features will be disabled.</Original>
+				<English>INFO: ACE Mod not found. Advanced Combat Environment features will be disabled.</English>
+				<Russian>ІНФО: Мод ACE не знайдено. Розширені функції бойового середовища будуть відключені.</Russian>
+			</Key>
+			<Key ID="INFO_MOD_NF_ACE_MEDICAL">
+				<Original>INFO: ACE Medical Mod not found. Advanced medical features will be disabled.</Original>
+				<English>INFO: ACE Medical Mod not found. Advanced medical features will be disabled.</English>
+				<Russian>ІНФО: Мод ACE Medical не знайдено. Розширені функції медицини будуть відключені.</Russian>
+			</Key>
+			<Key ID="INFO_MOD_NF_ACEX">
+				<Original>INFO: ACEX Mod not found. Survival features will be disabled.</Original>
+				<English>INFO: ACEX Mod not found. Survival features will be disabled.</English>
+				<Russian>ІНФО: Мод ACEX не знайдено. Функції виживання будуть відключені.</Russian>
+			</Key>
+			<Key ID="INFO_MOD_NF_FACTIONS">
+				<Original>INFO: CUP Vehicles Mod not found. Advanced fractions will be unavailable.</Original>
+				<English>INFO: CUP Vehicles Mod not found. Advanced fractions will be unavailable.</English>
+				<Russian>ІНФО: Мод CUP Vehicles не знайдено. Розширені фракції будуть недоступні.</Russian>
+			</Key>
+			<Key ID="INFO_DEV_01">
+				<Original>Development studio</Original>
+				<English>Development studio</English>
+				<Russian>Студія розробки</Russian>
+			</Key>
+			<Key ID="INFO_DEV_02">
+				<Original>In cooperation with community</Original>
+				<English>In cooperation with community</English>
+				<Russian>У співпраці зі спільнотою</Russian>
+			</Key>
+			<Key ID="INFO_DEV_03">
+				<Original>Presents</Original>
+				<English>Presents</English>
+				<Russian>Представляє</Russian>
+			</Key>
+			<Key ID="STR_FROM_01_INFO_01">
+				<Original>Select difficlty level:</Original>
+				<English>Select difficlty level:</English>
+				<Russian>Оберіть рівень складності:</Russian>
+			</Key>
+			<Key ID="STR_FROM_01_INFO_02">
+				<Original>Select mission location:</Original>
+				<English>Select mission location:</English>
+				<Russian>Оберіть локацію місії:</Russian>
+			</Key>
+			<Key ID="STR_FROM_01_INFO_03">
+				<Original>Select mission start type:</Original>
+				<English>Select mission start type:</English>
+				<Russian>Оберіть тип початку місії:</Russian>
+			</Key>
+			<Key ID="STR_FROM_01_INFO_04">
+				<Original>Navigation Tools: Map</Original>
+				<English>Navigation Tools: Map</English>
+				<Russian>Засоби навігації: Мапа</Russian>
+			</Key>
+			<Key ID="STR_FROM_01_INFO_09">
+				<Original>Navigation Tools: Compass</Original>
+				<English>Navigation Tools: Compass</English>
+				<Russian>Засоби навігації: Компас</Russian>
+			</Key>
+			<Key ID="STR_FROM_01_INFO_05">
+				<Original>Fraction: West</Original>
+				<English>Fraction: West</English>
+				<Russian>Фракція: Захід</Russian>
+			</Key>
+			<Key ID="STR_FROM_01_INFO_06">
+				<Original>Fraction: AOC (East)</Original>
+				<English>Fraction: AOC (East)</English>
+				<Russian>Фракція: АОС (East)</Russian>
+			</Key>
+			<Key ID="STR_FROM_01_INFO_07">
+				<Original>Fraction: PNG (Independent)</Original>
+				<English>Fraction: PNG (Independent)</English>
+				<Russian>Фракція: НГП (Незалежні)</Russian>
+			</Key>
+			<Key ID="STR_FROM_01_INFO_08">
+				<Original>Fraction: Сivilian</Original>
+				<English>Fraction: Сivilian</English>
+				<Russian>Фракція: Цивільні</Russian>
+			</Key>
+			<Key ID="STR_FROM_01_INFO_10">
+				<Original>Chance to be captured</Original>
+				<English>Chance to be captured</English>
+				<Russian>Шанс потрапити в полон</Russian>
+			</Key>
+			<Key ID="STR_FROM_01_CMD_01">
+				<Original>Start mission</Original>
+				<English>Start mission</English>
+				<Russian>Почати місію</Russian>
+			</Key>
+			<Key ID="FROM_01_DIF_SELECT_01">
+				<Original>Easy</Original>
+				<English>Easy</English>
+				<Russian>Легка</Russian>
+			</Key>
+			<Key ID="FROM_01_DIF_SELECT_02">
+				<Original>Hardcore</Original>
+				<English>Hardcore</English>
+				<Russian>Хардкор</Russian>
+			</Key>
+			<Key ID="FROM_01_DIF_SELECT_03">
+				<Original>Nightmare</Original>
+				<English>Nightmare</English>
+				<Russian>Кошмар</Russian>
+			</Key>
+			<Key ID="FROM_01_LOC_SELECT_01">
+				<Original>Random</Original>
+				<English>Random</English>
+				<Russian>Випадково</Russian>
+			</Key>
+			<Key ID="FROM_01_START_SELECT_01">
+				<Original>Default</Original>
+				<English>Default</English>
+				<Russian>Звичайний</Russian>
+			</Key>
+			<Key ID="FROM_01_START_SELECT_02">
+				<Original>Express</Original>
+				<English>Express</English>
+				<Russian>Експресс</Russian>
+			</Key>
+			<Key ID="FROM_01_NAVTOOS_SELECT_01">
+				<Original>Everyone have</Original>
+				<English>Everyone have</English>
+				<Russian>Є у кожного</Russian>
+			</Key>
+			<Key ID="FROM_01_NAVTOOS_SELECT_02">
+				<Original>Only the leaders have</Original>
+				<English>Only the leaders have</English>
+				<Russian>Тільки у командирів</Russian>
+			</Key>
+			<Key ID="FROM_01_NAVTOOS_SELECT_03">
+				<Original>No one have</Original>
+				<English>No one have</English>
+				<Russian>Ніхто не має</Russian>
+			</Key>
+		</Container>
+	</Package>
+</Project>

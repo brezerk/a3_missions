@@ -1,0 +1,72 @@
+/***************************************************************************
+ *   Copyright (C) 2008-2019 by Oleksii S. Malakhov <brezerk@gmail.com>    *
+ *                                                                         *
+ *   This program is free software: you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation, either version 3 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program.  If not, see <http://www.gnu.org/licenses/>. *
+ *                                                                         *
+ ***************************************************************************/
+ 
+ // Mission description file
+ 
+class Header
+{
+	gameType   =  Sandbox;	// Game type
+	minPlayers =  1;	// minimum number of players the mission supports
+	maxPlayers = 64;	// maximum number of players the mission supports
+};
+
+author			= "brezerk@brezblock.org.ua";
+OnLoadName		= "Arma3Ukraine MCC NG v0.06";
+OnLoadMission	= "Traning and Zeus mession playgroud";
+briefingName    = "Traning and Zeus mession playgroud";
+// FIXME: https://feedback.bistudio.com/T67181
+overviewPicture = "data\mission_picture.paa";
+loadScreen      = "data\mission_picture.paa";
+overviewTextLocked = "Locked";
+
+// Respawn type
+respawn = 3;
+// Delay in seconds before playable unit respawns.
+respawnDelay = 15;
+// Respawn templates from CfgRespawnTemplates. You can combine any number of them together.
+respawnTemplates[] = {"Counter", "Base"};
+// 0 to disable the score table (it can still be opened manually by pressing 'P' key).
+respawnDialog = 0;
+// When 1, the score table contains score of all playable units as opposed to players only.
+aikills = 0;
+
+// Revive
+reviveMode = 0;  //0 - disabled (we are using ACE); 1 - enabled
+reviveUnconsciousStateMode = 0;
+reviveRequiredItemsFakConsumed = 1;
+reviveRequiredTrait = 0; // all can revive
+reviveRequiredItems = 2; 
+
+respawnOnStart = -1;
+
+// Manage player corpses
+corpseManagerMode = 0;
+corpseLimit = 10;
+corpseRemovalMinTime = 60;
+corpseRemovalMaxTime = 1200;
+minPlayerDistance = 25;
+
+// Force cba_settings.sqf loading
+cba_settings_hasSettingsFile = 1;
+
+class CfgFunctions {
+	#include "addons\BrezBlock.framework\functions.cpp"
+};
+
+#include "ui\settingsDialog.hpp"
+#include "addons\BrezBlock.framework\ui\MissionLogo.hpp"

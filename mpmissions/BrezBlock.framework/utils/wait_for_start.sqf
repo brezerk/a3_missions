@@ -163,6 +163,11 @@ if (!isNil "_missionLogo") then {
 						_intoFrame = _intoFrame + 1;
 					};
 					case 3: {
+						if (!isNil "_settingDialog") then {
+							[0] execVM _settingDialog;
+						};
+						//FIME: move to dialog logic
+						/*
 						if (side player == west) then {
 							private _role = roleDescription player;
 							_role = (_role splitString "@") select 0;
@@ -171,7 +176,7 @@ if (!isNil "_missionLogo") then {
 									[0] execVM _settingDialog;
 								};
 							};
-						};
+						};*/
 						_intoFrame = _intoFrame + 1;
 						if (!D_MOD_ACE) then { systemChat localize "INFO_MOD_NF_ACE"; };
 						if (!D_MOD_ACE_MEDICAL) then { systemChat localize "INFO_MOD_NF_ACE_MEDICAL"; };
