@@ -80,7 +80,7 @@ if (isServer) then {
 	//Fix MCC time multiplier issue
 	//setTimeMultiplier 5;
 	
-	{ { _x  setFlagTexture "addons\apl\data\uaflag.paa"; } forEach ((getPosATL _x) nearObjects ["FlagPole_F", 150]) } forEach [a3mcc_main];
+	//{ { _x  setFlagTexture "addons\apl\data\uaflag.paa"; } forEach ((getPosATL _x) nearObjects ["FlagPole_F", 150]) } forEach [a3mcc_main];
 	
 	//upa_flag_01 setFlagTexture "addons\apl\data\upaflag.paa";
 };

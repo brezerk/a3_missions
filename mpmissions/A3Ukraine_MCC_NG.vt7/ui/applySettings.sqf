@@ -20,6 +20,49 @@ D_LOCATION = "Main";
 D_FACTION = "UA";
 D_ROLE = "Default";
 
+private _cbStart = lbCurSel 2102;
+private _cbDiff = lbCurSel 2101;
+
+private _cbFractionWest = lbCurSel 2105;
+private _cbFractionClass = lbCurSel 2106;
+
+private _cbMedical01 = lbCurSel 2102;
+private _cbMedical02 = lbCurSel 2103;
+private _cbMedical03 = lbCurSel 2104;
+private _cbMedical04 = lbCurSel 2109;
+
+ace_medical_treatment_advancedBandages = _cbMedical01;
+ace_medical_treatment_holsterRequired = _cbMedical02;
+ace_medical_fractures = _cbMedical03;
+ace_medical_limping = _cbMedical04;
+
+switch (_cbDiff) do {
+	case 0: {
+		ace_medical_playerDamageThreshold = 3;
+		ace_advanced_fatigue_loadFactor = 0.5;
+		ace_advanced_fatigue_performanceFactor = 2;
+		ace_advanced_fatigue_recoveryFactor = 2;
+		ace_advanced_fatigue_swayFactor = 0.5;
+		ace_advanced_fatigue_terrainGradientFactor = 0.5;
+	};
+	case 1: {
+		ace_medical_playerDamageThreshold = 1;
+		ace_advanced_fatigue_loadFactor = 1;
+		ace_advanced_fatigue_performanceFactor = 1.5;
+		ace_advanced_fatigue_recoveryFactor = 1.5;
+		ace_advanced_fatigue_swayFactor = 1;
+		ace_advanced_fatigue_terrainGradientFactor = 1;
+	};
+	case 3: {
+		ace_medical_playerDamageThreshold = 1;
+		ace_advanced_fatigue_loadFactor = 1;
+		ace_advanced_fatigue_performanceFactor = 1.5;
+		ace_advanced_fatigue_recoveryFactor = 1.5;
+		ace_advanced_fatigue_swayFactor = 1;
+		ace_advanced_fatigue_terrainGradientFactor = 1;
+	};
+};
+
 mission_generated = true;
 
 closeDialog 1;

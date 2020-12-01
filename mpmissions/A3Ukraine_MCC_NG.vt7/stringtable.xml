@@ -46,99 +46,69 @@
 				<Russian>Оберіть рівень складності:</Russian>
 			</Key>
 			<Key ID="STR_FROM_01_INFO_02">
-				<Original>Select mission location:</Original>
-				<English>Select mission location:</English>
-				<Russian>Оберіть локацію місії:</Russian>
+				<Original>Select start location:</Original>
+				<English>Select start location:</English>
+				<Russian>Оберіть початкову локацію:</Russian>
 			</Key>
-			<Key ID="STR_FROM_01_INFO_03">
-				<Original>Select mission start type:</Original>
-				<English>Select mission start type:</English>
-				<Russian>Оберіть тип початку місії:</Russian>
+			<Key ID="STR_FROM_01_MEDICAL_INFO_01">
+				<Original>Medical: </Original>
+				<English>Medical: </English>
+				<Russian>Медецина: Розширена перев'язка</Russian>
 			</Key>
-			<Key ID="STR_FROM_01_INFO_04">
-				<Original>Navigation Tools: Map</Original>
-				<English>Navigation Tools: Map</English>
-				<Russian>Засоби навігації: Мапа</Russian>
+			<Key ID="STR_FROM_01_MEDICAL_INFO_02">
+				<Original>Medical: </Original>
+				<English>Medical: </English>
+				<Russian>Медецина: Необхідність прибирати зброю</Russian>
 			</Key>
-			<Key ID="STR_FROM_01_INFO_09">
-				<Original>Navigation Tools: Compass</Original>
-				<English>Navigation Tools: Compass</English>
-				<Russian>Засоби навігації: Компас</Russian>
+			<Key ID="STR_FROM_01_MEDICAL_INFO_03">
+				<Original>Medical: </Original>
+				<English>Medical: </English>
+				<Russian>Медецина: Злами кісток</Russian>
+			</Key>
+			<Key ID="STR_FROM_01_MEDICAL_INFO_04">
+				<Original>Medical: </Original>
+				<English>Medical: </English>
+				<Russian>Медицина: Кульгавість</Russian>
 			</Key>
 			<Key ID="STR_FROM_01_INFO_05">
-				<Original>Fraction: West</Original>
-				<English>Fraction: West</English>
-				<Russian>Фракція: Захід</Russian>
+				<Original>Fraction:</Original>
+				<English>Fraction:</English>
+				<Russian>Фракція:</Russian>
 			</Key>
 			<Key ID="STR_FROM_01_INFO_06">
-				<Original>Fraction: AOC (East)</Original>
-				<English>Fraction: AOC (East)</English>
-				<Russian>Фракція: АОС (East)</Russian>
-			</Key>
-			<Key ID="STR_FROM_01_INFO_07">
-				<Original>Fraction: PNG (Independent)</Original>
-				<English>Fraction: PNG (Independent)</English>
-				<Russian>Фракція: НГП (Незалежні)</Russian>
-			</Key>
-			<Key ID="STR_FROM_01_INFO_08">
-				<Original>Fraction: Сivilian</Original>
-				<English>Fraction: Сivilian</English>
-				<Russian>Фракція: Цивільні</Russian>
-			</Key>
-			<Key ID="STR_FROM_01_INFO_10">
-				<Original>Chance to be captured</Original>
-				<English>Chance to be captured</English>
-				<Russian>Шанс потрапити в полон</Russian>
+				<Original>Class:</Original>
+				<English>Class:</English>
+				<Russian>Класс (Навик та стартове спорядження):</Russian>
 			</Key>
 			<Key ID="STR_FROM_01_CMD_01">
 				<Original>Start mission</Original>
 				<English>Start mission</English>
-				<Russian>Почати місію</Russian>
+				<Russian>В бій!</Russian>
 			</Key>
 			<Key ID="FROM_01_DIF_SELECT_01">
 				<Original>Easy</Original>
 				<English>Easy</English>
-				<Russian>Легка</Russian>
+				<Russian>Призовник (Повний арсенал, Зменшене пошкодження, Зменшена втома)</Russian>
 			</Key>
 			<Key ID="FROM_01_DIF_SELECT_02">
 				<Original>Hardcore</Original>
 				<English>Hardcore</English>
-				<Russian>Хардкор</Russian>
+				<Russian>Контрактник (Повний арсенал, Збільшена витрата палива)</Russian>
 			</Key>
 			<Key ID="FROM_01_DIF_SELECT_03">
 				<Original>Nightmare</Original>
 				<English>Nightmare</English>
-				<Russian>Кошмар</Russian>
+				<Russian>ССО (Обмежений арсенал, Збільшена витрата палива)</Russian>
 			</Key>
-			<Key ID="FROM_01_LOC_SELECT_01">
-				<Original>Random</Original>
-				<English>Random</English>
-				<Russian>Випадково</Russian>
+			<Key ID="FROM_01_OPTION_OFF">
+				<Original>Off</Original>
+				<English>Off</English>
+				<Russian>Вимкнено</Russian>
 			</Key>
-			<Key ID="FROM_01_START_SELECT_01">
-				<Original>Default</Original>
-				<English>Default</English>
-				<Russian>Звичайний</Russian>
-			</Key>
-			<Key ID="FROM_01_START_SELECT_02">
-				<Original>Express</Original>
-				<English>Express</English>
-				<Russian>Експресс</Russian>
-			</Key>
-			<Key ID="FROM_01_NAVTOOS_SELECT_01">
-				<Original>Everyone have</Original>
-				<English>Everyone have</English>
-				<Russian>Є у кожного</Russian>
-			</Key>
-			<Key ID="FROM_01_NAVTOOS_SELECT_02">
-				<Original>Only the leaders have</Original>
-				<English>Only the leaders have</English>
-				<Russian>Тільки у командирів</Russian>
-			</Key>
-			<Key ID="FROM_01_NAVTOOS_SELECT_03">
-				<Original>No one have</Original>
-				<English>No one have</English>
-				<Russian>Ніхто не має</Russian>
+			<Key ID="FROM_01_OPTION_ON">
+				<Original>On</Original>
+				<English>On</English>
+				<Russian>Ввімкнено</Russian>
 			</Key>
 		</Container>
 	</Package>

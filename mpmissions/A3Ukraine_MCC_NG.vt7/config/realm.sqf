@@ -19,7 +19,7 @@
 // Available locations for play
 // This mps to different set of wp_<location>_ markers.
 // For example, Plau has two different islands, while Stratis or Tanoa has only one location
-D_LOCATIONS = ['Shrilan', 'Zero'];
+D_LOCATIONS = ['Ширлан (Тренування)', 'Нуль (Бойові місії)'];
 
 // Real time vs fast time
 // true: Real time is more realistic weather conditions change slowly (ideal for persistent game)
@@ -27,7 +27,7 @@ D_LOCATIONS = ['Shrilan', 'Zero'];
 D_CODE43_REAL_WEATHER_REALTIME = false;
 
 // Debug only
-D_DEBUG = false;
+D_DEBUG = true;
 
 D_PRISONS = ["Land_Slum_03_F", "Land_Shed_05", "Land_Shed_07", "Land_House_Small_03_F", "Land_House_Small_01_F"];
 
