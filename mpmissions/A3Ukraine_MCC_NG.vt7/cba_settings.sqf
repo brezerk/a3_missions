@@ -155,3 +155,10 @@ force force STGI_Settings_Enabled = false;
 force force STHud_Settings_HUDMode = 1;
 // Прибрати ванільний список підлеглих
 force force STHud_Settings_SquadBar = true;
+
+// Хапати усіх
+force ace_captives_requireSurrender = 0;
+
+
+//TFAR
+force force TFAR_Teamspeak_Channel_Name = "MCCTaskForceRadio";
