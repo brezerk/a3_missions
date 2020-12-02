@@ -69,4 +69,5 @@ class CfgFunctions {
 };
 
 #include "ui\settingsDialog.hpp"
+#include "ui\vehicleSpawnDialog.hpp"
 #include "addons\BrezBlock.framework\ui\MissionLogo.hpp"

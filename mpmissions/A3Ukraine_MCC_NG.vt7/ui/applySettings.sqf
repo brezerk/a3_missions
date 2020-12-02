@@ -17,14 +17,17 @@
  ***************************************************************************/
 
 D_LOCATION = "Main";
-D_FACTION = "UA";
-D_ROLE = "Default";
+
+D_ROLE = "I_G_Survivor_F";
 
 private _cbStart = lbCurSel 2102;
 private _cbDiff = lbCurSel 2101;
 
 private _cbFractionWest = lbCurSel 2105;
+D_FACTION = D_SIDE_FACTIONS # _cbFractionWest;
 private _cbFractionClass = lbCurSel 2106;
+private _factionClases = [D_FACTION, "soldier"] call Fn_Config_GetFactionVehicles;
+D_ROLE = _factionClases # _cbFractionClass;
 
 private _cbMedical01 = lbCurSel 2102;
 private _cbMedical02 = lbCurSel 2103;
@@ -66,6 +69,9 @@ switch (_cbDiff) do {
 mission_generated = true;
 
 closeDialog 1;
+
+//Fix MCC artillery calculator issue
+call Fn_Local_Respawn;
 
 /* 
 if (!mission_requested) then { 

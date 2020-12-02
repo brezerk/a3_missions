@@ -16,6 +16,7 @@
  *                                                                         *
  ***************************************************************************/
 
+#include "config\loader.sqf";
 #include "config\realm.sqf";
 
 real_weather_init = false;

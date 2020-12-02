@@ -85,6 +85,11 @@
 				<English>Start mission</English>
 				<Russian>В бій!</Russian>
 			</Key>
+			<Key ID="STR_FROM_02_CMD_01">
+				<Original>Spawn vehicle</Original>
+				<English>Spawn vehicle</English>
+				<Russian>Запросити техніку</Russian>
+			</Key>
 			<Key ID="FROM_01_DIF_SELECT_01">
 				<Original>Easy</Original>
 				<English>Easy</English>
@@ -109,6 +114,62 @@
 				<Original>On</Original>
 				<English>On</English>
 				<Russian>Ввімкнено</Russian>
+			</Key>
+			<Key ID="STR_FROM_02_INFO_01">
+				<Original>Fraction:</Original>
+				<English>Fraction:</English>
+				<Russian>Фракція:</Russian>
+			</Key>
+			<Key ID="STR_FROM_02_INFO_02">
+				<Original>Class:</Original>
+				<English>Class:</English>
+				<Russian>Класс:</Russian>
+			</Key>
+			<Key ID="STR_FROM_02_CLASS_01">
+				<Original>Cars</Original>
+				<English>Cars</English>
+				<Russian>Колесна</Russian>
+			</Key>
+			<Key ID="STR_FROM_02_CLASS_02">
+				<Original>Tracked</Original>
+				<English>Tracked</English>
+				<Russian>Гусенечна</Russian>
+			</Key>
+			<Key ID="STR_FROM_02_CLASS_03">
+				<Original>Helicopters</Original>
+				<English>Helicopters</English>
+				<Russian>Гелікоптери</Russian>
+			</Key>
+			<Key ID="STR_FROM_02_CLASS_04">
+				<Original>Planes</Original>
+				<English>Planes</English>
+				<Russian>Літаки</Russian>
+			</Key>
+			<Key ID="STR_FROM_02_CLASS_04">
+				<Original>Boats</Original>
+				<English>Boats</English>
+				<Russian>Лодки</Russian>
+			</Key>
+			<Key ID="STR_FROM_02_INFO_03">
+				<Original>Type: %1\nEngine Power: %2 Kw.\nMax speed: %3 km/h\nFuel amount: %4 l.\nPassengers: %5\nLR Radio: %6\nGPS: %7</Original>
+				<English>Type: %1\nEngine Power: %2 Kw.\nMax speed: %3 km/h\nFuel amount: %4 l.\nPassengers: %5\nLR Radio: %6\nGPS: %7</English>
+				<Russian>Тип: %1\nПотужність двигуна: %2 Кв.\nМаксимальна швидкість: %3 Км/год\nОб'єм палива: %4 л.\nКількість пасс. місць: %5\nЄ ДХ радіо: %6\nЄ GPS: %7</Russian>
+			</Key>
+			<Key ID="STR_FROM_INFO_NO">
+				<Original>No</Original>
+				<English>No</English>
+				<Russian>Ні</Russian>
+			</Key>
+				<Key ID="STR_FROM_INFO_YES">
+				<Original>Yes</Original>
+				<English>Yes</English>
+				<Russian>Так</Russian>
+			</Key>
+			</Key>
+				<Key ID="STR_ZONE_NOT_EMPTY">
+				<Original>Zone is not empty</Original>
+				<English>Zone is not empty</English>
+				<Russian>Зона зайнята</Russian>
 			</Key>
 		</Container>
 	</Package>

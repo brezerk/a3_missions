@@ -18,6 +18,8 @@
 
 mission_requested = false;
 mission_generated = false;
+D_SIDE_FACTIONS = [];
+D_FACTION_CACHE = [];
 
 Fn_Local_WaitPublicVariables = {
 	params ['_vars'];
@@ -36,8 +38,38 @@ Fn_Local_Respawn = {
 
 	waitUntil { alive player }; // Wait for player to initialize
 	
+	player setUnitLoadout (configFile >> "CfgVehicles" >> D_ROLE);
+	
+	if (getNumber (configfile >> "CfgVehicles" >> D_ROLE >> "attendant") == 1) then {
+		if (D_MOD_ACE) then {
+			player setVariable ["ace_medical_medicclass", 1, true];
+		} else {
+			player setUnitTrait ["Medic", true];
+		};
+	} else {
+		if (D_MOD_ACE) then {
+			player setVariable ["ace_medical_medicclass", 0, true];
+		} else {
+			player setUnitTrait ["Medic", false];
+		};
+	};
+	if (getNumber (configfile >> "CfgVehicles" >> D_ROLE >> "engineer") == 1) then {
+		if (D_MOD_ACE) then {
+			player setVariable ["ACE_IsEngineer", 1, true];
+		} else {
+			player setUnitTrait ["engineer", true];
+		};
+	} else {
+		if (D_MOD_ACE) then {
+			player setVariable ["ACE_IsEngineer", 0, true];
+		} else {
+			player setUnitTrait ["engineer", false];
+		};
+	};
 	private _building = selectRandom((getMarkerPos "wp_main") nearObjects ["Base_WarfareBBarracks", 50]);
 	player setPos (getPos _building);
+	
+	
 };
 
 waitUntil { !isNull player }; // Wait for player to initialize
@@ -49,17 +81,104 @@ cutText ["", "BLACK"];
 
 waitUntil { sleep 1; [["mission_requested", "mission_generated", "real_weather_init"]] call Fn_Local_WaitPublicVariables; };
 
+//FIXME: Dynamic side?
+D_SIDE_FACTIONS = [2] call Fn_Config_GetFactions;
+
 if ((!mission_requested) || (!mission_generated)) then {
-	["ui\settingsDialog.sqf"] call BrezBlock_fnc_WaitForStart;
+	["ui\settingsDialogHandler.sqf"] call BrezBlock_fnc_WaitForStart;
 };
 
 waitUntil { sleep 1; [["D_LOCATION", "D_FACTION", "D_ROLE"]] call Fn_Local_WaitPublicVariables; }; 
 
-//Fix MCC artillery calculator issue
-call Fn_Local_Respawn;
-
 [1, "BLACK", 1, 1] call BIS_fnc_fadeEffect;
 [[""]] call BIS_fnc_music;
+
+
+[
+	a3ua_mcc_medic01,
+	"Змінити налаштування",
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
+	"_this distance _target < 3",
+	"_caller distance _target < 3",
+	{},
+	{},
+	{ [0] execVM "ui\settingsDialog.sqf"; },
+	{ },
+	[],
+	3,
+	nil,
+	false,
+	false] call BIS_fnc_holdActionAdd;
+
+[
+	a3ua_vehSpawn01,
+	"Запросити технику",
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
+	"_this distance _target < 3",
+	"_caller distance _target < 3",
+	{},
+	{},
+	{ [(getPos a3ua_vehSpawn_lcs01), (getDir a3ua_vehSpawn_lcs01)] execVM "ui\vehicleSpawnDialog.sqf"; },
+	{ },
+	[],
+	3,
+	nil,
+	false,
+	false] call BIS_fnc_holdActionAdd;
+	
+[
+	a3ua_vehSpawn02,
+	"Запросити технику",
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
+	"_this distance _target < 3",
+	"_caller distance _target < 3",
+	{},
+	{},
+	{ [(getPos a3ua_vehSpawn_lcs02), (getDir a3ua_vehSpawn_lcs02)] execVM "ui\vehicleSpawnDialog.sqf"; },
+	{ },
+	[],
+	3,
+	nil,
+	false,
+	false] call BIS_fnc_holdActionAdd;
+
+[
+	a3ua_vehSpawn03,
+	"Запросити технику",
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
+	"_this distance _target < 3",
+	"_caller distance _target < 3",
+	{},
+	{},
+	{ [(getPos a3ua_vehSpawn_lcs03), (getDir a3ua_vehSpawn_lcs03)] execVM "ui\vehicleSpawnDialog.sqf"; },
+	{ },
+	[],
+	3,
+	nil,
+	false,
+	false] call BIS_fnc_holdActionAdd;
+
+[
+	a3ua_vehSpawn04,
+	"Запросити технику",
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
+	"_this distance _target < 3",
+	"_caller distance _target < 3",
+	{},
+	{},
+	{ [(getPos a3ua_vehSpawn_lcs04), (getDir a3ua_vehSpawn_lcs04)] execVM "ui\vehicleSpawnDialog.sqf"; },
+	{ },
+	[],
+	3,
+	nil,
+	false,
+	false] call BIS_fnc_holdActionAdd;	
+
 
 a3ua_mcc_pc01 addAction
 [
