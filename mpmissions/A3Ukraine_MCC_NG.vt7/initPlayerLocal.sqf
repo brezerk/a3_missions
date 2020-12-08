@@ -16,9 +16,6 @@
  *                                                                         *
  ***************************************************************************/
 
-mission_requested = false;
-mission_generated = false;
-D_SIDE_FACTIONS = [];
 D_FACTION_CACHE = [];
 
 Fn_Local_WaitPublicVariables = {
@@ -33,9 +30,6 @@ Fn_Local_WaitPublicVariables = {
 Fn_Local_Respawn = {
 	enableEngineArtillery false; 
 
-	player setVariable ["BB_CorpseTTL", -1, true];
-	player setVariable ["MCC_valorPoints", 10000, true];
-
 	waitUntil { alive player }; // Wait for player to initialize
 	
 	player setUnitLoadout (configFile >> "CfgVehicles" >> D_ROLE);
@@ -43,12 +37,30 @@ Fn_Local_Respawn = {
 	if (getNumber (configfile >> "CfgVehicles" >> D_ROLE >> "attendant") == 1) then {
 		if (D_MOD_ACE) then {
 			player setVariable ["ace_medical_medicclass", 1, true];
+			for "_i" from 1 to 20 do {player addItem "ACE_fieldDressing";};
+			for "_i" from 1 to 5 do {player addItem "ACE_morphine";};
+			for "_i" from 1 to 4 do {player addItem "ACE_tourniquet";};
+			for "_i" from 1 to 19 do {player addItem "ACE_packingBandage";};
+			for "_i" from 1 to 5 do {player addItem "ACE_epinephrine";};
+			for "_i" from 1 to 10 do {player addItem "ACE_splint";};
+			for "_i" from 1 to 10 do {player addItem "ACE_adenosine";};
+			for "_i" from 1 to 4 do {player addItem "ACE_bloodIV_500";};
+			for "_i" from 1 to 10 do {player addItem "ACE_quikclot";};
+			for "_i" from 1 to 10 do {player addItem "ACE_elasticBandage";};
+			player addItem "ACE_surgicalKit";
+			player addItem "ACE_personalAidKit";
 		} else {
 			player setUnitTrait ["Medic", true];
 		};
 	} else {
 		if (D_MOD_ACE) then {
 			player setVariable ["ace_medical_medicclass", 0, true];
+			for "_i" from 1 to 10 do {player addItem "ACE_fieldDressing";};
+			for "_i" from 1 to 2 do {player addItem "ACE_tourniquet";};
+			for "_i" from 1 to 6 do {player addItem "ACE_packingBandage";};
+			for "_i" from 1 to 4 do {player addItem "ACE_splint";};
+			for "_i" from 1 to 8 do {player addItem "ACE_quikclot";};
+			for "_i" from 1 to 8 do {player addItem "ACE_elasticBandage";};
 		} else {
 			player setUnitTrait ["Medic", false];
 		};
@@ -74,25 +86,10 @@ Fn_Local_Respawn = {
 
 waitUntil { !isNull player }; // Wait for player to initialize
 
+player linkItem "ItemMap";
+
 // hide markers
 {if (_x find "wp_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
-
-cutText ["", "BLACK"];
-
-waitUntil { sleep 1; [["mission_requested", "mission_generated", "real_weather_init"]] call Fn_Local_WaitPublicVariables; };
-
-//FIXME: Dynamic side?
-D_SIDE_FACTIONS = [2] call Fn_Config_GetFactions;
-
-if ((!mission_requested) || (!mission_generated)) then {
-	["ui\settingsDialogHandler.sqf"] call BrezBlock_fnc_WaitForStart;
-};
-
-waitUntil { sleep 1; [["D_LOCATION", "D_FACTION", "D_ROLE"]] call Fn_Local_WaitPublicVariables; }; 
-
-[1, "BLACK", 1, 1] call BIS_fnc_fadeEffect;
-[[""]] call BIS_fnc_music;
-
 
 [
 	a3ua_mcc_medic01,
@@ -112,73 +109,65 @@ waitUntil { sleep 1; [["D_LOCATION", "D_FACTION", "D_ROLE"]] call Fn_Local_WaitP
 	false] call BIS_fnc_holdActionAdd;
 
 [
-	a3ua_vehSpawn01,
-	"Запросити технику",
+	a3ua_mcc_health00,
+	"Пнути сніговика",
 	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
 	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
 	"_this distance _target < 3",
 	"_caller distance _target < 3",
 	{},
 	{},
-	{ [(getPos a3ua_vehSpawn_lcs01), (getDir a3ua_vehSpawn_lcs01)] execVM "ui\vehicleSpawnDialog.sqf"; },
+	{
+		for "_i" from 1 to 3 do {
+			private _dmgType = selectRandom["bullet", "stub"];
+			private _dmgLoc = selectRandom["head", "body", "leftarm", "rightarm", "leftleg", "rightleg"];
+			private _dmg = (random 4) + 1;
+			[player, (0.1 * _dmg), _dmgLoc, _dmgType] call ace_medical_fnc_addDamageToUnit;
+		}; 
+	},
 	{ },
 	[],
-	3,
-	nil,
-	false,
-	false] call BIS_fnc_holdActionAdd;
-	
-[
-	a3ua_vehSpawn02,
-	"Запросити технику",
-	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
-	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
-	"_this distance _target < 3",
-	"_caller distance _target < 3",
-	{},
-	{},
-	{ [(getPos a3ua_vehSpawn_lcs02), (getDir a3ua_vehSpawn_lcs02)] execVM "ui\vehicleSpawnDialog.sqf"; },
-	{ },
-	[],
-	3,
+	2,
 	nil,
 	false,
 	false] call BIS_fnc_holdActionAdd;
 
 [
-	a3ua_vehSpawn03,
-	"Запросити технику",
+	a3ua_t_house01,
+	"Заспавнити ворогів",
 	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
 	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
 	"_this distance _target < 3",
 	"_caller distance _target < 3",
 	{},
 	{},
-	{ [(getPos a3ua_vehSpawn_lcs03), (getDir a3ua_vehSpawn_lcs03)] execVM "ui\vehicleSpawnDialog.sqf"; },
+	{
+		0 = [] spawn {
+			private _bots = ['rhs_vdv_recon_medic', 'rhs_vdv_recon_rifleman_l', 'rhs_vdv_recon_marksman_asval', 'rhs_vdv_recon_rifleman', 'rhs_vdv_recon_rifleman_akms'];
+			private _pos = getMarkerPos "mrk_t_house00";
+			if (count (_pos nearObjects ["CAManBase", 15]) > 0) then {
+				hint "В зоні є люди!";
+			};
+			{
+				private _hpos = _x buildingPos -1;
+				for "_i" from 1 to (random 2) do {
+					private _pos = selectRandom _hpos;
+					private _class = selectRandom _bots;
+					private _grp = createGroup east;
+					private _unit = _grp createUnit [_class, _pos, [], 0, "FORM"];
+					_unit disableAI "MOVE";
+					_unit setBehaviour "COMBAT";
+					_unit setCombatMode "RED";
+				};
+			} forEach [a3ua_mcc_house01, a3ua_mcc_house02, a3ua_mcc_house03, a3ua_mcc_house04, a3ua_mcc_house05];
+		};
+	},
 	{ },
 	[],
-	3,
+	2,
 	nil,
 	false,
 	false] call BIS_fnc_holdActionAdd;
-
-[
-	a3ua_vehSpawn04,
-	"Запросити технику",
-	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
-	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
-	"_this distance _target < 3",
-	"_caller distance _target < 3",
-	{},
-	{},
-	{ [(getPos a3ua_vehSpawn_lcs04), (getDir a3ua_vehSpawn_lcs04)] execVM "ui\vehicleSpawnDialog.sqf"; },
-	{ },
-	[],
-	3,
-	nil,
-	false,
-	false] call BIS_fnc_holdActionAdd;	
-
 
 a3ua_mcc_pc01 addAction
 [
@@ -281,6 +270,9 @@ a3ua_t_mine01 addAction
 	"",
 	""
 ];
+
+[a3ua_info01, "data\traning\RPG-7V2.paa", ""] call BIS_fnc_initInspectable; 
+
 
 
 /*

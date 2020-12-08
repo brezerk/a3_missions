@@ -145,7 +145,7 @@
 				<English>Planes</English>
 				<Russian>Літаки</Russian>
 			</Key>
-			<Key ID="STR_FROM_02_CLASS_04">
+			<Key ID="STR_FROM_02_CLASS_05">
 				<Original>Boats</Original>
 				<English>Boats</English>
 				<Russian>Лодки</Russian>
@@ -171,6 +171,13 @@
 				<English>Zone is not empty</English>
 				<Russian>Зона зайнята</Russian>
 			</Key>
+			</Key>
+				<Key ID="STR_MCC_MISSION_RESET_NOT_READY">
+				<Original>No active mission found. Or mission generation in progress.</Original>
+				<English>No active mission found. Or mission generation in progress.</English>
+				<Russian>Активної місії не знайдено. Або триває її генерація.</Russian>
+			</Key>
+			
 		</Container>
 	</Package>
 </Project>

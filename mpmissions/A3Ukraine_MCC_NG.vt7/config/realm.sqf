@@ -26,11 +26,6 @@ D_LOCATIONS = ['Ширлан (Тренування)', 'Нуль (Бойові м
 // false: fast time give more different weather conditions (ideal for non persistent game) 
 D_CODE43_REAL_WEATHER_REALTIME = false;
 
-// Debug only
-D_DEBUG = true;
-
-D_PRISONS = ["Land_Slum_03_F", "Land_Shed_05", "Land_Shed_07", "Land_House_Small_03_F", "Land_House_Small_01_F"];
-
 //
 //D_RESPAWN_DELAY = 300;
 D_RESPAWN_DELAY = 900;

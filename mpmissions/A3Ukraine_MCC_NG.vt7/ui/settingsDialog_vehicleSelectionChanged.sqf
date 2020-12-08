@@ -16,40 +16,28 @@
  *                                                                         *
  ***************************************************************************/
  
-private _cbFraction = lbCurSel 2201;
-private _faction = D_SIDE_FACTIONS # _cbFraction;
+private _cbRole = (lbCurSel 2106);
 
-private _cbClass = "soldier";
+if (!isNil "_cbRole") then {
+	if (_cbRole > 0) then {
+		private _cacheFactionsVehicles = uiNamespace getVariable ["settingsDialog_cacheFactionsVehicles", []];
+		private _class = _cacheFactionsVehicles # _cbRole;
+		private _weapons = [];
 
-switch (lbCurSel 2200) do {
-	case 0: { _cbClass = "carx"};
-	case 1: { _cbClass = "tankX"};
-	case 2: { _cbClass = "helicopterrtd"};
-	case 3: { _cbClass = "airplanex"};
-	case 4: { _cbClass = "shipx"};
+		{
+			if (!(_x in ['Throw', 'Put'])) then {
+				_weapons pushBack (getText(configfile >> "CfgWeapons" >> _x >> "displayName"));
+			};
+		} forEach (getArray(configfile >> "CfgVehicles" >> _class >> "weapons"));
+
+		ctrlSetText [1003, format[
+			"Роль: %1\nМедик: %2\nІнженер: %3\nУніформа: %4\nЗброя: %5",
+			getText(configfile >> "CfgVehicles" >> _class >> "role"),
+			localize (["STR_FROM_INFO_NO", "STR_FROM_INFO_YES"] # getNumber (configfile >> "CfgVehicles" >> _class >> "attendant")),
+			localize (["STR_FROM_INFO_NO", "STR_FROM_INFO_YES"] # getNumber (configfile >> "CfgVehicles" >> _class >> "engineer")),
+			getText(configfile >> "CfgWeapons" >> (getText(configfile >> "CfgVehicles" >> _class >> "uniformClass")) >> "displayName"),
+			(_weapons joinString ", ")]];
+	};
+} else {
+	ctrlSetText [1003, ""];
 };
-
-private _dialog = findDisplay 3873;
-private _cbVehicles = _dialog displayCtrl 2202;
-
-if (!isNil "_cbVehicles") then {
-	D_FACTION_CACHE = [_faction, _cbClass] call Fn_Config_GetFactionVehicles;
-	lbClear _cbVehicles;
-	{
-		private _name = getText (configFile >> "CfgVehicles" >> _x >> "displayName");
-		_cbVehicles lbAdd (_name);
-	} forEach (D_FACTION_CACHE);
-	_cbVehicles lbSetCurSel 0;
-};
-
-
-
-//configfile >> "CfgVehicles" >> "RHS_BM21_VDV_01" >> "unitInfoType"   unitInfoType = "RscUnitInfoArtillery"; unitInfoType = "RscUnitInfoSoldier";
-//configfile >> "CfgVehicles" >> "RHS_BM21_VDV_01" >> "type"           0
-
-//configfile >> "CfgVehicles" >> "rhs_pchela1t_vvs" >> "armor"
-//configfile >> "CfgVehicles" >> "rhs_pchela1t_vvs" >> "maxSpeed"
-//configfile >> "CfgVehicles" >> "rhs_pchela1t_vvs" >> "transportSoldier"
-//configfile >> "CfgVehicles" >> "rhs_pchela1t_vvs" >> "textSingular"
-//configfile >> "CfgVehicles" >> "rhs_pchela1t_vvs" >> "picture"
- 

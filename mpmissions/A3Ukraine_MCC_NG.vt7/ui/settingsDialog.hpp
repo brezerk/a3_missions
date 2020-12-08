@@ -4,7 +4,7 @@
 class SettingsDialog
 {
 	idd = 3773;
-	onUnload = "params ['_display', '_exitCode']; [_exitCode] execVM 'ui\SettingsDialogHandler.sqf';";
+	onUnload = "params ['_display', '_exitCode']; if (isNil 'D_ROLE') then { [_exitCode] execVM 'ui\SettingsDialogHandler.sqf'; };";
 	
 	class ControlsBackground
 	{
@@ -215,7 +215,6 @@ class SettingsDialog
 			w = safeZoneW * 0.170625;
 			h = safeZoneH * 0.02222223;
 			text = "$STR_FROM_01_INFO_06";
-			
 		};
 		class cbFractionClass : RscCombo 
 		{
@@ -224,6 +223,7 @@ class SettingsDialog
 			y = safeZoneY + safeZoneH * 0.52888889;
 			w = safeZoneW * 0.165;
 			h = safeZoneH * 0.02222223;
+			onLBSelChanged = "execVM 'ui\settingsDialog_vehicleSelectionChanged.sqf';";
 			class ComboScrollBar
 			{
 				color[] = {1,1,1,1};
@@ -235,17 +235,19 @@ class SettingsDialog
 			};
 			
 		};
-		/*
-		class lblFractionIndep : RscText 
+		
+		class lblVehicleInfo : RscText 
 		{
-			idc = 1002;
+			idc = 1003;
+			style = 0+16;
 			x = safeZoneX + safeZoneW * 0.503125;
 			y = safeZoneY + safeZoneH * 0.56888889;
 			w = safeZoneW * 0.170625;
-			h = safeZoneH * 0.02222223;
-			text = "$STR_FROM_01_INFO_07";
+			h = safeZoneH * 0.12847222;
+			text = "";
 			
 		};
+		/*
 		class cbFractionIndep : RscCombo 
 		{
 			idc = 2107;

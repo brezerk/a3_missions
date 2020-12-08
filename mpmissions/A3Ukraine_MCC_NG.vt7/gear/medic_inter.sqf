@@ -43,3 +43,8 @@ comment "Add items";
 
 comment "Set identity";
 _this setSpeaker "NoVoice";
+
+_this disableAI "MOVE";
+_this disableAI "FSM";
+_this disableAI "SUPPRESSION";
+_this disableAI "AUTOCOMBAT";

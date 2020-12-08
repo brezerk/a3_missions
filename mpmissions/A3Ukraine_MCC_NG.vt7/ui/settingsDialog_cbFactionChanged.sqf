@@ -16,17 +16,33 @@
  *                                                                         *
  ***************************************************************************/
  
-private _cbFractionWest = lbCurSel 2105;
-private _faction = D_SIDE_FACTIONS # _cbFractionWest;
- 
- private _dialog = findDisplay 3773;
-private _cbFractionEast = _dialog displayCtrl 2106;
-lbClear _cbFractionEast;
-if (!isNil "_cbFractionEast") then {
-	{
-		private _name = getText (configFile >> "CfgVehicles" >> _x >> "displayName");
-		_cbFractionEast lbAdd (_name);
-	} forEach ([_faction, "soldier"] call Fn_Config_GetFactionVehicles);
-	_cbFractionEast lbSetCurSel 0;
+private _selections = profileNamespace getVariable ["a3ua_mcc_userSettings", []];
+private _cbFraction = lbCurSel 2105;
+if (_cbFraction > 0) then {
+	private _cacheFactions = uiNamespace getVariable ["settingsDialog_cacheFaction", []];
+	private _faction = _cacheFactions # _cbFraction;
+	private _cacheFactionsVehicles = [_faction, "soldier"] call NECK_fnc_configGetVehicles;
+	uiNamespace setVariable ["settingsDialog_cacheFactionsVehicles", _cacheFactionsVehicles];
+	private _dialog = findDisplay 3773;
+	private _cbRole = _dialog displayCtrl 2106;
+	lbClear _cbRole;
+	if (!isNil "_cbRole") then {
+		{
+			private _name = getText (configFile >> "CfgVehicles" >> _x >> "displayName");
+			_cbRole lbAdd (_name);
+		} forEach (_cacheFactionsVehicles);
+		if (count _selections > 0) then {
+			_index = _cacheFactionsVehicles find (_selections # 7);
+			if (!isNil "_index") then {
+				if (_index > 0) then {
+					_cbRole lbSetCurSel _index;
+				} else {
+					_cbRole lbSetCurSel 0;
+				};
+			};
+		} else {
+			_cbRole lbSetCurSel 0;
+		};
+	};
+	
 };
- 

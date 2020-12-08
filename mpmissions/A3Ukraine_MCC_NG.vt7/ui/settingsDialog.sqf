@@ -17,6 +17,8 @@
  ***************************************************************************/
 
 
+	private _selections = profileNamespace getVariable ["a3ua_mcc_userSettings", []];
+
 	private _settingsDialog = createDialog "SettingsDialog";
 	 
 	if (!isNil "_settingsDialog") then {
@@ -27,7 +29,11 @@
 			_cbDiff lbAdd (localize "FROM_01_DIF_SELECT_01");
 			_cbDiff lbAdd (localize "FROM_01_DIF_SELECT_02");
 			_cbDiff lbAdd (localize "FROM_01_DIF_SELECT_03");
-			_cbDiff lbSetCurSel 0;
+			if (count _selections > 0) then {
+				_cbDiff lbSetCurSel (_selections # 0);
+			} else {
+				_cbDiff lbSetCurSel 0;
+			};
 		};
 		
 		private _cbLocation = _dialog displayCtrl 2100;
@@ -35,7 +41,11 @@
 			{
 				_cbLocation lbAdd _x;
 			} forEach D_LOCATIONS;
-			_cbLocation lbSetCurSel 0;
+			if (count _selections > 0) then {
+				_cbLocation lbSetCurSel (_selections # 1);
+			} else {
+				_cbLocation lbSetCurSel 0;
+			};
 		};
 		
 		private _cbMedical01 = _dialog displayCtrl 2102;
@@ -43,7 +53,11 @@
 			_cbMedical01 lbAdd (localize "FROM_01_OPTION_OFF");
 			_cbMedical01 lbAdd (localize "FROM_01_OPTION_ON");
 			_cbMedical01 lbAdd (localize "STR_ACE_Medical_Treatment_AdvancedBandages_EnabledCanReopen");
-			_cbMedical01 lbSetCurSel 0;
+			if (count _selections > 0) then {
+				_cbMedical01 lbSetCurSel (_selections # 2);
+			} else {
+				_cbMedical01 lbSetCurSel 0;
+			};
 		};
 		
 		private _cbMedical02 = _dialog displayCtrl 2103;
@@ -53,7 +67,11 @@
 			_cbMedical02 lbAdd (localize "STR_ACE_Medical_Treatment_HolsterRequired_LoweredExam");
 			_cbMedical02 lbAdd (localize "STR_ACE_Medical_Treatment_HolsterRequired_Holstered");
 			_cbMedical02 lbAdd (localize "STR_ACE_Medical_Treatment_HolsterRequired_HolsteredExam");
-			_cbMedical02 lbSetCurSel 0;
+			if (count _selections > 0) then {
+				_cbMedical02 lbSetCurSel (_selections # 3);
+			} else {
+				_cbMedical02 lbSetCurSel 0;
+			};
 		};
 		
 		private _cbMedical03 = _dialog displayCtrl 2104;
@@ -62,7 +80,11 @@
 			_cbMedical03 lbAdd (localize "STR_ACE_Medical_Fractures_SplintHealsFully");
 			_cbMedical03 lbAdd (localize "STR_ACE_Medical_Fractures_SplintHealsNoSprint");
 			_cbMedical03 lbAdd (localize "STR_ACE_Medical_Fractures_SplintHealsNoJog");
-			_cbMedical03 lbSetCurSel 0;
+			if (count _selections > 0) then {
+				_cbMedical03 lbSetCurSel (_selections # 4);
+			} else {
+				_cbMedical03 lbSetCurSel 0;
+			};
 		};
 		
 		private _cbMedical04 = _dialog displayCtrl 2109;
@@ -70,46 +92,26 @@
 			_cbMedical04 lbAdd (localize "FROM_01_OPTION_OFF");
 			_cbMedical04 lbAdd (localize "STR_ACE_Medical_Limping_LimpOnOpenWounds");
 			_cbMedical04 lbAdd (localize "STR_ACE_Medical_Limping_LimpRequiresStitching");
-			_cbMedical04 lbSetCurSel 0;
+			if (count _selections > 0) then {
+				_cbMedical04 lbSetCurSel (_selections # 5);
+			} else {
+				_cbMedical04 lbSetCurSel 0;
+			};
 		};
 
 		private _cbFractionWest = _dialog displayCtrl 2105;
 		if (!isNil "_cbFractionWest") then {
+			_cacheFactions = [];
 			{
 				private _name = getText (configFile >> "CfgFactionClasses" >> _x >> "displayName");
 				_cbFractionWest lbAdd (_name);
-			} forEach (D_SIDE_FACTIONS);
-			_cbFractionWest lbSetCurSel 22;
+				_cacheFactions pushBackUnique _x;
+			} forEach ([side player] call NECK_fnc_configGetFactions);
+			if (count _selections > 0) then {
+				_cbFractionWest lbSetCurSel (_selections # 6);
+			} else {
+				_cbFractionWest lbSetCurSel 22;
+			};
+			uiNamespace setVariable ["settingsDialog_cacheFaction", _cacheFactions];
 		};
-		
-		/*
-		private _cbFractionEast = _dialog displayCtrl 2106;
-		if (!isNil "_cbFractionEast") then {
-			{
-				private _name = getText (configFile >> "CfgVehicles" >> _x >> "displayName");
-				_cbFractionEast lbAdd (_name);
-			} forEach (["LOP_UKR", "Men"] call Fn_Config_GetFactionVehicles);
-			_cbFractionEast lbSetCurSel 0;
-		};*/
-
-		/*
-		private _cbFractionIndep = _dialog displayCtrl 2107;
-		if (!isNil "_cbFractionIndep") then {
-			{
-				private _name = getText (configFile >> "CfgFactionClasses" >> _x >> "displayName");
-				_cbFractionIndep lbAdd (_name);
-			} forEach ([independent] call Fn_Config_GetFractions);
-			_cbFractionIndep lbSetCurSel 0;
-		};
-		
-		private _cbFractionCiv = _dialog displayCtrl 2108;
-		if (!isNil "_cbFractionCiv") then {
-			{
-				private _name = getText (configFile >> "CfgFactionClasses" >> _x >> "displayName");
-				_cbFractionCiv lbAdd (_name);
-			} forEach ([civilian] call Fn_Config_GetFractions);
-			_cbFractionCiv lbSetCurSel 0;
-		};
-		*/
 	};
-

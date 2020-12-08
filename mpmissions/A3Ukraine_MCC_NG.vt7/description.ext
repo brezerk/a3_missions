@@ -64,10 +64,4 @@ minPlayerDistance = 25;
 // Force cba_settings.sqf loading
 cba_settings_hasSettingsFile = 1;
 
-class CfgFunctions {
-	#include "addons\BrezBlock.framework\functions.cpp"
-};
-
 #include "ui\settingsDialog.hpp"
-#include "ui\vehicleSpawnDialog.hpp"
-#include "addons\BrezBlock.framework\ui\MissionLogo.hpp"
