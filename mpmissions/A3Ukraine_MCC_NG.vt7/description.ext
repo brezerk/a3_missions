@@ -45,6 +45,10 @@ respawnDialog = 0;
 // When 1, the score table contains score of all playable units as opposed to players only.
 aikills = 0;
 
+//
+enableDebugConsole = 1;
+enableDebugConsole[] = {"76561198059570583", "76561198023185330", "76561198076512963", "76561198025447410"};
+
 // Revive
 reviveMode = 0;  //0 - disabled (we are using ACE); 1 - enabled
 reviveUnconsciousStateMode = 0;
