@@ -46,7 +46,6 @@ respawnDialog = 0;
 aikills = 0;
 
 //
-enableDebugConsole = 1;
 enableDebugConsole[] = {"76561198059570583", "76561198023185330", "76561198076512963", "76561198025447410"};
 
 // Revive
