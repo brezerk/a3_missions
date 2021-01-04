@@ -68,3 +68,4 @@ minPlayerDistance = 25;
 cba_settings_hasSettingsFile = 1;
 
 #include "ui\settingsDialog.hpp"
+//#include "ui\uiMissinWizardDialog.hpp"

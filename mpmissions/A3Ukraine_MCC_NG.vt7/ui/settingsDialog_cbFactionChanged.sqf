@@ -21,7 +21,7 @@ private _cbFraction = lbCurSel 2105;
 if (_cbFraction > 0) then {
 	private _cacheFactions = uiNamespace getVariable ["settingsDialog_cacheFaction", []];
 	private _faction = _cacheFactions # _cbFraction;
-	private _cacheFactionsVehicles = [_faction, "soldier"] call NECK_fnc_configGetVehicles;
+	private _cacheFactionsVehicles = [_faction, "Man"] call NECK_fnc_configGetVehicles;
 	uiNamespace setVariable ["settingsDialog_cacheFactionsVehicles", _cacheFactionsVehicles];
 	private _dialog = findDisplay 3773;
 	private _cbRole = _dialog displayCtrl 2106;

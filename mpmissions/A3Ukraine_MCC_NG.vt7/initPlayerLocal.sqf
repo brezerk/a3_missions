@@ -78,7 +78,15 @@ Fn_Local_Respawn = {
 			player setUnitTrait ["engineer", false];
 		};
 	};
-	private _building = selectRandom((getMarkerPos "wp_main") nearObjects ["Base_WarfareBBarracks", 50]);
+	private _marker = "wp_main";
+	
+	switch (side player) do {
+		case east: { _marker = "wp_hard"; };
+		case independent: { _marker = "wp_main"; };
+		case west: { _marker = "wp_main"; };
+	};
+	
+	private _building = selectRandom((getMarkerPos _marker) nearObjects ["Base_WarfareBBarracks", 50]);
 	player setPos (getPos _building);
 	
 	
