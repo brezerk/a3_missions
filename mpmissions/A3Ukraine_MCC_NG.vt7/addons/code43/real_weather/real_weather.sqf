@@ -39,7 +39,7 @@
 	// Ratio 1 real time second for x game time seconds
 	// Default: 1 real second = 6 second in game
 	_daytimeratio = 6;
-	_nighttimeratio = 12;
+	_nighttimeratio = 8;
 
 	// send sync data across the network each xxx seconds
 	// 60 real seconds by default is a good value

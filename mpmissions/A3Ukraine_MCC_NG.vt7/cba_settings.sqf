@@ -23,7 +23,16 @@ force force ace_common_checkPBOsCheckAll = true;
 
 // ACE Cook off
 // Увімкнути обробку зриву башти
-force force ace_cookoff_enable = 2;
+force ace_cookoff_ammoCookoffDuration = 0.2;
+force ace_cookoff_enable = true;
+force ace_cookoff_enableAmmobox = true;
+force ace_cookoff_enableAmmoCookoff = true;
+force ace_cookoff_probabilityCoef = 0.2;
+
+// ACE Explosives
+force ace_explosives_explodeOnDefuse = true;
+force ace_explosives_punishNonSpecialists = true;
+force ace_explosives_requireSpecialist = false;
 
 // ACE CSW
 // Розширений монтаж стаціонарної зброї
@@ -74,8 +83,8 @@ force force ace_medical_statemachine_AIUnconsciousness = false;
 // Джерело фатального ушкодження - тільки важливі органи
 force force ace_medical_fatalDamageSource = 0;
 // Збільшити шанс отямитися
-force force ace_medical_spontaneousWakeUpChance = 0.2;
-force force ace_medical_spontaneousWakeUpEpinephrineBoost = 2;
+force force ace_medical_spontaneousWakeUpChance = 0.35;
+force force ace_medical_spontaneousWakeUpEpinephrineBoost = 15;
 // Сповільнити кровотечу
 force force ace_medical_bleedingCoefficient = 0.8;
 // Інші налаштування за замовченням, окрім параметрів кількості крові і сміття, які регулюються сервером
@@ -155,6 +164,14 @@ force force STGI_Settings_Enabled = false;
 force force STHud_Settings_HUDMode = 1;
 // Прибрати ванільний список підлеглих
 force force STHud_Settings_SquadBar = true;
+
+// Labels
+force ace_nametags_showPlayerRanks = true;
+force ace_nametags_playerNamesViewDistance = 5;
+force ace_nametags_showCursorTagForVehicles = false;
+force ace_nametags_showPlayerNames = 1;
+force ace_nametags_showPlayerRanks = true;
+force ace_nametags_showVehicleCrewInfo = true;
 
 // Хапати усіх
 force ace_captives_requireSurrender = 0;
