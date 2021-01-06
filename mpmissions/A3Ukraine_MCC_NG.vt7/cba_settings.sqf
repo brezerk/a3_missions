@@ -52,6 +52,9 @@ force force ace_goggles_showClearGlasses = true;
 force force ace_repair_fullRepairLocation = 3;
 // Перезарядка техніки касетами
 force force ace_rearm_level = 1;
+force force ace_repair_engineerSetting_fullRepair = 2;
+force force ace_repair_engineerSetting_repair = 1;
+
 
 // ACE Map
 // За замовченням маркер ставится в канал сторони 
@@ -131,7 +134,7 @@ force force ace_finger_enabled = true;
 
 // ACE Respawn
 // Відроджувати з інвентарем що був на час смерті
-force force ace_respawn_savePreDeathGear = true;
+force force ace_respawn_savePreDeathGear = false;
 
 // ACE Weather
 force force ace_weather_updateInterval = 300;
@@ -175,6 +178,9 @@ force ace_nametags_showVehicleCrewInfo = true;
 
 // Хапати усіх
 force ace_captives_requireSurrender = 0;
+
+// ACE MAP
+force force ace_markers_moveRestriction = 0;
 
 
 //TFAR

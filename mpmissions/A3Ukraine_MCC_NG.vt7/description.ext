@@ -25,10 +25,10 @@ class Header
 	maxPlayers = 32;	// maximum number of players the mission supports
 };
 
-author			= "brezerk@brezblock.org.ua";
-OnLoadName		= "Arma3Ukraine MCC NG v0.06";
-OnLoadMission	= "Traning and Zeus mession playgroud";
-briefingName    = "Traning and Zeus mession playgroud";
+author			= "brezerk, Barman, MaMi";
+OnLoadName		= "Arma 3 Ukraine: Shyrlan Proving Ground v0.44";
+OnLoadMission	= "Широколанівський полігон (також 235-й загальновійськовий полігон, а нині 235 міжвидовий центр підготовки військових частин та підрозділів або просто «Широкий лан») — загальновійськовий полігон першої категорії, розташований на півдні України — в Миколаївській області";
+briefingName    = "Широколанівський полігон (також 235-й загальновійськовий полігон, а нині 235 міжвидовий центр підготовки військових частин та підрозділів або просто «Широкий лан») — загальновійськовий полігон першої категорії, розташований на півдні України — в Миколаївській області";
 // FIXME: https://feedback.bistudio.com/T67181
 overviewPicture = "data\mission_picture.paa";
 loadScreen      = "data\mission_picture.paa";

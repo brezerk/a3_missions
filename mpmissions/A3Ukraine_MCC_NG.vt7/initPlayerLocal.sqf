@@ -27,6 +27,7 @@ Fn_Local_WaitPublicVariables = {
 	_done;
 };
 
+
 Fn_Local_Respawn = {
 	enableEngineArtillery false; 
 
@@ -48,6 +49,7 @@ Fn_Local_Respawn = {
 			for "_i" from 1 to 10 do {player addItem "ACE_quikclot";};
 			for "_i" from 1 to 10 do {player addItem "ACE_elasticBandage";};
 			player addItem "ACE_surgicalKit";
+			player addItem "ACE_EarPlugs";
 			player addItem "ACE_personalAidKit";
 		} else {
 			player setUnitTrait ["Medic", true];
@@ -61,6 +63,7 @@ Fn_Local_Respawn = {
 			for "_i" from 1 to 4 do {player addItem "ACE_splint";};
 			for "_i" from 1 to 8 do {player addItem "ACE_quikclot";};
 			for "_i" from 1 to 8 do {player addItem "ACE_elasticBandage";};
+			player addItem "ACE_EarPlugs";
 		} else {
 			player setUnitTrait ["Medic", false];
 		};
