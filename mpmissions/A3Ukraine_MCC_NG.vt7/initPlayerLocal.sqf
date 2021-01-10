@@ -81,17 +81,21 @@ Fn_Local_Respawn = {
 			player setUnitTrait ["engineer", false];
 		};
 	};
-	private _marker = "wp_main";
 	
-	switch (side player) do {
-		case east: { _marker = "wp_hard"; };
-		case independent: { _marker = "wp_main"; };
-		case west: { _marker = "wp_main"; };
+	private _marker = missionNamespace getVariable ["D_LOCATION", "wp_main"];
+	
+	if (_marker in ["wp_main", "wp_east"]) then {
+		private _building = selectRandom((getMarkerPos _marker) nearObjects ["Base_WarfareBBarracks", 50]);
+		player setPos (getPos _building);
+	} else {
+		private _building = selectRandom ((getMarkerPos _marker) nearObjects ["House", 10]);
+		private _positions = [_building] call CBA_fnc_buildingPositions;
+		if ((count _positions) > 0) then {
+			player setPos (selectRandom _positions);
+		} else {
+			player setPos ([[[(getMarkerPos _marker), 30]],[]] call BIS_fnc_randomPos);
+		};
 	};
-	
-	private _building = selectRandom((getMarkerPos _marker) nearObjects ["Base_WarfareBBarracks", 50]);
-	player setPos (getPos _building);
-	
 	
 };
 
@@ -104,6 +108,92 @@ player linkItem "ItemMap";
 
 [
 	a3ua_mcc_medic01,
+	"Змінити налаштування",
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
+	"_this distance _target < 3",
+	"_caller distance _target < 3",
+	{},
+	{},
+	{ [0] execVM "ui\settingsDialog.sqf"; },
+	{ },
+	[],
+	3,
+	nil,
+	false,
+	false] call BIS_fnc_holdActionAdd;
+
+[
+	a3ua_mcc_health00,
+	"Пнути сніговика",
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
+	"_this distance _target < 3",
+	"_caller distance _target < 3",
+	{},
+	{},
+	{
+		for "_i" from 1 to 3 do {
+			private _dmgType = selectRandom["bullet", "stub"];
+			private _dmgLoc = selectRandom["head", "body", "leftarm", "rightarm", "leftleg", "rightleg"];
+			private _dmg = (random 4) + 1;
+			[player, (0.1 * _dmg), _dmgLoc, _dmgType] call ace_medical_fnc_addDamageToUnit;
+		}; 
+	},
+	{ },
+	[],
+	2,
+	nil,
+	false,
+	false] call BIS_fnc_holdActionAdd;
+	
+{if (_x find "wp_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
+
+[
+	a3ua_mcc_medic02,
+	"Змінити налаштування",
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
+	"_this distance _target < 3",
+	"_caller distance _target < 3",
+	{},
+	{},
+	{ [0] execVM "ui\settingsDialog.sqf"; },
+	{ },
+	[],
+	3,
+	nil,
+	false,
+	false] call BIS_fnc_holdActionAdd;
+
+[
+	a3ua_mcc_health00,
+	"Пнути сніговика",
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
+	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
+	"_this distance _target < 3",
+	"_caller distance _target < 3",
+	{},
+	{},
+	{
+		for "_i" from 1 to 3 do {
+			private _dmgType = selectRandom["bullet", "stub"];
+			private _dmgLoc = selectRandom["head", "body", "leftarm", "rightarm", "leftleg", "rightleg"];
+			private _dmg = (random 4) + 1;
+			[player, (0.1 * _dmg), _dmgLoc, _dmgType] call ace_medical_fnc_addDamageToUnit;
+		}; 
+	},
+	{ },
+	[],
+	2,
+	nil,
+	false,
+	false] call BIS_fnc_holdActionAdd;
+	
+{if (_x find "wp_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
+
+[
+	a3ua_mcc_medic03,
 	"Змінити налаштування",
 	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",
 	"\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_connect_ca.paa",

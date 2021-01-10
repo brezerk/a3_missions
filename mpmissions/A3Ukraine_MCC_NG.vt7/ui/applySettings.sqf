@@ -20,8 +20,9 @@ D_LOCATION = "Main";
 
 D_ROLE = "I_G_Survivor_F";
 
-private _cbStart = lbCurSel 2102;
+
 private _cbDiff = lbCurSel 2101;
+private _cbStart = lbCurSel 2100;
 
 private _cbFractionWest = lbCurSel 2105;
 private _cacheFactions = uiNamespace getVariable ["settingsDialog_cacheFaction", []];
@@ -79,6 +80,14 @@ switch (_cbDiff) do {
 		ace_advanced_fatigue_swayFactor = 1;
 		ace_advanced_fatigue_terrainGradientFactor = 1.5;
 	};
+};
+
+systemChat format["%1", _cbStart];
+
+if (side player == independent) then {
+	missionNamespace setVariable ["D_LOCATION", (["wp_main", "wp_sso"] # _cbStart)] ;
+} else {
+	missionNamespace setVariable ["D_LOCATION", "wp_east"] ;
 };
 
 missionNamespace setVariable ["D_INTRO_DONE", true];

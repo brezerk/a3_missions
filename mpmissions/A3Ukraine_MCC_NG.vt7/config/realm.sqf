@@ -19,7 +19,37 @@
 // Available locations for play
 // This mps to different set of wp_<location>_ markers.
 // For example, Plau has two different islands, while Stratis or Tanoa has only one location
-D_LOCATIONS = ['Ширлан (Тренування)', 'Нуль (Бойові місії)'];
+D_LOCATIONS = ['Ширлан (Тренування)', 'База ССО (Бойові місії, обмежений арсенал)'];
+
+missionNamespace setVariable ["D_NECK_LCS_BLAKLIST", [
+		'Pytersaari',
+		'Karhusaari',
+		'Lehtinen',
+		'Pieni Lakasaari',
+		'Suuri Lakasaari',
+		'Kauholmi',
+		'Kuppari',
+		'Pulteri',
+		'Lapuri',
+		'Santasaari',
+		'Haapasari',
+		'Korkiasaari',
+		'Lylysaari',
+		'Raitsaari',
+		'Tervasaari',
+		'Naastio',
+		'Souvio',
+		'Kujaholmi',
+		'Pirkholmi',
+		'Hanholmi'
+	]];
+	
+missionNamespace setVariable ["D_NECK_LCS_BLAKLIST_MARKERS", [
+		'wp_main',
+		'wp_east',
+		'wp_sso'
+	]];
+
 
 // Real time vs fast time
 // true: Real time is more realistic weather conditions change slowly (ideal for persistent game)
@@ -27,5 +57,4 @@ D_LOCATIONS = ['Ширлан (Тренування)', 'Нуль (Бойові м
 D_CODE43_REAL_WEATHER_REALTIME = false;
 
 //
-//D_RESPAWN_DELAY = 300;
-D_RESPAWN_DELAY = 900;
+D_RESPAWN_DELAY = 300;

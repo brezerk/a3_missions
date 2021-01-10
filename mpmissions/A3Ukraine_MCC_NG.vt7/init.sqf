@@ -24,8 +24,8 @@ if (isServer) then {
 	_civilianHQ = createCenter civilian;
 	
 	waitUntil {real_weather_init};
-	
-	{ { _x  setFlagTexture "addons\apl\data\uaflag.paa"; } forEach ((getMarkerPos _x) nearObjects ["FlagPole_F", 150]) } forEach ["wp_main"];
+
+	{ private _marker = _x; { _x  setFlagTexture "addons\apl\data\uaflag.paa"; } forEach ((getMarkerPos _marker) nearObjects ["FlagPole_F", 500]) } forEach ["wp_main", "wp_sso"];
 	
 	waitUntil {time > 10};
 		
