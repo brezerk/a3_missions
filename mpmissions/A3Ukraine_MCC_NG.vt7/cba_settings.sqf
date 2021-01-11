@@ -177,7 +177,10 @@ force ace_nametags_showPlayerRanks = true;
 force ace_nametags_showVehicleCrewInfo = true;
 
 // Хапати усіх
-force ace_captives_requireSurrender = 0;
+force force ace_captives_allowHandcuffOwnSide = true;
+force force ace_captives_allowSurrender = false;
+force force ace_captives_requireSurrender = 0;
+force force ace_captives_requireSurrenderAi = true;
 
 // ACE MAP
 force force ace_markers_moveRestriction = 0;
