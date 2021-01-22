@@ -208,6 +208,10 @@ player linkItem "ItemMap";
 	nil,
 	false,
 	false] call BIS_fnc_holdActionAdd;
+	
+a3ua_mcc_medic01 setVariable ['neck_noSurrender', true];
+a3ua_mcc_medic02 setVariable ['neck_noSurrender', true];
+a3ua_mcc_medic03 setVariable ['neck_noSurrender', true];
 
 [
 	a3ua_mcc_health00,
