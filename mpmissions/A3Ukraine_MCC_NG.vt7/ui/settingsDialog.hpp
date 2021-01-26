@@ -12,7 +12,7 @@ class SettingsDialog
 	};
 	class Controls
 	{
-		class bkrDialog : IGUIBack 
+		class bkrDialog : BB_IGUIBack 
 		{
 			idc = 1801;
 			x = safeZoneX + safeZoneW * 0.323125;
@@ -22,7 +22,7 @@ class SettingsDialog
 			colorBackground[] = {0,0,0,0.7};
 			
 		};
-		class frmGeneral : RscFrame 
+		class frmGeneral : BB_RscFrame 
 		{
 			idc = 1800;
 			x = safeZoneX + safeZoneW * 0.329375;
@@ -32,7 +32,7 @@ class SettingsDialog
 			text = "";
 			
 		};
-		class frmFractions : RscFrame 
+		class frmFractions : BB_RscFrame 
 		{
 			idc = 1800;
 			x = safeZoneX + safeZoneW * 0.504375;
@@ -42,7 +42,7 @@ class SettingsDialog
 			text = "";
 			
 		};
-		class frmAdvanced : RscFrame 
+		class frmAdvanced : BB_RscFrame 
 		{
 			idc = 1800;
 			x = safeZoneX + safeZoneW * 0.329375;
@@ -52,7 +52,7 @@ class SettingsDialog
 			text = "";
 			
 		};
-		class lblDifficlty : RscText 
+		class lblDifficlty : BB_RscText 
 		{
 			idc = 1000;
 			x = safeZoneX + safeZoneW * 0.328125;
@@ -62,7 +62,7 @@ class SettingsDialog
 			text = "$STR_FROM_01_INFO_01";
 			
 		};
-		class lblLocation : RscText 
+		class lblLocation : BB_RscText 
 		{
 			idc = 1001;
 			x = safeZoneX + safeZoneW * 0.328125;
@@ -72,7 +72,7 @@ class SettingsDialog
 			text = "$STR_FROM_01_INFO_02";
 			
 		};
-		class cbLocation : RscCombo 
+		class cbLocation : BB_RscCombo 
 		{
 			idc = 2100;
 			x = safeZoneX + safeZoneW * 0.333125;
@@ -90,7 +90,7 @@ class SettingsDialog
 			};
 			
 		};
-		class cbDifficlty : RscCombo 
+		class cbDifficlty : BB_RscCombo 
 		{
 			idc = 2101;
 			x = safeZoneX + safeZoneW * 0.333125;
@@ -108,7 +108,7 @@ class SettingsDialog
 			};
 			
 		};
-		class lblMedical01 : RscText 
+		class lblMedical01 : BB_RscText 
 		{
 			idc = 1002;
 			x = safeZoneX + safeZoneW * 0.328125;
@@ -118,7 +118,7 @@ class SettingsDialog
 			text = "$STR_ACE_Medical_Treatment_AdvancedBandages_DisplayName";
 			tooltip = "$STR_ACE_Medical_Treatment_AdvancedBandages_Description";
 		};
-		class cbMedical01 : RscCombo 
+		class cbMedical01 : BB_RscCombo 
 		{
 			idc = 2102;
 			x = safeZoneX + safeZoneW * 0.333125;
@@ -136,7 +136,7 @@ class SettingsDialog
 			};
 			
 		};
-		class bntStart : RscButton 
+		class bntStart : BB_RscButton 
 		{
 			idc = 1600;
 			x = safeZoneX + safeZoneW * 0.333125;
@@ -149,7 +149,7 @@ class SettingsDialog
 			action = "execVM 'ui\applySettings.sqf';";
 			
 		};
-		class lblMedical02 : RscText 
+		class lblMedical02 : BB_RscText 
 		{
 			idc = 1002;
 			x = safeZoneX + safeZoneW * 0.328125;
@@ -160,7 +160,7 @@ class SettingsDialog
 			tooltip = "$STR_ACE_Medical_Treatment_HolsterRequired_Description";
 			
 		};
-		class cbMedical02 : RscCombo 
+		class cbMedical02 : BB_RscCombo 
 		{
 			idc = 2103;
 			x = safeZoneX + safeZoneW * 0.333125;
@@ -178,7 +178,7 @@ class SettingsDialog
 			};
 			
 		};
-		class lblFractionWest : RscText 
+		class lblFractionWest : BB_RscText 
 		{
 			idc = 1002;
 			x = safeZoneX + safeZoneW * 0.503125;
@@ -188,7 +188,7 @@ class SettingsDialog
 			text = "$STR_FROM_01_INFO_05";
 			
 		};
-		class cbFractionWest : RscCombo 
+		class cbFractionWest : BB_RscCombo 
 		{
 			idc = 2105;
 			x = safeZoneX + safeZoneW * 0.508125;
@@ -207,7 +207,7 @@ class SettingsDialog
 			};
 			
 		};
-		class lblFractionClass : RscText 
+		class lblFractionClass : BB_RscText 
 		{
 			idc = 1002;
 			x = safeZoneX + safeZoneW * 0.503125;
@@ -216,7 +216,7 @@ class SettingsDialog
 			h = safeZoneH * 0.02222223;
 			text = "$STR_FROM_01_INFO_06";
 		};
-		class cbFractionClass : RscCombo 
+		class cbFractionClass : BB_RscCombo 
 		{
 			idc = 2106;
 			x = safeZoneX + safeZoneW * 0.508125;
@@ -236,7 +236,7 @@ class SettingsDialog
 			
 		};
 		
-		class lblVehicleInfo : RscText 
+		class lblVehicleInfo : BB_RscText 
 		{
 			idc = 1003;
 			style = 0+16;
@@ -295,7 +295,7 @@ class SettingsDialog
 			
 		};
 		*/
-		class lblMedical03 : RscText 
+		class lblMedical03 : BB_RscText 
 		{
 			idc = 1002;
 			x = safeZoneX + safeZoneW * 0.328125;
@@ -306,7 +306,7 @@ class SettingsDialog
 			tooltip = "$STR_ACE_Medical_Fractures_Description";
 			
 		};
-		class cbMedical03 : RscCombo 
+		class cbMedical03 : BB_RscCombo 
 		{
 			idc = 2104;
 			x = safeZoneX + safeZoneW * 0.333125;
@@ -324,7 +324,7 @@ class SettingsDialog
 			};
 			
 		};
-		class lblMedical04 : RscText 
+		class lblMedical04 : BB_RscText 
 		{
 			idc = 1002;
 			x = safeZoneX + safeZoneW * 0.328125;
@@ -334,7 +334,7 @@ class SettingsDialog
 			text = "$STR_ACE_Medical_Limping_DisplayName";
 			tooltip = "$STR_ACE_Medical_Limping_Description";
 		};
-		class cbMedical04 : RscCombo 
+		class cbMedical04 : BB_RscCombo 
 		{
 			idc = 2109;
 			x = safeZoneX + safeZoneW * 0.333125;
@@ -352,7 +352,7 @@ class SettingsDialog
 			};
 			
 		};
-		class bkrCaption : IGUIBack 
+		class bkrCaption : BB_IGUIBack 
 		{
 			idc = 1801;
 			x = safeZoneX + safeZoneW * 0.323125;
@@ -362,7 +362,7 @@ class SettingsDialog
 			colorBackground[] = {0.1569,0.5882,0.1569,1};
 			
 		};
-		class lblCaption : RscText 
+		class lblCaption : BB_RscText 
 		{
 			idc = 1000;
 			x = safeZoneX + safeZoneW * 0.3275;

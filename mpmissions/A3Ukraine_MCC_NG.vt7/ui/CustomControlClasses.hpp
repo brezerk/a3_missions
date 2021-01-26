@@ -1,9 +1,9 @@
 //Exported via Arma Dialog Creator (https://github.com/kayler-renslow/arma-dialog-creator)
-#ifndef HG_CustomControlClasseshpp
-#define HG_CustomControlClasseshpp 1
+#ifndef HG_BB_CustomControlClasseshpp
+#define HG_BB_CustomControlClasseshpp 1
 //Create a header guard to prevent duplicate include.
 
-class IGUIBack
+class BB_IGUIBack
 {
 	type = 0;
 	idc = 124;
@@ -19,7 +19,7 @@ class IGUIBack
 	h = 0.1;
 	
 };
-class RscFrame
+class BB_RscFrame
 {
 	type = 0;
 	idc = -1;
@@ -36,7 +36,7 @@ class RscFrame
 	h = 0.3;
 	
 };
-class RscText
+class BB_RscText
 {
 	type = 0;
 	idc = -1;
@@ -59,7 +59,7 @@ class RscText
 	tooltipColorShade[] = {0,0,0,0.65};
 	
 };
-class RscCombo
+class BB_RscCombo
 {
 	type = 4;
 	colorSelect[] = {0,0,0,1};
@@ -90,7 +90,7 @@ class RscCombo
 	colorActive[] = {1,0,0,1};
 	
 };
-class RscButton
+class BB_RscButton
 {
 	type = 1;
 	text = "";
@@ -122,7 +122,7 @@ class RscButton
 	borderSize = 0;
 	
 };
-class RscPicture
+class BB_RscPicture
 {
     idc = -1;
     type = 0;
