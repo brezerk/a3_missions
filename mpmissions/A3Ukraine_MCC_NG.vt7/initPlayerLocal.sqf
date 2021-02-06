@@ -82,6 +82,11 @@ Fn_Local_Respawn = {
 		};
 	};
 	
+	player unassignItem "ItemGPS";
+	player removeItem "ItemGPS";
+	player linkItem "NECK_ItemConsole_F";
+	
+	
 	private _marker = missionNamespace getVariable ["D_LOCATION", "wp_main"];
 	
 	if (_marker in ["wp_main", "wp_east"]) then {
