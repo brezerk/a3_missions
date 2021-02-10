@@ -124,9 +124,12 @@ force force ace_medical_treatment_timeCoefficientPAK = 1;
 
 // ACE Nightvision
 // Зменшити зерно ПНБ в 2 рази
-force force ace_nightvision_noiseScaling = 0.5;
+force force ace_nightvision_noiseScaling = 0.2;
 // Прибрати розмиття єкрану при прицілюванні
 force force ace_nightvision_aimDownSightsBlur = 0;
+force ace_nightvision_disableNVGsWithSights = false;
+force force ace_nightvision_fogScaling = 0.1;
+force force ace_nightvision_effectScaling = 0.2;
 
 // ACE Pointing
 // Включити показування пальцем
@@ -185,6 +188,6 @@ force force ace_captives_requireSurrenderAi = true;
 // ACE MAP
 force force ace_markers_moveRestriction = 0;
 
-
 //TFAR
 force force TFAR_Teamspeak_Channel_Name = "MCCTaskForceRadio";
+force force tf_radio_channel_name = "MCCTaskForceRadio";
