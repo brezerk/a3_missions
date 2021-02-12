@@ -178,9 +178,9 @@
 		_lastrain = _rain;
 
 		wcweather = [_rain, _fog, _overcast, _wind, date];
-		60 setRain (wcweather select 0);
-		60 setfog (wcweather select 1);
-		60 setOvercast (wcweather select 2);
+		300 setRain (wcweather select 0);
+		300 setfog (wcweather select 1);
+		300 setOvercast (wcweather select 2);
 		setwind (wcweather select 3);
 		if(_random) then {
 			_timeforecast = _mintime + (random (_maxtime - _mintime));

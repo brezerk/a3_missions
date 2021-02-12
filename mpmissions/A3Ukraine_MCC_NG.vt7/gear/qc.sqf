@@ -19,27 +19,6 @@
 comment "[!] UNIT MUST BE LOCAL [!]";
 if (!local _this) exitWith {};
 
-comment "Exported from Arsenal by brezerk";
-
-comment "Remove existing items";
-removeAllWeapons _this;
-removeAllItems _this;
-removeAllAssignedItems _this;
-removeUniform _this;
-removeVest _this;
-removeBackpack _this;
-removeHeadgear _this;
-removeGoggles _this;
-
-comment "Add containers";
-_this forceAddUniform "LOP_U_UKR_Fatigue_Digit";
-_this addVest "LOP_V_6B23_Rifleman_TAN";
-_this addHeadgear "LOP_H_6B27M_Digit";
-
-comment "Add weapons";
-
-comment "Add items";
-
 comment "Set identity";
 _this setSpeaker "NoVoice";
 
