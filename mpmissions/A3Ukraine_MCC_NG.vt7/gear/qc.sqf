@@ -21,9 +21,3 @@ if (!local _this) exitWith {};
 
 comment "Set identity";
 _this setSpeaker "NoVoice";
-
-_this disableAI "MOVE";
-_this disableAI "FSM";
-_this disableAI "SUPPRESSION";
-_this disableAI "AUTOCOMBAT";
-_this setVariable ["lambs_danger_disableAI",true];

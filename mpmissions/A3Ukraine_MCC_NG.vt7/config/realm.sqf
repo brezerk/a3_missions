@@ -41,7 +41,10 @@ missionNamespace setVariable ["D_NECK_LCS_BLAKLIST", [
 		'Souvio',
 		'Kujaholmi',
 		'Pirkholmi',
-		'Hanholmi'
+		'Hanholmi',
+		'Nakarinmäki',
+		'Myllynmäki',
+		'Pajunlahti'
 	]];
 	
 missionNamespace setVariable ["D_NECK_LCS_BLAKLIST_MARKERS", [

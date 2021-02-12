@@ -191,3 +191,14 @@ force force ace_markers_moveRestriction = 0;
 //TFAR
 force force TFAR_Teamspeak_Channel_Name = "MCCTaskForceRadio";
 force force tf_radio_channel_name = "MCCTaskForceRadio";
+
+// GRAD окопы
+force force grad_trenches_functions_allowTrenchDecay = true;
+force force grad_trenches_functions_bigEnvelopeDigTime = 25;
+force force grad_trenches_functions_decayTime = 900;
+force force grad_trenches_functions_giantEnvelopeDigTime = 40;
+force force grad_trenches_functions_LongEnvelopeDigTime = 60;
+force force grad_trenches_functions_shortEnvelopeDigTime = 10;
+force force grad_trenches_functions_smallEnvelopeDigTime = 15;
+force force grad_trenches_functions_timeoutToDecay = 600;
+force force grad_trenches_functions_vehicleEnvelopeDigTime = 90;
