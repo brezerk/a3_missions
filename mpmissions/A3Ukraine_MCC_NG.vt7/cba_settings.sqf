@@ -191,6 +191,9 @@ force force ace_markers_moveRestriction = 0;
 //TFAR
 force force TFAR_Teamspeak_Channel_Name = "MCCTaskForceRadio";
 force force tf_radio_channel_name = "MCCTaskForceRadio";
+froce force tf_west_radio_code = "DSH&G^G";
+froce force tf_east_radio_code = "DSH&G^G";
+froce force tf_guer_radio_code = "DSH&G^G";
 
 // GRAD окопы
 force force grad_trenches_functions_allowTrenchDecay = true;
