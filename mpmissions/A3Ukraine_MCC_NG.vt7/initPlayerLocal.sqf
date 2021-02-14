@@ -101,7 +101,7 @@ Fn_Local_Respawn = {
 		};
 	};
 	
-	missionNamespace setVariable ["bg_playersdead_list", []];
+	missionNamespace setVariable ["bg_playersdead_list", [], true];
 	[false] call ace_spectator_fnc_setSpectator;
 	
 };
