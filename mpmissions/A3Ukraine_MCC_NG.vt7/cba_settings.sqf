@@ -121,6 +121,8 @@ force force ace_medical_treatment_medicIV = 1;
 force force ace_medical_treatment_medicPAK = 1;
 force force ace_medical_treatment_medicSurgicalKit = 1;
 force force ace_medical_treatment_timeCoefficientPAK = 1;
+force force ace_medical_treatment_allowBodyBagUnconscious = true;
+
 
 // ACE Nightvision
 // Зменшити зерно ПНБ в 2 рази
@@ -205,3 +207,7 @@ force force grad_trenches_functions_shortEnvelopeDigTime = 10;
 force force grad_trenches_functions_smallEnvelopeDigTime = 15;
 force force grad_trenches_functions_timeoutToDecay = 600;
 force force grad_trenches_functions_vehicleEnvelopeDigTime = 90;
+
+// ACE Перегрузки
+force ace_gforces_coef = 0.70;
+
