@@ -8,19 +8,19 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=7318;
+		nextID=7322;
 	};
 	class MarkerIDProvider
 	{
-		nextID=33;
+		nextID=34;
 	};
 	class LayerIndexProvider
 	{
-		nextID=8365;
+		nextID=8499;
 	};
 	class Camera
 	{
-		pos[]={346.98615,414.8418,7034.8076};
+		pos[]={72.595825,875.54834,7106.9121};
 		dir[]={0.38571715,-0.86262977,-0.32734683};
 		up[]={0.65769452,0.50584531,-0.55816466};
 		aside[]={-0.64707768,-8.9063542e-007,-0.76246303};
@@ -12259,7 +12259,7 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={15588.953,8.5900002,16310.322};
+				position[]={15588.965,8.5900002,16310.335};
 			};
 			areaSize[]={1,-1,1};
 			id=1251;
@@ -77201,6 +77201,7 @@ class Mission
 			};
 			id=6961;
 			type="Land_Bandage_F";
+			atlOffset=0.021904945;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -77241,6 +77242,7 @@ class Mission
 			};
 			id=6962;
 			type="Land_Bandage_F";
+			atlOffset=0.021904945;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -77281,6 +77283,7 @@ class Mission
 			};
 			id=6963;
 			type="Land_Bandage_F";
+			atlOffset=0.021904945;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -85097,7 +85100,7 @@ class Mission
 									"SCALAR"
 								};
 							};
-							value=1;
+							value=0;
 						};
 					};
 				};

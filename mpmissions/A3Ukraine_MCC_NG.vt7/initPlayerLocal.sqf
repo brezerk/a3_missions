@@ -27,7 +27,6 @@ Fn_Local_WaitPublicVariables = {
 	_done;
 };
 
-
 Fn_Local_Respawn = {
 	enableEngineArtillery false; 
 
@@ -101,6 +100,9 @@ Fn_Local_Respawn = {
 			player setPos ([[[(getMarkerPos _marker), 30]],[]] call BIS_fnc_randomPos);
 		};
 	};
+	
+	missionNamespace setVariable ["bg_playersdead_list", []];
+	[false] call ace_spectator_fnc_setSpectator;
 	
 };
 
