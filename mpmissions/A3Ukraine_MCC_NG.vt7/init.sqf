@@ -13,7 +13,6 @@
 
 real_weather_init = false;
 D_LOCATION = nil;
-tf_radio_channel_name = "MCCTaskForceRadio";
 
 [] execVM "addons\code43\real_weather\real_weather.sqf";
 

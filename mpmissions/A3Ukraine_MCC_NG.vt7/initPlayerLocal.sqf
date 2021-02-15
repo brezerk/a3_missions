@@ -28,6 +28,10 @@ Fn_Local_WaitPublicVariables = {
 };
 
 Fn_Local_Respawn = {
+	params ["_marker"];
+	
+	systemChat format["Got marker: %1", _marker];
+	
 	enableEngineArtillery false; 
 
 	waitUntil { alive player }; // Wait for player to initialize
@@ -85,7 +89,34 @@ Fn_Local_Respawn = {
 	player removeItem "ItemGPS";
 	player linkItem "NECK_ItemConsole_F";
 	
+	private _pos = [];
 	
+
+	if (_marker != "") then {
+		_pos = getMarkerPos _marker;
+	} else {
+		_pos = getPos player;
+	};
+
+	private _building = selectRandom(_pos nearObjects ["Base_WarfareBBarracks", 50]);
+	if (not isNil "_building") then {
+		_pos = getPos _building;
+		player setPos _pos;
+	} else {
+		private _building = selectRandom((_pos) nearObjects ["House", 10]);
+		if (not isNil "_building") then {
+			private _positions = [_building] call CBA_fnc_buildingPositions;
+			if ((count _positions) > 0) then {
+				player setPos (selectRandom _positions);
+			} else {
+				player setPos _pos;
+			};
+		} else {
+			player setPos _pos;
+		};
+	};
+	
+	/*
 	private _marker = missionNamespace getVariable ["D_LOCATION", "wp_main"];
 	
 	if (_marker in ["wp_main", "wp_east"]) then {
@@ -100,9 +131,11 @@ Fn_Local_Respawn = {
 			player setPos ([[[(getMarkerPos _marker), 30]],[]] call BIS_fnc_randomPos);
 		};
 	};
+	*/
 	
-	missionNamespace setVariable ["bg_playersdead_list", [], true];
-	[false] call ace_spectator_fnc_setSpectator;
+	//BG hotfix
+	//missionNamespace setVariable ["bg_playersdead_list", [], true];
+	//[false] call ace_spectator_fnc_setSpectator;
 	
 };
 
@@ -199,6 +232,7 @@ player linkItem "ItemMap";
 	
 {if (_x find "wp_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
 
+/*
 [
 	a3ua_mcc_medic03,
 	"Змінити налаштування",
@@ -214,11 +248,11 @@ player linkItem "ItemMap";
 	3,
 	nil,
 	false,
-	false] call BIS_fnc_holdActionAdd;
+	false] call BIS_fnc_holdActionAdd;*/
 	
 a3ua_mcc_medic01 setVariable ['neck_noSurrender', true];
 a3ua_mcc_medic02 setVariable ['neck_noSurrender', true];
-a3ua_mcc_medic03 setVariable ['neck_noSurrender', true];
+//a3ua_mcc_medic03 setVariable ['neck_noSurrender', true];
 
 [
 	a3ua_mcc_health00,

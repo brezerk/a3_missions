@@ -1,3 +1,3 @@
 
 
-call Fn_Local_Respawn;
+[""] call Fn_Local_Respawn;

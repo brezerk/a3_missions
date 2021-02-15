@@ -85,9 +85,9 @@ switch (_cbDiff) do {
 systemChat format["%1", _cbStart];
 
 if (side player == independent) then {
-	missionNamespace setVariable ["D_LOCATION", (["wp_main", "wp_sso"] # _cbStart)] ;
+	missionNamespace setVariable ["D_LOCATION", (["respawn_guerrila_main", "respawn_guerrila_sso"] # _cbStart)] ;
 } else {
-	missionNamespace setVariable ["D_LOCATION", "wp_east"] ;
+	missionNamespace setVariable ["D_LOCATION", "respawn_east_main"] ;
 };
 
 missionNamespace setVariable ["D_INTRO_DONE", true];
@@ -95,4 +95,4 @@ missionNamespace setVariable ["D_INTRO_DONE", true];
 closeDialog 1;
 
 //Fix MCC artillery calculator issue
-call Fn_Local_Respawn;
+[(missionNamespace getVariable "D_LOCATION")] call Fn_Local_Respawn;
