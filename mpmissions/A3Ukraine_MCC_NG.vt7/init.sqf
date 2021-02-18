@@ -9,6 +9,8 @@
  *                                                                                     *
  **************************************************************************************/
 
+missionNamespace setVariable ["bg_spectator_enabled", false];
+
 #include "config\realm.sqf";
 
 real_weather_init = false;
