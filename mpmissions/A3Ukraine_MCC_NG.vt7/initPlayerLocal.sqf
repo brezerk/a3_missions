@@ -103,7 +103,7 @@ Fn_Local_Respawn = {
 		_pos = getPos _building;
 		player setPos _pos;
 	} else {
-		private _building = selectRandom((_pos) nearObjects ["House", 10]);
+		private _building = selectRandom((_pos) nearObjects ["House", 15]);
 		if (not isNil "_building") then {
 			private _positions = [_building] call CBA_fnc_buildingPositions;
 			if ((count _positions) > 0) then {
@@ -231,6 +231,7 @@ player linkItem "ItemMap";
 	false] call BIS_fnc_holdActionAdd;
 	
 {if (_x find "wp_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
+{if (_x find "respawn" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
 
 /*
 [
@@ -404,6 +405,30 @@ a3ua_t_mine01 addAction
 		for "_i" from 1 to 25 do {
 			_mine = createMine ["ATMine", _pos, [], 50];
 		};
+	},
+	nil,
+	1.5,
+	true,
+	true,
+	"",
+	"true", // _target, _this, _originalTarget
+	3,
+	false,
+	"",
+	""
+];
+
+cqb_book_01 addAction
+[
+	"Розпочати тренування",
+	{
+		params ["_target", "_caller", "_actionId", "_arguments"];
+		private _pos = getMarkerPos "mrk_t_mines00";
+		if (count (_pos nearObjects ["CAManBase", 25]) > 0) then {
+			hint "В зоні працюють люди!";
+		};
+		[50, iCenter] remoteExecCall ["CQB_Reset", 2]; 
+		hint "Готово!";
 	},
 	nil,
 	1.5,

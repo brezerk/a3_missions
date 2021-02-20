@@ -91,7 +91,8 @@ force force ace_medical_spontaneousWakeUpEpinephrineBoost = 15;
 // Сповільнити кровотечу
 force force ace_medical_bleedingCoefficient = 0.8;
 // Інші налаштування за замовченням, окрім параметрів кількості крові і сміття, які регулюються сервером
-force force ace_medical_ai_enabledFor = 2;
+force force ace_medical_ai_enabledFor = 0;
+//force force ace_medical_ai_enabledFor = 2;
 force force ace_medical_AIDamageThreshold = 0.5;
 force force ace_medical_feedback_bloodVolumeEffectType = 0;
 force force ace_medical_fractureChance = 0.8;

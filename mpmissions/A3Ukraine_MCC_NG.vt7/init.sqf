@@ -16,6 +16,9 @@ missionNamespace setVariable ["bg_spectator_enabled", false];
 real_weather_init = false;
 D_LOCATION = nil;
 
+//disable targets from moving automatically
+nopop = true;
+
 [] execVM "addons\code43\real_weather\real_weather.sqf";
 
 if (isServer) then {

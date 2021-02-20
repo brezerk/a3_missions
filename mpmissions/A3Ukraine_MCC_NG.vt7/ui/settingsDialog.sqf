@@ -101,26 +101,25 @@
 
 		private _cbFractionWest = _dialog displayCtrl 2105;
 		if (!isNil "_cbFractionWest") then {
-			_factions = [];
-			if ((side player) == east) then {
-				_factions = [side player] call NECK_fnc_configGetFactions;
-			} else {
-				_factions = [west] call NECK_fnc_configGetFactions;
-				_factions append ([independent] call NECK_fnc_configGetFactions);
-			};
+			_factions = [side player] call NECK_fnc_configGetFactions;
+			//if ((side player) == east) then {
+			//	_factions = [side player] call NECK_fnc_configGetFactions;
+			//} else {
+			//	_factions = [west] call NECK_fnc_configGetFactions;
+			//	_factions append ([independent] call NECK_fnc_configGetFactions);
+			//};
 			_cacheFactions = [];
 			{
 				private _name = getText (configFile >> "CfgFactionClasses" >> _x >> "displayName");
 				_cbFractionWest lbAdd (_name);
 				_cacheFactions pushBackUnique _x;
 			} forEach (_factions);
-			_cbFractionWest lbSetCurSel 2;
-			/*
+			
 			if (count _selections > 0) then {
 				_cbFractionWest lbSetCurSel (_selections # 6);
 			} else {
-				_cbFractionWest lbSetCurSel 22;
-			};*/
+				_cbFractionWest lbSetCurSel 14;
+			};
 			uiNamespace setVariable ["settingsDialog_cacheFaction", _cacheFactions];
 		};
 	};
