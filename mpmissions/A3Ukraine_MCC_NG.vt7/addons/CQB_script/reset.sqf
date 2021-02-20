@@ -14,8 +14,8 @@ CQB_Reset = {
 	0 = [] spawn {
 		//params [["_dist",50,[1]],["_center",player,[objNull]]];					//in params
 		//params ["_dist"],["_center"];					//in params
-		private _dist = "30";
-		peivate _center = getMarkerPos "mrk_t_cqb01";
+		private _dist = 30;
+		private _center = getMarkerPos "mrk_t_cqb01";
 		_targets = nearestObjects [_center, ["TargetBase"], _dist];	//take all nearby practice targets
 		
 		if (count _targets < 1) exitWith {
