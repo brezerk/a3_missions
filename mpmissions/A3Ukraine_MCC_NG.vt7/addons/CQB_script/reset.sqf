@@ -11,10 +11,12 @@ of the code.
 
 CQB_Reset = {
 	params ["_dist", "_center"];	
-	0 = [_dist, _center] spawn {
+	0 = [] spawn {
 		//params [["_dist",50,[1]],["_center",player,[objNull]]];					//in params
-		params ["_dist"],["_center"];					//in params
-		_targets = nearestObjects [position _center, ["TargetBase"], _dist];	//take all nearby practice targets
+		//params ["_dist"],["_center"];					//in params
+		private _dist = "30";
+		peivate _center = getMarkerPos "mrk_t_cqb01";
+		_targets = nearestObjects [_center, ["TargetBase"], _dist];	//take all nearby practice targets
 		
 		if (count _targets < 1) exitWith {
 			diag_log "[CQB] Error: No compatible targets were found.";						//exit if no targets have been found
@@ -28,7 +30,7 @@ CQB_Reset = {
 			}];
 		} forEach _targets;
 
-		_SwivelTargets = nearestObjects [position _center, ["Target_Swivel_01_base_F"], _dist];		//swivel targets work differently
+		_SwivelTargets = nearestObjects [_center, ["Target_Swivel_01_base_F"], _dist];		//swivel targets work differently
 		if (count _SwivelTargets < 1) exitWith {
 			diag_log "[CQB] Error: No swivel targets were found";						//exit if no targets have been found
 		};
