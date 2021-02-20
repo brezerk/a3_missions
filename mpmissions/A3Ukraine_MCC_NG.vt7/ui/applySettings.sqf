@@ -85,7 +85,7 @@ switch (_cbDiff) do {
 systemChat format["%1", _cbStart];
 
 if (side player == west) then {
-	missionNamespace setVariable ["D_LOCATION", (["respawn_guerrila_main", "respawn_guerrila_sso"] # _cbStart)] ;
+	missionNamespace setVariable ["D_LOCATION", (["respawn_west_main", "respawn_west_sso"] # _cbStart)] ;
 } else {
 	missionNamespace setVariable ["D_LOCATION", "respawn_east_main"] ;
 };

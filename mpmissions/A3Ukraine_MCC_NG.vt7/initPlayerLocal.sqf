@@ -320,6 +320,7 @@ a3ua_mcc_medic02 setVariable ['neck_noSurrender', true];
 	false,
 	false] call BIS_fnc_holdActionAdd;
 
+/*
 a3ua_mcc_pc01 addAction
 [
 	"Брама",
@@ -342,7 +343,7 @@ a3ua_mcc_pc01 addAction
 	false,
 	"",
 	""
-];
+];*/
 
 a3ua_t_mine01 addAction
 [
@@ -350,7 +351,7 @@ a3ua_t_mine01 addAction
 	{
 		params ["_target", "_caller", "_actionId", "_arguments"];
 		private _pos = getMarkerPos "mrk_t_mines00";
-		if (count (_pos nearObjects ["CAManBase", 50]) > 0) then {
+		if (count (_pos nearObjects ["CAManBase", 50]) > 0) exitWith {
 			hint "В зоні працюють люди!";
 		};
 		{ deleteVehicle _x; } forEach (_pos nearObjects ["MineBase", 150]);
@@ -376,7 +377,7 @@ a3ua_t_mine01 addAction
 	{
 		params ["_target", "_caller", "_actionId", "_arguments"];
 		private _pos = getMarkerPos "mrk_t_mines00";
-		if (count (_pos nearObjects ["CAManBase", 50]) > 0) then {
+		if (count (_pos nearObjects ["CAManBase", 50]) > 0) exitWith {
 			hint "В зоні працюють люди!";
 		};
 		{ deleteVehicle _x; } forEach (_pos nearObjects ["MineBase", 150]);
@@ -402,7 +403,7 @@ a3ua_t_mine01 addAction
 	{
 		params ["_target", "_caller", "_actionId", "_arguments"];
 		private _pos = getMarkerPos "mrk_t_mines00";
-		if (count (_pos nearObjects ["CAManBase", 50]) > 0) then {
+		if (count (_pos nearObjects ["CAManBase", 50]) > 0) exitWith {
 			hint "В зоні працюють люди!";
 		};
 		{ deleteVehicle _x; } forEach (_pos nearObjects ["MineBase", 150]);
@@ -427,8 +428,8 @@ cqb_book_01 addAction
 	"Розпочати тренування",
 	{
 		params ["_target", "_caller", "_actionId", "_arguments"];
-		private _pos = getMarkerPos "mrk_t_mines00";
-		if (count (_pos nearObjects ["CAManBase", 25]) > 0) then {
+		private _pos = getMarkerPos "mrk_t_cqb01";
+		if (count (_pos nearObjects ["CAManBase", 25]) > 0) exitWith {
 			hint "В зоні працюють люди!";
 		};
 		[50, iCenter] remoteExecCall ["CQB_Reset", 2]; 
