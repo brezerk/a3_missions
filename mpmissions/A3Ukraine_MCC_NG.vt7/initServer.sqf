@@ -16,7 +16,7 @@
  *                                                                         *
  ***************************************************************************/
 
-#include 'addons\CQB_script\reset.sqf';
+#include "addons\CQB_script\reset.sqf";
 
 missionNamespace setVariable ["bg_spectator_enabled", false];
 

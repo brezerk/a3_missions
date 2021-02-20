@@ -136,8 +136,9 @@ Fn_Local_Respawn = {
 	//BG hotfix
 	missionNamespace setVariable ["bg_playersdead_list", [], true];
 	[false] call ace_spectator_fnc_setSpectator;
-	
-	sleep 3;
+	sleep 1;
+	{_x addCuratorEditableObjects [[player],false]} forEach allCurators;
+	sleep 2;
 	missionNamespace setVariable ["bg_playersdead_list", [], true];
 	[false] call ace_spectator_fnc_setSpectator;
 };
