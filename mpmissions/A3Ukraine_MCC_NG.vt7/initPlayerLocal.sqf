@@ -137,6 +137,9 @@ Fn_Local_Respawn = {
 	missionNamespace setVariable ["bg_playersdead_list", [], true];
 	[false] call ace_spectator_fnc_setSpectator;
 	
+	sleep 3;
+	missionNamespace setVariable ["bg_playersdead_list", [], true];
+	[false] call ace_spectator_fnc_setSpectator;
 };
 
 waitUntil { !isNull player }; // Wait for player to initialize
