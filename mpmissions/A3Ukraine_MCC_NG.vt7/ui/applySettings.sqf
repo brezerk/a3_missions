@@ -17,11 +17,12 @@
  ***************************************************************************/
 
 D_LOCATION = "Main";
-
+D_DIFF = 0;
 D_ROLE = "I_G_Survivor_F";
 
 
 private _cbDiff = lbCurSel 2101;
+D_DIFF = _cbDiff;
 private _cbStart = lbCurSel 2100;
 
 private _cbFractionWest = lbCurSel 2105;

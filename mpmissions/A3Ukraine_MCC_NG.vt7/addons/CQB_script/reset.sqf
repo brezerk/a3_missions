@@ -48,5 +48,29 @@ CQB_Reset = {
 	};
 };
 
-
+CQBP_Reset = {
+	//params ["_dist", "_center"];
+	0 = [] spawn {
+		private _bots = ['rhs_vdv_recon_medic', 'rhs_vdv_recon_rifleman_l', 'rhs_vdv_recon_marksman_asval', 'rhs_vdv_recon_rifleman', 'rhs_vdv_recon_rifleman_akms'];
+		{
+			private _hpos = _x buildingPos -1;
+			for "_i" from 1 to (random 2) do {
+				private _pos = selectRandom _hpos;
+				private _class = selectRandom _bots;
+				private _grp = createGroup east;
+				private _unit = _grp createUnit [_class, _pos, [], 0, "FORM"];
+				_unit setBehaviour "COMBAT";
+				_unit setCombatMode "RED";
+				_unit setSpeaker "NoVoice";
+				_unit disableConversation true;
+				if (D_MOD_CBA) then {
+					[_grp, _pos, 5, 1, false, false] call CBA_fnc_taskDefend;
+				} else {
+					[_grp, _pos] call bis_fnc_taskDefend;
+				};
+			};
+		} forEach [a3ua_mcc_house01, a3ua_mcc_house02, a3ua_mcc_house03, a3ua_mcc_house04, a3ua_mcc_house05];
+		diag_log "[CQB]: Ready";
+	};
+};
 

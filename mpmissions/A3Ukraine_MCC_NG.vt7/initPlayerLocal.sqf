@@ -17,6 +17,7 @@
  ***************************************************************************/
 
 D_FACTION_CACHE = [];
+D_DIFF = 0;
 
 Fn_Local_WaitPublicVariables = {
 	params ['_vars'];
@@ -85,8 +86,8 @@ Fn_Local_Respawn = {
 		};
 	};
 	
-	player unassignItem "ItemGPS";
-	player removeItem "ItemGPS";
+	player unassignItem "ItemWatch";
+	player removeItem "ItemWatch";
 	player linkItem "NECK_ItemConsole_F";
 	
 	private _pos = [];
@@ -115,6 +116,8 @@ Fn_Local_Respawn = {
 			player setPos _pos;
 		};
 	};
+	
+	player setUnitRank (["PRIVATE", "PRIVATE", "SERGEANT", "CAPTAIN"] # D_DIFF);
 	
 	/*
 	private _marker = missionNamespace getVariable ["D_LOCATION", "wp_main"];
@@ -236,6 +239,7 @@ player linkItem "ItemMap";
 	
 {if (_x find "wp_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
 {if (_x find "respawn" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
+{if (_x find "NECK_" >= 0) then {_x setMarkerAlpha 0};} forEach allMapMarkers;
 
 /*
 [
@@ -256,7 +260,14 @@ player linkItem "ItemMap";
 	false] call BIS_fnc_holdActionAdd;*/
 	
 a3ua_mcc_medic01 setVariable ['neck_noSurrender', true];
+a3ua_mcc_medic01 setVariable ['neck_noSurrender', true];
+a3ua_mcc_medic01 disableCollisionWith player;
+private _anim = selectRandom ['STAND_U1', 'STAND_U2', 'STAND_U3', 'GUARD', 'LISTEN_BRIEFING'];
+[a3ua_mcc_medic01, _anim, "NONE"] call BIS_fnc_ambientAnim;
 a3ua_mcc_medic02 setVariable ['neck_noSurrender', true];
+a3ua_mcc_medic02 setVariable ['neck_noSurrender', true];
+a3ua_mcc_medic02 disableCollisionWith player;
+[a3ua_mcc_medic02, _anim, "NONE"] call BIS_fnc_ambientAnim;
 //a3ua_mcc_medic03 setVariable ['neck_noSurrender', true];
 
 [
@@ -294,23 +305,12 @@ a3ua_mcc_medic02 setVariable ['neck_noSurrender', true];
 	{},
 	{
 		0 = [] spawn {
-			private _bots = ['rhs_vdv_recon_medic', 'rhs_vdv_recon_rifleman_l', 'rhs_vdv_recon_marksman_asval', 'rhs_vdv_recon_rifleman', 'rhs_vdv_recon_rifleman_akms'];
-			private _pos = getMarkerPos "mrk_t_house00";
-			if (count (_pos nearObjects ["CAManBase", 15]) > 0) then {
+			private _pos = getMarkerPos "mrk_t_cqb02";
+			if (count (_pos nearObjects ["CAManBase", 25]) > 0) exitWith {
 				hint "В зоні є люди!";
 			};
-			{
-				private _hpos = _x buildingPos -1;
-				for "_i" from 1 to (random 2) do {
-					private _pos = selectRandom _hpos;
-					private _class = selectRandom _bots;
-					private _grp = createGroup east;
-					private _unit = _grp createUnit [_class, _pos, [], 0, "FORM"];
-					_unit disableAI "MOVE";
-					_unit setBehaviour "COMBAT";
-					_unit setCombatMode "RED";
-				};
-			} forEach [a3ua_mcc_house01, a3ua_mcc_house02, a3ua_mcc_house03, a3ua_mcc_house04, a3ua_mcc_house05];
+			[] remoteExecCall ["CQBP_Reset", 2]; 
+			hint "Готово!";
 		};
 	},
 	{ },

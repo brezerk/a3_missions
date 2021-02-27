@@ -20,4 +20,18 @@
 
 missionNamespace setVariable ["bg_spectator_enabled", false];
 
+{
+	_x allowDamage false;
+	_x setVariable ["lambs_danger_disableAI", true];
+	_x setVariable ["BIS_fnc_animalBehaviour_disable", true];
+	_x setVariable ['neck_noSurrender', true];
+	_x setSpeaker "NoVoice";
+	_x disableConversation true;
+	_x setBehaviour "CARELESS";
+	_x enableFatigue false;
+	_x setSkill ["courage", 1];
+	_x setUnitPos "UP";
+	_x setMass 7000;
+	_x disableAI "ALL"; 
+} forEach [a3ua_mcc_medic01, a3ua_mcc_medic02];
 
