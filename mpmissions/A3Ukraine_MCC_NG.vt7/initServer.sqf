@@ -19,8 +19,9 @@
 #include "addons\CQB_script\reset.sqf";
 
 missionNamespace setVariable ["bg_spectator_enabled", false];
-
+private _anim = selectRandom ['STAND_U1', 'STAND_U2', 'STAND_U3', 'GUARD', 'LISTEN_BRIEFING'];
 {
+	[_x, _anim, "NONE"] call BIS_fnc_ambientAnim;
 	_x allowDamage false;
 	_x setVariable ["lambs_danger_disableAI", true];
 	_x setVariable ["BIS_fnc_animalBehaviour_disable", true];

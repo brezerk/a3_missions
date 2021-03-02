@@ -262,12 +262,10 @@ player linkItem "ItemMap";
 a3ua_mcc_medic01 setVariable ['neck_noSurrender', true];
 a3ua_mcc_medic01 setVariable ['neck_noSurrender', true];
 a3ua_mcc_medic01 disableCollisionWith player;
-private _anim = selectRandom ['STAND_U1', 'STAND_U2', 'STAND_U3', 'GUARD', 'LISTEN_BRIEFING'];
-[a3ua_mcc_medic01, _anim, "NONE"] call BIS_fnc_ambientAnim;
 a3ua_mcc_medic02 setVariable ['neck_noSurrender', true];
 a3ua_mcc_medic02 setVariable ['neck_noSurrender', true];
 a3ua_mcc_medic02 disableCollisionWith player;
-[a3ua_mcc_medic02, _anim, "NONE"] call BIS_fnc_ambientAnim;
+
 //a3ua_mcc_medic03 setVariable ['neck_noSurrender', true];
 
 [

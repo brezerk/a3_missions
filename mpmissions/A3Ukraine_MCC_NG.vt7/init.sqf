@@ -10,6 +10,7 @@
  **************************************************************************************/
 
 missionNamespace setVariable ["bg_spectator_enabled", false];
+missionNamespace setVariable ["CasualGame", false];
 
 #include "config\realm.sqf";
 
