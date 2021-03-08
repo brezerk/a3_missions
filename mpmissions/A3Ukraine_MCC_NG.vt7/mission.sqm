@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=17621;
+		nextID=17695;
 	};
 	class Camera
 	{
-		pos[]={15799.453,57.363785,16216.31};
-		dir[]={-0.25496876,-0.31060654,-0.9157536};
-		up[]={-0.083320431,0.95051664,-0.29925209};
-		aside[]={-0.9633944,-1.5832484e-008,0.26823589};
+		pos[]={15789.504,57.363785,16185.9};
+		dir[]={-0.32120934,-0.61253768,-0.72229695};
+		up[]={-0.24889946,0.79042357,-0.5596925};
+		aside[]={-0.91375858,8.9220703e-007,0.40635604};
 	};
 };
 binarizationWanted=0;
@@ -4140,7 +4140,7 @@ class Mission
 									"STRING"
 								};
 							};
-							value="['Car','Truck','Static','Armored','AntiAir','Tank','Artillery']";
+							value="['Car','Truck','Static','Armored','AntiAir','Tank']";
 						};
 					};
 				};

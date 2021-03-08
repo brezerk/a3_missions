@@ -25,8 +25,8 @@ class Header
 	maxPlayers = 36;	// maximum number of players the mission supports
 };
 
-author			= "brezerk, Barman, MaMi, Roland";
-OnLoadName		= "Shyrlan Proving Ground v0.60";
+author			= "brezerk, Barman, MaMi, Roland, taras";
+OnLoadName		= "Shyrlan Proving Ground v0.61";
 OnLoadMission	= "Широколанівський полігон (також 235-й загальновійськовий полігон, а нині 235 міжвидовий центр підготовки військових частин та підрозділів або просто «Широкий лан») — загальновійськовий полігон першої категорії, розташований на півдні України — в Миколаївській області";
 briefingName    = "Широколанівський полігон (також 235-й загальновійськовий полігон, а нині 235 міжвидовий центр підготовки військових частин та підрозділів або просто «Широкий лан») — загальновійськовий полігон першої категорії, розташований на півдні України — в Миколаївській області";
 // FIXME: https://feedback.bistudio.com/T67181
