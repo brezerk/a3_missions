@@ -446,7 +446,8 @@ cqb_book_01 addAction
 ];
 
 [a3ua_info01, "data\traning\RPG-7V2.paa", ""] call BIS_fnc_initInspectable; 
-
+[a3ua_info02, "data\traning\RPG-7V2.paa", ""] call BIS_fnc_initInspectable; 
+[a3ua_info03, "data\traning\RPG-7V2.paa", ""] call BIS_fnc_initInspectable; 
 
 
 /*

@@ -192,8 +192,8 @@ force force ace_captives_requireSurrenderAi = true;
 force force ace_markers_moveRestriction = 0;
 
 //TFAR
-force force TFAR_Teamspeak_Channel_Name = "MCCTaskForceRadio";
-force force tf_radio_channel_name = "MCCTaskForceRadio";
+force force TFAR_Teamspeak_Channel_Name = "A3UATaskForceRadio";
+force force tf_radio_channel_name = "A3UATaskForceRadio";
 froce force tf_west_radio_code = "DSH&G^G";
 froce force tf_east_radio_code = "DSH&G^G";
 froce force tf_guer_radio_code = "DSH&G^G";
