@@ -34,6 +34,8 @@
 
 	// Max time seconds (real time) before a new weather forecast
 	_maxtime = 2400;
+	
+	_transtime = 600;
 
 	// If Fastime is on
 	// Ratio 1 real time second for x game time seconds
@@ -97,9 +99,9 @@
 				setdate (wcweather select 4);
 			}else{
 				wcweather = _this select 1;
-				300 setRain (wcweather select 0);
-				300 setfog (wcweather select 1);
-				300 setOvercast (wcweather select 2);
+				_transtime setRain (wcweather select 0);
+				_transtime setfog (wcweather select 1);
+				_transtime setOvercast (wcweather select 2);
 				setwind (wcweather select 3);
 				setdate (wcweather select 4);
 			};
@@ -178,9 +180,9 @@
 		_lastrain = _rain;
 
 		wcweather = [_rain, _fog, _overcast, _wind, date];
-		300 setRain (wcweather select 0);
-		300 setfog (wcweather select 1);
-		300 setOvercast (wcweather select 2);
+		_transtime setRain (wcweather select 0);
+		_transtime setfog (wcweather select 1);
+		_transtime setOvercast (wcweather select 2);
 		setwind (wcweather select 3);
 		if(_random) then {
 			_timeforecast = _mintime + (random (_maxtime - _mintime));

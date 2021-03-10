@@ -18,6 +18,7 @@
 
 D_FACTION_CACHE = [];
 D_DIFF = 0;
+D_RANKS = ["PRIVATE", "CORPORAL", "SERGEANT", "LIEUTENANT", "CAPTAIN", "MAJOR", "COLONEL"];
 
 Fn_Local_WaitPublicVariables = {
 	params ['_vars'];
@@ -117,7 +118,17 @@ Fn_Local_Respawn = {
 		};
 	};
 	
-	player setUnitRank (["PRIVATE", "PRIVATE", "SERGEANT", "CAPTAIN"] # D_DIFF);
+	private _rank = D_DIFF;
+	
+	if ("group leader" in (toLower (roleDescription player))) then {
+		_rank = _rank + 1;
+	} else {
+		if ("squad leader" in (toLower (roleDescription player))) then {
+			_rank = _rank + 2;
+		};
+	};
+	
+	player setUnitRank (D_RANKS # _rank);
 	
 	/*
 	private _marker = missionNamespace getVariable ["D_LOCATION", "wp_main"];
@@ -448,6 +459,7 @@ cqb_book_01 addAction
 [a3ua_info01, "data\traning\RPG-7V2.paa", ""] call BIS_fnc_initInspectable; 
 [a3ua_info02, "data\traning\RPG-7V2.paa", ""] call BIS_fnc_initInspectable; 
 [a3ua_info03, "data\traning\RPG-7V2.paa", ""] call BIS_fnc_initInspectable; 
+[a3ua_info04, "data\traning\RPG-7V2.paa", ""] call BIS_fnc_initInspectable; 
 
 
 /*

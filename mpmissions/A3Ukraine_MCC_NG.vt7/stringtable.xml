@@ -3,7 +3,7 @@
 	<Package name="UnfinishedBusiness">
 		<Container name="l18n">
 			<Key ID="STR_ONLOAD_NAME">
-				<Original>Arma 3 Ukraine: Shyrlan Proving Ground v0.61</Original>
+				<Original>Arma 3 Ukraine: Shyrlan Proving Ground v0.62</Original>
 			</Key>
 			<Key ID="INFO_MOD_NF_ACE">
 				<Original>INFO: ACE Mod not found. Advanced Combat Environment features will be disabled.</Original>
