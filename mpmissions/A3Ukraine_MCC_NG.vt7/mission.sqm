@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=513;
+	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=9489;
+		nextID=9496;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=19323;
+		nextID=19397;
 	};
 	class Camera
 	{
-		pos[]={15783.853,22.403166,16087.337};
-		dir[]={-0.66012281,-0.69507402,-0.28482851};
-		up[]={-0.63820571,0.71893466,-0.27537161};
-		aside[]={-0.39617589,3.4528057e-007,0.91818535};
+		pos[]={15646.535,34.084316,15723.753};
+		dir[]={-0.94090831,-0.28308195,-0.18603285};
+		up[]={-0.27773404,0.9590866,-0.054913715};
+		aside[]={-0.19396994,7.9917663e-007,0.98103923};
 	};
 };
 binarizationWanted=0;
@@ -210,7 +210,6 @@ addons[]=
 	"A3_Structures_F_Orange_Walls_Plastic",
 	"A3_Structures_F_Orange_Signs_Mines",
 	"A3_Structures_F_Civ_Dead",
-	"A3_Weapons_F_Exp",
 	"A3_Structures_F_Argo_Signs_Warnings",
 	"A3_Weapons_F_Ammoboxes",
 	"ace_spottingscope",
@@ -218,7 +217,8 @@ addons[]=
 	"rhsusf_c_statics",
 	"WMT_noUI",
 	"ace_map",
-	"A3_Supplies_F_Enoch_Ammoboxes"
+	"A3_Supplies_F_Enoch_Ammoboxes",
+	"A3_Weapons_F_Exp"
 };
 class AddonsMetaData
 {
@@ -949,49 +949,49 @@ class AddonsMetaData
 		};
 		class Item113
 		{
-			className="A3_Weapons_F_Exp";
-			name="Arma 3 Apex - Weapons and Accessories";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item114
-		{
 			className="ace_spottingscope";
 			name="ACE3 - Spotting Scope";
 			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
-		class Item115
+		class Item114
 		{
 			className="rhs_c_heavyweapons";
 			name="Heavy weapons pack";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item116
+		class Item115
 		{
 			className="rhsusf_c_statics";
 			name="RHSUSF Static Weapons";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item117
+		class Item116
 		{
 			className="WMT_noUI";
 			name="WMT_noUI";
 			author="Arma 3 Big Games";
 		};
-		class Item118
+		class Item117
 		{
 			className="ace_map";
 			name="ACE3 - Map";
 			author="Команда ACE";
 			url="http://ace3mod.com/";
 		};
-		class Item119
+		class Item118
 		{
 			className="A3_Supplies_F_Enoch";
 			name="Arma 3 Enoch - Ammoboxes and Supplies";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item119
+		{
+			className="A3_Weapons_F_Exp";
+			name="Arma 3 Apex - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -1359,7 +1359,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=371;
+		items=372;
 		class Item0
 		{
 			dataType="Marker";
@@ -16663,7 +16663,7 @@ class Mission
 							};
 							id=2778;
 							type="Land_OfficeCabinet_01_F";
-							atlOffset=0.044189453;
+							atlOffset=0.042557716;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -16706,7 +16706,7 @@ class Mission
 							};
 							id=2779;
 							type="Land_OfficeCabinet_01_F";
-							atlOffset=0.046970367;
+							atlOffset=0.042910576;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -16749,7 +16749,7 @@ class Mission
 							};
 							id=2781;
 							type="OfficeTable_01_new_F";
-							atlOffset=0.030112267;
+							atlOffset=0.030032158;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -16791,7 +16791,7 @@ class Mission
 							};
 							id=2782;
 							type="OfficeTable_01_new_F";
-							atlOffset=0.63680744;
+							atlOffset=0.63733196;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -16833,7 +16833,7 @@ class Mission
 							};
 							id=2783;
 							type="OfficeTable_01_new_F";
-							atlOffset=0.63341618;
+							atlOffset=0.63394833;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -16875,7 +16875,7 @@ class Mission
 							};
 							id=2784;
 							type="OfficeTable_01_new_F";
-							atlOffset=0.73390627;
+							atlOffset=0.73424101;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -16918,7 +16918,7 @@ class Mission
 							};
 							id=2785;
 							type="OfficeTable_01_new_F";
-							atlOffset=0.0002374649;
+							atlOffset=0.00023651123;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -16960,7 +16960,7 @@ class Mission
 							};
 							id=2786;
 							type="OfficeTable_01_new_F";
-							atlOffset=0.66001606;
+							atlOffset=0.66094589;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -24845,6 +24845,7 @@ class Mission
 							};
 							id=6961;
 							type="Land_Bandage_F";
+							atlOffset=0.021904945;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -24886,6 +24887,7 @@ class Mission
 							};
 							id=6962;
 							type="Land_Bandage_F";
+							atlOffset=0.021904945;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -24927,6 +24929,7 @@ class Mission
 							};
 							id=6963;
 							type="Land_Bandage_F";
+							atlOffset=0.021904945;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -25096,7 +25099,7 @@ class Mission
 						};
 					};
 					id=9039;
-					atlOffset=0.94565964;
+					atlOffset=0.94680882;
 				};
 				class Item12
 				{
@@ -25593,7 +25596,7 @@ class Mission
 								class Attribute1
 								{
 									property="ace_refuel_fuelCargo";
-									expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+									expression="if (_value != (if (isNumber (configOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 									class Value
 									{
 										class data
@@ -25612,7 +25615,7 @@ class Mission
 								class Attribute2
 								{
 									property="ace_isRepairFacility";
-									expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairFacility', _value, true]}";
+									expression="if (_value != (if (isNumber (configOf _this >> ""ace_repair_canRepair"")) then {getNumber (configOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairFacility', _value, true]}";
 									class Value
 									{
 										class data
@@ -25631,7 +25634,7 @@ class Mission
 								class Attribute3
 								{
 									property="ace_rearm_rearmCargo";
-									expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_rearm_defaultSupply"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_rearm_defaultSupply"")} else {-1})) then {[_this, _value] call ace_rearm_fnc_makeSource}";
+									expression="if (_value != (if (isNumber (configOf _this >> ""ace_rearm_defaultSupply"")) then {getNumber (configOf _this >> ""ace_rearm_defaultSupply"")} else {-1})) then {[_this, _value] call ace_rearm_fnc_makeSource}";
 									class Value
 									{
 										class data
@@ -25691,7 +25694,7 @@ class Mission
 								class Attribute1
 								{
 									property="ace_refuel_fuelCargo";
-									expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+									expression="if (_value != (if (isNumber (configOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 									class Value
 									{
 										class data
@@ -25710,7 +25713,7 @@ class Mission
 								class Attribute2
 								{
 									property="ace_isRepairFacility";
-									expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairFacility', _value, true]}";
+									expression="if (_value != (if (isNumber (configOf _this >> ""ace_repair_canRepair"")) then {getNumber (configOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairFacility', _value, true]}";
 									class Value
 									{
 										class data
@@ -25729,7 +25732,7 @@ class Mission
 								class Attribute3
 								{
 									property="ace_rearm_rearmCargo";
-									expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_rearm_defaultSupply"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_rearm_defaultSupply"")} else {-1})) then {[_this, _value] call ace_rearm_fnc_makeSource}";
+									expression="if (_value != (if (isNumber (configOf _this >> ""ace_rearm_defaultSupply"")) then {getNumber (configOf _this >> ""ace_rearm_defaultSupply"")} else {-1})) then {[_this, _value] call ace_rearm_fnc_makeSource}";
 									class Value
 									{
 										class data
@@ -25754,7 +25757,7 @@ class Mission
 				};
 			};
 			id=3381;
-			atlOffset=1.3026502;
+			atlOffset=1.3027256;
 		};
 		class Item59
 		{
@@ -33629,7 +33632,7 @@ class Mission
 								class Attribute1
 								{
 									property="ace_refuel_fuelCargo";
-									expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+									expression="if (_value != (if (isNumber (configOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 									class Value
 									{
 										class data
@@ -38491,7 +38494,7 @@ class Mission
 								class Attribute3
 								{
 									property="ace_cargo_size";
-									expression="[_this,_value] call ace_cargo_fnc_setSize;";
+									expression="[_this, _value] call ace_cargo_fnc_setSize;";
 									class Value
 									{
 										class data
@@ -39976,7 +39979,7 @@ class Mission
 								class Attribute4
 								{
 									property="ace_cargo_size";
-									expression="[_this,_value] call ace_cargo_fnc_setSize;";
+									expression="[_this, _value] call ace_cargo_fnc_setSize;";
 									class Value
 									{
 										class data
@@ -40139,7 +40142,7 @@ class Mission
 								class Attribute1
 								{
 									property="ace_refuel_fuelCargo";
-									expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+									expression="if (_value != (if (isNumber (configOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 									class Value
 									{
 										class data
@@ -40158,7 +40161,7 @@ class Mission
 								class Attribute2
 								{
 									property="ace_isRepairFacility";
-									expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairFacility', _value, true]}";
+									expression="if (_value != (if (isNumber (configOf _this >> ""ace_repair_canRepair"")) then {getNumber (configOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairFacility', _value, true]}";
 									class Value
 									{
 										class data
@@ -40177,7 +40180,7 @@ class Mission
 								class Attribute3
 								{
 									property="ace_rearm_rearmCargo";
-									expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_rearm_defaultSupply"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_rearm_defaultSupply"")} else {-1})) then {[_this, _value] call ace_rearm_fnc_makeSource}";
+									expression="if (_value != (if (isNumber (configOf _this >> ""ace_rearm_defaultSupply"")) then {getNumber (configOf _this >> ""ace_rearm_defaultSupply"")} else {-1})) then {[_this, _value] call ace_rearm_fnc_makeSource}";
 									class Value
 									{
 										class data
@@ -41879,7 +41882,7 @@ class Mission
 								class Attribute1
 								{
 									property="ace_cargo_size";
-									expression="[_this,_value] call ace_cargo_fnc_setSize;";
+									expression="[_this, _value] call ace_cargo_fnc_setSize;";
 									class Value
 									{
 										class data
@@ -41940,7 +41943,7 @@ class Mission
 								class Attribute1
 								{
 									property="ace_cargo_size";
-									expression="[_this,_value] call ace_cargo_fnc_setSize;";
+									expression="[_this, _value] call ace_cargo_fnc_setSize;";
 									class Value
 									{
 										class data
@@ -42001,7 +42004,7 @@ class Mission
 								class Attribute1
 								{
 									property="ace_cargo_size";
-									expression="[_this,_value] call ace_cargo_fnc_setSize;";
+									expression="[_this, _value] call ace_cargo_fnc_setSize;";
 									class Value
 									{
 										class data
@@ -46103,7 +46106,7 @@ class Mission
 								class Attribute0
 								{
 									property="ace_refuel_hooks";
-									expression="if !(_value isEqualTo (if (isArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"")) then {getArray (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_hooks"") select 0} else {[0, 0, 0]})) then {_this setVariable ['ace_refuel_hooks', [_value], true]}";
+									expression="if (_value isNotEqualTo (if (isArray (configOf _this >> ""ace_refuel_hooks"")) then {getArray (configOf _this >> ""ace_refuel_hooks"") select 0} else {[0, 0, 0]})) then {_this setVariable ['ace_refuel_hooks', [_value], true]}";
 									class Value
 									{
 										class data
@@ -75994,7 +75997,7 @@ class Mission
 						class Attribute1
 						{
 							property="ace_refuel_fuelCargo";
-							expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+							expression="if (_value != (if (isNumber (configOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 							class Value
 							{
 								class data
@@ -76013,7 +76016,7 @@ class Mission
 						class Attribute2
 						{
 							property="ace_isRepairFacility";
-							expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairFacility', _value, true]}";
+							expression="if (_value != (if (isNumber (configOf _this >> ""ace_repair_canRepair"")) then {getNumber (configOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairFacility', _value, true]}";
 							class Value
 							{
 								class data
@@ -76032,7 +76035,7 @@ class Mission
 						class Attribute3
 						{
 							property="ace_rearm_rearmCargo";
-							expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_rearm_defaultSupply"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_rearm_defaultSupply"")} else {-1})) then {[_this, _value] call ace_rearm_fnc_makeSource}";
+							expression="if (_value != (if (isNumber (configOf _this >> ""ace_rearm_defaultSupply"")) then {getNumber (configOf _this >> ""ace_rearm_defaultSupply"")} else {-1})) then {[_this, _value] call ace_rearm_fnc_makeSource}";
 							class Value
 							{
 								class data
@@ -76092,7 +76095,7 @@ class Mission
 						class Attribute1
 						{
 							property="ace_refuel_fuelCargo";
-							expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+							expression="if (_value != (if (isNumber (configOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 							class Value
 							{
 								class data
@@ -76111,7 +76114,7 @@ class Mission
 						class Attribute2
 						{
 							property="ace_isRepairFacility";
-							expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairFacility', _value, true]}";
+							expression="if (_value != (if (isNumber (configOf _this >> ""ace_repair_canRepair"")) then {getNumber (configOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairFacility', _value, true]}";
 							class Value
 							{
 								class data
@@ -76130,7 +76133,7 @@ class Mission
 						class Attribute3
 						{
 							property="ace_rearm_rearmCargo";
-							expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_rearm_defaultSupply"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_rearm_defaultSupply"")} else {-1})) then {[_this, _value] call ace_rearm_fnc_makeSource}";
+							expression="if (_value != (if (isNumber (configOf _this >> ""ace_rearm_defaultSupply"")) then {getNumber (configOf _this >> ""ace_rearm_defaultSupply"")} else {-1})) then {[_this, _value] call ace_rearm_fnc_makeSource}";
 							class Value
 							{
 								class data
@@ -79953,7 +79956,7 @@ class Mission
 								class Attribute1
 								{
 									property="ace_refuel_fuelCargo";
-									expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+									expression="if (_value != (if (isNumber (configOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 									class Value
 									{
 										class data
@@ -86203,7 +86206,7 @@ class Mission
 								class Attribute1
 								{
 									property="ace_refuel_fuelCargo";
-									expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+									expression="if (_value != (if (isNumber (configOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 									class Value
 									{
 										class data
@@ -86222,7 +86225,7 @@ class Mission
 								class Attribute2
 								{
 									property="ace_isRepairFacility";
-									expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairFacility', _value, true]}";
+									expression="if (_value != (if (isNumber (configOf _this >> ""ace_repair_canRepair"")) then {getNumber (configOf _this >> ""ace_repair_canRepair"")} else {0})) then {_this setVariable ['ace_isRepairFacility', _value, true]}";
 									class Value
 									{
 										class data
@@ -86241,7 +86244,7 @@ class Mission
 								class Attribute3
 								{
 									property="ace_rearm_rearmCargo";
-									expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_rearm_defaultSupply"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_rearm_defaultSupply"")} else {-1})) then {[_this, _value] call ace_rearm_fnc_makeSource}";
+									expression="if (_value != (if (isNumber (configOf _this >> ""ace_rearm_defaultSupply"")) then {getNumber (configOf _this >> ""ace_rearm_defaultSupply"")} else {-1})) then {[_this, _value] call ace_rearm_fnc_makeSource}";
 									class Value
 									{
 										class data
@@ -86330,7 +86333,7 @@ class Mission
 								class Attribute1
 								{
 									property="ace_refuel_fuelCargo";
-									expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
+									expression="if (_value != (if (isNumber (configOf _this >> ""ace_refuel_fuelCargo"")) then {getNumber (configOf _this >> ""ace_refuel_fuelCargo"")} else {-1})) then {[_this, _value] call ace_refuel_fnc_makeSource}";
 									class Value
 									{
 										class data
@@ -91495,7 +91498,7 @@ class Mission
 						class Attribute3
 						{
 							property="ace_cargo_size";
-							expression="[_this,_value] call ace_cargo_fnc_setSize;";
+							expression="[_this, _value] call ace_cargo_fnc_setSize;";
 							class Value
 							{
 								class data
@@ -93042,7 +93045,7 @@ class Mission
 					name="Огорожа";
 					class Entities
 					{
-						items=50;
+						items=49;
 						class Item0
 						{
 							dataType="Object";
@@ -93646,8 +93649,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={15647.064,34.066124,15732.197};
-								angles[]={0,3.8511932,0};
+								position[]={15647.064,34.052128,15732.197};
+								angles[]={-0,3.8511932,0};
 							};
 							side="Empty";
 							flags=4;
@@ -93658,7 +93661,7 @@ class Mission
 							};
 							id=9167;
 							type="Concrete_Wall_EP1";
-							atlOffset=0.010822296;
+							atlOffset=-0.0031738281;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -93688,11 +93691,10 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={15640.959,34.186569,15724.772};
-								angles[]={0,3.838634,0};
+								position[]={15640.959,34.137833,15724.772};
+								angles[]={-0,3.838634,0};
 							};
 							side="Empty";
-							flags=4;
 							class Attributes
 							{
 								disableSimulation=1;
@@ -93700,6 +93702,7 @@ class Mission
 							};
 							id=9198;
 							type="Concrete_Wall_EP1";
+							atlOffset=0.5742321;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -93729,11 +93732,10 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={15637.877,34.190449,15720.893};
-								angles[]={0,0.70960414,0};
+								position[]={15637.877,34.151745,15720.893};
+								angles[]={-0,0.70960414,0};
 							};
 							side="Empty";
-							flags=4;
 							class Attributes
 							{
 								disableSimulation=1;
@@ -93741,6 +93743,7 @@ class Mission
 							};
 							id=9203;
 							type="Concrete_Wall_EP1";
+							atlOffset=0.85549927;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -93770,11 +93773,10 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={15634.509,34.186649,15716.809};
-								angles[]={0,0.69516939,0};
+								position[]={15634.509,34.140236,15716.809};
+								angles[]={-0,0.69516939,0};
 							};
 							side="Empty";
-							flags=4;
 							class Attributes
 							{
 								disableSimulation=1;
@@ -93782,6 +93784,7 @@ class Mission
 							};
 							id=9207;
 							type="Concrete_Wall_EP1";
+							atlOffset=1.1193905;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -93853,8 +93856,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={15662.123,32.442924,15736.208};
-								angles[]={0,0.37283722,0};
+								position[]={15662.123,32.458473,15736.208};
+								angles[]={-0,0.37283722,0};
 							};
 							side="Empty";
 							class Attributes
@@ -93864,7 +93867,7 @@ class Mission
 							};
 							id=9201;
 							type="Land_HumanSkeleton_F";
-							atlOffset=0.92580032;
+							atlOffset=0.94134521;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -94017,11 +94020,10 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={15644.019,34.20076,15728.401};
-								angles[]={0,3.838634,0};
+								position[]={15644.019,34.148117,15728.401};
+								angles[]={-0,3.838634,0};
 							};
 							side="Empty";
-							flags=4;
 							class Attributes
 							{
 								disableSimulation=1;
@@ -94029,6 +94031,7 @@ class Mission
 							};
 							id=9361;
 							type="Concrete_Wall_EP1";
+							atlOffset=0.3157196;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -94058,8 +94061,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={15650.371,34.17931,15735.804};
-								angles[]={0,3.838634,0};
+								position[]={15650.371,34.156597,15735.804};
+								angles[]={-0,3.838634,0};
 							};
 							side="Empty";
 							flags=4;
@@ -94070,7 +94073,7 @@ class Mission
 							};
 							id=9362;
 							type="Concrete_Wall_EP1";
-							atlOffset=0.0010643005;
+							atlOffset=0.13094711;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -94100,11 +94103,10 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={15653.481,34.19775,15739.548};
-								angles[]={0,3.838634,0};
+								position[]={15653.601,34.117714,15739.665};
+								angles[]={-0,3.838634,0};
 							};
 							side="Empty";
-							flags=4;
 							class Attributes
 							{
 								disableSimulation=1;
@@ -94112,6 +94114,7 @@ class Mission
 							};
 							id=9363;
 							type="Concrete_Wall_EP1";
+							atlOffset=0.33789444;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -94854,66 +94857,6 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={15661.897,32.302917,15735.771};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								health=0.36868858;
-								disableSimulation=1;
-								dynamicSimulation=1;
-							};
-							id=9365;
-							type="Weapon_launch_RPG7_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"STRING"
-												};
-											};
-											value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="allowDamage";
-									expression="_this allowdamage _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"BOOL"
-												};
-											};
-											value=0;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item44
-						{
-							dataType="Object";
-							class PositionInfo
-							{
 								position[]={15661.53,35.955208,15731.232};
 							};
 							side="Empty";
@@ -94949,7 +94892,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item45
+						class Item44
 						{
 							dataType="Object";
 							class PositionInfo
@@ -94990,7 +94933,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item46
+						class Item45
 						{
 							dataType="Object";
 							class PositionInfo
@@ -95031,7 +94974,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item47
+						class Item46
 						{
 							dataType="Object";
 							class PositionInfo
@@ -95071,7 +95014,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item48
+						class Item47
 						{
 							dataType="Object";
 							class PositionInfo
@@ -95111,7 +95054,7 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item49
+						class Item48
 						{
 							dataType="Object";
 							class PositionInfo
@@ -95154,7 +95097,7 @@ class Mission
 						};
 					};
 					id=8964;
-					atlOffset=0.31954956;
+					atlOffset=0.5611515;
 				};
 				class Item2
 				{
@@ -98249,7 +98192,7 @@ class Mission
 								class Attribute2
 								{
 									property="ace_cargo_size";
-									expression="[_this,_value] call ace_cargo_fnc_setSize;";
+									expression="[_this, _value] call ace_cargo_fnc_setSize;";
 									class Value
 									{
 										class data
@@ -98327,7 +98270,7 @@ class Mission
 								class Attribute2
 								{
 									property="ace_cargo_size";
-									expression="[_this,_value] call ace_cargo_fnc_setSize;";
+									expression="[_this, _value] call ace_cargo_fnc_setSize;";
 									class Value
 									{
 										class data
@@ -98405,7 +98348,7 @@ class Mission
 								class Attribute2
 								{
 									property="ace_cargo_size";
-									expression="[_this,_value] call ace_cargo_fnc_setSize;";
+									expression="[_this, _value] call ace_cargo_fnc_setSize;";
 									class Value
 									{
 										class data
@@ -98483,7 +98426,7 @@ class Mission
 								class Attribute2
 								{
 									property="ace_cargo_size";
-									expression="[_this,_value] call ace_cargo_fnc_setSize;";
+									expression="[_this, _value] call ace_cargo_fnc_setSize;";
 									class Value
 									{
 										class data
@@ -98562,7 +98505,7 @@ class Mission
 								class Attribute2
 								{
 									property="ace_cargo_size";
-									expression="[_this,_value] call ace_cargo_fnc_setSize;";
+									expression="[_this, _value] call ace_cargo_fnc_setSize;";
 									class Value
 									{
 										class data
@@ -98640,7 +98583,7 @@ class Mission
 								class Attribute2
 								{
 									property="ace_cargo_size";
-									expression="[_this,_value] call ace_cargo_fnc_setSize;";
+									expression="[_this, _value] call ace_cargo_fnc_setSize;";
 									class Value
 									{
 										class data
@@ -98718,7 +98661,7 @@ class Mission
 								class Attribute2
 								{
 									property="ace_cargo_size";
-									expression="[_this,_value] call ace_cargo_fnc_setSize;";
+									expression="[_this, _value] call ace_cargo_fnc_setSize;";
 									class Value
 									{
 										class data
@@ -98796,7 +98739,7 @@ class Mission
 								class Attribute2
 								{
 									property="ace_cargo_size";
-									expression="[_this,_value] call ace_cargo_fnc_setSize;";
+									expression="[_this, _value] call ace_cargo_fnc_setSize;";
 									class Value
 									{
 										class data
@@ -98875,7 +98818,7 @@ class Mission
 								class Attribute2
 								{
 									property="ace_cargo_size";
-									expression="[_this,_value] call ace_cargo_fnc_setSize;";
+									expression="[_this, _value] call ace_cargo_fnc_setSize;";
 									class Value
 									{
 										class data
@@ -98953,7 +98896,7 @@ class Mission
 								class Attribute2
 								{
 									property="ace_cargo_size";
-									expression="[_this,_value] call ace_cargo_fnc_setSize;";
+									expression="[_this, _value] call ace_cargo_fnc_setSize;";
 									class Value
 									{
 										class data
@@ -99031,7 +98974,7 @@ class Mission
 								class Attribute2
 								{
 									property="ace_cargo_size";
-									expression="[_this,_value] call ace_cargo_fnc_setSize;";
+									expression="[_this, _value] call ace_cargo_fnc_setSize;";
 									class Value
 									{
 										class data
@@ -99210,7 +99153,7 @@ class Mission
 								class Attribute1
 								{
 									property="ace_cargo_size";
-									expression="[_this,_value] call ace_cargo_fnc_setSize;";
+									expression="[_this, _value] call ace_cargo_fnc_setSize;";
 									class Value
 									{
 										class data
@@ -99270,7 +99213,7 @@ class Mission
 								class Attribute1
 								{
 									property="ace_cargo_size";
-									expression="[_this,_value] call ace_cargo_fnc_setSize;";
+									expression="[_this, _value] call ace_cargo_fnc_setSize;";
 									class Value
 									{
 										class data
@@ -99348,7 +99291,7 @@ class Mission
 								class Attribute2
 								{
 									property="ace_cargo_size";
-									expression="[_this,_value] call ace_cargo_fnc_setSize;";
+									expression="[_this, _value] call ace_cargo_fnc_setSize;";
 									class Value
 									{
 										class data
@@ -99426,7 +99369,7 @@ class Mission
 								class Attribute2
 								{
 									property="ace_cargo_size";
-									expression="[_this,_value] call ace_cargo_fnc_setSize;";
+									expression="[_this, _value] call ace_cargo_fnc_setSize;";
 									class Value
 									{
 										class data
@@ -99910,7 +99853,7 @@ class Mission
 				};
 			};
 			id=8963;
-			atlOffset=3.1701202;
+			atlOffset=3.2879524;
 		};
 		class Item260
 		{
@@ -101776,7 +101719,7 @@ class Mission
 			name="NECK_lcs_strategic_30";
 			type="mil_objective";
 			id=9096;
-			atlOffset=2.1267929;
+			atlOffset=0.00028610229;
 		};
 		class Item320
 		{
@@ -103011,7 +102954,7 @@ class Mission
 						class Attribute2
 						{
 							property="ace_cargo_size";
-							expression="[_this,_value] call ace_cargo_fnc_setSize;";
+							expression="[_this, _value] call ace_cargo_fnc_setSize;";
 							class Value
 							{
 								class data
@@ -103091,7 +103034,7 @@ class Mission
 						class Attribute2
 						{
 							property="ace_cargo_size";
-							expression="[_this,_value] call ace_cargo_fnc_setSize;";
+							expression="[_this, _value] call ace_cargo_fnc_setSize;";
 							class Value
 							{
 								class data
@@ -103171,7 +103114,7 @@ class Mission
 						class Attribute2
 						{
 							property="ace_cargo_size";
-							expression="[_this,_value] call ace_cargo_fnc_setSize;";
+							expression="[_this, _value] call ace_cargo_fnc_setSize;";
 							class Value
 							{
 								class data
@@ -103251,7 +103194,7 @@ class Mission
 						class Attribute2
 						{
 							property="ace_cargo_size";
-							expression="[_this,_value] call ace_cargo_fnc_setSize;";
+							expression="[_this, _value] call ace_cargo_fnc_setSize;";
 							class Value
 							{
 								class data
@@ -103331,7 +103274,7 @@ class Mission
 						class Attribute2
 						{
 							property="ace_cargo_size";
-							expression="[_this,_value] call ace_cargo_fnc_setSize;";
+							expression="[_this, _value] call ace_cargo_fnc_setSize;";
 							class Value
 							{
 								class data
@@ -103411,7 +103354,7 @@ class Mission
 						class Attribute2
 						{
 							property="ace_cargo_size";
-							expression="[_this,_value] call ace_cargo_fnc_setSize;";
+							expression="[_this, _value] call ace_cargo_fnc_setSize;";
 							class Value
 							{
 								class data
@@ -103491,7 +103434,7 @@ class Mission
 						class Attribute2
 						{
 							property="ace_cargo_size";
-							expression="[_this,_value] call ace_cargo_fnc_setSize;";
+							expression="[_this, _value] call ace_cargo_fnc_setSize;";
 							class Value
 							{
 								class data
@@ -103591,7 +103534,7 @@ class Mission
 						class Attribute3
 						{
 							property="ace_cargo_size";
-							expression="[_this,_value] call ace_cargo_fnc_setSize;";
+							expression="[_this, _value] call ace_cargo_fnc_setSize;";
 							class Value
 							{
 								class data
@@ -103691,7 +103634,7 @@ class Mission
 						class Attribute3
 						{
 							property="ace_cargo_size";
-							expression="[_this,_value] call ace_cargo_fnc_setSize;";
+							expression="[_this, _value] call ace_cargo_fnc_setSize;";
 							class Value
 							{
 								class data
@@ -103772,7 +103715,7 @@ class Mission
 						class Attribute2
 						{
 							property="ace_cargo_size";
-							expression="[_this,_value] call ace_cargo_fnc_setSize;";
+							expression="[_this, _value] call ace_cargo_fnc_setSize;";
 							class Value
 							{
 								class data
@@ -103853,7 +103796,7 @@ class Mission
 						class Attribute2
 						{
 							property="ace_cargo_size";
-							expression="[_this,_value] call ace_cargo_fnc_setSize;";
+							expression="[_this, _value] call ace_cargo_fnc_setSize;";
 							class Value
 							{
 								class data
@@ -103934,7 +103877,7 @@ class Mission
 						class Attribute2
 						{
 							property="ace_cargo_size";
-							expression="[_this,_value] call ace_cargo_fnc_setSize;";
+							expression="[_this, _value] call ace_cargo_fnc_setSize;";
 							class Value
 							{
 								class data
@@ -104015,7 +103958,7 @@ class Mission
 						class Attribute2
 						{
 							property="ace_cargo_size";
-							expression="[_this,_value] call ace_cargo_fnc_setSize;";
+							expression="[_this, _value] call ace_cargo_fnc_setSize;";
 							class Value
 							{
 								class data
@@ -104115,7 +104058,7 @@ class Mission
 						class Attribute3
 						{
 							property="ace_cargo_size";
-							expression="[_this,_value] call ace_cargo_fnc_setSize;";
+							expression="[_this, _value] call ace_cargo_fnc_setSize;";
 							class Value
 							{
 								class data
@@ -104215,7 +104158,7 @@ class Mission
 						class Attribute3
 						{
 							property="ace_cargo_size";
-							expression="[_this,_value] call ace_cargo_fnc_setSize;";
+							expression="[_this, _value] call ace_cargo_fnc_setSize;";
 							class Value
 							{
 								class data
@@ -104315,7 +104258,7 @@ class Mission
 						class Attribute3
 						{
 							property="ace_cargo_size";
-							expression="[_this,_value] call ace_cargo_fnc_setSize;";
+							expression="[_this, _value] call ace_cargo_fnc_setSize;";
 							class Value
 							{
 								class data
@@ -104395,7 +104338,7 @@ class Mission
 						class Attribute2
 						{
 							property="ace_cargo_size";
-							expression="[_this,_value] call ace_cargo_fnc_setSize;";
+							expression="[_this, _value] call ace_cargo_fnc_setSize;";
 							class Value
 							{
 								class data
@@ -104475,7 +104418,7 @@ class Mission
 						class Attribute2
 						{
 							property="ace_cargo_size";
-							expression="[_this,_value] call ace_cargo_fnc_setSize;";
+							expression="[_this, _value] call ace_cargo_fnc_setSize;";
 							class Value
 							{
 								class data
@@ -104555,7 +104498,7 @@ class Mission
 						class Attribute2
 						{
 							property="ace_cargo_size";
-							expression="[_this,_value] call ace_cargo_fnc_setSize;";
+							expression="[_this, _value] call ace_cargo_fnc_setSize;";
 							class Value
 							{
 								class data
@@ -104666,90 +104609,6 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={15639.02,31.303228,15694.576};
-				angles[]={6.2286263,0,6.2330942};
-			};
-			side="Empty";
-			class Attributes
-			{
-				name="a3ua_info01";
-				disableSimulation=1;
-				dynamicSimulation=1;
-			};
-			id=9447;
-			type="Leaflet_05_New_F";
-			atlOffset=0.8900013;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item343
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={15639.771,31.182526,15693.063};
-				angles[]={6.2286263,0,6.2330942};
-			};
-			side="Empty";
-			class Attributes
-			{
-				name="a3ua_info02";
-				disableSimulation=1;
-				dynamicSimulation=1;
-			};
-			id=9448;
-			type="Leaflet_05_New_F";
-			atlOffset=0.88899994;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item344
-		{
-			dataType="Object";
-			class PositionInfo
-			{
 				position[]={15640.261,31.185673,15692.098};
 				angles[]={6.2127609,0,6.2489772};
 			};
@@ -104788,50 +104647,7 @@ class Mission
 				nAttributes=1;
 			};
 		};
-		class Item345
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={15640.893,30.990873,15690.676};
-				angles[]={6.2127609,0,6.2489772};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				name="a3ua_info04";
-				disableSimulation=1;
-				dynamicSimulation=1;
-			};
-			id=9452;
-			type="Leaflet_05_New_F";
-			atlOffset=0.00046920776;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="allowDamage";
-					expression="_this allowdamage _value;";
-					class Value
-					{
-						class data
-						{
-							class type
-							{
-								type[]=
-								{
-									"BOOL"
-								};
-							};
-							value=0;
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item346
+		class Item343
 		{
 			dataType="Object";
 			class PositionInfo
@@ -104871,7 +104687,7 @@ class Mission
 				class Attribute1
 				{
 					property="ace_cargo_size";
-					expression="[_this,_value] call ace_cargo_fnc_setSize;";
+					expression="[_this, _value] call ace_cargo_fnc_setSize;";
 					class Value
 					{
 						class data
@@ -104890,7 +104706,7 @@ class Mission
 				class Attribute2
 				{
 					property="ace_rearm_rearmCargo";
-					expression="if (_value != (if (isNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_rearm_defaultSupply"")) then {getNumber (configFile >> 'CfgVehicles' >> typeOf _this >> ""ace_rearm_defaultSupply"")} else {-1})) then {[_this, _value] call ace_rearm_fnc_makeSource}";
+					expression="if (_value != (if (isNumber (configOf _this >> ""ace_rearm_defaultSupply"")) then {getNumber (configOf _this >> ""ace_rearm_defaultSupply"")} else {-1})) then {[_this, _value] call ace_rearm_fnc_makeSource}";
 					class Value
 					{
 						class data
@@ -104909,7 +104725,7 @@ class Mission
 				nAttributes=3;
 			};
 		};
-		class Item347
+		class Item344
 		{
 			dataType="Marker";
 			position[]={4585.9014,31.61677,15936.985};
@@ -104918,7 +104734,7 @@ class Mission
 			id=9458;
 			atlOffset=0.00028610229;
 		};
-		class Item348
+		class Item345
 		{
 			dataType="Marker";
 			position[]={3501.1807,24.349157,16422.365};
@@ -104927,7 +104743,7 @@ class Mission
 			id=9459;
 			atlOffset=-2.4649754;
 		};
-		class Item349
+		class Item346
 		{
 			dataType="Marker";
 			position[]={3905.7302,18.577042,14510.82};
@@ -104936,7 +104752,7 @@ class Mission
 			id=9460;
 			atlOffset=0.00028610229;
 		};
-		class Item350
+		class Item347
 		{
 			dataType="Marker";
 			position[]={4673.8218,20.319445,11392.362};
@@ -104945,7 +104761,7 @@ class Mission
 			id=9461;
 			atlOffset=0.00028610229;
 		};
-		class Item351
+		class Item348
 		{
 			dataType="Marker";
 			position[]={3573.3113,20.301117,10824.033};
@@ -104954,7 +104770,7 @@ class Mission
 			id=9462;
 			atlOffset=0.00028610229;
 		};
-		class Item352
+		class Item349
 		{
 			dataType="Marker";
 			position[]={3554.7451,34.248177,9873.8174};
@@ -104963,7 +104779,7 @@ class Mission
 			id=9463;
 			atlOffset=0.00028610229;
 		};
-		class Item353
+		class Item350
 		{
 			dataType="Marker";
 			position[]={2634.1563,16.984688,11032.431};
@@ -104972,7 +104788,7 @@ class Mission
 			id=9464;
 			atlOffset=0.00028610229;
 		};
-		class Item354
+		class Item351
 		{
 			dataType="Marker";
 			position[]={2371.8699,21.283833,15916.577};
@@ -104981,7 +104797,7 @@ class Mission
 			id=9465;
 			atlOffset=0.00028610229;
 		};
-		class Item355
+		class Item352
 		{
 			dataType="Marker";
 			position[]={2164.7239,19.356583,16870.895};
@@ -104990,7 +104806,7 @@ class Mission
 			id=9466;
 			atlOffset=0.00028610229;
 		};
-		class Item356
+		class Item353
 		{
 			dataType="Marker";
 			position[]={5052.9136,25.731173,16894.975};
@@ -104999,7 +104815,7 @@ class Mission
 			id=9467;
 			atlOffset=0.00028610229;
 		};
-		class Item357
+		class Item354
 		{
 			dataType="Marker";
 			position[]={6224.2075,28.635077,16936.176};
@@ -105008,7 +104824,7 @@ class Mission
 			id=9468;
 			atlOffset=0.00028610229;
 		};
-		class Item358
+		class Item355
 		{
 			dataType="Marker";
 			position[]={5521.2754,27.097813,14877.407};
@@ -105017,7 +104833,7 @@ class Mission
 			id=9469;
 			atlOffset=0.00028610229;
 		};
-		class Item359
+		class Item356
 		{
 			dataType="Object";
 			class PositionInfo
@@ -105346,7 +105162,7 @@ class Mission
 				nAttributes=7;
 			};
 		};
-		class Item360
+		class Item357
 		{
 			dataType="Object";
 			class PositionInfo
@@ -105674,7 +105490,7 @@ class Mission
 				nAttributes=7;
 			};
 		};
-		class Item361
+		class Item358
 		{
 			dataType="Object";
 			class PositionInfo
@@ -105690,7 +105506,7 @@ class Mission
 			id=9473;
 			type="b_a3ua_afougf_D30";
 		};
-		class Item362
+		class Item359
 		{
 			dataType="Object";
 			class PositionInfo
@@ -105706,7 +105522,7 @@ class Mission
 			id=9474;
 			type="b_a3ua_afougf_D30";
 		};
-		class Item363
+		class Item360
 		{
 			dataType="Object";
 			class PositionInfo
@@ -105722,7 +105538,7 @@ class Mission
 			id=9475;
 			type="b_a3ua_afougf_2s3";
 		};
-		class Item364
+		class Item361
 		{
 			dataType="Object";
 			class PositionInfo
@@ -105739,7 +105555,7 @@ class Mission
 			type="b_a3ua_afougf_2b14_82mm";
 			atlOffset=-8.5830688e-006;
 		};
-		class Item365
+		class Item362
 		{
 			dataType="Object";
 			class PositionInfo
@@ -105755,7 +105571,7 @@ class Mission
 			id=9477;
 			type="b_a3ua_afougf_2b14_82mm";
 		};
-		class Item366
+		class Item363
 		{
 			dataType="Object";
 			class PositionInfo
@@ -105772,7 +105588,7 @@ class Mission
 			type="b_a3ua_afougf_2b14_82mm";
 			atlOffset=-1.335144e-005;
 		};
-		class Item367
+		class Item364
 		{
 			dataType="Object";
 			class PositionInfo
@@ -105789,7 +105605,7 @@ class Mission
 			type="b_a3ua_afougf_Ural_fuel";
 			atlOffset=-0.049206495;
 		};
-		class Item368
+		class Item365
 		{
 			dataType="Object";
 			class PositionInfo
@@ -105806,7 +105622,7 @@ class Mission
 			type="b_a3ua_afougf_gaz66_ammo";
 			atlOffset=-2.9563904e-005;
 		};
-		class Item369
+		class Item366
 		{
 			dataType="Object";
 			class PositionInfo
@@ -105823,7 +105639,7 @@ class Mission
 			type="b_a3ua_afougf_m998_w_2dr";
 			atlOffset=-0.0043292046;
 		};
-		class Item370
+		class Item367
 		{
 			dataType="Object";
 			class PositionInfo
@@ -105859,6 +105675,174 @@ class Mission
 								};
 							};
 							value="[[[[""rhs_weap_m4_carryhandle"",""FirstAidKit""],[2,10]],[[""rhs_mag_30Rnd_556x45_M855A1_Stanag"",""rhs_mag_m67"",""rhs_mag_m18_green"",""rhs_mag_m18_red"",""rhs_mag_an_m8hc""],[10,2,2,2,4]],[[""ToolKit""],[1]],[[""rhsusf_falconii""],[1]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item368
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15639.775,31.255449,15693.06};
+				angles[]={6.2286263,0,6.2330942};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="a3ua_info02";
+				disableSimulation=1;
+				dynamicSimulation=1;
+			};
+			id=9489;
+			type="Leaflet_05_Stack_F";
+			atlOffset=0.88899994;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item369
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15639.023,31.376213,15694.573};
+				angles[]={6.2286263,0,6.2330942};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="a3ua_info01";
+				disableSimulation=1;
+				dynamicSimulation=1;
+			};
+			id=9490;
+			type="Leaflet_05_Stack_F";
+			atlOffset=0.88999939;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item370
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15640.896,31.063772,15690.671};
+				angles[]={6.2127609,0,6.2489772};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				name="a3ua_info04";
+				disableSimulation=1;
+				dynamicSimulation=1;
+			};
+			id=9491;
+			type="Leaflet_05_Stack_F";
+			atlOffset=0.00046920776;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item371
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={15661.907,32.302948,15735.982};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+				dynamicSimulation=1;
+			};
+			id=9495;
+			type="Weapon_launch_RPG7_F";
+			atlOffset=3.0517578e-005;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"BOOL"
+								};
+							};
+							value=0;
 						};
 					};
 				};
